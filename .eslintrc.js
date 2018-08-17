@@ -1,17 +1,31 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    browser: true,
+    node: true,
+    es6: true,
   },
   'extends': [
-    'plugin:vue/essential',
+    'plugin:vue/recommended',
     '@vue/airbnb'
   ],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-console': 'off',
+    'no-debugger': 'off',
+    'vue/html-closing-bracket-newline': 'warning',
+    'vue/html-closing-bracket-spacing': 'warning',
+    'vue/no-use-v-if-with-v-for': 'warning',
+    'vue/no-v-html': 'warning',
+    'vue/prop-name-casing': 'warning',
+    'vue/html-self-closing': 'off',
+    'vue/max-attributes-per-line': [5, {
+      multiline: {
+        max: 5,
+        allowFirstLine: true
+      }
+    }]
   },
   parserOptions: {
     parser: 'babel-eslint'
   }
-}
+};
