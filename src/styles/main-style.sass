@@ -1,0 +1,121 @@
+@font-face 
+  font-family: "ProximaNova"
+  src: url("fonts/ProximaNova-Bold.woff") format("woff")
+  font-weight: 700
+  font-style: normal
+  font-display: swap
+
+@font-face 
+  font-family: "ProximaNova"
+  src: url("fonts/ProximaNova-Regular.woff") format("woff")
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+	
+
+.home
+	font-family: ProximaNova
+	box-sizing: border-box
+	font-size: 15px
+	color: #000000
+	font-weight: 400
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden 
+	position: absolute
+
+	width: 1px
+	height: 1px
+	margin: -1px
+	border: 0
+	padding: 0
+
+	white-space: nowrap
+
+	clip-path: inset(100%)
+	clip: rect(0 0 0 0)
+	overflow: hidden
+
+
+img 
+	max-width: 100%
+	height: auto
+
+*, *::before, *::after 
+	box-sizing: inherit
+
+
+.content-container
+	width: 1170px
+	margin:
+		left: auto
+		right: auto
+
+.main-header
+	padding: 
+		top: 24px
+		bottom: 24px
+	display: flex
+	&__logo
+		width: 108px
+		height: 50px
+		background-color: blue
+		margin: 
+			right: 51px
+	&__menu-list
+		display: flex
+		list-style: none
+		padding: 0
+		margin: 
+			top: 16px
+			bottom: 0
+		width: 590px
+		flex-wrap: wrap
+	&__menu-element
+		margin: 
+			right: 40px
+		&:last-child
+			margin: 
+				right: 0
+		a
+			padding: 5px
+			text-decoration: none
+			color: #000000
+			font-weight: 700
+	&__user
+		margin: 
+			left: auto
+	&__user-list
+		list-style: none
+		display: flex
+		margin: 
+			top: 16px
+			bottom: 0
+		padding: 0
+	&__user-element
+		position: relative
+		margin: 
+			right: 40px
+		&:last-child
+			margin: 
+				right: 0
+		a
+			padding: 5px
+			text-decoration: none
+			color: #000000
+			font-weight: 700
+		&--buy
+			&:before
+				content: '1'
+				position: absolute
+				right: -13px
+				top: -15px
+				width: 18px
+				height: 18px
+				border-radius: 50%
+				background-color: #e70068
+				color: #ffffff
+				padding-left: 6px
+				line-height: 19px
+	
