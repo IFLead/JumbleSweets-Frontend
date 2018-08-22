@@ -1,11 +1,14 @@
 <template>
   <div class="home">
-
-    <div class="content-container">
+    <b-container>
       <header class="main-header">
-        <a href="#"><div class="main-header__logo"></div></a>
+        <a href="#" class="main-header__logo-link"><div class="main-header__logo"></div></a>
         <nav class="main-header__menu">
-          <ul class="main-header__menu-list">
+          <div class="main-header__hamburger">
+            <div class="main-header__hamburger--midleline"></div>
+          </div>
+          <div class="main-header__close "></div> <!--Чтобы появился крестик добавить класс .show -->
+          <ul class="main-header__menu-list "> <!--Чтобы появилось меню добавить класс .show -->
             <li class="main-header__menu-element">
               <a href="#">Главная</a>
             </li>
@@ -24,42 +27,74 @@
           </ul>
         </nav>
         <div class="main-header__user">
-          <ul class="main-header__user-list">
-            <li class="main-header__user-element main-header__user-element--buy"><a href="#">Корзина</a></li>
+          <ul class="main-header__user-list "><!--Чтобы появилось меню добавить класс .show -->
+            <li class="main-header__user-element">
+              <el-badge :value="1" class="item">
+                <a href="#">Корзина</a>
+              </el-badge>
+            </li>
             <li class="main-header__user-element"><a href="#">Личный кабинет</a></li>
           </ul>
         </div>
       </header>
-
       <main>
         <section class="about-company">
           <b-container>
             <b-row>
-              <b-col cols="9" xl="9" class="about-company__description description">
-                <b class="description__title">Вселенские сладости</b>
-                <p class="description__text">
-                  Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
-                </p>
-                <p class="description__text">
-                  Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным презентом и, несомненно, подарит получателю массу положительных эмоций.
-                </p>
-                <a href="#" class="description__button btn">Посмотреть каталог</a>
+              <b-col cols="12" md="8" lg="9" class="about-company__description description">
+                <el-carousel :interval="5000" arrow="never" trigger="click">
+                  <el-carousel-item>
+                    <div class="description__wrapper">
+                      <b class="description__title">Вселенские сладости</b>
+                      <p class="description__text">
+                        Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
+                      </p>
+                      <p class="description__text">
+                        Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным презентом и, несомненно, подарит получателю массу положительных эмоций.
+                      </p>
+                      <el-button class="description__button">Посмотреть каталог</el-button>
+                    </div>
+                  </el-carousel-item>
+                  <el-carousel-item>
+                    <div class="description__wrapper">
+                      <b class="description__title">Вселенские сладости 2</b>
+                      <p class="description__text">
+                        Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
+                      </p>
+                      <p class="description__text">
+                        Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным презентом и, несомненно, подарит получателю массу положительных эмоций.
+                      </p>
+                      <el-button class="description__button">Посмотреть каталог</el-button>
+                    </div>
+                  </el-carousel-item>
+                  <el-carousel-item>
+                    <div class="description__wrapper">
+                      <b class="description__title">Вселенские сладости 3</b>
+                      <p class="description__text">
+                        Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
+                      </p>
+                      <p class="description__text">
+                        Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным презентом и, несомненно, подарит получателю массу положительных эмоций.
+                      </p>
+                      <el-button class="description__button">Посмотреть каталог</el-button>
+                    </div>
+                  </el-carousel-item>
+                </el-carousel>
               </b-col>
-              <b-col cols="3" xl="3" class="about-company__information information">
+              <b-col cols="12" md="4" lg="3" class="about-company__information information">
                 <div class="information__news news">
                   <div class="news__actions">
-                    <p class="news__action">01.08.2018 был добавлен
-                    Напиток Coca-Cola.</p>
-                    <p class="news__action">01.08.2018 был добавлен
-                    Напиток Coca-Cola.</p>
-                    <p class="news__action">01.08.2018 был добавлен
-                    Напиток Coca-Cola.</p>
-                    <p class="news__action">01.08.2018 был добавлен
-                    Напиток Coca-Cola.</p>
-                    <p class="news__action">01.08.2018 был добавлен
-                    Напиток Coca-Cola.</p>
-                    <p class="news__action">01.08.2018 был добавлен
-                    Напиток Coca-Cola.</p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавле<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
+                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
                   </div>
                   <a href="#" class="news__link">Ещё новости</a>
                 </div>
@@ -77,28 +112,48 @@
 
         <section class="category">
           <h2 class="category__title">Популярные категории товаров</h2>
-          <ul class="category__list">
-            <li class="category__element category__element--candybar">
-              Батончики
-            </li>
-            <li class="category__element category__element--marmalade">
-              Мармелад
-            </li>
-            <li class="category__element category__element--drinks">
-              Напитки
-            </li>
-            <li class="category__element category__element--chocolate">
-              Шоколад
-            </li>
-          </ul>
+          <b-container>
+            <b-row>
+              <b-col sm="6" lg="3" class="category__element">
+                <a href="#">
+                  <div class=" category__element-candybar">
+                    <h3 class="category__element-title">Батончики</h3>
+                  </div>
+                </a>
+              </b-col>
+              <b-col sm="6" lg="3" class="category__element">
+                <a href="#">
+                  <div class="category__element-marmalade">
+                    <h3 class="category__element-title">Мармелад</h3>
+                  </div>
+                </a>
+              </b-col>
+              <b-col sm="6" lg="3" class="category__element">
+                <a href="#">
+                  <div class="category__element-drinks">
+                    <h3 class="category__element-title">Напитки</h3>
+                  </div>
+                </a>
+              </b-col>
+              <b-col sm="6" lg="3" class="category__element">
+                <a href="#">
+                  <div class="category__element-chocolate">
+                    <h3 class="category__element-title">Шоколад</h3>
+                  </div>
+                </a>
+              </b-col>
+            </b-row>
+          </b-container>
         </section>
 
         <section class="sale">
-          <b class="sale__title">Получи 10% скидку на одну покупку.</b>
-          <p class="sale__description">Используй промокод <span class="special">JUMBLESALE2018</span> при оформлении заказа. Акция действует до <span class="sale__date">31 декабря 2018 года.</span></p>
+          <div class="sale__wrapper">
+            <b class="sale__title">Получи 10% скидку на одну покупку.</b>
+            <p class="sale__description">Используй промокод  <span class="special">JUMBLESALE2018</span> при оформлении заказа. Акция действует до <span class="sale__date">31 декабря 2018 года.</span></p>
+          </div>
         </section>
 
-        <section class="products">
+        <!-- <section class="products">
           <div class="products__sort sort">
             <div class="sort__search">
               <input type="text" placeholder="Поиск товаров">
@@ -252,13 +307,15 @@
             </ul>
             <p class="navigation__information">Страница 1 из 20</p>
           </div>
-        </section>
+        </section> -->
 
         <section class="jumble">
-          <b class="jumble__title">Jumble Box - это всегда позитивные эмоции.</b>
-          <p class="jumble__description">У нас можно заказать Jumble Box к любому значимому событию. Он станет отличным подарком для Вашей второй половинки, друга или коллеги по работе.</p>
-          <p class="jumble__description">Jumble Box можно заказать в любом оформлении и наполнении. Каждый Jumble Box создаётся в соответствии с Вашими пожеланиями и исключительно в оригинальном стиле.</p>
-          <a href="#" class="jumble__link">Перейти в конструктор</a>
+          <div class="jumble__wrapper">
+            <b class="jumble__title">Jumble Box - это всегда позитивные эмоции.</b>
+            <p class="jumble__description">У нас можно заказать Jumble Box к любому значимому событию. Он станет отличным подарком для Вашей второй половинки, друга или коллеги по работе.</p>
+            <p class="jumble__description">Jumble Box можно заказать в любом оформлении и наполнении. Каждый Jumble Box создаётся в соответствии с Вашими пожеланиями и исключительно в оригинальном стиле.</p>
+            <el-button class="jumble__button">Перейти в конструктор</el-button>
+          </div>
         </section>
 
         <section class="advantages">
@@ -324,7 +381,7 @@
         </ul>
         <p class="main-footer__copyright">Jumble Sweets  2018</p>
       </footer>
-    </div>
+    </b-container>
   </div>
 </template>
 

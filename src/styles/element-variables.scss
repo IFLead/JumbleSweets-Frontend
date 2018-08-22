@@ -1,5 +1,17 @@
 /* theme color */
+
+/*конпка*/
 $--color-primary: red;
+$--button-default-fill:  #E70068;
+$--button-default-color: #FFFFFF;
+$--button-padding-vertical: 16px;
+$--button-padding-horizontal: 30px;
+$--button-font-size: 15px;
+$--border-base: none;
+$--button-border-radius: 0px;
+
+/*сообщение о покупке*/
+$--badge-fill: #E70068;
 
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';

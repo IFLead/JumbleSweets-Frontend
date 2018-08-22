@@ -23,36 +23,36 @@ import {
 // Option,
 // OptionGroup,
   Button,
-// ButtonGroup,
-// Table,
-// TableColumn,
-// DatePicker,
-// TimeSelect,
-// TimePicker,
-// Popover,
-// Tooltip,
-// Breadcrumb,
-// BreadcrumbItem,
-// Form,
-// FormItem,
-// Tabs,
-// TabPane,
-// Tag,
-// Tree,
-// Alert,
-// Slider,
-// Icon,
-// Row,
-// Col,
-// Upload,
-// Progress,
-// Badge,
-// Card,
-// Rate,
-// Steps,
-// Step,
-// Carousel,
-// CarouselItem,
+  // ButtonGroup,
+  // Table,
+  // TableColumn,
+  // DatePicker,
+  // TimeSelect,
+  // TimePicker,
+  // Popover,
+  // Tooltip,
+  // Breadcrumb,
+  // BreadcrumbItem,
+  // Form,
+  // FormItem,
+  // Tabs,
+  // TabPane,
+  // Tag,
+  // Tree,
+  // Alert,
+  // Slider,
+  // Icon,
+  // Row,
+  // Col,
+  // Upload,
+  // Progress,
+  Badge,
+  // Card,
+  // Rate,
+  // Steps,
+  // Step,
+  Carousel,
+  CarouselItem,
 // Collapse,
 // CollapseItem,
 // Cascader,
@@ -119,13 +119,13 @@ Vue.use(Button);
 // Vue.use(Col);
 // Vue.use(Upload);
 // Vue.use(Progress);
-// Vue.use(Badge);
+Vue.use(Badge);
 // Vue.use(Card);
 // Vue.use(Rate);
 // Vue.use(Steps);
 // Vue.use(Step);
-// Vue.use(Carousel);
-// Vue.use(CarouselItem);
+Vue.use(Carousel);
+Vue.use(CarouselItem);
 // Vue.use(Collapse);
 // Vue.use(CollapseItem);
 // Vue.use(Cascader);

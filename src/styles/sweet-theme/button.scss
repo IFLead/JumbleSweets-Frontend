@@ -10,14 +10,13 @@
   white-space: nowrap;
   cursor: pointer;
   background: $--button-default-fill;
-  border: $--border-base;
+	border: $--border-base;
   border-color: $--button-default-border;
   color: $--button-default-color;
   -webkit-appearance: none;
   text-align: center;
   box-sizing: border-box;
   outline: none;
-  margin: 0;
   transition: .1s;
   font-weight: $--button-font-weight;
   @include utils-user-select(none);
@@ -77,7 +76,6 @@
     &:focus {
       color: $--button-disabled-color;
       cursor: not-allowed;
-      background-image: none;
       background-color: $--button-disabled-fill;
       border-color: $--button-disabled-border;
     }
