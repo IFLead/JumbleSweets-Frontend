@@ -321,42 +321,44 @@
         <section class="advantages">
           <h2 class="advantages__title">Наши преимущества</h2>
           <ul class="advantages__list">
-            <li class="advantages__element">
+            <li class="advantages__element advantages__element--assortment">
               <h3 class="advantages__element-title">Широкий ассортимент</h3>
               <p class="advantages__description">Большой выбор товаров на любой вкус</p>
             </li>
-            <li class="advantages__element">
+            <li class="advantages__element advantages__element--orders">
               <h3 class="advantages__element-title">Быстрая обработка заказов</h3>
               <p class="advantages__description">Мы ценим Ваше время и понимаем, с каким волнением Вы ждёте товар, поэтому все заказы обрабатываются максимально быстро.</p>
             </li>
-            <li class="advantages__element">
-              <h3 class="advantages__element-title">Безопасная доставка и оплата</h3>
-              <p class="advantages__description">Если доставка осуществляется по Харькову, Вы платите только при получении товара. В случае, если Вы проживаете в другом регионе Украины, доставка происходит Новой почтой посредством предоплаты или наложенного платежа.</p>
+            <li class="advantages__element advantages__element--delivery">
+              <h3 class="advantages__element-title ">Безопасная доставка и оплата</h3>
+              <p class="advantages__description">Если доставка осуществляется по Харькову, Вы платите только при получении товара<br> В случае, если Вы проживаете в другом регионе Украины, доставка происходит Новой почтой посредством предоплаты или наложенного платежа.</p>
             </li>
           </ul>
         </section>
 
         <section class="delivery">
-          <h2 class="delivery__title">Доставка</h2>
-          <b class="delivery__order">Заказ можно осуществить в любом регионе Украины</b>
-          <ul class="delivery__list">
-            <li class="delivery__element">- Бесплатная доставка по г. Харькову</li>
-            <li class="delivery__element">- Возможность самовывоза</li>
-            <li class="delivery__element">- Доставка Новой почтой по всей Украине</li>
-          </ul>
-          <p class="delivery__description">Более подробно Вы можете ознакомиться с условиями доставки и оплаты в <span class="special">специальном разделе.</span></p>
+					<div class="delivery__wrapper">
+						<h2 class="delivery__title">Доставка</h2>
+						<b class="delivery__order">Заказ можно осуществить в любом регионе Украины</b>
+						<ul class="delivery__list">
+							<li class="delivery__element">- Бесплатная доставка по г. Харькову</li>
+							<li class="delivery__element">- Возможность самовывоза</li>
+							<li class="delivery__element">- Доставка Новой почтой по всей Украине</li>
+						</ul>
+						<p class="delivery__description">Более подробно Вы можете ознакомиться с условиями доставки и оплаты в <a href="#" class="delivery__special">специальном разделе.</a></p>
+					</div>
         </section>
       </main>
 
       <footer class="main-footer">
         <ul class="main-footer__list">
-          <li class="main-footer__logo"></li>
+          <li class="main-footer__logo"><a href="#"></a></li>
           <li class="main-footer__main-information main-information">
             <h3 class="main-information__title">Основная информация</h3>
             <ul class="main-information__list">
-              <li class="main-information__element">Оплата и доставка</li>
-              <li class="main-information__element">Jumble Box</li>
-              <li class="main-information__element">О нас</li>
+              <li class="main-information__element"><a href="">Оплата и доставка</a></li>
+              <li class="main-information__element"><a href="">Jumble Box</a></li>
+              <li class="main-information__element"><a href="">О нас</a></li>
             </ul>
           </li>
 
@@ -364,22 +366,22 @@
           <li class="main-footer__client client">
             <h3 class="client__title">Клиенту</h3>
             <ul class="client__list">
-              <li class="client__element">Личный кабинет</li>
-              <li class="client__element">Мои заказы</li>
-              <li class="client__element">Каталог товаров</li>
+              <li class="client__element"><a href="#">Личный кабинет</a></li>
+              <li class="client__element"><a href="#">Мои заказы</a></li>
+              <li class="client__element"><a href="#">Каталог товаров</a></li>
             </ul>
           </li>
 
-          <li class="main-footer__Feedback Feedback">
-            <h3 class="Feedback__title">Всегда с Вами</h3>
-            <ul class="Feedback__list">
-              <li class="Feedback__element">Обратная связь</li>
-              <li class="Feedback__element">Наш Instagram</li>
-              <li class="Feedback__element">Контакты</li>
+          <li class="main-footer__feedback feedback">
+            <h3 class="feedback__title">Всегда с Вами</h3>
+            <ul class="feedback__list">
+              <li class="feedback__element"><a href="#">Обратная связь</a></li>
+              <li class="feedback__element"><a href="#">Наш Instagram</a></li>
+              <li class="feedback__element"><a href="#">Контакты</a></li>
             </ul>
           </li>
         </ul>
-        <p class="main-footer__copyright">Jumble Sweets  2018</p>
+        <p class="main-footer__copyright">Jumble Sweets © 2018</p>
       </footer>
     </b-container>
   </div>
