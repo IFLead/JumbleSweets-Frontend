@@ -20,7 +20,7 @@ import {
   // CheckboxGroup,
   // Switch,
   Select,
-  // Option,
+  Option,
   // OptionGroup,
   Button,
   // ButtonGroup,
@@ -93,7 +93,7 @@ Vue.use(Checkbox);
 // Vue.use(CheckboxGroup);
 // Vue.use(Switch);
 Vue.use(Select);
-// Vue.use(Option);
+Vue.use(Option);
 // Vue.use(OptionGroup);
 Vue.use(Button);
 // Vue.use(ButtonGroup);
