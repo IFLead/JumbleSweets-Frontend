@@ -7,11 +7,18 @@ import store from './store';
 import './registerServiceWorker';
 import './plugins/element';
 import './styles/element-variables.scss';
+import YmapPlugin from 'vue-yandex-maps';
 
 Vue.config.productionTip = false;
+
+Vue.use(YmapPlugin);
+
 
 new Vue({
   router,
   store,
   render: h => h(App),
 }).$mount('#app');
+
+
+
