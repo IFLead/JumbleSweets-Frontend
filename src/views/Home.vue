@@ -154,379 +154,379 @@
         </section>
 
         <section class="products">
-            <div class="products__search">
-              <!-- <el-autocomplete
+          <div class="products__search">
+            <!-- <el-autocomplete
 							class="inline-input products__search--input"
 							v-model="state1"
 							:fetch-suggestions="querySearch"
 							placeholder="Поиск товаров"
 							@select="handleSelect"
 							></el-autocomplete> -->
-            </div>
-            <h3 class="products__title">Сортировка</h3>
-						<el-select v-model="value" placeholder="Сначала новые">
-							<el-option
-								v-for="item in options"
-								:key="item.value"
-								:label="item.label"
-								:value="item.value">
-							</el-option>
-						</el-select>
+          </div>
+          <h3 class="products__title">Сортировка</h3>
+          <el-select v-model="value" placeholder="Сначала новые">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
 
-					<b-container>
-						<b-row>
-							<b-col cols="3" class="products__filter filter">
-								<form action="">
-									<ul class="filter__list">
-										<li class="filter__element">
-											<h3 class="filter__title filter__title--category">Категория товара</h3>
-											<ul class="filter__checkbox filter__checkbox--category">
-												<li><label><el-checkbox>Все (101)</el-checkbox></label></li>
-												<li><label><input type="checkbox" name="category"  >Шоколад (9)</label></li>
-												<li><label><input type="checkbox" name="category" >Мармелад (40)</label></li>
-												<li><label><input type="checkbox" name="category" >Батончики (1)</label></li>
-												<li><label><input type="checkbox" name="category" >Печенье (7)</label></li>
-												<li><label><input type="checkbox" name="category" >Жвачки (11)</label></li>
-												<li><label><input type="checkbox" name="category" >Напитки (33)</label></li>
-											</ul>
-										</li>
-										<li class="filter__element">
-											<h3 class="filter__title filter__title--manufacturer">Производитель</h3>occasion
-											<ul class="filter__checkbox filter__checkbox--manufacture">
-												<li><label><input type="checkbox" name="manufacture" >Все</label></li>
-												<li><label><input type="checkbox" name="manufacture" >Европа</label></li>
-												<li><label><input type="checkbox" name="manufacture" >США</label></li>
-												<li><label><input type="checkbox" name="manufacture" >Азия</label></li>
-											</ul>
-										</li>
-										<li class="filter__element">
-											<h3 class="filter__title filter__title--occasion">Поводы</h3>
-											<ul class="filter__checkbox filter__checkbox--occasion">
-												<li><label><input type="checkbox" name="occasion" >День рождения</label></li>
-												<li><label><input type="checkbox" name="occasion" >Свадьба</label></li>
-												<li><label><input type="checkbox" name="occasion" >Свидание</label></li>
-												<li><label><input type="checkbox" name="occasion" >Рождение ребенка</label></li>
-												<li><label><input type="checkbox" name="occasion" >Юбилей</label></li>
-											</ul>
-										</li>
-										<li class="filter__element">
-											<h3 class="filter__title filter__title--cost">Цена</h3>
-										</li>
-									</ul>
-									<input type="submit" value="Применить">
-									<input type="reset" value="Сбросить">
-								</form>
-							</b-col>
+          <b-container>
+            <b-row>
+              <b-col cols="3" class="products__filter filter">
+                <form action="">
+                  <ul class="filter__list">
+                    <li class="filter__element">
+                      <h3 class="filter__title filter__title--category">Категория товара</h3>
+                      <ul class="filter__checkbox filter__checkbox--category">
+                        <li><label><el-checkbox>Все (101)</el-checkbox></label></li>
+                        <li><label><input type="checkbox" name="category" >Шоколад (9)</label></li>
+                        <li><label><input type="checkbox" name="category" >Мармелад (40)</label></li>
+                        <li><label><input type="checkbox" name="category" >Батончики (1)</label></li>
+                        <li><label><input type="checkbox" name="category" >Печенье (7)</label></li>
+                        <li><label><input type="checkbox" name="category" >Жвачки (11)</label></li>
+                        <li><label><input type="checkbox" name="category" >Напитки (33)</label></li>
+                      </ul>
+                    </li>
+                    <li class="filter__element">
+                      <h3 class="filter__title filter__title--manufacturer">Производитель</h3>occasion
+                      <ul class="filter__checkbox filter__checkbox--manufacture">
+                        <li><label><input type="checkbox" name="manufacture" >Все</label></li>
+                        <li><label><input type="checkbox" name="manufacture" >Европа</label></li>
+                        <li><label><input type="checkbox" name="manufacture" >США</label></li>
+                        <li><label><input type="checkbox" name="manufacture" >Азия</label></li>
+                      </ul>
+                    </li>
+                    <li class="filter__element">
+                      <h3 class="filter__title filter__title--occasion">Поводы</h3>
+                      <ul class="filter__checkbox filter__checkbox--occasion">
+                        <li><label><input type="checkbox" name="occasion" >День рождения</label></li>
+                        <li><label><input type="checkbox" name="occasion" >Свадьба</label></li>
+                        <li><label><input type="checkbox" name="occasion" >Свидание</label></li>
+                        <li><label><input type="checkbox" name="occasion" >Рождение ребенка</label></li>
+                        <li><label><input type="checkbox" name="occasion" >Юбилей</label></li>
+                      </ul>
+                    </li>
+                    <li class="filter__element">
+                      <h3 class="filter__title filter__title--cost">Цена</h3>
+                    </li>
+                  </ul>
+                  <input type="submit" value="Применить">
+                  <input type="reset" value="Сбросить">
+                </form>
+              </b-col>
 
-							<b-col cols="9" class="products__catalog catalog">
-								<ul class="catalog__list">
-									<li class="catalog__element catalog__element--snikers">
-										<div class="catalog__photo">
-											<a href="#">
-												<img src="../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="Батончик Snickers" width="190" height="54.52"	>
-											</a>
-										</div>
+              <b-col cols="9" class="products__catalog catalog">
+                <ul class="catalog__list">
+                  <li class="catalog__element catalog__element--snikers">
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img src="../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="Батончик Snickers" width="190" height="54.52"	>
+                      </a>
+                    </div>
 
-										<h4 class="catalog__title"><a href="#">Батончик Snickers</a></h4>
-										<div class="catalog__information">
-											<p class="catalog__price">60 грн.</p>
-											<div class="catalog__basket">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-													viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-													<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+                    <h4 class="catalog__title"><a href="#">Батончик Snickers</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">60 грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-														</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-											<div class="catalog__like">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-														 height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-													<g>
-														<g id="favorite">
-															<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-										</div>
-									</li>
-									<li class="catalog__element catalog__element--cola">
-										<div class="catalog__photo">
-											<a href="#">
-												<img src="../assets/cocacola_PNG22.png" alt="Напиток Coca Cola" width="183px" height="121">
-											</a>
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="catalog__element catalog__element--cola">
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img src="../assets/cocacola_PNG22.png" alt="Напиток Coca Cola" width="183px" height="121">
+                      </a>
 
-										</div>
-										<h4 class="catalog__title"><a href="#">Напиток Coca Cola</a></h4>
-										<div class="catalog__information">
-											<p class="catalog__price">120 грн.</p>
-											<div class="catalog__basket">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-													viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-													<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+                    </div>
+                    <h4 class="catalog__title"><a href="#">Напиток Coca Cola</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">120 грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-														</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-											<div class="catalog__like">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-														width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-													<g>
-														<g id="favorite">
-															<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-										</div>
-									</li>
-									<li class="catalog__element catalog__element--milka">
-											<div class="catalog__sale">-10%</div>
-										<div class="catalog__photo">
-											<a href="#">
-												<img src="../assets/milka.png" alt="Шоколад Milka Молочный" width="157" height="157">
-											</a>
-										</div>
-										<h4 class="catalog__title"><a href="#">Шоколад Milka Молочный</a></h4>
-										<div class="catalog__information">
-											<p class="catalog__price">75 грн.</p>
-											<p class="catalog__old-price">83 грн.</p>
-											<div class="catalog__basket">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-													viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-													<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="catalog__element catalog__element--milka">
+                    <div class="catalog__sale">-10%</div>
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img src="../assets/milka.png" alt="Шоколад Milka Молочный" width="157" height="157">
+                      </a>
+                    </div>
+                    <h4 class="catalog__title"><a href="#">Шоколад Milka Молочный</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">75 грн.</p>
+                      <p class="catalog__old-price">83 грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-														</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-											<div class="catalog__like">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-														width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-													<g>
-														<g id="favorite">
-															<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-										</div>
-									</li>
-									<li class="catalog__element catalog__element--kinder">
-										<div class="catalog__photo">
-											<a href="#">
-												<img src="../assets/12.png" alt="Яйцо Kinder Surprise" width="139" height="139">
-											</a>
-										</div>
-										<h4 class="catalog__title"><a href="#">Яйцо Kinder Surprise</a></h4>
-										<div class="catalog__information">
-											<p class="catalog__price">88 грн.</p>
-											<div class="catalog__basket">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-													viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-													<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="catalog__element catalog__element--kinder">
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img src="../assets/12.png" alt="Яйцо Kinder Surprise" width="139" height="139">
+                      </a>
+                    </div>
+                    <h4 class="catalog__title"><a href="#">Яйцо Kinder Surprise</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">88 грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-														</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-											<div class="catalog__like">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-														width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-													<g>
-														<g id="favorite">
-															<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-										</div>
-									</li>
-									<li class="catalog__element catalog__element--sprite">
-										<div class="catalog__photo">
-											<a href="#">
-												<img src="../assets/Sprite.png" alt="Напиток Sprite" width="287" height="130">
-											</a>
-										</div>
-										<h4 class="catalog__title"><a href="#">Напиток Sprite</a></h4>
-										<div class="catalog__information">
-											<p class="catalog__price">50 грн.</p>
-											<div class="catalog__basket">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-													viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-													<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="catalog__element catalog__element--sprite">
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img src="../assets/Sprite.png" alt="Напиток Sprite" width="287" height="130">
+                      </a>
+                    </div>
+                    <h4 class="catalog__title"><a href="#">Напиток Sprite</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">50 грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-														</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-											<div class="catalog__like">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-														width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-													<g>
-														<g id="favorite">
-															<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-										</div>
-									</li>
-									<li class="catalog__element catalog__element--fanta">
-										<div class="catalog__photo">
-											<a href="#">
-												<img src="../assets/3.png" alt="Напиток Fanta" width="152" height="114">
-											</a>
-										</div>
-										<h4 class="catalog__title"><a href="#">Напиток Fanta</a></h4>
-										<div class="catalog__information">
-											<p class="catalog__price">65 грн.</p>
-											<div class="catalog__basket">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-													viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-													<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="catalog__element catalog__element--fanta">
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img src="../assets/3.png" alt="Напиток Fanta" width="152" height="114">
+                      </a>
+                    </div>
+                    <h4 class="catalog__title"><a href="#">Напиток Fanta</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">65 грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-														</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-											<div class="catalog__like">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-														width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-													<g>
-														<g id="favorite">
-															<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-										</div>
-									</li>
-									<li class="catalog__element catalog__element--oreo">
-										<div class="catalog__sale">-50%</div>
-										<div class="catalog__photo">
-											<a href="#">
-												<img src="../assets/4.png" alt="Печенье Oreo" width="125" height="100">
-											</a>
-										</div>
-										<h4 class="catalog__title"><a href="#">Печенье Oreo</a></h4>
-										<div class="catalog__information">
-											<p class="catalog__price">90 грн.</p>
-											<p class="catalog__old-price">180 грн.</p>
-											<div class="catalog__basket">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-													viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-													<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="catalog__element catalog__element--oreo">
+                    <div class="catalog__sale">-50%</div>
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img src="../assets/4.png" alt="Печенье Oreo" width="125" height="100">
+                      </a>
+                    </div>
+                    <h4 class="catalog__title"><a href="#">Печенье Oreo</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">90 грн.</p>
+                      <p class="catalog__old-price">180 грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-														</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-											<div class="catalog__like">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-														width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-													<g>
-														<g id="favorite">
-															<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-										</div>
-									</li>
-									<li class="catalog__element catalog__element--kitkat">
-										<div class="catalog__photo">
-											<a href="#">
-												<img src="../assets/5.png" alt="Батончик KitKat Chunk" width="181" height="181">
-											</a>
-										</div>
-										<h4 class="catalog__title"><a href="#">Батончик KitKat Chunky</a></h4>
-										<div class="catalog__information">
-											<p class="catalog__price">24 грн.</p>
-											<div class="catalog__basket">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-													viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-													<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="catalog__element catalog__element--kitkat">
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img src="../assets/5.png" alt="Батончик KitKat Chunk" width="181" height="181">
+                      </a>
+                    </div>
+                    <h4 class="catalog__title"><a href="#">Батончик KitKat Chunky</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">24 грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-														</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-											<div class="catalog__like">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-														width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-													<g>
-														<g id="favorite">
-															<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-										</div>
-									</li>
-									<li class="catalog__element catalog__element--orbit">
-										<div class="catalog__photo">
-											<a href="#">
-												<img src="../assets/7.png" alt="Батончик KitKat Chunk" width="151" height="80">
-											</a>
-										</div>
-										<h4 class="catalog__title"><a href="#">Жевательная резинка Orbit</a></h4>
-										<div class="catalog__information">
-											<p class="catalog__price">10 грн.</p>
-											<div class="catalog__basket">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-													viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-													<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="catalog__element catalog__element--orbit">
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img src="../assets/7.png" alt="Батончик KitKat Chunk" width="151" height="80">
+                      </a>
+                    </div>
+                    <h4 class="catalog__title"><a href="#">Жевательная резинка Orbit</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">10 грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-														</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-											<div class="catalog__like">
-												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-														width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-													<g>
-														<g id="favorite">
-															<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-												</svg>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</b-col>
-						</b-row>
-					</b-container>
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </b-col>
+            </b-row>
+          </b-container>
 
 
           <div class="products__navigation navigation">
@@ -807,18 +807,18 @@ export default {
   components: {
 
   },
-	data() {
-      return {
-        options: [{
-          value: 'Option1',
-          label: 'А-Я'
-        }, {
-          value: 'Option2',
-          label: 'Цена'
-        }],
-        value: ''
-      }
-    }
+  data() {
+    return {
+      options: [{
+        value: 'Option1',
+        label: 'А-Я',
+      }, {
+        value: 'Option2',
+        label: 'Цена',
+      }],
+      value: '',
+    };
+  },
 };
 </script>
 
