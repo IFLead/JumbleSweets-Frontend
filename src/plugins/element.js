@@ -2,26 +2,26 @@ import Vue from 'vue';
 import {
 // Pagination,
 // Dialog,
-// Autocomplete,
-// Dropdown,
-// DropdownMenu,
-// DropdownItem,
-// Menu,
-// Submenu,
-// MenuItem,
-// MenuItemGroup,
-// Input,
-// InputNumber,
-// Radio,
-// RadioGroup,
-// RadioButton,
-// Checkbox,
-// CheckboxButton,
-// CheckboxGroup,
-// Switch,
-// Select,
-// Option,
-// OptionGroup,
+  Autocomplete,
+  // Dropdown,
+  // DropdownMenu,
+  // DropdownItem,
+  // Menu,
+  // Submenu,
+  // MenuItem,
+  // MenuItemGroup,
+  Input,
+  InputNumber,
+  // Radio,
+  // RadioGroup,
+  // RadioButton,
+  Checkbox,
+  // CheckboxButton,
+  // CheckboxGroup,
+  // Switch,
+  Select,
+  Option,
+  // OptionGroup,
   Button,
   // ButtonGroup,
   // Table,
@@ -75,7 +75,7 @@ locale.use(lang);
 
 // Vue.use(Pagination);
 // Vue.use(Dialog);
-// Vue.use(Autocomplete);
+Vue.use(Autocomplete);
 // Vue.use(Dropdown);
 // Vue.use(DropdownMenu);
 // Vue.use(DropdownItem);
@@ -83,17 +83,17 @@ locale.use(lang);
 // Vue.use(Submenu);
 // Vue.use(MenuItem);
 // Vue.use(MenuItemGroup);
-// Vue.use(Input);
-// Vue.use(InputNumber);
+Vue.use(Input);
+Vue.use(InputNumber);
 // Vue.use(Radio);
 // Vue.use(RadioGroup);
 // Vue.use(RadioButton);
-// Vue.use(Checkbox);
+Vue.use(Checkbox);
 // Vue.use(CheckboxButton);
 // Vue.use(CheckboxGroup);
 // Vue.use(Switch);
-// Vue.use(Select);
-// Vue.use(Option);
+Vue.use(Select);
+Vue.use(Option);
 // Vue.use(OptionGroup);
 Vue.use(Button);
 // Vue.use(ButtonGroup);

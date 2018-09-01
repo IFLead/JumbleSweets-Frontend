@@ -1,42 +1,42 @@
 <template>
   <div class="home">
     <b-container>
-      <header class="main-header">
-        <a href="#" class="main-header__logo-link"><div class="main-header__logo"></div></a>
-        <nav class="main-header__menu">
-          <div class="main-header__hamburger">
-            <div class="main-header__hamburger--midleline"></div>
-          </div>
-          <div class="main-header__close "></div> <!--Чтобы появился крестик добавить класс .show -->
-          <ul class="main-header__menu-list "> <!--Чтобы появилось меню добавить класс .show -->
-            <li class="main-header__menu-element">
-              <a href="#">Главная</a>
-            </li>
-            <li class="main-header__menu-element">
-              <a href="#">О нас</a>
-            </li>
-            <li class="main-header__menu-element">
-              <a href="#">Контакты</a>
-            </li>
-            <li class="main-header__menu-element">
-              <a href="#">Доставка и оплата</a>
-            </li>
-            <li class="main-header__menu-element">
-              <a href="#">Jumble box</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="main-header__user">
-          <ul class="main-header__user-list "><!--Чтобы появилось меню добавить класс .show -->
-            <li class="main-header__user-element">
-              <el-badge :value="1" class="item">
-                <a href="#">Корзина</a>
-              </el-badge>
-            </li>
-            <li class="main-header__user-element"><a href="#">Личный кабинет</a></li>
-          </ul>
-        </div>
-      </header>
+      <!--<header class="main-header">-->
+        <!--<a href="#" class="main-header__logo-link"><div class="main-header__logo"></div></a>-->
+        <!--<nav class="main-header__menu">-->
+          <!--<div class="main-header__hamburger">-->
+            <!--<div class="main-header__hamburger&#45;&#45;midleline"></div>-->
+          <!--</div>-->
+          <!--<div class="main-header__close "></div> &lt;!&ndash;Чтобы появился крестик добавить класс .show &ndash;&gt;-->
+          <!--<ul class="main-header__menu-list "> &lt;!&ndash;Чтобы появилось меню добавить класс .show &ndash;&gt;-->
+            <!--<li class="main-header__menu-element">-->
+              <!--<a href="#">Главная</a>-->
+            <!--</li>-->
+            <!--<li class="main-header__menu-element">-->
+              <!--<a href="#">О нас</a>-->
+            <!--</li>-->
+            <!--<li class="main-header__menu-element">-->
+              <!--<a href="#">Контакты</a>-->
+            <!--</li>-->
+            <!--<li class="main-header__menu-element">-->
+              <!--<a href="#">Доставка и оплата</a>-->
+            <!--</li>-->
+            <!--<li class="main-header__menu-element">-->
+              <!--<a href="#">Jumble box</a>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</nav>-->
+        <!--<div class="main-header__user">-->
+          <!--<ul class="main-header__user-list ">&lt;!&ndash;Чтобы появилось меню добавить класс .show &ndash;&gt;-->
+            <!--<li class="main-header__user-element">-->
+              <!--<el-badge :value="1" class="item">-->
+                <!--<a href="#">Корзина</a>-->
+              <!--</el-badge>-->
+            <!--</li>-->
+            <!--<li class="main-header__user-element"><a href="#">Личный кабинет</a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      <!--</header>-->
       <main>
         <section class="about-company">
           <b-container>
@@ -98,12 +98,12 @@
                   </div>
                   <a href="#" class="news__link">Ещё новости</a>
                 </div>
-                <div class="information__contacts contacts">
-                  <p class="contacts__phone">+38(050)-666-66-66</p>
-                  <p class="contacts__email">help@jumble-sweets.com.ua</p>
-                  <p class="contacts__address">г. Харьков, Героев труда 7,
+                <div class="information__contact contact">
+                  <p class="contact__phone">+38(050)-666-66-66</p>
+                  <p class="contact__email">help@jumble-sweets.com.ua</p>
+                  <p class="contact__address">г. Харьков, Героев труда 7,
                   ТРЦ Караван</p>
-                  <a href="#" class="contacts__link">Мы в Instagram</a>
+                  <a href="#" class="contact__link">Мы в Instagram</a>
                 </div>
               </b-col>
             </b-row>
@@ -350,39 +350,39 @@
         </section>
       </main>
 
-      <footer class="main-footer">
-        <ul class="main-footer__list">
-          <li class="main-footer__logo"><a href="#"></a></li>
-          <li class="main-footer__main-information main-information">
-            <h3 class="main-information__title">Основная информация</h3>
-            <ul class="main-information__list">
-              <li class="main-information__element"><a href="">Оплата и доставка</a></li>
-              <li class="main-information__element"><a href="">Jumble Box</a></li>
-              <li class="main-information__element"><a href="">О нас</a></li>
-            </ul>
-          </li>
+      <!--<footer class="main-footer">-->
+        <!--<ul class="main-footer__list">-->
+          <!--<li class="main-footer__logo"><a href="#"></a></li>-->
+          <!--<li class="main-footer__main-information main-information">-->
+            <!--<h3 class="main-information__title">Основная информация</h3>-->
+            <!--<ul class="main-information__list">-->
+              <!--<li class="main-information__element"><a href="">Оплата и доставка</a></li>-->
+              <!--<li class="main-information__element"><a href="">Jumble Box</a></li>-->
+              <!--<li class="main-information__element"><a href="">О нас</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
 
 
-          <li class="main-footer__client client">
-            <h3 class="client__title">Клиенту</h3>
-            <ul class="client__list">
-              <li class="client__element"><a href="#">Личный кабинет</a></li>
-              <li class="client__element"><a href="#">Мои заказы</a></li>
-              <li class="client__element"><a href="#">Каталог товаров</a></li>
-            </ul>
-          </li>
+          <!--<li class="main-footer__client client">-->
+            <!--<h3 class="client__title">Клиенту</h3>-->
+            <!--<ul class="client__list">-->
+              <!--<li class="client__element"><a href="#">Личный кабинет</a></li>-->
+              <!--<li class="client__element"><a href="#">Мои заказы</a></li>-->
+              <!--<li class="client__element"><a href="#">Каталог товаров</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
 
-          <li class="main-footer__feedback feedback">
-            <h3 class="feedback__title">Всегда с Вами</h3>
-            <ul class="feedback__list">
-              <li class="feedback__element"><a href="#">Обратная связь</a></li>
-              <li class="feedback__element"><a href="#">Наш Instagram</a></li>
-              <li class="feedback__element"><a href="#">Контакты</a></li>
-            </ul>
-          </li>
-        </ul>
-        <p class="main-footer__copyright">Jumble Sweets © 2018</p>
-      </footer>
+          <!--<li class="main-footer__feedback feedback">-->
+            <!--<h3 class="feedback__title">Всегда с Вами</h3>-->
+            <!--<ul class="feedback__list">-->
+              <!--<li class="feedback__element"><a href="#">Обратная связь</a></li>-->
+              <!--<li class="feedback__element"><a href="#">Наш Instagram</a></li>-->
+              <!--<li class="feedback__element"><a href="#">Контакты</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<p class="main-footer__copyright">Jumble Sweets © 2018</p>-->
+      <!--</footer>-->
     </b-container>
   </div>
 </template>
@@ -393,6 +393,18 @@ export default {
   name: 'Home',
   components: {
 
+  },
+  data() {
+    return {
+      options: [{
+        value: 'Option1',
+        label: 'А-Я',
+      }, {
+        value: 'Option2',
+        label: 'Цена',
+      }],
+      value: '',
+    };
   },
 };
 </script>

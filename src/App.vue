@@ -1,26 +1,29 @@
 <template>
   <div id="app">
+    <vHeader></vHeader>
     <router-view></router-view>
+    <vFooter></vFooter>
   </div>
 </template>
 
 <script>
+  import Header from './views/VueHeader';
+  import Footer from './views/VueFooter';
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
+    'vHeader': Header,
+    'vFooter': Footer,
   },
 };
 </script>
 
-<<<<<<< HEAD
 <style lang="sass" type="text/sass">
   @import "./styles/main-style.sass"
 </style>
 
 
-=======
 <style>
 
 </style>
->>>>>>> 007428d4d9f32cdd282d099ac75d5763924bacef

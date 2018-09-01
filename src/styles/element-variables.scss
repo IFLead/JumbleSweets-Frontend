@@ -1,6 +1,6 @@
 /* theme color */
 
-/*конпка*/
+/*кнопка*/
 $--color-primary: red;
 $--button-default-fill:  #E70068;
 $--button-default-color: #FFFFFF;
@@ -13,7 +13,18 @@ $--button-border-radius: 0px;
 /*сообщение о покупке*/
 $--badge-fill: #E70068;
 
+
+/*Поиск*/
+$--border-color-light: #000000;
+
+/*Select*/
+$--select-input-color: #c4c4c4;
+$--select-multiple-input-color: #000000;
+
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import "sweet-theme/index";
+
+//colors
+//$white: #fff;

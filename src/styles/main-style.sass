@@ -1,17 +1,23 @@
-@font-face 
+@font-face
   font-family: "ProximaNova"
   src: url("fonts/ProximaNova-Bold.woff") format("woff")
   font-weight: 700
   font-style: normal
   font-display: swap
 
-@font-face 
+@font-face
   font-family: "ProximaNova"
   src: url("fonts/ProximaNova-Regular.woff") format("woff")
   font-weight: normal
   font-style: normal
   font-display: swap
-	
+
+.header, .footer
+  font-family: ProximaNova
+  font-size: 15px
+  color: #000000
+  font-weight: 400
+  line-height: 25px
 
 .home
 	font-family: ProximaNova
@@ -26,7 +32,7 @@
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
-input[type="radio"].visually-hidden 
+input[type="radio"].visually-hidden
 	position: absolute
 
 	width: 1px
@@ -42,38 +48,38 @@ input[type="radio"].visually-hidden
 	overflow: hidden
 
 
-img 
+img
 	max-width: 100%
 	height: auto
 
-*, *::before, *::after 
+*, *::before, *::after
 	box-sizing: inherit
 
 .container
 	padding: 0
 
 .main-header
-	padding: 
+	padding:
 		top: 24px
 		bottom: 24px
 	display: flex
 	@media (max-width: 991.98px)
-		padding: 
+		padding:
 			top: 15px
 			bottom: 15px
 	@media (max-width: 575.98px)
 		font-size: 14px
 	&__logo-link
 		@media (max-width: 991.98px)
-				order: 1 
+				order: 1
 	&__logo
 		width: 108px
 		height: 50px
 		background-image: url("assets/Icons/logo-pink.svg")
-		margin: 
+		margin:
 			right: 51px
 		@media (max-width: 575.98px)
-			margin: 
+			margin:
 				left: 10px
 	&__menu-list
 		position: relative
@@ -81,18 +87,18 @@ img
 		flex-direction: row
 		list-style: none
 		padding: 0
-		margin: 
+		margin:
 			top: 16px
 			bottom: 0
 		width: 590px
 		flex-wrap: wrap
 		@media (max-width: 1199.98px)
 			width: 540px
-		@media (max-width: 991.98px)	
+		@media (max-width: 991.98px)
 			flex-direction: column
 			width: 100%
 			position: fixed
-			top: -17px	
+			top: -17px
 			left: 0
 			width: 100%
 			z-index: 1000
@@ -101,8 +107,8 @@ img
 	&__menu-list.show
 		display: block
 	&__hamburger
-		margin: 
-			top: 18px	
+		margin:
+			top: 18px
 		position: relative
 		width: 30px
 		height: 20px
@@ -131,27 +137,27 @@ img
 		@media (max-width: 991.98px)
 			display: block
 		@media (max-width: 575.98px)
-			margin: 
+			margin:
 				right: 10px
 
 
 	&__menu
 		@media (max-width: 991.98px)
 			order: 3
-			
-		
+
+
 	&__menu-element
-		margin: 
+		margin:
 			right: 40px
 		@media (max-width: 1199.98px)
-			margin: 
+			margin:
 				right: 20px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				right: 0
 			border-bottom: 1px solid rgba(0, 0, 0, 0.15)
 		&:last-child
-			margin: 
+			margin:
 				right: 0
 		a
 			padding: 5px
@@ -161,11 +167,11 @@ img
 			@media (max-width: 991.98px)
 				display: block
 				width: 100%
-				padding: 
+				padding:
 					top: 10px
 					bottom: 10px
 				text-align: center
-	&__close	
+	&__close
 		cursor: pointer
 		position: fixed
 		top: 10px
@@ -175,7 +181,7 @@ img
 		height: 20px
 		background-color: #000
 		transform: rotate(45deg)
-		display: none	
+		display: none
 		&::after
 			content: ''
 			position: fixed
@@ -186,22 +192,22 @@ img
 			background-color: #000
 			transform: rotate(-90deg)
 	&__close.show
-		display: block		
+		display: block
 
-	
+
 	&__user
-		margin: 
+		margin:
 			left: auto
 			right: 30px
 		@media (max-width: 1199.98px)
-			margin: 
+			margin:
 				right: 10px
 		@media (max-width: 991.98px)
-				order: 2 
+				order: 2
 	&__user-list
 		list-style: none
 		display: flex
-		margin: 
+		margin:
 			top: 16px
 			bottom: 0
 		padding: 0
@@ -210,35 +216,35 @@ img
 			flex-direction: column
 			width: 100%
 			position: fixed
-			top: 213px	
+			top: 213px
 			left: 0
 			width: 100%
 			z-index: 10000
 			background: #ffffff
 	&__user-element
 		position: relative
-		margin: 
+		margin:
 			right: 40px
 		@media (max-width: 1199.98px)
-			margin: 
+			margin:
 				right: 20px
 		@media (max-width: 575.98px)
-			margin: 
+			margin:
 				right: 0
 			border-bottom: 1px solid rgba(0, 0, 0, 0.15)
-	
+
 		&:last-child
-			margin: 
+			margin:
 				right: 0
 		.el-badge.item
 			@media (max-width: 575.98px)
 				display: block
-				margin: 
+				margin:
 					left: auto
 					right: auto
 		.el-badge__content
 			@media (max-width: 575.98px)
-				margin: 
+				margin:
 					right: calc(50% - 40px)
 					top: 10px
 		a
@@ -249,7 +255,7 @@ img
 			@media (max-width: 575.98px)
 				display: block
 				width: 100%
-				padding: 
+				padding:
 					top: 10px
 					bottom: 10px
 				text-align: center
@@ -257,7 +263,7 @@ img
 
 .main-header__user-list.show
 	display: block
-	
+
 .description
 	padding: 0
 	&__wrapper
@@ -269,10 +275,10 @@ img
 		position: relative
 		z-index: 100
 		@media (max-width: 991.98px)
-			padding: 
+			padding:
 				top: 70px
 		@media (max-width: 575.98px)
-			padding: 
+			padding:
 				right: 20px
 				left: 40px
 	&__title
@@ -280,19 +286,19 @@ img
 		width: 600px
 		font-size: 50px
 		line-height: 55px
-		margin: 
+		margin:
 			bottom: 35px
 		@media (max-width: 991.98px)
 			font-size: 30px
 			line-height: 35px
 			width: 370px
-			margin: 
+			margin:
 				bottom: 30px
 		@media (max-width: 767.98px)
 			font-size: 25px
 			line-height: 30px
 			width: 280px
-			margin: 
+			margin:
 				bottom: 25px
 		@media (max-width: 575.98px)
 			font-size: 20px
@@ -301,52 +307,52 @@ img
 	&__text
 		width: 590px
 		line-height: 25px
-		margin: 
+		margin:
 			bottom: 32px
 		@media (max-width: 991.98px)
 			width: 370px
 			font-size: 14px
 			line-height: 22px
-			margin: 
+			margin:
 				bottom: 25px
 		@media (max-width: 767.98px)
 			width: 400px
-			margin: 
+			margin:
 				bottom: 15px
 		@media (max-width: 575.98px)
 			width: 100%
 
 		&:last-of-type
-			margin: 
+			margin:
 				bottom: 42px
 			@media (max-width: 991.98px)
-				margin: 
+				margin:
 					bottom: 35px
 	.description__button
 		background-image: url("assets/Icons/shopping-purse-icon.svg")
-		background-repeat: no-repeat 
+		background-repeat: no-repeat
 		background-size: 20px 20px
 		background-position: right 30px top 10px
-		margin: 
+		margin:
 			bottom: 45px
-		padding: 
+		padding:
 			right: 60px
 
 	.el-carousel__indicator
-		margin: 
+		margin:
 			bottom: 38px
-		.el-carousel__button 
-			padding: 0 
-			width: 5px  
-			height: 5px 
-			border-radius: 50% 
-			background-color: #ffffff 
-			opacity: 0.5 
+		.el-carousel__button
+			padding: 0
+			width: 5px
+			height: 5px
+			border-radius: 50%
+			background-color: #ffffff
+			opacity: 0.5
 
 	.el-carousel__indicator.is-active
-		.el-carousel__button 
-			width: 10px  
-			height: 10px 
+		.el-carousel__button
+			width: 10px
+			height: 10px
 			opacity: 1
 
 	.el-carousel__indicators
@@ -364,14 +370,14 @@ img
 
 .el-carousel__item
 	position: relative
-	
+
 	background-size: cover
 	background-repeat: no-repeat
 	color: #ffffff
 	min-height: 600px
 	@media (max-width: 991.98px)
 		min-height: 545px
-		
+
 	@media (max-width: 767.98px)
 		min-height: 475px
 	@media (max-width: 575.98px)
@@ -407,44 +413,44 @@ img
 
 
 
-.contacts
+.contact
 	line-height: 18px
-	margin: 
+	margin:
 		top: 24px
 	p
-		margin: 
+		margin:
 			bottom: 22px
 		@media (max-width: 1199.98px)
-			margin: 
+			margin:
 				bottom: 15px
 		@media (max-width: 991.98px)
 			font-size: 14px
 
 	&__phone, &__email, &__address
-		padding: 
+		padding:
 			left: 40px
 		background-repeat: no-repeat
 		background-size: contain
 		background-position: left center
-		padding: 
+		padding:
 			top: 2px
 			bottom: 2px
 	&__address
-		padding: 
+		padding:
 			bottom: 9px
-	&__phone	
+	&__phone
 		background-image: url("assets/Icons/phone-receiver.svg")
 		background-size: 20px 20px
 	&__email
 		background-image: url("assets/Icons/envelope.svg")
-		background-size: 20px auto		
+		background-size: 20px auto
 	&__address
 		background-image: url("assets/Icons/map.svg")
-		background-size: 28px auto	
+		background-size: 28px auto
 		background-position: -4px 2px
 	&__link
 		display: block
-		margin: 
+		margin:
 			left: auto
 			right: auto
 		width: 115px
@@ -459,23 +465,23 @@ img
 .news
 	position: relative
 	background-color: #F8F8F8
-	padding: 
+	padding:
 		left: 20px
 		bottom: 15px
 	&__actions
 		height: 355px
 		overflow: auto
-		padding: 
-			top: 18px	
+		padding:
+			top: 18px
 		@media (max-width: 991.98px)
 			height: 300px
 		@media (max-width: 767.98px)
-			height: 355px	
+			height: 355px
 	span
 		display: block
 		color: #6a0030
 		font-weight: 700
-		margin: 
+		margin:
 			top: -7px
 	&__link
 		text-decoration: none
@@ -485,14 +491,14 @@ img
 		display: block
 		width: 100px
 		margin:
-			top: 14px 
+			top: 14px
 			left: auto
 			right: auto
 		&:hover, &:focus
 			text-decoration: none
-			color: #000	
+			color: #000
 	&__action
-		margin: 
+		margin:
 			bottom: 15px
 		@media (max-width: 991.98px)
 			font-size: 14px
@@ -503,46 +509,46 @@ img
 		width: calc(100% - 34px)
 		position: absolute
 		bottom: 46px
-		margin: 
+		margin:
 			left: auto
 			right: auto
 		background-color: #dcdcdc
 
-.news__actions::-webkit-scrollbar 
+.news__actions::-webkit-scrollbar
 	width: 4px
-.news__actions::-webkit-scrollbar-button 
+.news__actions::-webkit-scrollbar-button
 	background-color: #666
-.news__actions::-webkit-scrollbar-track 
+.news__actions::-webkit-scrollbar-track
 	background-color: none
-.news__actions::-webkit-scrollbar-thumb 
+.news__actions::-webkit-scrollbar-thumb
 	height: 100px
 	background-color: #000000
 	border-radius: 5px
-.news__actions::-webkit-scrollbar-button 
+.news__actions::-webkit-scrollbar-button
     background-color: #F8F8F8
 
 
 .information
-	padding: 
+	padding:
 		left: 31px
 		right: 0
 	@media (max-width: 991.98px)
-		padding: 
+		padding:
 			left: 20px
 	@media (max-width: 767.98px)
-		padding: 
+		padding:
 			left: 0
 			right: 0
-		margin: 
+		margin:
 			top: 30px
 	@media (max-width: 575.98px)
-		padding: 
+		padding:
 			left: 20px
 			right: 20px
 
 
 .category
-	margin: 
+	margin:
 		top: 40px
 	a
 		text-decoration: none
@@ -551,19 +557,19 @@ img
 	&__title
 		font-size: 30px
 		font-weight: 700
-		margin: 
+		margin:
 			bottom: 40px
 		width: 700px
 		@media (max-width: 1199.98px)
 			width: 600px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				bottom: 25px
 		@media (max-width: 767.98px)
 			font-size: 25px
 			width: 500px
 		@media (max-width: 575.98px)
-			padding: 
+			padding:
 				left: 20px
 				right: 30px
 			width: 100%
@@ -576,21 +582,21 @@ img
 		line-height: 22px
 		width: 100px
 		text-align: center
-		margin: 
+		margin:
 			left: auto
 			right: auto
 			bottom: 0
 	&__element
-		margin: 
+		margin:
 			bottom: 20px
-		padding: 
+		padding:
 			left: 15px
 			right: 15px
 		&:first-child
-			padding: 	
+			padding:
 				left: 0
-		&:last-child		
-			padding: 	
+		&:last-child
+			padding:
 				right: 0
 		@media (max-width: 991.98px)
 			&:nth-child(2n + 1)
@@ -639,7 +645,7 @@ img
 			background-position: 0 -35px
 			@media (max-width: 1199.98px)
 				background-position: 0 -20px
-			
+
 		&-drinks
 			background-image: url("assets/drew-taylor-325456-unsplash.jpg")
 			background-position: 0 -35px
@@ -659,9 +665,9 @@ img
 	background-repeat: no-repeat
 	background-size: cover
 	background-position: 0 -250px
-	margin: 
+	margin:
 		top: 30px
-	padding: 
+	padding:
 		top: 40px
 		left: 45px
 		right: 45px
@@ -670,7 +676,7 @@ img
 	@media (max-width: 991.98px)
 		background-position: 0 -50px
 	@media (max-width: 767.98px)
-		padding: 
+		padding:
 			left: 20px
 			right: 20px
 	@media (max-width: 575.98px)
@@ -681,7 +687,7 @@ img
 		line-height: 37px
 		width: 600px
 		color: #ffffff
-		margin: 
+		margin:
 			bottom: 12px
 		@media (max-width: 767.98px)
 			font-size: 25px
@@ -693,7 +699,7 @@ img
 	&__description
 		width: 850px
 		color: #E6E6E6
-		margin: 
+		margin:
 			bottom: 30px
 		@media (max-width: 991.98px)
 			width: 600px
@@ -717,38 +723,38 @@ img
 		font-weight: 700
 	.special
 		display: inline-block
-		margin: 
+		margin:
 			left: 7px
 			right: 7px
 		color: #FFFAB9
 		border-bottom: 2px dotted #FFFAB9
 		font-weight: 700
-	
+
 
 .jumble
 	position: relative
-	margin: 
+	margin:
 		top: 30px
 	background-color: grey
 	background-image: url("assets/samuel-holt-490207-unsplash.jpg")
 	background-repeat: no-repeat
 	background-size: cover
 	background-position: 0 -130px
-	padding: 
+	padding:
 		left: 70px
 		top: 70px
 		right: 70px
 		bottom: 80px
 	color: #E6E6E6
 	@media (max-width: 991.98px)
-		padding: 
+		padding:
 			left: 50px
 			bottom: 50px
 			top: 50px
 			right: 50px
 		background-position: 0 0
 	@media (max-width: 767.98px)
-		padding: 
+		padding:
 			left: 45px
 			right: 45px
 	&__title
@@ -757,10 +763,10 @@ img
 		font-size: 30px
 		line-height: 35px
 		color: #ffffff
-		margin: 
+		margin:
 			bottom: 40px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				bottom: 20px
 		@media (max-width: 767.98px)
 			font-size: 25px
@@ -770,22 +776,22 @@ img
 			width: 100%
 	&__description
 		width: 695px
-		margin: 
+		margin:
 			bottom: 32px
 		&:last-of-type
-			margin: 
+			margin:
 				bottom: 42px
 			@media (max-width: 991.98px)
-				margin: 
+				margin:
 					bottom: 30px
 
 		@media (max-width: 991.98px)
 			width: 550px
-			margin: 
+			margin:
 				bottom: 20px
 		@media (max-width: 767.98px)
 			width: 450px
-			margin: 
+			margin:
 				bottom: 15px
 		@media (max-width: 575.98px)
 			width: 100%
@@ -802,19 +808,19 @@ img
 		z-index: 100
 		position: relative
 	.jumble__button
-		padding: 
-			right: 62px 
+		padding:
+			right: 62px
 		background-image: url("assets/Icons/tool.svg")
 		background-repeat: no-repeat
 		background-size: 18px auto
 		background-position: right 30px top 15px
-		margin: 
+		margin:
 			bottom: 28px
 
 .advantages
-	margin: 
+	margin:
 		top: 70px
-	padding: 
+	padding:
 		top: 70px
 		left: 70px
 		right: 50px
@@ -827,12 +833,12 @@ img
 		background-position: -40px 0
 	@media (max-width: 767.98px)
 		padding:
-			top: 60px 
+			top: 60px
 			left: 50px
 			right: 30px
 		background-position: -120px 0
 	@media (max-width: 575.98px)
-		padding: 
+		padding:
 			top: 50px
 			left: 20px
 			right: 20px
@@ -841,32 +847,32 @@ img
 		font-size: 50px
 		line-height: 61px
 		width: 600px
-		margin: 
+		margin:
 			bottom: 80px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				bottom: 50px
 		@media (max-width: 767.98px)
 			font-size: 40px
 			line-height: 50px
 			width: 450px
-			margin: 
+			margin:
 				bottom: 40px
 		@media (max-width: 575.98px)
 			font-size: 25px
 			line-height: 40px
 			width: 100%
-			margin: 
+			margin:
 				bottom: 30px
 	&__list
-		padding: 
+		padding:
 			left: 0
 		list-style: none
 	&__element-title
 		font-weight: 700
 		font-size: 20px
-		line-height: 24px	
-		margin: 
+		line-height: 24px
+		margin:
 			bottom: 10px
 		width: 350px
 		@media (max-width: 767.98px)
@@ -875,17 +881,17 @@ img
 			width: 100%
 	&__description
 		width: 345px
-		margin: 
+		margin:
 			bottom: 0
 		@media (max-width: 767.98px)
 			width: 300px
 		@media (max-width: 575.98px)
 			width: 100%
 	&__element
-		padding: 
+		padding:
 			left: 100px
 			bottom: 10px
-		margin: 
+		margin:
 			bottom: 70px
 		background-repeat: no-repeat
 		background-position: 0 0
@@ -898,26 +904,26 @@ img
 		&--delivery
 			background-image: url("assets/Icons/delivery-box.svg")
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				bottom: 40px
 		@media (max-width: 767.98px)
 			background-size: 50px auto
-			padding: 
+			padding:
 				left: 80px
-			margin: 
+			margin:
 				bottom: 30px
 		@media (max-width: 575.98px)
 			background-size: 40px auto
-			padding: 
+			padding:
 				left: 60px
-			margin: 
+			margin:
 				bottom: 20px
 
 .delivery
-	margin: 
+	margin:
 		top: 70px
 	position: relative
-	padding: 
+	padding:
 		top: 70px
 		left: 70px
 		bottom: 135px
@@ -929,14 +935,14 @@ img
 	background-size: cover
 	background-position: 0 -120px
 	@media (max-width: 991.98px)
-		padding: 
+		padding:
 			bottom: 90px
 	@media (max-width: 767.98px)
-		padding: 
+		padding:
 			left: 50px
 			bottom: 70px
 	@media (max-width: 575.98px)
-		padding: 
+		padding:
 			bottom: 50px
 
 
@@ -944,11 +950,11 @@ img
 		font-size: 50px
 		line-height: 61px
 		font-weight: 700
-		margin: 
+		margin:
 			bottom: 80px
 		width: 600px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				bottom: 50px
 		@media (max-width: 767.98px)
 			font-size: 35px
@@ -961,14 +967,14 @@ img
 		font-size: 20px
 		font-weight: 700
 		line-height: 25px
-		margin: 
+		margin:
 			bottom: 40px
 		width: 700px
 		@media (max-width: 991.98px)
 			width: 600px
 		@media (max-width: 767.98px)
 			width: 400px
-			margin: 
+			margin:
 				bottom: 30px
 		@media (max-width: 575.98px)
 			font-size: 18px
@@ -976,23 +982,23 @@ img
 			width: 100%
 	&__list
 		color: #E6E6E6
-		padding: 
+		padding:
 			left: 0
 		list-style: none
-		margin: 
+		margin:
 			bottom: 50px
 		width: 700px
 		@media (max-width: 991.98px)
 			width: 600px
 		@media (max-width: 767.98px)
 			width: 400px
-			margin: 
+			margin:
 				bottom: 30px
 		@media (max-width: 575.98px)
 			width: 100%
 	&__description
 		color: #E6E6E6
-		margin: 
+		margin:
 			bottom: 50px
 		width: 900px
 		@media (max-width: 991.98px)
@@ -1003,20 +1009,20 @@ img
 			width: 100%
 	&__special
 		display: inline-block
-		margin: 
+		margin:
 			left: 7px
 			right: 7px
 		color: #FFFAB9
 		border-bottom: 2px dotted #FFFAB9
 		font-weight: 700
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				left: 0
 		&:hover, &:focus
 			color: #FFFAB9
 			text-decoration: none
 	&__element
-		margin: 
+		margin:
 			top: -4px
 	&__wrapper
 		position: relative
@@ -1033,7 +1039,7 @@ img
 		background-color: rgba(0, 0, 0, 0.4)
 
 .main-footer
-	padding: 
+	padding:
 		top: 72px
 		left: 70px
 		right: 70px
@@ -1041,21 +1047,21 @@ img
 	background-color: #000000
 	color: #ffffff
 	&__list
-		padding: 
+		padding:
 			left: 0
 		list-style: none
 		display: flex
 		flex-wrap: wrap
-		margin: 
+		margin:
 			bottom: 110px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				bottom: 70px
 		@media (max-width: 767.98px)
-			margin: 
+			margin:
 				bottom: 50px
 
-	&__logo	
+	&__logo
 		a
 			display: block
 			width: 108px
@@ -1063,94 +1069,94 @@ img
 			background-image: url("assets/Icons/logo-yellow.svg")
 			background-repeat: no-repeat
 			background-size: contain
-		margin: 
+		margin:
 			right: 117px
 		@media (max-width: 1199.98px)
-			margin: 
+			margin:
 				right: 80px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				right: 40px
 		@media (max-width: 575.98px)
 			width: 250px
-			margin: 
+			margin:
 				left: auto
 				right: auto
 				bottom: 30px
-	&__main-information 
-		margin: 
+	&__main-information
+		margin:
 			right: 74px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				right: 44px
 		@media (max-width: 767.98px)
-			margin: 
+			margin:
 				right: 0
 		@media (max-width: 575.98px)
 			width: 250px
-			margin: 
+			margin:
 				left: auto
 				right: auto
-			
+
 	&__client
-		margin: 
+		margin:
 			right: 80px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				right: 0
 		@media (max-width: 767.98px)
-			margin: 
+			margin:
 				left: 148px
 		@media (max-width: 575.98px)
 			width: 250px
-			margin: 
+			margin:
 				left: auto
 				right: auto
 	&__copyright
 		width: 160px
 		text-align: center
-		margin: 
+		margin:
 			left: auto
 			right: auto
 			bottom: 0
 	&__feedback
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				left: 148px
 		@media (max-width: 767.98px)
-			margin: 
+			margin:
 				left: 148px
 		@media (max-width: 575.98px)
 			width: 250px
-			margin: 
+			margin:
 				left: auto
 				right: auto
 	@media (max-width: 767.98px)
-		padding: 
+		padding:
 			left: 70px
 			top: 40px
 			right: 70px
 	@media (max-width: 575.98px)
-		padding: 
+		padding:
 			left: 0
 			right: 0
 
 .main-information, .client, .feedback
-	&__list	
-		padding: 
+	&__list
+		padding:
 			left: 0
 		list-style: none
 	&__title
 		font-size: 20px
 		font-weight: 700
-		margin: 
+		margin:
 			bottom: 30px
 		@media (max-width: 991.98px)
-			margin: 
+			margin:
 				bottom: 20px
-				
+
 	&__element
-		margin: 
+		margin:
 			bottom: 5px
 		a
 			color: #e6e6e6
@@ -1158,11 +1164,148 @@ img
 				color: #e6e6e6
 				text-decoration: none
 	@media (max-width: 991.98px)
-		margin: 
+		margin:
 			bottom: 30px
 
-			
 
 
-	
-		
+
+
+.about
+  font-family: ProximaNova
+  font-size: 15px
+  color: #fff
+  font-weight: 400
+  line-height: 25px
+
+.aboutus
+  margin-top: 10px
+  position: relative
+  background-color: grey
+  background-image: url("assets/about_back.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: 0 -230px
+  padding:
+    left: 70px
+    top: 35px
+    right: 70px
+    bottom: 0px
+  color: #ffffff
+
+  &__title
+    font-size: 30px
+    line-height: 35px
+
+  &__description
+    max-width: 956px
+    margin-top: 42px
+
+  &__schedule
+    //display: flex
+    margin-top: 74px
+    justify-content: space-around
+
+  &__item
+    display: flex
+
+  &__item-icon
+    padding-right: 25px
+
+  &__item-wrapper
+    padding-top: 5px
+
+  &__item-title
+    font-size: 20px
+
+  &__item-subtitle
+    font-size: 15px
+    color: #c4c4c4
+
+  &::after
+    height: 470px
+    z-index: 10
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-image: url("assets/back_back.png")
+
+  &__wrapper
+    z-index: 100
+    position: relative
+
+
+.support
+  background-color: #000
+  padding:
+    left: 70px
+    top: 90px
+    right: 70px
+    bottom: 74px
+  color: #ffffff
+
+  &__title
+    font-size: 30px
+    line-height: 35px
+
+  &__description
+    max-width: 956px
+    margin-top: 42px
+
+
+.contacts
+  font-family: ProximaNova
+  font-size: 15px
+  color: #000000
+  font-weight: 400
+  line-height: 25px
+
+.map
+  height: 400px
+
+.data
+  margin:
+    top: 50px
+    bottom: 50px
+  &__title
+    text-align: center
+    margin-bottom: 82px
+    font-size: 30px
+    line-height: 37px
+    font-weight: 700
+  &__wrapper
+    display: flex
+    justify-content: space-between
+  &__element
+    color: #000000
+    background-color: #F8F8F8
+    padding:
+      top: 40px
+      left: 35px
+      bottom: 28px
+      right: 110px
+  &__element-title
+    font-size: 20px
+    line-height: 24px
+    font-weight: 700
+    margin-bottom: 20px
+  &__element-description
+    line-height: 18px
+    margin-bottom: 35px
+  &__element-description a
+    color: #000000
+  &__element-wrapper
+    display: inline-block
+  &__element-icon
+    display: inline-block
+    margin-right: 20px
+  &__element-inst
+    color: #707070
+
+
+
+
+
