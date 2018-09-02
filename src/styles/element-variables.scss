@@ -1,13 +1,12 @@
 /* theme color */
 
 /*кнопка*/
-$--color-primary: red;
+$--color-primary: #E70068;
 $--button-default-fill:  #E70068;
 $--button-default-color: #FFFFFF;
 $--button-padding-vertical: 16px;
 $--button-padding-horizontal: 30px;
 $--button-font-size: 15px;
-$--border-base: none;
 $--button-border-radius: 0px;
 
 /*сообщение о покупке*/
@@ -17,6 +16,12 @@ $--badge-fill: #E70068;
 /*Поиск*/
 $--border-color-light: #000000;
 
+/*Ползунок*/
+$--slider-button-size: 15px;
+$--slider-height: 1px;
+$--slider-runway-background-color: #c4c4c4;
+$--slider-main-background-color: #6a0030;
+$--slider-button-wrapper-offset: -17px;
 /*Select*/
 $--select-input-color: #c4c4c4;
 $--select-multiple-input-color: #000000;

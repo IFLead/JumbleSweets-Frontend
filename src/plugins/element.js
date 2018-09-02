@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import {
-// Pagination,
+Pagination,
 // Dialog,
   Autocomplete,
   // Dropdown,
@@ -40,7 +40,7 @@ import {
   // Tag,
   // Tree,
   // Alert,
-  // Slider,
+  Slider,
   // Icon,
   // Row,
   // Col,
@@ -73,7 +73,7 @@ import locale from 'element-ui/lib/locale';
 
 locale.use(lang);
 
-// Vue.use(Pagination);
+Vue.use(Pagination);
 // Vue.use(Dialog);
 Vue.use(Autocomplete);
 // Vue.use(Dropdown);
@@ -113,7 +113,7 @@ Vue.use(Button);
 // Vue.use(Tag);
 // Vue.use(Tree);
 // Vue.use(Alert);
-// Vue.use(Slider);
+Vue.use(Slider);
 // Vue.use(Icon);
 // Vue.use(Row);
 // Vue.use(Col);
