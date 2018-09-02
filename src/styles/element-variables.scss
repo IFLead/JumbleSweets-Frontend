@@ -24,6 +24,22 @@ $--select-multiple-input-color: #000000;
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
+/*checkbox*/
+$--checkbox-color: #c4c4c4;
+$--font-size-base: 13px;
+$--checkbox-input-border: solid #c4c4c4 2px;
+$--checkbox-input-border-color-hover: #E70068;
+
+$--checkbox-checked-text-color: #E70068;
+$--checkbox-checked-input-fill: #E70068;
+$--checkbox-checked-icon-color: #E70068;
+$--checkbox-checked-input-border-color: #E70068;
+
+
+/*input*/
+$--input-placeholder-color: #c4c4c4;
+$--input-height: 28px;
+
 @import "sweet-theme/index";
 
 //colors

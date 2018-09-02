@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import AboutUs from './views/AboutUs.vue';
 import Contacts from './views/Contacts.vue';
+import DelPay from './views/DelPay.vue';
 
 Vue.use(Router);
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/contacts',
       name: 'contacts',
       component: Contacts,
+    },
+    {
+      path: '/delivery',
+      name: 'delivery',
+      component: DelPay,
     },
     // {
     //   path: '/about',
