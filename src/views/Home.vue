@@ -61,12 +61,12 @@
                   </div>
                   <a href="#" class="news__link">Ещё новости</a>
                 </div>
-                <div class="information__contacts contacts">
-                  <p class="contacts__phone">+38(050)-666-66-66</p>
-                  <p class="contacts__email">help@jumble-sweets.com.ua</p>
-                  <p class="contacts__address">г. Харьков, Героев труда 7,
+                <div class="information__contact contact">
+                  <p class="contact__phone">+38(050)-666-66-66</p>
+                  <p class="contact__email">help@jumble-sweets.com.ua</p>
+                  <p class="contact__address">г. Харьков, Героев труда 7,
                   ТРЦ Караван</p>
-                  <a href="#" class="contacts__link">Мы в Instagram</a>
+                  <a href="#" class="contact__link">Мы в Instagram</a>
                 </div>
               </b-col>
             </b-row>
