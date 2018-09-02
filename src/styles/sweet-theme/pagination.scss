@@ -194,8 +194,8 @@
     .btn-next,
     .el-pager li {
       margin: 0 5px;
-      background-color: $--color-info-lighter;
-      color: $--color-text-regular;
+      background-color: transparent;
+      color: #000000;
       min-width: 30px;
       border-radius: 2px;
 
@@ -218,8 +218,8 @@
       }
 
       &.active {
-        background-color: $--color-primary;
-        color: $--color-white;
+        background-color: #dcdcdc;
+        color: #000000;
       }
     }
 
