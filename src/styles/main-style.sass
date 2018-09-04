@@ -42,7 +42,7 @@ input[type="radio"].visually-hidden
 
 img
 	max-width: 100%
-	height: auto	
+	height: auto
 
 
 .row, .container
@@ -182,6 +182,9 @@ img
     margin-right: 20px
   &__element-inst
     color: #707070
+  &__element-inst:hover
+    color: #707070
+    text-decoration: none
 
 
 .delpay
@@ -284,8 +287,20 @@ img
       bottom: 25px
     .el-input__inner
       padding: 5px 5px
-      border-bottom: 1px solid #c4c4c4
+      border:
+        top: 1px solid #ffffff
+        left: 1px solid #ffffff
+        right: 1px solid #ffffff
+        bottom: 1px solid #c4c4c4
       font-size: 15px
+    .el-input__inner:hover
+      border-bottom: 1px solid #c4c4c4
+    .el-input__inner:focus
+      border:
+        top: 1px solid #ffffff
+        left: 1px solid #ffffff
+        right: 1px solid #ffffff
+        bottom: 1px solid #c4c4c4
   .ring__button
     height: 50px
     width: 278px
