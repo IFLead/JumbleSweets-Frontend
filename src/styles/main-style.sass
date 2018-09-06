@@ -74,25 +74,42 @@ img
     right: 70px
     bottom: 0px
   color: #ffffff
+  @media (max-width: 1199.98px)
+    background-position: 0 -100px
+  @media (max-width: 991.98px)
+    background-position: 0 0px
 
   &__title
     font-size: 30px
     line-height: 35px
+    font-weight: 700
+    @media (max-width: 575.98px)
+      font-size: 28px
 
   &__description
     max-width: 956px
     margin-top: 42px
 
   &__schedule
-    //display: flex
+    display: flex
     margin-top: 74px
     justify-content: space-around
+    flex-wrap: wrap
+    @media (max-width: 991.98px)
+      justify-content: flex-start
+    //  background-color: rgba(0, 0, 0, 0.6)
 
   &__item
     display: flex
+    padding-right: 10px
+    margin:
+      bottom: 20px
+
 
   &__item-icon
     padding-right: 25px
+  &__item-icon img
+    max-width: 60px
 
   &__item-wrapper
     padding-top: 5px
@@ -105,7 +122,8 @@ img
     color: #c4c4c4
 
   &::after
-    height: 470px
+    //height: 470px
+    min-width: 320px
     z-index: 10
     content: ''
     position: absolute
@@ -113,7 +131,15 @@ img
     left: 0
     right: 0
     bottom: 0
-    background-image: url("assets/back_back.png")
+    background-color: rgba(0, 0, 0, 0.6)
+    //@media (max-width: 767.98px)
+    //  margin:
+    //    bottom: 20px
+    //background-image: url("assets/back_back.png")
+    //@media (max-width: 1199.98px)
+    //  background-image: none
+    //  background-color: rgba(0, 0, 0, 0.6)
+
 
   &__wrapper
     z-index: 100
@@ -132,6 +158,9 @@ img
   &__title
     font-size: 30px
     line-height: 35px
+    font-weight: 700
+    @media (max-width: 575.98px)
+      font-size: 28px
 
   &__description
     max-width: 956px
@@ -158,9 +187,16 @@ img
     font-size: 30px
     line-height: 37px
     font-weight: 700
+    @media (max-width: 1199.98px)
+      margin-bottom: 45px
+    @media (max-width: 575.98px)
+      font-size: 28px
   &__wrapper
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
+    @media (max-width: 1199.98px)
+      justify-content: center
   &__element
     color: #000000
     background-color: #F8F8F8
@@ -169,6 +205,12 @@ img
       left: 35px
       bottom: 28px
       right: 110px
+  &__element--social
+    @media (max-width: 1199.98px)
+      margin-top: 40px
+  &__element--connect
+    @media (max-width: 767.98px)
+      margin-top: 40px
   &__element-title
     font-size: 20px
     line-height: 24px
@@ -206,6 +248,8 @@ img
     margin:
       bottom: 50px
     text-align: center
+    @media (max-width: 575.98px)
+      font-size: 28px
   &__wrapper
     display: flex
     justify-content: space-around
@@ -221,6 +265,8 @@ img
     font-weight: 700
     margin:
       bottom: 20px
+    @media (max-width: 575.98px)
+      font-size: 28px
   &__element-description
     color: #ffffff
     font-size: 18px
@@ -274,17 +320,22 @@ img
     text-align: center
     margin:
       bottom: 25px
+    @media (max-width: 575.98px)
+      font-size: 28px
   &__description
     text-align: center
 
 .ring
   display: flex
   justify-content: center
+  flex-wrap: wrap
   margin:
     bottom: 50px
   &__number
     margin:
       right: 75px
+    @media (max-width: 767.98px)
+      margin-right: 0
   &__number-input
     width: 264px
     margin:
@@ -317,6 +368,10 @@ img
       bottom: 45px
     padding:
       right: 60px
+    @media (max-width: 767.98px)
+      margin:
+        top: 25px
+        bottom: 10px
 
 
 
