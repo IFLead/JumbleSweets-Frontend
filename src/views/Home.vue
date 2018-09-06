@@ -62,7 +62,18 @@
                   <a href="#" class="news__link">Ещё новости</a>
                 </div>
                 <div class="information__contact contact">
-                  <p class="contact__phone">+38(050)-666-66-66</p>
+                  <p class="contact__phone">
+										<span>
+											<svg class="contact__phone--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19.987">
+												<g id="phone-receiver" transform="translate(0 -0.188)">
+													<g id="Group_42" data-name="Group 42" transform="translate(0 0.188)">
+														<path id="Path_28" data-name="Path 28" class="cls-1" d="M19.99,15.962a.967.967,0,0,1-.3.847L16.878,19.6a1.585,1.585,0,0,1-.5.36,2.056,2.056,0,0,1-.6.191q-.021,0-.127.011t-.275.011a9.761,9.761,0,0,1-1.3-.138,9.889,9.889,0,0,1-2.2-.678,18.483,18.483,0,0,1-2.954-1.62A22.021,22.021,0,0,1,5.4,14.776a23.2,23.2,0,0,1-2.456-2.795A19.913,19.913,0,0,1,1.38,9.515,13.285,13.285,0,0,1,.49,7.461a10.9,10.9,0,0,1-.4-1.588A5.244,5.244,0,0,1,0,4.825Q.025,4.444.025,4.4a2.058,2.058,0,0,1,.191-.6,1.587,1.587,0,0,1,.36-.5L3.391.484a.933.933,0,0,1,.678-.3.79.79,0,0,1,.487.159,1.472,1.472,0,0,1,.36.392l2.265,4.3a1.03,1.03,0,0,1,.106.741,1.32,1.32,0,0,1-.36.678L5.89,7.493a.353.353,0,0,0-.074.138.522.522,0,0,0-.032.159,3.823,3.823,0,0,0,.381,1.016,9.329,9.329,0,0,0,.783,1.239,13.752,13.752,0,0,0,1.5,1.683,14.025,14.025,0,0,0,1.694,1.514,9.782,9.782,0,0,0,1.239.794,3.292,3.292,0,0,0,.762.307l.265.053a.5.5,0,0,0,.138-.032.354.354,0,0,0,.138-.074l1.207-1.228a1.3,1.3,0,0,1,.889-.339,1.106,1.106,0,0,1,.572.127h.021l4.086,2.414A1.065,1.065,0,0,1,19.99,15.962Z" transform="translate(0 -0.188)"/>
+													</g>
+												</g>
+											</svg>
+
+										</span>
+									+38(050)-666-66-66</p>
                   <p class="contact__email">help@jumble-sweets.com.ua</p>
                   <p class="contact__address">г. Харьков, Героев труда 7,
                   ТРЦ Караван</p>
@@ -552,21 +563,67 @@
 											</div>
 										</div>
 									</b-col>
+									<b-col md="12" lg="6">
+										<div class="pagination">
+											<el-pagination class="pagination__content"
+												background
+												layout="prev, pager, next"
+												pager-count="6"
+												:total="200">
+											</el-pagination>
+										</div>
+									</b-col>
+									<b-col md="6" class="ml-lg-auto pages">
+										<p class="pages__count">Страница 1 из 20</p>
+									</b-col>
+										<!-- Чтобы показать, что ничего не нашлось добавить класс show -->
+										<div class="products__not-found not-found ">
+											<div class="not-found__heart">
+												<svg class="not-found__heart--icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+												width="79.5px" height="70px" viewBox="0 0 63.111 63.11" style="enable-background:new 0 0 79.5 70;"
+												xml:space="preserve">
+											<g>
+												<path d="M41.691,5.234l-8.567,11.079l11.928,8.056L33.909,48.825l0.897-18.475L22.507,18.711L25.92,7.534
+													C13.316-0.526,0,4.712,0,19.846c0.002,17.429,31.557,39.495,31.557,39.495s31.554-22.062,31.554-39.492
+													C63.113,6.509,52.77,0.883,41.691,5.234z"/>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											<g>
+											</g>
+											</svg>
+											</div>
+											<h2 class="not-found__title">Ничего не найдено.</h2>
+											<p class="not-found__description">Очень жаль, но мы ничего не нашли по вашему запросу. Может поищем ещё?</p>
+											<el-button class="not-found__button">Сбросить фильтры</el-button>
+										</div>
 								</b-row>
-							</b-col>
-
-							<b-col md="8" lg="6" offset-md="1" offset-lg="3" >
-								<div class="pagination">
-									<el-pagination class="pagination__content"
-										background
-										layout="prev, pager, next"
-										pager-count="6"
-										:total="200">
-									</el-pagination>
-								</div>
-							</b-col>
-							<b-col md="3" class="pages">
-								<p class="pages__count">Страница 1 из 20</p>
 							</b-col>
 						</b-row>
 					</b-container>
@@ -756,57 +813,55 @@ export default {
 		display: flex
 		align-items: center
 
-.el-carousel
-	min-height: 600px
-	@media (max-width: 991.98px)
-		min-height: 545px
-	@media (max-width: 767.98px)
-		min-height: 475px
-	@media (max-width: 575.98px)
-		min-height: 500px
+	.el-carousel
+		&__container
+			height: 600px
+			@media (max-width: 991.98px)
+				height: 545px
+			@media (max-width: 767.98px)
+				height: 475px
+			@media (max-width: 575.98px)
+				height: 500px
+		&__item
+			background-size: cover
+			background-repeat: no-repeat
+			color: #ffffff
+			height: 600px
+			@media (max-width: 991.98px)
+				height: 545px
 
-.el-carousel__item
-	position: relative
+			@media (max-width: 767.98px)
+				height: 475px
+			@media (max-width: 575.98px)
+				height: 500px
 
-	background-size: cover
-	background-repeat: no-repeat
-	color: #ffffff
-	min-height: 600px
-	@media (max-width: 991.98px)
-		min-height: 545px
+			&::before
+				z-index: 1
+				content: ''
+				position: absolute
+				left: 0
+				right: 0
+				top: 0
+				bottom: 0
+				background-color: rgba(0, 0, 0, 0.6)
 
-	@media (max-width: 767.98px)
-		min-height: 475px
-	@media (max-width: 575.98px)
-		min-height: 500px
+			&:nth-child(1)
+				background-image: url("../assets/churros-2188871_1920.jpg")
+				background-position: -10px 0
+				@media (max-width: 991.98px)
+					background-position: -140px 0
 
-	&::before
-		z-index: 1
-		content: ''
-		position: absolute
-		left: 0
-		right: 0
-		top: 0
-		bottom: 0
-		background-color: rgba(0, 0, 0, 0.6)
+			&:nth-child(2)
+				background-image: url("../assets/churros-2188871_1920.jpg")
+				background-position: -10px 0
+				@media (max-width: 991.98px)
+					background-position: -140px 0
 
-.el-carousel__item:nth-child(1)
-	background-image: url("../assets/churros-2188871_1920.jpg")
-	background-position: -10px 0
-	@media (max-width: 991.98px)
-		background-position: -140px 0
-
-.el-carousel__item:nth-child(2)
-	background-image: url("../assets/churros-2188871_1920.jpg")
-	background-position: -10px 0
-	@media (max-width: 991.98px)
-		background-position: -140px 0
-
-.el-carousel__item:nth-child(3)
-	background-image: url("../assets/churros-2188871_1920.jpg")
-	background-position: -10px 0
-	@media (max-width: 991.98px)
-		background-position: -140px 0
+			&:nth-child(3)
+				background-image: url("../assets/churros-2188871_1920.jpg")
+				background-position: -10px 0
+				@media (max-width: 991.98px)
+					background-position: -140px 0
 
 
 .information
@@ -880,7 +935,7 @@ export default {
     background-color: #F8F8F8
 
 
-.contacts
+.contact
 	line-height: 18px
 	margin:
 		top: 24px
@@ -902,12 +957,21 @@ export default {
 		padding:
 			top: 2px
 			bottom: 2px
+		span
+			display: inline-block
 	&__address
 		padding:
 			bottom: 9px
 	&__phone
-		background-image: url("../assets/Icons/phone-receiver.svg")
-		background-size: 20px 20px
+		padding:
+			left: 0
+		span
+			margin:
+				right: 20px
+			width: 20px
+			height: 20px
+		&--icon
+			fill: #E70068
 	&__email
 		background-image: url("../assets/Icons/envelope.svg")
 		background-size: 20px auto
@@ -1619,6 +1683,7 @@ export default {
 
 
 .catalog
+	position: relative
 	margin: 
 		top: 8px
 	&__title
@@ -1822,9 +1887,59 @@ export default {
 		margin: 
 			left: auto
 			bottom: 0
-		@media (max-width: 767.98px)
+		@media (max-width: 991.98px)
 			margin: 
 				left: 0
 				top: 20px
+
+.not-found
+	display: none
+	padding: 
+		top: 231px
+		left: 50px
+		right: 50px
+	flex-direction: column
+	position: absolute
+	z-index: 100
+	top: -1px
+	left: -1px
+	bottom: 0
+	right: 0
+	margin: 
+		right: 15px
+		left: 15px
+	background-color: #f8f8f8
+	@media (max-width: 575.98px)
+		padding: 
+			left: 30px
+			right: 30px
+	&__title
+		font-size: 30px
+		font-weight: 700
+		text-align: center
+		margin: 
+			bottom: 19px
+		@media (max-width: 575.98px)
+			font-size: 25px
+	&__description
+		text-align: center
+		margin: 
+			bottom: 45px
+	&__heart
+		width: 80px
+		height: 70px
+		margin: 
+			left: auto
+			right: auto
+			bottom: 31px
+		&--icon
+			fill: #E70068
+	.el-button.not-found__button
+		margin: 
+			left: auto
+			right: auto 
+
+.not-found.show
+	display: flex
 
 </style>
