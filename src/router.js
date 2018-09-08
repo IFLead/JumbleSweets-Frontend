@@ -6,6 +6,7 @@ import Contacts from './views/Contacts.vue';
 import DelPay from './views/DelPay.vue';
 import JumbleBox from './views/JumbleBox.vue';
 import Item from './views/Item.vue';
+import JumbleBoxPackage from './views/JumbleBoxPackage.vue';
 
 Vue.use(Router);
 
@@ -42,6 +43,11 @@ export default new Router({
 			path: '/item',
       name: 'item',
       component: Item,
+		},
+		{
+			path: '/JumbleBoxPackage',
+      name: 'JumbleBoxPackage',
+      component: JumbleBoxPackage,
 		},
     // {
     //   path: '/about',
