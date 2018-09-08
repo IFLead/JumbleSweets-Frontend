@@ -3,6 +3,11 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import AboutUs from './views/AboutUs.vue';
 import Contacts from './views/Contacts.vue';
+import DelPay from './views/DelPay.vue';
+import JumbleBox from './views/JumbleBox.vue';
+import Item from './views/Item.vue';
+import JumbleBoxPackage from './views/JumbleBoxPackage.vue';
+import Profile from './views/Profile.vue';
 
 Vue.use(Router);
 
@@ -24,6 +29,31 @@ export default new Router({
       path: '/contacts',
       name: 'contacts',
       component: Contacts,
+    },
+    {
+      path: '/delivery',
+      name: 'delivery',
+      component: DelPay,
+    },
+    {
+      path: '/jumble_box',
+      name: 'jumble_box',
+      component: JumbleBox,
+		},
+		{
+			path: '/item',
+      name: 'item',
+      component: Item,
+		},
+		{
+			path: '/JumbleBoxPackage',
+      name: 'JumbleBoxPackage',
+      component: JumbleBoxPackage,
+		},
+    {
+      path: '/profile',
+      name: 'profile',
+      component: Profile,
     },
     // {
     //   path: '/about',

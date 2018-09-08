@@ -24,19 +24,19 @@
       <section class="data">
         <h2 class="data__title">Контактная информация</h2>
           <div class="data__wrapper">
-            <div class="data__element">
+            <div class="data__element data__element--address">
               <h3 class="data__element-title">Адрес</h3>
               <p class="data__element-description">г. Харьков, ул. Героев Труда 7, ТРЦ Караван</p>
               <h3 class="data__element-title">Работаем</h3>
               <p class="data__element-description">Ежедневно с 10:00 до 22:00</p>
             </div>
-            <div class="data__element">
+            <div class="data__element data__element--connect">
               <h3 class="data__element-title">Почта</h3>
               <p class="data__element-description"><a href="mailto:jumble.main@gmail.com">jumble.main@gmail.com</a></p>
               <h3 class="data__element-title">Телефон</h3>
               <p class="data__element-description"><a href="tel:+38(050)-666-66-66">+38(050)-666-66-66</a></p>
             </div>
-            <div class="data__element">
+            <div class="data__element data__element--social">
               <h3 class="data__element-title">Социальные сети</h3>
               <div class="data__element-wrapper">
                 <div class="data__element-icon">

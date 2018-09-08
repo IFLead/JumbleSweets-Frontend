@@ -14,7 +14,7 @@
 
   &:hover {
     .el-input__inner {
-      border-color: $--select-border-color-hover;
+      border-color: transparent;
     }
   }
 
@@ -23,7 +23,7 @@
     padding-right: 35px;
 
     &:focus {
-      border-color: $--select-input-focus-background;
+      border-color: transparent;
     }
   }
 

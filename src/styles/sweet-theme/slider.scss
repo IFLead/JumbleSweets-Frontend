@@ -120,8 +120,8 @@
   @include e(button) {
     width: $--slider-button-size;
     height: $--slider-button-size;
-    border: solid 2px $--slider-main-background-color;
-    background-color: $--color-white;
+    border: 0;
+    background-color: $--color-primary;
     border-radius: 50%;
     transition: .2s;
     user-select: none;

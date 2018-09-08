@@ -7,8 +7,8 @@
 </template>
 
 <script>
-  import Header from './views/VueHeader';
-  import Footer from './views/VueFooter';
+  import Header from './components/VueHeader';
+  import Footer from './components/VueFooter';
 
 export default {
   name: 'app',

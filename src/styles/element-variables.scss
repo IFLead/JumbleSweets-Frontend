@@ -1,14 +1,14 @@
 /* theme color */
 
 /*кнопка*/
-$--color-primary: red;
+$--color-primary: #E70068;
 $--button-default-fill:  #E70068;
 $--button-default-color: #FFFFFF;
 $--button-padding-vertical: 16px;
 $--button-padding-horizontal: 30px;
 $--button-font-size: 15px;
-$--border-base: none;
 $--button-border-radius: 0px;
+$--color-primary-dark-3: darken($--color-primary, 3%);
 
 /*сообщение о покупке*/
 $--badge-fill: #E70068;
@@ -17,12 +17,35 @@ $--badge-fill: #E70068;
 /*Поиск*/
 $--border-color-light: #000000;
 
+/*Ползунок*/
+$--slider-button-size: 15px;
+$--slider-height: 1px;
+$--slider-runway-background-color: #c4c4c4;
+$--slider-main-background-color: #6a0030;
+$--slider-button-wrapper-offset: -17px;
 /*Select*/
 $--select-input-color: #c4c4c4;
 $--select-multiple-input-color: #000000;
 
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+/*checkbox*/
+$--checkbox-color: #c4c4c4;
+$--font-size-base: 13px;
+$--checkbox-input-border: solid #c4c4c4 2px;
+// $--checkbox-input-border-color-hover: #E70068;
+
+// $--checkbox-checked-text-color: #E70068;
+// $--checkbox-checked-input-fill: #E70068;
+// $--checkbox-checked-icon-color: #E70068;
+// $--checkbox-checked-input-border-color: #E70068;
+
+
+/*input*/
+$--input-placeholder-color: #c4c4c4;
+$--input-height: 28px;
+$--input-hover-border: #ffffff;
 
 @import "sweet-theme/index";
 

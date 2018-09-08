@@ -11,8 +11,8 @@
             <br>
             Вдохните глоток свежего креатива и отойдите в сторону от банальных сюрпризов. Jumble Sweets дарит радость от подарков всем желающим.
           </p>
-          <div class="row aboutus__schedule">
-            <div class="aboutus__item">
+          <div class="aboutus__schedule">
+            <div class="aboutus__item aboutus__item--days">
               <div class="aboutus__item-icon">
                 <img src="../assets/Icons/Calendar.svg" width="60" height="60" alt="Дни работы">
               </div>
@@ -21,7 +21,7 @@
                 <p class="aboutus__item-subtitle">С понедельника по воскресенье</p>
               </div>
             </div>
-            <div class="aboutus__item">
+            <div class="aboutus__item aboutus__item--clock">
               <div class="aboutus__item-icon">
                 <img src="../assets/Icons/Clock.svg"  width="60" height="60" alt="Время работы">
               </div>
