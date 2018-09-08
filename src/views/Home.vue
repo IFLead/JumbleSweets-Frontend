@@ -46,19 +46,44 @@
               </b-col>
               <b-col cols="12" md="4" lg="3" class="about-company__information information">
                 <div class="information__news news">
-                  <div class="news__actions">
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавле<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                    <p class="news__action">01.08.2018 был добавлен<span>Напиток Coca-Cola.</span></p>
-                  </div>
+                  <ul class="news__actions">
+                    <li class="news__element">
+											<p class="news__action">01.08.2018 был добавлен</p>
+											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                    </li>
+										<li class="news__element">
+											<p class="news__action">01.08.2018 был добавлен</p>
+											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                    </li>
+										<li class="news__element">
+											<p class="news__action">01.08.2018 был добавлен</p>
+											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                    </li>
+										<li class="news__element">
+											<p class="news__action">01.08.2018 был добавлен</p>
+											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                    </li>
+										<li class="news__element">
+											<p class="news__action">01.08.2018 был добавлен</p>
+											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                    </li>
+										<li class="news__element">
+											<p class="news__action">01.08.2018 был добавлен</p>
+											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                    </li>
+										<li class="news__element">
+											<p class="news__action">01.08.2018 был добавлен</p>
+											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                    </li>
+										<li class="news__element">
+											<p class="news__action">01.08.2018 был добавлен</p>
+											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                    </li>
+										<li class="news__element">
+											<p class="news__action">01.08.2018 был добавлен</p>
+											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                    </li>
+                  </ul>
                   <a href="#" class="news__link">Ещё новости</a>
                 </div>
                 <div class="information__contact contact">
@@ -155,10 +180,11 @@
 								</el-select>
 							</b-col>
 
+														
 
-							<!-- Для показа мобильной добавить класс show -->
 							<b-col md="4" lg="3" class="products__filter filter">
-								<div class="filter__content">
+								<el-collapse v-model="activeNames">		
+									<div class="filter__content">
 									<div class="filter__close">
 										<svg class="filter__close--icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g>
@@ -204,33 +230,36 @@
 													</svg>
 									</div>
 									<h2 class="filter__mobile-title">Фильтр</h2>
-									<h3 class="filter__title filter__title--category">Категория товара</h3>
-									<ul class="filter__list filter__list--category">
-										<li><el-checkbox>Все (101)</el-checkbox></li>
-										<li><el-checkbox>Школад (9)</el-checkbox></li>
-										<li><el-checkbox>Мармелад (40)</el-checkbox></li>
-										<li><el-checkbox>Батончики (1)</el-checkbox></li>
-										<li><el-checkbox>Печенье (7)</el-checkbox></li>
-										<li><el-checkbox>Жвачки (11)</el-checkbox></li>
-										<li><el-checkbox>Напитки (33)</el-checkbox></li>
-									</ul>
+									<el-collapse-item title="Категория товара" name="1">
+										<ul class="filter__list filter__list--category">
+											<li><el-checkbox>Все (101)</el-checkbox></li>
+											<li><el-checkbox>Школад (9)</el-checkbox></li>
+											<li><el-checkbox>Мармелад (40)</el-checkbox></li>
+											<li><el-checkbox>Батончики (1)</el-checkbox></li>
+											<li><el-checkbox>Печенье (7)</el-checkbox></li>
+											<li><el-checkbox>Жвачки (11)</el-checkbox></li>
+											<li><el-checkbox>Напитки (33)</el-checkbox></li>
+										</ul>
+									</el-collapse-item>
 
-									<h3 class="filter__title filter__title--manufacturer">Производитель</h3>
-									<ul class="filter__list filter__list--manufacture">
-										<li><el-checkbox>Все</el-checkbox></li>
-										<li><el-checkbox>Европа</el-checkbox></li>
-										<li><el-checkbox>США</el-checkbox></li>
-										<li><el-checkbox>Азия</el-checkbox></li>
-									</ul>
+									<el-collapse-item title="Производитель" name="2">
+										<ul class="filter__list filter__list--manufacture">
+											<li><el-checkbox>Все</el-checkbox></li>
+											<li><el-checkbox>Европа</el-checkbox></li>
+											<li><el-checkbox>США</el-checkbox></li>
+											<li><el-checkbox>Азия</el-checkbox></li>
+										</ul>
+									</el-collapse-item>
 
-									<h3 class="filter__title filter__title--occasion">Поводы</h3>
-									<ul class="filter__list filter__list--occasion">
-										<li><el-checkbox>День Рождения</el-checkbox></li>
-										<li><el-checkbox>Свадьба</el-checkbox></li>
-										<li><el-checkbox>Свидание</el-checkbox></li>
-										<li><el-checkbox>Рождение ребенка</el-checkbox></li>
-										<li><el-checkbox>Юбилей</el-checkbox></li>
-									</ul>
+									<el-collapse-item title="Поводы" name="3">
+										<ul class="filter__list filter__list--occasion">
+											<li><el-checkbox>День Рождения</el-checkbox></li>
+											<li><el-checkbox>Свадьба</el-checkbox></li>
+											<li><el-checkbox>Свидание</el-checkbox></li>
+											<li><el-checkbox>Рождение ребенка</el-checkbox></li>
+											<li><el-checkbox>Юбилей</el-checkbox></li>
+										</ul>
+									</el-collapse-item>
 
 									<h3 class="filter__title filter__title--cost">Цена</h3>
 									<el-slider
@@ -239,8 +268,10 @@
 									</el-slider>
 									<el-button class="filter__button filter__button--submit">Применить</el-button>
 									<el-button class="filter__button filter__button--refresh">Сбросить</el-button>
-								</div>
+									</div>
+								</el-collapse>
 							</b-col>
+								
 
 							<b-col md="8" lg="9" class="products__catalog catalog">
 								<b-row class="catalog__list">
@@ -568,7 +599,7 @@
 											<el-pagination class="pagination__content"
 												background
 												layout="prev, pager, next"
-												pager-count="6"
+												pager-count="5"
 												:total="200">
 											</el-pagination>
 										</div>
@@ -576,7 +607,6 @@
 									<b-col md="6" class="ml-lg-auto pages">
 										<p class="pages__count">Страница 1 из 20</p>
 									</b-col>
-										<!-- Чтобы показать, что ничего не нашлось добавить класс show -->
 										<div class="products__not-found not-found ">
 											<div class="not-found__heart">
 												<svg class="not-found__heart--icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -712,7 +742,8 @@ export default {
         value: 'Option2',
         label: 'Цена',
       }],
-      value: '',
+			value: '',
+			activeNames: ['1']
     };
   },
 };
@@ -876,6 +907,9 @@ export default {
 		left: 20px
 		bottom: 15px
 	&__actions
+		padding:
+			left: 0
+		list-style: none
 		height: 355px
 		overflow: auto
 		padding:
@@ -884,12 +918,6 @@ export default {
 			height: 300px
 		@media (max-width: 767.98px)
 			height: 355px
-	span
-		display: block
-		color: #6a0030
-		font-weight: 700
-		margin:
-			top: -7px
 	&__link
 		text-decoration: none
 		color: #000000
@@ -906,10 +934,20 @@ export default {
 			color: #000
 	&__action
 		margin:
-			bottom: 15px
+			bottom: -5px
 		@media (max-width: 991.98px)
 			font-size: 14px
 			line-height: 22px
+	&__element
+		margin:
+			bottom: 10px
+	&__action-link
+		transition: all 0.2s ease
+		color: #6a0030
+		font-weight: 700
+		&:hover, &:focus
+			color: #e70068
+			text-decoration: none
 	&:before
 		content: ''
 		height: 2px
@@ -1536,29 +1574,11 @@ export default {
 				top: 17px
 				bottom: 35px
 	&__title
-		position: relative
 		font-size: 18px
 		font-weight: 700
 		width: 220px
-		cursor: pointer
 		margin: 
 			bottom: 13px
-		&--category, &--manufacturer, &--occasion
-			&::after
-				content: ''
-				position: absolute
-				right: 0
-				top: 4px
-				margin: 
-					top: auto
-					bottom: auto
-				transform: rotate(-90deg)
-				display: inline
-				width: 10px
-				height: 12px
-				background-image: url("../assets/Icons/right-arrow.svg")
-				background-repeat: no-repeat
-				background-size: cover
 	&__list
 		padding: 
 			left: 19px
@@ -1573,8 +1593,12 @@ export default {
 			background-color: #fff
 			margin: 
 				top: 23px
+			&:hover, &:focus
+				background-color: darken(#ffffff, 3%)
+				color: #000000
 			@media (max-width: 767.98px)
 				display: none
+			
 
 	.el-slider
 		width: 230px
@@ -1648,6 +1672,8 @@ export default {
 				color: #000
 			@media (max-width: 767.98px)
 				width: 360px
+			@media (max-width: 575.98px)
+				width: 100%
 		@media (max-width: 575.98px)
 			width: 100%
 			
@@ -1827,7 +1853,7 @@ export default {
 			left: 10px
 			top: -5px
 		.like
-			transition: all 0.3s ease
+			transition: all 0.2s ease
 			fill: #C4C4C4
 		&:hover
 			.like
@@ -1857,10 +1883,12 @@ export default {
 		top: 5px
 		bottom: 5px
 	background-color: #f8f8f8
+	
 	&__content
 		display: flex
 		align-items: center
 		.number
+			transition: all 0.2s ease
 			width: 40px
 			height: 40px
 			padding: 
@@ -1870,14 +1898,19 @@ export default {
 				height: 30px
 				padding: 
 					top: 2px
-		.number.active + .number
-			box-shadow: inset 0 0 0px 1px #dcdcdc
+			&:hover, &:focus
+				box-shadow: inset 0 0 0px 1px #dcdcdc
 		.el-icon-more
 			margin: 
 				top: 10px
 		.el-pager
 			display: flex
 			align-items: baseline
+		.el-icon.more.btn-quickprev.el-icon-more
+			display: none
+		.el-pagination
+			@media (max-width: 575.98px)
+				width: 100%
 
 
 .pages

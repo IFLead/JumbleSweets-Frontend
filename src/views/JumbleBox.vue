@@ -453,11 +453,11 @@
 		margin: 
 			bottom: 0
 	&__content
-		transition: opacity 0.3s ease
+		transition: opacity 0.2s ease
 		position: relative
 		z-index: 10
 	&__hide
-		transition: opacity 0.3s ease
+		transition: opacity 0.2s ease
 		display: flex
 		opacity: 0
 		position: absolute
@@ -585,11 +585,11 @@
 			bottom: 0
 			background-color: rgba(231, 0, 104, 0.8)
 	&__content
-		transition: opacity 0.3s ease
+		transition: opacity 0.2s ease
 		position: relative
 		z-index: 10
 	&__hide
-		transition: opacity 0.3s ease
+		transition: opacity 0.2s ease
 		display: flex
 		opacity: 0
 		position: absolute
@@ -610,7 +610,7 @@
 				right: auto
 				top: auto
 				bottom: auto
-			background-image: url("../assets/Icons/shopping-bag.svg")
+			background-image: url("../assets/Icons/shopping-bag-white.svg")
 			background-repeat: no-repeat
 			background-size: 20px auto
 			background-position: right 2px

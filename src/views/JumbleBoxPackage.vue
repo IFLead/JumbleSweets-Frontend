@@ -308,14 +308,14 @@
 			left: auto
 			bottom: 50px
 		color: #000000
-		transition: all 0.3s ease
+		transition: all 0.2s ease
 		&:hover, &:focus
 			text-decoration: none
 			color: #e70068
 			.choose__link--icon
 				fill: #e70068
 		&--icon
-			transition: all 0.3s ease
+			transition: all 0.2s ease
 		p
 			margin: 
 				bottom: 0

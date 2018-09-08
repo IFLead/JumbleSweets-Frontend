@@ -77,96 +77,10 @@
 							<div class="prices">
 								<p class="information__price">100 грн.</p><p class="information__price--old">200 грн.</p>
 							</div>
-							
-							<div class="information__controls controls">
-								<div class="controls__wrapper">
-									<div class="controls__minus">
-									<svg class="controls__minus--icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-									viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
-								<g>
-									<g>
-										<path d="M465.064,207.562H26.908C12.076,207.562,0,219.698,0,234.53v22.804c0,14.832,12.072,27.104,26.908,27.104h438.156
-											c14.84,0,26.936-12.272,26.936-27.104V234.53C492,219.698,479.904,207.562,465.064,207.562z"/>
-									</g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								</svg>
-								</div>
-								<p class="controls__count">2</p>
-								<div class="controls__plus">
-									<svg class="controls__plus--icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-									viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
-								<g>
-									<g>
-										<path d="M465.064,207.566l0.028,0H284.436V27.25c0-14.84-12.016-27.248-26.856-27.248h-23.116
-											c-14.836,0-26.904,12.408-26.904,27.248v180.316H26.908c-14.832,0-26.908,12-26.908,26.844v23.248
-											c0,14.832,12.072,26.78,26.908,26.78h180.656v180.968c0,14.832,12.064,26.592,26.904,26.592h23.116
-											c14.84,0,26.856-11.764,26.856-26.592V284.438h180.624c14.84,0,26.936-11.952,26.936-26.78V234.41
-											C492,219.566,479.904,207.566,465.064,207.566z"/>
-									</g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								<g>
-								</g>
-								</svg>
-								</div>	
-								</div>
+							<div class="characteristics__controls controls">
+								<template>
+									<el-input-number v-model="num1" @change="handleChange" :min="1" :max="10"></el-input-number>
+								</template>
 							</div>
 							<div class="information__buttons">
 								<el-button class="information__button"><p>Добавить в корзину</p>
@@ -649,8 +563,18 @@
       name: "Item",
       components: {
 
-      },
-    }
+			},
+			data() {
+				return {
+					num1: 1
+				};
+			},
+			methods: {
+				handleChange(value) {
+					console.log(value)
+				}
+			}
+		};
 </script>
 
 <style lang="sass">
@@ -658,13 +582,15 @@
 	margin: 
 		top: 37px
 	&__link	
+		transition: all 0.2s ease
 		display: flex
+		width: 150px
 		color: #000000
 		margin: 
 			bottom: 40px
 		@media (max-width: 767.98px)
 			margin: 
-				bottom: 20px
+				bottom: 20px			
 		p
 			font-weight: 700
 			margin: 
@@ -675,12 +601,15 @@
 			width: 12px
 			height: 12px
 			margin: 
-				top: 14px
+				top: 13px
 				right: 12px
 		&:hover, &:focus
 			text-decoration: none
-			color: #000000
+			color: #e70068
+			.characteristics__link--icon
+				fill: #e70068
 		&--icon
+			transition: all 0.2s ease
 			fill: #000000
 	&__wrapper
 		width: 340px
@@ -831,6 +760,7 @@
 				margin: 
 					bottom: 40px
 		&__link
+			transition: all 0.2s ease
 			display: inline-block
 			margin: 
 				left: 40px
@@ -853,46 +783,7 @@
 				margin: 
 					bottom: 15px
 
-.controls
-	margin: 
-		top: 32px
-		bottom: 30px
-	display: inline-block
-	align-items: center
-	border: 1px solid #f8f8f8
-	padding: 
-		top: 15px
-		bottom: 15px
-		left: 20px
-		right: 20px
-	@media (max-width: 1199.98px)
-		margin: 
-			top: 25px
-			bottom: 25px
-	&__wrapper
-		display: flex
-		align-items: center
-	&__minus
-		cursor: pointer
-		width: 20px
-		height: 20px
-		transition: all 0.3s ease
-		&:hover
-			fill: #e70068
-	&__plus
-		cursor: pointer
-		width: 20px
-		height: 20px
-		transition: all 0.3s ease
-		&:hover
-			fill: #e70068
-	&__count
-		margin: 
-			bottom: 0
-			left: 30px
-			right: 30px
-		font-size: 20px
-		line-height: 30px
+
 
 
 .description-item
@@ -1173,7 +1064,7 @@
 			left: 10px
 			top: -5px
 		.like
-			transition: all 0.3s ease
+			transition: all 0.2s ease
 			fill: #C4C4C4
 		&:hover
 			.like
@@ -1187,7 +1078,7 @@
 			left: auto
 			top: -5px
 		.basket
-			transition: all 0.3s ease
+			transition: all 0.2s ease
 			fill: #C4C4C4
 		&:hover
 			.basket
@@ -1196,4 +1087,33 @@
 		display: flex
 		margin: 
 			top: auto
+
+.controls
+	margin: 
+		top: 32px
+		bottom: 30px
+	.el-input-number
+		width: 152px
+	.el-input__inner
+		color: #000000
+		font-size: 20px
+		line-height: 30px
+		border: 1px solid #f8f8f8
+		width: 152px
+		padding: 
+			top: 9px
+			bottom: 14px
+			left: 20px
+			right: 20px
+		height: 50px
+	.el-input-number__decrease
+		top: 10px
+		left: 20px
+		background-color: transparent
+		border: none
+	.el-input-number__increase
+		top: 10px
+		right: 20px
+		background-color: transparent
+		border: none
 </style>

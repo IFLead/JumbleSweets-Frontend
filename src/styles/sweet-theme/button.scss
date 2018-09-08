@@ -17,7 +17,7 @@
   text-align: center;
   box-sizing: border-box;
   outline: none;
-  transition: .1s;
+  transition: .2s;
   font-weight: $--button-font-weight;
   @include utils-user-select(none);
   & + & {
@@ -28,9 +28,9 @@
 
   &:hover,
   &:focus {
-    color: $--color-primary;
-    border-color: $--color-primary-light-7;
-    background-color: $--color-primary-light-9;
+    color: #ffffff;
+    border-color: transparent;
+    background-color: $--color-primary-dark-3;
   }
 
   &:active {
