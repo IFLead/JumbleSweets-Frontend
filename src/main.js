@@ -14,7 +14,6 @@ Vue.config.productionTip = false;
 
 Vue.use(YmapPlugin);
 
-
 new Vue({
   router,
   store,
