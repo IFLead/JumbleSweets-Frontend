@@ -8,6 +8,8 @@ import JumbleBox from './views/JumbleBox.vue';
 import Item from './views/Item.vue';
 import JumbleBoxPackage from './views/JumbleBoxPackage.vue';
 import Profile from './views/Profile.vue';
+import JumbleBoxConstructor from './views/JumbleBoxConstructor.vue';
+
 
 Vue.use(Router);
 
@@ -54,6 +56,11 @@ export default new Router({
       path: '/profile',
       name: 'profile',
       component: Profile,
+    },
+    {
+      path: '/JumbleBoxConstructor',
+      name: 'JumbleBoxConstructor',
+      component: JumbleBoxConstructor,
     },
     // {
     //   path: '/about',
