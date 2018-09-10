@@ -1548,6 +1548,27 @@ export default {
 		color: #000
 		padding: 
 			left: 15px
+	.el-collapse
+		border: none
+	.el-collapse-item__header
+		height: 30px
+		line-height: 30px
+		font-size: 18px
+		font-weight: 700
+		width: 220px
+		cursor: pointer
+		margin: 
+			bottom: 13px
+		border: none
+	.el-collapse-item__wrap
+		border: none
+	.el-collapse-item__arrow
+		color: #c4c4c4
+		margin: 
+			top: -8px
+	.el-collapse-item__content
+		padding: 
+			bottom: 15px
 	&__close
 		display: none
 		@media (max-width: 767.98px)
