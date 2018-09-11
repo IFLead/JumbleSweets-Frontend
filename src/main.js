@@ -8,7 +8,7 @@ import store from './store/index';
 import './registerServiceWorker';
 import './plugins/element';
 import './styles/element-variables.scss';
-import { createProvider } from './vue-apollo';
+// import { createProvider } from './vue-apollo';
 
 Vue.config.productionTip = false;
 
@@ -17,7 +17,7 @@ Vue.use(YmapPlugin);
 new Vue({
   router,
   store,
-  apolloProvider: createProvider(),
+  // apolloProvider: createProvider(),
   render: h => h(App),
 }).$mount('#app');
 
