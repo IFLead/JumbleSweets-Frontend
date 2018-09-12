@@ -284,7 +284,7 @@
 											</div>
 											<h4 class="catalog__title"><a href="#">Батончик Snickers</a></h4>
 											<div class="catalog__information">
-												<p class="catalog__price">60 грн.</p>
+												<p class="catalog__price ">60 грн.</p>
 												<div class="catalog__basket">
 														<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
 														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -355,7 +355,7 @@
 											</div>
 											<h4 class="catalog__title"><a href="#">Шоколад Milka Молочный</a></h4>
 											<div class="catalog__information">
-												<p class="catalog__price">75 грн.</p>
+												<p class="catalog__price catalog__price--sale">75 грн.</p>
 												<p class="catalog__old-price">83 грн.</p>
 												<div class="catalog__basket">
 													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
@@ -497,7 +497,7 @@
 											</div>
 											<h4 class="catalog__title"><a href="#">Печенье Oreo</a></h4>
 											<div class="catalog__information">
-												<p class="catalog__price">90 грн.</p>
+												<p class="catalog__price catalog__price--sale">90 грн.</p>
 												<p class="catalog__old-price">180 грн.</p>
 												<div class="catalog__basket">
 													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
@@ -594,7 +594,7 @@
 											</div>
 										</div>
 									</b-col>
-									<b-col md="12" lg="6">
+									<b-col md="12" lg="9">
 										<div class="pagination">
 											<el-pagination class="pagination__content"
 												background
@@ -604,7 +604,7 @@
 											</el-pagination>
 										</div>
 									</b-col>
-									<b-col md="6" class="ml-lg-auto pages">
+									<b-col md="6" lg="3" class="ml-lg-auto pages">
 										<p class="pages__count">Страница 1 из 20</p>
 									</b-col>
 										<div class="products__not-found not-found ">
@@ -1735,6 +1735,7 @@ export default {
 		top: 8px
 	&__title
 		a
+			transition: all 0.2s ease
 			display: block
 			font-size: 15px
 			color: #000000
@@ -1742,6 +1743,8 @@ export default {
 			line-height: 18px
 			margin: 
 				bottom: 22px
+			&:hover, &:focus
+				color: #e70068
 	&__sale
 		position: absolute
 		width: 70px
@@ -1858,6 +1861,8 @@ export default {
 		line-height: 18px
 		margin: 
 			bottom: 0
+		&--sale
+			color: #e70068
 	&__old-price
 		font-weight: regular
 		line-height: 18px
@@ -1904,10 +1909,16 @@ export default {
 		top: 5px
 		bottom: 5px
 	background-color: #f8f8f8
+	.pagination__content 
+		@media (max-width: 575.98px)
+			padding:
+				left: 0
+				right: 0
 	
 	&__content
 		display: flex
 		align-items: center
+	
 		.number
 			transition: all 0.2s ease
 			width: 40px
