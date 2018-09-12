@@ -74,10 +74,11 @@
     &,
     &:hover,
     &:focus {
-      color: $--button-disabled-color;
+			opacity: 0.2;
+      color: $--button-default-color;
       cursor: not-allowed;
-      background-color: $--button-disabled-fill;
-      border-color: $--button-disabled-border;
+      background-color: $--button-default-fill;
+      border-color: none;
     }
 
     &.el-button--text {

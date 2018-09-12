@@ -518,6 +518,345 @@
 				</b-row>
 			</b-container>
 		</section>
+
+		<section class="product-add">
+			<div class="product-add__alert">
+				<p class="product-add__alert--message">Батончик Snickers добавлен в Jumble Box</p>
+			</div>
+			<b-container>
+				<b-row>
+					<b-col>
+						<div class="product-add__content">
+							<div class="product-add__menu menu">
+								<div class="menu__list--wrapper">
+									<ul class="menu__list">
+										<li class="menu__element">
+											<a href="#" class="menu__link active">Все</a>
+										</li>
+										<li class="menu__element">
+											<a href="#" class="menu__link">Напитки</a>
+										</li>
+										<li class="menu__element">
+											<a href="#" class="menu__link">Сладости</a>
+										</li>
+									</ul>
+								</div>		
+								<el-input placeholder="Поиск по названию" class="menu__search"></el-input>
+								<p class="menu__places">Свободных мест в боксе: <span>4</span></p>
+								<div class="menu__close"></div>
+							</div>
+							<b-row>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								<b-col sm="6" md="4" lg="3" class="product-add__element element">
+									<a href="#" class="element__wrapper">
+										<div class="element__content">
+											<h3 class="element__title">Батончик Snikers</h3>
+											<p class="element__price">60 грн.</p>
+											<p class="element__place">Занимает места в боксе: 1</p>
+										</div>
+										<div class="element__icon"></div>
+									</a>
+								</b-col>
+								
+								
+							</b-row>
+							<div class="product-add__bottom-navigation">
+								<div class="product-add__pagination">
+									<el-pagination class="product-add__pagination-content"
+										background
+										layout="prev, pager, next"
+										pager-count="5"
+										:total="200">
+									</el-pagination>
+								</div>
+								<p class="product-add__pages">Страница 1 из 20</p>
+							</div>
+									
+						</div>					
+					</b-col>
+				</b-row>
+			</b-container>
+		</section>
+
+		<section class="holiday">
+			<div class="holiday__alert">
+				<p class="holiday__alert--message">Обёртка <span>Название_обёртки</span> добавлена</p>
+			</div>
+			<b-container>
+				<b-row>
+					<b-col>
+						<div class="holiday__content">
+							<div class="holiday__close"></div>
+							<b-row>
+								<b-col cols="12">
+									<h2 class="holiday__title">Атмосфера праздника</h2>
+									<p class="holiday__descrition">Выберите подходящую праздничную обёртку для вашего Jumble Box</p>
+								</b-col>
+
+								<b-col lg="6" class="holiday__element holiday__element--default">
+									<div class="holiday__wrapper">
+										<div class="holiday__control">
+												<h3 class="holiday__element-title">По умолчанию</h3>
+												<p class="holiday__element-price">10 грн.</p>
+												<el-button class="holiday__button">
+													<p>Текущий выбор<span class="holiday__button--icon">
+														<svg version="1.1" id="box" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+															viewBox="0 0 482 482" style="enable-background:new 0 0 482 482;" xml:space="preserve">
+														<g>
+															<g>
+																<polygon points="279.8,244.8 258.2,257.3 258.2,482 452.7,369.7 452.7,145 		"/>
+																<polygon points="315,43.3 240.2,0 40.3,115.4 115.2,158.7 		"/>
+																<polygon points="440,115.4 353.8,66.3 154,181.7 165.4,187.6 240.2,230.8 314.6,187.9 		"/>
+																<polygon points="138.9,264.3 103.1,245.9 103.1,188.7 29.3,146.2 29.3,369.3 222.4,480.8 222.4,257.7 138.9,209.6 		"/>
+															</g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														</svg>
+													</span></p>
+												</el-button>
+										</div>
+										<div class="holiday__background"></div>
+									</div>
+								</b-col>
+
+								<b-col lg="6" class="holiday__element holiday__element--texture">
+									<div class="holiday__wrapper">
+											<div class="holiday__control">
+												<h3 class="holiday__element-title">Название текстуры</h3>
+												<p class="holiday__element-price">50 грн.</p>
+												<el-button class="holiday__button">
+													<p>Выбрать обёртку<span class="holiday__button--icon">
+														<svg version="1.1" id="box" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+															viewBox="0 0 482 482" style="enable-background:new 0 0 482 482;" xml:space="preserve">
+														<g>
+															<g>
+																<polygon points="279.8,244.8 258.2,257.3 258.2,482 452.7,369.7 452.7,145 		"/>
+																<polygon points="315,43.3 240.2,0 40.3,115.4 115.2,158.7 		"/>
+																<polygon points="440,115.4 353.8,66.3 154,181.7 165.4,187.6 240.2,230.8 314.6,187.9 		"/>
+																<polygon points="138.9,264.3 103.1,245.9 103.1,188.7 29.3,146.2 29.3,369.3 222.4,480.8 222.4,257.7 138.9,209.6 		"/>
+															</g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														</svg>
+													</span></p>	
+												</el-button>
+											</div>
+										<div class="holiday__background"></div>
+									</div>
+								</b-col>
+							</b-row>
+						</div>
+					</b-col>
+				</b-row>
+			</b-container>
+		</section>
+
+		<section class="postcard">
+			<div class="postcard__alert">
+				<p class="postcard__alert--message">Открытка добавлена</p>
+			</div>
+			<b-container>
+				<b-row>
+					<b-col>
+						<div class="postcard__content">
+							<div class="postcard__close"></div>
+							<h2 class="postcard__title">Открытка - прекрасное дополнение к подарку</h2>
+							<p class="postcard__description">Напишите несколько приятных слов, а мы красиво изобразим их в поздравительной открытке</p>
+							<form action="POST" class="postcard__form">
+								<textarea class="postcard__textarea"></textarea>
+								<el-button :disabled="true" class="postcard__button">Готово</el-button>
+							</form>
+						</div>					
+					</b-col>
+				</b-row>
+			</b-container>
+		</section>
+
+		<section class="confirmed show">
+			<b-container>
+				<b-row>
+					<b-col>
+						<div class="confirmed__content">
+							<div class="confirmed__icon"></div>
+							<h2 class="confirmed__title">Вам точно понравится</h2>
+							<p class="confirmed__description">Мы заметили, что вы только что добавили праздничный бокс в корзину.</p>
+							<p class="confirmed__description">Возможно, это всё, ради чего вы пришли к нам. Хотите оформить заказ прямо сейчас или присмотрите что-нибудь ещё?</p>
+							<div class="confirmed__buttons">
+								<el-button>Хочу побыстрее свой Jumble Box</el-button>
+								<a href="#" class="confirmed__link">Посмотрю что-нибудь ещё</a>
+							</div>
+						</div>
+					</b-col>
+				</b-row>
+			</b-container>
+		</section>
 	</div>
 </template>
 
@@ -529,6 +868,7 @@ export default {
   },
   data() {
     return { 
+			activeName: 'first'
 		}
 	}
 }
@@ -536,7 +876,7 @@ export default {
 
 <style lang="sass">
 .JumbleBoxConstructor
-	.constructor	
+	.constructor			
 		margin: 
 			top: 21px
 			bottom: 50px
@@ -830,4 +1170,732 @@ export default {
 					top: 15px
 					left: auto
 					right: auto
+
+	.product-add.show
+		display: block
+	.product-add
+		display: none
+		overflow: auto
+		position: fixed
+		z-index: 10000
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		background-color: rgba(58, 58, 58, 0.8)
+		
+		.container
+			background-color: #fff
+			margin: 
+				top: 115px	
+				bottom: 115px	
+			@media (max-width: 575.98px)
+				margin: 
+					top: 50px
+					bottom: 50px
+				width: calc(100% - 30px) !important
+		.product-add__alert.show
+			display: block
+		&__alert
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			z-index: 100000
+			display: none
+			margin: 
+				left: auto
+				right: auto
+			width: 700px
+			padding: 
+				top: 14px
+				bottom: 16px
+			background-color: #e70068
+			@media (max-width: 767.98px)
+				width: calc(100% - 40px)
+			&--message
+				font-size: 15px
+				line-height: 20px
+				font-weight: 700
+				color: #ffffff
+				text-align: center
+				padding: 
+					left: 20px
+					right: 20px
+				margin: 
+					bottom: 0
+		&__content
+			padding: 
+				top: 30px
+				bottom: 35px
+		.menu
+			display: flex
+			flex-wrap: wrap
+			align-items: flex-end
+			margin: 
+				bottom: 40px
+			@media (max-width: 767.98px)
+				flex-direction: column
+				align-items: flex-start
+			&__close
+				position: absolute
+				width: 15px
+				height: 15px
+				top: 54px
+				right: 54px
+				cursor: pointer
+				background-repeat: no-repeat
+				background-image: url("../assets/Icons/cancel.svg")
+				@media (max-width: 1199.98px)
+					right: 34px
+				@media (max-width: 767.98px)
+					top: 45px
+					
+			&__list	
+				list-style: none
+				display: flex
+				border: 1px solid #f8f8f8
+				padding: 
+					top: 5px
+					left: 5px
+					bottom: 5px
+					right: 5px
+				&--wrapper
+					display: inline-block
+					margin: 
+						bottom: 0
+						right: 70px
+					@media (max-width: 1199.98px)
+						margin: 
+							right: 60px
+					@media (max-width: 991.98px)
+						margin: 
+							right: 50px
+					@media (max-width: 767.98px)
+						margin: 
+							bottom: 20px
+					@media (max-width: 575.98px)
+						margin: 
+							right: 0
+			&__link
+				transition: all 0.2s ease
+				padding: 
+					top: 9px
+					bottom: 11px
+					left: 25px
+					right: 25px
+				display: block
+				line-height: 20px
+				color: #000
+				@media (max-width: 575.98px)
+					padding:
+						top: 5px
+						bottom: 6px
+						left: 15px
+						right: 15px
+
+				&:hover, &:focus
+					text-decoration: none
+					background-color: #e70068
+					color: #ffffff
+			&__link.active
+				background-color: #e70068
+				color: #ffffff
+			&__search.el-input
+				width: 264px	
+				margin:
+					right: 70px	
+				@media (max-width: 1199.98px)
+					margin: 
+						right: 60px	
+				@media (max-width: 575.98px)
+					margin: 
+						right: 0
+				
+				.el-input__inner
+					padding: 
+						left: 5px
+						bottom: 10px
+					border: none
+					border-radius: 0px
+					border-bottom: 1px solid #c4c4c4
+					font-size: 15px
+					line-height: 20px
+					color: #DCDCDC
+					&::placeholder
+						font-size: 15px
+						line-height: 20px
+						color: #DCDCDC
+							
+			&__places
+				margin: 
+					bottom: 10px
+				@media (max-width: 991.98px)
+					margin: 
+						top: 15px
+				@media (max-width: 767.98px)
+					margin: 
+						top: 20px
+		.element
+			margin: 
+				bottom: 30px
+			@media (max-width: 575.98px)
+				margin: 
+					bottom: 20px
+			&__wrapper
+				display: block
+				position: relative
+				z-index: 10
+				background-image: url("../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png")
+				background-repeat: no-repeat
+				background-size: 190px auto
+				background-position: center center
+				&::before
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					bottom: 0
+					right: 0
+					background-color: rgba(0, 0, 0, 0.8)
+				&:hover, &:focus
+					text-decoration: none
+					.element__content
+						opacity: 0
+					.element__icon
+						opacity: 1
+			&__content
+				transition: all 0.2s ease
+				opacity: 1
+				padding: 
+					left: 20px
+					top: 18px
+					bottom: 20px
+					right: 18px
+				position: relative
+				z-index: 100
+				color: #ffffff
+			&__title
+				font-size: 15px
+				line-height: 20px
+				font-weight: 400
+				margin: 
+					bottom: 6px
+			&__price
+				font-size: 30px
+				line-height: 40px
+				font-weight: 700
+				margin: 
+					bottom: 27px
+			&__place
+				opacity: 0.5
+				font-size: 14px
+				line-height: 19px
+				margin: 
+					bottom: 0
+			&__icon
+				transition: all 0.2s ease
+				opacity: 0
+				position: absolute
+				z-index: 100
+				width: 35px
+				height: 35px
+				transform: rotate(45deg)
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				margin: 
+					top: auto
+					bottom: auto
+					left: auto
+					right: auto
+				background-image: url("../assets/Icons/add-sweets.svg")
+				background-repeat: no-repeat
+				background-size: contain
+		&__bottom-navigation
+			display: flex
+			align-items: center
+			justify-content: space-between
+			@media (max-width: 575.98px)
+				flex-direction: column
+				align-items: flex-start
+		&__pages
+			margin: 
+				bottom: 0
+			@media (max-width: 575.98px)
+				margin: 
+					top: 15px
+		&__pagination
+			display: inline-block
+			margin: 
+				top: 5px
+			padding: 
+				top: 5px
+				bottom: 5px
+			background-color: #f8f8f8	
+			&-content
+				display: flex
+				align-items: center
+				.number
+					transition: all 0.2s ease
+					width: 40px
+					height: 40px
+					padding: 
+						top: 5px
+					@media (max-width: 575.98px)
+						width: 30px
+						height: 30px
+						padding: 
+							top: 2px
+					&:hover, &:focus
+						box-shadow: inset 0 0 0px 1px #dcdcdc
+				.el-icon-more
+					margin: 
+						top: 10px
+				.el-pager
+					display: flex
+					align-items: baseline
+				.el-icon.more.btn-quickprev.el-icon-more
+					display: none
+				.el-pagination
+					@media (max-width: 575.98px)
+						width: 100%
+
+	.product-add::-webkit-scrollbar
+		width: 4px
+	.product-add::-webkit-scrollbar-button
+		background-color: #666
+	.product-add::-webkit-scrollbar-track
+		background-color: none
+	.product-add::-webkit-scrollbar-thumb
+		height: 100px
+		background-color: #000000
+		border-radius: 5px
+	.product-add::-webkit-scrollbar-button
+			background-color: #F8F8F8
+
+	.holiday.show
+		display: block
+
+	.holiday
+		display: none
+		position: fixed
+		overflow: auto
+		z-index: 100000
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		background-color: rgba(58, 58, 58, 0.8)
+		.container
+			background-color: #fff
+			margin:
+				top: 115px 
+				bottom: 115px
+			@media (max-width: 575.98px)
+				margin: 
+					top: 50px
+					bottom: 50px
+				width: calc(100% - 30px) !important
+			.product-add__alert.show
+			display: block
+		&__alert.show
+			display: block
+		&__alert
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			z-index: 100000
+			display: none
+			margin: 
+				left: auto
+				right: auto
+			width: 700px
+			padding: 
+				top: 14px
+				bottom: 16px
+			background-color: #e70068
+			@media (max-width: 767.98px)
+				width: calc(100% - 40px)
+			&--message
+				font-size: 15px
+				line-height: 20px
+				font-weight: 700
+				color: #ffffff
+				text-align: center
+				padding: 
+					left: 20px
+					right: 20px
+				margin: 
+					bottom: 0
+		&__close
+			position: absolute
+			width: 15px
+			height: 15px
+			top: 54px
+			right: 54px
+			cursor: pointer
+			background-repeat: no-repeat
+			background-image: url("../assets/Icons/cancel.svg")
+			@media (max-width: 767.98px)
+				top: 40px
+				right: 40px
+		&__content
+			padding: 
+				top: 110px
+				left: 12px
+				right: 12px
+				bottom: 170px
+			@media (max-width: 767.98px)
+				padding: 
+					top: 70px
+					bottom: 70px
+			@media (max-width: 575.98px)
+				padding: 
+					left: 0
+					right: 0
+		&__wrapper
+			display: flex
+			align-items: stretch
+		&__title
+			text-align: center
+			font-size: 30px
+			font-weight: 700
+			line-height: 40px
+			margin: 
+				bottom: 19px
+		&__descrition
+			text-align: center
+			margin: 
+				bottom: 80px	
+			@media (max-width: 767.98px)
+				margin: 
+					bottom: 40px
+		&__element
+			margin: 
+				bottom: 30px
+			&--default
+				.holiday__button
+					background-color: rgba(231, 0, 104, 0.5)
+				.holiday__background
+					flex-grow: 1
+					background-image: url("../assets/white.jpg")
+			&--texture	
+				.holiday__background
+					flex-grow: 1
+					background-image: url("../assets/painting_texture_package_by_lumbe_stock.jpg")
+		&__control
+			display: flex
+			flex-direction: column
+			padding: 
+				top: 110px
+			width: 294px
+			background-color: #f8f8f8
+			@media (max-width: 1199.98px)
+				width: 260px
+			@media (max-width: 575.98px)
+				width: 55%
+				padding: 
+					top: 50px
+		&__element-title
+			margin: 
+				bottom: 9px
+			font-size: 20px
+			line-height: 30px
+			font-weight: 700
+			text-align: center
+			padding: 
+				left: 20px
+				right: 20px
+			@media (max-width: 575.98px)
+				padding: 
+					left: 10px
+					right: 10px
+		&__element-price
+			text-align: center
+			padding: 
+				left: 50px
+				right: 50px
+			margin: 
+				bottom: 64px
+			@media (max-width: 575.98px)
+				margin: 
+					bottom: 40px
+		&__button
+			width: 100%
+			
+			p
+				margin: 
+					bottom: 0
+			&--icon
+				display: inline-block
+				width: 18px
+				margin: 
+					left: 13px
+				#box
+					fill: #ffffff
+			@media (max-width: 575.98px)
+				padding: 
+					left: 5px
+					right: 5px
+		&__background
+			min-height: 205px
+			background-repeat: no-repeat
+			background-size: cover
+
+	.holiday::-webkit-scrollbar
+		width: 4px
+	.holiday::-webkit-scrollbar-button
+		background-color: #666
+	.holiday::-webkit-scrollbar-track
+		background-color: none
+	.holiday::-webkit-scrollbar-thumb
+		height: 100px
+		background-color: #000000
+		border-radius: 5px
+	.holiday::-webkit-scrollbar-button
+			background-color: #F8F8F8
+
+	.postcard.show
+		display: block
+	.postcard
+		display: none
+		position: fixed
+		overflow: auto
+		z-index: 100000
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		background-color: rgba(58, 58, 58, 0.8)
+		.container
+			background-color: #fff
+			margin:
+				top: 115px 
+				bottom: 115px
+			@media (max-width: 575.98px)
+				margin: 
+					top: 50px
+					bottom: 50px
+				width: calc(100% - 30px) !important
+		&__close
+			position: absolute
+			width: 15px
+			height: 15px
+			top: 54px
+			right: 54px
+			cursor: pointer
+			background-repeat: no-repeat
+			background-image: url("../assets/Icons/cancel.svg")
+			@media (max-width: 767.98px)
+				top: 40px
+				right: 40px
+			@media (max-width: 575.98px)
+				top: 30px
+				right: 30px
+		&__content
+			padding: 
+				top: 110px
+				bottom: 84px
+			@media (max-width: 767.98px)
+				padding: 
+					top: 90px
+					bottom: 70px
+		&__form
+			display: flex
+			flex-direction: column
+			align-items: center
+			@media (max-width: 767.98px)
+				padding: 
+					left: 20px
+					right: 20px
+		&__textarea
+			width: 700px
+			border: none
+			height: 330px
+			line-height: 40px
+			margin: 
+				left: auto
+				right: auto
+			background: repeating-linear-gradient(to bottom, #ffffff,  #ffffff 40px, #c4c4c4 40px, #c4c4c4 41px)
+			@media (max-width: 991.98px) 
+				width: 550px
+			@media (max-width: 767.98px)
+				width: 100%
+
+		&__title
+			font-size: 30px
+			line-height: 40px
+			font-weight: 700
+			text-align: center
+			margin: 
+				bottom: 19px
+			@media (max-width: 991.98px) 
+				font-size: 25px
+				line-height: 35px
+		&__description
+			text-align: center
+			line-height: 20px
+			margin: 
+				bottom: 45px
+		&__button
+			min-width: 200px
+			margin: 
+				top: 55px
+		&__alert.show
+			display: block
+		&__alert
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			z-index: 100000
+			display: none
+			margin: 
+				left: auto
+				right: auto
+			width: 700px
+			padding: 
+				top: 14px
+				bottom: 16px
+			background-color: #e70068
+			@media (max-width: 767.98px)
+				width: calc(100% - 40px)
+			&--message
+				font-size: 15px
+				line-height: 20px
+				font-weight: 700
+				color: #ffffff
+				text-align: center
+				padding: 
+					left: 20px
+					right: 20px
+				margin: 
+					bottom: 0
+	.postcard::-webkit-scrollbar
+		width: 4px
+	.postcard::-webkit-scrollbar-button
+		background-color: #666
+	.postcard::-webkit-scrollbar-track
+		background-color: none
+	.postcard::-webkit-scrollbar-thumb
+		height: 100px
+		background-color: #000000
+		border-radius: 5px
+	.postcard::-webkit-scrollbar-button
+		background-color: #F8F8F8
+
+	.confirmed.show
+		display: block
+		
+	.confirmed
+		display: none
+		position: fixed
+		overflow: auto
+		z-index: 100000
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		background-color: rgba(58, 58, 58, 0.8)
+		.container
+			margin:
+				top: 115px 
+				bottom: 115px
+			@media (max-width: 575.98px)
+				margin: 
+					top: 50px
+					bottom: 50px
+				width: calc(100% - 30px) !important
+		.col
+			padding: 
+				left: 0
+				right: 0
+		&__content
+			background-color: #fff
+			margin: 
+				left: auto
+				right: auto
+			width: 700px
+			padding: 
+				left: 50px
+				right: 50px
+				top: 35px
+				bottom: 80px
+			@media (max-width: 767.98px)
+				width: 100%
+			@media (max-width: 575.98px)
+				padding: 
+					left: 30px
+					right: 30px
+					bottom: 50px
+		&__icon
+			width: 50px
+			height: 50px
+			background-image: url("../assets/Icons/present.svg")
+			background-position: 0 0
+			background-repeat: no-repeat
+			background-size: cover
+			margin: 
+				left: auto
+				right: auto
+				bottom: 16px
+		&__title
+			font-size: 30px
+			line-height: 40px
+			text-align: center
+			font-weight: 700
+			margin: 
+				bottom: 61px
+			@media (max-width: 767.98px)
+				margin: 
+					bottom: 40px
+			@media (max-width: 575.98px)
+				font-size: 25px
+				line-height: 35px
+		&__description
+			margin: 
+				bottom: 30px
+			@media (max-width: 767.98px)
+				margin: 
+					bottom: 20px
+		&__buttons
+			display: flex
+			align-items: center
+			padding: 
+				top: 30px
+				left: 43px
+			@media (max-width: 767.98px)
+				flex-direction: column
+				padding: 
+					top: 20px
+					left: 0
+
+		&__link
+			transition: all 0.2s ease
+			color: #000000
+			margin: 
+				left: 40px
+			@media (max-width: 767.98px)
+				margin: 
+					left: 0
+					top: 20px
+			&:hover, &:focus
+				color: #e70068
+				text-decoration: none
+
+	.confirmed::-webkit-scrollbar
+		width: 4px
+	.confirmed::-webkit-scrollbar-button
+		background-color: #666
+	.confirmed::-webkit-scrollbar-track
+		background-color: none
+	.confirmed::-webkit-scrollbar-thumb
+		height: 100px
+		background-color: #000000
+		border-radius: 5px
+	.confirmed::-webkit-scrollbar-button
+		background-color: #F8F8F8
 </style>
