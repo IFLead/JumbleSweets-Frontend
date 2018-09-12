@@ -5,8 +5,8 @@
     <scripts>
       <script value="build" />
     </scripts>
-    <node-interpreter value="project" />
+    <node-interpreter value="C:/Program Files/nodejs/node" />
     <envs />
-    <method v="2" />
+    <method />
   </configuration>
 </component>

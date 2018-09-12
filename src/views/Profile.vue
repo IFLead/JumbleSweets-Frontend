@@ -6,15 +6,25 @@
           <aside class="left-panel">
             <div class="left-panel__user">
               <div class="left-panel__user-wrapper">
-                <h3 class="left-panel__user-title">Здравствуйте,<br><span>Иванов Иван Иванович</span></h3>
+                <h3 class="left-panel__user-title">
+                  Здравствуйте,<br><span>Иванов Иван Иванович</span>
+                </h3>
               </div>
             </div>
             <div class="left-panel__wrapper">
               <div class="left-panel__menu">
-                <div @click="panelIndex = 1" class="left-panel__menu-element">Основная информация</div>
-                <div @click="panelIndex = 2" class="left-panel__menu-element">Мои заказы</div>
-                <div @click="panelIndex = 3" class="left-panel__menu-element">Список желаний</div>
-                <div @click="panelIndex = 4" class="left-panel__menu-element">Выйти</div>
+                <div class="left-panel__menu-element" @click="panelIndex = 1">
+                  Основная информация
+                </div>
+                <div class="left-panel__menu-element" @click="panelIndex = 2">
+                  Мои заказы
+                </div>
+                <div class="left-panel__menu-element" @click="panelIndex = 3">
+                  Список желаний
+                </div>
+                <div class="left-panel__menu-element" @click="panelIndex = 4">
+                  Выйти
+                </div>
               </div>
             </div>
           </aside>
@@ -22,31 +32,274 @@
 
         <b-col cols="8">
           <div class="panel-content">
+
             <div v-show="panelIndex === 1" class="personal-data">
-              <div class="personal-data__title title">Личный кабинет</div>
-              <div class="personal-data__subtitle">Здесь вы можете изменить или добавить свои личные данные.</div>
+              <div class="personal-data__title title">
+                Личный кабинет
+              </div>
+              <div class="personal-data__subtitle subtitle">
+                Здесь вы можете изменить или добавить свои личные данные.
+              </div>
               <div class="personal-data__personal">
                 <div class="personal-data__personal-elem">
                   <div class="personal-data__personal-label">Фамилия</div>
-                  <el-input class="personal-data__personal-field" placeholder="Иванов" v-model="input"></el-input>
+                  <el-input v-model="input" class="personal-data__personal-field" placeholder="Иванов">
+                  </el-input>
                 </div>
                 <div class="personal-data__personal-elem">
                   <div class="personal-data__personal-label">Имя</div>
-                  <el-input class="personal-data__personal-field" placeholder="Иван" v-model="input"></el-input>
+                  <el-input v-model="input" class="personal-data__personal-field" placeholder="Иван">
+                  </el-input>
                 </div>
                 <div class="personal-data__personal-elem">
                   <div class="personal-data__personal-label">Отчество</div>
-                  <el-input class="personal-data__personal-field" placeholder="Иванович" v-model="input"></el-input>
+                  <el-input v-model="input" class="personal-data__personal-field" placeholder="Иванович">
+                  </el-input>
                 </div>
                 <div class="personal-data__personal-elem">
                   <div class="personal-data__personal-label">Телефон</div>
-                  <el-input class="personal-data__personal-field" placeholder="+3805012312312" v-model="input"></el-input>
+                  <el-input v-model="input" class="personal-data__personal-field" placeholder="+3805012312312">
+                  </el-input>
                 </div>
               </div>
               <div class="personal-data__button">
                 <el-button>Сохранить изменения</el-button>
               </div>
             </div>
+
+            <div v-show="panelIndex === 2" class="orders">
+              <div class="orders__title title">Просмотр истории заказов</div>
+              <div class="orders__subtitle subtitle">
+                Мы ведём хронологию ваших покупок, чтобы вы никогда не забывали,
+                чем радовали себя и близких.
+              </div>
+
+              <div class="orders-yes">
+
+                <div class="orders-yes__elem">
+                  <div class="orders-yes__elem-picture">
+                    <div class="orders-yes__elem-picture-wrapper">
+                      <div class="orders-yes__elem-date">22 / 06 / 2018</div>
+                      <div class="orders-yes__elem-time">18:55</div>
+                    </div>
+                  </div>
+                  <div class="orders-yes__elem-content">
+                    <div class="orders-yes__elem-main">
+                      <div class="orders-yes__elem-header">
+                        <div class="orders-yes__elem-hide">
+                          <div class="orders-yes__elem-hide-label">
+                            Скрыть
+                          </div>
+                          <div class="orders-yes__elem-hide-icon">
+                            <img src="../assets/Icons/right-arrow_profile_top.svg"
+                                 width="12" height="7" alt="Скрыть">
+                          </div>
+                        </div>
+                        <div class="orders-yes__elem-repeat">
+                          <div class="orders-yes__elem-repeat-label">Повторить</div>
+                          <div class="orders-yes__elem-repeat-icon">
+                            <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
+                          </div>
+                        </div>
+                        <div class="orders-yes__elem-cost">
+                          <div class="orders-yes__elem-cost-icon">
+                            <img src="../assets/Icons/card-payment_profile.svg" width="20" height="20" alt="Цена">
+                          </div>
+                          <div class="orders-yes__elem-cost-label">6760 грн.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div v-if="isHidden === false" class="orders-yes__elem-products">
+                      <div class="orders-yes__elem-products-wrapper">
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper bold-type">Батончик Snickers</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">4 шт.</div>
+                          <div class="orders-yes__elem-products-price">60 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Шоколад Milka Sweet</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper underline">Jumble Box Light</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Шоколад Alpen Gold</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Jumble Box Light Mistery</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="orders-yes__elem">
+                  <div class="orders-yes__elem-picture">
+                    <div class="orders-yes__elem-picture-wrapper">
+                      <div class="orders-yes__elem-date">22 / 06 / 2018</div>
+                      <div class="orders-yes__elem-time">18:55</div>
+                    </div>
+                  </div>
+                  <div class="orders-yes__elem-content">
+                    <div class="orders-yes__elem-main">
+                      <div class="orders-yes__elem-header">
+                        <div class="orders-yes__elem-hide">
+                          <div class="orders-yes__elem-hide-label">Скрыть</div>
+                          <div class="orders-yes__elem-hide-icon">
+                            <img src="../assets/Icons/right-arrow_profile_top.svg" width="12" height="7" alt="Скрыть">
+                          </div>
+                        </div>
+                        <div class="orders-yes__elem-repeat">
+                          <div class="orders-yes__elem-repeat-label">Повторить</div>
+                          <div class="orders-yes__elem-repeat-icon">
+                            <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
+                          </div>
+                        </div>
+                        <div class="orders-yes__elem-cost">
+                          <div class="orders-yes__elem-cost-icon">
+                            <img src="../assets/Icons/card-payment_profile.svg" width="20" height="20" alt="Цена">
+                          </div>
+                          <div class="orders-yes__elem-cost-label">6760 грн.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div v-if="isHidden === true" class="orders-yes__elem-products">
+                      <div class="orders-yes__elem-products-wrapper">
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper bold-type">Батончик Snickers</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">4 шт.</div>
+                          <div class="orders-yes__elem-products-price">60 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Шоколад Milka Sweet</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper underline">Jumble Box Light</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Шоколад Alpen Gold</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Jumble Box Light Mistery</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="orders-yes__elem">
+                  <div class="orders-yes__elem-picture">
+                    <div class="orders-yes__elem-picture-wrapper">
+                      <div class="orders-yes__elem-date">22 / 06 / 2018</div>
+                      <div class="orders-yes__elem-time">18:55</div>
+                    </div>
+                  </div>
+                  <div class="orders-yes__elem-content">
+                    <div class="orders-yes__elem-main">
+                      <div class="orders-yes__elem-header">
+                        <div class="orders-yes__elem-hide">
+                          <div class="orders-yes__elem-hide-label">Скрыть</div>
+                          <div class="orders-yes__elem-hide-icon">
+                            <img src="../assets/Icons/right-arrow_profile_top.svg" width="12" height="7" alt="Скрыть">
+                          </div>
+                        </div>
+                        <div class="orders-yes__elem-repeat">
+                          <div class="orders-yes__elem-repeat-label">Повторить</div>
+                          <div class="orders-yes__elem-repeat-icon">
+                            <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
+                          </div>
+                        </div>
+                        <div class="orders-yes__elem-cost">
+                          <div class="orders-yes__elem-cost-icon">
+                            <img src="../assets/Icons/card-payment_profile.svg" width="20" height="20" alt="Цена">
+                          </div>
+                          <div class="orders-yes__elem-cost-label">6760 грн.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div v-if="isHidden === true" class="orders-yes__elem-products">
+                      <div class="orders-yes__elem-products-wrapper">
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper bold-type">Батончик Snickers</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">4 шт.</div>
+                          <div class="orders-yes__elem-products-price">60 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Шоколад Milka Sweet</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper underline">Jumble Box Light</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Шоколад Alpen Gold</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                        <div class="orders-yes__elem-products-product">
+                          <div class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Jumble Box Light Mistery</div>
+                          </div>
+                          <div class="orders-yes__elem-products-number">1 шт.</div>
+                          <div class="orders-yes__elem-products-price">150 грн.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
           </div>
         </b-col>
 
@@ -58,19 +311,23 @@
 </template>
 
 <script>
-    export default {
-      name: "Profile",
-      components: {
-      },
-      data() {
-        return {
-          panelIndex: 1
-        }
-      },
-    }
+export default {
+  name: 'Profile',
+  components: {
+  },
+  data() {
+    return {
+      panelIndex: 1,
+      isHidden: false,
+    };
+  },
+};
 </script>
 
 <style lang="sass">
+
+.subtitle
+  color: #707070
 
 .profile
   font-family: ProximaNova
@@ -142,8 +399,11 @@
       color: #ffffff
       cursor: pointer
 
-.personal-data
+
+.panel-content
   padding-left: 30px
+
+.personal-data
 
   &__title
     margin:
@@ -151,7 +411,6 @@
       top: 15px
 
   &__subtitle
-    color: #707070
     margin:
       bottom: 88px
 
@@ -204,6 +463,133 @@
       background-position: right 30px top 14px
       padding:
         right: 60px
+
+
+.orders
+
+  &__title
+    margin:
+      bottom: 27px
+      top: 15px
+
+  &__subtitle
+    margin:
+      bottom: 50px
+
+.orders-yes
+
+  &__elem
+    display: flex
+    margin:
+      bottom: 40px
+    &:last-of-type
+      margin:
+        bottom: 0px
+
+  &__elem-picture
+    max-width: 160px
+    background-image: url("../assets/glass_back.jpg")
+    background-position: -190px 0px
+    background-size: cover
+    background-repeat: no-repeat
+    position: relative
+    background-color: grey
+    padding:
+      left: 25px
+      right: 30px
+      top: 20px
+      bottom: 20px
+    &:after
+      content: ''
+      z-index: 1
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      background-color: rgba(255, 250, 185, 0.7)
+
+  &__elem-picture-wrapper
+    position: relative
+    z-index: 100
+
+  &__elem-date
+    font-weight: 700
+    margin:
+      bottom: 5px
+
+  &__elem-time
+    font-weight: 700
+    font-size: 25px
+    line-height: 30px
+
+  &__elem-content
+    min-width: 564px
+
+  &__elem-header
+    min-height: 100px
+    padding-right: 35px
+    padding-left: 35px
+    justify-content: space-between
+    align-items: center
+    background-color: #000000
+    display: flex
+    color: #ffffff
+
+  &__elem-hide
+    display: flex
+
+  &__elem-hide-icon
+    margin-left: 12px
+
+  &__elem-repeat
+    display: flex
+
+  &__elem-repeat-icon
+    margin-left: 12px
+
+  &__elem-cost
+    display: flex
+    height: 60px
+    align-items: center
+    padding-left: 55px
+    border-left: 1px solid rgba(255, 255, 255, .3)
+
+  &__elem-cost-label
+    font-weight: 700
+    font-size: 25px
+    line-height: 30px
+
+  &__elem-cost-icon
+    margin-right: 12px
+
+  &__elem-products
+    background-color: #f8f8f8
+    padding:
+      left: 35px
+      right: 35px
+      top: 30px
+      bottom: 50px
+
+  &__elem-products-wrapper
+    width: 494px
+
+  &__elem-products-product
+    display: flex
+    justify-content: space-between
+    padding-bottom: 15px
+
+  &__elem-products-name
+    width: 170px
+
+  &__elem-products-name-wrapper
+    display: inline-block
+
+  .underline
+    border-bottom: 1px dashed #E70068
+
+  .bold-type
+    font-weight: 700
 
 
 </style>
