@@ -1,0 +1,970 @@
+<template>
+	<div class="Cart">
+		<section class="basket">
+			<b-container>
+				<b-row>
+					<b-col cols="12">
+						<div class="basket__wrapper">
+							<div class="basket__content">
+								<h2 class="basket__title">Корзина покупок</h2>
+								<p class="basket__description">Товары, отложенные в корзину, хранятся 30 дней с момента добавления. В течение этого времени вы сможете зайти в свой аккаунт, выбрать товар и оформить заказ.</p>
+							</div>
+						</div>
+					</b-col>
+				</b-row>
+			</b-container>
+		</section>
+
+		<section class="purchases">
+			<b-container>
+				<b-row>
+					<b-col cols="12" class="purchases__control control">
+						<div class="control__content">
+							<h2 class="control__title">Моя корзина</h2>
+							<a href="#" class="control__link control__link--like">Добавить всё в список желания
+								<span>
+									<svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+										viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+									<g>
+										<g id="favorite">
+											<path d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+												C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/>
+										</g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									</svg>
+								</span>
+							</a>
+							<a href="#" class="control__link control__link--delete">Очистить корзину
+								<span>
+									<svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+										 viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;" xml:space="preserve">
+									<g>
+										<g id="delete">
+											<path d="M76.5,408c0,28.05,22.95,51,51,51h204c28.05,0,51-22.95,51-51V102h-306V408z M408,25.5h-89.25L293.25,0h-127.5l-25.5,25.5
+												H51v51h357V25.5z"/>
+										</g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									</svg>
+								</span>
+							</a>
+						</div>
+					</b-col>
+
+					<b-col cols="12" class="purchases__element element">
+						<div class="element__content">
+							<a href="#" class="element__link">
+								<div class="element__photo">
+									<img src="../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="батончик Snickers" width="190" height="56">
+								</div>
+							</a>
+							<div class="element__information">
+								<a href="#" class="element__name">Название товара</a>
+								<div class="element__contrlos">
+									<div class="element__col">
+										<template>
+											<el-input-number v-model="num1" @change="handleChange" :min="1" :max="10"></el-input-number>
+										</template>
+									</div>
+									<p class="element__price">2500 грн.</p>
+									<a href="#" class="element__delete">Удалить</a>
+								</div>
+							</div>
+						</div>
+					</b-col>
+
+					<b-col cols="12" class="purchases__element element">
+						<div class="element__content">
+							<a href="#" class="element__link">
+								<div class="element__photo">
+									<img src="../assets/cocacola_PNG22.png" alt="Coca-cola" width="183" height="121">
+								</div>
+							</a>
+							<div class="element__information">
+								<a href="#" class="element__name">Название товара</a>
+								<div class="element__contrlos">
+									<div class="element__col">
+										<template>
+											<el-input-number v-model="num1" @change="handleChange" :min="1" :max="10"></el-input-number>
+										</template>
+									</div>
+								<p class="element__price">2500 грн.</p>
+								<a href="#" class="element__delete">Удалить</a>
+								</div>
+							</div>
+						</div>
+					</b-col>
+
+					<b-col cols="12" class="purchases__element element">
+						<div class="element__content">
+							<a href="#" class="element__link">
+								<div class="element__photo">
+									<img src="../assets/milka.png" alt="Milka" width="157" height="157">
+								</div>
+							</a>
+							<div class="element__information">
+								<a href="#" class="element__name">Название товара</a>
+								<div class="element__contrlos">
+									<div class="element__col">
+										<template>
+											<el-input-number v-model="num1" @change="handleChange" :min="1" :max="10"></el-input-number>
+										</template>
+									</div>
+									<p class="element__price">2500 грн.</p>
+									<a href="#" class="element__delete">Удалить</a>
+								</div>
+							</div>	
+						</div>
+					</b-col>
+					<b-col cols="12" class="purchases__total total">
+						<div class="total__content">
+							<a href="#" class="total__promo">У меня есть промокод на скидку</a>
+							<p class="total__price">Сумма: <span>7000 грн.</span></p>
+							<el-button class="total__button">Перейти к оформлению 
+								<span class="total__button--icon">
+									<svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+										viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+									<g>
+										<g>
+											<path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+												c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
+												c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
+												c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
+										</g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									</svg>
+								</span>
+							</el-button>
+						</div>
+					</b-col>
+				</b-row>
+			</b-container>
+		</section>
+
+		<section class="alerts">
+			<div class="alerts__element alerts__element--basket">
+				<p>Корзина очищена</p>
+			</div>
+
+			<div class="alerts__element alerts__element--products">
+				<p>Мы перенесли все товары в список желаний</p>
+			</div>
+		</section>
+
+		<section class="modals">
+			<div class="modals__clean clean">
+				<div class="clean__content">
+					<div class="clean__icon"></div>
+					<h3 class="clean__title">Очистка корзины</h3>
+					<p class="clean__description">Мы удалим весь товар из вашей корзины, точно этого хотите?</p>
+					<div class="clean__buttons">
+						<el-button class="clean__button">Очистить корзину</el-button>
+						<a href="#" class="clean__link">Нет, не надо</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="modals__favourite favourite">
+				<div class="favourite__content">
+					<div class="favourite__icon"></div>
+					<h3 class="favourite__title">В список желаемого</h3>
+					<p class="favourite__description">С радостью перенесем содержимое корзины в список желаний, вы согласны?</p>
+					<div class="favourite__buttons">
+						<el-button class="favourite__button">Да, конечно</el-button>
+						<a href="#" class="favourite__link">Нет, оставьте всё в корзине</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="modals__sale sale">
+				<div class="sale__content">
+					<div class="sale__close"></div>
+					<h3 class="sale__title">Промокод на скидку</h3>
+					<p class="sale__description">Для получения нужно ввести промокод в специальное поле и нажать "Использовать". После этого стоимость товара пересчитается со скидкой.</p>
+					<div class="sale__wrapper">
+						<el-input class="sale__promo" placeholder="Введите промокод"></el-input>
+					</div>
+					<p class="sale__alert show">*Извините, промокод недействителен</p>
+					<div class="sale__buttons">
+						<el-button class="sale__button">Использовать</el-button>
+						<a href="#" class="sale__link">Отмена</a>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		
+	</div>
+</template>
+
+<script>
+    export default {     
+			data() {
+				return {
+       	  num1: 1,
+					input: ''
+     		};
+			},	
+		};
+</script>
+
+<style lang="sass">
+.Cart
+	.basket
+		position: relative
+		&__wrapper
+			position: relative
+			background-image: url("../assets/laura-marques-647991-unsplash.jpg")
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: 0 center
+			&::after
+				content: ''
+				position: absolute
+				z-index: 10
+				top: 0
+				left: 0
+				bottom: 0
+				right: 0
+				background-color: rgba(0, 0, 0, 0.6)
+		&__content
+			position: relative
+			z-index: 1000
+			color: #ffffff
+			padding: 
+				left: 70px
+				top: 44px
+				bottom: 125px
+			@media (max-width: 991.98px)
+				padding: 
+					left: 50px
+					bottom: 100px
+			@media (max-width: 767.98px)
+				padding: 
+					left: 30px
+					right: 20px
+					bottom: 70px
+		&__title
+			font-size: 30px
+			line-height: 40px
+			font-weight: 700
+			margin: 
+				bottom: 41px
+			width: 400px
+			@media (max-width: 991.98px)
+				margin: 
+					bottom: 30px
+			@media (max-width: 767.98px)
+				width: 100%
+		&__description
+			width: 950px
+			line-height: 25px
+			margin:
+				bottom: 0
+			@media (max-width: 1199.98px)
+				width: 700px
+			@media (max-width: 991.98px)
+				width: 550px
+			@media (max-width: 767.98px)
+				width: 100%
+
+	.purchases
+		.control
+			margin: 
+				bottom: 41px
+			&__content
+				padding: 
+					top: 46px
+				display: flex
+				align-items: center
+				@media (max-width: 991.98px)
+					justify-content: space-between
+				@media (max-width: 767.98px)
+					flex-direction: column
+					align-items: flex-start
+			&__title
+				font-size: 30px
+				line-height: 40px
+				font-weight: 700
+				margin: 
+					bottom: 0
+					right: 98px
+				@media (max-width: 991.98px)
+					margin: 
+						right: 0
+				@media (max-width: 767.98px)
+					margin: 
+						bottom: 10px
+			&__link 
+				transition: all 0.2s ease
+				color: #000000
+				opacity: 0.5
+				&:hover, &:focus
+					opacity: 1
+					text-decoration: none
+				&--like
+					margin: 
+						right: 133px
+					@media (max-width: 991.98px)
+						margin: 
+							right: 0
+					@media (max-width: 767.98px)
+						margin: 
+							bottom: 8px
+					span
+						display: inline-block
+						width: 21.74px
+						height: 20px
+						margin: 
+							left: 17px
+						.icon	
+							fill: #e70068
+				&--delete
+					span
+						display: inline-block
+						width: 20px
+						height: 20px
+						margin: 
+							left: 15px
+						.icon		
+							margin: 
+								top: -2px
+							fill: #e70068
+	.element
+		margin: 
+			bottom: 30px
+		&__link
+			background-color: #f8f8f8
+			width: 264px
+			height: 160px
+			display: flex
+			@media (max-width: 767.98px)
+				width: 350px
+				height: 200px
+			@media (max-width: 575.98px)
+				width: 100%
+			&:hover, &:focus
+				text-decoration: none
+		&__information
+			display: flex
+			flex-grow: 1
+			justify-content: space-between
+			@media (max-width: 991.98px)
+				flex-wrap: wrap
+		&__photo
+			display: inline-block
+			margin: 
+				top: auto
+				bottom: auto
+				left: auto
+				right: auto
+		&__content
+			display: flex
+			align-items: flex-start
+			@media (max-width: 767.98px)
+				flex-wrap: wrap
+		&__name
+			transition: all 0.2s ease
+			color: #000000
+			line-height: 20px
+			margin: 
+				top: 6px
+				left: 31px
+				right: auto
+			&:hover, &:focus
+				text-decoration: none
+				color: #e70068
+			@media (max-width: 991.98px)
+				margin: 
+					right: 0
+					left: 31px
+			@media (max-width: 767.98px)
+				margin: 
+					top: 20px
+					left: 0
+					right: 100px
+		&__col
+			margin: 
+				right: 45px
+			@media (max-width: 991.98px)
+				margin: 
+					right: 0
+			.el-input-number
+				width: 152px
+			.el-input__inner
+				color: #000000
+				font-size: 20px
+				line-height: 30px
+				border: 1px solid #f8f8f8
+				width: 152px
+				padding: 
+					top: 9px
+					bottom: 14px
+					left: 20px
+					right: 20px
+				height: 50px
+			.el-input-number__decrease
+				top: 10px
+				left: 20px
+				background-color: transparent
+				border: none
+			.el-input-number__increase
+				top: 10px
+				right: 20px
+				background-color: transparent
+				border: none
+		&__price
+			font-size: 18px
+			line-height: 24px
+			margin: 
+				right: 74px
+				bottom: 0
+			@media (max-width: 991.98px)
+				margin: 
+					right: 0
+		&__delete
+			color: #e70068
+			line-height: 20px
+			&:hover, &:focus
+				text-decoration: none
+		&__contrlos
+			margin: 
+				top: 9px
+				right: 55px
+			display: flex
+			align-items: center
+			@media (max-width: 1199.98px)
+				margin: 
+					right: 0
+			@media (max-width: 991.98px)
+				width: 350px
+				justify-content: space-between
+				margin: 
+					top: 20px
+					left: 31px
+			@media (max-width: 767.98px)
+				margin: 
+					top: 15px
+					left: 0
+			@media (max-width: 575.98px)
+				width: 100%
+	.total
+		&__content
+			padding:
+				top: 70px
+				bottom: 50px
+			display: flex
+			align-items: center	
+			@media (max-width: 991.98px)
+				justify-content: space-between
+			@media (max-width: 767.98px)
+				flex-wrap: wrap
+			@media (max-width: 575.98px)
+				flex-direction: column
+				align-items: flex-start
+				padding: 
+					top: 40px
+		&__button
+			&--icon
+				display: inline-block
+				width: 12px
+				height: 12px
+				margin: 
+					left: 5px
+				.icon
+					margin: 
+						top: -2px
+					fill: #ffffff
+			@media (max-width: 767.98px)
+				margin: 
+					top: 20px
+		&__promo
+			transition: all 0.2s ease
+			display: inline-block
+			padding: 
+				bottom: 8.5px
+			color: #000000
+			border-bottom: 1px dashed #e70068
+			margin: 
+				left: 24px
+				right: auto
+			@media (max-width: 991.98px)
+				margin: 
+					right: 0
+					left: 0
+			@media (max-width: 575.98px)
+				margin: 
+					bottom: 20px	
+			&:hover, &:focus
+				color: #e70068
+				text-decoration: none
+		&__price
+			font-weight: 700
+			font-size: 20px
+			line-height: 27px
+			margin: 
+				bottom: 0
+				right: 40px
+			span
+				display: inline-block
+				margin: 
+					left: 12px
+			@media (max-width: 991.98px)
+				margin: 
+					right: 0
+		&__button
+			margin:
+				right: 34px
+			@media (max-width: 991.98px)
+				margin: 
+					right: 0
+
+	.alerts
+		&__element
+			display: none	
+			position: fixed
+			z-index: 10000
+			top: 0
+			left: 0
+			right: 0
+			margin: 
+				left: auto
+				right: auto
+			width: 700px
+			background-color: #e70068
+			color: #ffffff
+			@media (max-width: 767.98px)
+				width: calc(100% - 60px)
+				margin: 
+					left: 30px
+					right: 30px
+			&--basket.show
+				display: block
+			&--products.show
+				display: block
+			p
+				text-align: center
+				line-height: 20px
+				padding: 
+					top: 14px
+					bottom: 16px
+					left: 10px
+					right: 10px
+				margin: 
+					bottom: 0
+
+	.modals
+		display: flex
+		align-items: center
+		.clean.show
+			display: block
+		.clean
+			display: none
+			&__content	
+				position: fixed
+				z-index: 10000
+				width: 600px
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				height: 400px
+				padding: 
+					top: 35px
+					bottom: 50px
+				margin: 
+					top: auto
+					bottom: auto
+					left: auto
+					right: auto
+				background-color: #fff
+				@media (max-width: 767.98px)
+					width: 500px
+				@media (max-width: 575.98px)
+					width: calc(100% - 60px)
+					padding: 
+						left: 10px
+						right: 10px
+			&__title
+				font-size: 30px
+				line-height: 40px
+				font-weight: 700
+				text-align: center
+				margin: 
+					bottom: 50px
+				@media (max-width: 575.98px)
+					font-size: 25px
+					line-height: 35px
+					margin: 
+						bottom: 40px
+			&__description
+				text-align: center
+				margin: 
+					bottom: 90px
+				@media (max-width: 575.98px)
+					margin: 
+						bottom: 50px
+			&__link
+				transition: all 0.2s ease
+				color: #000000
+				&:hover, &:focus
+					text-decoration: none
+					color: #e70068
+			&__button
+				margin: 
+					right: 50px
+				@media (max-width: 575.98px)
+					margin: 
+						right: 0
+						bottom: 15px
+			&__buttons
+				display: flex
+				justify-content: center
+				align-items: center
+				margin: 
+					left: auto
+					right: auto
+				@media (max-width: 575.98px)
+					flex-direction: column
+			&__icon
+				width: 50px
+				height: 50px
+				background-image: url("../assets/Icons/rubbish-bin-delete-button.svg")
+				background-repeat: no-repeat
+				background-size: cover
+				margin:
+					left: auto
+					right: auto
+					bottom: 16px
+
+			&::before
+				z-index: 1000
+				content: ''
+				position: fixed
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				background-color: rgba(0, 0, 0, 0.8)
+
+		.favourite.show
+			display: block
+		.favourite
+			display: none
+			&__content	
+				position: fixed
+				z-index: 10000
+				width: 600px
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				height: 400px
+				padding: 
+					top: 35px
+					bottom: 50px
+				margin: 
+					top: auto
+					bottom: auto
+					left: auto
+					right: auto
+				background-color: #fff
+				@media (max-width: 767.98px)
+					width: 500px
+				@media (max-width: 575.98px)
+					width: calc(100% - 60px)
+					padding: 
+						left: 10px
+						right: 10px
+			&__title
+				font-size: 30px
+				line-height: 40px
+				font-weight: 700
+				text-align: center
+				margin: 
+					bottom: 50px
+				@media (max-width: 575.98px)
+					font-size: 25px
+					line-height: 35px
+					margin: 
+						bottom: 40px
+			&__description
+				width: 450px
+				text-align: center
+				margin: 
+					left: auto
+					right: auto
+					bottom: 60px
+				@media (max-width: 575.98px)
+					width: 100%
+					margin: 
+						bottom: 40px
+			&__link
+				transition: all 0.2s ease
+				color: #000000
+				&:hover, &:focus
+					text-decoration: none
+					color: #e70068
+			&__button
+				margin: 
+					right: 50px
+				@media (max-width: 575.98px)
+					margin: 
+						right: 0
+						bottom: 15px
+			&__buttons
+				display: flex
+				justify-content: center
+				align-items: center
+				margin: 
+					left: auto
+					right: auto
+				@media (max-width: 575.98px)
+					flex-direction: column
+			&__icon
+				width: 55px
+				height: 55px
+				background-image: url("../assets/Icons/favorite-heart-button.svg")
+				background-repeat: no-repeat
+				background-size: cover
+				margin:
+					left: auto
+					right: auto
+					bottom: 16px
+
+			&::before
+				z-index: 1000
+				content: ''
+				position: fixed
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				background-color: rgba(0, 0, 0, 0.8)
+
+		.sale.show
+			display: block
+		.sale
+			display: none
+			&__content	
+				position: fixed
+				z-index: 10000
+				width: 600px
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				height: 600px
+				padding: 
+					top: 106px
+					bottom: 50px
+				margin: 
+					top: auto
+					bottom: auto
+					left: auto
+					right: auto
+				background-color: #fff
+				@media (max-width: 767.98px)
+					width: 550px
+					height: 550px
+				@media (max-width: 575.98px)
+					width: calc(100% - 60px)
+					height: 450px
+					padding: 
+						top: 40px
+						left: 10px
+						right: 10px
+			&__close
+				width: 15px
+				height: 15px
+				cursor: pointer
+				position: absolute
+				top: 54px
+				right: 54px
+				background-image: url(../assets/Icons/cancel.svg)
+				background-size: cover
+				background-repeat: no-repeat
+				@media (max-width: 575.98px)
+					top: 20px
+					right: 20px
+			&__title
+				font-size: 30px
+				line-height: 40px
+				font-weight: 700
+				text-align: center
+				margin: 
+					bottom: 19px
+				@media (max-width: 575.98px)
+					font-size: 25px
+					line-height: 35px
+					margin: 
+						bottom: 15px
+			&__wrapper
+				padding: 
+					left: 33px
+					right: 33px
+			&__promo.el-input
+				width: 100%		
+				.el-input__inner
+					padding: 
+						left: 5px
+						bottom: 10px
+					border: none
+					border-bottom: 1px solid #c4c4c4
+					font-size: 15px
+					line-height: 20px
+					color: #DCDCDC
+					&::placeholder
+						font-size: 15px
+						line-height: 20px
+						color: #DCDCDC
+			&__description	
+				width: 470px
+				text-align: center
+				margin: 
+					left: auto
+					right: auto
+					bottom: 40px
+				@media (max-width: 575.98px)
+					width: 100%
+
+			&__alert
+				transition: all 0.2s ease
+				line-height: 20px
+				color: #e70068
+				margin: 
+					bottom: 0
+				opacity: 0
+				margin: 
+					left: 33px
+					top: 43px
+				@media (max-width: 575.98px)
+					margin: 
+						top: 30px
+			&__alert.show
+				opacity: 1
+			&__link
+				transition: all 0.2s ease
+				color: #000000
+				margin: 
+					left: 47px
+					right: 44px
+				&:hover, &:focus
+					text-decoration: none
+					color: #e70068
+				@media (max-width: 575.98px)
+					margin: 
+						right: 10px
+						left: 30px
+			&__buttons
+				display: flex
+				justify-content: flex-end
+				align-items: center
+				margin: 
+					top: 124px
+				@media (max-width: 767.98px)
+					margin: 
+						top: 90px
+				@media (max-width: 575.98px)
+					margin: 
+						top: 50px
+			&::before
+				z-index: 1000
+				content: ''
+				position: fixed
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				background-color: rgba(0, 0, 0, 0.8)
+
+</style>

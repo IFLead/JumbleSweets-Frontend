@@ -9,6 +9,7 @@ import Item from './views/Item.vue';
 import JumbleBoxPackage from './views/JumbleBoxPackage.vue';
 import Profile from './views/Profile.vue';
 import JumbleBoxConstructor from './views/JumbleBoxConstructor.vue';
+import Cart from './views/Cart.vue';
 
 
 Vue.use(Router);
@@ -61,6 +62,11 @@ export default new Router({
       path: '/JumbleBoxConstructor',
       name: 'JumbleBoxConstructor',
       component: JumbleBoxConstructor,
+    },
+    {
+      path: '/Cart',
+      name: 'Cart',
+      component: Cart,
     },
     // {
     //   path: '/about',

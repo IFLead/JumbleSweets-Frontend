@@ -839,7 +839,7 @@
 			</b-container>
 		</section>
 
-		<section class="confirmed show">
+		<section class="confirmed">
 			<b-container>
 				<b-row>
 					<b-col>
