@@ -1,738 +1,506 @@
 <template>
   <div class="home">
-      <main>
-        <section class="about-company">
-          <b-container>
-            <b-row>
-              <b-col cols="12" md="8" lg="9" class="about-company__description description">
-                <el-carousel :interval="5000" arrow="never" trigger="click">
-                  <el-carousel-item>
-                    <div class="description__wrapper">
-                      <b class="description__title">Вселенские сладости</b>
-                      <p class="description__text">
-                        Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
-                      </p>
-                      <p class="description__text">
-                        Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным презентом и, несомненно, подарит получателю массу положительных эмоций.
-                      </p>
-                      <el-button class="description__button">Посмотреть каталог</el-button>
-                    </div>
-                  </el-carousel-item>
-                  <el-carousel-item>
-                    <div class="description__wrapper">
-                      <b class="description__title">Вселенские сладости 2</b>
-                      <p class="description__text">
-                        Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
-                      </p>
-                      <p class="description__text">
-                        Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным презентом и, несомненно, подарит получателю массу положительных эмоций.
-                      </p>
-                      <el-button class="description__button">Посмотреть каталог</el-button>
-                    </div>
-                  </el-carousel-item>
-                  <el-carousel-item>
-                    <div class="description__wrapper">
-                      <b class="description__title">Вселенские сладости 3</b>
-                      <p class="description__text">
-                        Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
-                      </p>
-                      <p class="description__text">
-                        Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным презентом и, несомненно, подарит получателю массу положительных эмоций.
-                      </p>
-                      <el-button class="description__button">Посмотреть каталог</el-button>
-                    </div>
-                  </el-carousel-item>
-                </el-carousel>
-              </b-col>
-              <b-col cols="12" md="4" lg="3" class="about-company__information information">
-                <div class="information__news news">
-                  <ul class="news__actions">
-                    <li class="news__element">
-											<p class="news__action">01.08.2018 был добавлен</p>
-											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                    </li>
-										<li class="news__element">
-											<p class="news__action">01.08.2018 был добавлен</p>
-											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                    </li>
-										<li class="news__element">
-											<p class="news__action">01.08.2018 был добавлен</p>
-											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                    </li>
-										<li class="news__element">
-											<p class="news__action">01.08.2018 был добавлен</p>
-											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                    </li>
-										<li class="news__element">
-											<p class="news__action">01.08.2018 был добавлен</p>
-											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                    </li>
-										<li class="news__element">
-											<p class="news__action">01.08.2018 был добавлен</p>
-											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                    </li>
-										<li class="news__element">
-											<p class="news__action">01.08.2018 был добавлен</p>
-											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                    </li>
-										<li class="news__element">
-											<p class="news__action">01.08.2018 был добавлен</p>
-											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                    </li>
-										<li class="news__element">
-											<p class="news__action">01.08.2018 был добавлен</p>
-											<a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                    </li>
-                  </ul>
-                  <a href="#" class="news__link">Ещё новости</a>
+    <main>
+      <section class="about-company">
+        <b-container>
+          <b-row>
+            <b-col cols="12" md="8" lg="9" class="about-company__description description">
+              <el-carousel :interval="5000" arrow="never" trigger="click">
+                <el-carousel-item>
+                  <div class="description__wrapper">
+                    <b class="description__title">Вселенские сладости</b>
+                    <p class="description__text">
+                      Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
+                    </p>
+                    <p class="description__text">
+                      Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным
+                      презентом и, несомненно, подарит получателю массу положительных эмоций.
+                    </p>
+                    <el-button class="description__button">Посмотреть каталог</el-button>
+                  </div>
+                </el-carousel-item>
+                <el-carousel-item>
+                  <div class="description__wrapper">
+                    <b class="description__title">Вселенские сладости 2</b>
+                    <p class="description__text">
+                      Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
+                    </p>
+                    <p class="description__text">
+                      Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным
+                      презентом и, несомненно, подарит получателю массу положительных эмоций.
+                    </p>
+                    <el-button class="description__button">Посмотреть каталог</el-button>
+                  </div>
+                </el-carousel-item>
+                <el-carousel-item>
+                  <div class="description__wrapper">
+                    <b class="description__title">Вселенские сладости 3</b>
+                    <p class="description__text">
+                      Доставляем самые разные сладости и напитки из Европы, Азии и США прямо к Вам домой.
+                    </p>
+                    <p class="description__text">
+                      Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным
+                      презентом и, несомненно, подарит получателю массу положительных эмоций.
+                    </p>
+                    <el-button class="description__button">Посмотреть каталог</el-button>
+                  </div>
+                </el-carousel-item>
+              </el-carousel>
+            </b-col>
+            <b-col cols="12" md="4" lg="3" class="about-company__information information">
+              <div class="information__news news">
+                <ul class="news__actions">
+                  <li class="news__element">
+                    <p class="news__action">01.08.2018 был добавлен</p>
+                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                  </li>
+                  <li class="news__element">
+                    <p class="news__action">01.08.2018 был добавлен</p>
+                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                  </li>
+                  <li class="news__element">
+                    <p class="news__action">01.08.2018 был добавлен</p>
+                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                  </li>
+                  <li class="news__element">
+                    <p class="news__action">01.08.2018 был добавлен</p>
+                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                  </li>
+                  <li class="news__element">
+                    <p class="news__action">01.08.2018 был добавлен</p>
+                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                  </li>
+                  <li class="news__element">
+                    <p class="news__action">01.08.2018 был добавлен</p>
+                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                  </li>
+                  <li class="news__element">
+                    <p class="news__action">01.08.2018 был добавлен</p>
+                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                  </li>
+                  <li class="news__element">
+                    <p class="news__action">01.08.2018 был добавлен</p>
+                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                  </li>
+                  <li class="news__element">
+                    <p class="news__action">01.08.2018 был добавлен</p>
+                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                  </li>
+                </ul>
+                <a href="#" class="news__link">Ещё новости</a>
+              </div>
+              <div class="information__contact contact">
+                <p class="contact__phone">
+                  <span>
+                    <svg class="contact__phone--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19.987">
+                      <g id="phone-receiver" transform="translate(0 -0.188)">
+                        <g id="Group_42" data-name="Group 42" transform="translate(0 0.188)">
+                          <path id="Path_28" data-name="Path 28" class="cls-1"
+                                d="M19.99,15.962a.967.967,0,0,1-.3.847L16.878,19.6a1.585,1.585,0,0,1-.5.36,2.056,2.056,0,0,1-.6.191q-.021,0-.127.011t-.275.011a9.761,9.761,0,0,1-1.3-.138,9.889,9.889,0,0,1-2.2-.678,18.483,18.483,0,0,1-2.954-1.62A22.021,22.021,0,0,1,5.4,14.776a23.2,23.2,0,0,1-2.456-2.795A19.913,19.913,0,0,1,1.38,9.515,13.285,13.285,0,0,1,.49,7.461a10.9,10.9,0,0,1-.4-1.588A5.244,5.244,0,0,1,0,4.825Q.025,4.444.025,4.4a2.058,2.058,0,0,1,.191-.6,1.587,1.587,0,0,1,.36-.5L3.391.484a.933.933,0,0,1,.678-.3.79.79,0,0,1,.487.159,1.472,1.472,0,0,1,.36.392l2.265,4.3a1.03,1.03,0,0,1,.106.741,1.32,1.32,0,0,1-.36.678L5.89,7.493a.353.353,0,0,0-.074.138.522.522,0,0,0-.032.159,3.823,3.823,0,0,0,.381,1.016,9.329,9.329,0,0,0,.783,1.239,13.752,13.752,0,0,0,1.5,1.683,14.025,14.025,0,0,0,1.694,1.514,9.782,9.782,0,0,0,1.239.794,3.292,3.292,0,0,0,.762.307l.265.053a.5.5,0,0,0,.138-.032.354.354,0,0,0,.138-.074l1.207-1.228a1.3,1.3,0,0,1,.889-.339,1.106,1.106,0,0,1,.572.127h.021l4.086,2.414A1.065,1.065,0,0,1,19.99,15.962Z"
+                                transform="translate(0 -0.188)"/>
+                        </g>
+                      </g>
+                    </svg>
+
+                  </span>
+                  +38(050)-666-66-66
+                </p>
+                <p class="contact__email">help@jumble-sweets.com.ua</p>
+                <p class="contact__address">г. Харьков, Героев труда 7,
+                ТРЦ Караван</p>
+                <a href="#" class="contact__link">Мы в Instagram</a>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
+
+      <section class="category">
+        <b-container>
+          <b-row>
+            <b-col cols="12">
+              <h2 class="category__title">Популярные категории товаров</h2>
+            </b-col>
+            <b-col sm="6" lg="3" class="category__element">
+              <a href="#">
+                <div class=" category__element-candybar">
+                  <h3 class="category__element-title">Батончики</h3>
                 </div>
-                <div class="information__contact contact">
-                  <p class="contact__phone">
-										<span>
-											<svg class="contact__phone--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19.987">
-												<g id="phone-receiver" transform="translate(0 -0.188)">
-													<g id="Group_42" data-name="Group 42" transform="translate(0 0.188)">
-														<path id="Path_28" data-name="Path 28" class="cls-1" d="M19.99,15.962a.967.967,0,0,1-.3.847L16.878,19.6a1.585,1.585,0,0,1-.5.36,2.056,2.056,0,0,1-.6.191q-.021,0-.127.011t-.275.011a9.761,9.761,0,0,1-1.3-.138,9.889,9.889,0,0,1-2.2-.678,18.483,18.483,0,0,1-2.954-1.62A22.021,22.021,0,0,1,5.4,14.776a23.2,23.2,0,0,1-2.456-2.795A19.913,19.913,0,0,1,1.38,9.515,13.285,13.285,0,0,1,.49,7.461a10.9,10.9,0,0,1-.4-1.588A5.244,5.244,0,0,1,0,4.825Q.025,4.444.025,4.4a2.058,2.058,0,0,1,.191-.6,1.587,1.587,0,0,1,.36-.5L3.391.484a.933.933,0,0,1,.678-.3.79.79,0,0,1,.487.159,1.472,1.472,0,0,1,.36.392l2.265,4.3a1.03,1.03,0,0,1,.106.741,1.32,1.32,0,0,1-.36.678L5.89,7.493a.353.353,0,0,0-.074.138.522.522,0,0,0-.032.159,3.823,3.823,0,0,0,.381,1.016,9.329,9.329,0,0,0,.783,1.239,13.752,13.752,0,0,0,1.5,1.683,14.025,14.025,0,0,0,1.694,1.514,9.782,9.782,0,0,0,1.239.794,3.292,3.292,0,0,0,.762.307l.265.053a.5.5,0,0,0,.138-.032.354.354,0,0,0,.138-.074l1.207-1.228a1.3,1.3,0,0,1,.889-.339,1.106,1.106,0,0,1,.572.127h.021l4.086,2.414A1.065,1.065,0,0,1,19.99,15.962Z" transform="translate(0 -0.188)"/>
-													</g>
-												</g>
-											</svg>
-
-										</span>
-									+38(050)-666-66-66</p>
-                  <p class="contact__email">help@jumble-sweets.com.ua</p>
-                  <p class="contact__address">г. Харьков, Героев труда 7,
-                  ТРЦ Караван</p>
-                  <a href="#" class="contact__link">Мы в Instagram</a>
+              </a>
+            </b-col>
+            <b-col sm="6" lg="3" class="category__element">
+              <a href="#">
+                <div class="category__element-marmalade">
+                  <h3 class="category__element-title">Мармелад</h3>
                 </div>
-              </b-col>
-            </b-row>
-          </b-container>
-        </section>
+              </a>
+            </b-col>
+            <b-col sm="6" lg="3" class="category__element">
+              <a href="#">
+                <div class="category__element-drinks">
+                  <h3 class="category__element-title">Напитки</h3>
+                </div>
+              </a>
+            </b-col>
+            <b-col sm="6" lg="3" class="category__element">
+              <a href="#">
+                <div class="category__element-chocolate">
+                  <h3 class="category__element-title">Шоколад</h3>
+                </div>
+              </a>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
 
-        <section class="category">
-          <b-container>
-            <b-row>
-							<b-col cols="12">
-								<h2 class="category__title">Популярные категории товаров</h2>
-							</b-col>
-              <b-col sm="6" lg="3" class="category__element">
-                <a href="#">
-                  <div class=" category__element-candybar">
-                    <h3 class="category__element-title">Батончики</h3>
-                  </div>
-                </a>
-              </b-col>
-              <b-col sm="6" lg="3" class="category__element">
-                <a href="#">
-                  <div class="category__element-marmalade">
-                    <h3 class="category__element-title">Мармелад</h3>
-                  </div>
-                </a>
-              </b-col>
-              <b-col sm="6" lg="3" class="category__element">
-                <a href="#">
-                  <div class="category__element-drinks">
-                    <h3 class="category__element-title">Напитки</h3>
-                  </div>
-                </a>
-              </b-col>
-              <b-col sm="6" lg="3" class="category__element">
-                <a href="#">
-                  <div class="category__element-chocolate">
-                    <h3 class="category__element-title">Шоколад</h3>
-                  </div>
-                </a>
-              </b-col>
-            </b-row>
-          </b-container>
-        </section>
-
-        <section class="sale">
-					<b-container>
-						<b-row>
-							<b-col>
-								<div class="sale__content">
-									<div class="sale__wrapper">
-										<b class="sale__title">Получи 10% скидку на одну покупку.</b>
-										<p class="sale__description">Используй промокод  <span class="special">JUMBLESALE2018</span> при оформлении заказа. Акция действует до <span class="sale__date">31 декабря 2018 года.</span></p>
-									</div>	
-								</div>
-							</b-col>
-						</b-row>
-					</b-container>  
-        </section>
+      <section class="sale">
+        <b-container>
+          <b-row>
+            <b-col>
+              <div class="sale__content">
+                <div class="sale__wrapper">
+                  <b class="sale__title">Получи 10% скидку на одну покупку.</b>
+                  <p class="sale__description">Используй промокод <span class="special">JUMBLESALE2018</span> при
+                  оформлении заказа. Акция действует до <span class="sale__date">31 декабря 2018 года.</span></p>
+                </div>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
 
 
-				<section class="products">	
-					<b-container>
-						<b-row>
-							<b-col cols="12" class="products__sort sort">
-								<el-input placeholder="Поиск товаров" class="sort__search"></el-input>
-								<div class="sort__filters">Фильтры</div>
-								<h3 class="sort__title">Сортировка</h3>
-								<el-select  v-model="value" placeholder="Сначала новые" class="sort__select">
-									<el-option
-										v-for="item in options"
-										:key="item.value"
-										:label="item.label"
-										:value="item.value">
-									</el-option>
-								</el-select>
-							</b-col>
+      <section class="products">
+        <b-container>
+          <b-row>
+            <b-col cols="12" class="products__sort sort">
+              <el-input placeholder="Поиск товаров" class="sort__search"></el-input>
+              <div class="sort__filters">Фильтры</div>
+              <h3 class="sort__title">Сортировка</h3>
+              <el-select v-model="value" placeholder="Сначала новые" class="sort__select">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+            </b-col>
 
-														
 
-							<b-col md="4" lg="3" class="products__filter filter">
-								<el-collapse v-model="activeNames">		
-									<div class="filter__content">
-									<div class="filter__close">
-										<svg class="filter__close--icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-										viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g>
-											<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+            <b-col md="4" lg="3" class="products__filter filter">
+              <el-collapse v-model="activeNames">
+                <div class="filter__content">
+                  <div class="filter__close">
+                    <svg id="Layer_1" class="filter__close--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g>
+                           <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
 												c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
 												c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
 												L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
 												c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
 												c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
 												c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
-														</g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													<g>
-													</g>
-													</svg>
-									</div>
-									<h2 class="filter__mobile-title">Фильтр</h2>
-									<el-collapse-item title="Категория товара" name="1">
-										<ul class="filter__list filter__list--category">
-											<li><el-checkbox>Все (101)</el-checkbox></li>
-											<li><el-checkbox>Школад (9)</el-checkbox></li>
-											<li><el-checkbox>Мармелад (40)</el-checkbox></li>
-											<li><el-checkbox>Батончики (1)</el-checkbox></li>
-											<li><el-checkbox>Печенье (7)</el-checkbox></li>
-											<li><el-checkbox>Жвачки (11)</el-checkbox></li>
-											<li><el-checkbox>Напитки (33)</el-checkbox></li>
-										</ul>
-									</el-collapse-item>
+                         </g>
+                         </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                    </svg>
+                  </div>
+                  <h2 class="filter__mobile-title">Фильтр</h2>
+                  <el-collapse-item title="Категория товара" name="1">
+                    <ul class="filter__list filter__list--category">
+                      <li>
+                        <el-checkbox>Все (101)</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Школад (9)</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Мармелад (40)</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Батончики (1)</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Печенье (7)</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Жвачки (11)</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Напитки (33)</el-checkbox>
+                      </li>
+                    </ul>
+                  </el-collapse-item>
 
-									<el-collapse-item title="Производитель" name="2">
-										<ul class="filter__list filter__list--manufacture">
-											<li><el-checkbox>Все</el-checkbox></li>
-											<li><el-checkbox>Европа</el-checkbox></li>
-											<li><el-checkbox>США</el-checkbox></li>
-											<li><el-checkbox>Азия</el-checkbox></li>
-										</ul>
-									</el-collapse-item>
+                  <el-collapse-item title="Производитель" name="2">
+                    <ul class="filter__list filter__list--manufacture">
+                      <li>
+                        <el-checkbox>Все</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Европа</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>США</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Азия</el-checkbox>
+                      </li>
+                    </ul>
+                  </el-collapse-item>
 
-									<el-collapse-item title="Поводы" name="3">
-										<ul class="filter__list filter__list--occasion">
-											<li><el-checkbox>День Рождения</el-checkbox></li>
-											<li><el-checkbox>Свадьба</el-checkbox></li>
-											<li><el-checkbox>Свидание</el-checkbox></li>
-											<li><el-checkbox>Рождение ребенка</el-checkbox></li>
-											<li><el-checkbox>Юбилей</el-checkbox></li>
-										</ul>
-									</el-collapse-item>
+                  <el-collapse-item title="Поводы" name="3">
+                    <ul class="filter__list filter__list--occasion">
+                      <li>
+                        <el-checkbox>День Рождения</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Свадьба</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Свидание</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Рождение ребенка</el-checkbox>
+                      </li>
+                      <li>
+                        <el-checkbox>Юбилей</el-checkbox>
+                      </li>
+                    </ul>
+                  </el-collapse-item>
 
-									<h3 class="filter__title filter__title--cost">Цена</h3>
-									<el-slider
-										range
-										:max="3000">
-									</el-slider>
-									<el-button class="filter__button filter__button--submit">Применить</el-button>
-									<el-button class="filter__button filter__button--refresh">Сбросить</el-button>
-									</div>
-								</el-collapse>
-							</b-col>
-								
+                  <h3 class="filter__title filter__title--cost">Цена</h3>
+                  <el-slider
+                    :max="3000"
+                    range>
+                  </el-slider>
+                  <el-button class="filter__button filter__button--submit">Применить</el-button>
+                  <el-button class="filter__button filter__button--refresh">Сбросить</el-button>
+                </div>
+              </el-collapse>
+            </b-col>
 
-							<b-col md="8" lg="9" class="products__catalog catalog">
-								<b-row class="catalog__list">
-									<b-col sm="6" lg="4" class="catalog__element catalog__element--snikers">
-										<div class="catalog__content">
-											<div class="catalog__photo">
-												<a href="#">
-													<img src="../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="Батончик Snickers" width="190" height="54.52"	>
-												</a>
-											</div>
-											<h4 class="catalog__title"><a href="#">Батончик Snickers</a></h4>
-											<div class="catalog__information">
-												<p class="catalog__price ">60 грн.</p>
-												<div class="catalog__basket">
-														<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-														<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
+
+            <b-col md="8" lg="9" class="products__catalog catalog">
+              <b-row class="catalog__list">
+                <b-col v-for="product in allProducts" :key="product.id" sm="6" lg="4"
+                       class="catalog__element catalog__element--oreo">
+                  <div class="catalog__content">
+                    <div v-if="isDisc(product)" class="catalog__sale">{{ getDiscount(product.price,
+                                                                                     product.pre_disc_price) }}%
+                    </div>
+                    <div class="catalog__photo">
+                      <a href="#">
+                        <img :src="product.photo_url" width="125" height="100">
+                      </a>
+                    </div>
+                    <h4 class="catalog__title"><a href="#">{{ product.name }}</a></h4>
+                    <div class="catalog__information">
+                      <p class="catalog__price">{{ product.price }} грн.</p>
+                      <p v-if="isDisc(product)" class="catalog__old-price">{{ product.pre_disc_price }} грн.</p>
+                      <div class="catalog__basket">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                          <g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
 																	C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
 																	c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
 																	C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
 																	c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
 																	c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 																	c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-															</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-												<div class="catalog__like">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-															height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-														<g>
-															<g id="favorite">
-																<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+                          </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      </div>
+                      <!--todo добавить состояние кнопки для продукта в избранном-->
+                      <div v-if="product.is_top">
+                      </div>
+                      <div class="catalog__like">
+                        <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                          <g>
+                            <g id="favorite">
+                              <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
 																	C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-											</div>
-										</div>
-									</b-col>
-									<b-col sm="6" lg="4" class="catalog__element catalog__element--cola">
-										<div class="catalog__content">
-											<div class="catalog__photo">
-												<a href="#">
-													<img src="../assets/cocacola_PNG22.png" alt="Напиток Coca Cola" width="183px" height="121">
-												</a>	
-											</div>
-											<h4 class="catalog__title"><a href="#">Напиток Coca Cola</a></h4>
-											<div class="catalog__information">
-												<p class="catalog__price">120 грн.</p>
-												<div class="catalog__basket">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-														<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
-																	C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
-																	c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
-																	C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
-																	c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
-																	c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
-																	c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-															</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-												<div class="catalog__like">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-															width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-														<g>
-															<g id="favorite">
-																<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-																	C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-											</div>
-										</div>
-									</b-col>
-									<b-col sm="6" lg="4" class="catalog__element catalog__element--milka">
-										<div class="catalog__content">
-											<div class="catalog__sale">-10%</div>
-											<div class="catalog__photo">
-												<a href="#">
-													<img src="../assets/milka.png" alt="Шоколад Milka Молочный" width="157" height="157">
-												</a>				
-											</div>
-											<h4 class="catalog__title"><a href="#">Шоколад Milka Молочный</a></h4>
-											<div class="catalog__information">
-												<p class="catalog__price catalog__price--sale">75 грн.</p>
-												<p class="catalog__old-price">83 грн.</p>
-												<div class="catalog__basket">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-														<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
-																	C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
-																	c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
-																	C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
-																	c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
-																	c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
-																	c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-															</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-												<div class="catalog__like">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-															width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-														<g>
-															<g id="favorite">
-																<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-																	C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-											</div>
-										</div>
-									</b-col>
-									<b-col sm="6" lg="4" class="catalog__element catalog__element--kinder">
-										<div class="catalog__content">
-											<div class="catalog__photo">
-												<a href="#">
-													<img src="../assets/12.png" alt="Яйцо Kinder Surprise" width="139" height="139">
-												</a>					
-											</div>
-											<h4 class="catalog__title"><a href="#">Яйцо Kinder Surprise</a></h4>
-											<div class="catalog__information">
-												<p class="catalog__price">88 грн.</p>
-												<div class="catalog__basket">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-														<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
-																	C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
-																	c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
-																	C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
-																	c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
-																	c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
-																	c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-															</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-												<div class="catalog__like">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-															width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-														<g>
-															<g id="favorite">
-																<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-																	C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-											</div>
-										</div>
-									</b-col>
-									<b-col sm="6" lg="4" class="catalog__element catalog__element--sprite">
-										<div class="catalog__content">
-											<div class="catalog__photo">
-												<a href="#">
-													<img src="../assets/Sprite.png" alt="Напиток Sprite" width="287" height="130">
-												</a>
-											</div>
-											<h4 class="catalog__title"><a href="#">Напиток Sprite</a></h4>
-											<div class="catalog__information">
-												<p class="catalog__price">50 грн.</p>
-												<div class="catalog__basket">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-														<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
-																	C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
-																	c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
-																	C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
-																	c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
-																	c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
-																	c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-															</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-												<div class="catalog__like">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-															width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-														<g>
-															<g id="favorite">
-																<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-																	C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-											</div>
-										</div>
-									</b-col>
-									<b-col sm="6" lg="4" class="catalog__element catalog__element--fanta">
-										<div class="catalog__content">
-											<div class="catalog__photo">
-												<a href="#">
-													<img src="../assets/3.png" alt="Напиток Fanta" width="152" height="119">
-												</a>
-											</div>
-											<h4 class="catalog__title"><a href="#">Напиток Fanta</a></h4>
-											<div class="catalog__information">
-												<p class="catalog__price">65 грн.</p>
-												<div class="catalog__basket">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-														<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
-																	C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
-																	c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
-																	C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
-																	c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
-																	c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
-																	c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-															</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-												<div class="catalog__like">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-															width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-														<g>
-															<g id="favorite">
-																<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-																	C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-											</div>
-										</div>
-									</b-col>
-									<b-col sm="6" lg="4" class="catalog__element catalog__element--oreo">
-										<div class="catalog__content">
-											<div class="catalog__sale">-50%</div>
-											<div class="catalog__photo">
-												<a href="#">
-													<img src="../assets/4.png" alt="Печенье Oreo" width="125" height="100">
-												</a>
-											</div>
-											<h4 class="catalog__title"><a href="#">Печенье Oreo</a></h4>
-											<div class="catalog__information">
-												<p class="catalog__price catalog__price--sale">90 грн.</p>
-												<p class="catalog__old-price">180 грн.</p>
-												<div class="catalog__basket">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-														<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
-																	C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
-																	c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
-																	C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
-																	c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
-																	c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
-																	c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-															</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-												<div class="catalog__like">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-															width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-														<g>
-															<g id="favorite">
-																<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-																	C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-											</div>
-										</div>
-									</b-col>
-									<b-col sm="6" lg="4" class="catalog__element catalog__element--kitkat">
-										<div class="catalog__content">
-											<div class="catalog__photo">
-												<a href="#">
-													<img src="../assets/5.png" alt="Батончик KitKat Chunk" width="181" height="181">
-												</a>
-											</div>
-											<h4 class="catalog__title"><a href="#">Батончик KitKat Chunky</a></h4>
-											<div class="catalog__information">
-												<p class="catalog__price">24 грн.</p>
-												<div class="catalog__basket">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-														<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
-																	C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
-																	c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
-																	C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
-																	c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
-																	c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
-																	c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-															</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-												<div class="catalog__like">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-															width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-														<g>
-															<g id="favorite">
-																<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-																	C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-											</div>
-										</div>
-									</b-col>
-									<b-col sm="6" lg="4" class="catalog__element catalog__element--orbit">
-										<div class="catalog__content">
-											<div class="catalog__photo">
-												<a href="#">
-													<img src="../assets/7.png" alt="Батончик KitKat Chunk" width="151" height="80">
-												</a>
-											</div>
-											<h4 class="catalog__title"><a href="#">Жевательная резинка Orbit</a></h4>
-											<div class="catalog__information">
-												<p class="catalog__price">10 грн.</p>
-												<div class="catalog__basket">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
-														viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-														<g><g><path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936
-																	C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208
-																	c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8
-																	C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32
-																	c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
-																	c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
-																	c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-															</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>
-												</div>
-												<div class="catalog__like">
-													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-															width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-														<g>
-															<g id="favorite">
-																<path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-																	C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-													</svg>		
-												</div>
-											</div>
-										</div>
-									</b-col>
-									<b-col md="12" lg="9">
-										<div class="pagination">
-											<el-pagination class="pagination__content"
-												background
-												layout="prev, pager, next"
-												pager-count="5"
-												:total="200">
-											</el-pagination>
-										</div>
-									</b-col>
-									<b-col md="6" lg="3" class="ml-lg-auto pages">
-										<p class="pages__count">Страница 1 из 20</p>
-									</b-col>
-										<div class="products__not-found not-found ">
-											<div class="not-found__heart">
-												<svg class="not-found__heart--icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												width="79.5px" height="70px" viewBox="0 0 63.111 63.11" style="enable-background:new 0 0 79.5 70;"
-												xml:space="preserve">
-											<g>
-												<path d="M41.691,5.234l-8.567,11.079l11.928,8.056L33.909,48.825l0.897-18.475L22.507,18.711L25.92,7.534
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </b-col>
+                <b-col md="12" lg="6">
+                  <div class="pagination">
+                    <el-pagination :total="200"
+                                   class="pagination__content"
+                                   background
+                                   layout="prev, pager, next"
+                                   pager-count="5">
+                    </el-pagination>
+                  </div>
+                </b-col>
+                <b-col md="6" class="ml-lg-auto pages">
+                  <p class="pages__count">Страница 1 из 20</p>
+                </b-col>
+                <div class="products__not-found not-found ">
+                  <div class="not-found__heart">
+                    <svg id="Capa_1" class="not-found__heart--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="79.5px" height="70px" viewBox="0 0 63.111 63.11" style="enable-background:new 0 0 79.5 70;"
+                         xml:space="preserve">
+                      <g>
+                        <path d="M41.691,5.234l-8.567,11.079l11.928,8.056L33.909,48.825l0.897-18.475L22.507,18.711L25.92,7.534
 													C13.316-0.526,0,4.712,0,19.846c0.002,17.429,31.557,39.495,31.557,39.495s31.554-22.062,31.554-39.492
 													C63.113,6.509,52.77,0.883,41.691,5.234z"/>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											</svg>
-											</div>
-											<h2 class="not-found__title">Ничего не найдено.</h2>
-											<p class="not-found__description">Очень жаль, но мы ничего не нашли по вашему запросу. Может поищем ещё?</p>
-											<el-button class="not-found__button">Сбросить фильтры</el-button>
-										</div>
-								</b-row>
-							</b-col>
-						</b-row>
-					</b-container>
-				</section>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                    </svg>
+                  </div>
+                  <h2 class="not-found__title">Ничего не найдено.</h2>
+                  <p class="not-found__description">Очень жаль, но мы ничего не нашли по вашему запросу. Может поищем
+                  ещё?</p>
+                  <el-button class="not-found__button">Сбросить фильтры</el-button>
+                </div>
+              </b-row>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
 
-        <section class="jumble">
-					<b-container>
-						<b-row>
-							<b-col>
-								<div class="jumble__content">
-									<div class="jumble__wrapper">
-										<b class="jumble__title">Jumble Box - это всегда позитивные эмоции.</b>
-										<p class="jumble__description">У нас можно заказать Jumble Box к любому значимому событию. Он станет отличным подарком для Вашей второй половинки, друга или коллеги по работе.</p>
-										<p class="jumble__description">Jumble Box можно заказать в любом оформлении и наполнении. Каждый Jumble Box создаётся в соответствии с Вашими пожеланиями и исключительно в оригинальном стиле.</p>
-										<el-button class="jumble__button">Перейти в конструктор</el-button>
-									</div>
-								</div>
-							</b-col>
-						</b-row>
-					</b-container>
-        </section>
+      <section class="jumble">
+        <b-container>
+          <b-row>
+            <b-col>
+              <div class="jumble__content">
+                <div class="jumble__wrapper">
+                  <b class="jumble__title">Jumble Box - это всегда позитивные эмоции.</b>
+                  <p class="jumble__description">У нас можно заказать Jumble Box к любому значимому событию. Он станет
+                  отличным подарком для Вашей второй половинки, друга или коллеги по работе.</p>
+                  <p class="jumble__description">Jumble Box можно заказать в любом оформлении и наполнении. Каждый
+                  Jumble Box создаётся в соответствии с Вашими пожеланиями и исключительно в оригинальном стиле.</p>
+                  <el-button class="jumble__button">Перейти в конструктор</el-button>
+                </div>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
 
-        <section class="advantages">
-					<b-container>
-						<b-row>
-							<b-col>
-								<div class="advantages__content">
-									<h2 class="advantages__title">Наши преимущества</h2>
-									<ul class="advantages__list">
-										<li class="advantages__element advantages__element--assortment">
-											<h3 class="advantages__element-title">Широкий ассортимент</h3>
-											<p class="advantages__description">Большой выбор товаров на любой вкус</p>
-										</li>
-										<li class="advantages__element advantages__element--orders">
-											<h3 class="advantages__element-title">Быстрая обработка заказов</h3>
-											<p class="advantages__description">Мы ценим Ваше время и понимаем, с каким волнением Вы ждёте товар, поэтому все заказы обрабатываются максимально быстро.</p>
-										</li>
-										<li class="advantages__element advantages__element--delivery">
-											<h3 class="advantages__element-title ">Безопасная доставка и оплата</h3>
-											<p class="advantages__description">Если доставка осуществляется по Харькову, Вы платите только при получении товара<br> В случае, если Вы проживаете в другом регионе Украины, доставка происходит Новой почтой посредством предоплаты или наложенного платежа.</p>
-										</li>
-									</ul>
-								</div>
-							</b-col>
-						</b-row>
-					</b-container>  
-        </section>
+      <section class="advantages">
+        <b-container>
+          <b-row>
+            <b-col>
+              <div class="advantages__content">
+                <h2 class="advantages__title">Наши преимущества</h2>
+                <ul class="advantages__list">
+                  <li class="advantages__element advantages__element--assortment">
+                    <h3 class="advantages__element-title">Широкий ассортимент</h3>
+                    <p class="advantages__description">Большой выбор товаров на любой вкус</p>
+                  </li>
+                  <li class="advantages__element advantages__element--orders">
+                    <h3 class="advantages__element-title">Быстрая обработка заказов</h3>
+                    <p class="advantages__description">Мы ценим Ваше время и понимаем, с каким волнением Вы ждёте товар,
+                    поэтому все заказы обрабатываются максимально быстро.</p>
+                  </li>
+                  <li class="advantages__element advantages__element--delivery">
+                    <h3 class="advantages__element-title ">Безопасная доставка и оплата</h3>
+                    <p class="advantages__description">Если доставка осуществляется по Харькову, Вы платите только при
+                    получении товара<br> В случае, если Вы проживаете в другом регионе Украины, доставка происходит
+                    Новой почтой посредством предоплаты или наложенного платежа.</p>
+                  </li>
+                </ul>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
 
-        <section class="delivery">
-					<b-container>
-						<b-row>
-							<b-col>
-								<div class="delivery__content">
-									<div class="delivery__wrapper">
-										<h2 class="delivery__title">Доставка</h2>
-										<b class="delivery__order">Заказ можно осуществить в любом регионе Украины</b>
-										<ul class="delivery__list">
-											<li class="delivery__element">- Бесплатная доставка по г. Харькову</li>
-											<li class="delivery__element">- Возможность самовывоза</li>
-											<li class="delivery__element">- Доставка Новой почтой по всей Украине</li>
-										</ul>
-										<p class="delivery__description">Более подробно Вы можете ознакомиться с условиями доставки и оплаты в <a href="#" class="delivery__special">специальном разделе.</a></p>
-									</div>
-								</div>
-							</b-col>
-						</b-row>
-					</b-container>
-        </section>
-      </main>
+      <section class="delivery">
+        <b-container>
+          <b-row>
+            <b-col>
+              <div class="delivery__content">
+                <div class="delivery__wrapper">
+                  <h2 class="delivery__title">Доставка</h2>
+                  <b class="delivery__order">Заказ можно осуществить в любом регионе Украины</b>
+                  <ul class="delivery__list">
+                    <li class="delivery__element">- Бесплатная доставка по г. Харькову</li>
+                    <li class="delivery__element">- Возможность самовывоза</li>
+                    <li class="delivery__element">- Доставка Новой почтой по всей Украине</li>
+                  </ul>
+                  <p class="delivery__description">Более подробно Вы можете ознакомиться с условиями доставки и оплаты в
+                  <a href="#" class="delivery__special">специальном разделе.</a></p>
+                </div>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
+    </main>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Home',
-  components: {
-
-  },
+  components: {},
   data() {
     return {
       options: [{
@@ -742,9 +510,24 @@ export default {
         value: 'Option2',
         label: 'Цена',
       }],
-			value: '',
-			activeNames: ['1']
+      value: '',
+      activeNames: ['1'],
     };
+  },
+  methods: {
+    ...mapActions(['loadProducts']),
+    getDiscount(price, preDiscPrice) {
+      return Math.floor(100 * ((preDiscPrice - price) / preDiscPrice));
+    },
+    isDisc(product) {
+      return product.price !== product.pre_disc_price;
+    },
+  },
+  computed: {
+    ...mapGetters(['allProducts']),
+  },
+  created() {
+    this.loadProducts({});
   },
 };
 </script>
@@ -973,6 +756,8 @@ export default {
 	.news__actions::-webkit-scrollbar-button
 			background-color: #F8F8F8
 
+  .news__actions::-webkit-scrollbar
+    width: 4px
 
 	.contact
 		line-height: 18px
@@ -1032,6 +817,10 @@ export default {
 				text-decoration: none
 				color: #000
 
+  .news__actions::-webkit-scrollbar-thumb
+    height: 100px
+    background-color: #000000
+    border-radius: 5px
 
 	.category
 		margin:
@@ -1634,7 +1423,71 @@ export default {
 	.filter.show
 		display: block
 
+  .filter.show
+    display: block
 
+  .sort
+    padding:
+      top: 38px
+      bottom: 33px
+      left: 31px
+    display: flex
+    align-items: baseline
+    @media (max-width: 1199.98px)
+      padding:
+        left: 15px
+    @media (max-width: 767.98px)
+      display: flex
+      flex-direction: column
+    @media (max-width: 575.98px)
+      padding:
+        left: 40px
+        right: 40px
+    &__title
+      font-size: 18px
+      font-weight: 700
+      margin:
+        bottom: 0
+        left: 60px
+        right: 67px
+      @media (max-width: 767.98px)
+        display: none
+    &__filters
+      display: none
+      @media (max-width: 767.98px)
+        display: block
+        width: 350px
+        cursor: pointer
+        padding:
+          top: 5px
+          bottom: 5px
+        margin:
+          top: 23px
+        background-image: url("../assets/Icons/filter-tool-black-shape.svg")
+        background-repeat: no-repeat
+        background-size: 15px auto
+        background-position: right center
+      @media (max-width: 575.98px)
+        width: 100%
+    &__select
+      @media (max-width: 767.98px)
+        display: inline-block
+        margin:
+          top: 23px
+      .el-input__inner
+        border: none
+        padding:
+          left: 0
+        width: 140px
+        &::placeholder
+          font-size: 15px
+          color: #000
+        @media (max-width: 767.98px)
+          width: 360px
+        @media (max-width: 575.98px)
+          width: 100%
+      @media (max-width: 575.98px)
+        width: 100%
 
 	.sort
 		padding: 
@@ -1714,6 +1567,8 @@ export default {
 			@media (max-width: 575.98px)
 				width: 100%
 
+  .filter::-webkit-scrollbar
+    width: 4px
 
 	.filter::-webkit-scrollbar
 		width: 4px
@@ -1728,7 +1583,13 @@ export default {
 	.filter::-webkit-scrollbar-button
 			background-color: #F8F8F8
 
+  .filter::-webkit-scrollbar-track
+    background-color: none
 
+  .filter::-webkit-scrollbar-thumb
+    height: 100px
+    background-color: #000000
+    border-radius: 5px
 
 	.catalog
 		position: relative
@@ -1945,6 +1806,33 @@ export default {
 				@media (max-width: 575.98px)
 					width: 100%
 
+    &__content
+      display: flex
+      align-items: center
+      .number
+        transition: all 0.2s ease
+        width: 40px
+        height: 40px
+        padding:
+          top: 5px
+        @media (max-width: 575.98px)
+          width: 30px
+          height: 30px
+          padding:
+            top: 2px
+        &:hover, &:focus
+          box-shadow: inset 0 0 0px 1px #dcdcdc
+      .el-icon-more
+        margin:
+          top: 10px
+      .el-pager
+        display: flex
+        align-items: baseline
+      .el-icon.more.btn-quickprev.el-icon-more
+        display: none
+      .el-pagination
+        @media (max-width: 575.98px)
+          width: 100%
 
 	.pages
 		display: flex

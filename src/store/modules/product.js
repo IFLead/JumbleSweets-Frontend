@@ -23,6 +23,7 @@ const actions = {
       {
         results: [
           {
+            id: 1,
             name: 'Кола',
             photo_url: 'http://burgervsem.ru/media/plg_system_vmmagiczoom/magictoolbox_cache/80543c918ed05ba09145ba56f4b3651f/1/9/195/thumb500x500/1089504901/coca-cola-pet-15-500x500.png',
             price: 15,
@@ -30,6 +31,7 @@ const actions = {
             is_top: false,
           },
           {
+            id: 2,
             name: 'Сникерс',
             photo_url: 'https://images.ua.prom.st/1015701052_w640_h640_snikers_101_gr.png',
             price: 10,
@@ -37,6 +39,7 @@ const actions = {
             is_top: true,
           },
           {
+            id: 3,
             name: 'Щоколадная паста Баунти',
             photo_url: 'https://ohlala.market/wp-content/uploads/2018/03/баунти.png',
             price: 140,
@@ -44,7 +47,7 @@ const actions = {
             is_top: false,
           },
         ],
-      },
+      }.results,
     );
   },
 };
