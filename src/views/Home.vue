@@ -753,9 +753,8 @@ export default {
 		height: 100px
 		background-color: #000000
 		border-radius: 5px
-	.news__actions::-webkit-scrollbar-button
-			background-color: #F8F8F8
-
+    /*.news__actions::-webkit-scrollbar-button*/
+    /*background-color: #f8f8f8*/
   .news__actions::-webkit-scrollbar
     width: 4px
 
@@ -862,7 +861,7 @@ export default {
 			margin:
 				bottom: 30px
 			@media (max-width: 575.98px)
-				margin: 
+				margin:
 					bottom: 15px
 			&-candybar, &-marmalade, &-drinks, &-chocolate
 				background-size: cover
@@ -1010,7 +1009,7 @@ export default {
 					left: 45px
 					right: 45px
 			@media (max-width: 575.98px)
-				padding: 
+				padding:
 					left: 20px
 					right: 20px
 			&::after
@@ -1293,14 +1292,14 @@ export default {
 				top: -4px
 
 	.filter
-		padding: 
+		padding:
 			left: 31px
-		@media (max-width: 1199.98px) 
-			padding: 
+		@media (max-width: 1199.98px)
+			padding:
 				left: 15px
 		@media (max-width: 767.98px)
 			display: none
-			padding: 
+			padding:
 				right: 0
 			position: fixed
 			z-index: 1000
@@ -1326,7 +1325,7 @@ export default {
 				position: relative
 				z-index: 100
 				background-color: #fff
-				padding: 
+				padding:
 					left: 30px
 					top: 1px
 					bottom: 40px
@@ -1336,7 +1335,7 @@ export default {
 			border-color: #c4c4c4
 		.el-checkbox__label
 			color: #000
-			padding: 
+			padding:
 				left: 15px
 		.el-collapse
 			border: none
@@ -1347,17 +1346,17 @@ export default {
 			font-weight: 700
 			width: 220px
 			cursor: pointer
-			margin: 
+			margin:
 				bottom: 13px
 			border: none
 		.el-collapse-item__wrap
 			border: none
 		.el-collapse-item__arrow
 			color: #c4c4c4
-			margin: 
+			margin:
 				top: -8px
 		.el-collapse-item__content
-			padding: 
+			padding:
 				bottom: 15px
 		&__close
 			display: none
@@ -1371,7 +1370,7 @@ export default {
 				right: 310px
 				.filter__close--icon
 					fill: #ffffff
-					margin: 
+					margin:
 						top: -11px
 		&__mobile-title
 			display: none
@@ -1381,39 +1380,39 @@ export default {
 				font-size: 20px
 				color: #c4c4c4
 				text-transform: uppercase
-				margin: 
+				margin:
 					top: 17px
 					bottom: 35px
 		&__title
 			font-size: 18px
 			font-weight: 700
 			width: 220px
-			margin: 
+			margin:
 				bottom: 13px
 		&__list
-			padding: 
+			padding:
 				left: 19px
 			list-style: none
 		&__button.el-button
-			margin: 
+			margin:
 				left: 15px
 			width: 200px
 		&__button--refresh.el-button
 				color: #000
 				font-weight: 700
 				background-color: #fff
-				margin: 
+				margin:
 					top: 23px
 				&:hover, &:focus
 					background-color: darken(#ffffff, 3%)
 					color: #000000
 				@media (max-width: 767.98px)
 					display: none
-				
+
 
 		.el-slider
 			width: 230px
-			margin: 
+			margin:
 				bottom: 40px
 			@media (max-width: 1199.98px)
 				width: 100%
@@ -1490,26 +1489,26 @@ export default {
         width: 100%
 
 	.sort
-		padding: 
+		padding:
 			top: 38px
 			bottom: 33px
 			left: 31px
 		display: flex
 		align-items: baseline
-		@media (max-width: 1199.98px) 
-			padding: 
+		@media (max-width: 1199.98px)
+			padding:
 				left: 15px
 		@media (max-width: 767.98px)
 			display: flex
 			flex-direction: column
 		@media (max-width: 575.98px)
-			padding: 
+			padding:
 				left: 40px
 				right: 40px
 		&__title
 			font-size: 18px
 			font-weight: 700
-			margin: 
+			margin:
 				bottom: 0
 				left: 60px
 				right: 67px
@@ -1521,25 +1520,25 @@ export default {
 				display: block
 				width: 350px
 				cursor: pointer
-				padding: 
+				padding:
 					top: 5px
 					bottom: 5px
-				margin: 
+				margin:
 					top: 23px
 				background-image: url("../assets/Icons/filter-tool-black-shape.svg")
 				background-repeat: no-repeat
 				background-size: 15px auto
-				background-position: right center	
+				background-position: right center
 			@media (max-width: 575.98px)
-				width: 100%						
+				width: 100%
 		&__select
 			@media (max-width: 767.98px)
 				display: inline-block
-				margin: 
+				margin:
 					top: 23px
 			.el-input__inner
 				border: none
-				padding: 
+				padding:
 					left: 0
 				width: 140px
 				&::placeholder
@@ -1551,11 +1550,11 @@ export default {
 					width: 100%
 			@media (max-width: 575.98px)
 				width: 100%
-				
+
 		&__search.el-input
-			width: 230px			
+			width: 230px
 			.el-input__inner
-				padding: 
+				padding:
 					left: 5px
 				border: none
 				border-bottom: 1px solid #c4c4c4
@@ -1580,8 +1579,8 @@ export default {
 		height: 100px
 		background-color: #000000
 		border-radius: 5px
-	.filter::-webkit-scrollbar-button
-			background-color: #F8F8F8
+    /*.filter::-webkit-scrollbar-button*/
+    /*background-color: #F8F8F8*/
 
   .filter::-webkit-scrollbar-track
     background-color: none
@@ -1593,7 +1592,7 @@ export default {
 
 	.catalog
 		position: relative
-		margin: 
+		margin:
 			top: 8px
 		&__title
 			a
@@ -1603,7 +1602,7 @@ export default {
 				color: #000000
 				text-decoration: none
 				line-height: 18px
-				margin: 
+				margin:
 					bottom: 22px
 				&:hover, &:focus
 					color: #e70068
@@ -1620,7 +1619,7 @@ export default {
 			top: 0
 			left: 0
 		&__photo
-			margin: 
+			margin:
 				left: auto
 				right: auto
 		&__content
@@ -1630,18 +1629,18 @@ export default {
 			height: 100%
 			background-color: #F8F8F8
 			padding:
-				top: 1px 	
+				top: 1px
 				left: 20px
 				right: 20px
-				bottom: 24px	
+				bottom: 24px
 		&__element
-			margin: 
-				bottom: 30px		
+			margin:
+				bottom: 30px
 			&--snikers
 				.catalog__photo
 					width: 190px
 					height: 55px
-					margin: 
+					margin:
 						top: 71px
 						bottom: 91px
 						left: auto
@@ -1650,7 +1649,7 @@ export default {
 				.catalog__photo
 					width: 183px
 					height: 121px
-					margin: 
+					margin:
 						top: 49px
 						bottom: 47px
 						left: auto
@@ -1659,7 +1658,7 @@ export default {
 				.catalog__photo
 					width: 157px
 					height: 157px
-					margin: 
+					margin:
 						top: 21px
 						bottom: 39px
 						left: auto
@@ -1668,7 +1667,7 @@ export default {
 				.catalog__photo
 					width: 139px
 					height: 139px
-					margin: 
+					margin:
 						top: 34px
 						bottom: 44px
 						left: auto
@@ -1677,7 +1676,7 @@ export default {
 				.catalog__photo
 					width: 224px
 					height: 130px
-					margin: 
+					margin:
 						top: 44px
 						bottom: 44px
 						left: auto
@@ -1686,7 +1685,7 @@ export default {
 				.catalog__photo
 					width: 152px
 					height: 119px
-					margin: 
+					margin:
 						top: 49px
 						bottom: 51px
 						left: auto
@@ -1695,7 +1694,7 @@ export default {
 				.catalog__photo
 					width: 125px
 					height: 100px
-					margin: 
+					margin:
 						top: 49px
 						bottom: 68px
 						left: auto
@@ -1704,7 +1703,7 @@ export default {
 				.catalog__photo
 					width: 181px
 					height: 181px
-					margin: 
+					margin:
 						top: 9px
 						bottom: 27px
 						left: auto
@@ -1713,7 +1712,7 @@ export default {
 				.catalog__photo
 					width: 151px
 					height: 80px
-					margin: 
+					margin:
 						top: 60px
 						bottom: 77px
 						left: auto
@@ -1721,7 +1720,7 @@ export default {
 		&__price
 			font-weight: 700
 			line-height: 18px
-			margin: 
+			margin:
 				bottom: 0
 			&--sale
 				color: #e70068
@@ -1730,14 +1729,14 @@ export default {
 			line-height: 18px
 			color: #c4c4c4
 			text-decoration: line-through
-			margin: 
-				left: 9px	
+			margin:
+				left: 9px
 				bottom: 0
 		&__like
 			cursor: pointer
 			width: 22px
 			height: 20px
-			margin: 
+			margin:
 				left: 10px
 				top: -5px
 			.like
@@ -1746,12 +1745,12 @@ export default {
 			&:hover
 				.like
 					fill: #E70068
-				
+
 		&__basket
 			cursor: pointer
 			width: 15px
 			height: 20px
-			margin: 
+			margin:
 				left: auto
 				top: -5px
 			.basket
@@ -1762,40 +1761,40 @@ export default {
 					fill: #E70068
 		&__information
 			display: flex
-			margin: 
+			margin:
 				top: auto
 
 	.pagination
 		display: inline-block
-		padding: 
+		padding:
 			top: 5px
 			bottom: 5px
 		background-color: #f8f8f8
-		.pagination__content 
+		.pagination__content
 			@media (max-width: 575.98px)
 				padding:
 					left: 0
 					right: 0
-		
+
 		&__content
 			display: flex
 			align-items: center
-		
+
 			.number
 				transition: all 0.2s ease
 				width: 40px
 				height: 40px
-				padding: 
+				padding:
 					top: 5px
 				@media (max-width: 575.98px)
 					width: 30px
 					height: 30px
-					padding: 
+					padding:
 						top: 2px
 				&:hover, &:focus
 					box-shadow: inset 0 0 0px 1px #dcdcdc
 			.el-icon-more
-				margin: 
+				margin:
 					top: 10px
 			.el-pager
 				display: flex
@@ -1838,17 +1837,17 @@ export default {
 		display: flex
 		align-items: center
 		&__count
-			margin: 
+			margin:
 				left: auto
 				bottom: 0
 			@media (max-width: 991.98px)
-				margin: 
+				margin:
 					left: 0
 					top: 20px
 
 	.not-found
 		display: none
-		padding: 
+		padding:
 			top: 231px
 			left: 50px
 			right: 50px
@@ -1859,39 +1858,39 @@ export default {
 		left: -1px
 		bottom: 0
 		right: 0
-		margin: 
+		margin:
 			right: 15px
 			left: 15px
 		background-color: #f8f8f8
 		@media (max-width: 575.98px)
-			padding: 
+			padding:
 				left: 30px
 				right: 30px
 		&__title
 			font-size: 30px
 			font-weight: 700
 			text-align: center
-			margin: 
+			margin:
 				bottom: 19px
 			@media (max-width: 575.98px)
 				font-size: 25px
 		&__description
 			text-align: center
-			margin: 
+			margin:
 				bottom: 45px
 		&__heart
 			width: 80px
 			height: 70px
-			margin: 
+			margin:
 				left: auto
 				right: auto
 				bottom: 31px
 			&--icon
 				fill: #E70068
 		.el-button.not-found__button
-			margin: 
+			margin:
 				left: auto
-				right: auto 
+				right: auto
 
 	.not-found.show
 		display: flex

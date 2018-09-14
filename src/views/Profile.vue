@@ -74,7 +74,7 @@
                 чем радовали себя и близких.
               </div>
 
-              <div class="orders-yes">
+              <div v-show="isOrders === true" class="orders-yes">
 
                 <div class="orders-yes__elem">
                   <div class="orders-yes__elem-picture">
@@ -152,7 +152,7 @@
                 </div>
 
                 <div class="orders-yes__elem">
-                  <div class="orders-yes__elem-picture">
+                  <div class="orders-yes__elem-picture orders-yes__elem-picture--hidden">
                     <div class="orders-yes__elem-picture-wrapper">
                       <div class="orders-yes__elem-date">22 / 06 / 2018</div>
                       <div class="orders-yes__elem-time">18:55</div>
@@ -162,9 +162,9 @@
                     <div class="orders-yes__elem-main">
                       <div class="orders-yes__elem-header">
                         <div class="orders-yes__elem-hide">
-                          <div class="orders-yes__elem-hide-label">Скрыть</div>
+                          <div class="orders-yes__elem-hide-label">Подробнее</div>
                           <div class="orders-yes__elem-hide-icon">
-                            <img src="../assets/Icons/right-arrow_profile_top.svg" width="12" height="7" alt="Скрыть">
+                            <img src="../assets/Icons/right-arrow_profile.svg" width="12" height="7" alt="Подробнее">
                           </div>
                         </div>
                         <div class="orders-yes__elem-repeat">
@@ -224,7 +224,7 @@
                 </div>
 
                 <div class="orders-yes__elem">
-                  <div class="orders-yes__elem-picture">
+                  <div class="orders-yes__elem-picture orders-yes__elem-picture--hidden">
                     <div class="orders-yes__elem-picture-wrapper">
                       <div class="orders-yes__elem-date">22 / 06 / 2018</div>
                       <div class="orders-yes__elem-time">18:55</div>
@@ -234,9 +234,9 @@
                     <div class="orders-yes__elem-main">
                       <div class="orders-yes__elem-header">
                         <div class="orders-yes__elem-hide">
-                          <div class="orders-yes__elem-hide-label">Скрыть</div>
+                          <div class="orders-yes__elem-hide-label">Подробнее</div>
                           <div class="orders-yes__elem-hide-icon">
-                            <img src="../assets/Icons/right-arrow_profile_top.svg" width="12" height="7" alt="Скрыть">
+                            <img src="../assets/Icons/right-arrow_profile.svg" width="12" height="7" alt="Подробнее">
                           </div>
                         </div>
                         <div class="orders-yes__elem-repeat">
@@ -298,6 +298,24 @@
 
               </div>
 
+              <div v-show="isOrders === false" class="orders-no">
+                <div class="orders-no__wrapper">
+                  <div class="orders-no__icon">
+                    <img src="../assets/Icons/gift-box-profile.svg"
+                         width="44" height="50" alt="Подарок">
+                  </div>
+                  <div class="orders-no__text">
+                    На данный момент у вас нет заказов
+                  </div>
+                  <div class="orders-no__subtext">
+                    Но не расстраивайтесь, а лучше приступайте к покупкам прямо сейчас
+                  </div>
+                  <div class="orders-no__button-wrapper">
+                    <el-button class="orders-no__button">Посмотреть каталог</el-button>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -319,6 +337,7 @@ export default {
     return {
       panelIndex: 1,
       isHidden: false,
+      isOrders: false,
     };
   },
 };
@@ -357,12 +376,13 @@ export default {
 
   &__user
     max-width: 362px
+    max-height: 150px
+    background-position: 0 -20px
     background-size: cover
     background-repeat: no-repeat
     position: relative
     background-color: grey
     background-image: url("../assets/user_back.jpg")
-    background-position: 0 0px
     padding:
       top: 30px
       left: 30px
@@ -407,12 +427,13 @@ export default {
 
   &__title
     margin:
-      bottom: 27px
+      bottom: 20px
       top: 15px
 
   &__subtitle
+    line-height: 18px
     margin:
-      bottom: 88px
+      bottom: 85px
 
   &__personal
     display: flex
@@ -468,11 +489,13 @@ export default {
 .orders
 
   &__title
+    line-height: 37px
     margin:
-      bottom: 27px
+      bottom: 20px
       top: 15px
 
   &__subtitle
+    line-height: 18px
     margin:
       bottom: 50px
 
@@ -508,6 +531,8 @@ export default {
       top: 0
       bottom: 0
       background-color: rgba(255, 250, 185, 0.7)
+  &__elem-picture--hidden
+    background-position: 0px 0px
 
   &__elem-picture-wrapper
     position: relative
@@ -591,5 +616,44 @@ export default {
   .bold-type
     font-weight: 700
 
+.orders-no
+  background-color: #f8f8f8
+  padding:
+    top: 50px
+
+  &__icon
+    text-align: center
+    padding:
+      bottom: 35px
+
+  &__text
+    font-size: 20px
+    line-height: 24px
+    font-weight: 700
+    text-align: center
+    padding:
+      bottom: 20px
+
+  &__subtext
+    font-size: 15px
+    line-height: 18px
+    font-weight: 400
+    text-align: center
+    padding:
+      bottom: 45px
+
+  &__button-wrapper
+    display: flex
+    justify-content: center
+
+  .orders-no__button
+    background-image: url("../assets/Icons/shopping-purse-icon.svg")
+    background-repeat: no-repeat
+    background-size: 20px 20px
+    background-position: right 30px top 10px
+    padding:
+      right: 60px
+    margin:
+      bottom: 80px
 
 </style>
