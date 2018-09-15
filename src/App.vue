@@ -7,14 +7,20 @@
 </template>
 
 <script>
-  import Header from './components/VueHeader';
-  import Footer from './components/VueFooter';
+import Header from './components/VueHeader';
+import Footer from './components/VueFooter';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    'vHeader': Header,
-    'vFooter': Footer,
+    vHeader: Header,
+    vFooter: Footer,
+  },
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: 'Default Title',
+    // all titles will be injected into this template
+    titleTemplate: '%s | My Awesome Webapp',
   },
 };
 </script>

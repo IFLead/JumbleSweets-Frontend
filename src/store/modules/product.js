@@ -40,7 +40,7 @@ const actions = {
           },
           {
             id: 3,
-            name: 'Щоколадная паста Баунти',
+            name: 'Шоколадная паста Баунти',
             photo_url: 'https://ohlala.market/wp-content/uploads/2018/03/баунти.png',
             price: 140,
             pre_disc_price: 140,
