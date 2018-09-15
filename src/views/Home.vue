@@ -754,7 +754,7 @@ export default {
 		background-color: #000000
 		border-radius: 5px
 	.news__actions::-webkit-scrollbar-button
-			background-color: #F8F8F8
+		background-color: #F8F8F8
 
   .news__actions::-webkit-scrollbar
     width: 4px
@@ -1581,7 +1581,7 @@ export default {
 		background-color: #000000
 		border-radius: 5px
 	.filter::-webkit-scrollbar-button
-			background-color: #F8F8F8
+		background-color: #F8F8F8
 
   .filter::-webkit-scrollbar-track
     background-color: none

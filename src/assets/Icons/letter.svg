@@ -4,12 +4,12 @@
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <g>
 	<g>
-		<rect x="90" y="271" width="136" height="60.5"/>
+		<rect style="fill: #e70068;" x="90" y="271" width="136" height="60.5"/>
 	</g>
 </g>
 <g>
 	<g>
-		<path d="M0,90.5v331h512v-331H0z M256,361.5H60V241h196V361.5z M452,240.5H286v-30h166V240.5z M452,180.5H286v-30h166V180.5z"/>
+		<path style="fill: #e70068;" d="M0,90.5v331h512v-331H0z M256,361.5H60V241h196V361.5z M452,240.5H286v-30h166V240.5z M452,180.5H286v-30h166V180.5z"/>
 	</g>
 </g>
 <g>
