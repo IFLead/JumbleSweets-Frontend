@@ -237,64 +237,25 @@
                   </div>
                   <h2 class="filter__mobile-title">Фильтр</h2>
                   <el-collapse-item title="Категория товара" name="1">
-                    <ul class="filter__list filter__list--category">
+                    <ul v-for="category in allCategories" :key="category.id" class="filter__list filter__list--category">
                       <li>
-                        <el-checkbox>Все (101)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Школад (9)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Мармелад (40)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Батончики (1)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Печенье (7)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Жвачки (11)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Напитки (33)</el-checkbox>
+                        <el-checkbox> {{ category.name + ' ' + '(' + category.count + ')' }} </el-checkbox>
                       </li>
                     </ul>
                   </el-collapse-item>
 
                   <el-collapse-item title="Производитель" name="2">
-                    <ul class="filter__list filter__list--manufacture">
+                    <ul v-for="manufacturer in allManufacturers" :key="manufacturer.id" class="filter__list filter__list--manufacture">
                       <li>
-                        <el-checkbox>Все</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Европа</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>США</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Азия</el-checkbox>
+                        <el-checkbox> {{ manufacturer.name }} </el-checkbox>
                       </li>
                     </ul>
                   </el-collapse-item>
 
                   <el-collapse-item title="Поводы" name="3">
-                    <ul class="filter__list filter__list--occasion">
+                    <ul v-for="occasion in allOccasions" :key="occasion.id" class="filter__list filter__list--occasion">
                       <li>
-                        <el-checkbox>День Рождения</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Свадьба</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Свидание</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Рождение ребенка</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Юбилей</el-checkbox>
+                        <el-checkbox> {{ occasion.name }} </el-checkbox>
                       </li>
                     </ul>
                   </el-collapse-item>
@@ -525,7 +486,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(['loadProducts']),
+    ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers']),
     getDiscount(price, preDiscPrice) {
       return Math.floor(100 * (preDiscPrice - price) / preDiscPrice);
     },
@@ -534,10 +495,13 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['allProducts']),
+    ...mapGetters(['allProducts', 'allCategories', 'allOccasions', 'allManufacturers']),
   },
   created() {
     this.loadProducts({});
+    this.loadCategories({});
+    this.loadManufacturers({});
+    this.loadOccasions({});
   },
 };
 </script>
