@@ -563,6 +563,7 @@ export default {
   name: 'Item',
   components: {
   },
+  props: ['id'],
   data() {
     return {
       num1: 1,
