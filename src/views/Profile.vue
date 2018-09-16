@@ -318,6 +318,37 @@
 
             </div>
 
+            <div v-show="panelIndex === 3" class="wishlist">
+              <div class="wishlist__title title">
+                Список желаний
+              </div>
+              <div class="wishlist__subtitle subtitle">
+                Создайте список желаний на сайте, чтобы быстрее находить понравившиеся товары.
+              </div>
+
+              <div v-show="isWish === true" class="wishlist-yes">
+              </div>
+
+              <div v-show="isWish === false" class="wishlist-no">
+                <div class="wishlist-no__wrapper">
+                  <div class="wishlist-no__icon">
+                    <img src="../assets/Icons/wedding-gift-profile.svg"
+                         width="68" height="50" alt="Избранное">
+                  </div>
+                  <div class="wishlist-no__text">
+                    Пока что здесь пусто
+                  </div>
+                  <div class="wishlist-no__subtext">
+                    Не смогли выбрать подходящий товар?<br>
+                    Загляните в наш каталог, и вы обязательно найдёте то, что нужно.
+                  </div>
+                  <div class="wishlist-no__button-wrapper">
+                    <el-button class="wishlist-no__button">Посмотреть каталог</el-button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </b-col>
 
@@ -337,7 +368,8 @@ export default {
     return {
       panelIndex: 1,
       isHidden: false,
-      isOrders: false,
+      isOrders: true,
+      isWish: false,
     };
   },
 };
@@ -655,5 +687,58 @@ export default {
       right: 60px
     margin:
       bottom: 80px
+
+.wishlist
+
+  &__title
+    line-height: 37px
+    margin:
+      bottom: 20px
+      top: 15px
+
+  &__subtitle
+    line-height: 18px
+    margin:
+      bottom: 45px
+
+.wishlist-no
+  background-color: #f8f8f8
+  padding:
+    top: 50px
+
+  &__icon
+    text-align: center
+    padding:
+      bottom: 35px
+
+  &__text
+    font-size: 20px
+    line-height: 24px
+    font-weight: 700
+    text-align: center
+    padding:
+      bottom: 20px
+
+  &__subtext
+    font-size: 15px
+    line-height: 25px
+    font-weight: 400
+    text-align: center
+    padding:
+      bottom: 45px
+
+  &__button-wrapper
+    display: flex
+    justify-content: center
+
+  .wishlist-no__button
+    background-image: url("../assets/Icons/shopping-purse-icon.svg")
+    background-repeat: no-repeat
+    background-size: 20px 20px
+    background-position: right 30px top 10px
+    padding:
+      right: 60px
+    margin:
+      bottom: 55px
 
 </style>
