@@ -34,7 +34,7 @@
   }
 
   &:active {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: rgba(255,255,255, .9);
     border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
     outline: none;
   }

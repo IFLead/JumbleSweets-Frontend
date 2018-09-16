@@ -1564,9 +1564,13 @@ export default {
 		&__search.el-input
 			width: 230px
 			.el-input__inner
+				font-size: 15px
+				color: #DCDCDC
 				padding:
 					left: 5px
+					bottom: 10px
 				border: none
+				border-radius: 0px
 				border-bottom: 1px solid #c4c4c4
 				&::placeholder
 					font-size: 15px

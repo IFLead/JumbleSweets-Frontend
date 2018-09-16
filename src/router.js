@@ -11,6 +11,10 @@ import JumbleBoxPackage from './views/JumbleBoxPackage.vue';
 import Profile from './views/Profile.vue';
 import JumbleBoxConstructor from './views/JumbleBoxConstructor.vue';
 import Cart from './views/Cart.vue';
+import Shopping from './views/Shopping.vue';
+import NovaPoshta from './views/NovaPoshta.vue';
+import Kharkiv from './views/Kharkiv.vue';
+import Summary from './views/Summary.vue';
 
 
 Vue.use(Router);
@@ -73,6 +77,26 @@ export default new Router({
       path: '/Cart',
       name: 'Cart',
       component: Cart,
+    },
+    {
+      path: '/Shopping',
+      name: 'Shopping',
+      component: Shopping,
+    },
+    {
+      path: '/NovaPoshta',
+      name: 'NovaPoshta',
+      component: NovaPoshta,
+    },
+    {
+      path: '/Kharkiv',
+      name: 'Kharkiv',
+      component: Kharkiv,
+    },
+    {
+      path: '/Summary',
+      name: 'Summary',
+      component: Summary,
     },
     // {
     //   path: '/about',
