@@ -239,7 +239,7 @@
                   <el-collapse-item title="Категория товара" name="1">
                     <ul v-for="category in allCategories" :key="category.id" class="filter__list filter__list--category">
                       <li>
-                        <el-checkbox> {{ category.name + ' ' + '(' + category.count + ')' }} </el-checkbox>
+                        <el-checkbox> {{ `${category.name} (${category.count})` }} </el-checkbox>
                       </li>
                     </ul>
                   </el-collapse-item>
