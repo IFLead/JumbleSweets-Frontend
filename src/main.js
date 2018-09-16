@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import YmapPlugin from 'vue-yandex-maps';
+import Meta from 'vue-meta';
 import 'normalize.css/normalize.css';
 import './plugins/bootstrap-vue';
 import App from './App.vue';
@@ -13,7 +14,7 @@ import './styles/element-variables.scss';
 Vue.config.productionTip = false;
 
 Vue.use(YmapPlugin);
-
+Vue.use(Meta);
 new Vue({
   router,
   store,

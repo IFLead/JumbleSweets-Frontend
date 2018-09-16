@@ -188,132 +188,87 @@
             </b-col>
 
 
-            <b-col md="4" lg="3" class="products__filter">
-							<div class="filter">
-								<el-collapse v-model="activeNames">
-									<div class="filter__content">
-										<div class="filter__close">
-											<svg id="Layer_1" class="filter__close--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-													viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g>
-														<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
-													c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
-													c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
-													L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
-													c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
-													c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
-													c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
-													</g>
-													</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-												<g>
-												</g>
-											</svg>
-										</div>
-										<h2 class="filter__mobile-title">Фильтр</h2>
-										<el-collapse-item title="Категория товара" name="1">
-											<ul class="filter__list filter__list--category">
-												<li>
-													<el-checkbox>Все (101)</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Шоколад (9)</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Мармелад (40)</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Батончики (1)</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Печенье (7)</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Жвачки (11)</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Напитки (33)</el-checkbox>
-												</li>
-											</ul>
-										</el-collapse-item>
+            <b-col md="4" lg="3" class="products__filter filter">
+              <el-collapse v-model="activeNames">
+                <div class="filter__content">
+                  <div class="filter__close">
+                    <svg id="Layer_1" class="filter__close--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g>
+                           <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+												c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+												c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+												L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+												c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+												c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+												c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
+                         </g>
+                         </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                    </svg>
+                  </div>
+                  <h2 class="filter__mobile-title">Фильтр</h2>
+                  <el-collapse-item title="Категория товара" name="1">
+                    <ul v-for="category in allCategories" :key="category.id" class="filter__list filter__list--category">
+                      <li>
+                        <el-checkbox> {{ `${category.name} (${category.count})` }} </el-checkbox>
+                      </li>
+                    </ul>
+                  </el-collapse-item>
 
-										<el-collapse-item title="Производитель" name="2">
-											<ul class="filter__list filter__list--manufacture">
-												<li>
-													<el-checkbox>Все</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Европа</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>США</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Азия</el-checkbox>
-												</li>
-											</ul>
-										</el-collapse-item>
+                  <el-collapse-item title="Производитель" name="2">
+                    <ul v-for="manufacturer in allManufacturers" :key="manufacturer.id" class="filter__list filter__list--manufacture">
+                      <li>
+                        <el-checkbox> {{ manufacturer.name }} </el-checkbox>
+                      </li>
+                    </ul>
+                  </el-collapse-item>
 
-										<el-collapse-item title="Поводы" name="3">
-											<ul class="filter__list filter__list--occasion">
-												<li>
-													<el-checkbox>День Рождения</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Свадьба</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Свидание</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Рождение ребенка</el-checkbox>
-												</li>
-												<li>
-													<el-checkbox>Юбилей</el-checkbox>
-												</li>
-											</ul>
-										</el-collapse-item>
+                  <el-collapse-item title="Поводы" name="3">
+                    <ul v-for="occasion in allOccasions" :key="occasion.id" class="filter__list filter__list--occasion">
+                      <li>
+                        <el-checkbox> {{ occasion.name }} </el-checkbox>
+                      </li>
+                    </ul>
+                  </el-collapse-item>
 
-										<h3 class="filter__title filter__title--cost">Цена</h3>
-										<el-slider
-											:max="3000"
-											range>
-										</el-slider>
-										<el-button class="filter__button filter__button--ready">Готово</el-button>
-									</div>
-									
-								</el-collapse>
-							</div>
-							<div class="filter__buttons">
-								<el-button class="filter__button filter__button--submit">Применить</el-button>
-            	  <el-button class="filter__button filter__button--refresh">Сбросить</el-button>
-							</div>			
+                  <h3 class="filter__title filter__title--cost">Цена</h3>
+                  <el-slider
+                    :max="3000"
+                    range>
+                  </el-slider>
+                  <el-button class="filter__button filter__button--submit">Применить</el-button>
+                  <el-button class="filter__button filter__button--refresh">Сбросить</el-button>
+                </div>
+              </el-collapse>
             </b-col>
 
 
@@ -532,7 +487,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(['loadProducts']),
+    ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers']),
     getDiscount(price, preDiscPrice) {
       return Math.floor(100 * (preDiscPrice - price) / preDiscPrice);
     },
@@ -541,10 +496,13 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['allProducts']),
+    ...mapGetters(['allProducts', 'allCategories', 'allOccasions', 'allManufacturers']),
   },
   created() {
     this.loadProducts({});
+    this.loadCategories({});
+    this.loadManufacturers({});
+    this.loadOccasions({});
   },
 };
 </script>
