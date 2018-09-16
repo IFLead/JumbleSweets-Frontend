@@ -188,144 +188,149 @@
             </b-col>
 
 
-            <b-col md="4" lg="3" class="products__filter filter">
-              <el-collapse v-model="activeNames">
-                <div class="filter__content">
-                  <div class="filter__close">
-                    <svg id="Layer_1" class="filter__close--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                         viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g>
-                           <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
-												c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
-												c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
-												L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
-												c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
-												c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
-												c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
-                         </g>
-                         </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                    </svg>
-                  </div>
-                  <h2 class="filter__mobile-title">Фильтр</h2>
-                  <el-collapse-item title="Категория товара" name="1">
-                    <ul class="filter__list filter__list--category">
-                      <li>
-                        <el-checkbox>Все (101)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Школад (9)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Мармелад (40)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Батончики (1)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Печенье (7)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Жвачки (11)</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Напитки (33)</el-checkbox>
-                      </li>
-                    </ul>
-                  </el-collapse-item>
+            <b-col md="4" lg="3" class="products__filter">
+							<div class="filter">
+								<el-collapse v-model="activeNames">
+									<div class="filter__content">
+										<div class="filter__close">
+											<svg id="Layer_1" class="filter__close--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+													viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g>
+														<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+													c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+													c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+													L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+													c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+													c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+													c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
+													</g>
+													</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+											</svg>
+										</div>
+										<h2 class="filter__mobile-title">Фильтр</h2>
+										<el-collapse-item title="Категория товара" name="1">
+											<ul class="filter__list filter__list--category">
+												<li>
+													<el-checkbox>Все (101)</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Шоколад (9)</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Мармелад (40)</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Батончики (1)</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Печенье (7)</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Жвачки (11)</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Напитки (33)</el-checkbox>
+												</li>
+											</ul>
+										</el-collapse-item>
 
-                  <el-collapse-item title="Производитель" name="2">
-                    <ul class="filter__list filter__list--manufacture">
-                      <li>
-                        <el-checkbox>Все</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Европа</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>США</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Азия</el-checkbox>
-                      </li>
-                    </ul>
-                  </el-collapse-item>
+										<el-collapse-item title="Производитель" name="2">
+											<ul class="filter__list filter__list--manufacture">
+												<li>
+													<el-checkbox>Все</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Европа</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>США</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Азия</el-checkbox>
+												</li>
+											</ul>
+										</el-collapse-item>
 
-                  <el-collapse-item title="Поводы" name="3">
-                    <ul class="filter__list filter__list--occasion">
-                      <li>
-                        <el-checkbox>День Рождения</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Свадьба</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Свидание</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Рождение ребенка</el-checkbox>
-                      </li>
-                      <li>
-                        <el-checkbox>Юбилей</el-checkbox>
-                      </li>
-                    </ul>
-                  </el-collapse-item>
+										<el-collapse-item title="Поводы" name="3">
+											<ul class="filter__list filter__list--occasion">
+												<li>
+													<el-checkbox>День Рождения</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Свадьба</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Свидание</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Рождение ребенка</el-checkbox>
+												</li>
+												<li>
+													<el-checkbox>Юбилей</el-checkbox>
+												</li>
+											</ul>
+										</el-collapse-item>
 
-                  <h3 class="filter__title filter__title--cost">Цена</h3>
-                  <el-slider
-                    :max="3000"
-                    range>
-                  </el-slider>
-                  <el-button class="filter__button filter__button--submit">Применить</el-button>
-                  <el-button class="filter__button filter__button--refresh">Сбросить</el-button>
-                </div>
-              </el-collapse>
+										<h3 class="filter__title filter__title--cost">Цена</h3>
+										<el-slider
+											:max="3000"
+											range>
+										</el-slider>
+										<el-button class="filter__button filter__button--ready">Готово</el-button>
+									</div>
+									
+								</el-collapse>
+							</div>
+							<div class="filter__buttons">
+								<el-button class="filter__button filter__button--submit">Применить</el-button>
+            	  <el-button class="filter__button filter__button--refresh">Сбросить</el-button>
+							</div>			
             </b-col>
 
 
             <b-col md="8" lg="9" class="products__catalog catalog">
               <b-row class="catalog__list">
                 <b-col v-for="product in allProducts" :key="product.id" sm="6" lg="4"
-                       class="catalog__element catalog__element--oreo">
+                       class="catalog__element">
                   <div class="catalog__content">
-                    <div v-if="isDisc(product)" class="catalog__sale">{{ getDiscount(product.price,
-                                                                                     product.pre_disc_price) }}%
+                    <div v-if="isDisc(product)" 		class="catalog__sale">{{ getDiscount(product.price, product.pre_disc_price) }}%
                     </div>
                     <div class="catalog__photo">
                       <a href="#">
                         <img :src="product.photo_url" width="125" height="100">
                       </a>
                     </div>
-                    <h4 class="catalog__title"><a href="#">{{ product.name }}</a></h4>
-                    <div class="catalog__information">
+										<div class="catalog__information">
+                   		<h4 class="catalog__name"><a href="#">{{ product.name }}</a></h4>
                       <p class="catalog__price">{{ product.price }} грн.</p>
                       <p v-if="isDisc(product)" class="catalog__old-price">{{ product.pre_disc_price }} грн.</p>
                       <div class="catalog__basket">
@@ -366,6 +371,8 @@
                     </div>
                   </div>
                 </b-col>
+
+
                 <b-col md="12" lg="6">
                   <div class="pagination">
                     <el-pagination :total="200"
@@ -830,6 +837,111 @@ export default {
     height: 100px
     background-color: #000000
     border-radius: 5px
+
+	.catalog
+		position: relative
+		margin:
+			top: 8px
+		&__photo
+			height: 200px
+			display: flex
+			justify-content: center
+			align-items: center
+		&__information
+			height: 100px
+			display: flex
+			flex-wrap: wrap
+			align-items: flex-start
+			padding: 
+				top: 16px
+				left: 20px
+				right: 20px
+				bottom: 24px
+		&__name
+			font-size: 15px
+			line-height: 20px
+			width: 100%
+			margin:
+				bottom: 20px
+			a
+				transition: all 0.2s ease
+				display: inline-block
+				font-size: 15px
+				line-height: 20px
+				color: #000000
+				text-decoration: none
+				&:hover, &:focus
+					color: #e70068
+		&__sale
+			position: absolute
+			width: 70px
+			height: 35px
+			text-align: center
+			background-color: #E70068
+			color: #ffffff
+			line-height: 35px
+			font-weight: 700
+			text-align: center
+			top: 0
+			left: 0
+		&__content
+			display: flex
+			flex-direction: column
+			position: relative
+			height: 300px
+			background-color: #F8F8F8
+		&__element
+			margin:
+				bottom: 30px
+			@media (max-width: 575.98px)
+				width: 294px
+				margin:
+					left: auto
+					right: auto
+		&__price
+			font-weight: 700
+			line-height: 20px
+			margin:
+				bottom: 0
+			&--sale
+				color: #e70068
+		&__old-price
+			font-weight: regular
+			line-height: 20px
+			color: #c4c4c4
+			text-decoration: line-through
+			margin:
+				left: 9px
+				bottom: 0
+		&__like
+			cursor: pointer
+			width: 22px
+			height: 20px
+			margin:
+				left: 10px
+				top: -4px
+			.like
+				transition: all 0.2s ease
+				fill: #C4C4C4
+			&:hover
+				.like
+					fill: #E70068
+
+		&__basket
+			cursor: pointer
+			width: 15px
+			height: 20px
+			margin:
+				left: auto
+				top: -4px
+			.basket
+				transition: all 0.3s ease
+				fill: #C4C4C4
+			&:hover
+				.basket
+					fill: #E70068
+		.liked
+			fill: #E70068
 
 	.category
 		margin:
@@ -1303,14 +1415,16 @@ export default {
 
 	.filter
 		padding:
-			left: 31px
+			left: 16px
 		@media (max-width: 1199.98px)
 			padding:
-				left: 15px
+				left: 0px
 		@media (max-width: 767.98px)
 			display: none
 			padding:
 				right: 0
+				top: 0
+				bottom: 0
 			position: fixed
 			z-index: 1000
 			background-color: #fff
@@ -1334,6 +1448,7 @@ export default {
 			@media (max-width: 767.98px)
 				position: relative
 				z-index: 100
+				height: 100%
 				background-color: #fff
 				padding:
 					left: 30px
@@ -1407,6 +1522,24 @@ export default {
 			margin:
 				left: 15px
 			width: 200px
+			@media (max-width: 767.98px)
+				margin:
+					left: 0px
+		&__buttons
+			padding:
+				left: 16px
+			@media (max-width: 1199.98px)
+				padding:
+					left: 0
+			@media (max-width: 767.98px)
+				margin: 
+					bottom: 20px
+				display: flex
+				flex-direction: column
+			@media (max-width: 575.98px)
+				align-items: center
+				margin: 
+					bottom: 6px
 		&__button--refresh.el-button
 				color: #000
 				font-weight: 700
@@ -1416,8 +1549,12 @@ export default {
 				&:hover, &:focus
 					background-color: darken(#ffffff, 3%)
 					color: #000000
-				@media (max-width: 767.98px)
-					display: none
+		&__button--ready.el-button
+			display: none
+			@media (max-width: 767.98px)
+				display: inline-block
+				margin:
+					left: 17px
 
 
 		.el-slider
@@ -1434,69 +1571,6 @@ export default {
 
   .filter.show
     display: block
-
-  .sort
-    padding:
-      top: 38px
-      bottom: 33px
-      left: 31px
-    display: flex
-    align-items: baseline
-    @media (max-width: 1199.98px)
-      padding:
-        left: 15px
-    @media (max-width: 767.98px)
-      display: flex
-      flex-direction: column
-    @media (max-width: 575.98px)
-      padding:
-        left: 40px
-        right: 40px
-    &__title
-      font-size: 18px
-      font-weight: 700
-      margin:
-        bottom: 0
-        left: 60px
-        right: 67px
-      @media (max-width: 767.98px)
-        display: none
-    &__filters
-      display: none
-      @media (max-width: 767.98px)
-        display: block
-        width: 350px
-        cursor: pointer
-        padding:
-          top: 5px
-          bottom: 5px
-        margin:
-          top: 23px
-        background-image: url("../assets/Icons/filter-tool-black-shape.svg")
-        background-repeat: no-repeat
-        background-size: 15px auto
-        background-position: right center
-      @media (max-width: 575.98px)
-        width: 100%
-    &__select
-      @media (max-width: 767.98px)
-        display: inline-block
-        margin:
-          top: 23px
-      .el-input__inner
-        border: none
-        padding:
-          left: 0
-        width: 140px
-        &::placeholder
-          font-size: 15px
-          color: #000
-        @media (max-width: 767.98px)
-          width: 360px
-        @media (max-width: 575.98px)
-          width: 100%
-      @media (max-width: 575.98px)
-        width: 100%
 
 	.sort
 		padding:
@@ -1580,222 +1654,20 @@ export default {
 			@media (max-width: 575.98px)
 				width: 100%
 
-  .filter::-webkit-scrollbar
-    width: 4px
-
-	.filter::-webkit-scrollbar
-		width: 4px
-	.filter::-webkit-scrollbar-button
-		background-color: #666
-	.filter::-webkit-scrollbar-track
-		background-color: none
-	.filter::-webkit-scrollbar-thumb
-		height: 100px
-		background-color: #000000
-		border-radius: 5px
-    /*.filter::-webkit-scrollbar-button*/
-    /*background-color: #F8F8F8*/
-
-  .filter::-webkit-scrollbar-track
-    background-color: none
-
-  .filter::-webkit-scrollbar-thumb
-    height: 100px
-    background-color: #000000
-    border-radius: 5px
-
-	.catalog
-		position: relative
-		margin:
-			top: 8px
-		&__title
-			a
-				transition: all 0.2s ease
-				display: block
-				font-size: 15px
-				color: #000000
-				text-decoration: none
-				line-height: 18px
-				margin:
-					bottom: 22px
-				&:hover, &:focus
-					color: #e70068
-		&__sale
-			position: absolute
-			width: 70px
-			height: 35px
-			text-align: center
-			background-color: #E70068
-			color: #ffffff
-			line-height: 35px
-			font-weight: 700
-			text-align: center
-			top: 0
-			left: 0
-		&__photo
-			margin:
-				left: auto
-				right: auto
-		&__content
-			display: flex
-			flex-direction: column
-			position: relative
-			height: 100%
-			background-color: #F8F8F8
-			padding:
-				top: 1px
-				left: 20px
-				right: 20px
-				bottom: 24px
-		&__element
-			margin:
-				bottom: 30px
-			&--snikers
-				.catalog__photo
-					width: 190px
-					height: 55px
-					margin:
-						top: 71px
-						bottom: 91px
-						left: auto
-						right: auto
-			&--cola
-				.catalog__photo
-					width: 183px
-					height: 121px
-					margin:
-						top: 49px
-						bottom: 47px
-						left: auto
-						right: auto
-			&--milka
-				.catalog__photo
-					width: 157px
-					height: 157px
-					margin:
-						top: 21px
-						bottom: 39px
-						left: auto
-						right: auto
-			&--kinder
-				.catalog__photo
-					width: 139px
-					height: 139px
-					margin:
-						top: 34px
-						bottom: 44px
-						left: auto
-						right: auto
-			&--sprite
-				.catalog__photo
-					width: 224px
-					height: 130px
-					margin:
-						top: 44px
-						bottom: 44px
-						left: auto
-						right: auto
-			&--fanta
-				.catalog__photo
-					width: 152px
-					height: 119px
-					margin:
-						top: 49px
-						bottom: 51px
-						left: auto
-						right: auto
-			&--oreo
-				.catalog__photo
-					width: 125px
-					height: 100px
-					margin:
-						top: 49px
-						bottom: 68px
-						left: auto
-						right: auto
-			&--kitkat
-				.catalog__photo
-					width: 181px
-					height: 181px
-					margin:
-						top: 9px
-						bottom: 27px
-						left: auto
-						right: auto
-			&--orbit
-				.catalog__photo
-					width: 151px
-					height: 80px
-					margin:
-						top: 60px
-						bottom: 77px
-						left: auto
-						right: auto
-		&__price
-			font-weight: 700
-			line-height: 18px
-			margin:
-				bottom: 0
-			&--sale
-				color: #e70068
-		&__old-price
-			font-weight: regular
-			line-height: 18px
-			color: #c4c4c4
-			text-decoration: line-through
-			margin:
-				left: 9px
-				bottom: 0
-		&__like
-			cursor: pointer
-			width: 22px
-			height: 20px
-			margin:
-				left: 10px
-				top: -5px
-			.like
-				transition: all 0.2s ease
-				fill: #C4C4C4
-			&:hover
-				.like
-					fill: #E70068
-
-		&__basket
-			cursor: pointer
-			width: 15px
-			height: 20px
-			margin:
-				left: auto
-				top: -5px
-			.basket
-				transition: all 0.3s ease
-				fill: #C4C4C4
-			&:hover
-				.basket
-					fill: #E70068
-		&__information
-			display: flex
-			margin:
-				top: auto
-
-  .liked
-    fill: #E70068
-  .pagination
+	.pagination
+		background-color: #f8f8f8
 		display: inline-block
 		padding:
 			top: 5px
 			bottom: 5px
-		background-color: #f8f8f8
 		.pagination__content
 			@media (max-width: 575.98px)
 				padding:
 					left: 0
 					right: 0
-
 		&__content
 			display: flex
 			align-items: center
-
 			.number
 				transition: all 0.2s ease
 				width: 40px
@@ -1821,34 +1693,6 @@ export default {
 				@media (max-width: 575.98px)
 					width: 100%
 
-    &__content
-      display: flex
-      align-items: center
-      .number
-        transition: all 0.2s ease
-        width: 40px
-        height: 40px
-        padding:
-          top: 5px
-        @media (max-width: 575.98px)
-          width: 30px
-          height: 30px
-          padding:
-            top: 2px
-        &:hover, &:focus
-          box-shadow: inset 0 0 0px 1px #dcdcdc
-      .el-icon-more
-        margin:
-          top: 10px
-      .el-pager
-        display: flex
-        align-items: baseline
-      .el-icon.more.btn-quickprev.el-icon-more
-        display: none
-      .el-pagination
-        @media (max-width: 575.98px)
-          width: 100%
-
 	.pages
 		display: flex
 		align-items: center
@@ -1861,6 +1705,8 @@ export default {
 					left: 0
 					top: 20px
 
+	.not-found.show
+		display: flex
 	.not-found
 		display: none
 		padding:
@@ -1908,7 +1754,29 @@ export default {
 				left: auto
 				right: auto
 
-	.not-found.show
-		display: flex
+  .filter::-webkit-scrollbar
+    width: 4px
 
+	.filter::-webkit-scrollbar
+		width: 4px
+	.filter::-webkit-scrollbar-button
+		background-color: #666
+	.filter::-webkit-scrollbar-track
+		background-color: none
+	.filter::-webkit-scrollbar-thumb
+		height: 100px
+		background-color: #000000
+		border-radius: 5px
+  .filter::-webkit-scrollbar-track
+    background-color: none
+
+  .filter::-webkit-scrollbar-thumb
+    height: 100px
+    background-color: #000000
+    border-radius: 5px
+	.filter::-webkit-scrollbar-button
+    background-color: transparent
+
+	
+  
 </style>

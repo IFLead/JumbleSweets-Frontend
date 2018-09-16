@@ -79,11 +79,12 @@
 	&__logo
 		a
 			display: block
-			width: 108px
-			height: 50px
-			background-image: url("../assets/Icons/logo-yellow.svg")
+			width: 103px
+			height: 55px
+			background-image: url("../assets/Icons/Logo-light.svg")
 			background-repeat: no-repeat
-			background-size: contain
+			background-size: 103px auto
+			background-position: center center
 			margin: 
 				left: 70px
 			@media (max-width: 575.98px)

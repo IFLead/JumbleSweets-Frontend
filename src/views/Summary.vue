@@ -264,9 +264,10 @@
 			bottom: 46px
 		&__wrapper
 			position: relative
-			background-image: url(../assets/ukraine.jpg)
+			background-image: url(../assets/christian-dubovan-686398-unsplash.jpg)
 			background-repeat: no-repeat
 			background-size: cover
+			background-position: center center 
 			&::before
 				content: ''
 				top: 0
@@ -275,7 +276,7 @@
 				bottom: 0
 				position: absolute
 				z-index: 100
-				background-color: rgba(0, 0, 0, 0.7)
+				background-color: rgba(0, 0, 0, 0.65)
 
 		&__content
 			position: relative
