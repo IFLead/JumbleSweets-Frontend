@@ -58,6 +58,7 @@ export default new Router({
       path: '/item/:id',
       name: 'item',
       component: Item,
+      props: true,
     },
     {
       path: '/JumbleBoxPackage',
