@@ -21,8 +21,10 @@
         <section class="authorization">
 
           <div class="authorization__site">
-            <el-button class="authorization__button authorization__button--google">Войти через Google</el-button>
-            <el-button class="authorization__button authorization__button--facebook">Войти через Facebook</el-button>
+            <div class="authorization__site-wrapper">
+              <el-button class="authorization__button authorization__button--google">Войти через Google</el-button>
+              <el-button class="authorization__button authorization__button--facebook">Войти через Facebook</el-button>
+            </div>
           </div>
 
           <div class="authorization__line"></div>
@@ -57,8 +59,10 @@
                 <el-checkbox v-model="checked">Запомнить меня</el-checkbox>
               </div>
             </div>
-            <div class="authorization__pointerlink">
-              <a href="#">Ещё не зарегистрированы? Вам сюда</a>
+            <div class="authorization__pointerlink-wrapper">
+              <div class="authorization__pointerlink">
+                <a href="#">Ещё не зарегистрированы? Вам сюда</a>
+              </div>
             </div>
           </div>
 
@@ -133,17 +137,29 @@
           </div>
         </section>
 
+
+        <!--<b-btn v-b-modal.modal1>Launch demo modal</b-btn>-->
+
+        <!--<div class="modals">-->
+          <!--<repeat-modal :id="'repeat_modal'">Чтобы добавить магазин, необходимо зарегистрироваться в 2 клика</repeat-modal>-->
+        <!--</div>-->
+
+
       </div>
 
     </b-container>
+
   </div>
 
 </template>
 
 <script>
+  import RepeatModal from '../components/modals/RepeatModal'
+
     export default {
       name: "Auth",
       components: {
+        RepeatModal
       },
       data() {
         return {
@@ -155,6 +171,7 @@
         }
       },
     }
+
 </script>
 
 <style lang="sass">
@@ -169,10 +186,14 @@
 .info--aut
   background-image: url("../assets/joshua-ness-225844-unsplash.jpg")
   background-position: 0 -230px
+  @media (max-width: 991.98px)
+    background-position: 0 -50px
 
 .info--reg
   background-image: url("../assets/registr_back.jpg")
   background-position: 0 -80px
+  @media (max-width: 767.98px)
+    background-position: 0 -50px
 
 .info
   margin-top: 10px
@@ -186,6 +207,16 @@
     right: 140px
     bottom: 0px
   color: #ffffff
+  @media (max-width: 991.98px)
+    padding:
+      left: 70px
+      right: 70px
+      bottom: 0px
+  @media (max-width: 767.98px)
+    padding:
+      left: 40px
+      right: 40px
+      bottom: 0px
 
   &__wrapper
     position: relative
@@ -230,9 +261,19 @@
     bottom: 130px
   display: flex
   justify-content: center
+  @media (max-width: 991.98px)
+    flex-wrap: wrap
+    padding:
+      top: 20px
+      bottom: 60px
+  @media (max-width: 767.98px)
+    padding:
+      top: 0px
+
   //padding:
     left: 178px
     right: 178px
+
 
   &__line
     width: 1px
@@ -241,12 +282,26 @@
     margin:
       right: 112px
       left: 112px
+    @media (max-width: 991.98px)
+      display: none
 
   &__site
     max-width: 240px
     padding:
       top: 65px
       bottom: 65px
+    @media (max-width: 991.98px)
+      display: flex
+      justify-content: center
+      min-width: 500px
+      padding:
+        top: 40px
+        bottom: 40px
+
+  &__site-wrapper
+    @media (max-width: 991.98px)
+      display: flex
+      flex-direction: column
 
   .authorization__button
     height: 50px
@@ -276,17 +331,26 @@
     min-width: 16px
     margin:
       right: 15px
+    @media (max-width: 575.98px)
+      margin:
+        right: 10px
 
   &__data-pass-icon
     text-align: center
     min-width: 16px
     margin:
       right: 15px
+    @media (max-width: 575.98px)
+      margin:
+        right: 10px
 
   &__data-pass-eye
     opacity: 0.5
     margin:
       left: 10px
+    @media (max-width: 575.98px)
+      margin:
+        left: 5px
   &__data-pass-eye:hover
     opacity: 1
 
@@ -323,6 +387,9 @@
     margin:
       top: 15px
       bottom: 45px
+    @media (max-width: 575.98px)
+      flex-direction: column-reverse
+      align-items: center
 
   .authorization__actives-button
     width: 150px
@@ -331,10 +398,17 @@
 
   &__actives-check
     font-weight: 400
+    @media (max-width: 575.98px)
+      margin:
+        bottom: 20px
+
 
   .el-checkbox__inner
     background: none
     border-radius: 0
+
+  &__pointerlink-wrapper
+    text-align: center
 
   &__pointerlink
     display: inline-block
@@ -363,6 +437,10 @@
     min-width: 16px
     margin:
       right: 15px
+    @media (max-width: 575.98px)
+      margin:
+        right: 5px
+        left: 5px
 
   &__data-pass
     display: flex
@@ -372,11 +450,18 @@
     min-width: 16px
     margin:
       right: 15px
+    @media (max-width: 575.98px)
+      margin:
+        right: 5px
+        left: 5px
 
   &__data-pass-eye
     opacity: 0.5
     margin:
       left: 10px
+    @media (max-width: 575.98px)
+      margin:
+        left: 5px
   &__data-pass-eye:hover
     opacity: 1
 
@@ -388,11 +473,18 @@
     min-width: 16px
     margin:
       right: 15px
+    @media (max-width: 575.98px)
+      margin:
+        right: 5px
+        left: 5px
 
   &__data-repass-eye
     opacity: 0.5
     margin:
       left: 10px
+    @media (max-width: 575.98px)
+      margin:
+        left: 5px
   &__data-repass-eye:hover
     opacity: 1
 
@@ -430,6 +522,9 @@
     display: flex
     justify-content: space-between
     min-width: 364px
+    @media (max-width: 575.98px)
+      flex-direction: column-reverse
+      align-items: center
 
   .registr__actives-button
     width: 150px
@@ -438,6 +533,9 @@
 
   &__actives-check
     font-weight: 400
+    @media (max-width: 575.98px)
+      margin:
+        bottom: 20px
 
   .el-checkbox
     display: flex

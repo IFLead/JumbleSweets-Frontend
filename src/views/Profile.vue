@@ -2,7 +2,7 @@
   <div class="profile">
     <b-container>
       <b-row>
-        <b-col cols="4">
+        <b-col md="4" sm="12">
           <aside class="left-panel">
             <div class="left-panel__user">
               <div class="left-panel__user-wrapper">
@@ -27,10 +27,19 @@
                 </div>
               </div>
             </div>
+            <div class="left-panel__back-button">
+              <div class="left-panel__back-button-icon">
+                <img src="../assets/Icons/left-arrow.svg"
+                     width="7" height="12" alt="Назад">
+              </div>
+              <div class="left-panel__back-button-label">
+                Назад
+              </div>
+            </div>
           </aside>
         </b-col>
 
-        <b-col cols="8">
+        <b-col md="8" sm="12">
           <div class="panel-content">
 
             <div v-show="panelIndex === 1" class="personal-data">
@@ -63,7 +72,9 @@
                 </div>
               </div>
               <div class="personal-data__button">
-                <el-button>Сохранить изменения</el-button>
+                <div class="personal-data__button-wrapper">
+                  <el-button>Сохранить изменения</el-button>
+                </div>
               </div>
             </div>
 
@@ -295,8 +306,243 @@
                   </div>
                 </div>
 
+              </div>
+
+              <div v-show="isOrders === true" class="orders-yesmob">
+
+                <div class="orders-yesmob__elem">
+                  <div class="orders-yesmob__elem-picture">
+                    <div class="orders-yesmob__elem-picture-wrapper">
+
+                      <div class="orders-yesmob__elem-header">
+                        <div class="orders-yesmob__elem-header-left">
+                          <div class="orders-yesmob__elem-date">22 / 06 / 2018</div>
+                          <div class="orders-yesmob__elem-time">18:55</div>
+                        </div>
+                        <div class="orders-yesmob__elem-cost">
+                          <div class="orders-yesmob__elem-cost-icon">
+                            <img src="../assets/Icons/card-payment_profile.svg" width="20" height="20" alt="Цена">
+                          </div>
+                          <div class="orders-yesmob__elem-cost-label">6760 грн.</div>
+                        </div>
+                      </div>
+                      <div class="orders-yesmob__elem-footer">
+                        <div class="orders-yesmob__elem-hide">
+                          <div class="orders-yesmob__elem-hide-label">Скрыть</div>
+                          <div class="orders-yesmob__elem-hide-icon">
+                            <img src="../assets/Icons/right-arrow_profile_top.svg"
+                                 width="12" height="7" alt="Скрыть">
+                          </div>
+                        </div>
+                        <div class="orders-yesmob__elem-repeat">
+                          <div class="orders-yesmob__elem-repeat-label">Повторить</div>
+                          <div class="orders-yesmob__elem-repeat-icon">
+                            <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div v-if="isHidden === false" class="orders-yesmob__elem-products">
+                    <div class="orders-yesmob__elem-products-wrapper">
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Батончик Snickers</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">4 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">60 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Шоколад Milka Sweet</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper underline">Jumble Box Light</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Шоколад Alpen Gold</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Jumble Box Light Mistery</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="orders-yesmob__elem">
+                  <div class="orders-yesmob__elem-picture">
+                    <div class="orders-yesmob__elem-picture-wrapper">
+
+                      <div class="orders-yesmob__elem-header">
+                        <div class="orders-yesmob__elem-header-left">
+                          <div class="orders-yesmob__elem-date">22 / 06 / 2018</div>
+                          <div class="orders-yesmob__elem-time">18:55</div>
+                        </div>
+                        <div class="orders-yesmob__elem-cost">
+                          <div class="orders-yesmob__elem-cost-icon">
+                            <img src="../assets/Icons/card-payment_profile.svg" width="20" height="20" alt="Цена">
+                          </div>
+                          <div class="orders-yesmob__elem-cost-label">6760 грн.</div>
+                        </div>
+                      </div>
+                      <div class="orders-yesmob__elem-footer">
+                        <div class="orders-yesmob__elem-hide">
+                          <div class="orders-yesmob__elem-hide-label">Подробнее</div>
+                          <div class="orders-yesmob__elem-hide-icon">
+                            <img src="../assets/Icons/right-arrow_profile.svg"
+                                 width="12" height="7" alt="Скрыть">
+                          </div>
+                        </div>
+                        <div class="orders-yesmob__elem-repeat">
+                          <div class="orders-yesmob__elem-repeat-label">Повторить</div>
+                          <div class="orders-yesmob__elem-repeat-icon">
+                            <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div v-if="isHidden === true" class="orders-yesmob__elem-products">
+                    <div class="orders-yesmob__elem-products-wrapper">
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Батончик Snickers</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">4 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">60 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Шоколад Milka Sweet</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper underline">Jumble Box Light</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Шоколад Alpen Gold</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Jumble Box Light Mistery</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="orders-yesmob__elem">
+                  <div class="orders-yesmob__elem-picture">
+                    <div class="orders-yesmob__elem-picture-wrapper">
+
+                      <div class="orders-yesmob__elem-header">
+                        <div class="orders-yesmob__elem-header-left">
+                          <div class="orders-yesmob__elem-date">22 / 06 / 2018</div>
+                          <div class="orders-yesmob__elem-time">18:55</div>
+                        </div>
+                        <div class="orders-yesmob__elem-cost">
+                          <div class="orders-yesmob__elem-cost-icon">
+                            <img src="../assets/Icons/card-payment_profile.svg" width="20" height="20" alt="Цена">
+                          </div>
+                          <div class="orders-yesmob__elem-cost-label">6760 грн.</div>
+                        </div>
+                      </div>
+                      <div class="orders-yesmob__elem-footer">
+                        <div class="orders-yesmob__elem-hide">
+                          <div class="orders-yesmob__elem-hide-label">Подробнее</div>
+                          <div class="orders-yesmob__elem-hide-icon">
+                            <img src="../assets/Icons/right-arrow_profile.svg"
+                                 width="12" height="7" alt="Скрыть">
+                          </div>
+                        </div>
+                        <div class="orders-yesmob__elem-repeat">
+                          <div class="orders-yesmob__elem-repeat-label">Повторить</div>
+                          <div class="orders-yesmob__elem-repeat-icon">
+                            <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div v-if="isHidden === true" class="orders-yesmob__elem-products">
+                    <div class="orders-yesmob__elem-products-wrapper">
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Батончик Snickers</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">4 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">60 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Шоколад Milka Sweet</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper underline">Jumble Box Light</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Шоколад Alpen Gold</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                      <div class="orders-yesmob__elem-products-product">
+                        <div class="orders-yesmob__elem-products-name">
+                          <div class="orders-yesmob__elem-products-name-wrapper">Jumble Box Light Mistery</div>
+                        </div>
+                        <div class="orders-yesmob__elem-products-number">1 шт.</div>
+                        <div class="orders-yesmob__elem-products-price">150 грн.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
 
               </div>
+
 
               <div v-show="isOrders === false" class="orders-no">
                 <div class="orders-no__wrapper">
@@ -419,6 +665,8 @@ export default {
       top: 30px
       left: 30px
       bottom: 76px
+    @media (max-width: 767.98px)
+      margin: 0 auto
     &:after
       content: ''
       z-index: 1
@@ -434,6 +682,11 @@ export default {
     background-color: #f8f8f8
     margin:
       top: 35px
+    @media (max-width: 767.98px)
+      margin:
+        left: auto
+        right: auto
+        top: 25px
 
   &__menu
     padding:
@@ -451,11 +704,32 @@ export default {
       color: #ffffff
       cursor: pointer
 
+  &__back-button
+    margin:
+      left: 30px
+      top: 30px
+    display: flex
+    @media (min-width: 767.98px)
+      display: none
+
+  &__back-button-icon
+    margin-right: 12px
 
 .panel-content
-  padding-left: 30px
+  padding:
+    left: 30px
+  @media (max-width: 767.98px)
+    padding:
+      left: 0px
+    margin-top: 25px
+    display: flex
+    justify-content: center
 
 .personal-data
+  @media (max-width: 575.98px)
+    margin:
+      left: 30px
+      right: 30px
 
   &__title
     margin:
@@ -466,6 +740,9 @@ export default {
     line-height: 18px
     margin:
       bottom: 85px
+    @media (max-width: 767.98px)
+      margin:
+        bottom: 35px
 
   &__personal
     display: flex
@@ -506,6 +783,11 @@ export default {
 
   &__button
     margin-top: 70px
+    @media (max-width: 767.98px)
+      margin:
+        top: 35px
+      display: flex
+      justify-content: center
     .el-button
       width: 244px
       height: 50px
@@ -518,7 +800,12 @@ export default {
         right: 60px
 
 
+
 .orders
+  @media (max-width: 575.98px)
+    margin:
+      left: 30px
+      right: 30px
 
   &__title
     line-height: 37px
@@ -530,8 +817,13 @@ export default {
     line-height: 18px
     margin:
       bottom: 50px
+    @media (max-width: 1199.98px)
+      margin:
+        bottom: 35px
 
 .orders-yes
+  @media (max-width: 1199.98px)
+    display: none
 
   &__elem
     display: flex
@@ -648,6 +940,113 @@ export default {
   .bold-type
     font-weight: 700
 
+
+.orders-yesmob
+  @media (min-width: 1199.98px)
+    display: none
+
+  &__elem
+    margin:
+      bottom: 30px
+    &:last-of-type
+      margin:
+        bottom: 0px
+
+  &__elem-picture
+    background-image: url("../assets/glass_back.jpg")
+    background-position: 0px -60px
+    background-size: cover
+    background-repeat: no-repeat
+    position: relative
+    background-color: grey
+    padding: 15px
+    @media (max-width: 575.98px)
+      background-position: 0px -30px
+    &:after
+      content: ''
+      z-index: 1
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      background: linear-gradient(rgba(0,0,0,.80), rgba(0,0,0,.99))
+
+  &__elem-picture-wrapper
+    color: #ffffff
+    position: relative
+    z-index: 100
+
+  &__elem-header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 38px
+
+  &__elem-date
+    font-weight: 700
+    margin:
+      bottom: 15px
+
+  &__elem-time
+    font-weight: 700
+    font-size: 25px
+    line-height: 30px
+
+  &__elem-cost
+    display: flex
+    height: 60px
+
+  &__elem-cost-label
+    font-weight: 700
+    font-size: 25px
+    line-height: 30px
+    @media (max-width: 575.98px)
+      font-size: 20px
+
+  &__elem-cost-icon
+    margin-right: 12px
+
+  &__elem-footer
+    display: flex
+    justify-content: space-between
+
+  &__elem-hide
+    display: flex
+
+  &__elem-hide-icon
+    margin-left: 12px
+
+  &__elem-repeat
+    display: flex
+
+  &__elem-repeat-icon
+    margin-left: 12px
+
+  &__elem-products
+    background-color: #f8f8f8
+    padding:
+      left: 15px
+      right: 15px
+      top: 15px
+      bottom: 30px
+
+  //&__elem-products-wrapper
+    width: 494px
+
+  &__elem-products-product
+    display: flex
+    justify-content: space-between
+    padding-bottom: 15px
+
+  &__elem-products-name
+    width: 170px
+
+  &__elem-products-name-wrapper
+    display: inline-block
+
+  .underline
+    border-bottom: 1px dashed #E70068
+
 .orders-no
   background-color: #f8f8f8
   padding:
@@ -689,6 +1088,10 @@ export default {
       bottom: 80px
 
 .wishlist
+  @media (max-width: 575.98px)
+    margin:
+      left: 30px
+      right: 30px
 
   &__title
     line-height: 37px
