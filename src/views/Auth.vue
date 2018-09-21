@@ -137,14 +137,6 @@
           </div>
         </section>
 
-
-        <!--<b-btn v-b-modal.modal1>Launch demo modal</b-btn>-->
-
-        <!--<div class="modals">-->
-          <!--<repeat-modal :id="'repeat_modal'">Чтобы добавить магазин, необходимо зарегистрироваться в 2 клика</repeat-modal>-->
-        <!--</div>-->
-
-
       </div>
 
     </b-container>
@@ -154,12 +146,10 @@
 </template>
 
 <script>
-  import RepeatModal from '../components/modals/RepeatModal'
 
     export default {
       name: "Auth",
       components: {
-        RepeatModal
       },
       data() {
         return {

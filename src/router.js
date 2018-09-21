@@ -15,8 +15,8 @@ import Shopping from './views/Shopping.vue';
 import NovaPoshta from './views/NovaPoshta.vue';
 import Kharkiv from './views/Kharkiv.vue';
 import Summary from './views/Summary.vue';
-
 import Auth from './views/Auth.vue';
+import RepeatModal from './components/modals/RepeatModal.vue';
 
 Vue.use(Router);
 Vue.use(Meta, {
@@ -61,7 +61,7 @@ export default new Router({
       props: true,
     },
     {
-      path: '/JumbleBoxPackage',
+      path: '/package',
       name: 'JumbleBoxPackage',
       component: JumbleBoxPackage,
     },
@@ -71,39 +71,44 @@ export default new Router({
       component: Profile,
     },
     {
-      path: '/JumbleBoxConstructor',
+      path: '/constructor',
       name: 'JumbleBoxConstructor',
       component: JumbleBoxConstructor,
     },
     {
-      path: '/Cart',
+      path: '/cart',
       name: 'Cart',
       component: Cart,
     },
     {
-      path: '/Auth',
+      path: '/auth',
       name: 'Auth',
       component: Auth,
     },
     {
-      path: '/Shopping',
+      path: '/shopping',
       name: 'Shopping',
       component: Shopping,
     },
     {
-      path: '/NovaPoshta',
+      path: '/novaposhta',
       name: 'NovaPoshta',
       component: NovaPoshta,
     },
     {
-      path: '/Kharkiv',
+      path: '/kharkiv',
       name: 'Kharkiv',
       component: Kharkiv,
     },
     {
-      path: '/Summary',
+      path: '/summary',
       name: 'Summary',
       component: Summary,
+    },
+    {
+      path: '/repeatmodal',
+      name: 'RepeatModal',
+      component: RepeatModal,
     },
     // {
     //   path: '/about',

@@ -42,7 +42,9 @@
                       Мы с удовольствием соберём для Вас стильный бокс сладостей, который станет вкусным и необычным
                       презентом и, несомненно, подарит получателю массу положительных эмоций.
                     </p>
-                    <el-button class="description__button">Посмотреть каталог</el-button>
+                    <el-button class="description__button">
+                      Посмотреть каталог
+                    </el-button>
                   </div>
                 </el-carousel-item>
               </el-carousel>
@@ -405,7 +407,11 @@
                   отличным подарком для Вашей второй половинки, друга или коллеги по работе.</p>
                   <p class="jumble__description">Jumble Box можно заказать в любом оформлении и наполнении. Каждый
                   Jumble Box создаётся в соответствии с Вашими пожеланиями и исключительно в оригинальном стиле.</p>
-                  <el-button class="jumble__button">Перейти в конструктор</el-button>
+                  <router-link to="/constructor">
+                    <el-button class="jumble__button">
+                      Перейти в конструктор
+                    </el-button>
+                  </router-link>
                 </div>
               </div>
             </b-col>
@@ -810,7 +816,7 @@ export default {
 			display: flex
 			flex-wrap: wrap
 			align-items: flex-start
-			padding: 
+			padding:
 				top: 16px
 				left: 20px
 				right: 20px
@@ -1490,13 +1496,13 @@ export default {
 				padding:
 					left: 0
 			@media (max-width: 767.98px)
-				margin: 
+				margin:
 					bottom: 20px
 				display: flex
 				flex-direction: column
 			@media (max-width: 575.98px)
 				align-items: center
-				margin: 
+				margin:
 					bottom: 6px
 		&__button--refresh.el-button
 				color: #000
@@ -1735,6 +1741,6 @@ export default {
 	.filter::-webkit-scrollbar-button
     background-color: transparent
 
-	
-  
+
+
 </style>

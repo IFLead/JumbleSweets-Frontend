@@ -1,5 +1,5 @@
 <template>
-  <div class="footer"> 
+  <div class="footer">
 		<footer class="main-footer">
 			<b-container>
 				<b-row>
@@ -15,9 +15,9 @@
 									<div class="main-footer__main-information main-information">
 										<h3 class="main-information__title">Основная информация</h3>
 										<ul class="main-information__list">
-											<li class="main-information__element"><a href="">Оплата и доставка</a></li>
-											<li class="main-information__element"><a href="">Jumble Box</a></li>
-											<li class="main-information__element"><a href="">О нас</a></li>
+                      <li class="main-information__element"><router-link to="/delivery">Оплата и доставка</router-link></li>
+                      <li class="main-information__element"><router-link to="/jumble_box">Jumble Box</router-link></li>
+                      <li class="main-information__element"><router-link to="/about">О нас</router-link></li>
 										</ul>
 									</div>
 								</b-col>
@@ -25,9 +25,10 @@
 									<div class="main-footer__client client">
 										<h3 class="client__title">Клиенту</h3>
 										<ul class="client__list">
-											<li class="client__element"><a href="#">Личный кабинет</a></li>
-											<li class="client__element"><a href="#">Мои заказы</a></li>
-											<li class="client__element"><a href="#">Каталог товаров</a></li>
+                      <li class="client__element"><router-link to="/profile">Личный кабинет</router-link></li>
+                      <li class="client__element"><router-link to="/cart">Мои заказы</router-link></li>
+                      <li class="client__element"><router-link to="/">Каталог товаров</router-link></li>
+                      <!--не знаю, как делать ссылки на класс через router-link-->
 										</ul>
 									</div>
 								</b-col>
@@ -35,9 +36,9 @@
 									<div class="main-footer__feedback feedback">
 										<h3 class="feedback__title">Всегда с Вами</h3>
 										<ul class="feedback__list">
-											<li class="feedback__element"><a href="#">Политика конфиденциальности</a></li>
-											<li class="feedback__element"><a href="#">Наш Instagram</a></li>
-											<li class="feedback__element"><a href="#">Контакты</a></li>
+                      <li class="feedback__element"><router-link to="#">Политика конфиденциальност</router-link></li>
+                      <li class="feedback__element"><router-link to="#">Наш Instagram</router-link></li>
+                      <li class="feedback__element"><router-link to="/contacts">Контакты</router-link></li>
 										</ul>
 									</div>
 								</b-col>
@@ -46,10 +47,10 @@
 								</b-col>
 							</b-row>
 						</div>
-					</b-col>			
+					</b-col>
 				</b-row>
    	 </b-container>
-		</footer>				
+		</footer>
   </div>
 </template>
 
@@ -74,7 +75,7 @@
 			padding:
 				top: 40px
 		@media (max-width: 575.98px)
-			padding: 
+			padding:
 				bottom: 40px
 	&__logo
 		a
@@ -85,10 +86,10 @@
 			background-repeat: no-repeat
 			background-size: 103px auto
 			background-position: center center
-			margin: 
+			margin:
 				left: 70px
 			@media (max-width: 575.98px)
-				margin: 
+				margin:
 					left: 0
 					bottom: 20px
 	&__copyright
@@ -100,7 +101,7 @@
 			left: auto
 			right: auto
 		@media (max-width: 575.98px)
-			margin: 
+			margin:
 				top: 60px
 .main-information, .client, .feedback
 	&__list

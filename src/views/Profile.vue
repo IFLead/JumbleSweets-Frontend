@@ -600,15 +600,24 @@
 
       </b-row>
 
+      <!--<b-btn v-b-modal.modal1>Launch demo modal</b-btn>-->
+
+      <!--<div class="modals">-->
+      <!--<repeat-modal :id="'repeat_modal'">Чтобы добавить магазин, необходимо зарегистрироваться в 2 клика</repeat-modal>-->
+      <!--</div>-->
+
     </b-container>
   </div>
 
 </template>
 
 <script>
+  import RepeatModal from '../components/modals/RepeatModal'
+
 export default {
   name: 'Profile',
   components: {
+    RepeatModal
   },
   data() {
     return {

@@ -5,19 +5,19 @@
 				<b-row>
 					<b-col>
 						<div class="main-header__content">
-							<a href="#" class="main-header__logo"></a>
+              <router-link to="/" class="main-header__logo"></router-link>
 							<a href="#" class="main-header__title">Меню</a>
 							<div class="main-header__menu menu">
 								<ul class="menu__list">
 									<li class="menu__close"></li>
-									<li class="menu__element"><a href="#">Главная</a></li>
-									<li class="menu__element"><a href="#">О нас</a></li>
-									<li class="menu__element"><a href="#">Контакты</a></li>
-									<li class="menu__element"><a href="#">Доставка и оплата</a></li>
-									<li class="menu__element"><a href="#">Jumble Box</a></li>
+									<li class="menu__element"><router-link to="/">Главная</router-link></li>
+									<li class="menu__element"><router-link to="/about">О нас</router-link></li>
+									<li class="menu__element"><router-link to="/contacts">Контакты</router-link></li>
+									<li class="menu__element"><router-link to="/delivery">Доставка и оплата</router-link></li>
+									<li class="menu__element"><router-link to="/jumble_box">Jumble Box</router-link></li>
 									<li class="menu__element menu__element--mobile mobile">
-										<a href="#" class="mobile__login">Личный кабинет</a>
-										<a href="#" class="mobile__inst">Мы в Instagram</a>
+                    <router-link to="/profile" class="mobile__login">Личный кабинет</router-link>
+                    <router-link to="#" class="mobile__inst">Мы в Instagram</router-link>
 										<ul class="mobile__contacts">
 											<li class="mobile__element">+38(050)-666-66-66</li>
 											<li class="mobile__element">help@jumble-sweets.com.ua</li>
@@ -30,17 +30,17 @@
 							<ul class="main-header__user user">
 								<li class="user__element user__element--cart">
 									<el-badge :value="1">
-										<a href="#"><span>Корзина</span></a>
+                    <router-link to="/cart"><span>Корзина</span></router-link>
 									</el-badge>
 								</li>
-								<li class="user__element user__element--login"><a href="#">Личный кабинет</a></li>
+								<li class="user__element user__element--login"><router-link to="/profile">Личный кабинет</router-link></li>
 							</ul>
 
 						</div>
 					</b-col>
 				</b-row>
    	 </b-container>
-		</header>			
+		</header>
   </div>
 </template>
 
