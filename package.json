@@ -9,6 +9,7 @@
     "build-modern": "vue-cli-service build --modern"
   },
   "dependencies": {
+    "apollo-link-http": "^1.5.5",
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0-rc.11",
     "element-ui": "^2.4.5",

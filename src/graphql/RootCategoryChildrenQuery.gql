@@ -1,0 +1,17 @@
+query RootCategoryChildren {
+    categories(level: 0) {
+      edges {
+        cursor
+        node {
+          id
+          name
+          children {
+            totalCount
+          }
+          products {
+            totalCount
+          }
+        }
+      }
+    }
+  }

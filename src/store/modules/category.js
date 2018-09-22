@@ -1,3 +1,7 @@
+import Vue from 'vue';
+import ROOT_CATEGORY_CHILDREN from '../../graphql/RootCategoryChildrenQuery.gql'
+import { apolloProvider } from '../../vue-apollo';
+
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {
   categories: {},
@@ -17,7 +21,18 @@ const mutations = {
 
 // actions
 const actions = {
-  loadCategories(context) {
+  async loadCategories(context) {
+    console.log(this._vm);
+    // console.log(Vue);
+    const response = await apolloProvider.defaultClient.query({
+      // It is important to not use the
+      // ES6 template syntax for variables
+      // directly inside the `gql` query,
+      // because this would make it impossible
+      // for Babel to optimize the code.
+      query: ROOT_CATEGORY_CHILDREN,
+    });
+    console.log(response.data);
     context.commit(
       'setCategories',
       {
