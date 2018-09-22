@@ -1,0 +1,98 @@
+#import "./MoneyFragment.gql"
+#import "./ProductImageFragment.gql"
+
+fragment Product on Product {
+    id
+    name
+    description
+    seoTitle
+    seoDescription
+    category {
+      id
+      name
+    }
+    collections {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+    price {
+      ...Money
+    }
+    margin {
+      start
+      stop
+    }
+    purchaseCost {
+      start {
+        ...Money
+      }
+      stop {
+        ...Money
+      }
+    }
+    isPublished
+    chargeTaxes
+    availableOn
+    attributes {
+      attribute {
+        id
+        slug
+        name
+        values {
+          name
+          slug
+        }
+      }
+      value {
+        id
+        name
+        slug
+      }
+    }
+    availability {
+      available
+      priceRange {
+        start {
+          net {
+            ...Money
+          }
+        }
+        stop {
+          net {
+            ...Money
+          }
+        }
+      }
+    }
+    images {
+      edges {
+        node {
+          ...ProductImage
+        }
+      }
+    }
+    variants {
+      edges {
+        node {
+          id
+          sku
+          name
+          priceOverride {
+            ...Money
+          }
+          stockQuantity
+          margin
+        }
+      }
+    }
+    productType {
+      id
+      name
+      hasVariants
+    }
+    url
+  }
