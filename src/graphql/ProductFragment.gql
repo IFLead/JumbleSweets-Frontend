@@ -27,19 +27,25 @@ fragment Product on Product {
   availability {
     available
   }
-  images {
-    edges {
-      node {
-        ...ProductImage
-      }
-    }
-  }
+  # images {
+  #   edges {
+  #     node {
+  #       ...ProductImage
+  #     }
+  #   }
+  # }
   variants {
     edges {
       node {
         id
-        sku
         name
+        images {
+          edges {
+            node {
+              ...ProductImage
+            }
+          }
+        }
         priceOverride {
           ...Money
         }
