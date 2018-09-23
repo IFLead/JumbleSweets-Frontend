@@ -177,7 +177,7 @@
           <b-row>
             <b-col cols="12" class="products__sort sort">
               <el-input placeholder="Поиск товаров" class="sort__search"></el-input>
-              <div class="sort__filters">Фильтры</div>
+              <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
               <el-select v-model="value" placeholder="Сначала новые" class="sort__select">
                 <el-option
@@ -190,10 +190,10 @@
             </b-col>
 
 
-            <b-col md="4" lg="3" class="products__filter filter">
+            <b-col md="4" lg="3" class="products__filter filter" :class="{show: filterOpen}">
               <el-collapse v-model="activeNames">
                 <div class="filter__content">
-                  <div class="filter__close">
+                  <div class="filter__close" @click="filterOpen = false">
                     <svg id="Layer_1" class="filter__close--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g>
                            <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
@@ -489,7 +489,8 @@ export default {
         label: 'Цена',
       }],
       value: '',
-      activeNames: ['1'],
+			activeNames: ['1'],
+			filterOpen: false
     };
   },
   methods: {
@@ -726,18 +727,14 @@ export default {
 
 	.news__actions::-webkit-scrollbar
 		width: 4px
-	.news__actions::-webkit-scrollbar-button
-		background-color: #666
 	.news__actions::-webkit-scrollbar-track
 		background-color: none
 	.news__actions::-webkit-scrollbar-thumb
 		height: 100px
 		background-color: #000000
 		border-radius: 5px
-    /*.news__actions::-webkit-scrollbar-button*/
-    /*background-color: #f8f8f8*/
-  .news__actions::-webkit-scrollbar
-    width: 4px
+  .news__actions::-webkit-scrollbar-button
+    background-color: #f8f8f8
 
 	.contact
 		line-height: 18px
@@ -824,6 +821,10 @@ export default {
 		&__name
 			font-size: 15px
 			line-height: 20px
+			white-space: nowrap 
+			overflow: hidden 
+			text-overflow: ellipsis 
+			max-width: 200ch
 			width: 100%
 			margin:
 				bottom: 20px
@@ -1379,10 +1380,10 @@ export default {
 
 	.filter
 		padding:
-			left: 16px
+			left: 31px
 		@media (max-width: 1199.98px)
 			padding:
-				left: 0px
+				left: 15px
 		@media (max-width: 767.98px)
 			display: none
 			padding:
@@ -1456,7 +1457,9 @@ export default {
 				height: 15px
 				position: fixed
 				top: 25px
-				right: 310px
+				right: 330px
+				@media (max-width: 575.98px)
+					right: 310px
 				.filter__close--icon
 					fill: #ffffff
 					margin:
@@ -1532,9 +1535,6 @@ export default {
 
 	.filter.show
 		display: block
-
-  .filter.show
-    display: block
 
 	.sort
 		padding:
@@ -1717,29 +1717,6 @@ export default {
 			margin:
 				left: auto
 				right: auto
-
-  .filter::-webkit-scrollbar
-    width: 4px
-
-	.filter::-webkit-scrollbar
-		width: 4px
-	.filter::-webkit-scrollbar-button
-		background-color: #666
-	.filter::-webkit-scrollbar-track
-		background-color: none
-	.filter::-webkit-scrollbar-thumb
-		height: 100px
-		background-color: #000000
-		border-radius: 5px
-  .filter::-webkit-scrollbar-track
-    background-color: none
-
-  .filter::-webkit-scrollbar-thumb
-    height: 100px
-    background-color: #000000
-    border-radius: 5px
-	.filter::-webkit-scrollbar-button
-    background-color: transparent
 
 
 

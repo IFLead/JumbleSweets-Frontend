@@ -21,7 +21,7 @@
 					<b-col cols="12" class="purchases__control control">
 						<div class="control__content">
 							<h2 class="control__title">Моя корзина</h2>
-							<a href="#" class="control__link control__link--like">Добавить всё в список желания
+							<a href="#" class="control__link control__link--like" @click="favouriteModal = true">Добавить всё в список желания
 								<span>
 									<svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
@@ -64,7 +64,7 @@
 									</svg>
 								</span>
 							</a>
-							<a href="#" class="control__link control__link--delete">Очистить корзину
+							<a href="#" class="control__link control__link--delete" @click="cleanModal = true">Очистить корзину
 								<span>
 									<svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										 viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;" xml:space="preserve">
@@ -184,7 +184,7 @@
 							<div class="element__information">
 								<div class="element__name--wrapper">
 									<a href="#" class="element__name">Jumble Box Light</a>
-									<a href="#" class="element__look">Посмотреть содержимое бокса</a>
+									<a href="#" class="element__look" @click="insideModal = true">Посмотреть содержимое бокса</a>
 								</div>
 								<div class="element__contrlos">
 									<div class="element__col">
@@ -224,9 +224,9 @@
 
 					<b-col cols="12" class="purchases__total total">
 						<div class="total__content">
-							<a href="#" class="total__promo activated"><span class="total__promo--first">У меня есть промокод на скидку</span> <span class="total__promo--activated">Скидка 10% с промокода</span></a>
+							<a href="#" class="total__promo activated"><span class="total__promo--first">У меня есть промокод на скидку</span> <span class="total__promo--activated" @click="saleModal = true">Скидка 10% с промокода</span></a>
 							<p class="total__price">Сумма: <span>7000 грн.</span></p>
-							<el-button class="total__button">Перейти к оформлению 
+							<el-button class="total__button" @click="decorModal = true">Перейти к оформлению 
 								<span class="total__button--icon">
 									<svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
@@ -288,31 +288,31 @@
 		</section>
 
 		<section class="modals">
-			<div class="modals__clean clean">
+			<el-dialog class="modals__clean clean" close-on-press-escape="true" :visible.sync="cleanModal">
 				<div class="clean__content">
 					<div class="clean__icon"></div>
 					<h3 class="clean__title">Очистка корзины</h3>
 					<p class="clean__description">Мы удалим весь товар из вашей корзины, точно этого хотите?</p>
 					<div class="clean__buttons">
 						<el-button class="clean__button">Очистить корзину</el-button>
-						<a href="#" class="clean__link">Нет, не надо</a>
+						<a href="#" class="clean__link" @click="cleanModal = false">Нет, не надо</a>
 					</div>
 				</div>
-			</div>
+			</el-dialog>
 
-			<div class="modals__favourite favourite">
+			<el-dialog class="modals__favourite favourite" :visible.sync="favouriteModal" close-on-press-escape="true">
 				<div class="favourite__content">
 					<div class="favourite__icon"></div>
 					<h3 class="favourite__title">В список желаемого</h3>
 					<p class="favourite__description">С радостью перенесем содержимое корзины в список желаний, вы согласны?</p>
 					<div class="favourite__buttons">
 						<el-button class="favourite__button">Да, конечно</el-button>
-						<a href="#" class="favourite__link">Нет, оставьте всё в корзине</a>
+						<a href="#" class="favourite__link" @click="favouriteModal = false">Нет, оставьте всё в корзине</a>
 					</div>
 				</div>
-			</div>
+			</el-dialog>
 
-			<div class="modals__sale sale">
+			<el-dialog class="modals__sale sale" :visible.sync="saleModal" div >
 				<div class="sale__content">
 					<div class="sale__close"></div>
 					<h3 class="sale__title">Промокод на скидку</h3>
@@ -323,14 +323,14 @@
 					<p class="sale__alert show">*Извините, промокод недействителен</p>
 					<div class="sale__buttons">
 						<el-button class="sale__button">Использовать</el-button>
-						<a href="#" class="sale__link">Отмена</a>
+						<a href="#" class="sale__link" @click="saleModal = false">Отмена</a>
 					</div>
 				</div>
 				
-			</div>
+			</el-dialog>
 		</section>
 
-		<section class="inside ">
+		<el-dialog class="inside" close-on-press-escape="true" :visible.sync="insideModal">
 			<b-container>
 				<b-row>
 					<b-col>
@@ -343,7 +343,7 @@
 									</div>
 									<div class="top-navigation__buttons">
 										<el-button class="top-navigation__button">Сладости</el-button>
-										<a href="#" class="top-navigation__link">Оформление</a>
+										<a href="#" class="top-navigation__link" @click="decorModal = true">Оформление</a>
 									</div>
 									
 								</b-col>
@@ -996,7 +996,7 @@
 									</a>
 								</b-col>
 								<b-col cols="12" class="inside__button">
-									<el-button >Закрыть подробности</el-button>
+									<el-button @click="insideModal = false">Закрыть подробности</el-button>
 								</b-col>
 								
 							</b-row>
@@ -1004,9 +1004,9 @@
 					</b-col>
 				</b-row>
 			</b-container>
-		</section>
+		</el-dialog>
 
-		<section class="decor">
+		<el-dialog class="decor" close-on-press-escape="true" :visible.sync="decorModal">
 			<b-container>
 				<b-row>
 					<b-col>
@@ -1088,7 +1088,7 @@
 								</b-col>
 								
 								<b-col cols="12" class="decor__button">
-									<el-button >Закрыть подробности</el-button>
+									<el-button @click="decorModal = false">Закрыть подробности</el-button>
 								</b-col>
 
 								
@@ -1098,7 +1098,7 @@
 					</b-col>
 				</b-row>
 			</b-container>
-		</section>
+		</el-dialog>
 		
 	</div>
 </template>
@@ -1108,7 +1108,12 @@
 			data() {
 				return {
        	  num1: 1,
-					input: ''
+					input: '',
+					cleanModal: false,
+					favouriteModal: false,
+					saleModal: false,
+					insideModal: false,
+					decorModal: false
      		};
 			},	
 		};
@@ -1547,13 +1552,17 @@
 	.modals
 		display: flex
 		align-items: center
-		.clean.show
-			display: block
 		.clean
-			display: none
+			.el-dialog__header
+				display: none
+			.el-dialog
+				width: 600px
+				padding: 0
+				@media (max-width: 767.98px)
+					width: 500px
+				@media (max-width: 575.98px)
+					width: 100%
 			&__content	
-				position: fixed
-				z-index: 10000
 				width: 600px
 				top: 0
 				left: 0
@@ -1628,28 +1637,17 @@
 					right: auto
 					bottom: 16px
 
-			&::before
-				z-index: 1000
-				content: ''
-				position: fixed
-				top: 0
-				right: 0
-				bottom: 0
-				left: 0
-				background-color: rgba(0, 0, 0, 0.8)
-
-		.favourite.show
-			display: block
 		.favourite
-			display: none
-			&__content	
-				position: fixed
-				z-index: 10000
+			.el-dialog__header
+				display: none
+			.el-dialog
 				width: 600px
-				top: 0
-				left: 0
-				right: 0
-				bottom: 0
+				@media (max-width: 767.98px)
+					width: 500px
+				@media (max-width: 575.98px)
+					width: 100%
+			&__content	
+				width: 600px
 				height: 400px
 				padding: 
 					top: 35px
@@ -1723,28 +1721,18 @@
 					right: auto
 					bottom: 16px
 
-			&::before
-				z-index: 1000
-				content: ''
-				position: fixed
-				top: 0
-				right: 0
-				bottom: 0
-				left: 0
-				background-color: rgba(0, 0, 0, 0.8)
-
-		.sale.show
-			display: block
 		.sale
-			display: none
-			&__content	
-				position: fixed
-				z-index: 10000
+			.el-dialog__header
+				display: none
+			.el-dialog
 				width: 600px
-				top: 0
-				left: 0
-				right: 0
-				bottom: 0
+				padding: 0
+				@media (max-width: 767.98px)
+					width: 550px
+				@media (max-width: 575.98px)
+					width: 100%
+			&__content	
+				width: 600px
 				height: 600px
 				padding: 
 					top: 106px
@@ -1759,7 +1747,7 @@
 					width: 550px
 					height: 550px
 				@media (max-width: 575.98px)
-					width: calc(100% - 60px)
+					width: calc(100% - 30px)
 					height: 450px
 					padding: 
 						top: 40px
@@ -1857,31 +1845,25 @@
 					margin: 
 						top: 90px
 				@media (max-width: 575.98px)
+					justify-content: center
 					margin: 
 						top: 50px
-			&::before
-				z-index: 1000
-				content: ''
-				position: fixed
-				top: 0
-				right: 0
-				bottom: 0
-				left: 0
-				background-color: rgba(0, 0, 0, 0.8)
 
-	.inside.show, .decor.show
-		display: block
 	.inside, .decor
-		display: none
 		overflow: auto
-		position: fixed
-		z-index: 10000
-		top: 0
-		left: 0
-		bottom: 0
-		right: 0
 		background-color: rgba(58, 58, 58, 0.8)
-		
+		.el-dialog__header
+			display: none
+		.el-dialog
+			width: 1200px
+			@media (max-width: 1199.98px) 
+				width: 990px
+			@media (max-width: 991.98px)
+				width: 750px
+			@media (max-width: 767.98px)
+				width: 570px
+			@media (max-width: 575.98px)
+				width: 100%
 		.container
 			background-color: #fff
 			margin: 
@@ -2014,15 +1996,26 @@
 					right: 5px
 					bottom: 5px
 				border: 1px solid #f8f8f8
+				.el-button
+					padding:
+						top: 9px
+						bottom: 11px
+					span
+						display: inline-block
+						line-height: 20px
 				@media (max-width: 767.98px)
 					margin: 	
 						top: 20px
+				
 			&__link
 				margin: 
 					left: 50px
 					right: 30px
 				transition: all 0.2s ease
 				color: #000000
+				@media (max-width: 575.98px)
+					margin: 
+						left: 30px
 				&:hover, &:focus
 					text-decoration: none
 					color: #e70068

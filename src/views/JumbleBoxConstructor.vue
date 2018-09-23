@@ -319,7 +319,7 @@
 							<div class="add-sweets__controls controls">
 								<ul class="controls__list">
 									<li class="controls__element">
-										<a href="#" class="controls__link">
+										<a href="#" class="controls__link" @click="product__add = true">
 											<span class="controls__icon">
 												<svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 													viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
@@ -368,7 +368,7 @@
 										</a>
 									</li>
 									<li class="controls__element">
-										<a href="#" class="controls__link">
+										<a href="#" class="controls__link" @click="holiday = true">
 											<span class="controls__icon">
 												<svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 													 viewBox="0 0 528.899 528.899" style="enable-background:new 0 0 528.899 528.899;"
@@ -415,7 +415,7 @@
 										</a>
 									</li>
 									<li class="controls__element">
-										<a href="#" class="controls__link">
+										<a href="#" class="controls__link" @click="postcard = true">
 											<span class="controls__icon">
 												<svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 													viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
@@ -467,7 +467,7 @@
 								<p class="controls__progress-title">Наполнение (<span>6</span>/10)</p>
 								<el-progress :text-inside="false" :stroke-width="15" :percentage="60" :width="200" color="#000000"></el-progress>
 								<div class="controls__buttons-wrapper">
-									<el-button class="controls__button">Добавить в корзину</el-button>
+									<el-button class="controls__button" @click="confirmed = true">Добавить в корзину</el-button>
 									<a href="#" class="controls__clean">Очистить
 										<span class="controls__clean--icon">
 											<svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -519,7 +519,7 @@
 			</b-container>
 		</section>
 
-		<section class="product-add">
+		<el-dialog class="product-add" :visible.sync="product__add" close-on-press-escape="true">
 			<div class="product-add__alert">
 				<p class="product-add__alert--message">Батончик Snickers добавлен в Jumble Box</p>
 			</div>
@@ -543,7 +543,52 @@
 								</div>		
 								<el-input placeholder="Поиск по названию" class="menu__search"></el-input>
 								<p class="menu__places">Свободных мест в боксе: <span>4</span></p>
-								<div class="menu__close"></div>
+								<div class="menu__close" @click="product__add = false">
+									<svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+										viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
+									<g>
+										<g>
+											<path  d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+												c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+												c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+												L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+												c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+												c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+												c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
+										</g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									</svg>
+								</div>
 							</div>
 							<b-row>
 								<b-col sm="6" md="4" lg="3" class="product-add__element element">
@@ -685,9 +730,9 @@
 					</b-col>
 				</b-row>
 			</b-container>
-		</section>
+		</el-dialog>
 
-		<section class="holiday">
+		<el-dialog class="holiday" :visible.sync="holiday" close-on-press-escape="true">
 			<div class="holiday__alert">
 				<p class="holiday__alert--message">Обёртка <span>Название_обёртки</span> добавлена</p>
 			</div>
@@ -695,7 +740,52 @@
 				<b-row>
 					<b-col>
 						<div class="holiday__content">
-							<div class="holiday__close"></div>
+							<div class="holiday__close" @click="holiday = false">
+								<svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
+								<g>
+									<g>
+										<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+											c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+											c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+											L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+											c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+											c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+											c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
+									</g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								</svg>
+							</div>
 							<b-row>
 								<b-col cols="12">
 									<h2 class="holiday__title">Атмосфера праздника</h2>
@@ -816,9 +906,9 @@
 					</b-col>
 				</b-row>
 			</b-container>
-		</section>
+		</el-dialog>
 
-		<section class="postcard">
+		<el-dialog class="postcard" :visible.sync="postcard" close-on-press-escape="true">
 			<div class="postcard__alert">
 				<p class="postcard__alert--message">Открытка добавлена</p>
 			</div>
@@ -826,7 +916,52 @@
 				<b-row>
 					<b-col>
 						<div class="postcard__content">
-							<div class="postcard__close"></div>
+							<div class="postcard__close" @click="postcard = false">
+								<svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
+								<g>
+									<g>
+										<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+											c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+											c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+											L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+											c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+											c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+											c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
+									</g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								</svg>
+							</div>
 							<h2 class="postcard__title">Открытка - прекрасное дополнение к подарку</h2>
 							<p class="postcard__description">Напишите несколько приятных слов, а мы красиво изобразим их в поздравительной открытке</p>
 							<form action="POST" class="postcard__form">
@@ -837,9 +972,9 @@
 					</b-col>
 				</b-row>
 			</b-container>
-		</section>
+		</el-dialog>
 
-		<section class="confirmed">
+		<el-dialog class="confirmed" :visible.sync="confirmed" close-on-press-escape="true">
 			<b-container>
 				<b-row>
 					<b-col>
@@ -850,13 +985,13 @@
 							<p class="confirmed__description">Возможно, это всё, ради чего вы пришли к нам. Хотите оформить заказ прямо сейчас или присмотрите что-нибудь ещё?</p>
 							<div class="confirmed__buttons">
 								<el-button>Хочу побыстрее свой Jumble Box</el-button>
-								<a href="#" class="confirmed__link">Посмотрю что-нибудь ещё</a>
+								<a href="#" class="confirmed__link" @click="confirmed = false">Посмотрю что-нибудь ещё</a>
 							</div>
 						</div>
 					</b-col>
 				</b-row>
 			</b-container>
-		</section>
+		</el-dialog>
 	</div>
 </template>
 
@@ -868,7 +1003,11 @@ export default {
   },
   data() {
     return { 
-			activeName: 'first'
+			activeName: 'first',
+			product__add: false,
+			holiday: false,
+			postcard: false,
+			confirmed: false
 		}
 	}
 }
@@ -881,6 +1020,7 @@ export default {
 			top: 21px
 			bottom: 50px
 		&__title
+			color: #000000
 			font-size: 30px
 			line-height: 40px
 			text-align: center
@@ -1015,6 +1155,7 @@ export default {
 				bottom: 42px
 			background-color: #f8f8f8
 		&__title
+			color: #000000
 			font-size: 15px
 			line-height: 20px
 			font-weight: 700
@@ -1171,31 +1312,29 @@ export default {
 					left: auto
 					right: auto
 
-	.product-add.show
-		display: block
 	.product-add
-		display: none
-		overflow: auto
-		position: fixed
-		z-index: 10000
-		top: 0
-		left: 0
-		bottom: 0
-		right: 0
+		display: block
 		background-color: rgba(58, 58, 58, 0.8)
-		
+		.el-dialog
+			width: 1200px
+			padding: 0
+			@media (max-width: 1199.98px) 
+				width: 990px
+			@media (max-width: 991.98px)
+				width: 750px
+			@media (max-width: 767.98px)
+				width: 570px
+			@media (max-width: 575.98px)
+				width: 100%
+		.el-dialog__header
+			display: none
 		.container
 			background-color: #fff
-			margin: 
-				top: 115px	
-				bottom: 115px	
 			@media (max-width: 575.98px)
 				margin: 
 					top: 50px
 					bottom: 50px
 				width: calc(100% - 30px) !important
-		.product-add__alert.show
-			display: block
 		&__alert
 			position: fixed
 			top: 0
@@ -1244,8 +1383,10 @@ export default {
 				top: 54px
 				right: 54px
 				cursor: pointer
-				background-repeat: no-repeat
-				background-image: url("../assets/Icons/cancel.svg")
+				.icon
+					fill: #000000
+					margin: 
+						top: -10px
 				@media (max-width: 1199.98px)
 					right: 34px
 				@media (max-width: 767.98px)
@@ -1255,6 +1396,8 @@ export default {
 				list-style: none
 				display: flex
 				border: 1px solid #f8f8f8
+				margin: 
+					bottom: 0
 				padding: 
 					top: 5px
 					left: 5px
@@ -1461,6 +1604,11 @@ export default {
 				.el-pagination
 					@media (max-width: 575.98px)
 						width: 100%
+				.btn-prev, .btn-next
+					@media (max-width: 575.98px)
+						margin: 
+							left: 0 !important
+							right: 0 !important
 
 	.product-add::-webkit-scrollbar
 		width: 4px
@@ -1475,19 +1623,23 @@ export default {
 	.product-add::-webkit-scrollbar-button
 			background-color: #F8F8F8
 
-	.holiday.show
-		display: block
 
 	.holiday
-		display: none
-		position: fixed
 		overflow: auto
-		z-index: 100000
-		top: 0
-		left: 0
-		bottom: 0
-		right: 0
 		background-color: rgba(58, 58, 58, 0.8)
+		.el-dialog__header
+			display: none
+		.el-dialog
+			width: 1200px
+			padding: 0
+			@media (max-width: 1199.98px) 
+				width: 990px
+			@media (max-width: 991.98px)
+				width: 750px
+			@media (max-width: 767.98px)
+				width: 570px
+			@media (max-width: 575.98px)
+				width: 100%
 		.container
 			background-color: #fff
 			margin:
@@ -1539,6 +1691,10 @@ export default {
 			cursor: pointer
 			background-repeat: no-repeat
 			background-image: url("../assets/Icons/cancel.svg")
+			.icon
+				fill: #000000
+				margin:
+					top: -10px
 			@media (max-width: 767.98px)
 				top: 40px
 				right: 40px
@@ -1560,6 +1716,7 @@ export default {
 			display: flex
 			align-items: stretch
 		&__title
+			color: #000000
 			text-align: center
 			font-size: 30px
 			font-weight: 700
@@ -1658,18 +1815,22 @@ export default {
 	.holiday::-webkit-scrollbar-button
 			background-color: #F8F8F8
 
-	.postcard.show
-		display: block
 	.postcard
-		display: none
-		position: fixed
 		overflow: auto
-		z-index: 100000
-		top: 0
-		left: 0
-		bottom: 0
-		right: 0
 		background-color: rgba(58, 58, 58, 0.8)
+		.el-dialog__header
+			display: none
+		.el-dialog
+			width: 1200px
+			padding: 0
+			@media (max-width: 1199.98px) 
+				width: 990px
+			@media (max-width: 991.98px)
+				width: 750px
+			@media (max-width: 767.98px)
+				width: 570px
+			@media (max-width: 575.98px)
+				width: 100%
 		.container
 			background-color: #fff
 			margin:
@@ -1687,8 +1848,10 @@ export default {
 			top: 54px
 			right: 54px
 			cursor: pointer
-			background-repeat: no-repeat
-			background-image: url("../assets/Icons/cancel.svg")
+			.icon
+				margin:
+					top: -10px
+				fill: #000000
 			@media (max-width: 767.98px)
 				top: 40px
 				right: 40px
@@ -1726,6 +1889,7 @@ export default {
 				width: 100%
 
 		&__title
+			color: #000000
 			font-size: 30px
 			line-height: 40px
 			font-weight: 700
@@ -1787,19 +1951,15 @@ export default {
 	.postcard::-webkit-scrollbar-button
 		background-color: #F8F8F8
 
-	.confirmed.show
-		display: block
-		
 	.confirmed
-		display: none
-		position: fixed
 		overflow: auto
-		z-index: 100000
-		top: 0
-		left: 0
-		bottom: 0
-		right: 0
 		background-color: rgba(58, 58, 58, 0.8)
+		.el-dialog__header
+			display: none
+		.el-dialog
+			width: 700px
+			@media (max-width: 575.98px)
+				width: 100%
 		.container
 			margin:
 				top: 115px 
@@ -1843,6 +2003,7 @@ export default {
 				right: auto
 				bottom: 16px
 		&__title
+			color: #000000
 			font-size: 30px
 			line-height: 40px
 			text-align: center

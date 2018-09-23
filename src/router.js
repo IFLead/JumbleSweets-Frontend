@@ -50,12 +50,12 @@ export default new Router({
       component: DelPay,
     },
     {
-      path: '/jumble_box',
-      name: 'jumble_box',
+      path: '/jumbleBox',
+      name: 'jumbleBox',
       component: JumbleBox,
     },
     {
-      path: '/item/:id',
+			path: '/item/:id',
       name: 'item',
       component: Item,
       props: true,
