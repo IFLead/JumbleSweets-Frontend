@@ -239,9 +239,9 @@
                   </div>
                   <h2 class="filter__mobile-title">Фильтр</h2>
                   <el-collapse-item title="Категория товара" name="1">
-                    <ul v-for="category in allCategories" :key="category.id" class="filter__list filter__list--category">
+                    <ul v-for="category in allCategories" :key="category.node.id" class="filter__list filter__list--category">
                       <li>
-                        <el-checkbox> {{ `${category.name} (${category.count})` }} </el-checkbox>
+                        <el-checkbox> {{ `${category.node.name} (${category.node.products.totalCount})` }} </el-checkbox>
                       </li>
                     </ul>
                   </el-collapse-item>

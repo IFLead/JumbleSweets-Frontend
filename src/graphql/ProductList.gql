@@ -1,0 +1,25 @@
+#import "./MoneyFragment.gql"
+
+query ProductList($first: Int, $after: String, $last: Int, $before: String) {
+    products(before: $before, after: $after, first: $first, last: $last) {
+      edges {
+        node {
+          id
+          name
+          thumbnailUrl
+          availability {
+            available
+          }
+          price {
+            ...Money
+          }
+        }
+      }
+      pageInfo {
+        hasPreviousPage
+        hasNextPage
+        startCursor
+        endCursor
+      }
+    }
+  }
