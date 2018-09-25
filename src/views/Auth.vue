@@ -61,7 +61,7 @@
             </div>
             <div class="authorization__pointerlink-wrapper">
               <div class="authorization__pointerlink">
-                <a href="#">Ещё не зарегистрированы? Вам сюда</a>
+                <a href="#" @click="isUser = false">Ещё не зарегистрированы? Вам сюда</a>
               </div>
             </div>
           </div>
@@ -102,9 +102,10 @@
                   <img src="../assets/Icons/key.svg" width="9" height="20" alt="Пароль">
                 </div>
                 <div class="registr__data-input">
-                  <el-input type="password" placeholder="Пароль" v-model="input_repass"></el-input>
+                  <el-input v-bind:type="visible_pass" placeholder="Пароль" v-model="input_pass"></el-input>
                 </div>
-                <div class="registr__data-pass-eye">
+                <div @mouseover="visible_pass = 'text'" @mouseout="visible_pass = 'password'" class="registr__data-pass-eye">
+                <!--<div v-on:click="visible_pass = 'text'" class="registr__data-pass-eye">-->
                   <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
                 </div>
               </div>
@@ -113,9 +114,9 @@
                   <img src="../assets/Icons/key.svg" width="9" height="20" alt="Повторите пароль">
                 </div>
                 <div class="registr__data-input">
-                  <el-input type="password" placeholder="Пароль" v-model="input_repass"></el-input>
+                  <el-input v-bind:type="visible_repass" placeholder="Пароль" v-model="input_repass"></el-input>
                 </div>
-                <div class="registr__data-repass-eye">
+                <div @mouseover="visible_repass = 'text'" @mouseout="visible_repass = 'password'" class="registr__data-repass-eye">
                   <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
                 </div>
               </div>
@@ -124,7 +125,9 @@
 
           <div class="registr__actives">
             <div class="registr__actives-wrapper">
-              <el-button class="registr__actives-button">Регистрация</el-button>
+              <el-button class="registr__actives-button">
+                Регистрация
+              </el-button>
               <div class="registr__actives-check">
                 <el-checkbox v-model="checked">Согласен с политикой<br>конфиденциальности</el-checkbox>
               </div>
@@ -132,7 +135,7 @@
           </div>
           <div class="registr__pointerlink-wrapper">
             <div class="registr__pointerlink">
-              <a href="#">У вас уже есть учётная запись? Войдите</a>
+              <a href="#" @click="isUser = true">У вас уже есть учётная запись? Войдите</a>
             </div>
           </div>
         </section>
@@ -157,7 +160,9 @@
           input_pass: '',
           input_repass: '',
           checked: false,
-          isUser: true
+          isUser: false,
+          visible_pass: 'password',
+          visible_repass: 'password'
         }
       },
     }
@@ -385,6 +390,9 @@
     width: 150px
     height: 43px
     padding: 15px 30px
+    @media (max-width: 575.98px)
+      width: 210px
+      height: 50px
 
   &__actives-check
     font-weight: 400
@@ -520,6 +528,9 @@
     width: 150px
     height: 43px
     padding: 15px 30px
+    @media (max-width: 575.98px)
+      width: 210px
+      height: 50px
 
   &__actives-check
     font-weight: 400

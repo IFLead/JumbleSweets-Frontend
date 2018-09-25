@@ -12,9 +12,9 @@ Pagination,
   // MenuItemGroup,
   Input,
   InputNumber,
-  // Radio,
-  // RadioGroup,
-  // RadioButton,
+  Radio,
+  RadioGroup,
+  RadioButton,
   Checkbox,
   // CheckboxButton,
   // CheckboxGroup,
@@ -85,9 +85,9 @@ Vue.use(Autocomplete);
 // Vue.use(MenuItemGroup);
 Vue.use(Input);
 Vue.use(InputNumber);
-// Vue.use(Radio);
-// Vue.use(RadioGroup);
-// Vue.use(RadioButton);
+Vue.use(Radio);
+Vue.use(RadioGroup);
+Vue.use(RadioButton);
 Vue.use(Checkbox);
 // Vue.use(CheckboxButton);
 // Vue.use(CheckboxGroup);

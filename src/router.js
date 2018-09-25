@@ -17,6 +17,7 @@ import Kharkiv from './views/Kharkiv.vue';
 import Summary from './views/Summary.vue';
 import Auth from './views/Auth.vue';
 import RepeatModal from './components/modals/RepeatModal.vue';
+import InsideModal from './components/modals/InsideModal.vue';
 
 Vue.use(Router);
 Vue.use(Meta, {
@@ -109,6 +110,11 @@ export default new Router({
       path: '/repeatmodal',
       name: 'RepeatModal',
       component: RepeatModal,
+    },
+    {
+      path: '/insidemodal',
+      name: 'InsideModal',
+      component: InsideModal,
     },
     // {
     //   path: '/about',

@@ -74,6 +74,14 @@
           <b-col lg="6" class="characteristics__information information">
             <div class="information__content">
               <h3 class="information__title">Батончик Snickers</h3>
+
+              <vFormat></vFormat>
+              <!--<el-radio-group v-model="radioFormat" class="choose-format">-->
+                <!--<el-radio-button class="choose-format__elem" label="200 гр"></el-radio-button>-->
+                <!--<el-radio-button class="choose-format__elem" label="500 гр"></el-radio-button>-->
+                <!--<el-radio-button class="choose-format__elem" label="1000 гр"></el-radio-button>-->
+              <!--</el-radio-group>-->
+
               <div class="prices">
                 <p class="information__price">100 грн.</p><p class="information__price--old">200 грн.</p>
               </div>
@@ -559,14 +567,18 @@
 </template>
 
 <script>
+
+  import Format from '../components/Format';
+
 export default {
   name: 'Item',
   components: {
+    vFormat: Format,
   },
   props: ['id'],
   data() {
     return {
-      num1: 1,
+      num1: 1
     };
   },
   methods: {
@@ -690,6 +702,7 @@ export default {
 			display: flex
 			align-items: center
 
+
 	.information
 		padding:
 			left: 60px
@@ -704,11 +717,11 @@ export default {
 			font-weight: 400
 			line-height: 40px
 			margin:
-				top: 37px
-				bottom: 46px
+				top: 10px
+				bottom: 25px
 			@media (max-width: 1199.98px)
 				margin:
-					bottom: 30px
+					bottom: 15px
 			@media (max-width: 991.98px)
 				margin:
 					top: 40px
@@ -722,9 +735,8 @@ export default {
 			line-height: 55px
 			font-weight: 700
 			color: #e70068
-			margin:
-				right: 34px
-				bottom: 0
+			margin-right: 34px
+      margin-bottom: 0px
 			@media (max-width: 767.98px)
 				font-size: 30px
 				line-height: 40px
@@ -805,7 +817,6 @@ export default {
 	&__information
 		margin:
 			bottom: 50px
-		padding:
 
 	.item-advantages
 		&__content
@@ -1094,8 +1105,8 @@ export default {
 
 .controls
 	margin:
-		top: 32px
-		bottom: 30px
+		top: 15px
+		bottom: 20px
 	.el-input-number
 		width: 152px
 	.el-input__inner
@@ -1120,4 +1131,8 @@ export default {
 		right: 20px
 		background-color: transparent
 		border: none
+
+.prices
+  margin-top: 30px
+
 </style>
