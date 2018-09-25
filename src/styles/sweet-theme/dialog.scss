@@ -8,7 +8,6 @@
   margin: 0 auto 50px;
   background: $--color-white;
   border-radius: $--border-radius-small;
-  box-shadow: $--dialog-box-shadow;
   box-sizing: border-box;
   width: 50%;
 
@@ -64,7 +63,7 @@
   }
 
   @include e(body) {
-    padding: 30px 20px;
+    padding: 0;
     color: $--color-text-regular;
     font-size: $--dialog-font-size;
   }

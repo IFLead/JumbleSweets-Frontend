@@ -1,0 +1,17 @@
+#import "./MoneyFragment.gql"
+#import "./ProductFragment.gql"
+#import "./ProductImageFragment.gql"
+
+query ProductDetails($id: ID!) {
+    product(id: $id) {
+      ...Product
+    }
+    collections {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+  }

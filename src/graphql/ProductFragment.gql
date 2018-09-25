@@ -1,0 +1,56 @@
+#import "./MoneyFragment.gql"
+#import "./ProductImageFragment.gql"
+
+fragment Product on Product {
+  id
+  name
+  description
+  seoTitle
+  seoDescription
+  category {
+    id
+    name
+  }
+  price {
+    ...Money
+  }
+  isPublished
+  availableOn
+  attributes {
+    attribute {
+      name
+    }
+    value {
+      name
+    }
+  }
+  availability {
+    available
+  }
+  # images {
+  #   edges {
+  #     node {
+  #       ...ProductImage
+  #     }
+  #   }
+  # }
+  variants {
+    edges {
+      node {
+        id
+        name
+        images {
+          edges {
+            node {
+              ...ProductImage
+            }
+          }
+        }
+        priceOverride {
+          ...Money
+        }
+      }
+    }
+  }
+  url
+}

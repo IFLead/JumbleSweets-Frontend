@@ -1,0 +1,6 @@
+fragment ProductImage on ProductImage {
+    id
+    alt
+    sortOrder
+    url
+  }
