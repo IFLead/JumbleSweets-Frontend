@@ -508,14 +508,14 @@
 
 <script>
 
-import Format from '../components/Format';
+import Format from '../components/Format.vue';
 
 export default {
   name: 'Item',
   components: {
     vFormat: Format,
   },
-  props: ['id'],
+  props: ['id', 'name'],
   data() {
     return {
       num1: 1,
@@ -528,7 +528,7 @@ export default {
   },
   metaInfo: {
     // // if no subcomponents specify a metaInfo.title, this title will be used
-    // title: 'Default Title',
+    title: 'Default Title',
     // // all titles will be injected into this template
     // titleTemplate: '%s | My Awesome Webapp',
   },

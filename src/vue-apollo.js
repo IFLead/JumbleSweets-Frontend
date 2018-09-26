@@ -58,6 +58,7 @@ export const apolloProvider = (function createProvider(options = {}) {
   apolloClient.wsClient = wsClient;
 
   // Create vue apollo provider
+  // eslint-disable-next-line no-shadow
   const apolloProvider = new VueApollo({
     defaultClient: apolloClient,
     defaultOptions: {

@@ -266,12 +266,15 @@
                                                                                      product.pre_disc_price) }}%
                     </div>
                     <div class="catalog__photo">
-                      <a href="#">
+                      <!--<a :href="product.url" @click="router.push(product.url)">-->
+                      <!--<img :src="product.photo_url" width="125" height="100">-->
+                      <!--</a>-->
+                      <router-link :to="product.url">
                         <img :src="product.photo_url" width="125" height="100">
-                      </a>
+                      </router-link>
                     </div>
                     <div class="catalog__information">
-                      <h4 class="catalog__name"><a href="#">{{ product.name }}</a></h4>
+                      <h4 class="catalog__name"><router-link :to="product.url">{{ product.name }}</router-link></h4>
                       <p class="catalog__price">{{ product.price }} грн.</p>
                       <p v-if="isDisc(product)" class="catalog__old-price">{{
                       product.pre_disc_price }} грн.</p>

@@ -56,7 +56,7 @@ export default new Router({
       component: JumbleBox,
     },
     {
-      path: '/products/*-:id',
+      path: '/products/:name(.*)-:id(\\d*)',
       name: 'item',
       component: Item,
       props: true,
