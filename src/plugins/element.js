@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import {
-Pagination,
+  Pagination,
   Dialog,
   Autocomplete,
   // Dropdown,
@@ -53,8 +53,8 @@ Pagination,
   // Step,
   Carousel,
   CarouselItem,
-Collapse,
-CollapseItem,
+  Collapse,
+  CollapseItem,
 // Cascader,
 // ColorPicker,
 // Transfer,

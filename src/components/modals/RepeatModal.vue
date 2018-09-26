@@ -4,8 +4,8 @@
 
     <el-button type="text" @click="repeatVisible = true">repeat modal</el-button>
 
-    <el-dialog class="repeat-modal"
-      :visible.sync="repeatVisible">
+    <el-dialog :visible.sync="repeatVisible"
+               class="repeat-modal">
       <div class="repeat-modal__wrapper">
         <div class="repeat-modal__icon">
           <img src="../../assets/Icons/refresh_icon.svg" width="50" height="50" alt="Повторить">
@@ -23,7 +23,7 @@
         </div>
         <div class="repeat-modal__buttons">
           <el-button class="repeat-modal__buttons-okey">Да, хорошо</el-button>
-          <el-button @click="repeatVisible = false" class="repeat-modal__buttons-close">Не хочу повторять</el-button>
+          <el-button class="repeat-modal__buttons-close" @click="repeatVisible = false">Не хочу повторять</el-button>
         </div>
       </div>
     </el-dialog>
@@ -34,16 +34,16 @@
 </template>
 
 <script>
-    export default {
-      name: "RepeatModal",
-      components: {
-      },
-      data() {
-        return {
-          repeatVisible: false
-        };
-      },
-    }
+export default {
+  name: 'RepeatModal',
+  components: {
+  },
+  data() {
+    return {
+      repeatVisible: false,
+    };
+  },
+};
 </script>
 
 <style lang="sass">

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
-import {apolloProvider} from "../../vue-apollo";
-import PRODUCT_LIST from '../../graphql/ProductList.gql'
+import { apolloProvider } from '../../vue-apollo';
+import PRODUCT_LIST from '../../graphql/ProductList.gql';
 
 const state = {
   products: {},
@@ -29,7 +29,7 @@ const actions = {
       // for Babel to optimize the code.
       query: PRODUCT_LIST,
     });
-    //console.log(response.data.products.edges);
+    // console.log(response.data.products.edges);
     context.commit(
       'setProducts',
       {

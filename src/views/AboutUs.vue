@@ -23,7 +23,7 @@
             </div>
             <div class="aboutus__item aboutus__item--clock">
               <div class="aboutus__item-icon">
-                <img src="../assets/Icons/Clock.svg"  width="60" height="60" alt="Время работы">
+                <img src="../assets/Icons/Clock.svg" width="60" height="60" alt="Время работы">
               </div>
               <div class="aboutus__item-wrapper">
                 <h3 class="aboutus__item-title">Время работы</h3>
@@ -51,11 +51,11 @@
 </template>
 
 <script>
-  export default {
-    name: 'AboutUs',
-    components: {
-    },
-  };
+export default {
+  name: 'AboutUs',
+  components: {
+  },
+};
 </script>
 
 <style lang="sass">

@@ -1,84 +1,84 @@
 <template>
-	<div class="Shopping">
-		<b-container>
-			<b-row>
+  <div class="Shopping">
+    <b-container>
+      <b-row>
 
-				<b-col cols="12" class="back">
-					<a href="#" class="back__link">
-						<span class="back__icon">
-							<svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-							<g>
-								<g>
-									<path  d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+        <b-col cols="12" class="back">
+          <a href="#" class="back__link">
+            <span class="back__icon">
+              <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                <g>
+                  <g>
+                    <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
 										c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
 										c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
 										c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
-								</g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							<g>
-							</g>
-							</svg>
-						</span><span>Вернуться к редактированию корзину</span>
-					</a>
-				</b-col>
+                  </g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+              </svg>
+            </span><span>Вернуться к редактированию корзину</span>
+          </a>
+        </b-col>
 
-				<b-col cols="12" class="way">
-					<div class="way__wrapper">
-						<div class="way__content">
-							<h2 class="way__title">Получите сладости удобным способом</h2>
-							<p class="way__description">Мы позаботились о разных вариантах получения товара, которые предусматривают ваше географическое положение и количество свободного времени.</p>
-						</div>
-					</div>
-				</b-col>
+        <b-col cols="12" class="way">
+          <div class="way__wrapper">
+            <div class="way__content">
+              <h2 class="way__title">Получите сладости удобным способом</h2>
+              <p class="way__description">Мы позаботились о разных вариантах получения товара, которые предусматривают ваше географическое положение и количество свободного времени.</p>
+            </div>
+          </div>
+        </b-col>
 
-				<b-col cols="12" class="product-delivery">
-					<h2 class="product-delivery__title">Доставка товара</h2>
-					<p class="product-delivery__description">Для получения заказанного Вами товара выберите подходящий способ доставки</p>
-				</b-col>
+        <b-col cols="12" class="product-delivery">
+          <h2 class="product-delivery__title">Доставка товара</h2>
+          <p class="product-delivery__description">Для получения заказанного Вами товара выберите подходящий способ доставки</p>
+        </b-col>
 
-				<b-col>
-					<b-row>
-						<b-col lg="4" class="delivery-options delivery-options--pickup">
-							<div class="delivery-options__wrapper">
-								<div class="delivery-options__content">
-									<h3 class="delivery-options__title">Самовывоз</h3>
-									<p class="delivery-options__description">Для жителей Харькова есть возможность забрать заказ<br>в нашем магазине по адресу: <br>ул. Героев труда 7, ТРЦ Караван.</p>
-									<p class="delivery-options__description">Работаем ежедневно с 10:00 до 22:00.</p>
-									<el-button class="delivery-options__button">Выбрать этот тип доставки
-										<span class="delivery-options__button--icon">
-											<svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-											<g>
-												<path  d="M289.052,191.691l-36.224,87.974c-1.228,2.983-4.017,5.033-7.23,5.315L60.311,301.262
+        <b-col>
+          <b-row>
+            <b-col lg="4" class="delivery-options delivery-options--pickup">
+              <div class="delivery-options__wrapper">
+                <div class="delivery-options__content">
+                  <h3 class="delivery-options__title">Самовывоз</h3>
+                  <p class="delivery-options__description">Для жителей Харькова есть возможность забрать заказ<br>в нашем магазине по адресу: <br>ул. Героев труда 7, ТРЦ Караван.</p>
+                  <p class="delivery-options__description">Работаем ежедневно с 10:00 до 22:00.</p>
+                  <el-button class="delivery-options__button">Выбрать этот тип доставки
+                    <span class="delivery-options__button--icon">
+                      <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                        <g>
+                          <path d="M289.052,191.691l-36.224,87.974c-1.228,2.983-4.017,5.033-7.23,5.315L60.311,301.262
 													c-4.546,0.399-7.996,4.266-7.877,8.826l3.768,145.442c0.104,3.999,2.941,7.403,6.856,8.228l218.13,45.882
 													c5.333,1.122,10.753,1.677,16.173,1.665l0.004-43.135V193.336C297.363,181.33,293.623,180.59,289.052,191.691z M263.687,462.923
 													l-81.886-13.187v-42.921h81.886V462.923z M227.882,264.073L9.518,286.138c-6.671,0.674-11.532-6.18-8.69-12.252L58.973,149.6
@@ -91,57 +91,57 @@
 													C483.087,374.567,480.158,378.816,475.437,378.948z M602.481,286.138l-218.364-22.065c-3.086-0.312-5.768-2.254-7.025-5.088
 													l-70.261-158.29l239.934,44.069c2.746,0.504,5.079,2.306,6.263,4.835l58.145,124.286
 													C614.014,279.958,609.152,286.812,602.481,286.138z"/>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											<g>
-											</g>
-											</svg>
-									</span>
-									</el-button>
-								</div>
-							</div>
-						</b-col>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </span>
+                  </el-button>
+                </div>
+              </div>
+            </b-col>
 
-						<b-col lg="4" class="delivery-options delivery-options--kharkiv">
-							<div class="delivery-options__wrapper">
-								<div class="delivery-options__content">
-									<h3 class="delivery-options__title">По Харькову</h3>
-									<p class="delivery-options__description">Доставка товара по Харькову может быть осуществлена по указанному адресу на необходимую дату.</p>
-									<p class="delivery-options__description">Оплата происходить при получении товара</p>
-									<el-button class="delivery-options__button">
-                      Выбрать этот тип доставки
-                      <span class="delivery-options__button--icon">
-                      <svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                         viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-                      <g>
-                        <path  d="M289.052,191.691l-36.224,87.974c-1.228,2.983-4.017,5.033-7.23,5.315L60.311,301.262
+            <b-col lg="4" class="delivery-options delivery-options--kharkiv">
+              <div class="delivery-options__wrapper">
+                <div class="delivery-options__content">
+                  <h3 class="delivery-options__title">По Харькову</h3>
+                  <p class="delivery-options__description">Доставка товара по Харькову может быть осуществлена по указанному адресу на необходимую дату.</p>
+                  <p class="delivery-options__description">Оплата происходить при получении товара</p>
+                  <el-button class="delivery-options__button">
+                    Выбрать этот тип доставки
+                    <span class="delivery-options__button--icon">
+                      <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                        <g>
+                          <path d="M289.052,191.691l-36.224,87.974c-1.228,2.983-4.017,5.033-7.23,5.315L60.311,301.262
                           c-4.546,0.399-7.996,4.266-7.877,8.826l3.768,145.442c0.104,3.999,2.941,7.403,6.856,8.228l218.13,45.882
                           c5.333,1.122,10.753,1.677,16.173,1.665l0.004-43.135V193.336C297.363,181.33,293.623,180.59,289.052,191.691z M263.687,462.923
                           l-81.886-13.187v-42.921h81.886V462.923z M227.882,264.073L9.518,286.138c-6.671,0.674-11.532-6.18-8.69-12.252L58.973,149.6
@@ -154,57 +154,57 @@
                           C483.087,374.567,480.158,378.816,475.437,378.948z M602.481,286.138l-218.364-22.065c-3.086-0.312-5.768-2.254-7.025-5.088
                           l-70.261-158.29l239.934,44.069c2.746,0.504,5.079,2.306,6.263,4.835l58.145,124.286
                           C614.014,279.958,609.152,286.812,602.481,286.138z"/>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
                       </svg>
                     </span>
-									</el-button>
-								</div>
-							</div>
-						</b-col>
+                  </el-button>
+                </div>
+              </div>
+            </b-col>
 
-						<b-col lg="4" class="delivery-options delivery-options--ukraine">
-							<div class="delivery-options__wrapper">
-								<div class="delivery-options__content">
-									<h3 class="delivery-options__title">По Украине</h3>
-									<p class="delivery-options__description">Отправляем через Новую почту. Стоимость отправки зависит от веса посылки и города.</p>
-									<p class="delivery-options__description">Заказ высылается в течении 24-х часов после выполнения.</p>
-									<p class="delivery-options__description">Вы можете оплатить товар при получении наложенным платежом или произвести предоплату на карту банка.</p>
-									<el-button class="delivery-options__button">Выбрать этот тип доставки
-									<span class="delivery-options__button--icon">
-										<svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-											 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-										<g>
-											<path  d="M289.052,191.691l-36.224,87.974c-1.228,2.983-4.017,5.033-7.23,5.315L60.311,301.262
+            <b-col lg="4" class="delivery-options delivery-options--ukraine">
+              <div class="delivery-options__wrapper">
+                <div class="delivery-options__content">
+                  <h3 class="delivery-options__title">По Украине</h3>
+                  <p class="delivery-options__description">Отправляем через Новую почту. Стоимость отправки зависит от веса посылки и города.</p>
+                  <p class="delivery-options__description">Заказ высылается в течении 24-х часов после выполнения.</p>
+                  <p class="delivery-options__description">Вы можете оплатить товар при получении наложенным платежом или произвести предоплату на карту банка.</p>
+                  <el-button class="delivery-options__button">Выбрать этот тип доставки
+                    <span class="delivery-options__button--icon">
+                      <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                        <g>
+                          <path d="M289.052,191.691l-36.224,87.974c-1.228,2.983-4.017,5.033-7.23,5.315L60.311,301.262
 												c-4.546,0.399-7.996,4.266-7.877,8.826l3.768,145.442c0.104,3.999,2.941,7.403,6.856,8.228l218.13,45.882
 												c5.333,1.122,10.753,1.677,16.173,1.665l0.004-43.135V193.336C297.363,181.33,293.623,180.59,289.052,191.691z M263.687,462.923
 												l-81.886-13.187v-42.921h81.886V462.923z M227.882,264.073L9.518,286.138c-6.671,0.674-11.532-6.18-8.69-12.252L58.973,149.6
@@ -217,57 +217,57 @@
 												C483.087,374.567,480.158,378.816,475.437,378.948z M602.481,286.138l-218.364-22.065c-3.086-0.312-5.768-2.254-7.025-5.088
 												l-70.261-158.29l239.934,44.069c2.746,0.504,5.079,2.306,6.263,4.835l58.145,124.286
 												C614.014,279.958,609.152,286.812,602.481,286.138z"/>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										<g>
-										</g>
-										</svg>
-									</span>
-									</el-button>
-								</div>
-							</div>
-						</b-col>
-					</b-row>
-				</b-col>
-			</b-row>
-		</b-container>
-	</div>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </span>
+                  </el-button>
+                </div>
+              </div>
+            </b-col>
+          </b-row>
+        </b-col>
+      </b-row>
+    </b-container>
+  </div>
 </template>
 
 <script>
-    export default {
-      name: "Shipping",
-      components: {
+export default {
+  name: 'Shipping',
+  components: {
 
-      },
-    }
+  },
+};
 </script>
 
 <style lang="sass">

@@ -9,7 +9,7 @@
               Через личный профиль мы узнаем о вас очень многое.
               Например, что вы заказывали у нас, ваши предпочтения.
               Это помогает нам улучшить сервис и не потерять клиента.
-             </p>
+            </p>
             <h2 class="info__title">Социальные сети</h2>
             <p class="info__description info__description--social">
               Авторизация через социальные сети существенно экономит ваше время.
@@ -37,7 +37,7 @@
                     <img src="../assets/Icons/user.svg" width="16" height="20" alt="Контакты">
                   </div>
                   <div class="authorization__data-input">
-                    <el-input placeholder="Почта или телефон" v-model="input_mail"></el-input>
+                    <el-input v-model="input_mail" placeholder="Почта или телефон"></el-input>
                   </div>
                 </div>
                 <div class="authorization__data-pass">
@@ -45,7 +45,7 @@
                     <img src="../assets/Icons/key.svg" width="9" height="20" alt="Пароль">
                   </div>
                   <div class="authorization__data-input">
-                    <el-input type="password" placeholder="Пароль" v-model="input_pass"></el-input>
+                    <el-input v-model="input_pass" type="password" placeholder="Пароль"></el-input>
                   </div>
                   <div class="authorization__data-pass-eye">
                     <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
@@ -94,7 +94,7 @@
                   <img src="../assets/Icons/user.svg" width="16" height="20" alt="Контакты">
                 </div>
                 <div class="registr__data-input">
-                  <el-input placeholder="Почта или телефон" v-model="input_mail"></el-input>
+                  <el-input v-model="input_mail" placeholder="Почта или телефон"></el-input>
                 </div>
               </div>
               <div class="registr__data-pass">
@@ -102,10 +102,10 @@
                   <img src="../assets/Icons/key.svg" width="9" height="20" alt="Пароль">
                 </div>
                 <div class="registr__data-input">
-                  <el-input v-bind:type="visible_pass" placeholder="Пароль" v-model="input_pass"></el-input>
+                  <el-input :type="visible_pass" v-model="input_pass" placeholder="Пароль"></el-input>
                 </div>
-                <div @mouseover="visible_pass = 'text'" @mouseout="visible_pass = 'password'" class="registr__data-pass-eye">
-                <!--<div v-on:click="visible_pass = 'text'" class="registr__data-pass-eye">-->
+                <div class="registr__data-pass-eye" @mouseover="visible_pass = 'text'" @mouseout="visible_pass = 'password'">
+                  <!--<div v-on:click="visible_pass = 'text'" class="registr__data-pass-eye">-->
                   <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
                 </div>
               </div>
@@ -114,9 +114,9 @@
                   <img src="../assets/Icons/key.svg" width="9" height="20" alt="Повторите пароль">
                 </div>
                 <div class="registr__data-input">
-                  <el-input v-bind:type="visible_repass" placeholder="Пароль" v-model="input_repass"></el-input>
+                  <el-input :type="visible_repass" v-model="input_repass" placeholder="Пароль"></el-input>
                 </div>
-                <div @mouseover="visible_repass = 'text'" @mouseout="visible_repass = 'password'" class="registr__data-repass-eye">
+                <div class="registr__data-repass-eye" @mouseover="visible_repass = 'text'" @mouseout="visible_repass = 'password'">
                   <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
                 </div>
               </div>
@@ -150,22 +150,22 @@
 
 <script>
 
-    export default {
-      name: "Auth",
-      components: {
-      },
-      data() {
-        return {
-          input_mail: '',
-          input_pass: '',
-          input_repass: '',
-          checked: false,
-          isUser: false,
-          visible_pass: 'password',
-          visible_repass: 'password'
-        }
-      },
-    }
+export default {
+  name: 'Auth',
+  components: {
+  },
+  data() {
+    return {
+      input_mail: '',
+      input_pass: '',
+      input_repass: '',
+      checked: false,
+      isUser: false,
+      visible_pass: 'password',
+      visible_repass: 'password',
+    };
+  },
+};
 
 </script>
 

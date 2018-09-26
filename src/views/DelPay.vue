@@ -44,7 +44,7 @@
       <section class="ring">
         <div class="ring__number">
           <div class="ring__number-input">
-            <el-input placeholder="Номер телефона" v-model="input"></el-input>
+            <el-input v-model="input" placeholder="Номер телефона"></el-input>
           </div>
           <div class="ring__number_conf">
             <el-checkbox v-model="checked">Согласен с политикой конфиденциальности</el-checkbox>
@@ -59,17 +59,17 @@
 </template>
 
 <script>
-  export default {
-    name: 'Delivery',
-    components: {
-    },
-    data() {
-      return {
-        input: '',
-        checked: false
-      }
-    },
-  };
+export default {
+  name: 'Delivery',
+  components: {
+  },
+  data() {
+    return {
+      input: '',
+      checked: false,
+    };
+  },
+};
 </script>
 
 <style lang="sass">

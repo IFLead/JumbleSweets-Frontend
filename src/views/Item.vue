@@ -17,36 +17,6 @@
 														c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
                     </g>
                   </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
                 </svg>
               </span>
               <p>Вернуться назад</p>
@@ -77,9 +47,9 @@
 
               <vFormat></vFormat>
               <!--<el-radio-group v-model="radioFormat" class="choose-format">-->
-                <!--<el-radio-button class="choose-format__elem" label="200 гр"></el-radio-button>-->
-                <!--<el-radio-button class="choose-format__elem" label="500 гр"></el-radio-button>-->
-                <!--<el-radio-button class="choose-format__elem" label="1000 гр"></el-radio-button>-->
+              <!--<el-radio-button class="choose-format__elem" label="200 гр"></el-radio-button>-->
+              <!--<el-radio-button class="choose-format__elem" label="500 гр"></el-radio-button>-->
+              <!--<el-radio-button class="choose-format__elem" label="1000 гр"></el-radio-button>-->
               <!--</el-radio-group>-->
 
               <div class="prices">
@@ -105,36 +75,6 @@
 												c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
 												c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
                         </g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
                       </g>
                     </svg>
                   </span>
@@ -568,7 +508,7 @@
 
 <script>
 
-  import Format from '../components/Format';
+import Format from '../components/Format';
 
 export default {
   name: 'Item',
@@ -578,7 +518,7 @@ export default {
   props: ['id'],
   data() {
     return {
-      num1: 1
+      num1: 1,
     };
   },
   methods: {
@@ -602,6 +542,7 @@ export default {
 	&__link
 		transition: all 0.2s ease
 		display: flex
+		align-items: center
 		width: 150px
 		color: #000000
 		margin:

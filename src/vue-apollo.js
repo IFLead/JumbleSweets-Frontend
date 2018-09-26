@@ -72,7 +72,7 @@ export const apolloProvider = (function createProvider(options = {}) {
   });
 
   return apolloProvider;
-})();
+}());
 
 
 // Manually call this when user log in

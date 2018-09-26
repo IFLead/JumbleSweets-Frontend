@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import ROOT_CATEGORY_CHILDREN from '../../graphql/RootCategoryChildrenQuery.gql'
+import ROOT_CATEGORY_CHILDREN from '../../graphql/RootCategoryChildrenQuery.gql';
 import { apolloProvider } from '../../vue-apollo';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
@@ -32,9 +32,7 @@ const actions = {
       query: ROOT_CATEGORY_CHILDREN,
     });
     console.log(response.data.categories.edges);
-    context.commit(
-      'setCategories', response.data.categories.edges,
-    );
+    context.commit('setCategories', response.data.categories.edges);
   },
 };
 

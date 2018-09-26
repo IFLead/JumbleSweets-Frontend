@@ -56,7 +56,7 @@ export default new Router({
       component: JumbleBox,
     },
     {
-			path: '/item/:id',
+      path: '/products/*-:id',
       name: 'item',
       component: Item,
       props: true,
@@ -87,6 +87,7 @@ export default new Router({
       component: Auth,
     },
     {
+      // todo shipping a ne shopping blyat
       path: '/shopping',
       name: 'Shopping',
       component: Shopping,

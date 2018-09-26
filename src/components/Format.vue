@@ -12,16 +12,16 @@
 </template>
 
 <script>
-    export default {
-      name: "Format",
-      components: {
-      },
-      data() {
-        return {
-          radioFormat: '200гр'
-        };
-      },
-    }
+export default {
+  name: 'Format',
+  components: {
+  },
+  data() {
+    return {
+      radioFormat: '200гр',
+    };
+  },
+};
 </script>
 
 <style lang="sass">

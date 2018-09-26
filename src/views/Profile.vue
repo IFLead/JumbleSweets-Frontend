@@ -612,12 +612,12 @@
 </template>
 
 <script>
-  import RepeatModal from '../components/modals/RepeatModal'
+import RepeatModal from '../components/modals/RepeatModal';
 
 export default {
   name: 'Profile',
   components: {
-    RepeatModal
+    RepeatModal,
   },
   data() {
     return {
@@ -807,7 +807,6 @@ export default {
       background-position: right 30px top 14px
       padding:
         right: 60px
-
 
 
 .orders

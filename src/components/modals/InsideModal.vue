@@ -4,8 +4,8 @@
 
     <el-button type="text" @click="insideVisible = true">inside modal</el-button>
 
-    <el-dialog class="inside-modal"
-               :visible.sync="insideVisible">
+    <el-dialog :visible.sync="insideVisible"
+               class="inside-modal">
 
       <div class="inside-modal__header">
         <div class="inside-modal__name">
@@ -27,14 +27,14 @@
                 <div class="inside-modal__element-icon">
                   <img src="../../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="Батончик Snikers" width="340">
                 </div>
-                  <div class="inside-modal__element-title">Батончик Snickers</div>
-                  <div class="inside-modal__element-price">60 грн.</div>
+                <div class="inside-modal__element-title">Батончик Snickers</div>
+                <div class="inside-modal__element-price">60 грн.</div>
                 <div class="inside-modal__element-place">Занимает место в боксе: 1</div>
               </div>
               <!--<div class="inside-modal__hide">-->
-                <!--<p>-->
-                  <!--Перейти к наполнению-->
-                <!--</p>-->
+              <!--<p>-->
+              <!--Перейти к наполнению-->
+              <!--</p>-->
               <!--</div>-->
             </a>
           </div>
@@ -50,17 +50,17 @@
 </template>
 
 <script>
-    export default {
-      name: "InsideModal",
-      components: {
-      },
-      data() {
-        return {
-          insideVisible: false,
-          radioModal: 'Сладости'
-        };
-      },
-    }
+export default {
+  name: 'InsideModal',
+  components: {
+  },
+  data() {
+    return {
+      insideVisible: false,
+      radioModal: 'Сладости',
+    };
+  },
+};
 </script>
 
 <style lang="sass">
