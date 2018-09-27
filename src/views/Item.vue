@@ -515,7 +515,10 @@ export default {
   components: {
     vFormat: Format,
   },
-  props: ['id', 'name'],
+  props: {
+    id: Number,
+    name: String,
+  },
   data() {
     return {
       num1: 1,
