@@ -509,6 +509,7 @@
 <script>
 
 import Format from '../components/Format.vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Item',
@@ -525,6 +526,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['loadProductDetails']),
     handleChange(value) {
       console.log(value);
     },
@@ -535,6 +537,9 @@ export default {
     // // all titles will be injected into this template
     // titleTemplate: '%s | My Awesome Webapp',
   },
+  computed: {
+    ...mapGetters(['allProductDetails'])
+  }
 };
 </script>
 
