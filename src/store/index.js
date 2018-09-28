@@ -6,6 +6,7 @@ import product from './modules/product';
 import category from './modules/category';
 import manufacturer from './modules/manufacturer';
 import occasion from './modules/occasion';
+import productDetail from './modules/productDetail';
 
 Vue.use(Vuex);
 
@@ -16,5 +17,6 @@ export default new Vuex.Store({
     category,
     manufacturer,
     occasion,
+    productDetail,
   },
 });
