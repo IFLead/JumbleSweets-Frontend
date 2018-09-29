@@ -57,42 +57,10 @@
             </b-col>
             <b-col cols="12" md="4" lg="3" class="about-company__information information">
               <div class="information__news news">
-                <ul class="news__actions">
-                  <li class="news__element">
-                    <p class="news__action">01.08.2018 был добавлен</p>
-                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                  </li>
-                  <li class="news__element">
-                    <p class="news__action">01.08.2018 был добавлен</p>
-                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                  </li>
-                  <li class="news__element">
-                    <p class="news__action">01.08.2018 был добавлен</p>
-                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                  </li>
-                  <li class="news__element">
-                    <p class="news__action">01.08.2018 был добавлен</p>
-                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                  </li>
-                  <li class="news__element">
-                    <p class="news__action">01.08.2018 был добавлен</p>
-                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                  </li>
-                  <li class="news__element">
-                    <p class="news__action">01.08.2018 был добавлен</p>
-                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                  </li>
-                  <li class="news__element">
-                    <p class="news__action">01.08.2018 был добавлен</p>
-                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                  </li>
-                  <li class="news__element">
-                    <p class="news__action">01.08.2018 был добавлен</p>
-                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
-                  </li>
-                  <li class="news__element">
-                    <p class="news__action">01.08.2018 был добавлен</p>
-                    <a href="#" class="news__action-link">Напиток Coca-Cola.</a>
+                <ul v-if="allNews" class="news__actions">
+                  <li class="news__element" v-for="thing in allNews" :key="thing.node.id">
+                    <p class="news__action">{{thing.node.availableOn}} добавлен товар:</p>
+                    <a :href="thing.node.url" class="news__action-link">{{thing.node.name}}</a>
                   </li>
                 </ul>
                 <a href="#" class="news__link">Ещё новости</a>
@@ -253,17 +221,17 @@
 
             <b-col md="8" lg="9" class="products__catalog catalog">
               <b-row class="catalog__list">
-                <b-col v-for="product in allProducts" :key="product.node.id" sm="6" lg="4"
+                <b-col v-for="product in allProducts.edges" :key="product.node.id" sm="6" lg="4"
                        class="catalog__element">
                   <div class="catalog__content">
                     <div v-if="product.node.availability.onSale" class="catalog__sale">{{ getDiscount(product.node.availability.discount.net.amount,
-                                                                                     product.price.amount) }}%
+                                                                                     product.node.price.amount) }}%
                     </div>
                     <div class="catalog__photo">
                       <!--<a :href="product.url" @click="router.push(product.url)">-->
                       <!--<img :src="product.photo_url" width="125" height="100">-->
                       <!--</a>-->
-                      <router-link :to="product.url">
+                      <router-link :to="product.node.url">
                         <img :src="product.node.thumbnailUrl" width="125" height="100">
                       </router-link>
                     </div>
@@ -300,16 +268,16 @@
 
                 <b-col md="12" lg="6" class="pagination__wrapper">
                   <div class="pagination">
-                    <el-pagination :total="200"
+                    <el-pagination :total="allProducts.totalCount"
                                    class="pagination__content"
                                    background
                                    layout="prev, pager, next"
-                                   pager-count="5">
+                                   :page-size="this.$PAGINATE_BY">
                     </el-pagination>
                   </div>
                 </b-col>
                 <b-col md="6" class="ml-lg-auto pages">
-                  <p class="pages__count">Страница 1 из 20</p>
+                  <p class="pages__count">Страница 1 из {{Math.ceil(allProducts.totalCount/this.$PAGINATE_BY)}}</p>
                 </b-col>
                 <div class="products__not-found not-found ">
                   <div class="not-found__heart">
@@ -437,16 +405,17 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['allProducts', 'allCategories', 'allOccasions', 'allManufacturers']),
+    ...mapGetters(['allProducts', 'allCategories', 'allOccasions', 'allManufacturers', 'allNews']),
   },
   created() {
     this.loadProducts({});
     this.loadCategories({});
     this.loadManufacturers({});
     this.loadOccasions({});
+    this.loadNews({});
   },
   methods: {
-    ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers']),
+    ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers', 'loadNews']),
     getDiscount(reduction, preDiscPrice) {
       return Math.floor(100 * reduction / preDiscPrice);
     },

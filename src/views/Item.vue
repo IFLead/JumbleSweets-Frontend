@@ -45,7 +45,7 @@
 
               <div class="prices">
                 <p class="information__price">{{ getCurrentPrice(allProductDetails) }} грн.</p>
-                <p v-if="allProductDetails.availability.onSale" class="information__price--old">200 грн.</p>
+                <p v-if="allProductDetails.availability.onSale" class="information__price--old">{{allProductDetails.price.amount}} грн.</p>
               </div>
               <div class="characteristics__controls controls">
                 <template>

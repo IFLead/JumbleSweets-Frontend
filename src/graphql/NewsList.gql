@@ -6,9 +6,6 @@ query NewsList($first: Int, $after: String, $last: Int, $before: String) {
           name
           url
           availableOn
-          availability {
-            available
-          }
         }
       }
       pageInfo {

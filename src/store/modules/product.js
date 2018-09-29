@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
+import Vue from 'vue';
 import { apolloProvider } from '../../vue-apollo';
 import PRODUCT_LIST from '../../graphql/ProductList.gql';
 
 const state = {
   products: {},
+  endCursor: null,
 };
 
 // getters
@@ -15,6 +17,9 @@ const getters = {
 const mutations = {
   setProducts(state, payload) {
     state.products = payload;
+  },
+  setEndCursor(state, payload) {
+    state.endCursor = payload;
   },
 };
 
@@ -28,10 +33,14 @@ const actions = {
     //   // because this would make it impossible
     //   // for Babel to optimize the code.
     query: PRODUCT_LIST,
+    variables: {"first": Vue.prototype.$PAGINATE_BY, after:context.state.endCursor}
      });
     // console.log(response.data.products.edges);
     context.commit(
-      'setProducts', response.data.products.edges,
+      'setProducts', response.data.products,
+    );
+    context.commit(
+      'setEndCursor', response.data.products.pageInfo.endCursor,
     );
   },
 };

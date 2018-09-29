@@ -6,4 +6,16 @@ module.exports = {
   //     fix: true,
   //   });
   // },
+  devServer: {
+    proxy: {
+      '/graphql': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+      },
+      '/media': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+      },
+    },
+  }
 };
