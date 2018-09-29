@@ -26,19 +26,27 @@ fragment Product on Product {
   }
   availability {
     available
+    onSale
+    discount {
+      net {
+        amount
+      }
+    }
   }
-  # images {
-  #   edges {
-  #     node {
-  #       ...ProductImage
-  #     }
-  #   }
-  # }
+   images {
+     edges {
+       node {
+         ...ProductImage
+       }
+     }
+   }
   variants {
     edges {
       node {
         id
         name
+        stockQuantity
+        trackInventory
         images {
           edges {
             node {
