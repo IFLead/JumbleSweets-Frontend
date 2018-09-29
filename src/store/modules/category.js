@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import ROOT_CATEGORY_CHILDREN from '../../graphql/RootCategoryChildrenQuery.gql';
 import { apolloProvider } from '../../vue-apollo';
 

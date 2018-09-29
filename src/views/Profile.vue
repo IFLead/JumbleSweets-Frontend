@@ -612,7 +612,7 @@
 </template>
 
 <script>
-import RepeatModal from '../components/modals/RepeatModal';
+import RepeatModal from '../components/modals/RepeatModal.vue';
 
 export default {
   name: 'Profile',

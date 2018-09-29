@@ -253,25 +253,25 @@
 
             <b-col md="8" lg="9" class="products__catalog catalog">
               <b-row class="catalog__list">
-                <b-col v-for="product in allProducts" :key="product.id" sm="6" lg="4"
+                <b-col v-for="product in allProducts" :key="product.node.id" sm="6" lg="4"
                        class="catalog__element">
                   <div class="catalog__content">
-                    <div v-if="isDisc(product)" class="catalog__sale">{{ getDiscount(product.price,
-                                                                                     product.pre_disc_price) }}%
+                    <div v-if="product.node.availability.onSale" class="catalog__sale">{{ getDiscount(product.node.availability.discount.net.amount,
+                                                                                     product.price.amount) }}%
                     </div>
                     <div class="catalog__photo">
                       <!--<a :href="product.url" @click="router.push(product.url)">-->
                       <!--<img :src="product.photo_url" width="125" height="100">-->
                       <!--</a>-->
                       <router-link :to="product.url">
-                        <img :src="product.photo_url" width="125" height="100">
+                        <img :src="product.node.thumbnailUrl" width="125" height="100">
                       </router-link>
                     </div>
                     <div class="catalog__information">
-                      <h4 class="catalog__name"><router-link :to="product.url">{{ product.name }}</router-link></h4>
-                      <p class="catalog__price">{{ product.price }} грн.</p>
-                      <p v-if="isDisc(product)" class="catalog__old-price">{{
-                      product.pre_disc_price }} грн.</p>
+                      <h4 class="catalog__name"><router-link :to="product.node.url">{{ product.node.name }}</router-link></h4>
+                      <p v-if="product.node.availability.onSale" class="catalog__price">{{ product.node.price.amount - product.node.availability.discount.net.amount }} грн.</p>
+                      <p v-else class="catalog__price">{{ product.node.price.amount }} грн.</p>
+                      <p v-if="product.node.availability.onSale" class="catalog__old-price">{{product.node.price.amount }} грн.</p>
                       <div class="catalog__basket">
                         <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
                              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -281,7 +281,7 @@
                       <div>
                       </div>
                       <div class="catalog__like">
-                        <div v-if="product.is_top">
+                        <div v-if="false">
                           <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                width="21.74px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
                             <g><g id="favorite"><path class="liked" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g>
@@ -436,15 +436,6 @@ export default {
       filterOpen: false,
     };
   },
-  methods: {
-    ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers']),
-    getDiscount(price, preDiscPrice) {
-      return Math.floor(100 * (preDiscPrice - price) / preDiscPrice);
-    },
-    isDisc(product) {
-      return product.price !== product.pre_disc_price;
-    },
-  },
   computed: {
     ...mapGetters(['allProducts', 'allCategories', 'allOccasions', 'allManufacturers']),
   },
@@ -453,6 +444,15 @@ export default {
     this.loadCategories({});
     this.loadManufacturers({});
     this.loadOccasions({});
+  },
+  methods: {
+    ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers']),
+    getDiscount(reduction, preDiscPrice) {
+      return Math.floor(100 * reduction / preDiscPrice);
+    },
+    isDisc(product) {
+      return product.price !== product.pre_disc_price;
+    },
   },
 };
 </script>

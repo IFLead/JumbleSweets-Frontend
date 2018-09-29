@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import PRODUCT_DETAILS from '../../graphql/ProductDetails.gql';
 import { apolloProvider } from '../../vue-apollo';
 
@@ -24,10 +23,10 @@ const actions = {
   async loadProductDetails(context) {
     const response = await apolloProvider.defaultClient.query({
       query: PRODUCT_DETAILS,
-      variables: {"id": "UHJvZHVjdDoy"},
+      variables: { id: 'UHJvZHVjdDoy' },
     });
     console.log(response.data.product);
-    context.commit('setProductDetails', response.data.data.product);
+    context.commit('setProductDetails', response.data.product);
   },
 };
 

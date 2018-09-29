@@ -1,10 +1,8 @@
 <template>
   <div class="format">
 
-    <el-radio-group v-model="radioFormat" class="choose-format">
-      <el-radio-button class="choose-format__elem" label="200 гр"></el-radio-button>
-      <el-radio-button class="choose-format__elem" label="500 гр"></el-radio-button>
-      <el-radio-button class="choose-format__elem" label="1000 гр"></el-radio-button>
+    <el-radio-group v-model="selectedVariant" class="choose-format" @change="$emit('input', selectedVariant)">
+      <el-radio-button v-for="variant in variants" :key="variant.id" :label="variant.id" class="choose-format__elem">{{ variant.name }}</el-radio-button>
     </el-radio-group>
 
   </div>
@@ -15,10 +13,22 @@ export default {
   name: 'Format',
   components: {
   },
+  props: {
+    variants: {
+      type: Array,
+      required: true,
+    },
+    value: {
+      type: String,
+      default: null,
+    },
+  },
   data() {
     return {
-      radioFormat: '200гр',
+      selectedVariant: this.value,
     };
+  },
+  computed: {
   },
 };
 </script>

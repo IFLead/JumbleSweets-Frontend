@@ -23,28 +23,20 @@
           </b-col>
           <b-col lg="6" class="characteristics__photo">
             <el-carousel :interval="5000" arrow="never" trigger="click">
-              <el-carousel-item>
+              <el-carousel-item v-for="item in allProductDetails.images.edges" :key="item.node.id">
                 <div class="characteristics__wrapper">
-                  <img src="../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="Батончик Snikers" width="340">
-                </div>
-              </el-carousel-item>
-              <el-carousel-item>
-                <div class="characteristics__wrapper">
-                  <img src="../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="Батончик Snikers" width="340">
-                </div>
-              </el-carousel-item>
-              <el-carousel-item>
-                <div class="characteristics__wrapper">
-                  <img src="../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="Батончик Snikers" width="340">
+                  <img src="http://www.bbc.co.uk/staticarchive/6132e89e723956efa1bad9791d06b0f88d27d379.jpg"
+                       :alt="item.node.alt" width="340">
                 </div>
               </el-carousel-item>
             </el-carousel>
           </b-col>
           <b-col lg="6" class="characteristics__information information">
             <div class="information__content">
-              <h3 class="information__title">Батончик Snickers</h3>
+              <h3 class="information__title">{{ allProductDetails.name }}</h3>
 
-              <vFormat></vFormat>
+              <vFormat v-if="allProductDetails.variants.edges.length > 1" v-model="variant"
+                       :variants="allProductDetails.variants.edges | getVariants"></vFormat>
               <!--<el-radio-group v-model="radioFormat" class="choose-format">-->
               <!--<el-radio-button class="choose-format__elem" label="200 гр"></el-radio-button>-->
               <!--<el-radio-button class="choose-format__elem" label="500 гр"></el-radio-button>-->
@@ -52,7 +44,8 @@
               <!--</el-radio-group>-->
 
               <div class="prices">
-                <p class="information__price">100 грн.</p><p class="information__price--old">200 грн.</p>
+                <p class="information__price">{{ getCurrentPrice(allProductDetails) }} грн.</p>
+                <p v-if="allProductDetails.availability.onSale" class="information__price--old">200 грн.</p>
               </div>
               <div class="characteristics__controls controls">
                 <template>
@@ -80,7 +73,7 @@
                 </el-button>
                 <a href="#" class="information__link">Добавить в список желаний</a>
               </div>
-              <p class="information__manufacturer">Производитель: США</p>
+              <p class="information__manufacturer">Производитель: {{allProductDetails.attributes[1].value.name}}</p>
               <p class="information__occasions">Популярные поводы: Свадьба / День рождения / Извинения</p>
             </div>
           </b-col>
@@ -94,7 +87,7 @@
 
           <b-col cols="12">
             <h2 class="description-item__title">Описание товара</h2>
-            <p class="description-item__information">Начинка: арахис, глюкозный сироп, сахар, масло растительное подсолнечное рафинированное дезодорированное, молоко сухое обезжиренное, масло растительное пальмовое рафинированное дезодорированное, соль, лактоза, сухая молочная сыворотка, сухой яичный белок, ароматизатор натуральный (ектсракт ванили), сухой молочный белок; молочный шоколад (какао продуктов - не менее 27%, сухих молочных продуктов - не менее 20%): сахар, какао масло, молоко сухое обезжиренное, какао тертое, лактоза, молочный жир, сухая молочная сыворотка, эмульгатор (соевый лецитин), ароматизатор натуральный (экстракт ванили).</p>
+            <div class="description-item__information" v-html="allProductDetails.description"></div>
           </b-col>
 
           <b-col cols="12" class="description-item__item-advantages item-advantages">
@@ -129,36 +122,6 @@
                           l14.338,29.03c1.049,2.027,2.22,3.66,3.542,5.019L219.352,180.742L219.352,180.742z"/>
                         </g>
                       </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
                     </svg>
                   </div>
                   <h3 class="item-advantages__title">Самовывоз</h3>
@@ -186,36 +149,6 @@
                         c-4.822,0-8.733,3.91-8.733,8.733v60.393c0,4.824,3.91,8.733,8.733,8.733h108.798C523.342,270.394,527.48,262.421,523.408,256.635z
                         "/>
                       </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
                     </svg>
                   </div>
                   <h3 class="item-advantages__title">Доставка</h3>
@@ -229,36 +162,6 @@
                         <path d="M7,0.935c-3.866,0-7,2.463-7,5.5c0,1.438,0.703,2.749,1.854,3.729
                         c-0.044,0.955-0.242,2.239-0.942,2.901c1.337,0,2.706-0.88,3.518-1.514c0.796,0.248,1.663,0.384,2.57,0.384c3.866,0,7-2.463,7-5.5
                         S10.866,0.935,7,0.935z"/>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
                       </g>
                     </svg>
                   </div>
@@ -279,7 +182,9 @@
             <div class="add-jumble__content">
               <div class="add-jumble__wrapper">
                 <h2 class="add-jumble__title">Добавьте этот товар в Jumble Box</h2>
-                <p class="add-jumble__description">Внешний вид упаковки непосредственно влияет на эмоции человека при получении презента, ведь людям нравятся красивые и необычные вещи. Начните заполнение своего подарочного бокса с этого товара.</p>
+                <p class="add-jumble__description">Внешний вид упаковки непосредственно влияет на эмоции человека при
+                получении презента, ведь людям нравятся красивые и необычные вещи. Начните заполнение своего
+                подарочного бокса с этого товара.</p>
                 <el-button class="add-jumble__button"><p>Хочу Jumble Box</p>
                   <span class="add-jumble__button--icon">
                     <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -311,36 +216,6 @@
                         <g>
                           <rect x="271" y="271" width="180" height="241"/>
                         </g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
                       </g>
                     </svg>
                   </span>
@@ -376,7 +251,7 @@
                           c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
                           c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
                           c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-                    </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </g></g>
                   </svg>
                 </div>
                 <div class="similar-products__like">
@@ -385,7 +260,7 @@
                     <g>
                       <g id="favorite">
                         <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-                          C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                          C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g>
                   </svg>
                 </div>
               </div>
@@ -411,7 +286,7 @@
                           c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
                           c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
                           c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-                    </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </g></g>
                   </svg>
                 </div>
                 <div class="similar-products__like">
@@ -420,7 +295,7 @@
                     <g>
                       <g id="favorite">
                         <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-                          C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                          C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g>
                   </svg>
                 </div>
               </div>
@@ -446,7 +321,7 @@
                           c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
                           c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
                           c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-                    </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </g></g>
                   </svg>
                 </div>
                 <div class="similar-products__like">
@@ -455,7 +330,7 @@
                     <g>
                       <g id="favorite">
                         <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-                          C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                          C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g>
                   </svg>
                 </div>
               </div>
@@ -483,7 +358,7 @@
                           c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32
                           c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64
                           c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
-                    </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </g></g>
                   </svg>
                 </div>
                 <div class="similar-products__like">
@@ -492,7 +367,7 @@
                     <g>
                       <g id="favorite">
                         <path class="like" d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
-                          C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                          C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/></g></g>
                   </svg>
                 </div>
               </div>
@@ -506,91 +381,131 @@
 </template>
 
 <script>
-
-import Format from '../components/Format.vue';
 import { mapGetters, mapActions } from 'vuex';
+import Format from '../components/Format.vue';
+
 
 export default {
   name: 'Item',
   components: {
     vFormat: Format,
   },
+  filters: {
+    getVariants(uncutVariants) {
+      const newVariants = [];
+      for (let index = 0; index < uncutVariants.length; index++) {
+        const id = uncutVariants[index].node.id;
+        const name = uncutVariants[index].node.name;
+        newVariants.push({ id, name });
+      }
+      return newVariants;
+    },
+  },
   props: {
-    id: Number,
-    name: String,
+    id: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
+      loading: false,
+      product: null,
+      error: null,
+
       num1: 1,
+      variant: null,
     };
+  },
+  computed: {
+    ...mapGetters(['allProductDetails']),
+  },
+  watch: {
+    $route:
+        'fetchData',
+  },
+  created() {
+    this.fetchData();
   },
   methods: {
     ...mapActions(['loadProductDetails']),
     handleChange(value) {
       console.log(value);
     },
+    getCurrentPrice(product) {
+      if (product.availability.onSale) {
+        return 'Ублюдок мать твою, когда поменяешь это? ммм?!';
+      }
+      return product.price.amount;
+    },
+    fetchData() {
+      this.loadProductDetails({});
+    },
   },
-  metaInfo: {
+  metaInfo() {
     // // if no subcomponents specify a metaInfo.title, this title will be used
-    title: 'Default Title',
+    return {
+      title: this.allProductDetails.seoTitle
+    }
     // // all titles will be injected into this template
     // titleTemplate: '%s | My Awesome Webapp',
-  },
-  computed: {
-    ...mapGetters(['allProductDetails']),
   },
 };
 </script>
 
 <style lang="sass">
-.characteristics
-  margin:
-    top: 37px
-  &__link
-    transition: all 0.2s ease
-    display: flex
-    align-items: center
-    width: 150px
-    color: #000000
+  .characteristics
     margin:
-      bottom: 40px
-    @media (max-width: 767.98px)
-      margin:
-        bottom: 20px
-    p
-      font-weight: 700
-      margin:
-        bottom: 0
-    span
-      transform: rotate(-180deg)
-      display: inline-block
-      width: 12px
-      height: 12px
-      margin:
-        top: 13px
-        right: 12px
-    &:hover, &:focus
-      text-decoration: none
-      color: #e70068
-      .characteristics__link--icon
-        fill: #e70068
-    &--icon
+      top: 37px
+    &__link
       transition: all 0.2s ease
-      fill: #000000
-  &__wrapper
-    width: 340px
-    margin:
-      top: 200px
-      left: auto
-      right: auto
-    @media (max-width: 991.98px)
+      display: flex
+      align-items: center
+      width: 150px
+      color: #000000
       margin:
-        top: 175px
-    @media (max-width: 575.98px)
-      width: 280px
+        bottom: 40px
+      @media (max-width: 767.98px)
+        margin:
+          bottom: 20px
+      p
+        font-weight: 700
+        margin:
+          bottom: 0
+      span
+        transform: rotate(-180deg)
+        display: inline-block
+        width: 12px
+        height: 12px
+        margin:
+          top: 13px
+          right: 12px
+      &:hover, &:focus
+        text-decoration: none
+        color: #e70068
+        .characteristics__link--icon
+          fill: #e70068
+      &--icon
+        transition: all 0.2s ease
+        fill: #000000
+    &__wrapper
+      width: 340px
       margin:
-        top: 150px
-  &__photo
+        top: 200px
+        left: auto
+        right: auto
+      @media (max-width: 991.98px)
+        margin:
+          top: 175px
+      @media (max-width: 575.98px)
+        width: 280px
+        margin:
+          top: 150px
+    &__photo
     .el-carousel
       &__container
         position: relative
@@ -629,348 +544,345 @@ export default {
         @media (max-width: 575.98px)
           height: 400px
 
-    .el-carousel__indicator
-      margin:
-        bottom: 38px
-    .el-carousel__button
-      padding: 0
-      width: 5px
-      height: 5px
-      border-radius: 50%
-      background-color: #000000
-      opacity: 0.5
-
-    .el-carousel__indicator.is-active
+      .el-carousel__indicator
+        margin:
+          bottom: 38px
       .el-carousel__button
-        width: 10px
-        height: 10px
-        opacity: 1
+        padding: 0
+        width: 5px
+        height: 5px
+        border-radius: 50%
+        background-color: #000000
+        opacity: 0.5
 
-    .el-carousel__indicators
-      display: flex
-      align-items: center
+      .el-carousel__indicator.is-active
+        .el-carousel__button
+          width: 10px
+          height: 10px
+          opacity: 1
 
+      .el-carousel__indicators
+        display: flex
+        align-items: center
 
-  .information
-    padding:
-      left: 60px
-    @media (max-width: 1199.98px)
+    .information
       padding:
-        left: 20px
-    @media (max-width: 991.98px)
-      padding:
-        left: 15px
-    &__title
-      font-size: 30px
-      font-weight: 400
-      line-height: 40px
-      margin:
-        top: 10px
-        bottom: 25px
+        left: 60px
       @media (max-width: 1199.98px)
-        margin:
-          bottom: 15px
+        padding:
+          left: 20px
       @media (max-width: 991.98px)
-        margin:
-          top: 40px
-      @media (max-width: 767.98px)
+        padding:
+          left: 15px
+      &__title
+        font-size: 30px
+        font-weight: 400
+        line-height: 40px
         margin:
           top: 10px
-          bottom: 20px
-    &__price
-      display: inline-block
-      font-size: 45px
-      line-height: 55px
-      font-weight: 700
-      color: #e70068
-      margin-right: 34px
-      margin-bottom: 0px
-      @media (max-width: 767.98px)
-        font-size: 30px
-        line-height: 40px
-      &--old
+          bottom: 25px
+        @media (max-width: 1199.98px)
+          margin:
+            bottom: 15px
+        @media (max-width: 991.98px)
+          margin:
+            top: 40px
+        @media (max-width: 767.98px)
+          margin:
+            top: 10px
+            bottom: 20px
+      &__price
         display: inline-block
         font-size: 45px
         line-height: 55px
-        font-weight: 400
-        color: #c4c4c4
-        text-decoration: line-through
-        margin:
-          bottom: 0
+        font-weight: 700
+        color: #e70068
+        margin-right: 34px
+        margin-bottom: 0px
         @media (max-width: 767.98px)
           font-size: 30px
           line-height: 40px
-    &__button
-      &--icon
+        &--old
+          display: inline-block
+          font-size: 45px
+          line-height: 55px
+          font-weight: 400
+          color: #c4c4c4
+          text-decoration: line-through
+          margin:
+            bottom: 0
+          @media (max-width: 767.98px)
+            font-size: 30px
+            line-height: 40px
+      &__button
+        &--icon
+          margin:
+            top: -4px
+          width: 20px
+          height: 20px
+          fill: #ffffff
+        span
+          display: inline-block
+          margin:
+            top: 0px
+        p
+          display: inline-block
+          margin:
+            bottom: 0
+            right: 13px
+      &__buttons
         margin:
-          top: -4px
-        width: 20px
-        height: 20px
-        fill: #ffffff
-      span
+          bottom: 48px
+        @media (max-width: 1199.98px)
+          margin:
+            bottom: 30px
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 40px
+      &__link
+        transition: all 0.2s ease
         display: inline-block
         margin:
-          top: 0px
+          left: 40px
+        color: #000000
+        &:hover, &:focus
+          text-decoration: none
+          color: #e70068
+        @media (max-width: 1199.98px)
+          margin:
+            left: 15px
+        @media (max-width: 767.98px)
+          margin:
+            top: 20px
+            left: 0
+          width: 100%
+      &__manufacturer
+        margin:
+          bottom: 28px
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 15px
+
+  .description-item
+    margin:
+      top: 56px
+    &__title
+      font-size: 30px
+      line-height: 40px
+      font-weight: 700
+      margin:
+        bottom: 36px
+      @media (max-width: 575.98px)
+        margin:
+          bottom: 20px
+    &__information
+      margin:
+        bottom: 50px
+
+    .item-advantages
+      &__content
+        position: relative
+        padding:
+          top: 90px
+          bottom: 128px
+        background-image: url("../assets/frankie-cordoba-526925-unsplash.jpg")
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: 0 -520px
+        @media (max-width: 1199.98px)
+          background-position: 0 -400px
+        @media (max-width: 991.98px)
+          padding:
+            bottom: 100px
+          background-position: 0 -300px
+        @media (max-width: 767.98px)
+          background-position: -100px 0
+          padding:
+            top: 80px
+            bottom: 80px
+        &::after
+          content: ''
+          position: absolute
+          z-index: 10
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          background-color: rgba(0, 0, 0, 0.7)
+        .row
+          position: relative
+          z-index: 100
+      &__title
+        color: #ffffff
+        text-align: center
+        font-size: 20px
+        line-height: 30px
+        font-weight: 700
+        margin:
+          bottom: 14px
+      &__element
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 50px
+      &__description
+        color: #ffffff
+        text-align: center
+        width: 170px
+        margin:
+          bottom: 0
+          left: auto
+          right: auto
+      &__photo
+        margin:
+          left: auto
+          right: auto
+        &--car
+          width: 85px
+          height: 60px
+          margin:
+            bottom: 36px
+          .icon
+            fill: #fffab9
+        &--truck
+          width: 85px
+          height: 60px
+          margin:
+            bottom: 36px
+          .icon
+            fill: #fffab9
+        &--speak
+          width: 70px
+          height: 61px
+          margin:
+            bottom: 36px
+          .icon
+            fill: #fffab9
+
+  .add-jumble
+    margin:
+      top: 50px
+    &__content
+      position: relative
+      background-color: #000000
+      color: #ffffff
+      padding:
+        left: 70px
+        top: 46px
+        bottom: 104px
+      background-image: url("../assets/samuel-holt-490207-unsplash.jpg")
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: 0 -205px
+      @media (max-width: 991.98px)
+        padding:
+          bottom: 80px
+        background-position: 0 -100px
+      @media (max-width: 767.98px)
+        padding:
+          top: 60px
+          left: 40px
+          right: 20px
+          bottom: 60px
+        background-position: 0 0
+      &::after
+        content: ''
+        position: absolute
+        z-index: 10
+        left: 0
+        top: 0
+        right: 0
+        bottom: 0
+        background-color: rgba(0, 0, 0, 0.6)
+    &__wrapper
+      position: relative
+      z-index: 100
+    &__description
+      width: 840px
+      margin:
+        bottom: 30px
+      @media (max-width: 991.98px)
+        width: 600px
+      @media (max-width: 767.98px)
+        width: 450px
+      @media (max-width: 575.98px)
+        width: 100%
+    &__title
+      font-size: 30px
+      font-weight: 700
+      line-height: 40px
+      margin:
+        bottom: 21px
+      @media (max-width: 767.98px)
+        font-size: 25px
+        line-height: 35px
+    &__button
       p
         display: inline-block
         margin:
           bottom: 0
           right: 13px
-    &__buttons
-      margin:
-        bottom: 48px
-      @media (max-width: 1199.98px)
-        margin:
-          bottom: 30px
-      @media (max-width: 767.98px)
-        margin:
-          bottom: 40px
-    &__link
-      transition: all 0.2s ease
-      display: inline-block
-      margin:
-        left: 40px
-      color: #000000
-      &:hover, &:focus
-        text-decoration: none
-        color: #e70068
-      @media (max-width: 1199.98px)
-        margin:
-          left: 15px
-      @media (max-width: 767.98px)
-        margin:
-          top: 20px
-          left: 0
-        width: 100%
-    &__manufacturer
-      margin:
-        bottom: 28px
-      @media (max-width: 767.98px)
-        margin:
-          bottom: 15px
+      &--icon
 
+        display: inline-block
+        width: 20px
+        height: 20px
+        fill: #ffffff
+        .icon
+          margin:
+            top: -4
 
-.description-item
-  margin:
-    top: 56px
-  &__title
-    font-size: 30px
-    line-height: 40px
-    font-weight: 700
+  .similar-products
+    position: relative
     margin:
-      bottom: 36px
-    @media (max-width: 575.98px)
-      margin:
-        bottom: 20px
-  &__information
-    margin:
-      bottom: 50px
-
-  .item-advantages
-    &__content
-      position: relative
-      padding:
-        top: 90px
-        bottom: 128px
-      background-image: url("../assets/frankie-cordoba-526925-unsplash.jpg")
-      background-repeat: no-repeat
-      background-size: cover
-      background-position: 0 -520px
-      @media (max-width: 1199.98px)
-        background-position: 0 -400px
-      @media (max-width: 991.98px)
-        padding:
-          bottom: 100px
-        background-position: 0 -300px
-      @media (max-width: 767.98px)
-        background-position: -100px 0
-        padding:
-          top: 80px
-          bottom: 80px
-      &::after
-        content: ''
-        position: absolute
-        z-index: 10
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-        background-color: rgba(0, 0, 0, 0.7)
-      .row
-        position: relative
-        z-index: 100
+      top: 46px
+      bottom: 20px
     &__title
-      color: #ffffff
-      text-align: center
-      font-size: 20px
-      line-height: 30px
-      font-weight: 700
-      margin:
-        bottom: 14px
-    &__element
-      @media (max-width: 767.98px)
+      a
+        display: block
+        font-size: 15px
+        color: #000000
+        text-decoration: none
+        line-height: 18px
         margin:
-          bottom: 50px
-    &__description
-      color: #ffffff
+          bottom: 22px
+      &--main
+        font-size: 30px
+        line-height: 40px
+        font-weight: 700
+        margin:
+          bottom: 41px
+    &__sale
+      position: absolute
+      width: 70px
+      height: 35px
       text-align: center
-      width: 170px
-      margin:
-        bottom: 0
-        left: auto
-        right: auto
+      background-color: #E70068
+      color: #ffffff
+      line-height: 35px
+      font-weight: 700
+      text-align: center
+      top: 0
+      left: 0
     &__photo
       margin:
         left: auto
         right: auto
-      &--car
-        width: 85px
-        height: 60px
-        margin:
-          bottom: 36px
-        .icon
-          fill: #fffab9
-      &--truck
-        width: 85px
-        height: 60px
-        margin:
-          bottom: 36px
-        .icon
-          fill: #fffab9
-      &--speak
-        width: 70px
-        height: 61px
-        margin:
-          bottom: 36px
-        .icon
-          fill: #fffab9
-
-
-.add-jumble
-  margin:
-    top: 50px
-  &__content
-    position: relative
-    background-color: #000000
-    color: #ffffff
-    padding:
-      left: 70px
-      top: 46px
-      bottom: 104px
-    background-image: url("../assets/samuel-holt-490207-unsplash.jpg")
-    background-repeat: no-repeat
-    background-size: cover
-    background-position: 0 -205px
-    @media (max-width: 991.98px)
+    &__content
+      overflow:
+      display: flex
+      flex-direction: column
+      position: relative
+      height: 100%
+      background-color: #F8F8F8
       padding:
-        bottom: 80px
-      background-position: 0 -100px
-    @media (max-width: 767.98px)
-      padding:
-        top: 60px
-        left: 40px
+        top: 1px
+        left: 20px
         right: 20px
-        bottom: 60px
-      background-position: 0 0
-    &::after
-      content: ''
-      position: absolute
-      z-index: 10
-      left: 0
-      top: 0
-      right: 0
-      bottom: 0
-      background-color: rgba(0, 0, 0, 0.6)
-  &__wrapper
-    position: relative
-    z-index: 100
-  &__description
-    width: 840px
-    margin:
-      bottom: 30px
-    @media (max-width: 991.98px)
-      width: 600px
-    @media (max-width: 767.98px)
-      width: 450px
-    @media (max-width: 575.98px)
-      width: 100%
-  &__title
-    font-size: 30px
-    font-weight: 700
-    line-height: 40px
-    margin:
-      bottom: 21px
-    @media (max-width: 767.98px)
-      font-size: 25px
-      line-height: 35px
-  &__button
-    p
-      display: inline-block
+        bottom: 24px
+    &__element
       margin:
-        bottom: 0
-        right: 13px
-    &--icon
-
-      display: inline-block
-      width: 20px
-      height: 20px
-      fill: #ffffff
-      .icon
-        margin:
-          top: -4
-
-.similar-products
-  position: relative
-  margin:
-    top: 46px
-    bottom: 20px
-  &__title
-    a
-      display: block
-      font-size: 15px
-      color: #000000
-      text-decoration: none
-      line-height: 18px
-      margin:
-        bottom: 22px
-    &--main
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
-      margin:
-        bottom: 41px
-  &__sale
-    position: absolute
-    width: 70px
-    height: 35px
-    text-align: center
-    background-color: #E70068
-    color: #ffffff
-    line-height: 35px
-    font-weight: 700
-    text-align: center
-    top: 0
-    left: 0
-  &__photo
-    margin:
-      left: auto
-      right: auto
-  &__content
-    overflow:
-    display: flex
-    flex-direction: column
-    position: relative
-    height: 100%
-    background-color: #F8F8F8
-    padding:
-      top: 1px
-      left: 20px
-      right: 20px
-      bottom: 24px
-  &__element
-    margin:
-      bottom: 30px
-    &--kinder
+        bottom: 30px
+      &--kinder
       .similar-products__photo
         width: 139px
         height: 139px
@@ -979,7 +891,7 @@ export default {
           bottom: 44px
           left: auto
           right: auto
-    &--sprite
+      &--sprite
       .similar-products__photo
         width: 224px
         height: 130px
@@ -988,7 +900,7 @@ export default {
           bottom: 44px
           left: auto
           right: auto
-    &--fanta
+      &--fanta
       .similar-products__photo
         width: 152px
         height: 119px
@@ -997,7 +909,7 @@ export default {
           bottom: 51px
           left: auto
           right: auto
-    &--milka
+      &--milka
       .similar-products__photo
         width: 157px
         height: 157px
@@ -1006,81 +918,81 @@ export default {
           bottom: 39px
           left: auto
           right: auto
-  &__price
-    font-weight: 700
-    line-height: 18px
-    margin:
-      bottom: 0
-  &__old-price
-    font-weight: regular
-    line-height: 18px
-    color: #c4c4c4
-    text-decoration: line-through
-    margin:
-      left: 9px
-      bottom: 0
-  &__like
-    cursor: pointer
-    width: 22px
-    height: 20px
-    margin:
-      left: 10px
-      top: -5px
-    .like
-      transition: all 0.2s ease
-      fill: #C4C4C4
-    &:hover
+    &__price
+      font-weight: 700
+      line-height: 18px
+      margin:
+        bottom: 0
+    &__old-price
+      font-weight: regular
+      line-height: 18px
+      color: #c4c4c4
+      text-decoration: line-through
+      margin:
+        left: 9px
+        bottom: 0
+    &__like
+      cursor: pointer
+      width: 22px
+      height: 20px
+      margin:
+        left: 10px
+        top: -5px
       .like
-        fill: #E70068
+        transition: all 0.2s ease
+        fill: #C4C4C4
+      &:hover
+        .like
+          fill: #E70068
 
-  &__basket
-    cursor: pointer
-    width: 15px
-    height: 20px
-    margin:
-      left: auto
-      top: -5px
-    .basket
-      transition: all 0.2s ease
-      fill: #C4C4C4
-    &:hover
+    &__basket
+      cursor: pointer
+      width: 15px
+      height: 20px
+      margin:
+        left: auto
+        top: -5px
       .basket
-        fill: #E70068
-  &__information
-    display: flex
+        transition: all 0.2s ease
+        fill: #C4C4C4
+      &:hover
+        .basket
+          fill: #E70068
+    &__information
+      display: flex
+      margin:
+        top: auto
+
+  .controls
     margin:
-      top: auto
-
-.controls
-  margin:
-    top: 15px
-    bottom: 20px
-  .el-input-number
-    width: 152px
-  .el-input__inner
-    color: #000000
-    font-size: 20px
-    line-height: 30px
-    border: 1px solid #f8f8f8
-    width: 152px
-    padding:
-      top: 9px
-      bottom: 14px
+      top: 15px
+      bottom: 20px
+    .el-input-number
+      width: 152px
+    .el-input__inner
+      color: #000000
+      font-size: 20px
+      line-height: 30px
+      border: 1px solid #f8f8f8
+      width: 152px
+      padding:
+        top: 9px
+        bottom: 14px
+        left: 20px
+        right: 20px
+      height: 50px
+    .el-input-number__decrease
+      top: 10px
       left: 20px
+      background-color: transparent
+      border: none
+    .el-input-number__increase
+      top: 10px
       right: 20px
-    height: 50px
-  .el-input-number__decrease
-    top: 10px
-    left: 20px
-    background-color: transparent
-    border: none
-  .el-input-number__increase
-    top: 10px
-    right: 20px
-    background-color: transparent
-    border: none
+      background-color: transparent
+      border: none
 
-.prices
-  margin-top: 30px
+  .prices
+    margin-top: 30px
 
 </style>
