@@ -21,7 +21,7 @@
           <b-col cols="12" class="purchases__control control">
             <div class="control__content">
               <h2 class="control__title">Моя корзина</h2>
-              <a href="#" class="control__link control__link--like" @click="favouriteModal = true">Добавить всё в список желания
+              <a href="#" class="control__link control__link--like" @click="favouriteModalOpened = true">Добавить всё в список желания
                 <span>
                   <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                        viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
@@ -67,7 +67,7 @@
                     </template>
                   </div>
                   <p class="element__price">{{record.price}} грн.</p>
-                  <a href="#" class="element__delete">Удалить</a>
+                  <a href="#" @click="removeProductFromCart(record.id)" class="element__delete">Удалить</a>
                 </div>
               </div>
             </div>
@@ -115,20 +115,20 @@
           <h3 class="clean__title">Очистка корзины</h3>
           <p class="clean__description">Мы удалим весь товар из вашей корзины, точно этого хотите?</p>
           <div class="clean__buttons">
-            <el-button class="clean__button">Очистить корзину</el-button>
+            <el-button @click="modalClearCart" class="clean__button">Очистить корзину</el-button>
             <a href="#" class="clean__link" @click="cleanModal = false">Нет, не надо</a>
           </div>
         </div>
       </el-dialog>
 
-      <el-dialog :visible.sync="favouriteModal" class="modals__favourite favourite" close-on-press-escape="true">
+      <el-dialog :visible.sync="favouriteModalOpened" class="modals__favourite favourite" close-on-press-escape="true">
         <div class="favourite__content">
           <div class="favourite__icon"></div>
           <h3 class="favourite__title">В список желаемого</h3>
           <p class="favourite__description">С радостью перенесем содержимое корзины в список желаний, вы согласны?</p>
           <div class="favourite__buttons">
             <el-button class="favourite__button">Да, конечно</el-button>
-            <a href="#" class="favourite__link" @click="favouriteModal = false">Нет, оставьте всё в корзине</a>
+            <a href="#" class="favourite__link" @click="favouriteModalOpened = false">Нет, оставьте всё в корзине</a>
           </div>
         </div>
       </el-dialog>
@@ -535,17 +535,21 @@ export default {
       productAmount: 1,
       input: '',
       cleanModal: false,
-      favouriteModal: false,
+      favouriteModalOpened: false,
       saleModal: false,
       insideModal: false,
       checkModals: true,
     };
   },
   computed: {
-    ...mapMutations(['increaseCartVariant', 'decreaseCartVariant', 'clearCart', 'removeProductFromCart']),
+    ...mapGetters(['getCartItems', 'totalPrice']),
   },
   methods: {
-    ...mapGetters(['getCartItems', 'totalPrice']),
+    ...mapMutations(['clearCart', 'removeProductFromCart']),
+    modalClearCart(){
+      this.clearCart();
+      this.cleanModal = false;
+    },
   }
 };
 </script>

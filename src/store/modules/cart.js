@@ -6,7 +6,7 @@ const state = {
 // getters
 const getters = {
   getCartItems: state => state.cartItems,
-  totalPrice(state) {
+  totalPrice: (state) => {
     let price = 0;
     state.cartItems.forEach(function(record){
       price += record.price * record.quantity;
@@ -39,10 +39,10 @@ const mutations = {
     }
   },
   clearCart(state) {
-    state.cartItems = {};
+    state.cartItems = [];
   },
-  removeProductFromCart(state, payload) {
-    delete state.cartItems[payload];
+  removeProductFromCart(state, id) {
+    state.cartItems = state.cartItems.filter(x => x.id !== id);
   }
 };
 
