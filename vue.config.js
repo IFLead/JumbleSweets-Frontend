@@ -1,6 +1,6 @@
 
 module.exports = {
-  lintOnSave: false,
+  lintOnSave: true,
   // chainWebpack: (config) => {
   //   config.module.rule('eslint').use('eslint-loader').options({
   //     fix: true,
@@ -17,5 +17,5 @@ module.exports = {
         changeOrigin: true,
       },
     },
-  }
+  },
 };

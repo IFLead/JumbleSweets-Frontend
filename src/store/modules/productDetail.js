@@ -26,7 +26,7 @@ const actions = {
       variables: { id: 'UHJvZHVjdDoy' },
     });
     console.log(response.data.product);
-    context.commit('setProductDetails', response.data.product);
+    context.commit('setProductDetails', response.data.data.product);
   },
 };
 

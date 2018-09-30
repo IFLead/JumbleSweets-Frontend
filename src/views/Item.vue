@@ -25,8 +25,8 @@
             <el-carousel :interval="5000" arrow="never" trigger="click">
               <el-carousel-item v-for="item in allProductDetails.images.edges" :key="item.node.id">
                 <div class="characteristics__wrapper">
-                  <img src="http://www.bbc.co.uk/staticarchive/6132e89e723956efa1bad9791d06b0f88d27d379.jpg"
-                       :alt="item.node.alt" width="340">
+                  <img :alt="item.node.alt"
+                       src="http://www.bbc.co.uk/staticarchive/6132e89e723956efa1bad9791d06b0f88d27d379.jpg" width="340">
                 </div>
               </el-carousel-item>
             </el-carousel>
@@ -45,7 +45,7 @@
 
               <div class="prices">
                 <p class="information__price">{{ getCurrentPrice(allProductDetails) }} грн.</p>
-                <p v-if="allProductDetails.availability.onSale" class="information__price--old">{{allProductDetails.price.amount}} грн.</p>
+                <p v-if="allProductDetails.availability.onSale" class="information__price--old">{{ allProductDetails.price.amount }} грн.</p>
               </div>
               <div class="characteristics__controls controls">
                 <template>
@@ -73,7 +73,7 @@
                 </el-button>
                 <a href="#" class="information__link">Добавить в список желаний</a>
               </div>
-              <p class="information__manufacturer">Производитель: {{allProductDetails.attributes[1].value.name}}</p>
+              <p class="information__manufacturer">Производитель: {{ allProductDetails.attributes[1].value.name }}</p>
               <p class="information__occasions">Популярные поводы: Свадьба / День рождения / Извинения</p>
             </div>
           </b-col>
@@ -394,8 +394,8 @@ export default {
     getVariants(uncutVariants) {
       const newVariants = [];
       for (let index = 0; index < uncutVariants.length; index++) {
-        const id = uncutVariants[index].node.id;
-        const name = uncutVariants[index].node.name;
+        const { id, name } = uncutVariants[index].node;
+        // const name = uncutVariants[index].node.name;
         newVariants.push({ id, name });
       }
       return newVariants;
@@ -449,8 +449,8 @@ export default {
   metaInfo() {
     // // if no subcomponents specify a metaInfo.title, this title will be used
     return {
-      title: this.allProductDetails.seoTitle
-    }
+      title: this.allProductDetails.seoTitle,
+    };
     // // all titles will be injected into this template
     // titleTemplate: '%s | My Awesome Webapp',
   },

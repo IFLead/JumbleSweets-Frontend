@@ -32,16 +32,12 @@ const actions = {
     //   // directly inside the `gql` query,
     //   // because this would make it impossible
     //   // for Babel to optimize the code.
-    query: PRODUCT_LIST,
-    variables: {"first": Vue.prototype.$PAGINATE_BY, after:context.state.endCursor}
-     });
+      query: PRODUCT_LIST,
+      variables: { first: Vue.prototype.$PAGINATE_BY, after: context.state.endCursor },
+    });
     // console.log(response.data.products.edges);
-    context.commit(
-      'setProducts', response.data.products,
-    );
-    context.commit(
-      'setEndCursor', response.data.products.pageInfo.endCursor,
-    );
+    context.commit('setProducts', response.data.products);
+    context.commit('setEndCursor', response.data.products.pageInfo.endCursor);
   },
 };
 

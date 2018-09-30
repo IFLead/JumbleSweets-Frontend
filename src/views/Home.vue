@@ -58,9 +58,9 @@
             <b-col cols="12" md="4" lg="3" class="about-company__information information">
               <div class="information__news news">
                 <ul v-if="allNews" class="news__actions">
-                  <li class="news__element" v-for="thing in allNews" :key="thing.node.id">
-                    <p class="news__action">{{thing.node.availableOn}} добавлен товар:</p>
-                    <a :href="thing.node.url" class="news__action-link">{{thing.node.name}}</a>
+                  <li v-for="thing in allNews" :key="thing.node.id" class="news__element">
+                    <p class="news__action">{{ thing.node.availableOn }} добавлен товар:</p>
+                    <a :href="thing.node.url" class="news__action-link">{{ thing.node.name }}</a>
                   </li>
                 </ul>
                 <a href="#" class="news__link">Ещё новости</a>
@@ -225,7 +225,7 @@
                        class="catalog__element">
                   <div class="catalog__content">
                     <div v-if="product.node.availability.onSale" class="catalog__sale">{{ getDiscount(product.node.availability.discount.net.amount,
-                                                                                     product.node.price.amount) }}%
+                                                                                                      product.node.price.amount) }}%
                     </div>
                     <div class="catalog__photo">
                       <!--<a :href="product.url" @click="router.push(product.url)">-->
@@ -239,7 +239,7 @@
                       <h4 class="catalog__name"><router-link :to="product.node.url">{{ product.node.name }}</router-link></h4>
                       <p v-if="product.node.availability.onSale" class="catalog__price">{{ product.node.price.amount - product.node.availability.discount.net.amount }} грн.</p>
                       <p v-else class="catalog__price">{{ product.node.price.amount }} грн.</p>
-                      <p v-if="product.node.availability.onSale" class="catalog__old-price">{{product.node.price.amount }} грн.</p>
+                      <p v-if="product.node.availability.onSale" class="catalog__old-price">{{ product.node.price.amount }} грн.</p>
                       <div class="catalog__basket">
                         <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
                              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -269,15 +269,15 @@
                 <b-col md="12" lg="6" class="pagination__wrapper">
                   <div class="pagination">
                     <el-pagination :total="allProducts.totalCount"
+                                   :page-size="this.$PAGINATE_BY"
                                    class="pagination__content"
                                    background
-                                   layout="prev, pager, next"
-                                   :page-size="this.$PAGINATE_BY">
+                                   layout="prev, pager, next">
                     </el-pagination>
                   </div>
                 </b-col>
                 <b-col md="6" class="ml-lg-auto pages">
-                  <p class="pages__count">Страница 1 из {{Math.ceil(allProducts.totalCount/this.$PAGINATE_BY)}}</p>
+                  <p class="pages__count">Страница 1 из {{ Math.ceil(allProducts.totalCount/this.$PAGINATE_BY) }}</p>
                 </b-col>
                 <div class="products__not-found not-found ">
                   <div class="not-found__heart">
