@@ -406,7 +406,6 @@
         const newVariants = [];
         for (let index = 0; index < uncutVariants.length; index++) {
           const {id, name} = uncutVariants[index].node;
-          // const name = uncutVariants[index].node.name;
           newVariants.push({id, name});
         }
         return newVariants;
@@ -430,6 +429,7 @@
 
         productCount: 1,
         selectedVariant: '',
+        selectedProductPrice: 0,
       };
     },
     computed: {
@@ -473,6 +473,7 @@
           } else {
             this.product = response;
             this.selectedVariant = this.product.variants.edges[0].node.id;
+            this.selectedProductPrice = this.product.variants.edges[0].node.priceOverride.amount
           }
         };
         this.loadProductDetails({cb: callback, data: {}});
