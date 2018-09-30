@@ -25,8 +25,8 @@
             <el-carousel :interval="5000" arrow="never" trigger="click">
               <el-carousel-item v-for="item in allProductDetails.images.edges" :key="item.node.id">
                 <div class="characteristics__wrapper">
-                  <img :alt="item.node.alt"
-                       src="http://www.bbc.co.uk/staticarchive/6132e89e723956efa1bad9791d06b0f88d27d379.jpg" width="340">
+                  <img :alt="item.node.alt"  height="100%" width="100%" style="object-fit: cover"
+                       src="http://www.bbc.co.uk/staticarchive/6132e89e723956efa1bad9791d06b0f88d27d379.jpg">
                 </div>
               </el-carousel-item>
             </el-carousel>
@@ -45,15 +45,16 @@
 
               <div class="prices">
                 <p class="information__price">{{ getCurrentPrice(allProductDetails) }} грн.</p>
-                <p v-if="allProductDetails.availability.onSale" class="information__price--old">{{ allProductDetails.price.amount }} грн.</p>
+                <p v-if="allProductDetails.availability.onSale" class="information__price--old">{{
+                  allProductDetails.price.amount }} грн.</p>
               </div>
               <div class="characteristics__controls controls">
                 <template>
-                  <el-input-number v-model="num1" :min="1" :max="10" @change="handleChange"></el-input-number>
+                  <el-input-number v-model="productCount" :min="1" :max="10" @change="handleChange"></el-input-number>
                 </template>
               </div>
               <div class="information__buttons">
-                <el-button class="information__button"><p>Добавить в корзину</p>
+                <el-button @click="cartButtonClick()" class="information__button"><p>Добавить в корзину</p>
                   <span>
                     <svg id="Capa_1" class="information__button--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -183,8 +184,8 @@
               <div class="add-jumble__wrapper">
                 <h2 class="add-jumble__title">Добавьте этот товар в Jumble Box</h2>
                 <p class="add-jumble__description">Внешний вид упаковки непосредственно влияет на эмоции человека при
-                получении презента, ведь людям нравятся красивые и необычные вещи. Начните заполнение своего
-                подарочного бокса с этого товара.</p>
+                  получении презента, ведь людям нравятся красивые и необычные вещи. Начните заполнение своего
+                  подарочного бокса с этого товара.</p>
                 <el-button class="add-jumble__button"><p>Хочу Jumble Box</p>
                   <span class="add-jumble__button--icon">
                     <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -381,80 +382,93 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import Format from '../components/Format.vue';
+  import {mapGetters, mapActions, mapMutations} from 'vuex';
+  import Format from '../components/Format.vue';
 
 
-export default {
-  name: 'Item',
-  components: {
-    vFormat: Format,
-  },
-  filters: {
-    getVariants(uncutVariants) {
-      const newVariants = [];
-      for (let index = 0; index < uncutVariants.length; index++) {
-        const { id, name } = uncutVariants[index].node;
-        // const name = uncutVariants[index].node.name;
-        newVariants.push({ id, name });
-      }
-      return newVariants;
+  export default {
+    name: 'Item',
+    components: {
+      vFormat: Format,
     },
-  },
-  props: {
-    id: {
-      type: String,
-      required: true,
+    filters: {
+      getVariants(uncutVariants) {
+        const newVariants = [];
+        for (let index = 0; index < uncutVariants.length; index++) {
+          const {id, name} = uncutVariants[index].node;
+          // const name = uncutVariants[index].node.name;
+          newVariants.push({id, name});
+        }
+        return newVariants;
+      },
     },
-    name: {
-      type: String,
-      default: '',
+    props: {
+      id: {
+        type: String,
+        required: true,
+      },
+      name: {
+        type: String,
+        default: '',
+      },
     },
-  },
-  data() {
-    return {
-      loading: false,
-      product: null,
-      error: null,
+    data() {
+      return {
+        loading: false,
+        product: null,
+        error: null,
 
-      num1: 1,
-      variant: null,
-    };
-  },
-  computed: {
-    ...mapGetters(['allProductDetails']),
-  },
-  watch: {
-    $route:
+        productCount: 1,
+        variant: null,
+      };
+    },
+    computed: {
+      ...mapGetters(['allProductDetails']),
+    },
+    watch: {
+      $route:
         'fetchData',
-  },
-  created() {
-    this.fetchData();
-  },
-  methods: {
-    ...mapActions(['loadProductDetails']),
-    handleChange(value) {
-      console.log(value);
     },
-    getCurrentPrice(product) {
-      if (product.availability.onSale) {
-        return 'Ублюдок мать твою, когда поменяешь это? ммм?!';
+    created() {
+      this.fetchData();
+    },
+    methods: {
+      ...mapActions(['loadProductDetails']),
+      ...mapMutations(['addToCart']),
+      handleChange(value) {
+        console.log(value);
+      },
+      getCurrentPrice(product) {
+        if (product.availability.onSale) {
+          return 'Ублюдок мать твою, когда поменяешь это? ммм?!';
+        }
+        return product.price.amount;
+      },
+      fetchData() {
+        this.loadProductDetails({});
+      },
+      cartButtonClick() {
+        this.addToCart([
+          {
+            id: this.allProductDetails.id,
+            quantity: this.productCount,
+            price: this.allProductDetails.price.amount,
+            photoUrl: this.allProductDetails.images.edges[0].node.url,
+            name: this.allProductDetails.name,
+          }
+        ]);
+        this.productCount = 1;
       }
-      return product.price.amount;
     },
-    fetchData() {
-      this.loadProductDetails({});
+    metaInfo() {
+      // // if no subcomponents specify a metaInfo.title, this title will be used
+      return {
+        title: this.allProductDetails.seoTitle,
+      };
+      // // all titles will be injected into this template
+      // titleTemplate: '%s | My Awesome Webapp',
     },
-  },
-  metaInfo() {
-    // // if no subcomponents specify a metaInfo.title, this title will be used
-    return {
-      title: this.allProductDetails.seoTitle,
-    };
-    // // all titles will be injected into this template
-    // titleTemplate: '%s | My Awesome Webapp',
-  },
-};
+  };
 </script>
 
 <style lang="sass">
@@ -493,9 +507,9 @@ export default {
         transition: all 0.2s ease
         fill: #000000
     &__wrapper
-      width: 340px
+      /*width: 340px*/
       margin:
-        top: 200px
+        /*top: 200px*/
         left: auto
         right: auto
       @media (max-width: 991.98px)

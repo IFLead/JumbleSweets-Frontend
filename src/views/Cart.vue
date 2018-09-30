@@ -51,112 +51,22 @@
             </div>
           </b-col>
 
-          <b-col cols="12" class="purchases__element element">
+          <b-col v-for="record in getCartItems" :key="record.id" cols="12" class="purchases__element element">
             <div class="element__content">
               <a href="#" class="element__link">
                 <div class="element__photo">
-                  <img src="../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="батончик Snickers" width="190" height="56">
+                  <img :src="record.photoUrl" width="190" height="56">
                 </div>
               </a>
               <div class="element__information">
-                <a href="#" class="element__name">Название товара</a>
+                <a href="#" class="element__name">{{record.name}}</a>
                 <div class="element__contrlos">
                   <div class="element__col">
                     <template>
-                      <el-input-number v-model="num1" :min="1" :max="10" @change="handleChange"></el-input-number>
+                      <el-input-number v-model="record.quantity" :min="1" :max="10" @change="handleChange"></el-input-number>
                     </template>
                   </div>
-                  <p class="element__price">2500 грн.</p>
-                  <a href="#" class="element__delete">Удалить</a>
-                </div>
-              </div>
-            </div>
-          </b-col>
-
-          <b-col cols="12" class="purchases__element element">
-            <div class="element__content">
-              <a href="#" class="element__link">
-                <div class="element__photo">
-                  <img src="../assets/cocacola_PNG22.png" alt="Coca-cola" width="183" height="121">
-                </div>
-              </a>
-              <div class="element__information">
-                <a href="#" class="element__name">Название товара</a>
-                <div class="element__contrlos">
-                  <div class="element__col">
-                    <template>
-                      <el-input-number v-model="num1" :min="1" :max="10" @change="handleChange"></el-input-number>
-                    </template>
-                  </div>
-                  <p class="element__price">2500 грн.</p>
-                  <a href="#" class="element__delete">Удалить</a>
-                </div>
-              </div>
-            </div>
-          </b-col>
-
-          <b-col cols="12" class="purchases__element element">
-            <div class="element__content">
-              <a href="#" class="element__link">
-                <div class="element__photo">
-                  <img src="../assets/milka.png" alt="Milka" width="157" height="157">
-                </div>
-              </a>
-              <div class="element__information">
-                <a href="#" class="element__name">Название товара</a>
-                <div class="element__contrlos">
-                  <div class="element__col">
-                    <template>
-                      <el-input-number v-model="num1" :min="1" :max="10" @change="handleChange"></el-input-number>
-                    </template>
-                  </div>
-                  <p class="element__price">2500 грн.</p>
-                  <a href="#" class="element__delete">Удалить</a>
-                </div>
-              </div>
-            </div>
-          </b-col>
-
-          <b-col cols="12" class="purchases__element element element--jumble">
-            <div class="element__content">
-              <a href="#" class="element__link">
-                <div class="element__photo"></div>
-              </a>
-              <div class="element__information">
-                <div class="element__name--wrapper">
-                  <a href="#" class="element__name">Jumble Box Light</a>
-                  <a href="#" class="element__look" @click="insideModal = true">Посмотреть содержимое бокса</a>
-                </div>
-                <div class="element__contrlos">
-                  <div class="element__col">
-                    <template>
-                      <el-input-number v-model="num1" :min="1" :max="10" @change="handleChange"></el-input-number>
-                    </template>
-                  </div>
-                  <p class="element__price">2500 грн.</p>
-                  <a href="#" class="element__delete">Удалить</a>
-                </div>
-              </div>
-            </div>
-          </b-col>
-
-          <b-col cols="12" class="purchases__element element element--jumble-mystery">
-            <div class="element__content">
-              <a href="#" class="element__link">
-                <div class="element__photo"></div>
-              </a>
-              <div class="element__information">
-                <div class="element__name--wrapper">
-                  <a href="#" class="element__name">Jumble Box Mystery (Light)</a>
-                  <p class="element__random">Содержит 5 случайных сладостей</p>
-                </div>
-                <div class="element__contrlos">
-                  <div class="element__col">
-                    <template>
-                      <el-input-number v-model="num1" :min="1" :max="10" @change="handleChange"></el-input-number>
-                    </template>
-                  </div>
-                  <p class="element__price">2500 грн.</p>
+                  <p class="element__price">{{record.price}} грн.</p>
                   <a href="#" class="element__delete">Удалить</a>
                 </div>
               </div>
@@ -166,7 +76,7 @@
           <b-col cols="12" class="purchases__total total">
             <div class="total__content">
               <a href="#" class="total__promo activated"><span class="total__promo--first">У меня есть промокод на скидку</span> <span class="total__promo--activated" @click="saleModal = true">Скидка 10% с промокода</span></a>
-              <p class="total__price">Сумма: <span>7000 грн.</span></p>
+              <p class="total__price">Сумма: <span>{{this.totalPrice}} грн.</span></p>
               <el-button class="total__button" @click="decorModal = true">Перейти к оформлению
                 <span class="total__button--icon">
                   <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -587,36 +497,6 @@
                                 <polygon points="138.9,264.3 103.1,245.9 103.1,188.7 29.3,146.2 29.3,369.3 222.4,480.8 222.4,257.7 138.9,209.6     "/>
                               </g>
                             </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
                           </svg>
                         </span></p>
                       </el-button>
@@ -647,10 +527,12 @@
   </div>
 </template>
 <script>
+import {mapGetters, mapMutations} from 'vuex';
+
 export default {
   data() {
     return {
-      num1: 1,
+      productAmount: 1,
       input: '',
       cleanModal: false,
       favouriteModal: false,
@@ -659,6 +541,12 @@ export default {
       checkModals: true,
     };
   },
+  computed: {
+    ...mapMutations(['increaseCartVariant', 'decreaseCartVariant', 'clearCart', 'removeProductFromCart']),
+  },
+  methods: {
+    ...mapGetters(['getCartItems', 'totalPrice']),
+  }
 };
 </script>
 

@@ -8,6 +8,7 @@ import manufacturer from './modules/manufacturer';
 import occasion from './modules/occasion';
 import productDetail from './modules/productDetail';
 import news from './modules/news';
+import cart from './modules/cart';
 
 Vue.use(Vuex);
 
@@ -20,5 +21,6 @@ export default new Vuex.Store({
     occasion,
     productDetail,
     news,
+    cart,
   },
 });
