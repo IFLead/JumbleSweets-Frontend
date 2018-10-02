@@ -390,13 +390,10 @@
     </div>
   </div>
 </template>
-
 <script>
   import {mapGetters, mapActions, mapMutations} from 'vuex';
   import Format from '../components/Format.vue';
-
-
-  export default {
+export default {
     name: 'Item',
     components: {
       vFormat: Format,
