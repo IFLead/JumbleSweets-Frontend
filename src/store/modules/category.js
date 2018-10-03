@@ -1,5 +1,5 @@
 import ROOT_CATEGORY_CHILDREN from '../../graphql/RootCategoryChildrenQuery.gql';
-import {apolloProvider} from '../../vue-apollo';
+import { apolloProvider } from '../../vue-apollo';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {
@@ -29,32 +29,32 @@ const actions = {
       context.commit('setCategories', response.data.categories.edges);
     } catch (e) {
       const response = {
-        "data": {
-          "categories": {
-            "edges": [
+        data: {
+          categories: {
+            edges: [
               {
-                "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
-                "node": {
-                  "id": "Q2F0ZWdvcnk6Mg==",
-                  "name": "Батончики",
-                  "products": {
-                    "totalCount": 2
-                  }
-                }
+                cursor: 'YXJyYXljb25uZWN0aW9uOjA=',
+                node: {
+                  id: 'Q2F0ZWdvcnk6Mg==',
+                  name: 'Батончики',
+                  products: {
+                    totalCount: 2,
+                  },
+                },
               },
               {
-                "cursor": "YXJyYXljb25uZWN0aW9uOjg=",
-                "node": {
-                  "id": "Q2F0ZWdvcnk6MTA=",
-                  "name": "Шоколадная паста",
-                  "products": {
-                    "totalCount": 0
-                  }
-                }
-              }
-            ]
-          }
-        }
+                cursor: 'YXJyYXljb25uZWN0aW9uOjg=',
+                node: {
+                  id: 'Q2F0ZWdvcnk6MTA=',
+                  name: 'Шоколадная паста',
+                  products: {
+                    totalCount: 0,
+                  },
+                },
+              },
+            ],
+          },
+        },
       }.data.categories.edges;
       context.commit('setCategories', response);
     }

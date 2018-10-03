@@ -8,31 +8,33 @@ const getters = {
   getCartItems: state => state.cartItems,
   totalPrice: (state) => {
     let price = 0;
-    state.cartItems.forEach(function(record){
+    state.cartItems.forEach((record) => {
       price += record.price * record.quantity;
     });
     return price;
-  }
+  },
 };
 
 // mutations
 const mutations = {
-  addToCart(state, {id, quantity, photoUrl, price, name}) {
+  addToCart(state, {
+    id, quantity, photoUrl, price, name,
+  }) {
     const record = state.cartItems.find(x => x.id === id);
     if (!record) {
-      let item = {
+      const item = {
         id,
-        quantity: quantity ? quantity : 1,
+        quantity: quantity || 1,
         photoUrl,
         price,
         name,
       };
       state.cartItems.push(item);
     } else {
-      record.quantity += quantity ? quantity : 1;
+      record.quantity += quantity || 1;
     }
   },
-  updateCartVariant(state, {id, quantity}) {
+  updateCartVariant(state, { id, quantity }) {
     const record = state.cartItems.find(x => x.id === id);
     if (record) {
       record.quantity = quantity;
@@ -43,7 +45,7 @@ const mutations = {
   },
   removeProductFromCart(state, id) {
     state.cartItems = state.cartItems.filter(x => x.id !== id);
-  }
+  },
 };
 
 // actions

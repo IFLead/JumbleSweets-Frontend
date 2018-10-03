@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="loading" v-if="loading">
+    <div v-if="loading" class="loading">
       Загрузка...
     </div>
 
@@ -34,7 +34,7 @@
               <el-carousel :interval="5000" arrow="never" trigger="click">
                 <el-carousel-item v-for="item in product.images.edges" :key="item.node.id">
                   <div class="characteristics__wrapper">
-                    <img :alt="item.node.alt"  height="100%" width="100%" style="object-fit: cover"
+                    <img :alt="item.node.alt" height="100%" width="100%" style="object-fit: cover"
                          src="http://www.bbc.co.uk/staticarchive/6132e89e723956efa1bad9791d06b0f88d27d379.jpg">
                   </div>
                 </el-carousel-item>
@@ -55,7 +55,7 @@
                 <div class="prices">
                   <p class="information__price">{{ getCurrentPrice(product) }} грн.</p>
                   <p v-if="product.availability.onSale" class="information__price--old">{{
-                    product.price.amount }} грн.</p>
+                  product.price.amount }} грн.</p>
                 </div>
                 <div class="characteristics__controls controls">
                   <template>
@@ -63,7 +63,7 @@
                   </template>
                 </div>
                 <div class="information__buttons">
-                  <el-button @click="cartButtonClick()" class="information__button"><p>Добавить в корзину</p>
+                  <el-button class="information__button" @click="cartButtonClick()"><p>Добавить в корзину</p>
                     <span>
                       <svg id="Capa_1" class="information__button--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -193,8 +193,8 @@
                 <div class="add-jumble__wrapper">
                   <h2 class="add-jumble__title">Добавьте этот товар в Jumble Box</h2>
                   <p class="add-jumble__description">Внешний вид упаковки непосредственно влияет на эмоции человека при
-                    получении презента, ведь людям нравятся красивые и необычные вещи. Начните заполнение своего
-                    подарочного бокса с этого товара.</p>
+                  получении презента, ведь людям нравятся красивые и необычные вещи. Начните заполнение своего
+                  подарочного бокса с этого товара.</p>
                   <el-button class="add-jumble__button"><p>Хочу Jumble Box</p>
                     <span class="add-jumble__button--icon">
                       <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -391,112 +391,112 @@
   </div>
 </template>
 <script>
-  import {mapGetters, mapActions, mapMutations} from 'vuex';
-  import Format from '../components/Format.vue';
-export default {
-    name: 'Item',
-    components: {
-      vFormat: Format,
-    },
-    filters: {
-      getVariants(uncutVariants) {
-        const newVariants = [];
-        for (let index = 0; index < uncutVariants.length; index++) {
-          const {id, name} = uncutVariants[index].node;
-          newVariants.push({id, name});
-        }
-        return newVariants;
-      },
-    },
-    props: {
-      id: {
-        type: String,
-        required: true,
-      },
-      name: {
-        type: String,
-        default: '',
-      },
-    },
-    data() {
-      return {
-        loading: false,
-        product: null,
-        error: null,
+import { mapGetters, mapActions, mapMutations } from 'vuex';
+import Format from '../components/Format.vue';
 
-        productCount: 1,
-        selectedVariant: '',
-        selectedProductPrice: 0,
-      };
-    },
-    computed: {
-      ...mapGetters(['allProductDetails', 'getCartItems']),
-      seo (){
-        if (this.product) {
-          return {
-            title: this.product.seoTitle,
-          }
-        } else {
-          return {}
-        }
+
+export default {
+  name: 'Item',
+  components: {
+    vFormat: Format,
+  },
+  filters: {
+    getVariants(uncutVariants) {
+      const newVariants = [];
+      for (let index = 0; index < uncutVariants.length; index++) {
+        const { id, name } = uncutVariants[index].node;
+        newVariants.push({ id, name });
       }
+      return newVariants;
     },
-    watch: {
-      $route:
-        'fetchData',
+  },
+  props: {
+    id: {
+      type: String,
+      required: true,
     },
-    created() {
-      this.fetchData();
+    name: {
+      type: String,
+      default: '',
     },
-    methods: {
-      ...mapActions(['loadProductDetails']),
-      ...mapMutations(['addToCart']),
-      handleChange(value) {
-        console.log(value);
-      },
-      getCurrentPrice(product) {
-        if (product.availability.onSale) {
-          return 'Ублюдок мать твою, когда поменяешь это? ммм?!';
-        }
-        return product.price.amount;
-      },
-      async fetchData() {
-        this.error = this.product = null;
-        this.loading = true;
-        const callback = (err, response) => {
-          this.loading = false;
-          if (err) {
-            this.error = err.toString();
-          } else {
-            this.product = response;
-            this.selectedVariant = this.product.variants.edges[0].node.id;
-            this.selectedProductPrice = this.product.variants.edges[0].node.priceOverride.amount
-          }
+  },
+  data() {
+    return {
+      loading: false,
+      product: null,
+      error: null,
+
+      productCount: 1,
+      selectedVariant: '',
+      selectedProductPrice: 0,
+    };
+  },
+  computed: {
+    ...mapGetters(['allProductDetails', 'getCartItems']),
+    seo() {
+      if (this.product) {
+        return {
+          title: this.product.seoTitle,
         };
-        this.loadProductDetails({cb: callback, data: {}});
-      },
-      cartButtonClick() {
-        this.addToCart(
-          {
-            id: this.product.id,
-            quantity: this.productCount,
-            price: this.product.price.amount,
-            photoUrl: this.product.images.edges[0].node.url,
-            name: this.product.name,
-          }
-        );
-        this.productCount = 1;
       }
+      return {};
     },
-    metaInfo() {
-      // // if no subcomponents specify a metaInfo.title, this title will be used
-      return {
-        title: this.seo.title,
+  },
+  watch: {
+    $route:
+        'fetchData',
+  },
+  created() {
+    this.fetchData();
+  },
+  methods: {
+    ...mapActions(['loadProductDetails']),
+    ...mapMutations(['addToCart']),
+    handleChange(value) {
+      console.log(value);
+    },
+    getCurrentPrice(product) {
+      if (product.availability.onSale) {
+        return 'Ублюдок мать твою, когда поменяешь это? ммм?!';
+      }
+      return product.price.amount;
+    },
+    async fetchData() {
+      this.error = null;
+      this.product = null;
+      this.loading = true;
+      const callback = (err, response) => {
+        this.loading = false;
+        if (err) {
+          this.error = err.toString();
+        } else {
+          this.product = response;
+          this.selectedVariant = this.product.variants.edges[0].node.id;
+          this.selectedProductPrice = this.product.variants.edges[0].node.priceOverride.amount;
+        }
       };
-      // // all titles will be injected into this template
-      // titleTemplate: '%s | My Awesome Webapp',
+      this.loadProductDetails({ cb: callback, data: {} });
     },
-  };
+    cartButtonClick() {
+      this.addToCart({
+        id: this.product.id,
+        quantity: this.productCount,
+        price: this.product.price.amount,
+        photoUrl: this.product.images.edges[0].node.url,
+        name: this.product.name,
+      });
+      this.productCount = 1;
+    },
+  },
+  metaInfo() {
+    // // if no subcomponents specify a metaInfo.title, this title will be used
+    return {
+      title: this.seo.title,
+    };
+    // // all titles will be injected into this template
+    // titleTemplate: '%s | My Awesome Webapp',
+  },
+};
 </script>
 
 <style lang="sass">
