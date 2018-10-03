@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 import { apolloProvider } from '../../vue-apollo';
 import NEWS_LIST from '../../graphql/NewsList.gql';
+import { newsBackData } from '../data/fullBackData';
 
 const state = {
   news: [],
@@ -39,29 +40,7 @@ const actions = {
         context.commit('setEndCursor', response.data.products.pageInfo.endCursor);
         context.commit('setHasNextPage', response.data.products.pageInfo.hasNextPage);
       } catch (e) {
-        const response = {
-          data: {
-            products: {
-              edges: [
-                {
-                  node: {
-                    id: 'UHJvZHVjdDoy',
-                    name: 'Ferrero Duplo (10 шт.)',
-                    url: '/products/ferrero-duplo-10-sht-2/',
-                    availableOn: '2018-09-25',
-                  },
-                },
-              ],
-              pageInfo: {
-                hasPreviousPage: false,
-                hasNextPage: false,
-                startCursor: 'YXJyYXljb25uZWN0aW9uOjA=',
-                endCursor: 'YXJyYXljb25uZWN0aW9uOjA=',
-              },
-            },
-          },
-        }.data.products.edges;
-        context.commit('pushNews', response);
+        context.commit('pushNews', newsBackData);
       }
     }
   },
