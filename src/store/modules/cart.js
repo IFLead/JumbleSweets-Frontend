@@ -13,6 +13,7 @@ const getters = {
     });
     return price;
   },
+  getCartAmount: state => state.cartItems.length,
 };
 
 // mutations

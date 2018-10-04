@@ -53,9 +53,8 @@
                 <!--</el-radio-group>-->
 
                 <div class="prices">
-                  <p class="information__price">{{ getCurrentPrice(product) }} грн.</p>
-                  <p v-if="product.availability.onSale" class="information__price--old">{{
-                  product.price.amount }} грн.</p>
+                  <p class="information__price">{{ getSelectedProductPrice.priceOverride ? getSelectedProductPrice.priceOverride : getSelectedProductPrice.price }} грн.</p>
+                  <p v-if="getSelectedProductPrice.priceOverride !== null" class="information__price--old">{{ getSelectedProductPrice.price }} грн.</p>
                 </div>
                 <div class="characteristics__controls controls">
                   <template>
@@ -441,6 +440,17 @@ export default {
       }
       return {};
     },
+    getSelectedProductPrice() {
+      const product = this.allProductDetails.variants.edges;
+      for (let i = 0; i < product.length; i++) {
+        if (product[i].node.id === this.selectedVariant) {
+          const overridePrice = product[i].node.priceOverride;
+          console.log(product[i].node.id);
+          return { price: product[i].node.price.amount, overridePrice: overridePrice ? overridePrice.amount : null };
+        }
+      }
+      return { price: null, overridePrice: null };
+    },
   },
   watch: {
     $route:
@@ -454,12 +464,6 @@ export default {
     ...mapMutations(['addToCart']),
     handleChange(value) {
       console.log(value);
-    },
-    getCurrentPrice(product) {
-      if (product.availability.onSale) {
-        return 'Ублюдок мать твою, когда поменяешь это? ммм?!';
-      }
-      return product.price.amount;
     },
     async fetchData() {
       this.error = null;

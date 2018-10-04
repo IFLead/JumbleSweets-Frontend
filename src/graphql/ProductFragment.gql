@@ -47,6 +47,9 @@ fragment Product on Product {
         name
         stockQuantity
         trackInventory
+        price {
+          ...Money
+        }
         images {
           edges {
             node {
