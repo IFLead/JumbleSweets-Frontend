@@ -59,15 +59,15 @@
                 </div>
               </a>
               <div class="element__information">
-                <a href="#" class="element__name">{{record.name}}</a>
+                <a href="#" class="element__name">{{ record.name }}</a>
                 <div class="element__contrlos">
                   <div class="element__col">
                     <template>
                       <el-input-number v-model="record.quantity" :min="1" :max="10" @change="handleChange"></el-input-number>
                     </template>
                   </div>
-                  <p class="element__price">{{record.price}} грн.</p>
-                  <a href="#" @click="removeProductFromCart(record.id)" class="element__delete">Удалить</a>
+                  <p class="element__price">{{ record.price }} грн.</p>
+                  <a href="#" class="element__delete" @click="removeProductFromCart(record.id)">Удалить</a>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@
           <b-col cols="12" class="purchases__total total">
             <div class="total__content">
               <a href="#" class="total__promo activated"><span class="total__promo--first">У меня есть промокод на скидку</span> <span class="total__promo--activated" @click="saleModal = true">Скидка 10% с промокода</span></a>
-              <p class="total__price">Сумма: <span>{{this.totalPrice}} грн.</span></p>
+              <p class="total__price">Сумма: <span>{{ totalPrice }} грн.</span></p>
               <el-button class="total__button" @click="decorModal = true">Перейти к оформлению
                 <span class="total__button--icon">
                   <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -115,7 +115,7 @@
           <h3 class="clean__title">Очистка корзины</h3>
           <p class="clean__description">Мы удалим весь товар из вашей корзины, точно этого хотите?</p>
           <div class="clean__buttons">
-            <el-button @click="modalClearCart" class="clean__button">Очистить корзину</el-button>
+            <el-button class="clean__button" @click="modalClearCart">Очистить корзину</el-button>
             <a href="#" class="clean__link" @click="cleanModal = false">Нет, не надо</a>
           </div>
         </div>
@@ -527,7 +527,7 @@
   </div>
 </template>
 <script>
-import {mapGetters, mapMutations} from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   data() {
@@ -546,11 +546,11 @@ export default {
   },
   methods: {
     ...mapMutations(['clearCart', 'removeProductFromCart']),
-    modalClearCart(){
+    modalClearCart() {
       this.clearCart();
       this.cleanModal = false;
     },
-  }
+  },
 };
 </script>
 

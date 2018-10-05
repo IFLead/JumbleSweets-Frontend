@@ -35,7 +35,7 @@
                 <div calss="characteristics__sale">50%</div>
                 <el-carousel-item v-for="item in product.images.edges" :key="item.node.id">
                   <div class="characteristics__wrapper">
-                    <img :alt="item.node.alt" height="100%" width="100%"
+                    <img :alt="item.node.alt" height="100%" width="100%" style="object-fit: cover"
                          src="http://www.bbc.co.uk/staticarchive/6132e89e723956efa1bad9791d06b0f88d27d379.jpg">
                   </div>
                 </el-carousel-item>
@@ -54,9 +54,8 @@
                 <!--</el-radio-group>-->
 
                 <div class="prices">
-                  <p class="information__price">{{ getCurrentPrice(product) }} грн.</p>
-                  <p v-if="product.availability.onSale" class="information__price--old">{{
-                  product.price.amount }} грн.</p>
+                  <p class="information__price">{{ getSelectedProductPrice.priceOverride ? getSelectedProductPrice.priceOverride : getSelectedProductPrice.price }} грн.</p>
+                  <p v-if="getSelectedProductPrice.priceOverride !== null" class="information__price--old">{{ getSelectedProductPrice.price }} грн.</p>
                 </div>
                 <div class="characteristics__controls controls">
                   <template>
@@ -395,6 +394,10 @@
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Format from '../components/Format.vue';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 102daca46c8505ffdea6b88692f788e399508c10
 export default {
   name: 'Item',
   components: {
@@ -441,6 +444,17 @@ export default {
       }
       return {};
     },
+    getSelectedProductPrice() {
+      const product = this.allProductDetails.variants.edges;
+      for (let i = 0; i < product.length; i++) {
+        if (product[i].node.id === this.selectedVariant) {
+          const overridePrice = product[i].node.priceOverride;
+          console.log(product[i].node.id);
+          return { price: product[i].node.price.amount, overridePrice: overridePrice ? overridePrice.amount : null };
+        }
+      }
+      return { price: null, overridePrice: null };
+    },
   },
   watch: {
     $route:
@@ -455,14 +469,9 @@ export default {
     handleChange(value) {
       console.log(value);
     },
-    getCurrentPrice(product) {
-      if (product.availability.onSale) {
-        return 'Ублюдок мать твою, когда поменяешь это? ммм?!';
-      }
-      return product.price.amount;
-    },
     async fetchData() {
-      this.error = this.product = null;
+      this.error = null;
+      this.product = null;
       this.loading = true;
       const callback = (err, response) => {
         this.loading = false;

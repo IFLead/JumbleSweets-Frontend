@@ -10,7 +10,7 @@
               <div :class="{show: menuOpen}" class="main-header__menu menu">
                 <ul class="menu__list">
                   <li class="menu__cart">
-                    <el-badge :value="1">
+                    <el-badge :value="getCartAmount">
                       <router-link to="/cart"></router-link>
                     </el-badge>
                   </li>
@@ -53,7 +53,7 @@
 
               <ul class="main-header__user user">
                 <li class="user__element user__element--cart">
-                  <el-badge :value="1">
+                  <el-badge :value="getCartAmount">
                     <router-link to="/cart"><span>Корзина</span></router-link>
                   </el-badge>
                 </li>
@@ -69,6 +69,8 @@
 </template>
 <script>
 
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'VueHeader',
   components: {
@@ -78,6 +80,9 @@ export default {
     return {
       menuOpen: false,
     };
+  },
+  computed: {
+    ...mapGetters(['getCartAmount']),
   },
 };
 </script>
