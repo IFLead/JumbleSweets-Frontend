@@ -1,7 +1,8 @@
 #import "./MoneyFragment.gql"
 
 query ProductList($first: Int, $after: String, $last: Int, $before: String) {
-    products(before: $before, after: $after, first: $first, last: $last) {
+    products(before: $before, after: $after, first: $first, last: $last, isPublished: true) {
+      totalCount
       edges {
         node {
           id
@@ -10,6 +11,12 @@ query ProductList($first: Int, $after: String, $last: Int, $before: String) {
           thumbnailUrl
           availability {
             available
+            onSale
+            discount {
+              net {
+                amount
+              }
+            }
           }
           price {
             ...Money

@@ -53,7 +53,6 @@
     </footer>
   </div>
 </template>
-
 <script>
 export default {
   name: 'VueFooter',
@@ -65,68 +64,69 @@ export default {
 
 <style lang="sass">
 .main-footer
-	&__content
-		padding:
-			top: 60px
-			bottom: 62px
-		background-color: #000000
-		color: #ffffff
-		@media (max-width: 767.98px)
-			padding:
-				top: 40px
-		@media (max-width: 575.98px)
-			padding:
-				bottom: 40px
-	&__logo
-		a
-			display: block
-			width: 103px
-			height: 55px
-			background-image: url("../assets/Icons/Logo-light.svg")
-			background-repeat: no-repeat
-			background-size: 103px auto
-			background-position: center center
-			margin:
-				left: 70px
-			@media (max-width: 575.98px)
-				margin:
-					left: 0
-					bottom: 20px
-	&__copyright
-		width: 200px
-		text-align: center
-		margin:
-			bottom: 0
-			top: 90px
-			left: auto
-			right: auto
-		@media (max-width: 575.98px)
-			margin:
-				top: 60px
+  &__content
+    padding:
+      top: 60px
+      bottom: 62px
+    background-color: #000000
+    color: #ffffff
+    @media (max-width: 767.98px)
+      padding:
+        top: 40px
+    @media (max-width: 575.98px)
+      padding:
+        bottom: 40px
+  &__logo
+    a
+      display: block
+      width: 103px
+      height: 55px
+      background-image: url("../assets/Icons/Logo-light.svg")
+      background-repeat: no-repeat
+      background-size: 103px auto
+      background-position: center center
+      margin:
+        left: 70px
+      @media (max-width: 575.98px)
+        margin:
+          left: 0
+          bottom: 20px
+  &__copyright
+    width: 200px
+    text-align: center
+    margin:
+      bottom: 0
+      top: 90px
+      left: auto
+      right: auto
+    @media (max-width: 575.98px)
+      margin:
+        top: 60px
 .main-information, .client, .feedback
-	&__list
-		padding:
-			left: 0
-		list-style: none
-	&__title
-		font-size: 20px
-		font-weight: 700
-		margin:
-			bottom: 30px
-		@media (max-width: 991.98px)
-			margin:
-				bottom: 20px
+  &__list
+    padding:
+      left: 0
+    list-style: none
+  &__title
+    font-size: 20px
+    font-weight: 700
+    margin:
+      bottom: 30px
+    @media (max-width: 991.98px)
+      margin:
+        bottom: 20px
 
-	&__element
-		margin:
-			bottom: 5px
-		a
-			color: #e6e6e6
-			&:hover, &:focus
-				color: #e6e6e6
-				text-decoration: none
-	@media (max-width: 991.98px)
-		margin:
-			bottom: 30px
+  &__element
+    margin:
+      bottom: 5px
+    a
+      transition: all 0.2s ease
+      color: #e6e6e6
+      &:hover, &:focus
+        color: #FFFAB9
+        text-decoration: none
+  @media (max-width: 991.98px)
+    margin:
+      bottom: 30px
 
 </style>

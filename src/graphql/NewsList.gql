@@ -1,0 +1,18 @@
+query NewsList($first: Int, $after: String, $last: Int, $before: String) {
+    products(before: $before, after: $after, first: $first, last: $last, availableOn_Isnull: false) {
+      edges {
+        node {
+          id
+          name
+          url
+          availableOn
+        }
+      }
+      pageInfo {
+        hasPreviousPage
+        hasNextPage
+        startCursor
+        endCursor
+      }
+    }
+  }

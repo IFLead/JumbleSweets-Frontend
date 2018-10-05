@@ -50,14 +50,13 @@
             <el-checkbox v-model="checked">Согласен с политикой конфиденциальности</el-checkbox>
           </div>
         </div>
-        <el-button class="ring__button">Заказать обратный звонок</el-button>
+        <el-button :disabled="!checked" class="ring__button" >Заказать обратный звонок</el-button>
       </section>
 
     </b-container>
   </div>
 
 </template>
-
 <script>
 export default {
   name: 'Delivery',

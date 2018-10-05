@@ -11,7 +11,7 @@ import JumbleBoxPackage from './views/JumbleBoxPackage.vue';
 import Profile from './views/Profile.vue';
 import JumbleBoxConstructor from './views/JumbleBoxConstructor.vue';
 import Cart from './views/Cart.vue';
-import Shopping from './views/Shopping.vue';
+import Shipping from './views/Shipping.vue';
 import NovaPoshta from './views/NovaPoshta.vue';
 import Kharkiv from './views/Kharkiv.vue';
 import Summary from './views/Summary.vue';
@@ -87,10 +87,10 @@ export default new Router({
       component: Auth,
     },
     {
-      // todo shipping a ne shopping blyat
-      path: '/shopping',
-      name: 'Shopping',
-      component: Shopping,
+      // todo shipping a ne shopping blyat - ya vas ponyal izvenyaus
+      path: '/shipping',
+      name: 'Shipping',
+      component: Shipping,
     },
     {
       path: '/novaposhta',
