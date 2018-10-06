@@ -36,7 +36,7 @@
                   <div class="main-footer__feedback feedback">
                     <h3 class="feedback__title">Всегда с Вами</h3>
                     <ul class="feedback__list">
-                      <li class="feedback__element"><router-link to="#">Политика конфиденциальност</router-link></li>
+                      <li class="feedback__element"><router-link to="#">Политика конфиденциальности</router-link></li>
                       <li class="feedback__element"><router-link to="#">Наш Instagram</router-link></li>
                       <li class="feedback__element"><router-link to="/contacts">Контакты</router-link></li>
                     </ul>

@@ -87,7 +87,6 @@ export default new Router({
       component: Auth,
     },
     {
-      // todo shipping a ne shopping blyat - ya vas ponyal izvenyaus
       path: '/shipping',
       name: 'Shipping',
       component: Shipping,
