@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 import { apolloProvider } from '../../vue-apollo';
 import NEWS_LIST from '../../graphql/NewsList.gql';
-import { newsBackData } from '../data/fullBackData';
+import { newsBackData } from '../data/fallBackData';
 
 const state = {
   news: [],

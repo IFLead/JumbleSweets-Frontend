@@ -2,7 +2,7 @@
 import Vue from 'vue';
 import { apolloProvider } from '../../vue-apollo';
 import PRODUCT_LIST from '../../graphql/ProductList.gql';
-import { productBackData } from '../data/fullBackData';
+import { productBackData } from '../data/fallBackData';
 
 const state = {
   products: {},

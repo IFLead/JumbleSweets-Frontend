@@ -1,6 +1,6 @@
 import PRODUCT_DETAILS from '../../graphql/ProductDetails.gql';
 import { apolloProvider } from '../../vue-apollo';
-import { productDetailBackData } from '../data/fullBackData';
+import { productDetailBackData } from '../data/fallBackData';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {
@@ -32,6 +32,8 @@ const actions = {
       console.log(response.data.product);
       context.commit('setProductDetails', response.data.product);
     } catch (e) {
+      console.log(productDetailBackData);
+      cb(null, productDetailBackData);
       context.commit('setProductDetails', productDetailBackData);
     }
   },

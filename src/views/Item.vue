@@ -427,7 +427,6 @@ export default {
 
       productCount: 1,
       selectedVariant: '',
-      selectedProductPrice: 0,
     };
   },
   computed: {
@@ -445,7 +444,7 @@ export default {
       for (let i = 0; i < product.length; i++) {
         if (product[i].node.id === this.selectedVariant) {
           const overridePrice = product[i].node.priceOverride;
-          console.log(product[i].node.id);
+          console.log(product[i].node);
           return { price: product[i].node.price.amount, overridePrice: overridePrice ? overridePrice.amount : null };
         }
       }
@@ -476,7 +475,6 @@ export default {
         } else {
           this.product = response;
           this.selectedVariant = this.product.variants.edges[0].node.id;
-          this.selectedProductPrice = this.product.variants.edges[0].node.priceOverride.amount;
         }
       };
       this.loadProductDetails({ cb: callback, data: {} });
