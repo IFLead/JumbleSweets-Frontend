@@ -126,21 +126,3 @@ export default new Router({
     // },
   ],
 });
-// &::after
-//           content: '-50%'
-//           font-size: 20px
-//           font-weight: 700
-//           line-height: 70px
-//           text-align: center
-//           color: #ffffff
-//           position: absolute
-//           top: 0
-//           left: 0
-//           width: 140px
-//           height: 70px
-//           background-color: #e70068
-//           @media (max-width: 575.98px)
-//             width: 100px
-//             height: 50px
-//             line-height: 50px
-//             font-size: 15px

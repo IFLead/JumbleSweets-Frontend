@@ -12,6 +12,7 @@
 
       <section class="characteristics">
         <b-container>
+
           <b-row>
             <b-col cols="12">
               <a href="#" class="characteristics__link">
@@ -31,11 +32,12 @@
               </a>
             </b-col>
             <b-col lg="6" class="characteristics__photo">
+
               <el-carousel :interval="5000" arrow="never" trigger="click">
-                <div calss="characteristics__sale">50%</div>
+                <div class="characteristics__sale">50%</div>
                 <el-carousel-item v-for="item in product.images.edges" :key="item.node.id">
                   <div class="characteristics__wrapper">
-                    <img :alt="item.node.alt" height="100%" width="100%" style="object-fit: cover"
+                    <img :alt="item.node.alt"
                          src="http://www.bbc.co.uk/staticarchive/6132e89e723956efa1bad9791d06b0f88d27d379.jpg">
                   </div>
                 </el-carousel-item>
@@ -505,6 +507,24 @@ export default {
   .characteristics
     margin:
       top: 37px
+    &__sale
+      position: absolute
+      font-size: 20px
+      font-weight: 700
+      line-height: 70px
+      text-align: center
+      color: #ffffff
+      top: 0
+      left: 0
+      width: 140px
+      height: 70px
+      z-index: 100000
+      background-color: #e70068
+      @media (max-width: 575.98px)
+        width: 100px
+        height: 50px
+        line-height: 50px
+        font-size: 15px
     &__link
       transition: all 0.2s ease
       display: flex
@@ -537,20 +557,21 @@ export default {
         transition: all 0.2s ease
         fill: #000000
     &__wrapper
+      display: flex
+      align-items: flex-start
+      justify-content: center
+      height: 420px
+      overflow: hidden
       /*width: 340px*/
       margin:
-        /*top: 200px*/
         left: auto
         right: auto
       img
         object-fit: cover
       @media (max-width: 991.98px)
-        margin:
-          top: 175px
-      @media (max-width: 575.98px)
-        width: 280px
-        margin:
-          top: 150px
+        height: 300px
+
+
     &__photo
     .el-carousel
       &__container
