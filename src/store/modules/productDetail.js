@@ -32,6 +32,8 @@ const actions = {
       console.log(response.data.product);
       context.commit('setProductDetails', response.data.product);
     } catch (e) {
+      console.log(productDetailBackData);
+      cb(null, productDetailBackData);
       context.commit('setProductDetails', productDetailBackData);
     }
   },

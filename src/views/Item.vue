@@ -394,10 +394,6 @@
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Format from '../components/Format.vue';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 102daca46c8505ffdea6b88692f788e399508c10
 export default {
   name: 'Item',
   components: {
