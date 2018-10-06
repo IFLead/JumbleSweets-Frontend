@@ -1,6 +1,6 @@
 import ROOT_CATEGORY_CHILDREN from '../../graphql/RootCategoryChildrenQuery.gql';
 import { apolloProvider } from '../../vue-apollo';
-import { categoryBackData } from '../data/fullBackData';
+import { categoryBackData } from '../data/fallBackData';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {
