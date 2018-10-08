@@ -34,7 +34,7 @@
             <b-col lg="6" class="characteristics__photo">
 
               <el-carousel :interval="5000" arrow="never" trigger="click">
-                <div class="characteristics__sale">50%</div>
+                <div class="characteristics__sale">{{ getDiscount }}%</div>
                 <el-carousel-item v-for="item in product.images.edges" :key="item.node.id">
                   <div class="characteristics__wrapper">
                     <img :alt="item.node.alt"
@@ -56,8 +56,8 @@
                 <!--</el-radio-group>-->
 
                 <div class="prices">
-                  <p class="information__price">{{ getSelectedProductPrice.priceOverride ? getSelectedProductPrice.priceOverride : getSelectedProductPrice.price }} грн.</p>
-                  <p v-if="getSelectedProductPrice.priceOverride !== null" class="information__price--old">{{ getSelectedProductPrice.price }} грн.</p>
+                  <p class="information__price">{{ getSelectedProductPrice.priceDiscounted ? getSelectedProductPrice.priceDiscounted : getSelectedProductPrice.price }} грн.</p>
+                  <p v-if="getSelectedProductPrice.priceDiscounted !== null" class="information__price--old">{{ getSelectedProductPrice.price }} грн.</p>
                 </div>
                 <div class="characteristics__controls controls">
                   <template>
@@ -395,6 +395,7 @@
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Format from '../components/Format.vue';
+import { getDiscount as getDiscountBase } from '../utils/priceFuncs';
 
 export default {
   name: 'Item',
@@ -445,12 +446,20 @@ export default {
       const product = this.allProductDetails.variants.edges;
       for (let i = 0; i < product.length; i++) {
         if (product[i].node.id === this.selectedVariant) {
-          const overridePrice = product[i].node.priceOverride;
+          const priceDiscounted = product[i].node.availability.priceDiscounted.net.amount;
+          const price = product[i].node.price.amount;
+          if (price === priceDiscounted) {
+            return { price, priceDiscounted: null };
+          }
           console.log(product[i].node);
-          return { price: product[i].node.price.amount, overridePrice: overridePrice ? overridePrice.amount : null };
+          return { price, priceDiscounted };
         }
       }
-      return { price: null, overridePrice: null };
+      return { price: null, priceDiscounted: null };
+    },
+    getDiscount() {
+      const { price, priceDiscounted } = this.getSelectedProductPrice;
+      return getDiscountBase(priceDiscounted, price);
     },
   },
   watch: {
