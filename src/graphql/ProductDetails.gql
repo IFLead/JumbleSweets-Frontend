@@ -1,15 +1,81 @@
-#import "./ProductFragment.gql"
+#import "./MoneyFragment.gql"
+#import "./ProductImageFragment.gql"
 
 query ProductDetails($id: ID!) {
-    product(id: $id) {
-      ...Product
+  product(id: $id) {
+    id
+    name
+    description
+    seoTitle
+    seoDescription
+    category {
+      id
+      name
     }
-    collections {
+    price {
+      ...Money
+    }
+    isPublished
+    availableOn
+    attributes {
+      attribute {
+        name
+      }
+      value {
+        name
+      }
+    }
+    availability {
+      available
+      onSale
+      discount {
+        net {
+          amount
+        }
+      }
+    }
+    images {
+      edges {
+        node {
+          ...ProductImage
+        }
+      }
+    }
+    variants {
       edges {
         node {
           id
           name
+          stockQuantity
+          trackInventory
+          price {
+            ...Money
+          }
+          availability{
+            priceDiscounted{
+              net{
+                amount
+              }
+            }
+          }
+          images {
+            edges {
+              node {
+                ...ProductImage
+              }
+            }
+          }
         }
       }
     }
+    url
   }
+  collections {
+    edges {
+      node {
+        id
+        name
+      }
+    }
+  }
+}

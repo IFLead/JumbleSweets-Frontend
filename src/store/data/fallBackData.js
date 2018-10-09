@@ -141,6 +141,13 @@ export const productDetailBackData = {
                 amount: 92,
                 currency: 'UAH',
               },
+              availability: {
+                priceDiscounted: {
+                  net: {
+                    amount: 18.4,
+                  },
+                },
+              },
               images: {
                 edges: [
                   {
@@ -164,6 +171,13 @@ export const productDetailBackData = {
               price: {
                 amount: 90,
                 currency: 'UAH',
+              },
+              availability: {
+                priceDiscounted: {
+                  net: {
+                    amount: 18,
+                  },
+                },
               },
               images: {
                 edges: [

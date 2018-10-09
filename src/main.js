@@ -12,7 +12,7 @@ import './styles/element-variables.scss';
 import { apolloProvider } from './vue-apollo';
 
 Vue.config.productionTip = false;
-Vue.prototype.$PAGINATE_BY = 1;
+Vue.prototype.$PAGINATE_BY = 2;
 
 Vue.use(YmapPlugin);
 Vue.use(Meta);

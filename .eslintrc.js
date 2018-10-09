@@ -5,9 +5,9 @@ module.exports = {
     node: true,
     es6: true,
   },
-  'extends': [
+  extends: [
     'plugin:vue/recommended',
-    '@vue/airbnb'
+    '@vue/airbnb',
   ],
   rules: {
     'no-console': 'off',
@@ -22,24 +22,24 @@ module.exports = {
     'vue/max-attributes-per-line': [5, {
       multiline: {
         max: 5,
-        allowFirstLine: true
-      }
+        allowFirstLine: true,
+      },
     }],
     'vue/script-indent': 'off',
     //     ['error', 2, {
     //     'baseIndent': 1,
     //     'switchCase': 1,
     // }]
-    "no-mixed-operators": [
-      "error",
+    'no-mixed-operators': [
+      'error',
       {
 
-        "allowSamePrecedence": true
-      }
+        allowSamePrecedence: true,
+      },
     ],
-    'no-plusplus': ["error", { "allowForLoopAfterthoughts": true }]
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
   },
   parserOptions: {
-    parser: 'babel-eslint'
-  }
+    parser: 'babel-eslint',
+  },
 };

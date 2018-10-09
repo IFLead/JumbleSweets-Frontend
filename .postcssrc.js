@@ -5,5 +5,5 @@ module.exports = {
     // require('@fullhuman/postcss-purgecss')({
     //            content: ['./../src/index.html', './../**/*.vue', './../src/**/*.js']
     //          }),
-  ]
+  ],
 };

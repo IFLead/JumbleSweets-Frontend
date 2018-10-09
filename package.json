@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "apollo-link-http": "^1.5.5",
+    "autoprefixer": "^9.1.5",
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0-rc.11",
     "element-ui": "^2.4.5",
-    "normalize.css": "^8.0.0",
     "graphql-tag": "^2.9.0",
+    "normalize.css": "^8.0.0",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17",
     "vue-apollo": "^3.0.0-beta.11",

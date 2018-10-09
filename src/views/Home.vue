@@ -152,7 +152,7 @@
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
-              <el-input placeholder="Поиск товаров" class="sort__search"></el-input>
+              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="filterOnChange()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
               <el-select v-model="value" placeholder="Сначала новые" class="sort__select">
@@ -172,6 +172,7 @@
                   <div class="filter__close" @click="filterOpen = false">
                     <svg id="Layer_1" class="filter__close--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g>
+                           <!-- todo: vue ругается, что-то не так ч параметром d -->
                            <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
                          </g>
                          </g>
@@ -179,14 +180,15 @@
                   </div>
                   <h2 class="filter__mobile-title">Фильтр</h2>
                   <el-collapse-item title="Категория товара" name="1">
-                    <ul v-for="category in allCategories" :key="category.node.id"
-                        class="filter__list filter__list--category">
-                      <li>
-                        <el-checkbox> {{ `${category.node.name}
-                                                    (${category.node.products.totalCount})` }}
-                        </el-checkbox>
-                      </li>
-                    </ul>
+                    <el-checkbox-group v-model="checkList">
+                      <ul v-for="category in allCategories" :key="category.node.id"
+                          class="filter__list filter__list--category">
+                        <li>
+                          <el-checkbox :label="category.node.id">{{ `${category.node.name} (${category.node.products.totalCount})` }}
+                          </el-checkbox>
+                        </li>
+                      </ul>
+                    </el-checkbox-group>
                   </el-collapse-item>
 
                   <el-collapse-item title="Производитель" name="2">
@@ -209,10 +211,12 @@
 
                   <h3 class="filter__title filter__title--cost">Цена</h3>
                   <el-slider
-                    :max="3000"
+                    v-model="sliderRange"
+                    :max="1000"
                     range>
                   </el-slider>
-                  <el-button class="filter__button filter__button--submit">Применить</el-button>
+                  <el-button class="filter__button filter__button--submit" @click="filterProducts()">Применить
+                  </el-button>
                   <el-button class="filter__button filter__button--refresh">Сбросить</el-button>
                 </div>
               </el-collapse>
@@ -224,8 +228,9 @@
                 <b-col v-for="product in allProducts.edges" :key="product.node.id" sm="6" lg="4"
                        class="catalog__element">
                   <div class="catalog__content">
-                    <div v-if="product.node.availability.onSale" class="catalog__sale">{{ getDiscount(product.node.availability.discount.net.amount,
-                                                                                                      product.node.price.amount) }}%
+                    <div v-if="product.node.availability.onSale" class="catalog__sale">{{
+                      getDiscount(product.node.availability.discount.net.amount,
+                                  product.node.price.amount) }}%
                     </div>
                     <div class="catalog__photo">
                       <!--<a :href="product.url" @click="router.push(product.url)">-->
@@ -236,10 +241,14 @@
                       </router-link>
                     </div>
                     <div class="catalog__information">
-                      <h4 class="catalog__name"><router-link :to="product.node.url">{{ product.node.name }}</router-link></h4>
-                      <p v-if="product.node.availability.onSale" class="catalog__price">{{ product.node.price.amount - product.node.availability.discount.net.amount }} грн.</p>
+                      <h4 class="catalog__name">
+                        <router-link :to="product.node.url">{{ product.node.name }}</router-link>
+                      </h4>
+                      <p v-if="product.node.availability.onSale" class="catalog__price">{{ product.node.price.amount -
+                      product.node.availability.discount.net.amount }} грн.</p>
                       <p v-else class="catalog__price">{{ product.node.price.amount }} грн.</p>
-                      <p v-if="product.node.availability.onSale" class="catalog__old-price">{{ product.node.price.amount }} грн.</p>
+                      <p v-if="product.node.availability.onSale" class="catalog__old-price">{{ product.node.price.amount
+                      }} грн.</p>
                       <div class="catalog__basket">
                         <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
                              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -388,6 +397,7 @@
 </template>
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
+import { getDiscount as getDiscountBase } from '../utils/priceFuncs';
 
 export default {
   name: 'Home',
@@ -404,6 +414,9 @@ export default {
       value: '',
       activeNames: ['1'],
       filterOpen: false,
+      sliderRange: [0, 1000],
+      checkList: [],
+      productName: '',
     };
   },
   computed: {
@@ -419,9 +432,6 @@ export default {
   methods: {
     ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers', 'loadNews']),
     ...mapMutations(['addToCart']),
-    getDiscount(reduction, preDiscPrice) {
-      return Math.floor(100 * reduction / preDiscPrice);
-    },
     addProductToCart(product) {
       this.addToCart({
         id: product.id,
@@ -430,6 +440,19 @@ export default {
         photoUrl: product.thumbnailUrl,
         name: product.name,
       });
+    },
+    getDiscount(reduction, preDiscPrice) {
+      return getDiscountBase(reduction, preDiscPrice);
+    },
+    filterProducts() {
+      const priceGte = this.sliderRange[0];
+      const priceLte = this.sliderRange[1];
+      const filters = { price_Gte: priceGte, price_Lte: priceLte, name_Icontains: this.productName };
+      this.loadProducts(filters);
+    },
+    filterOnChange() {
+      const filters = { name_Icontains: this.productName };
+      this.loadProducts(filters);
     },
   },
 };
