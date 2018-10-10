@@ -37,7 +37,7 @@
                     <img src="../assets/Icons/user.svg" width="16" height="20" alt="Контакты">
                   </div>
                   <div class="authorization__data-input">
-                    <el-input v-model="input_mail" placeholder="Почта или телефон"></el-input>
+                    <el-input v-model="inputMail" placeholder="Почта или телефон"></el-input>
                   </div>
                 </div>
                 <div class="authorization__data-pass">
@@ -45,7 +45,7 @@
                     <img src="../assets/Icons/key.svg" width="9" height="20" alt="Пароль">
                   </div>
                   <div class="authorization__data-input">
-                    <el-input v-model="input_pass" type="password" placeholder="Пароль"></el-input>
+                    <el-input v-model="inputPass" type="password" placeholder="Пароль"></el-input>
                   </div>
                   <div class="authorization__data-pass-eye">
                     <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
@@ -54,9 +54,9 @@
               </div>
             </div>
             <div class="authorization__actives">
-              <el-button class="authorization__actives-button">Войти</el-button>
+              <el-button class="authorization__actives-button" @click="authorize()">Войти</el-button>
               <div class="authorization__actives-check">
-                <el-checkbox v-model="checked">Запомнить меня</el-checkbox>
+                <el-checkbox v-model="rememberMe">Запомнить меня</el-checkbox>
               </div>
             </div>
             <div class="authorization__pointerlink-wrapper">
@@ -94,7 +94,7 @@
                   <img src="../assets/Icons/user.svg" width="16" height="20" alt="Контакты">
                 </div>
                 <div class="registr__data-input">
-                  <el-input v-model="input_mail" placeholder="Почта или телефон"></el-input>
+                  <el-input v-model="inputMail" placeholder="Почта или телефон"></el-input>
                 </div>
               </div>
               <div class="registr__data-pass">
@@ -102,10 +102,10 @@
                   <img src="../assets/Icons/key.svg" width="9" height="20" alt="Пароль">
                 </div>
                 <div class="registr__data-input">
-                  <el-input :type="visible_pass" v-model="input_pass" placeholder="Пароль"></el-input>
+                  <el-input :type="visiblePass" v-model="inputPass" placeholder="Пароль"></el-input>
                 </div>
-                <div class="registr__data-pass-eye" @mouseover="visible_pass = 'text'" @mouseout="visible_pass = 'password'">
-                  <!--<div v-on:click="visible_pass = 'text'" class="registr__data-pass-eye">-->
+                <div class="registr__data-pass-eye" @mouseover="visiblePass = 'text'" @mouseout="visiblePass = 'password'">
+                  <!--<div v-on:click="visiblePass = 'text'" class="registr__data-pass-eye">-->
                   <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
                 </div>
               </div>
@@ -114,9 +114,9 @@
                   <img src="../assets/Icons/key.svg" width="9" height="20" alt="Повторите пароль">
                 </div>
                 <div class="registr__data-input">
-                  <el-input :type="visible_repass" v-model="input_repass" placeholder="Пароль"></el-input>
+                  <el-input :type="visibleRepass" v-model="inputRepass" placeholder="Пароль"></el-input>
                 </div>
-                <div class="registr__data-repass-eye" @mouseover="visible_repass = 'text'" @mouseout="visible_repass = 'password'">
+                <div class="registr__data-repass-eye" @mouseover="visibleRepass = 'text'" @mouseout="visibleRepass = 'password'">
                   <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
                 </div>
               </div>
@@ -149,6 +149,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 export default {
   name: 'Auth',
@@ -156,14 +157,27 @@ export default {
   },
   data() {
     return {
-      input_mail: '',
-      input_pass: '',
-      input_repass: '',
+      inputMail: '',
+      inputPass: '',
+      inputRepass: '',
       checked: false,
       isUser: false,
-      visible_pass: 'password',
-      visible_repass: 'password',
+      visiblePass: 'password',
+      visibleRepass: 'password',
+      rememberMe: false,
     };
+  },
+  computed: {
+    ...mapGetters(['getToken']),
+  },
+  methods: {
+    ...mapActions(['tokenCreate']),
+    ...mapMutations(['setAuthData', 'setRememberMe']),
+    authorize() {
+      this.setRememberMe(this.rememberMe);
+      this.setAuthData({ email: this.inputMail, password: this.inputPass });
+      this.tokenCreate();
+    },
   },
 };
 

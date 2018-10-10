@@ -9,6 +9,7 @@ import occasion from './modules/occasion';
 import productDetail from './modules/productDetail';
 import news from './modules/news';
 import cart from './modules/cart';
+import auth from './modules/auth';
 
 Vue.use(Vuex);
 
@@ -22,5 +23,6 @@ export default new Vuex.Store({
     productDetail,
     news,
     cart,
+    auth,
   },
 });

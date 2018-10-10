@@ -1,0 +1,6 @@
+mutation tokenRefresh($token: String!) {
+  tokenRefresh(token: $token) {
+    token
+    payload
+  }
+}
