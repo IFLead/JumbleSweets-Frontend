@@ -172,11 +172,10 @@ export default {
   },
   methods: {
     ...mapActions(['tokenCreate']),
-    ...mapMutations(['setAuthData', 'setRememberMe']),
+    ...mapMutations(['setRememberMe']),
     authorize() {
       this.setRememberMe(this.rememberMe);
-      this.setAuthData({ email: this.inputMail, password: this.inputPass });
-      this.tokenCreate();
+      this.tokenCreate({ email: this.inputMail, password: this.inputPass });
     },
   },
 };

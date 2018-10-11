@@ -29,13 +29,15 @@ const actions = {
   async loadProducts(context, filters = {}) {
     try {
       const response = await apolloProvider.defaultClient.query({
-        //   // It is important to not use the
-        //   // ES6 template syntax for variables
-        //   // directly inside the `gql` query,
-        //   // because this would make it impossible
-        //   // for Babel to optimize the code.
         query: PRODUCT_LIST,
-        variables: { first: Vue.prototype.$PAGINATE_BY, ...filters }, //  after: context.state.endCursor
+        variables: { first: Vue.prototype.$PAGINATE_BY, ...filters },
+        options: {
+          context: {
+            headers: {
+              Authorization: localStorage.token ? localStorage.token : sessionStorage.token,
+            },
+          },
+        }, //  after: context.state.endCursor
       });
       context.commit('setProducts', response.data.products);
       context.commit('setEndCursor', response.data.products.pageInfo.endCursor);

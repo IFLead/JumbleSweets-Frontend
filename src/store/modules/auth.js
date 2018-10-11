@@ -5,7 +5,6 @@ import { apolloProvider } from '../../vue-apollo';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {
-  authData: {},
   token: '',
   expTime: 0,
   rememberMe: false,
@@ -19,12 +18,6 @@ const getters = {
 
 // mutations
 const mutations = {
-  setAuthData(state, payload) {
-    state.authData = payload;
-  },
-  setToken(state, payload) {
-    state.token = payload;
-  },
   setRememberMe(state, payload) {
     state.token = payload;
   },
@@ -32,14 +25,15 @@ const mutations = {
 
 // actions
 const actions = {
-  async tokenCreate(context) {
+  async tokenCreate(context, authData) {
     try {
       const response = await apolloProvider.defaultClient.mutate({
         mutation: TOKEN_CREATE,
-        variables: context.state.authData,
+        variables: authData,
       });
       console.log(response);
       context.state.token = response.data.tokenCreate.token;
+      localStorage.email = authData.email;
       if (state.rememberMe) {
         localStorage.token = response.data.tokenCreate.token;
       } else {
@@ -53,7 +47,7 @@ const actions = {
     try {
       const response = await apolloProvider.defaultClient.mutate({
         mutation: TOKEN_REFRESH,
-        variables: localStorage.token,
+        variables: { token: context.state.token },
       });
       context.state.token = response.data.tokenRefresh.token;
       context.state.expTime = response.data.tokenRefresh.payload.exp;
@@ -70,7 +64,7 @@ const actions = {
     try {
       const response = await apolloProvider.defaultClient.mutate({
         mutation: TOKEN_VERIFY,
-        variables: context.state.token,
+        variables: { token: context.state.token },
       });
       context.state.expTime = response.data.tokenVerify.payload.exp;
     } catch (e) {
