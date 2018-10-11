@@ -77,5 +77,80 @@ export default {
 
 <style lang="sass">
 
+.contacts
+  font-family: ProximaNova
+  font-size: 15px
+  color: #000000
+  font-weight: 400
+  line-height: 25px
+
+.map
+  height: 400px
+
+.data
+  margin:
+    top: 50px
+    bottom: 50px
+  &__title
+    text-align: center
+    margin-bottom: 82px
+    font-size: 30px
+    line-height: 37px
+    font-weight: 700
+    @media (max-width: 1199.98px)
+      margin-bottom: 45px
+    @media (max-width: 575.98px)
+      font-size: 28px
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    @media (max-width: 1199.98px)
+      justify-content: center
+    @media (max-width: 991.98px)
+      flex-direction: column
+  &__element
+    color: #000000
+    background-color: #F8F8F8
+    padding:
+      top: 40px
+      left: 35px
+      bottom: 28px
+      right: 110px
+    @media (max-width: 991.98px)
+      text-align: center
+      padding:
+        left: 0px
+        right: 0px
+    @media (max-width: 575.98px)
+      padding:
+        top: 30px
+        bottom: 28px
+  &__element--social
+    @media (max-width: 1199.98px)
+      margin-top: 40px
+  &__element--connect
+    @media (max-width: 991.98px)
+      margin-top: 40px
+  &__element-title
+    font-size: 20px
+    line-height: 24px
+    font-weight: 700
+    margin-bottom: 20px
+  &__element-description
+    line-height: 18px
+    margin-bottom: 35px
+  &__element-description a
+    color: #000000
+  &__element-wrapper
+    display: inline-block
+  &__element-icon
+    display: inline-block
+    margin-right: 20px
+  &__element-inst
+    color: #707070
+  &__element-inst:hover
+    color: #E70068
+    text-decoration: none
 
 </style>

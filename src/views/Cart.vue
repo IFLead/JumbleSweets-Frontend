@@ -1433,6 +1433,8 @@ export default {
           right: 5px
           bottom: 5px
         border: 1px solid #f8f8f8
+        @media (max-width: 575.98px)
+          display: flex
         .el-button.active
           background-color: #e70068
           color: #ffffff

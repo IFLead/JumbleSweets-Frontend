@@ -21,21 +21,21 @@
 
 
 .home
-	font-family: ProximaNova
-	font-size: 15px
-	color: #000000
-	font-weight: 400
-	line-height: 25px
+  font-family: ProximaNova
+  font-size: 15px
+  color: #000000
+  font-weight: 400
+  line-height: 25px
 
 body
-	color: #000000
-	font-size: 15px
+  color: #000000
+  font-size: 15px
 
 button:active, button:focus
   outline: none !important
 
 a:active, a:focus
-	outline: none !important
+  outline: none !important
 
 
 
@@ -43,351 +43,28 @@ a:active, a:focus
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden
-	position: absolute
-	width: 1px
-	height: 1px
-	margin: -1px
-	border: 0
-	padding: 0
-	white-space: nowrap
-	clip-path: inset(100%)
-	clip: rect(0 0 0 0)
-	overflow: hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+  white-space: nowrap
+  clip-path: inset(100%)
+  clip: rect(0 0 0 0)
+  overflow: hidden
 
 img
-	max-width: 100%
-	height: auto
+  max-width: 100%
+  height: auto
 
 
 .row, .container
-	box-sizing: content-box
+  box-sizing: content-box
 
 .container
-	@media (max-width: 575.98px)
-		width: calc(100% - 30px) !important
-
-
-.about
-  font-family: ProximaNova
-  font-size: 15px
-  color: #fff
-  font-weight: 400
-  line-height: 25px
-
-.aboutus
-  margin-top: 10px
-  position: relative
-  background-color: grey
-  background-image: url("assets/about_back.jpg")
-  background-repeat: no-repeat
-  background-size: cover
-  background-position: 0 -230px
-  padding:
-    left: 70px
-    top: 35px
-    right: 70px
-    bottom: 0px
-  color: #ffffff
-  @media (max-width: 1199.98px)
-    background-position: 0 -100px
-  @media (max-width: 991.98px)
-    background-position: 0 0px
-
-  &__title
-    font-size: 30px
-    line-height: 35px
-    font-weight: 700
-    @media (max-width: 575.98px)
-      font-size: 28px
-
-  &__description
-    max-width: 956px
-    margin-top: 42px
-
-  &__schedule
-    display: flex
-    margin-top: 74px
-    justify-content: space-around
-    flex-wrap: wrap
-    @media (max-width: 991.98px)
-      justify-content: flex-start
-    //  background-color: rgba(0, 0, 0, 0.6)
-
-  &__item
-    display: flex
-    padding-right: 10px
-    margin:
-      bottom: 20px
-
-
-  &__item-icon
-    padding-right: 25px
-  &__item-icon img
-    max-width: 60px
-
-  &__item-wrapper
-    padding-top: 5px
-
-  &__item-title
-    font-size: 20px
-
-  &__item-subtitle
-    font-size: 15px
-    color: #c4c4c4
-
-  &::after
-    //height: 470px
-    min-width: 320px
-    z-index: 10
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background-color: rgba(0, 0, 0, 0.6)
-    //@media (max-width: 767.98px)
-    //  margin:
-    //    bottom: 20px
-    //background-image: url("assets/back_back.png")
-    //@media (max-width: 1199.98px)
-    //  background-image: none
-    //  background-color: rgba(0, 0, 0, 0.6)
-
-
-  &__wrapper
-    z-index: 100
-    position: relative
-
-
-.support
-  background-color: #000
-  padding:
-    left: 70px
-    top: 90px
-    right: 70px
-    bottom: 74px
-  color: #ffffff
-
-  &__title
-    font-size: 30px
-    line-height: 35px
-    font-weight: 700
-    @media (max-width: 575.98px)
-      font-size: 28px
-
-  &__description
-    max-width: 956px
-    margin-top: 42px
-
-
-.contacts
-  font-family: ProximaNova
-  font-size: 15px
-  color: #000000
-  font-weight: 400
-  line-height: 25px
-
-.map
-  height: 400px
-
-.data
-  margin:
-    top: 50px
-    bottom: 50px
-  &__title
-    text-align: center
-    margin-bottom: 82px
-    font-size: 30px
-    line-height: 37px
-    font-weight: 700
-    @media (max-width: 1199.98px)
-      margin-bottom: 45px
-    @media (max-width: 575.98px)
-      font-size: 28px
-  &__wrapper
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
-    @media (max-width: 1199.98px)
-      justify-content: center
-  &__element
-    color: #000000
-    background-color: #F8F8F8
-    padding:
-      top: 40px
-      left: 35px
-      bottom: 28px
-      right: 110px
-  &__element--social
-    @media (max-width: 1199.98px)
-      margin-top: 40px
-  &__element--connect
-    @media (max-width: 767.98px)
-      margin-top: 40px
-  &__element-title
-    font-size: 20px
-    line-height: 24px
-    font-weight: 700
-    margin-bottom: 20px
-  &__element-description
-    line-height: 18px
-    margin-bottom: 35px
-  &__element-description a
-    color: #000000
-  &__element-wrapper
-    display: inline-block
-  &__element-icon
-    display: inline-block
-    margin-right: 20px
-  &__element-inst
-    color: #707070
-  &__element-inst:hover
-    color: #707070
-    text-decoration: none
-
-
-.delpay
-  font-family: ProximaNova
-  font-size: 15px
-  color: #000000
-  font-weight: 400
-  margin-top: 30px
-
-.variants
-  &__title
-    font-size: 30px
-    line-height: 37px
-    font-weight: 700
-    margin:
-      bottom: 50px
-    text-align: center
-    @media (max-width: 575.98px)
-      font-size: 28px
-  &__wrapper
-    display: flex
-    justify-content: space-around
-    flex-wrap: wrap
-
-  &__element-wrapper
-    position: relative
-    z-index: 100
-  &__element-title
-    z-index: 10
-    color: #ffffff
-    font-size: 30px
-    font-weight: 700
-    margin:
-      bottom: 20px
-    @media (max-width: 575.98px)
-      font-size: 28px
-  &__element-description
-    color: #ffffff
-    font-size: 18px
-    font-weight: 400
-    position: relative
-    z-index: 10
-  &__element
-    margin:
-      bottom: 20px
-    padding:
-      left: 0px
-      right: 0px
-    max-width: 362px
-    &-pickup, &-kharkiv, &-ukraine
-      background-size: cover
-      background-repeat: no-repeat
-      position: relative
-      background-color: grey
-      min-height: 450px
-      padding:
-        right: 50px
-        left: 30px
-        top: 25px
-      &:before
-        content: ''
-        z-index: 1
-        position: absolute
-        left: 0
-        right: 0
-        top: 0
-        bottom: 0
-        background-color: rgba(0, 0, 0, 0.8)
-    &-pickup
-      background-image: url("assets/pickup.jpg")
-      background-position: 0 0
-    &-kharkiv
-      background-image: url("assets/kharkiv.jpg")
-      background-position: -180px 0px
-    &-ukraine
-      background-image: url("assets/ukraine.jpg")
-      background-position: -140px 0px
-
-.questions
-  margin:
-    top: 50px
-    bottom: 50px
-  &__title
-    font-size: 30px
-    line-height: 37px
-    font-weight: 700
-    text-align: center
-    margin:
-      bottom: 25px
-    @media (max-width: 575.98px)
-      font-size: 28px
-  &__description
-    text-align: center
-
-.ring
-  display: flex
-  justify-content: center
-  flex-wrap: wrap
-  margin:
-    bottom: 50px
-  &__number
-    margin:
-      right: 75px
-    @media (max-width: 767.98px)
-      margin-right: 0
-  &__number-input
-    width: 264px
-    margin:
-      bottom: 25px
-    .el-input__inner
-      border-radius: 0
-      padding: 5px 5px
-      border:
-        top: 1px solid #ffffff
-        left: 1px solid #ffffff
-        right: 1px solid #ffffff
-        bottom: 1px solid #c4c4c4
-      font-size: 15px
-    .el-input__inner:hover
-      border-bottom: 1px solid #c4c4c4
-    .el-input__inner:focus
-      border:
-        top: 1px solid #ffffff
-        left: 1px solid #ffffff
-        right: 1px solid #ffffff
-        bottom: 1px solid #c4c4c4
-  .ring__button
-    height: 50px
-    width: 278px
-    box-sizing: border-box
-    background-image: url("assets/Icons/phone-receiver.svg")
-    background-repeat: no-repeat
-    background-size: 20px 20px
-    background-position: right 30px top 14px
-    margin:
-      bottom: 45px
-    padding:
-      right: 60px
-    @media (max-width: 767.98px)
-      margin:
-        top: 25px
-        bottom: 10px
-
+  @media (max-width: 575.98px)
+    width: calc(100% - 30px) !important
 
 
 .title
