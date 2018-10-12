@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!--<el-button :plain="true" @click="openVn">VNode</el-button>-->
     <vHeader></vHeader>
     <router-view></router-view>
     <vFooter></vFooter>
@@ -16,6 +17,19 @@ export default {
   components: {
     vHeader: Header,
     vFooter: Footer,
+  },
+  data() {
+    return {
+      mes: 'our message',
+    };
+  },
+  methods: {
+    openVn() {
+      this.$message({
+        message: this.mes,
+        center: true,
+      });
+    },
   },
 };
 </script>

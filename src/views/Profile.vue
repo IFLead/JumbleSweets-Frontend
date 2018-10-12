@@ -1,5 +1,6 @@
 <template>
   <div class="profile">
+    <!--<repeatModal v-model="repeatVisible"></repeatModal>-->
     <b-container>
       <b-row>
         <b-col md="4" sm="12">
@@ -12,20 +13,39 @@
               </div>
             </div>
             <div class="left-panel__wrapper">
-              <div class="left-panel__menu">
+              <!--<div class="left-panel__menu">-->
+              <!--<div class="left-panel__menu-element" @click="panelIndex = 1">-->
+              <!--Основная информация-->
+              <!--</div>-->
+              <!--<div class="left-panel__menu-element" @click="panelIndex = 2">-->
+              <!--Мои заказы-->
+              <!--</div>-->
+              <!--<div class="left-panel__menu-element" @click="panelIndex = 3">-->
+              <!--Список желаний-->
+              <!--</div>-->
+              <!--<div class="left-panel__menu-element" @click="panelIndex = 4">-->
+              <!--Выйти-->
+              <!--</div>-->
+              <!--</div>-->
+              <el-radio-group v-model="selectedMenu" class="left-panel__menu">
                 <div class="left-panel__menu-element" @click="panelIndex = 1">
-                  Основная информация
+                  <el-radio-button label="Основная информация">
+                  </el-radio-button>
                 </div>
                 <div class="left-panel__menu-element" @click="panelIndex = 2">
-                  Мои заказы
+                  <el-radio-button label="Мои заказы">
+                  </el-radio-button>
                 </div>
                 <div class="left-panel__menu-element" @click="panelIndex = 3">
-                  Список желаний
+                  <el-radio-button label="Список желаний">
+                  </el-radio-button>
                 </div>
                 <div class="left-panel__menu-element" @click="panelIndex = 4">
-                  Выйти
+                  <el-radio-button label="Выйти">
+                  </el-radio-button>
                 </div>
-              </div>
+              </el-radio-group>
+
             </div>
             <div class="left-panel__back-button">
               <div class="left-panel__back-button-icon">
@@ -74,6 +94,7 @@
               <div class="personal-data__button">
                 <div class="personal-data__button-wrapper">
                   <el-button>Сохранить изменения</el-button>
+                  <!--<el-button type="text" @click="repeatVisibleValue = !repeatVisibleValue">repeat modal</el-button>-->
                 </div>
               </div>
             </div>
@@ -617,7 +638,7 @@ import RepeatModal from '../components/modals/RepeatModal.vue';
 export default {
   name: 'Profile',
   components: {
-    RepeatModal,
+    repeatModal: RepeatModal,
   },
   data() {
     return {
@@ -625,531 +646,566 @@ export default {
       isHidden: false,
       isOrders: true,
       isWish: false,
+      repeatVisibleValue: false,
+      selectedMenu: 'Основная информация',
     };
+  },
+  computed: {
+    repeatVisible() {
+      return this.repeatVisibleValue;
+    },
+  },
+  methods: {
+    setRepeatVisibleValue(val) {
+      this.repeatVisibleValue = val;
+    },
   },
 };
 </script>
 
 <style lang="sass">
 
-.subtitle
-  color: #707070
+  .subtitle
+    color: #707070
 
-.profile
-  font-family: ProximaNova
-  font-size: 15px
-  color: #000000
-  font-weight: 400
-  line-height: 25px
-  margin:
-    top: 30px
-  padding:
-    bottom: 50px
-
-.left-panel
-
-  &__user-wrapper
-    position: relative
-    z-index: 100
-
-  &__user-title
-    color: #ffffff
+  .profile
+    font-family: ProximaNova
     font-size: 15px
+    color: #000000
     font-weight: 400
     line-height: 25px
-  span
-    font-size: 18px
-    font-weight: 600
-
-  &__user
-    max-width: 362px
-    max-height: 150px
-    background-position: 0 -20px
-    background-size: cover
-    background-repeat: no-repeat
-    position: relative
-    background-color: grey
-    background-image: url("../assets/user_back.jpg")
-    padding:
-      top: 30px
-      left: 30px
-      bottom: 76px
-    @media (max-width: 767.98px)
-      margin: 0 auto
-    &:after
-      content: ''
-      z-index: 1
-      position: absolute
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-      background-color: rgba(0, 0, 0, 0.75)
-
-  &__wrapper
-    max-width: 362px
-    background-color: #f8f8f8
     margin:
-      top: 35px
-    @media (max-width: 767.98px)
-      margin:
-        left: auto
-        right: auto
-        top: 25px
-
-  &__menu
+      top: 30px
     padding:
-      top: 29px
-      bottom: 30px
+      bottom: 50px
 
-  &__menu-element
-    text-align: center
-    padding:
-      top: 21px
-      bottom: 21px
+  .left-panel
 
-    &:hover, &:focus
-      background-color: #E70068
+    &__user-wrapper
+      position: relative
+      z-index: 100
+
+    &__user-title
       color: #ffffff
-      cursor: pointer
-
-  &__back-button
-    margin:
-      left: 30px
-      top: 30px
-    display: flex
-    @media (min-width: 767.98px)
-      display: none
-
-  &__back-button-icon
-    margin-right: 12px
-
-.panel-content
-  padding:
-    left: 30px
-  @media (max-width: 767.98px)
-    padding:
-      left: 0px
-    margin-top: 25px
-    display: flex
-    justify-content: center
-
-.personal-data
-  @media (max-width: 575.98px)
-    margin:
-      left: 30px
-      right: 30px
-
-  &__title
-    margin:
-      bottom: 20px
-      top: 15px
-
-  &__subtitle
-    line-height: 18px
-    margin:
-      bottom: 85px
-    @media (max-width: 767.98px)
-      margin:
-        bottom: 35px
-
-  &__personal
-    display: flex
-    flex-wrap: wrap
-    max-width: 510px
-    justify-content: space-between
-
-  &__personal-elem
-    width: 234px
-
-  &__personal-label
-    font-size: 18px
-    line-height: 25px
-    font-weight: 700
-    margin:
-      bottom: 24px
-
-  &__personal-field
-    margin-bottom: 30px
-
-    .el-input__inner
-      width: 234px
-      padding: 10px 5px
-      border:
-        top: 1px solid #ffffff
-        left: 1px solid #ffffff
-        right: 1px solid #ffffff
-        bottom: 1px solid #c4c4c4
       font-size: 15px
-    .el-input__inner:hover
-      border-bottom: 1px solid #c4c4c4
-    .el-input__inner:focus
-      border:
-        top: 1px solid #ffffff
-        left: 1px solid #ffffff
-        right: 1px solid #ffffff
-        bottom: 1px solid #c4c4c4
+      font-weight: 400
+      line-height: 25px
+    span
+      font-size: 18px
+      font-weight: 600
 
-  &__button
-    margin-top: 70px
-    @media (max-width: 767.98px)
+    &__user
+      max-width: 362px
+      max-height: 150px
+      background-position: 0 -20px
+      background-size: cover
+      background-repeat: no-repeat
+      position: relative
+      background-color: grey
+      background-image: url("../assets/user_back.jpg")
+      padding:
+        top: 30px
+        left: 30px
+        bottom: 76px
+      @media (max-width: 767.98px)
+        margin: 0 auto
+      &:after
+        content: ''
+        z-index: 1
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background-color: rgba(0, 0, 0, 0.75)
+
+    &__wrapper
+      max-width: 362px
+      background-color: #f8f8f8
       margin:
         top: 35px
+      @media (max-width: 767.98px)
+        margin:
+          left: auto
+          right: auto
+          top: 25px
+
+    .el-radio-group
+      display: flex
+      flex-direction: column
+
+      label
+        margin:
+          bottom: 0
+
+    &__menu
+      padding:
+        top: 29px
+        bottom: 30px
+
+    &__menu-element
+      text-align: center
+      //padding:
+        top: 21px
+        bottom: 21px
+
+      .el-radio-button
+        width: 100%
+
+      .el-radio-button__inner
+        border: none !important
+        font-weight: 400
+        background: none
+        color: black
+        width: 100%
+        padding:
+          top: 21px
+          bottom: 21px
+          left: 14px
+          right: 14px
+
+    /*&:hover, &:focus*/
+      /*background-color: #E70068*/
+      /*color: #ffffff*/
+      /*cursor: pointer*/
+
+    &__back-button
+      margin:
+        left: 30px
+        top: 30px
+      display: flex
+      @media (min-width: 767.98px)
+        display: none
+
+    &__back-button-icon
+      margin-right: 12px
+
+  .panel-content
+    padding:
+      left: 30px
+    @media (max-width: 767.98px)
+      padding:
+        left: 0px
+      margin-top: 25px
       display: flex
       justify-content: center
-    .el-button
-      width: 244px
-      height: 50px
-      box-sizing: border-box
-      background-image: url("../assets/Icons/save-button-profile.svg")
-      background-repeat: no-repeat
-      background-size: 20px 20px
-      background-position: right 30px top 14px
-      padding:
-        right: 60px
 
-
-.orders
-  @media (max-width: 575.98px)
-    margin:
-      left: 30px
-      right: 30px
-
-  &__title
-    line-height: 37px
-    margin:
-      bottom: 20px
-      top: 15px
-
-  &__subtitle
-    line-height: 18px
-    margin:
-      bottom: 50px
-    @media (max-width: 1199.98px)
+  .personal-data
+    @media (max-width: 575.98px)
       margin:
+        left: 30px
+        right: 30px
+
+    &__title
+      margin:
+        bottom: 20px
+        top: 15px
+
+    &__subtitle
+      line-height: 18px
+      margin:
+        bottom: 85px
+      @media (max-width: 767.98px)
+        margin:
+          bottom: 35px
+
+    &__personal
+      display: flex
+      flex-wrap: wrap
+      max-width: 510px
+      justify-content: space-between
+
+    &__personal-elem
+      width: 234px
+
+    &__personal-label
+      font-size: 18px
+      line-height: 25px
+      font-weight: 700
+      margin:
+        bottom: 24px
+
+    &__personal-field
+      margin-bottom: 30px
+
+      .el-input__inner
+        width: 234px
+        padding: 10px 5px
+        border:
+          top: 1px solid #ffffff
+          left: 1px solid #ffffff
+          right: 1px solid #ffffff
+          bottom: 1px solid #c4c4c4
+        font-size: 15px
+      .el-input__inner:hover
+        border-bottom: 1px solid #c4c4c4
+      .el-input__inner:focus
+        border:
+          top: 1px solid #ffffff
+          left: 1px solid #ffffff
+          right: 1px solid #ffffff
+          bottom: 1px solid #c4c4c4
+
+    &__button
+      margin-top: 70px
+      @media (max-width: 767.98px)
+        margin:
+          top: 35px
+        display: flex
+        justify-content: center
+      .el-button
+        width: 244px
+        height: 50px
+        box-sizing: border-box
+        background-image: url("../assets/Icons/save-button-profile.svg")
+        background-repeat: no-repeat
+        background-size: 20px 20px
+        background-position: right 30px top 14px
+        padding:
+          right: 60px
+
+
+  .orders
+    @media (max-width: 575.98px)
+      margin:
+        left: 30px
+        right: 30px
+
+    &__title
+      line-height: 37px
+      margin:
+        bottom: 20px
+        top: 15px
+
+    &__subtitle
+      line-height: 18px
+      margin:
+        bottom: 50px
+      @media (max-width: 1199.98px)
+        margin:
+          bottom: 35px
+
+  .orders-yes
+    @media (max-width: 1199.98px)
+      display: none
+
+    &__elem
+      display: flex
+      margin:
+        bottom: 40px
+      &:last-of-type
+        margin:
+          bottom: 0px
+
+    &__elem-picture
+      max-width: 160px
+      background-image: url("../assets/glass_back.jpg")
+      background-position: -190px 0px
+      background-size: cover
+      background-repeat: no-repeat
+      position: relative
+      background-color: grey
+      padding:
+        left: 25px
+        right: 30px
+        top: 20px
+        bottom: 20px
+      &:after
+        content: ''
+        z-index: 1
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background-color: rgba(255, 250, 185, 0.7)
+    &__elem-picture--hidden
+      background-position: 0px 0px
+
+    &__elem-picture-wrapper
+      position: relative
+      z-index: 100
+
+    &__elem-date
+      font-weight: 700
+      margin:
+        bottom: 5px
+
+    &__elem-time
+      font-weight: 700
+      font-size: 25px
+      line-height: 30px
+
+    &__elem-content
+      min-width: 564px
+
+    &__elem-header
+      min-height: 100px
+      padding-right: 35px
+      padding-left: 35px
+      justify-content: space-between
+      align-items: center
+      background-color: #000000
+      display: flex
+      color: #ffffff
+
+    &__elem-hide
+      display: flex
+
+    &__elem-hide-icon
+      margin-left: 12px
+
+    &__elem-repeat
+      display: flex
+
+    &__elem-repeat-icon
+      margin-left: 12px
+
+    &__elem-cost
+      display: flex
+      height: 60px
+      align-items: center
+      padding-left: 55px
+      border-left: 1px solid rgba(255, 255, 255, .3)
+
+    &__elem-cost-label
+      font-weight: 700
+      font-size: 25px
+      line-height: 30px
+
+    &__elem-cost-icon
+      margin-right: 12px
+
+    &__elem-products
+      background-color: #f8f8f8
+      padding:
+        left: 35px
+        right: 35px
+        top: 30px
+        bottom: 50px
+
+    &__elem-products-wrapper
+      width: 494px
+
+    &__elem-products-product
+      display: flex
+      justify-content: space-between
+      padding-bottom: 15px
+
+    &__elem-products-name
+      width: 170px
+
+    &__elem-products-name-wrapper
+      display: inline-block
+
+    .underline
+      border-bottom: 1px dashed #E70068
+
+    .bold-type
+      font-weight: 700
+
+
+  .orders-yesmob
+    @media (min-width: 1199.98px)
+      display: none
+
+    &__elem
+      margin:
+        bottom: 30px
+      &:last-of-type
+        margin:
+          bottom: 0px
+
+    &__elem-picture
+      background-image: url("../assets/glass_back.jpg")
+      background-position: 0px -60px
+      background-size: cover
+      background-repeat: no-repeat
+      position: relative
+      background-color: grey
+      padding: 15px
+      @media (max-width: 575.98px)
+        background-position: 0px -30px
+      &:after
+        content: ''
+        z-index: 1
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background: linear-gradient(rgba(0,0,0,.80), rgba(0,0,0,.99))
+
+    &__elem-picture-wrapper
+      color: #ffffff
+      position: relative
+      z-index: 100
+
+    &__elem-header
+      display: flex
+      justify-content: space-between
+      margin-bottom: 38px
+
+    &__elem-date
+      font-weight: 700
+      margin:
+        bottom: 15px
+
+    &__elem-time
+      font-weight: 700
+      font-size: 25px
+      line-height: 30px
+
+    &__elem-cost
+      display: flex
+      height: 60px
+
+    &__elem-cost-label
+      font-weight: 700
+      font-size: 25px
+      line-height: 30px
+      @media (max-width: 575.98px)
+        font-size: 20px
+
+    &__elem-cost-icon
+      margin-right: 12px
+
+    &__elem-footer
+      display: flex
+      justify-content: space-between
+
+    &__elem-hide
+      display: flex
+
+    &__elem-hide-icon
+      margin-left: 12px
+
+    &__elem-repeat
+      display: flex
+
+    &__elem-repeat-icon
+      margin-left: 12px
+
+    &__elem-products
+      background-color: #f8f8f8
+      padding:
+        left: 15px
+        right: 15px
+        top: 15px
+        bottom: 30px
+
+    //&__elem-products-wrapper
+      width: 494px
+
+    &__elem-products-product
+      display: flex
+      justify-content: space-between
+      padding-bottom: 15px
+
+    &__elem-products-name
+      width: 170px
+
+    &__elem-products-name-wrapper
+      display: inline-block
+
+    .underline
+      border-bottom: 1px dashed #E70068
+
+  .orders-no
+    background-color: #f8f8f8
+    padding:
+      top: 50px
+
+    &__icon
+      text-align: center
+      padding:
         bottom: 35px
 
-.orders-yes
-  @media (max-width: 1199.98px)
-    display: none
-
-  &__elem
-    display: flex
-    margin:
-      bottom: 40px
-    &:last-of-type
-      margin:
-        bottom: 0px
-
-  &__elem-picture
-    max-width: 160px
-    background-image: url("../assets/glass_back.jpg")
-    background-position: -190px 0px
-    background-size: cover
-    background-repeat: no-repeat
-    position: relative
-    background-color: grey
-    padding:
-      left: 25px
-      right: 30px
-      top: 20px
-      bottom: 20px
-    &:after
-      content: ''
-      z-index: 1
-      position: absolute
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-      background-color: rgba(255, 250, 185, 0.7)
-  &__elem-picture--hidden
-    background-position: 0px 0px
-
-  &__elem-picture-wrapper
-    position: relative
-    z-index: 100
-
-  &__elem-date
-    font-weight: 700
-    margin:
-      bottom: 5px
-
-  &__elem-time
-    font-weight: 700
-    font-size: 25px
-    line-height: 30px
-
-  &__elem-content
-    min-width: 564px
-
-  &__elem-header
-    min-height: 100px
-    padding-right: 35px
-    padding-left: 35px
-    justify-content: space-between
-    align-items: center
-    background-color: #000000
-    display: flex
-    color: #ffffff
-
-  &__elem-hide
-    display: flex
-
-  &__elem-hide-icon
-    margin-left: 12px
-
-  &__elem-repeat
-    display: flex
-
-  &__elem-repeat-icon
-    margin-left: 12px
-
-  &__elem-cost
-    display: flex
-    height: 60px
-    align-items: center
-    padding-left: 55px
-    border-left: 1px solid rgba(255, 255, 255, .3)
-
-  &__elem-cost-label
-    font-weight: 700
-    font-size: 25px
-    line-height: 30px
-
-  &__elem-cost-icon
-    margin-right: 12px
-
-  &__elem-products
-    background-color: #f8f8f8
-    padding:
-      left: 35px
-      right: 35px
-      top: 30px
-      bottom: 50px
-
-  &__elem-products-wrapper
-    width: 494px
-
-  &__elem-products-product
-    display: flex
-    justify-content: space-between
-    padding-bottom: 15px
-
-  &__elem-products-name
-    width: 170px
-
-  &__elem-products-name-wrapper
-    display: inline-block
-
-  .underline
-    border-bottom: 1px dashed #E70068
-
-  .bold-type
-    font-weight: 700
-
-
-.orders-yesmob
-  @media (min-width: 1199.98px)
-    display: none
-
-  &__elem
-    margin:
-      bottom: 30px
-    &:last-of-type
-      margin:
-        bottom: 0px
-
-  &__elem-picture
-    background-image: url("../assets/glass_back.jpg")
-    background-position: 0px -60px
-    background-size: cover
-    background-repeat: no-repeat
-    position: relative
-    background-color: grey
-    padding: 15px
-    @media (max-width: 575.98px)
-      background-position: 0px -30px
-    &:after
-      content: ''
-      z-index: 1
-      position: absolute
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-      background: linear-gradient(rgba(0,0,0,.80), rgba(0,0,0,.99))
-
-  &__elem-picture-wrapper
-    color: #ffffff
-    position: relative
-    z-index: 100
-
-  &__elem-header
-    display: flex
-    justify-content: space-between
-    margin-bottom: 38px
-
-  &__elem-date
-    font-weight: 700
-    margin:
-      bottom: 15px
-
-  &__elem-time
-    font-weight: 700
-    font-size: 25px
-    line-height: 30px
-
-  &__elem-cost
-    display: flex
-    height: 60px
-
-  &__elem-cost-label
-    font-weight: 700
-    font-size: 25px
-    line-height: 30px
-    @media (max-width: 575.98px)
+    &__text
       font-size: 20px
+      line-height: 24px
+      font-weight: 700
+      text-align: center
+      padding:
+        bottom: 20px
 
-  &__elem-cost-icon
-    margin-right: 12px
+    &__subtext
+      font-size: 15px
+      line-height: 18px
+      font-weight: 400
+      text-align: center
+      padding:
+        bottom: 45px
 
-  &__elem-footer
-    display: flex
-    justify-content: space-between
+    &__button-wrapper
+      display: flex
+      justify-content: center
 
-  &__elem-hide
-    display: flex
+    .orders-no__button
+      background-image: url("../assets/Icons/shopping-purse-icon.svg")
+      background-repeat: no-repeat
+      background-size: 20px 20px
+      background-position: right 30px top 10px
+      padding:
+        right: 60px
+      margin:
+        bottom: 80px
 
-  &__elem-hide-icon
-    margin-left: 12px
+  .wishlist
+    @media (max-width: 575.98px)
+      margin:
+        left: 30px
+        right: 30px
 
-  &__elem-repeat
-    display: flex
+    &__title
+      line-height: 37px
+      margin:
+        bottom: 20px
+        top: 15px
 
-  &__elem-repeat-icon
-    margin-left: 12px
+    &__subtitle
+      line-height: 18px
+      margin:
+        bottom: 45px
 
-  &__elem-products
+  .wishlist-no
     background-color: #f8f8f8
     padding:
-      left: 15px
-      right: 15px
-      top: 15px
-      bottom: 30px
+      top: 50px
 
-  //&__elem-products-wrapper
-    width: 494px
+    &__icon
+      text-align: center
+      padding:
+        bottom: 35px
 
-  &__elem-products-product
-    display: flex
-    justify-content: space-between
-    padding-bottom: 15px
+    &__text
+      font-size: 20px
+      line-height: 24px
+      font-weight: 700
+      text-align: center
+      padding:
+        bottom: 20px
 
-  &__elem-products-name
-    width: 170px
+    &__subtext
+      font-size: 15px
+      line-height: 25px
+      font-weight: 400
+      text-align: center
+      padding:
+        bottom: 45px
 
-  &__elem-products-name-wrapper
-    display: inline-block
+    &__button-wrapper
+      display: flex
+      justify-content: center
 
-  .underline
-    border-bottom: 1px dashed #E70068
-
-.orders-no
-  background-color: #f8f8f8
-  padding:
-    top: 50px
-
-  &__icon
-    text-align: center
-    padding:
-      bottom: 35px
-
-  &__text
-    font-size: 20px
-    line-height: 24px
-    font-weight: 700
-    text-align: center
-    padding:
-      bottom: 20px
-
-  &__subtext
-    font-size: 15px
-    line-height: 18px
-    font-weight: 400
-    text-align: center
-    padding:
-      bottom: 45px
-
-  &__button-wrapper
-    display: flex
-    justify-content: center
-
-  .orders-no__button
-    background-image: url("../assets/Icons/shopping-purse-icon.svg")
-    background-repeat: no-repeat
-    background-size: 20px 20px
-    background-position: right 30px top 10px
-    padding:
-      right: 60px
-    margin:
-      bottom: 80px
-
-.wishlist
-  @media (max-width: 575.98px)
-    margin:
-      left: 30px
-      right: 30px
-
-  &__title
-    line-height: 37px
-    margin:
-      bottom: 20px
-      top: 15px
-
-  &__subtitle
-    line-height: 18px
-    margin:
-      bottom: 45px
-
-.wishlist-no
-  background-color: #f8f8f8
-  padding:
-    top: 50px
-
-  &__icon
-    text-align: center
-    padding:
-      bottom: 35px
-
-  &__text
-    font-size: 20px
-    line-height: 24px
-    font-weight: 700
-    text-align: center
-    padding:
-      bottom: 20px
-
-  &__subtext
-    font-size: 15px
-    line-height: 25px
-    font-weight: 400
-    text-align: center
-    padding:
-      bottom: 45px
-
-  &__button-wrapper
-    display: flex
-    justify-content: center
-
-  .wishlist-no__button
-    background-image: url("../assets/Icons/shopping-purse-icon.svg")
-    background-repeat: no-repeat
-    background-size: 20px 20px
-    background-position: right 30px top 10px
-    padding:
-      right: 60px
-    margin:
-      bottom: 55px
+    .wishlist-no__button
+      background-image: url("../assets/Icons/shopping-purse-icon.svg")
+      background-repeat: no-repeat
+      background-size: 20px 20px
+      background-position: right 30px top 10px
+      padding:
+        right: 60px
+      margin:
+        bottom: 55px
 
 </style>
