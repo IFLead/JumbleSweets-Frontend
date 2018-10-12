@@ -6,6 +6,7 @@ module.exports = {
   //     fix: true,
   //   });
   // },
+  productionSourceMap: false,
   devServer: {
     proxy: {
       '/graphql': {
