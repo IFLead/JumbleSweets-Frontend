@@ -494,7 +494,7 @@ export default {
       this.addToCart({
         id: this.product.id,
         quantity: this.productCount,
-        price: this.product.price.amount,
+        price: this.getSelectedProductPrice.priceDiscounted ? this.getSelectedProductPrice.priceDiscounted : this.getSelectedProductPrice.price,
         photoUrl: this.product.images.edges[0].node.url,
         name: this.product.name,
       });

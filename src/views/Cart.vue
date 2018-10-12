@@ -15,6 +15,10 @@
       </b-container>
     </section>
 
+    <!--<b-container>-->
+    <!--<el-button><router-link to="/summary">Summary</router-link> </el-button>-->
+    <!--</b-container>-->
+
     <section class="purchases">
       <b-container>
         <b-row>
@@ -55,7 +59,7 @@
             <div class="element__content">
               <a href="#" class="element__link">
                 <div class="element__photo">
-                  <img :src="record.photoUrl" width="190" height="56">
+                  <img :src="record.photoUrl">
                 </div>
               </a>
               <div class="element__information">
@@ -77,21 +81,23 @@
             <div class="total__content">
               <a href="#" class="total__promo activated"><span class="total__promo--first">У меня есть промокод на скидку</span> <span class="total__promo--activated" @click="saleModal = true">Скидка 10% с промокода</span></a>
               <p class="total__price">Сумма: <span>{{ totalPrice }} грн.</span></p>
-              <el-button class="total__button" @click="decorModal = true">Перейти к оформлению
-                <span class="total__button--icon">
-                  <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                       viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-                    <g>
+              <router-link to="/summary">
+                <el-button class="total__button" @click="decorModal = true">Перейти к оформлению
+                  <span class="total__button--icon">
+                    <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
                       <g>
-                        <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                        <g>
+                          <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
                         c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                         c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                         c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
+                        </g>
                       </g>
-                    </g>
-                  </svg>
-                </span>
-              </el-button>
+                    </svg>
+                  </span>
+                </el-button>
+              </router-link>
             </div>
           </b-col>
         </b-row>
@@ -682,7 +688,7 @@ export default {
     &__link
       background-color: #f8f8f8
       width: 264px
-      height: 160px
+      /*height: 160px*/
       display: flex
       @media (max-width: 767.98px)
         width: 350px
@@ -698,6 +704,7 @@ export default {
       @media (max-width: 991.98px)
         flex-wrap: wrap
     &__photo
+      max-width: 190px
       display: inline-block
       margin:
         top: auto

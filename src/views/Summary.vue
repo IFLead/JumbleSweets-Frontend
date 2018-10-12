@@ -3,51 +3,23 @@
     <b-container>
       <b-row>
         <b-col cols="12" class="back">
-          <a href="#" class="back__link">
-            <span class="back__icon">
-              <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                   viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-                <g>
+          <router-link to="/cart">
+            <a href="#" class="back__link">
+              <span class="back__icon">
+                <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
                   <g>
-                    <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                    <g>
+                      <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
                     c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                     c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                     c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
+                    </g>
                   </g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-              </svg>
-            </span><span>Вернуться к редактированию корзины</span>
-          </a>
+                </svg>
+              </span><span>Вернуться к редактированию корзины</span>
+            </a>
+          </router-link>
         </b-col>
 
         <b-col cols="12" class="pay">
@@ -95,7 +67,7 @@
         </b-col>
 
         <b-col cols="12" class="finaly">
-          <p class="finaly__price">Итого:<span>6750</span> грн.</p>
+          <p class="finaly__price">Итого:<span>{{ totalPrice }}</span> грн.</p>
           <el-button class="finaly__button">Перейти к сервису оплаты<span class="finaly__button--icon">
             <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
@@ -107,36 +79,6 @@
                         c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
                 </g>
               </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
             </svg>
           </span>
           </el-button>
@@ -145,65 +87,17 @@
         <b-col cols="12" class="additional">
           <h2 class="additional__title">Дополнительная информация</h2>
           <b-row>
-            <b-col lg="6">
+            <b-col v-for="record in getCartItems" :key="record.id" lg="6">
               <div class="additional__element">
                 <div class="additional__photo">
-                  <img src="../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png" alt="Батончик Snickers" width="190" height="56">
+                  <img :src="record.photoUrl">
                 </div>
                 <ul class="additional__information">
-                  <li class="additional__name">Название товара</li>
-                  <li class="additional__price">2500 грн.</li>
+                  <li class="additional__name">{{ record.name }}</li>
+                  <li class="additional__price">{{ record.price }} грн.</li>
                 </ul>
               </div>
             </b-col>
-
-            <b-col lg="6">
-              <div class="additional__element">
-                <div class="additional__photo">
-                  <img src="../assets/milka.png" alt="Milka" width="157" height="157">
-                </div>
-                <ul class="additional__information">
-                  <li class="additional__name">Название товара</li>
-                  <li class="additional__price">2500 грн.</li>
-                </ul>
-              </div>
-            </b-col>
-
-            <b-col lg="6">
-              <div class="additional__element">
-                <div class="additional__photo">
-                  <img src="../assets/cocacola_PNG22.png" alt="Coca-cola" width="183" height="121">
-                </div>
-                <ul class="additional__information">
-                  <li class="additional__name">Название товара</li>
-                  <li class="additional__price">2500 грн.</li>
-                </ul>
-              </div>
-            </b-col>
-
-            <b-col lg="6">
-              <div class="additional__element additional__element--jumble">
-                <div class="additional__photo"></div>
-                <ul class="additional__information">
-                  <li class="additional__name">Jumble Box Light</li>
-                  <li class="additional__link"><a href="#" @click="insideModal = true">Посмотреть содержимое бокса</a></li>
-                  <li class="additional__price">2500 грн.</li>
-                </ul>
-              </div>
-            </b-col>
-
-            <b-col lg="6">
-              <div class="additional__element additional__element--mystery">
-                <div class="additional__photo"></div>
-                <ul class="additional__information">
-                  <li class="additional__name">Jumble Box Mystery (Light)</li>
-                  <li class="additional__random">содержит 5 случайных сладостей</li>
-                  <li class="additional__price">2500 грн.</li>
-                </ul>
-              </div>
-            </b-col>
-
-
           </b-row>
         </b-col>
       </b-row>
@@ -554,36 +448,6 @@
                                 <polygon points="138.9,264.3 103.1,245.9 103.1,188.7 29.3,146.2 29.3,369.3 222.4,480.8 222.4,257.7 138.9,209.6     "/>
                               </g>
                             </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
                           </svg>
                         </span></p>
                       </el-button>
@@ -614,6 +478,8 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'Summary',
   components: {
@@ -624,6 +490,9 @@ export default {
       insideModal: false,
       checkModals: true,
     };
+  },
+  computed: {
+    ...mapGetters(['getCartItems', 'totalPrice']),
   },
 };
 </script>
@@ -688,7 +557,7 @@ export default {
 
     &__content
       position: relative
-      z-index: 1000
+      z-index: 999
       color: #ffffff
       padding:
         top: 44px
@@ -839,15 +708,16 @@ export default {
         margin:
           bottom: 30px
     &__photo
-      width: 264px
-      height: 160px
+      //width: 264px
+      //height: 160px
+      max-width: 190px
       background-color: #f8f8f8
-      @media (max-width: 1199.98px)
+      //@media (max-width: 1199.98px)
         width: 220px
-      @media (max-width: 991.98px)
+      //@media (max-width: 991.98px)
         width: 350px
         height: 200px
-      @media (max-width: 767.98px)
+      //@media (max-width: 767.98px)
         width: 264px
         height: 160px
       @media (max-width: 575.98px)
@@ -858,6 +728,7 @@ export default {
         bottom: 30px
       @media (max-width: 575.98px)
         flex-wrap: wrap
+        justify-content: center
       &--jumble
         .additional__name
           margin:
@@ -912,6 +783,8 @@ export default {
     &__price
       font-size: 30px
       line-height: 40px
+      @media (max-width: 575.98px)
+        text-align: center
     &__information
       flex-grow: 1
       padding:
@@ -930,6 +803,8 @@ export default {
     &__name
       margin:
         bottom: 60px
+      @media (max-width: 575.98px)
+        text-align: center
       @media (max-width: 575.98px)
         margin:
           bottom: 20px

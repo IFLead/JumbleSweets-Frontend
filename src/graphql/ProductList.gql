@@ -1,7 +1,7 @@
 #import "./MoneyFragment.gql"
 
-query ProductList($first: Int, $after: String, $last: Int, $before: String, $price_Gte: Float, $price_Lte: Float, $name_Icontains: String, $name: String) {
-  products(before: $before, after: $after, first: $first, last: $last, isPublished: true, price_Gte: $price_Gte, price_Lte: $price_Lte, name_Icontains: $name_Icontains, name: $name) {
+query ProductList($first: Int, $after: String, $last: Int, $before: String, $price_Gte: Float, $price_Lte: Float, $name_Icontains: String, $name: String, $sortBy: String) {
+  products(before: $before, after: $after, first: $first, last: $last, isPublished: true, price_Gte: $price_Gte, price_Lte: $price_Lte, name_Icontains: $name_Icontains, name: $name, sortBy: $sortBy) {
     totalCount
     edges {
       node {
