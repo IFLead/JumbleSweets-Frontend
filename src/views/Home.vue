@@ -152,10 +152,10 @@
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
-              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="filterOnChange()"></el-input>
+              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
-              <el-select v-model="value" placeholder="Сначала новые" class="sort__select">
+              <el-select v-model="sortBy" placeholder="Сначала новые" class="sort__select" @change="sortFilterProducts()">
                 <el-option
                   v-for="item in options"
                   :key="item.value"
@@ -215,7 +215,7 @@
                     :max="1000"
                     range>
                   </el-slider>
-                  <el-button class="filter__button filter__button--submit" @click="filterProducts()">Применить
+                  <el-button class="filter__button filter__button--submit" @click="sortFilterProducts()">Применить
                   </el-button>
                   <el-button class="filter__button filter__button--refresh">Сбросить</el-button>
                 </div>
@@ -405,13 +405,13 @@ export default {
   data() {
     return {
       options: [{
-        value: 'Option1',
+        value: 'name',
         label: 'А-Я',
       }, {
-        value: 'Option2',
+        value: 'price',
         label: 'Цена',
       }],
-      value: '',
+      sortBy: '',
       activeNames: ['1'],
       filterOpen: false,
       sliderRange: [0, 1000],
@@ -436,7 +436,7 @@ export default {
       this.addToCart({
         id: product.id,
         quantity: 1,
-        price: product.price.amount,
+        price: product.availability.discount ? product.price.amount - product.availability.discount.net.amount : product.price.amount,
         photoUrl: product.thumbnailUrl,
         name: product.name,
       });
@@ -444,15 +444,12 @@ export default {
     getDiscount(reduction, preDiscPrice) {
       return getDiscountBase(reduction, preDiscPrice);
     },
-    filterProducts() {
+    sortFilterProducts() {
       const priceGte = this.sliderRange[0];
       const priceLte = this.sliderRange[1];
       const filters = { price_Gte: priceGte, price_Lte: priceLte, name_Icontains: this.productName };
-      this.loadProducts(filters);
-    },
-    filterOnChange() {
-      const filters = { name_Icontains: this.productName };
-      this.loadProducts(filters);
+      const data = { filters, sortBy: this.sortBy };
+      this.loadProducts(data);
     },
   },
 };
