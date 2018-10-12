@@ -118,8 +118,9 @@
                   <div class="orders-yes__elem-content">
                     <div class="orders-yes__elem-main">
                       <div class="orders-yes__elem-header">
-                        <div class="orders-yes__elem-hide">
-                          <div class="orders-yes__elem-hide-label">
+
+                        <div v-if="isHidden1 === false" class="orders-yes__elem-hide">
+                          <div class="orders-yes__elem-hide-label" @click="isHidden1 = true">
                             Скрыть
                           </div>
                           <div class="orders-yes__elem-hide-icon">
@@ -127,6 +128,14 @@
                                  width="12" height="7" alt="Скрыть">
                           </div>
                         </div>
+
+                        <div v-else-if="isHidden1 === true" class="orders-yes__elem-hide">
+                          <div class="orders-yes__elem-hide-label" @click="isHidden1 = false">Подробнее</div>
+                          <div class="orders-yes__elem-hide-icon">
+                            <img src="../assets/Icons/right-arrow_profile.svg" width="12" height="7" alt="Подробнее">
+                          </div>
+                        </div>
+
                         <div class="orders-yes__elem-repeat">
                           <div class="orders-yes__elem-repeat-label">Повторить</div>
                           <div class="orders-yes__elem-repeat-icon">
@@ -141,7 +150,7 @@
                         </div>
                       </div>
                     </div>
-                    <div v-if="isHidden === false" class="orders-yes__elem-products">
+                    <div v-if="isHidden1 === false" class="orders-yes__elem-products">
                       <div class="orders-yes__elem-products-wrapper">
                         <div class="orders-yes__elem-products-product">
                           <div class="orders-yes__elem-products-name">
@@ -644,6 +653,7 @@ export default {
     return {
       panelIndex: 1,
       isHidden: false,
+      isHidden1: false,
       isOrders: true,
       isWish: false,
       repeatVisibleValue: false,
