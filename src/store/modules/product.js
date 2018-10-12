@@ -30,7 +30,7 @@ const actions = {
     try {
       const response = await apolloProvider.defaultClient.query({
         query: PRODUCT_LIST,
-        variables: { first: Vue.prototype.$PAGINATE_BY, sortBy: data.sortBy, ...data.filtes }, //  after: context.state.endCursor
+        variables: { first: Vue.prototype.$PAGINATE_BY, sortBy: data.sortBy, ...data.filters }, //  after: context.state.endCursor
       });
       context.commit('setProducts', response.data.products);
       context.commit('setEndCursor', response.data.products.pageInfo.endCursor);
