@@ -109,7 +109,7 @@
               <div v-show="isOrders === true" class="orders-yes">
 
                 <div class="orders-yes__elem">
-                  <div class="orders-yes__elem-picture">
+                  <div :class="{ 'orders-yes__elem-picture': true, 'orders-yes__elem-picture--hidden': isHidden1 }">
                     <div class="orders-yes__elem-picture-wrapper">
                       <div class="orders-yes__elem-date">22 / 06 / 2018</div>
                       <div class="orders-yes__elem-time">18:55</div>
@@ -119,8 +119,8 @@
                     <div class="orders-yes__elem-main">
                       <div class="orders-yes__elem-header">
 
-                        <div v-if="isHidden1 === false" class="orders-yes__elem-hide">
-                          <div class="orders-yes__elem-hide-label" @click="isHidden1 = true">
+                        <div v-if="isHidden1 === false" class="orders-yes__elem-hide" @click="isHidden1 = true">
+                          <div class="orders-yes__elem-hide-label">
                             Скрыть
                           </div>
                           <div class="orders-yes__elem-hide-icon">
@@ -129,8 +129,8 @@
                           </div>
                         </div>
 
-                        <div v-else-if="isHidden1 === true" class="orders-yes__elem-hide">
-                          <div class="orders-yes__elem-hide-label" @click="isHidden1 = false">Подробнее</div>
+                        <div v-else class="orders-yes__elem-hide" @click="isHidden1 = false">
+                          <div class="orders-yes__elem-hide-label">Подробнее</div>
                           <div class="orders-yes__elem-hide-icon">
                             <img src="../assets/Icons/right-arrow_profile.svg" width="12" height="7" alt="Подробнее">
                           </div>
@@ -341,7 +341,7 @@
               <div v-show="isOrders === true" class="orders-yesmob">
 
                 <div class="orders-yesmob__elem">
-                  <div class="orders-yesmob__elem-picture">
+                  <div :class="{ 'orders-yesmob__elem-picture': true, 'orders-yesmob__elem-picture--hidden': isHidden1 }">
                     <div class="orders-yesmob__elem-picture-wrapper">
 
                       <div class="orders-yesmob__elem-header">
@@ -357,13 +357,23 @@
                         </div>
                       </div>
                       <div class="orders-yesmob__elem-footer">
-                        <div class="orders-yesmob__elem-hide">
+
+                        <div v-if="isHidden1 === false" class="orders-yesmob__elem-hide" @click="isHidden1 = true">
                           <div class="orders-yesmob__elem-hide-label">Скрыть</div>
                           <div class="orders-yesmob__elem-hide-icon">
                             <img src="../assets/Icons/right-arrow_profile_top.svg"
                                  width="12" height="7" alt="Скрыть">
                           </div>
                         </div>
+
+                        <div v-else class="orders-yesmob__elem-hide" @click="isHidden1 = false">
+                          <div class="orders-yesmob__elem-hide-label">Подробнее</div>
+                          <div class="orders-yesmob__elem-hide-icon">
+                            <img src="../assets/Icons/right-arrow_profile.svg"
+                                 width="12" height="7" alt="Скрыть">
+                          </div>
+                        </div>
+
                         <div class="orders-yesmob__elem-repeat">
                           <div class="orders-yesmob__elem-repeat-label">Повторить</div>
                           <div class="orders-yesmob__elem-repeat-icon">
@@ -375,7 +385,7 @@
                     </div>
                   </div>
 
-                  <div v-if="isHidden === false" class="orders-yesmob__elem-products">
+                  <div v-if="isHidden1 === false" class="orders-yesmob__elem-products">
                     <div class="orders-yesmob__elem-products-wrapper">
                       <div class="orders-yesmob__elem-products-product">
                         <div class="orders-yesmob__elem-products-name">
@@ -961,6 +971,7 @@ export default {
 
     &__elem-hide
       display: flex
+      cursor: pointer
 
     &__elem-hide-icon
       margin-left: 12px
