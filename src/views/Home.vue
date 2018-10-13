@@ -152,10 +152,10 @@
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
-              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onFilterChange()"></el-input>
+              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onSortFilterChange()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
-              <el-select v-model="sortBy" class="sort__select" @change="sortFilterProducts()">
+              <el-select v-model="sortBy" class="sort__select" @change="sortFilterProducts(); onSortFilterChange()">
                 <el-option
                   v-for="item in options"
                   :key="item.value"
@@ -180,7 +180,7 @@
                   </div>
                   <h2 class="filter__mobile-title">Фильтр</h2>
                   <el-collapse-item title="Категория товара" name="1">
-                    <el-checkbox-group v-model="checkList" @change="onFilterChange()">
+                    <el-checkbox-group v-model="checkList" @change="onSortFilterChange()">
                       <ul v-for="category in allCategories" :key="category.node.id"
                           class="filter__list filter__list--category">
                         <li>
@@ -214,7 +214,7 @@
                     v-model="priceRange"
                     :max="1000"
                     range
-                    @change="onFilterChange()">
+                    @change="onSortFilterChange()">
                   </el-slider>
                   <el-button class="filter__button filter__button--submit" @click="sortFilterProducts()">Применить
                   </el-button>
@@ -456,8 +456,13 @@ export default {
       const data = { filters, sortBy: this.sortBy };
       this.loadProducts(data);
     },
-    onFilterChange() {
-      this.$router.push({ name: 'home', query: { 'product-name': this.productName, 'check-list': this.checkList, 'price-range': this.priceRange } });
+    onSortFilterChange() {
+      this.$router.push({
+        name: 'home',
+        query: {
+          'product-name': this.productName, 'check-list': this.checkList, 'price-range': this.priceRange, 'sort-by': this.sortBy,
+        },
+      });
     },
     onRouteWithParams() {
       if (this.$route.query['price-range']) {
@@ -468,6 +473,9 @@ export default {
       }
       if (this.$route.query['check-list']) {
         this.checkList = this.$route.query['check-list'];
+      }
+      if (this.$route.query['sort-by']) {
+        this.sortBy = this.$route.query['sort-by'];
       }
     },
   },
