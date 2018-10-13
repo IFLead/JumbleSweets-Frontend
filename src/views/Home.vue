@@ -152,7 +152,7 @@
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
-              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts()"></el-input>
+              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onFilterChange()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
               <el-select v-model="sortBy" class="sort__select" @change="sortFilterProducts()">
@@ -180,7 +180,7 @@
                   </div>
                   <h2 class="filter__mobile-title">Фильтр</h2>
                   <el-collapse-item title="Категория товара" name="1">
-                    <el-checkbox-group v-model="checkList">
+                    <el-checkbox-group v-model="checkList" @change="onFilterChange()">
                       <ul v-for="category in allCategories" :key="category.node.id"
                           class="filter__list filter__list--category">
                         <li>
@@ -211,9 +211,10 @@
 
                   <h3 class="filter__title filter__title--cost">Цена</h3>
                   <el-slider
-                    v-model="sliderRange"
+                    v-model="priceRange"
                     :max="1000"
-                    range>
+                    range
+                    @change="onFilterChange()">
                   </el-slider>
                   <el-button class="filter__button filter__button--submit" @click="sortFilterProducts()">Применить
                   </el-button>
@@ -417,7 +418,7 @@ export default {
       sortBy: '',
       activeNames: ['1'],
       filterOpen: false,
-      sliderRange: [0, 1000],
+      priceRange: [0, 1000],
       checkList: [],
       productName: '',
     };
@@ -431,6 +432,7 @@ export default {
     this.loadManufacturers({});
     this.loadOccasions({});
     this.loadNews({});
+    this.onRouteWithParams();
   },
   methods: {
     ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers', 'loadNews']),
@@ -448,11 +450,25 @@ export default {
       return getDiscountBase(reduction, preDiscPrice);
     },
     sortFilterProducts() {
-      const priceGte = this.sliderRange[0];
-      const priceLte = this.sliderRange[1];
+      const priceGte = this.priceRange[0];
+      const priceLte = this.priceRange[1];
       const filters = { price_Gte: priceGte, price_Lte: priceLte, name_Icontains: this.productName };
       const data = { filters, sortBy: this.sortBy };
       this.loadProducts(data);
+    },
+    onFilterChange() {
+      this.$router.push({ name: 'home', query: { 'product-name': this.productName, 'check-list': this.checkList, 'price-range': this.priceRange } });
+    },
+    onRouteWithParams() {
+      if (this.$route.query['price-range']) {
+        this.priceRange = this.$route.query['price-range'];
+      }
+      if (this.$route.query['product-name']) {
+        this.productName = this.$route.query['product-name'];
+      }
+      if (this.$route.query['check-list']) {
+        this.checkList = this.$route.query['check-list'];
+      }
     },
   },
 };
