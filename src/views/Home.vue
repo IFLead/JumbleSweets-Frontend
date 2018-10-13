@@ -155,7 +155,7 @@
               <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
-              <el-select v-model="sortBy" placeholder="Сначала новые" class="sort__select" @change="sortFilterProducts()">
+              <el-select v-model="sortBy" class="sort__select" @change="sortFilterProducts()">
                 <el-option
                   v-for="item in options"
                   :key="item.value"
@@ -410,6 +410,9 @@ export default {
       }, {
         value: 'price',
         label: 'Цена',
+      }, {
+        value: '',
+        label: 'Сначала новые',
       }],
       sortBy: '',
       activeNames: ['1'],
