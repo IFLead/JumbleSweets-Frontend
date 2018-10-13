@@ -409,8 +409,14 @@ export default {
         value: 'name',
         label: 'А-Я',
       }, {
+        value: '-name',
+        label: 'Я-А',
+      }, {
         value: 'price',
-        label: 'Цена',
+        label: 'Цена по убыванию',
+      }, {
+        value: '-price',
+        label: 'Цена по возрастанию',
       }, {
         value: '',
         label: 'Сначала новые',
