@@ -55,17 +55,17 @@ import {
   CarouselItem,
   Collapse,
   CollapseItem,
-// Cascader,
-// ColorPicker,
-// Transfer,
-// Container,
-// Header,
-// Aside,
-// Main,
-// Footer,
-// Loading,
-// MessageBox,
-// Message,
+  // Cascader,
+  // ColorPicker,
+  // Transfer,
+  // Container,
+  // Header,
+  // Aside,
+  // Main,
+  // Footer,
+  // Loading,
+  // MessageBox,
+  Message,
 // Notification,
 } from 'element-ui';
 import lang from 'element-ui/lib/locale/lang/ru-RU';
@@ -145,4 +145,4 @@ Vue.use(CollapseItem);
 // Vue.prototype.$confirm = MessageBox.confirm;
 // Vue.prototype.$prompt = MessageBox.prompt;
 // Vue.prototype.$notify = Notification;
-// Vue.prototype.$message = Message;
+Vue.prototype.$message = Message;

@@ -52,6 +52,12 @@ export default {
   .el-dialog
     max-width: 600px
     border-radius: 0px
+    @media (max-width: 1199.98px)
+      width: 70%
+    @media (max-width: 767.98px)
+      width: 80%
+    @media (max-width: 575.98px)
+      width: 95%
 
     &__header
       display: none
@@ -62,6 +68,19 @@ export default {
         left: 75px
         right: 75px
         bottom: 50px
+      @media (max-width: 1199.98px)
+        padding:
+          left: 50px
+          right: 50px
+      @media (max-width: 767.98px)
+        padding:
+          top: 30px
+          left: 30px
+          right: 30px
+          bottom: 30px
+      @media (max-width: 575.98px)
+        padding:
+          bottom: 10px
 
   &__icon
     text-align: center
@@ -74,20 +93,31 @@ export default {
     text-align: center
     margin:
       bottom: 46px
+    @media (max-width: 767.98px)
+      margin:
+        bottom: 25px
 
   &__text
     color: #000000
     text-align: center
     margin:
       bottom: 66px
+    @media (max-width: 767.98px)
+      margin:
+        bottom: 30px
 
   &__buttons
     display: flex
     justify-content: center
+    @media (max-width: 767.98px)
+      flex-wrap: wrap
 
   .repeat-modal__buttons-close
     background: none
     color: #707070
+    @media (max-width: 767.98px)
+      margin:
+        bottom: 20px
     &:hover, &:focus
       background: none
       color: #707070

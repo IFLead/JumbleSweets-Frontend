@@ -452,6 +452,7 @@ export default {
         photoUrl: product.thumbnailUrl,
         name: product.name,
       });
+      this.$message.info('Ура!!');
     },
     getDiscount(reduction, preDiscPrice) {
       return getDiscountBase(reduction, preDiscPrice);
