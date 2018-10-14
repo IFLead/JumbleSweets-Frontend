@@ -180,7 +180,7 @@
                   </div>
                   <h2 class="filter__mobile-title">Фильтр</h2>
                   <el-collapse-item title="Категория товара" name="1">
-                    <el-checkbox-group v-model="checkList" @change="onSortFilterChange()">
+                    <el-checkbox-group v-model="categoryList" @change="onSortFilterChange()">
                       <ul v-for="category in allCategories" :key="category.node.id"
                           class="filter__list filter__list--category">
                         <li>
@@ -218,7 +218,7 @@
                   </el-slider>
                   <el-button class="filter__button filter__button--submit" @click="sortFilterProducts()">Применить
                   </el-button>
-                  <el-button class="filter__button filter__button--refresh">Сбросить</el-button>
+                  <el-button class="filter__button filter__button--refresh" @click="cleatFilters()">Сбросить</el-button>
                 </div>
               </el-collapse>
             </b-col>
@@ -425,7 +425,7 @@ export default {
       activeNames: ['1'],
       filterOpen: false,
       priceRange: [0, 1000],
-      checkList: [],
+      categoryList: [],
       productName: '',
     };
   },
@@ -439,6 +439,7 @@ export default {
     this.loadOccasions({});
     this.loadNews({});
     this.onRouteWithParams();
+    this.sortFilterProducts();
   },
   methods: {
     ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers', 'loadNews']),
@@ -470,23 +471,34 @@ export default {
       this.$router.push({
         name: 'home',
         query: {
-          'product-name': this.productName, 'check-list': this.checkList, 'price-range': this.priceRange, 'sort-by': this.sortBy,
+          q: this.productName, categories: this.categoryList, price: this.priceRange, sort: this.sortBy,
         },
       });
     },
     onRouteWithParams() {
-      if (this.$route.query['price-range']) {
-        this.priceRange = this.$route.query['price-range'];
+      if (this.$route.query.price) {
+        this.priceRange = this.$route.query.price;
       }
-      if (this.$route.query['product-name']) {
-        this.productName = this.$route.query['product-name'];
+      if (this.$route.query.q) {
+        this.productName = this.$route.query.q;
       }
-      if (this.$route.query['check-list']) {
-        this.checkList = this.$route.query['check-list'];
+      if (this.$route.query.categories) {
+        if (Array.isArray(this.$route.query.categories)) {
+          this.categoryList = this.$route.query.categories;
+        } else {
+          this.categoryList = [this.$route.query.categories];
+        }
       }
-      if (this.$route.query['sort-by']) {
-        this.sortBy = this.$route.query['sort-by'];
+      if (this.$route.query.sort) {
+        this.sortBy = this.$route.query.sort;
       }
+    },
+    cleatFilters() {
+      this.priceRange = [0, 1000];
+      this.categoryList = [];
+      this.sortBy = '';
+      this.productName = '';
+      this.sortFilterProducts();
     },
   },
 };

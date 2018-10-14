@@ -67,7 +67,7 @@
                 <div class="element__contrlos">
                   <div class="element__col">
                     <template>
-                      <el-input-number v-model="record.quantity" :min="1" :max="10" @change="handleChange"></el-input-number>
+                      <el-input-number v-model="record.quantity" :min="1" :max="10" @change="quantityChange()"></el-input-number>
                     </template>
                   </div>
                   <p class="element__price">{{ record.price }} грн.</p>
@@ -533,7 +533,7 @@
   </div>
 </template>
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapMutations, mapActions } from 'vuex';
 
 export default {
   data() {
@@ -552,9 +552,13 @@ export default {
   },
   methods: {
     ...mapMutations(['clearCart', 'removeProductFromCart']),
+    ...mapActions(['saveCart']),
     modalClearCart() {
       this.clearCart();
       this.cleanModal = false;
+    },
+    quantityChange() {
+      this.saveCart();
     },
   },
 };

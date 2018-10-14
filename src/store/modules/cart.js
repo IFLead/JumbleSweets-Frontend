@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
+import { sumBy } from 'lodash/math';
+import { fromLocalStorage, toLocalStorage } from '../../utils/storageFuncs';
+
 const state = {
-  cartItems: [],
+  cartItems: fromLocalStorage('cartItems', []),
 };
 
 // getters
@@ -13,7 +16,7 @@ const getters = {
     });
     return price;
   },
-  getCartAmount: state => state.cartItems.length,
+  getCartAmount: state => sumBy(state.cartItems, 'quantity'),
 };
 
 // mutations
@@ -34,6 +37,7 @@ const mutations = {
     } else {
       record.quantity += quantity || 1;
     }
+    toLocalStorage(state.cartItems, 'cartItems');
   },
   updateCartVariant(state, { id, quantity }) {
     const record = state.cartItems.find(x => x.id === id);
@@ -43,14 +47,19 @@ const mutations = {
   },
   clearCart(state) {
     state.cartItems = [];
+    toLocalStorage(state.cartItems, 'cartItems');
   },
   removeProductFromCart(state, id) {
     state.cartItems = state.cartItems.filter(x => x.id !== id);
+    toLocalStorage(state.cartItems, 'cartItems');
   },
 };
 
 // actions
 const actions = {
+  saveCart() {
+    toLocalStorage(state.cartItems, 'cartItems');
+  },
 };
 
 export default {

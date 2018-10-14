@@ -54,7 +54,7 @@
               </div>
             </div>
             <div class="authorization__actives">
-              <el-button class="authorization__actives-button">Войти</el-button>
+              <el-button class="authorization__actives-button" @click="authorize()">Войти</el-button>
               <div class="authorization__actives-check">
                 <el-checkbox v-model="checked">Запомнить меня</el-checkbox>
               </div>
@@ -153,6 +153,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 export default {
   name: 'Auth',
@@ -160,18 +161,29 @@ export default {
   },
   data() {
     return {
-      input_mail: '',
-      input_pass_auto: '',
-      input_pass_reg: '',
-      input_repass: '',
+      inputMail: '',
+      inputPass: '',
+      inputRepass: '',
       checked: false,
       isUser: false,
-      visible_pass_auto: 'password',
-      visible_pass_reg: 'password',
-      visible_repass: 'password',
+      visiblePass: 'password',
+      visibleRepass: 'password',
+      rememberMe: false,
     };
   },
+  computed: {
+    ...mapGetters(['getToken']),
+  },
+  methods: {
+    ...mapActions(['tokenCreate']),
+    ...mapMutations(['setRememberMe']),
+    authorize() {
+      this.setRememberMe(this.rememberMe);
+      this.tokenCreate({ email: this.inputMail, password: this.inputPass });
+    },
+  },
 };
+
 
 </script>
 

@@ -1,0 +1,34 @@
+#import "./AddressFragment.gql"
+
+query OrderList($first: Int, $after: String, $last: Int, $before: String) {
+    orders(before: $before, after: $after, first: $first, last: $last) {
+      edges {
+        node {
+          __typename
+          billingAddress {
+            ...AddressFragment
+          }
+          created
+          id
+          number
+          paymentStatus
+          status
+          total {
+            __typename
+            gross {
+              __typename
+              amount
+              currency
+            }
+          }
+          userEmail
+        }
+      }
+      pageInfo {
+        hasPreviousPage
+        hasNextPage
+        startCursor
+        endCursor
+      }
+    }
+  }

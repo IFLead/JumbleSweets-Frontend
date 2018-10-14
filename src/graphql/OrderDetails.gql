@@ -1,0 +1,13 @@
+#import "./OrderDetailsFragment.gql"
+
+query OrderDetails($id: ID!) {
+    order(id: $id) {
+      ...OrderDetailsFragment
+    }
+    shop {
+      countries {
+        code
+        country
+      }
+    }
+  }

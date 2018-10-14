@@ -1,0 +1,87 @@
+#import "./OrderEventFragment.gql"
+#import "./AddressFragment.gql"
+#import "./OrderLineFragment.gql"
+
+fragment OrderDetailsFragment on Order {
+    id
+    billingAddress {
+      ...AddressFragment
+    }
+    created
+    events {
+      ...OrderEventFragment
+    }
+    fulfillments {
+      id
+      lines {
+        edges {
+          node {
+            id
+            quantity
+            orderLine {
+              ...OrderLineFragment
+            }
+          }
+        }
+      }
+      fulfillmentOrder
+      status
+      trackingNumber
+    }
+    lines {
+      ...OrderLineFragment
+    }
+    number
+    paymentStatus
+    shippingAddress {
+      ...AddressFragment
+    }
+    shippingMethod {
+      id
+    }
+    shippingMethodName
+    shippingPrice {
+      gross {
+        amount
+        currency
+      }
+    }
+    status
+    subtotal {
+      gross {
+        amount
+        currency
+      }
+    }
+    total {
+      gross {
+        amount
+        currency
+      }
+      tax {
+        amount
+        currency
+      }
+    }
+    totalAuthorized {
+      amount
+      currency
+    }
+    totalCaptured {
+      amount
+      currency
+    }
+    user {
+      id
+      email
+    }
+    userEmail
+    availableShippingMethods {
+      id
+      name
+      price {
+        amount
+        currency
+      }
+    }
+  }
