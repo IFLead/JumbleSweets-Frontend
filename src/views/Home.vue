@@ -451,7 +451,10 @@ export default {
         photoUrl: product.thumbnailUrl,
         name: product.name,
       });
-      this.$message.info('Ура!!');
+      this.$message({
+        message: 'Ура!!!',
+        center: true,
+      });
     },
     getDiscount(reduction, preDiscPrice) {
       return getDiscountBase(reduction, preDiscPrice);
@@ -490,6 +493,7 @@ export default {
 </script>
 
 <style lang="sass">
+
   .home
     .description
       &__wrapper
