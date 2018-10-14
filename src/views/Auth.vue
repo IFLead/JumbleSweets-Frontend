@@ -161,13 +161,15 @@ export default {
   },
   data() {
     return {
-      inputMail: '',
-      inputPass: '',
-      inputRepass: '',
+      input_mail: '',
+      input_pass_auto: '',
+      input_pass_reg: '',
+      input_repass: '',
       checked: false,
       isUser: false,
-      visiblePass: 'password',
-      visibleRepass: 'password',
+      visible_pass_auto: 'password',
+      visible_pass_reg: 'password',
+      visible_repass: 'password',
       rememberMe: false,
     };
   },
