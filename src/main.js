@@ -11,6 +11,7 @@ import './plugins/element';
 import './styles/element-variables.scss';
 import { apolloProvider } from './vue-apollo';
 
+
 Vue.config.productionTip = process.env.NODE_ENV === 'production';
 Vue.prototype.$PAGINATE_BY = 2;
 
