@@ -1,0 +1,13 @@
+fragment OrderEventFragment on OrderEvent {
+    id
+    amount
+    date
+    email
+    emailType
+    message
+    quantity
+    type
+    user {
+      email
+    }
+  }

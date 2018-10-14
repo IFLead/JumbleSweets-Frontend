@@ -1,0 +1,18 @@
+fragment OrderLineFragment on OrderLine {
+    id
+    productName
+    productSku
+    quantity
+    quantityFulfilled
+    unitPrice {
+      gross {
+        amount
+        currency
+      }
+      net {
+        amount
+        currency
+      }
+    }
+    thumbnailUrl
+  }
