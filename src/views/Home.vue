@@ -463,8 +463,9 @@ export default {
     sortFilterProducts() {
       const priceGte = this.priceRange[0];
       const priceLte = this.priceRange[1];
-      const filters = { price_Gte: priceGte, price_Lte: priceLte, name_Icontains: this.productName };
+      const filters = { price_Gte: priceGte, price_Lte: priceLte, query: this.productName };
       const data = { filters, sortBy: this.sortBy };
+      console.log(data);
       this.loadProducts(data);
     },
     onSortFilterChange() {

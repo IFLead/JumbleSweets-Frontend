@@ -214,4 +214,6 @@ export default {
       margin:
         top: 25px
         bottom: 10px
+  .el-button.is-disabled
+    background-image: url("../assets/Icons/phone-receiver.svg")
 </style>
