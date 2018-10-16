@@ -6,7 +6,7 @@
           <b-col>
             <div class="main-header__content">
               <router-link to="/" class="main-header__logo"></router-link>
-              <a href="#" class="main-header__title" @click="menuOpen = true">Меню</a>
+              <a href="#" class="main-header__title" @click="openMenu">Меню</a>
               <div :class="{show: menuOpen}" class="main-header__menu menu">
                 <ul class="menu__list">
                   <li class="menu__cart">
@@ -14,7 +14,7 @@
                       <router-link to="/cart"></router-link>
                     </el-badge>
                   </li>
-                  <li class="menu__close" @click="menuOpen = false"></li>
+                  <li class="menu__close" @click="closeMenu"></li>
                   <li class="menu__element"><router-link to="/">Главная</router-link></li>
                   <li class="menu__element"><router-link to="/about">О нас</router-link></li>
                   <li class="menu__element"><router-link to="/contacts">Контакты</router-link></li>
@@ -83,6 +83,18 @@ export default {
   },
   computed: {
     ...mapGetters(['getCartAmount']),
+  },
+  methods: {
+    openMenu() {
+      this.menuOpen = true;
+      const el = document.querySelector('body');
+      el.classList.add('no-scroll');
+    },
+    closeMenu() {
+      this.menuOpen = false;
+      const el = document.querySelector('body');
+      el.classList.remove('no-scroll');
+    },
   },
 };
 </script>
