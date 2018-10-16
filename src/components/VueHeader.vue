@@ -43,8 +43,8 @@
                         </svg>
                     </span>Мы в Instagram</router-link>
                     <ul class="mobile__contacts">
-                      <li class="mobile__element">+38(050)-666-66-66</li>
-                      <li class="mobile__element">help@jumble-sweets.com.ua</li>
+                      <li class="mobile__element"><a href="#">+38(050)-666-66-66</a></li>
+                      <li class="mobile__element"><a href="#">help@jumble-sweets.com.ua</a></li>
                       <li class="mobile__element">г. Харьков, Героев труда 7, ТРЦ Караван</li>
                     </ul>
                   </li>
@@ -192,6 +192,7 @@ export default {
       &__cart
         display: none
         .el-badge__content
+          width: 20px
           right: 3px
         @media (max-width: 991.98px)
           display: inline-block
@@ -247,6 +248,15 @@ export default {
         line-height: 20px
         margin:
           bottom: 18px
+        a
+          transition: all 0.2s ease
+          line-height: 20px
+          color: #000000
+          font-weight: 400
+          font-size: 15px
+          &:hover, &:focus
+            color: #000000
+            text-decoration: underline
       &__login
         display: inline-block
         line-height: 20px
@@ -300,10 +310,10 @@ export default {
 
           margin:
             right: 48px
-          .el-badge
             display: flex
             align-items: center
           .el-badge__content
+            width: 20px
             right: 3px
           @media (max-width: 1199.98px)
             margin:

@@ -49,6 +49,7 @@ $--checkbox-input-border: solid #c4c4c4 2px;
 $--input-placeholder-color: #c4c4c4;
 $--input-height: 28px;
 $--input-hover-border: #ffffff;
+$--input-color: #000000;
 
 //message
 $--border-radius-base: 0px;
@@ -57,6 +58,14 @@ $--message-background-color: #E70068;
 $--message-padding: 15px 20px 15px 20px;
 $--message-info-color: #ffffff;
 $--message-min-width: 320px;
+
+//badge
+$--badge-radius: 50%;
+$--badge-padding: 5px;
+$--badge-size: 20px;
+
+//pagination
+$--pagination-border-radius: 0px;
 
 @import "sweet-theme/index";
 

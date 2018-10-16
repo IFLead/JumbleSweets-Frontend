@@ -338,7 +338,6 @@ export default {
         bottom: 23px
       .el-input__inner
         font-size: 15px
-        color: #DCDCDC
         padding:
           left: 5px
           bottom: 10px
