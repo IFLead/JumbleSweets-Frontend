@@ -1463,7 +1463,7 @@ export default {
             border-bottom: 1px solid #c4c4c4
             font-size: 15px
             line-height: 20px
-            color: #DCDCDC
+
             &::placeholder
               font-size: 15px
               line-height: 20px

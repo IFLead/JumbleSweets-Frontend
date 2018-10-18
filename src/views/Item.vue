@@ -7,7 +7,6 @@
     <div v-if="error" class="error">
       {{ error }}
     </div>
-
     <div v-if="product" class="Item">
 
       <section class="characteristics">
@@ -528,7 +527,7 @@ export default {
       left: 0
       width: 140px
       height: 70px
-      z-index: 100000
+      z-index: 100
       background-color: #e70068
       @media (max-width: 575.98px)
         width: 100px
@@ -1028,7 +1027,6 @@ export default {
     .el-input-number
       width: 152px
     .el-input__inner
-      color: #000000
       font-size: 20px
       line-height: 30px
       border: 1px solid #f8f8f8
