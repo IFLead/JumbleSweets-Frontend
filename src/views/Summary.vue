@@ -26,7 +26,9 @@
           <div class="pay__wrapper">
             <div class="pay__content">
               <h2 class="pay__title">Платите безопасно</h2>
-              <p class="pay__description">Мы побеспокоились, чтобы ваши платежи проходили быстро и без всяких сюрпризов. Поэтому оплата производится на стороннем сервисе, который использует надежные алгоритмы шифрования данных и находится в доверии у крупных банков, таких как Приват и Ощад.</p>
+              <p class="pay__description">Мы побеспокоились, чтобы ваши платежи проходили быстро и без всяких сюрпризов.
+              Поэтому оплата производится на стороннем сервисе, который использует надежные алгоритмы шифрования
+              данных и находится в доверии у крупных банков, таких как Приват и Ощад.</p>
               <a href="#" class="pay__more">Подробнее о сервисе оплаты</a>
             </div>
           </div>
@@ -40,7 +42,8 @@
               <div class="user-data__content">
                 <ul class="user-data__list">
                   <li class="user-data__element user-data__element--name">ФИО: <span>Иванов Иван Иванович</span></li>
-                  <li class="user-data__element user-data__element--phone">Номер телефона: <span>+38 (050)-666-66-66</span></li>
+                  <li class="user-data__element user-data__element--phone">Номер телефона:
+                  <span>+38 (050)-666-66-66</span></li>
                 </ul>
               </div>
             </b-col>
@@ -48,8 +51,10 @@
             <b-col md="6" lg="4" class="user-data__wrapper">
               <div class="user-data__content">
                 <ul class="user-data__list">
-                  <li class="user-data__element user-data__element--address">Адрес доставки: <span>г. Харьков, ул. Героев труда, д. 38</span></li>
-                  <li class="user-data__element user-data__element--time">Примерное время доставки: <span>3 дня</span></li>
+                  <li class="user-data__element user-data__element--address">Адрес доставки: <span>г. Харьков, ул. Героев труда, д. 38</span>
+                  </li>
+                  <li class="user-data__element user-data__element--time">Примерное время доставки: <span>3 дня</span>
+                  </li>
                 </ul>
               </div>
             </b-col>
@@ -58,8 +63,10 @@
               <div class="user-data__content">
                 <ul class="user-data__list">
                   <li class="user-data__element user-data__element--price">Сумма заказа: <span>6750 грн.</span></li>
-                  <li class="user-data__element user-data__element--promo">Промокод: <span>Использован (10% скидка)</span></li>
-                  <li class="user-data__element user-data__element--delivery">Стоимость доставки: <span>200</span> грн.</li>
+                  <li class="user-data__element user-data__element--promo">Промокод:
+                  <span>Использован (10% скидка)</span></li>
+                  <li class="user-data__element user-data__element--delivery">Стоимость доставки: <span>200</span> грн.
+                  </li>
                 </ul>
               </div>
             </b-col>
@@ -106,7 +113,7 @@
       <b-container>
         <b-row>
           <b-col>
-            <div v-if="checkModals" class="inside__content" >
+            <div v-if="checkModals" class="inside__content">
               <b-row>
                 <b-col cols="12" class="inside__top-navigation top-navigation">
                   <div class="top-navigation__wrapper">
@@ -459,7 +466,9 @@
                 <b-col lg="5" class="inner-text">
                   <div class="inner-text__content">
                     <h2 class="inner-text__title">Текст открытки</h2>
-                    <p class="inner-text__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quaerat blanditiis odio ipsum ipsa, eum magni, expedita mollitia consequatur laudantium placeat alias doloribus quisquam! Similique praesentium enim ducimus! Unde, nihil.</p>
+                    <p class="inner-text__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Praesentium quaerat blanditiis odio ipsum ipsa, eum magni, expedita mollitia consequatur
+                    laudantium placeat alias doloribus quisquam! Similique praesentium enim ducimus! Unde, nihil.</p>
                   </div>
 
                 </b-col>
@@ -482,9 +491,7 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'Summary',
-  components: {
-
-  },
+  components: {},
   data() {
     return {
       insideModal: false,
@@ -498,281 +505,281 @@ export default {
 </script>
 
 <style lang="sass">
-.Summary
-  .back
-    &__link
-      display: inline-block
-      font-weight: 700
-      margin:
-        top: 37px
-        bottom: 50px
-      transition: all 0.2s ease
-      color: #000000
-      @media (max-width: 767.98px)
+  .Summary
+    .back
+      &__link
+        display: inline-block
+        font-weight: 700
         margin:
-          bottom: 30px
-      @media (max-width: 575.98px)
-        font-size: 14px
-      &:hover, &:focus
-        color: #e70068
-        text-decoration: none
-        .icon
-          fill: #e70068
-    span
-      display: inline-block
-    &__icon
-      margin:
-        left: 0
-      display: block
-      transform: rotate(-180deg)
-      .icon
+          top: 37px
+          bottom: 50px
         transition: all 0.2s ease
-        width: 12px
-        height: 12px
-        fill: #000000
-        margin:
-          left: 12px
-          top: -6px
-        @media (max-width: 575.98px)
+        color: #000000
+        @media (max-width: 767.98px)
           margin:
-            left: 5px
-  .pay
-    margin:
-      bottom: 46px
-    &__wrapper
-      position: relative
-      background-image: url(../assets/christian-dubovan-686398-unsplash.jpg)
-      background-repeat: no-repeat
-      background-size: cover
-      background-position: center center
-      &::before
-        content: ''
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        position: absolute
-        z-index: 100
-        background-color: rgba(0, 0, 0, 0.65)
-
-    &__content
-      position: relative
-      z-index: 999
-      color: #ffffff
-      padding:
-        top: 44px
-        left: 70px
-        bottom: 41px
-        right: 30px
-      @media (max-width: 991.98px)
-        padding:
-          left: 30px
-      @media (max-width: 575.98px)
-        padding:
-          left: 15px
-          right: 15px
-    &__title
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
-      margin:
-        bottom: 41px
-      @media (max-width: 575.98px)
-        font-size: 25px
-        line-height: 35px
-        margin:
-          bottom: 30px
-    &__description
-      width: 950px
-      line-height: 25px
-      margin:
-        bottom: 25px
-      @media (max-width: 1199.98px)
-        width: 800px
-      @media (max-width: 991.98px)
-        width: 100%
-    &__more
-      transition: all 0.2s ease
-      display: inline-block
-      padding:
-        bottom: 8px
-      color: #ffffff
-      border-bottom: 1px dashed #fffa89
-      &:hover, &:focus
-        color: #fffa89
-        text-decoration: none
-
-  .user-data
-    margin:
-      bottom: 40px
-    @media (max-width: 991.98px)
-      margin:
-        bottom: 20px
-    @media (max-width: 575.98px)
-      margin:
-        bottom: 10px
-    &__title
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
-      margin:
-        bottom: 51px
-      @media (max-width: 575.98px)
-        margin:
-          bottom: 30px
-    &__content
-      background-color: #f8f8f8
-      padding:
-        top: 28px
-        left: 30px
-        right: 20px
-        bottom: 54px
-      height: 100%
-      @media (max-width: 1199.98px)
-        padding:
-          left: 15px
-          right: 15px
-    &__list
-      list-style: none
-      padding:
-        left: 0
-    &__element
-      margin:
-        bottom: 18px
-    &__wrapper
-      @media (max-width: 991.98px)
-        margin:
-          bottom: 30px
-      @media (max-width: 767.98px)
-        margin:
-          bottom: 20px
-
-  .finaly
-    display: flex
-    align-items: center
-    margin:
-      left: auto
-      bottom: 76px
-    @media (max-width: 575.98px)
-      flex-direction: column
-      align-items: flex-start
-      margin:
-        bottom: 40px
-    &__price
-      margin:
-        bottom: 0
-        left: auto
-      line-height: 27px
-      font-size: 20px
-      font-weight: 700
-      @media (max-width: 575.98px)
-        margin:
-          left: 0
+            bottom: 30px
+        @media (max-width: 575.98px)
+          font-size: 14px
+        &:hover, &:focus
+          color: #e70068
+          text-decoration: none
+          .icon
+            fill: #e70068
       span
         display: inline-block
-        margin:
-          left: 12px
-    &__button
-      margin:
-        left: 22px
-        right: 34px
-      padding:
-        right: 28px
-      @media (max-width: 767.98px)
-        margin:
-          right: 0
-      @media (max-width: 575.98px)
+      &__icon
         margin:
           left: 0
-          top: 15px
-      &--icon
-        display: inline-block
+        display: block
+        transform: rotate(-180deg)
         .icon
-          fill: #ffffff
+          transition: all 0.2s ease
           width: 12px
           height: 12px
+          fill: #000000
           margin:
-            top: -2px
-            left: 10px
-
-  .additional
-    padding:
-      bottom: 20px
-    &__title
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
+            left: 12px
+            top: -6px
+          @media (max-width: 575.98px)
+            margin:
+              left: 5px
+    .pay
       margin:
         bottom: 46px
+      &__wrapper
+        position: relative
+        background-image: url(../assets/christian-dubovan-686398-unsplash.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center center
+        &::before
+          content: ''
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          position: absolute
+          z-index: 100
+          background-color: rgba(0, 0, 0, 0.65)
+
+      &__content
+        position: relative
+        z-index: 999
+        color: #ffffff
+        padding:
+          top: 44px
+          left: 70px
+          bottom: 41px
+          right: 30px
+        @media (max-width: 991.98px)
+          padding:
+            left: 30px
+        @media (max-width: 575.98px)
+          padding:
+            left: 15px
+            right: 15px
+      &__title
+        font-size: 30px
+        line-height: 40px
+        font-weight: 700
+        margin:
+          bottom: 41px
+        @media (max-width: 575.98px)
+          font-size: 25px
+          line-height: 35px
+          margin:
+            bottom: 30px
+      &__description
+        width: 950px
+        line-height: 25px
+        margin:
+          bottom: 25px
+        @media (max-width: 1199.98px)
+          width: 800px
+        @media (max-width: 991.98px)
+          width: 100%
+      &__more
+        transition: all 0.2s ease
+        display: inline-block
+        padding:
+          bottom: 8px
+        color: #ffffff
+        border-bottom: 1px dashed #fffa89
+        &:hover, &:focus
+          color: #fffa89
+          text-decoration: none
+
+    .user-data
+      margin:
+        bottom: 40px
+      @media (max-width: 991.98px)
+        margin:
+          bottom: 20px
       @media (max-width: 575.98px)
         margin:
-          bottom: 30px
-    &__photo
-      //width: 264px
-      //height: 160px
-      max-width: 190px
-      background-color: #f8f8f8
-      //@media (max-width: 1199.98px)
-        width: 220px
-      //@media (max-width: 991.98px)
-        width: 350px
-        height: 200px
-      //@media (max-width: 767.98px)
-        width: 264px
-        height: 160px
-      @media (max-width: 575.98px)
-        width: 100%
-    &__element
+          bottom: 10px
+      &__title
+        font-size: 30px
+        line-height: 40px
+        font-weight: 700
+        margin:
+          bottom: 51px
+        @media (max-width: 575.98px)
+          margin:
+            bottom: 30px
+      &__content
+        background-color: #f8f8f8
+        padding:
+          top: 28px
+          left: 30px
+          right: 20px
+          bottom: 54px
+        height: 100%
+        @media (max-width: 1199.98px)
+          padding:
+            left: 15px
+            right: 15px
+      &__list
+        list-style: none
+        padding:
+          left: 0
+      &__element
+        margin:
+          bottom: 18px
+      &__wrapper
+        @media (max-width: 991.98px)
+          margin:
+            bottom: 30px
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 20px
+
+    .finaly
       display: flex
+      align-items: center
       margin:
-        bottom: 30px
+        left: auto
+        bottom: 76px
       @media (max-width: 575.98px)
-        flex-wrap: wrap
-        justify-content: center
-      &--jumble
+        flex-direction: column
+        align-items: flex-start
+        margin:
+          bottom: 40px
+      &__price
+        margin:
+          bottom: 0
+          left: auto
+        line-height: 27px
+        font-size: 20px
+        font-weight: 700
+        @media (max-width: 575.98px)
+          margin:
+            left: 0
+        span
+          display: inline-block
+          margin:
+            left: 12px
+      &__button
+        margin:
+          left: 22px
+          right: 34px
+        padding:
+          right: 28px
+        @media (max-width: 767.98px)
+          margin:
+            right: 0
+        @media (max-width: 575.98px)
+          margin:
+            left: 0
+            top: 15px
+        &--icon
+          display: inline-block
+          .icon
+            fill: #ffffff
+            width: 12px
+            height: 12px
+            margin:
+              top: -2px
+              left: 10px
+
+    .additional
+      padding:
+        bottom: 20px
+      &__title
+        font-size: 30px
+        line-height: 40px
+        font-weight: 700
+        margin:
+          bottom: 46px
+        @media (max-width: 575.98px)
+          margin:
+            bottom: 30px
+      &__photo
+        //width: 264px
+        //height: 160px
+        max-width: 190px
+        background-color: #f8f8f8
+        //@media (max-width: 1199.98px)
+          width: 220px
+        //@media (max-width: 991.98px)
+          width: 350px
+          height: 200px
+        //@media (max-width: 767.98px)
+          width: 264px
+          height: 160px
+        @media (max-width: 575.98px)
+          width: 100%
+      &__element
+        display: flex
+        margin:
+          bottom: 30px
+        @media (max-width: 575.98px)
+          flex-wrap: wrap
+          justify-content: center
+        &--jumble
         .additional__name
           margin:
             bottom: 13px
-        .additional__link
-          a
-            display: inline-block
-            color: #000000
-            padding:
-              bottom: 5px
-            border-bottom: 1px dashed #e70068
-            margin:
-              bottom: 26px
-            @media (max-width: 575.98px)
+          .additional__link
+            a
+              display: inline-block
+              color: #000000
+              padding:
+                bottom: 5px
+              border-bottom: 1px dashed #e70068
               margin:
-                bottom: 20px
-            &:hover, &:focus
-              color: #e70068
-              text-decoration: none
+                bottom: 26px
+              @media (max-width: 575.98px)
+                margin:
+                  bottom: 20px
+              &:hover, &:focus
+                color: #e70068
+                text-decoration: none
 
-      &--mystery
+        &--mystery
         .additional__name
           margin:
             bottom: 18px
-        .additional__random
-          color: rgba(0, 0, 0, 0.5)
-          padding:
-            left: 30px
-          margin:
-            bottom: 26px
-          background-image: url("../assets/Icons/gift-box.svg")
-          background-repeat: no-repeat
-          background-size: 20px auto
-          background-position: 0 1px
-          @media (max-width: 1199.98px)
-            font-size: 13px
-            background-position: 0 0
-          @media (max-width: 991.98px)
-            font-size: 15px
-            background-position: 0 1px
-          @media (max-width: 575.98px)
+          .additional__random
+            color: rgba(0, 0, 0, 0.5)
+            padding:
+              left: 30px
             margin:
-              bottom: 20px
-      &--jumble, &--mystery
+              bottom: 26px
+            background-image: url("../assets/Icons/gift-box.svg")
+            background-repeat: no-repeat
+            background-size: 20px auto
+            background-position: 0 1px
+            @media (max-width: 1199.98px)
+              font-size: 13px
+              background-position: 0 0
+            @media (max-width: 991.98px)
+              font-size: 15px
+              background-position: 0 1px
+            @media (max-width: 575.98px)
+              margin:
+                bottom: 20px
+        &--jumble, &--mystery
         .additional__photo
           background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
           background-repeat: no-repeat
@@ -780,344 +787,343 @@ export default {
           background-position: center 0
           @media (max-width: 575.98px)
             background-size: cover
-    &__price
-      font-size: 30px
-      line-height: 40px
-      @media (max-width: 575.98px)
-        text-align: center
-    &__information
-      flex-grow: 1
-      padding:
-        top: 6px
-        left: 30px
-      list-style: none
-      @media (max-width: 1199.98px)
-        padding:
-          left: 15px
-      @media (max-width: 575.98px)
-        margin:
-          top: 15px
-        padding:
-          top: 0
-          left: 0
-    &__name
-      margin:
-        bottom: 60px
-      @media (max-width: 575.98px)
-        text-align: center
-      @media (max-width: 575.98px)
-        margin:
-          bottom: 20px
-    &__photo
-      display: flex
-      align-items: center
-      justify-content: center
-
-  .inside, .decor
-    overflow: auto
-    background-color: rgba(58, 58, 58, 0.8)
-    .el-dialog__header
-      display: none
-    .el-dialog
-      width: 1200px
-      @media (max-width: 1199.98px)
-        width: 990px
-      @media (max-width: 991.98px)
-        width: 750px
-      @media (max-width: 767.98px)
-        width: 570px
-      @media (max-width: 575.98px)
-        width: 100%
-    .container
-      background-color: #fff
-      margin:
-        top: 115px
-        bottom: 115px
-      @media (max-width: 575.98px)
-        margin:
-          top: 50px
-          bottom: 50px
-        width: calc(100% - 30px) !important
-    &__content
-      padding:
-        top: 46px
-        bottom: 30px
-    &__button
-      display: flex
-      justify-content: center
-    .element
-      margin:
-        bottom: 30px
-      @media (max-width: 575.98px)
-        margin:
-          bottom: 20px
-      &__wrapper
-        display: block
-        position: relative
-        z-index: 10
-        background-image: url("../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png")
-        background-repeat: no-repeat
-        background-size: 190px auto
-        background-position: center center
-        color: #ffffff
-        &::before
-          content: ''
-          position: absolute
-          top: 0
-          left: 0
-          bottom: 0
-          right: 0
-          background-color: rgba(0, 0, 0, 0.8)
-        &:hover, &:focus
-          text-decoration: none
-          .element__content
-            opacity: 0
-          .element__icon
-            opacity: 1
-      &__content
-        display: block
-        transition: all 0.2s ease
-        opacity: 1
-        padding:
-          left: 20px
-          top: 18px
-          bottom: 20px
-          right: 18px
-        position: relative
-        z-index: 100
-        color: #ffffff
-      &__title
-        font-size: 15px
-        line-height: 20px
-        font-weight: 400
-        margin:
-          bottom: 6px
       &__price
         font-size: 30px
         line-height: 40px
-        font-weight: 700
-        margin:
-          bottom: 27px
-      &__place
-        opacity: 0.5
-        font-size: 14px
-        line-height: 19px
-        margin:
-          bottom: 0
-      &__icon
-        transition: all 0.2s ease
-        position: absolute
-        opacity: 0
-        z-index: 100
-        width: 100%
-        text-align: center
-        height: 20px
-        top: 0
-        right: 0
-        bottom: 0
-        left: 0
-        margin:
-          top: auto
-          bottom: auto
-          left: auto
-          right: auto
-        background-repeat: no-repeat
-        background-size: contain
-        span
-          display: inline-block
-          width: 12px
-          height: 12px
-          margin:
-            left: 10px
-          .icon
-            fill: #ffffff
-
-    .top-navigation
-      display: flex
-      justify-content: space-between
-      align-items: flex-start
-      margin:
-        bottom: 51px
-      @media (max-width: 767.98px)
-        flex-direction: column
-      &__subtitle
-        font-weight: 700
-        font-size: 20px
-        line-height: 27px
-        color: #e6e6e6
-        margin:
-          bottom: 12px
-      &__title
-        font-weight: 700
-        font-size: 30px
-        line-height: 40px
-        margin:
-          bottom: 0
-      &__buttons
-        padding:
-          left: 5px
-          top: 5px
-          right: 5px
-          bottom: 5px
-        border: 1px solid #f8f8f8
-        .el-button.active
-          background-color: #e70068
-          color: #ffffff
-        .el-button
-          background-color: #ffffff
-          color: #000000
-          padding:
-            top: 9px
-            bottom: 11px
-          span
-            display: inline-block
-            line-height: 20px
-        @media (max-width: 767.98px)
-          margin:
-            top: 20px
-
-      &__link
-        margin:
-          left: 50px
-          right: 30px
-        transition: all 0.2s ease
-        color: #000000
         @media (max-width: 575.98px)
-          margin:
-            left: 30px
-        &:hover, &:focus
-          text-decoration: none
-          color: #e70068
-
-  .decor
-    &__content
-      padding:
-        left: 0px
-        right: 0px
-      @media (max-width: 575.98px)
-        padding:
-          left: 0
-          right: 0
-    .postcard
-      margin:
-        bottom: 214px
-      @media (max-width: 991.98px)
-        margin:
-          bottom: 50px
-      &__content
-        display: flex
-        align-items: stretch
-        @media (max-width: 575.98px)
-          flex-direction: column-reverse
-      &__background
+          text-align: center
+      &__information
         flex-grow: 1
-        min-height: 205px
-        background-image: url("../assets/white.jpg")
-        background-repeat: no-repeat
-        background-size: cover
-      &__control
-        display: flex
-        flex-direction: column
         padding:
-          top: 110px
-        width: 294px
-        background-color: #f8f8f8
+          top: 6px
+          left: 30px
+        list-style: none
+        @media (max-width: 1199.98px)
+          padding:
+            left: 15px
+        @media (max-width: 575.98px)
+          margin:
+            top: 15px
+          padding:
+            top: 0
+            left: 0
+      &__name
+        margin:
+          bottom: 60px
+        @media (max-width: 575.98px)
+          text-align: center
+        @media (max-width: 575.98px)
+          margin:
+            bottom: 20px
+      &__photo
+        display: flex
+        align-items: center
+        justify-content: center
+
+    .inside, .decor
+      overflow: auto
+      background-color: rgba(58, 58, 58, 0.8)
+      .el-dialog__header
+        display: none
+      .el-dialog
+        width: 1200px
+        @media (max-width: 1199.98px)
+          width: 990px
+        @media (max-width: 991.98px)
+          width: 750px
+        @media (max-width: 767.98px)
+          width: 570px
         @media (max-width: 575.98px)
           width: 100%
-          padding:
-            top: 50px
-      &__title
+      .container
+        background-color: #fff
         margin:
-          bottom: 9px
-        font-size: 20px
-        line-height: 30px
-        font-weight: 700
-        text-align: center
+          top: 115px
+          bottom: 115px
+        @media (max-width: 575.98px)
+          margin:
+            top: 50px
+            bottom: 50px
+          width: calc(100% - 30px) !important
+      &__content
         padding:
-          left: 20px
-          right: 20px
+          top: 46px
+          bottom: 30px
+      &__button
+        display: flex
+        justify-content: center
+      .element
+        margin:
+          bottom: 30px
+        @media (max-width: 575.98px)
+          margin:
+            bottom: 20px
+        &__wrapper
+          display: block
+          position: relative
+          z-index: 10
+          background-image: url("../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png")
+          background-repeat: no-repeat
+          background-size: 190px auto
+          background-position: center center
+          color: #ffffff
+          &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            background-color: rgba(0, 0, 0, 0.8)
+          &:hover, &:focus
+            text-decoration: none
+            .element__content
+              opacity: 0
+            .element__icon
+              opacity: 1
+        &__content
+          display: block
+          transition: all 0.2s ease
+          opacity: 1
+          padding:
+            left: 20px
+            top: 18px
+            bottom: 20px
+            right: 18px
+          position: relative
+          z-index: 100
+          color: #ffffff
+        &__title
+          font-size: 15px
+          line-height: 20px
+          font-weight: 400
+          margin:
+            bottom: 6px
+        &__price
+          font-size: 30px
+          line-height: 40px
+          font-weight: 700
+          margin:
+            bottom: 27px
+        &__place
+          opacity: 0.5
+          font-size: 14px
+          line-height: 19px
+          margin:
+            bottom: 0
+        &__icon
+          transition: all 0.2s ease
+          position: absolute
+          opacity: 0
+          z-index: 100
+          width: 100%
+          text-align: center
+          height: 20px
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+          margin:
+            top: auto
+            bottom: auto
+            left: auto
+            right: auto
+          background-repeat: no-repeat
+          background-size: contain
+          span
+            display: inline-block
+            width: 12px
+            height: 12px
+            margin:
+              left: 10px
+            .icon
+              fill: #ffffff
+
+      .top-navigation
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        margin:
+          bottom: 51px
+        @media (max-width: 767.98px)
+          flex-direction: column
+        &__subtitle
+          font-weight: 700
+          font-size: 20px
+          line-height: 27px
+          color: #e6e6e6
+          margin:
+            bottom: 12px
+        &__title
+          font-weight: 700
+          font-size: 30px
+          line-height: 40px
+          margin:
+            bottom: 0
+        &__buttons
+          padding:
+            left: 5px
+            top: 5px
+            right: 5px
+            bottom: 5px
+          border: 1px solid #f8f8f8
+          .el-button.active
+            background-color: #e70068
+            color: #ffffff
+          .el-button
+            background-color: #ffffff
+            color: #000000
+            padding:
+              top: 9px
+              bottom: 11px
+            span
+              display: inline-block
+              line-height: 20px
+          @media (max-width: 767.98px)
+            margin:
+              top: 20px
+
+        &__link
+          margin:
+            left: 50px
+            right: 30px
+          transition: all 0.2s ease
+          color: #000000
+          @media (max-width: 575.98px)
+            margin:
+              left: 30px
+          &:hover, &:focus
+            text-decoration: none
+            color: #e70068
+
+    .decor
+      &__content
+        padding:
+          left: 0px
+          right: 0px
         @media (max-width: 575.98px)
           padding:
-            left: 10px
-            right: 10px
-      &__price
-        text-align: center
-        padding:
-          left: 50px
-          right: 50px
+            left: 0
+            right: 0
+      .postcard
         margin:
-          bottom: 64px
-      &__button
-        width: 100%
-        background-color: rgba(231, 0, 104, 0.5)
-        p
+          bottom: 214px
+        @media (max-width: 991.98px)
           margin:
-            bottom: 0
-      &__icon
-        display: inline-block
-        width: 18px
-        margin:
-          left: 13px
-        #box
-          fill: #ffffff
-      &__link
-        display: block
-        width: 280px
-        margin:
-          top: 13px
-          left: auto
-          bottom: 50px
-        color: #000000
-        transition: all 0.2s ease
-        &:hover, &:focus
-          text-decoration: none
-          color: #e70068
-          .choose__link--icon
-            fill: #e70068
-        &--icon
-          transition: all 0.2s ease
-        p
+            bottom: 50px
+        &__content
+          display: flex
+          align-items: stretch
+          @media (max-width: 575.98px)
+            flex-direction: column-reverse
+        &__background
+          flex-grow: 1
+          min-height: 205px
+          background-image: url("../assets/white.jpg")
+          background-repeat: no-repeat
+          background-size: cover
+        &__control
+          display: flex
+          flex-direction: column
+          padding:
+            top: 110px
+          width: 294px
+          background-color: #f8f8f8
+          @media (max-width: 575.98px)
+            width: 100%
+            padding:
+              top: 50px
+        &__title
           margin:
-            bottom: 0
-        span
-          fill: #000000
+            bottom: 9px
+          font-size: 20px
+          line-height: 30px
+          font-weight: 700
+          text-align: center
+          padding:
+            left: 20px
+            right: 20px
+          @media (max-width: 575.98px)
+            padding:
+              left: 10px
+              right: 10px
+        &__price
+          text-align: center
+          padding:
+            left: 50px
+            right: 50px
+          margin:
+            bottom: 64px
+        &__button
+          width: 100%
+          background-color: rgba(231, 0, 104, 0.5)
+          p
+            margin:
+              bottom: 0
+        &__icon
           display: inline-block
-          width: 12px
+          width: 18px
           margin:
-            left: 3px
+            left: 13px
+          #box
+            fill: #ffffff
+        &__link
+          display: block
+          width: 280px
+          margin:
+            top: 13px
+            left: auto
+            bottom: 50px
+          color: #000000
+          transition: all 0.2s ease
+          &:hover, &:focus
+            text-decoration: none
+            color: #e70068
+            .choose__link--icon
+              fill: #e70068
+          &--icon
+            transition: all 0.2s ease
+          p
+            margin:
+              bottom: 0
+          span
+            fill: #000000
+            display: inline-block
+            width: 12px
+            margin:
+              left: 3px
 
-    .inner-text
-      &__title
-        font-size: 30px
-        line-height: 40px
-        font-weight: 700
-        width: 282px
-        margin:
-          bottom: 21px
-        padding:
-          right: 54px
-        background-image: url(../assets/Icons/letter.svg)
-        background-repeat: no-repeat
-        background-size: auto 35px
-        background-position: right 3px
-      &__description
-        line-height: 25px
-      @media (max-width: 991.98px)
-        margin:
-          bottom: 50px
+      .inner-text
+        &__title
+          font-size: 30px
+          line-height: 40px
+          font-weight: 700
+          width: 282px
+          margin:
+            bottom: 21px
+          padding:
+            right: 54px
+          background-image: url(../assets/Icons/letter.svg)
+          background-repeat: no-repeat
+          background-size: auto 35px
+          background-position: right 3px
+        &__description
+          line-height: 25px
+        @media (max-width: 991.98px)
+          margin:
+            bottom: 50px
 
-
-  .inside::-webkit-scrollbar, .decor::-webkit-scrollbar
-    width: 4px
-  .inside::-webkit-scrollbar-button, .decor::-webkit-scrollbar-button
-    background-color: #666
-  .inside::-webkit-scrollbar-track, .decor::-webkit-scrollbar-track
-    background-color: none
-  .inside::-webkit-scrollbar-thumb, .decor::-webkit-scrollbar-thumb
-    height: 100px
-    background-color: #000000
-    border-radius: 5px
-  .inside::-webkit-scrollbar-button, .decor::-webkit-scrollbar-button
+    .inside::-webkit-scrollbar, .decor::-webkit-scrollbar
+      width: 4px
+    .inside::-webkit-scrollbar-button, .decor::-webkit-scrollbar-button
+      background-color: #666
+    .inside::-webkit-scrollbar-track, .decor::-webkit-scrollbar-track
+      background-color: none
+    .inside::-webkit-scrollbar-thumb, .decor::-webkit-scrollbar-thumb
+      height: 100px
+      background-color: #000000
+      border-radius: 5px
+    .inside::-webkit-scrollbar-button, .decor::-webkit-scrollbar-button
       background-color: #F8F8F8
 
 

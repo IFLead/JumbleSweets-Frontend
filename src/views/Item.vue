@@ -464,7 +464,7 @@ export default {
   },
   watch: {
     $route:
-        'fetchData',
+      'fetchData',
   },
   created() {
     this.fetchData();
@@ -506,6 +506,7 @@ export default {
     return {
       title: this.seo.title,
     };
+
     // // all titles will be injected into this template
     // titleTemplate: '%s | My Awesome Webapp',
   },

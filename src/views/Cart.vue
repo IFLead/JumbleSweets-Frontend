@@ -7,7 +7,8 @@
             <div class="basket__wrapper">
               <div class="basket__content">
                 <h2 class="basket__title">Корзина покупок</h2>
-                <p class="basket__description">Товары, отложенные в корзину, хранятся 30 дней с момента добавления. В течение этого времени вы сможете зайти в свой аккаунт, выбрать товар и оформить заказ.</p>
+                <p class="basket__description">Товары, отложенные в корзину, хранятся 30 дней с момента добавления. В
+                течение этого времени вы сможете зайти в свой аккаунт, выбрать товар и оформить заказ.</p>
               </div>
             </div>
           </b-col>
@@ -25,7 +26,8 @@
           <b-col cols="12" class="purchases__control control">
             <div class="control__content">
               <h2 class="control__title">Моя корзина</h2>
-              <a href="#" class="control__link control__link--like" @click="favouriteModalOpened = true">Добавить всё в список желания
+              <a href="#" class="control__link control__link--like" @click="favouriteModalOpened = true">Добавить всё в
+              список желания
                 <span>
                   <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                        viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
@@ -67,7 +69,8 @@
                 <div class="element__contrlos">
                   <div class="element__col">
                     <template>
-                      <el-input-number v-model="record.quantity" :min="1" :max="10" @change="quantityChange()"></el-input-number>
+                      <el-input-number v-model="record.quantity" :min="1" :max="10"
+                                       @change="quantityChange()"></el-input-number>
                     </template>
                   </div>
                   <p class="element__price">{{ record.price }} грн.</p>
@@ -79,7 +82,8 @@
 
           <b-col cols="12" class="purchases__total total">
             <div class="total__content">
-              <a href="#" class="total__promo activated"><span class="total__promo--first">У меня есть промокод на скидку</span> <span class="total__promo--activated" @click="saleModal = true">Скидка 10% с промокода</span></a>
+              <a href="#" class="total__promo activated"><span class="total__promo--first">У меня есть промокод на скидку</span>
+              <span class="total__promo--activated" @click="saleModal = true">Скидка 10% с промокода</span></a>
               <p class="total__price">Сумма: <span>{{ totalPrice }} грн.</span></p>
               <router-link to="/summary">
                 <el-button class="total__button" @click="decorModal = true">Перейти к оформлению
@@ -139,11 +143,12 @@
         </div>
       </el-dialog>
 
-      <el-dialog :visible.sync="saleModal" class="modals__sale sale" div >
+      <el-dialog :visible.sync="saleModal" class="modals__sale sale" div>
         <div class="sale__content">
           <div class="sale__close"></div>
           <h3 class="sale__title">Промокод на скидку</h3>
-          <p class="sale__description">Для получения нужно ввести промокод в специальное поле и нажать "Использовать". После этого стоимость товара пересчитается со скидкой.</p>
+          <p class="sale__description">Для получения нужно ввести промокод в специальное поле и нажать "Использовать".
+          После этого стоимость товара пересчитается со скидкой.</p>
           <div class="sale__wrapper">
             <el-input class="sale__promo" placeholder="Введите промокод"></el-input>
           </div>
@@ -161,7 +166,7 @@
       <b-container>
         <b-row>
           <b-col>
-            <div v-if="checkModals" class="inside__content" >
+            <div v-if="checkModals" class="inside__content">
               <b-row>
                 <b-col cols="12" class="inside__top-navigation top-navigation">
                   <div class="top-navigation__wrapper">
@@ -514,7 +519,9 @@
                 <b-col lg="5" class="inner-text">
                   <div class="inner-text__content">
                     <h2 class="inner-text__title">Текст открытки</h2>
-                    <p class="inner-text__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quaerat blanditiis odio ipsum ipsa, eum magni, expedita mollitia consequatur laudantium placeat alias doloribus quisquam! Similique praesentium enim ducimus! Unde, nihil.</p>
+                    <p class="inner-text__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Praesentium quaerat blanditiis odio ipsum ipsa, eum magni, expedita mollitia consequatur
+                    laudantium placeat alias doloribus quisquam! Similique praesentium enim ducimus! Unde, nihil.</p>
                   </div>
 
                 </b-col>
@@ -565,1045 +572,1044 @@ export default {
 </script>
 
 <style lang="sass">
-.Cart
-  .basket
-    position: relative
-    &__wrapper
+  .Cart
+    .basket
       position: relative
-      background-image: url("../assets/laura-marques-647991-unsplash.jpg")
-      background-repeat: no-repeat
-      background-size: cover
-      background-position: 0 center
-      &::after
-        content: ''
-        position: absolute
-        z-index: 10
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-        background-color: rgba(0, 0, 0, 0.6)
-    &__content
-      position: relative
-      z-index: 100
-      color: #ffffff
-      padding:
-        left: 70px
-        top: 44px
-        bottom: 125px
-      @media (max-width: 991.98px)
-        padding:
-          left: 50px
-          bottom: 100px
-      @media (max-width: 767.98px)
-        padding:
-          left: 30px
-          right: 20px
-          bottom: 70px
-    &__title
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
-      margin:
-        bottom: 41px
-      width: 400px
-      @media (max-width: 991.98px)
-        margin:
-          bottom: 30px
-      @media (max-width: 767.98px)
-        width: 100%
-    &__description
-      width: 950px
-      line-height: 25px
-      margin:
-        bottom: 0
-      @media (max-width: 1199.98px)
-        width: 700px
-      @media (max-width: 991.98px)
-        width: 550px
-      @media (max-width: 767.98px)
-        width: 100%
-
-  .purchases
-    .control
-      margin:
-        bottom: 41px
+      &__wrapper
+        position: relative
+        background-image: url("../assets/laura-marques-647991-unsplash.jpg")
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: 0 center
+        &::after
+          content: ''
+          position: absolute
+          z-index: 10
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          background-color: rgba(0, 0, 0, 0.6)
       &__content
+        position: relative
+        z-index: 100
+        color: #ffffff
         padding:
-          top: 46px
-        display: flex
-        align-items: center
+          left: 70px
+          top: 44px
+          bottom: 125px
         @media (max-width: 991.98px)
-          justify-content: space-between
+          padding:
+            left: 50px
+            bottom: 100px
         @media (max-width: 767.98px)
-          flex-direction: column
-          align-items: flex-start
+          padding:
+            left: 30px
+            right: 20px
+            bottom: 70px
       &__title
         font-size: 30px
         line-height: 40px
         font-weight: 700
         margin:
-          bottom: 0
-          right: 98px
+          bottom: 41px
+        width: 400px
         @media (max-width: 991.98px)
           margin:
-            right: 0
+            bottom: 30px
         @media (max-width: 767.98px)
+          width: 100%
+      &__description
+        width: 950px
+        line-height: 25px
+        margin:
+          bottom: 0
+        @media (max-width: 1199.98px)
+          width: 700px
+        @media (max-width: 991.98px)
+          width: 550px
+        @media (max-width: 767.98px)
+          width: 100%
+
+    .purchases
+      .control
+        margin:
+          bottom: 41px
+        &__content
+          padding:
+            top: 46px
+          display: flex
+          align-items: center
+          @media (max-width: 991.98px)
+            justify-content: space-between
+          @media (max-width: 767.98px)
+            flex-direction: column
+            align-items: flex-start
+        &__title
+          font-size: 30px
+          line-height: 40px
+          font-weight: 700
           margin:
-            bottom: 10px
-      &__link
-        transition: all 0.2s ease
-        color: #000000
-        opacity: 0.5
-        &:hover, &:focus
-          opacity: 1
-          text-decoration: none
-        &--like
-          margin:
-            right: 133px
+            bottom: 0
+            right: 98px
           @media (max-width: 991.98px)
             margin:
               right: 0
           @media (max-width: 767.98px)
             margin:
-              bottom: 8px
-          span
-            display: inline-block
-            width: 21.74px
-            height: 20px
+              bottom: 10px
+        &__link
+          transition: all 0.2s ease
+          color: #000000
+          opacity: 0.5
+          &:hover, &:focus
+            opacity: 1
+            text-decoration: none
+          &--like
             margin:
-              left: 17px
-            .icon
-              fill: #e70068
-        &--delete
-          span
-            display: inline-block
-            width: 20px
-            height: 20px
-            margin:
-              left: 15px
-            .icon
+              right: 133px
+            @media (max-width: 991.98px)
               margin:
-                top: -2px
-              fill: #e70068
-  .element
-    margin:
-      bottom: 30px
-    &__link
-      background-color: #f8f8f8
-      width: 264px
-      /*height: 160px*/
-      display: flex
-      @media (max-width: 767.98px)
-        width: 350px
-        height: 200px
-      @media (max-width: 575.98px)
-        width: 100%
-      &:hover, &:focus
-        text-decoration: none
-    &__information
-      display: flex
-      flex-grow: 1
-      justify-content: space-between
-      @media (max-width: 991.98px)
-        flex-wrap: wrap
-    &__photo
-      max-width: 190px
-      display: inline-block
-      margin:
-        top: auto
-        bottom: auto
-        left: auto
-        right: auto
-    &--jumble
-      .element__photo
-        width: 264px
-        height: 100%
-        background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
-        background-repeat: no-repeat
-        background-size: 380px auto
-        background-position: center 0
-        @media (max-width: 991.98px)
-          width: 243px
-          background-size: 350px auto
-        @media (max-width: 767.98px)
-          width: 350px
-          height: 200px
-        @media (max-width: 575.98px)
-          width: 100%
-          background-size: cover
-    &--jumble-mystery
-      .element__photo
-        width: 264px
-        height: 100%
-        background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
-        background-repeat: no-repeat
-        background-size: 380px auto
-        background-position: center 0
-        @media (max-width: 991.98px)
-          width: 243px
-          background-size: 350px auto
-        @media (max-width: 767.98px)
-          width: 350px
-          height: 200px
-        @media (max-width: 575.98px)
-          width: 100%
-          background-size: cover
-    &__look
-      transition: all 0.2s ease
-      display: inline-block
-      color: #000000
-      padding:
-        bottom: 5px
-      border-bottom: 1px dashed #e70068
-      margin:
-        top: 13px
-        left: 31px
-      &:hover, &:focus
-        text-decoration: none
-        color: #e70068
-      @media (max-width: 1199.98px)
-        margin:
-          left: 20px
-      @media (max-width: 767.98px)
-        margin:
-          left: 0
-    &__name--wrapper
-      display: flex
-      flex-direction: column
-    &__random
-      color: rgba(0, 0, 0, 0.5)
-      padding:
-        left: 32px
-      margin:
-        top: 20px
-        bottom: 0
-        left: 31px
-      background-image: url("../assets/Icons/gift-box.svg")
-      background-repeat: no-repeat
-      background-size: contain
-      background-position: 0 0
-      @media (max-width: 1199.98px)
-        margin:
-          left: 20px
-      @media (max-width: 767.98px)
-        margin:
-          left: 0
-    &__content
-      display: flex
-      align-items: flex-start
-      @media (max-width: 767.98px)
-        flex-wrap: wrap
-    &__name
-      transition: all 0.2s ease
-      color: #000000
-      line-height: 20px
-      margin:
-        top: 6px
-        left: 31px
-        right: auto
-      &:hover, &:focus
-        text-decoration: none
-        color: #e70068
-      @media (max-width: 1199.98px)
-        margin:
-          left: 20px
-      @media (max-width: 991.98px)
-        margin:
-          right: 0
-      @media (max-width: 767.98px)
-        margin:
-          top: 20px
-          left: 0
-          right: 100px
-    &__col
-      margin:
-        right: 45px
-      @media (max-width: 991.98px)
-        margin:
-          right: 0
-      .el-input-number
-        width: 152px
-      .el-input__inner
-        color: #000000
-        font-size: 20px
-        line-height: 30px
-        border: 1px solid #f8f8f8
-        width: 152px
-        padding:
-          top: 9px
-          bottom: 14px
-          left: 20px
-          right: 20px
-        height: 50px
-      .el-input-number__decrease
-        top: 10px
-        left: 20px
-        background-color: transparent
-        border: none
-      .el-input-number__increase
-        top: 10px
-        right: 20px
-        background-color: transparent
-        border: none
-    &__price
-      font-size: 18px
-      line-height: 24px
-      margin:
-        right: 74px
-        bottom: 0
-      @media (max-width: 991.98px)
-        margin:
-          right: 0
-    &__delete
-      transition: all 0.2s ease
-      color: #000000
-      line-height: 20px
-      &:hover, &:focus
-        text-decoration: none
-        color: #e70068
-    &__contrlos
-      margin:
-        top: 9px
-        right: 55px
-      display: flex
-      align-items: center
-      @media (max-width: 1199.98px)
-        margin:
-          right: 0
-      @media (max-width: 991.98px)
-        width: 350px
-        justify-content: space-between
-        margin:
-          top: 20px
-          left: 31px
-      @media (max-width: 767.98px)
-        margin:
-          top: 15px
-          left: 0
-      @media (max-width: 575.98px)
-        width: 100%
-  .total
-    &__content
-      padding:
-        top: 70px
-        bottom: 50px
-      display: flex
-      align-items: center
-      @media (max-width: 991.98px)
-        justify-content: space-between
-      @media (max-width: 767.98px)
-        flex-wrap: wrap
-      @media (max-width: 575.98px)
-        flex-direction: column
-        align-items: flex-start
-        padding:
-          top: 40px
-    &__button
-      &--icon
-        display: inline-block
-        width: 12px
-        height: 12px
-        margin:
-          left: 5px
-        .icon
-          margin:
-            top: -2px
-          fill: #ffffff
-      @media (max-width: 767.98px)
-        margin:
-          top: 20px
-    &__promo
-      transition: all 0.2s ease
-      display: inline-block
-      padding:
-        bottom: 8.5px
-      color: #000000
-      border-bottom: 1px dashed #e70068
-      margin:
-        left: 24px
-        right: auto
-      &--activated
-        display: none
-      @media (max-width: 991.98px)
-        margin:
-          right: 0
-          left: 0
-      @media (max-width: 575.98px)
-        margin:
-          bottom: 20px
-      &:hover, &:focus
-        color: #e70068
-        text-decoration: none
-    &__promo.activated
-      border: none
-      color: #e70068
-      .total__promo--first
-        display: none
-      .total__promo--activated
-        display: inline-block
-    &__price
-      font-weight: 700
-      font-size: 20px
-      line-height: 27px
-      margin:
-        bottom: 0
-        right: 40px
-      span
-        display: inline-block
-        margin:
-          left: 12px
-      @media (max-width: 991.98px)
-        margin:
-          right: 0
-    &__button
-      margin:
-        right: 34px
-      @media (max-width: 991.98px)
-        margin:
-          right: 0
-
-  .alerts
-    &__element
-      display: none
-      position: fixed
-      z-index: 10000
-      top: 0
-      left: 0
-      right: 0
-      margin:
-        left: auto
-        right: auto
-      width: 700px
-      background-color: #e70068
-      color: #ffffff
-      @media (max-width: 767.98px)
-        width: calc(100% - 60px)
-        margin:
-          left: 30px
-          right: 30px
-      &--basket.show
-        display: block
-      &--products.show
-        display: block
-      p
-        text-align: center
-        line-height: 20px
-        padding:
-          top: 14px
-          bottom: 16px
-          left: 10px
-          right: 10px
-        margin:
-          bottom: 0
-
-  .modals
-    display: flex
-    align-items: center
-    .clean
-      .el-dialog__header
-        display: none
-      .el-dialog
-        width: 600px
-        padding: 0
-        @media (max-width: 767.98px)
-          width: 500px
-        @media (max-width: 575.98px)
-          width: 100%
-      &__content
-        width: 600px
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        height: 400px
-        padding:
-          top: 35px
-          bottom: 50px
-        margin:
-          top: auto
-          bottom: auto
-          left: auto
-          right: auto
-        background-color: #fff
-        @media (max-width: 767.98px)
-          width: 500px
-        @media (max-width: 575.98px)
-          width: calc(100% - 60px)
-          padding:
-            left: 10px
-            right: 10px
-      &__title
-        font-size: 30px
-        line-height: 40px
-        font-weight: 700
-        text-align: center
-        margin:
-          bottom: 50px
-        @media (max-width: 575.98px)
-          font-size: 25px
-          line-height: 35px
-          margin:
-            bottom: 40px
-      &__description
-        text-align: center
-        margin:
-          bottom: 90px
-        @media (max-width: 575.98px)
-          margin:
-            bottom: 50px
-      &__link
-        transition: all 0.2s ease
-        color: #000000
-        &:hover, &:focus
-          text-decoration: none
-          color: #e70068
-      &__button
-        margin:
-          right: 50px
-        @media (max-width: 575.98px)
-          margin:
-            right: 0
-            bottom: 15px
-      &__buttons
-        display: flex
-        justify-content: center
-        align-items: center
-        margin:
-          left: auto
-          right: auto
-        @media (max-width: 575.98px)
-          flex-direction: column
-      &__icon
-        width: 50px
-        height: 50px
-        background-image: url("../assets/Icons/rubbish-bin-delete-button.svg")
-        background-repeat: no-repeat
-        background-size: cover
-        margin:
-          left: auto
-          right: auto
-          bottom: 16px
-
-    .favourite
-      .el-dialog__header
-        display: none
-      .el-dialog
-        width: 600px
-        @media (max-width: 767.98px)
-          width: 500px
-        @media (max-width: 575.98px)
-          width: 100%
-      &__content
-        width: 600px
-        height: 400px
-        padding:
-          top: 35px
-          bottom: 50px
-        margin:
-          top: auto
-          bottom: auto
-          left: auto
-          right: auto
-        background-color: #fff
-        @media (max-width: 767.98px)
-          width: 500px
-        @media (max-width: 575.98px)
-          width: calc(100% - 60px)
-          padding:
-            left: 10px
-            right: 10px
-      &__title
-        font-size: 30px
-        line-height: 40px
-        font-weight: 700
-        text-align: center
-        margin:
-          bottom: 50px
-        @media (max-width: 575.98px)
-          font-size: 25px
-          line-height: 35px
-          margin:
-            bottom: 40px
-      &__description
-        width: 450px
-        text-align: center
-        margin:
-          left: auto
-          right: auto
-          bottom: 60px
-        @media (max-width: 575.98px)
-          width: 100%
-          margin:
-            bottom: 40px
-      &__link
-        transition: all 0.2s ease
-        color: #000000
-        &:hover, &:focus
-          text-decoration: none
-          color: #e70068
-      &__button
-        margin:
-          right: 50px
-        @media (max-width: 575.98px)
-          margin:
-            right: 0
-            bottom: 15px
-      &__buttons
-        display: flex
-        justify-content: center
-        align-items: center
-        margin:
-          left: auto
-          right: auto
-        @media (max-width: 575.98px)
-          flex-direction: column
-      &__icon
-        width: 55px
-        height: 55px
-        background-image: url("../assets/Icons/favorite-heart-button.svg")
-        background-repeat: no-repeat
-        background-size: cover
-        margin:
-          left: auto
-          right: auto
-          bottom: 16px
-
-    .sale
-      .el-dialog__header
-        display: none
-      .el-dialog
-        width: 600px
-        padding: 0
-        @media (max-width: 767.98px)
-          width: 550px
-        @media (max-width: 575.98px)
-          width: 100%
-      &__content
-        width: 600px
-        height: 600px
-        padding:
-          top: 106px
-          bottom: 50px
-        margin:
-          top: auto
-          bottom: auto
-          left: auto
-          right: auto
-        background-color: #fff
-        @media (max-width: 767.98px)
-          width: 550px
-          height: 550px
-        @media (max-width: 575.98px)
-          width: calc(100% - 30px)
-          height: 450px
-          padding:
-            top: 40px
-            left: 10px
-            right: 10px
-      &__close
-        width: 15px
-        height: 15px
-        cursor: pointer
-        position: absolute
-        top: 54px
-        right: 54px
-        background-image: url(../assets/Icons/cancel.svg)
-        background-size: cover
-        background-repeat: no-repeat
-        @media (max-width: 575.98px)
-          top: 20px
-          right: 20px
-      &__title
-        font-size: 30px
-        line-height: 40px
-        font-weight: 700
-        text-align: center
-        margin:
-          bottom: 19px
-        @media (max-width: 575.98px)
-          font-size: 25px
-          line-height: 35px
-          margin:
-            bottom: 15px
-      &__wrapper
-        padding:
-          left: 33px
-          right: 33px
-      &__promo.el-input
-        width: 100%
-        .el-input__inner
-          padding:
-            left: 5px
-            bottom: 10px
-          border: none
-          border-bottom: 1px solid #c4c4c4
-          font-size: 15px
-          line-height: 20px
-          color: #DCDCDC
-          &::placeholder
-            font-size: 15px
-            line-height: 20px
-            color: #DCDCDC
-      &__description
-        width: 470px
-        text-align: center
-        margin:
-          left: auto
-          right: auto
-          bottom: 40px
-        @media (max-width: 575.98px)
-          width: 100%
-
-      &__alert
-        transition: all 0.2s ease
-        line-height: 20px
-        color: #e70068
-        margin:
-          bottom: 0
-        opacity: 0
-        margin:
-          left: 33px
-          top: 43px
-        @media (max-width: 575.98px)
-          margin:
-            top: 30px
-      &__alert.show
-        opacity: 1
-      &__link
-        transition: all 0.2s ease
-        color: #000000
-        margin:
-          left: 47px
-          right: 44px
-        &:hover, &:focus
-          text-decoration: none
-          color: #e70068
-        @media (max-width: 575.98px)
-          margin:
-            right: 10px
-            left: 30px
-      &__buttons
-        display: flex
-        justify-content: flex-end
-        align-items: center
-        margin:
-          top: 124px
-        @media (max-width: 767.98px)
-          margin:
-            top: 90px
-        @media (max-width: 575.98px)
-          justify-content: center
-          margin:
-            top: 50px
-
-  .inside, .decor
-    overflow: auto
-    background-color: rgba(58, 58, 58, 0.8)
-    .el-dialog__header
-      display: none
-    .el-dialog
-      width: 1200px
-      @media (max-width: 1199.98px)
-        width: 990px
-      @media (max-width: 991.98px)
-        width: 750px
-      @media (max-width: 767.98px)
-        width: 570px
-      @media (max-width: 575.98px)
-        width: 100%
-    .container
-      background-color: #fff
-      margin:
-        top: 115px
-        bottom: 115px
-      @media (max-width: 575.98px)
-        margin:
-          top: 50px
-          bottom: 50px
-        width: calc(100% - 30px) !important
-    &__content
-      padding:
-        top: 46px
-        bottom: 30px
-    &__button
-      display: flex
-      justify-content: center
+                right: 0
+            @media (max-width: 767.98px)
+              margin:
+                bottom: 8px
+            span
+              display: inline-block
+              width: 21.74px
+              height: 20px
+              margin:
+                left: 17px
+              .icon
+                fill: #e70068
+          &--delete
+            span
+              display: inline-block
+              width: 20px
+              height: 20px
+              margin:
+                left: 15px
+              .icon
+                margin:
+                  top: -2px
+                fill: #e70068
     .element
       margin:
         bottom: 30px
-      @media (max-width: 575.98px)
-        margin:
-          bottom: 20px
-      &__wrapper
-        display: block
-        position: relative
-        z-index: 10
-        background-image: url("../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png")
-        background-repeat: no-repeat
-        background-size: 190px auto
-        background-position: center center
-        color: #ffffff
-        &::before
-          content: ''
-          position: absolute
-          top: 0
-          left: 0
-          bottom: 0
-          right: 0
-          background-color: rgba(0, 0, 0, 0.8)
+      &__link
+        background-color: #f8f8f8
+        width: 264px
+        /*height: 160px*/
+        display: flex
+        @media (max-width: 767.98px)
+          width: 350px
+          height: 200px
+        @media (max-width: 575.98px)
+          width: 100%
         &:hover, &:focus
           text-decoration: none
-          .element__content
-            opacity: 0
-          .element__icon
-            opacity: 1
-      &__content
-        display: block
-        transition: all 0.2s ease
-        opacity: 1
-        padding:
-          left: 20px
-          top: 18px
-          bottom: 20px
-          right: 18px
-        position: relative
-        z-index: 100
-        color: #ffffff
-      &__title
-        font-size: 15px
-        line-height: 20px
-        font-weight: 400
-        margin:
-          bottom: 6px
-      &__price
-        font-size: 30px
-        line-height: 40px
-        font-weight: 700
-        margin:
-          bottom: 27px
-      &__place
-        opacity: 0.5
-        font-size: 14px
-        line-height: 19px
-        margin:
-          bottom: 0
-      &__icon
-        transition: all 0.2s ease
-        position: absolute
-        opacity: 0
-        z-index: 100
-        width: 100%
-        text-align: center
-        height: 20px
-        top: 0
-        right: 0
-        bottom: 0
-        left: 0
+      &__information
+        display: flex
+        flex-grow: 1
+        justify-content: space-between
+        @media (max-width: 991.98px)
+          flex-wrap: wrap
+      &__photo
+        max-width: 190px
+        display: inline-block
         margin:
           top: auto
           bottom: auto
           left: auto
           right: auto
+      &--jumble
+      .element__photo
+        width: 264px
+        height: 100%
+        background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
+        background-repeat: no-repeat
+        background-size: 380px auto
+        background-position: center 0
+        @media (max-width: 991.98px)
+          width: 243px
+          background-size: 350px auto
+        @media (max-width: 767.98px)
+          width: 350px
+          height: 200px
+        @media (max-width: 575.98px)
+          width: 100%
+          background-size: cover
+      &--jumble-mystery
+      .element__photo
+        width: 264px
+        height: 100%
+        background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
+        background-repeat: no-repeat
+        background-size: 380px auto
+        background-position: center 0
+        @media (max-width: 991.98px)
+          width: 243px
+          background-size: 350px auto
+        @media (max-width: 767.98px)
+          width: 350px
+          height: 200px
+        @media (max-width: 575.98px)
+          width: 100%
+          background-size: cover
+      &__look
+        transition: all 0.2s ease
+        display: inline-block
+        color: #000000
+        padding:
+          bottom: 5px
+        border-bottom: 1px dashed #e70068
+        margin:
+          top: 13px
+          left: 31px
+        &:hover, &:focus
+          text-decoration: none
+          color: #e70068
+        @media (max-width: 1199.98px)
+          margin:
+            left: 20px
+        @media (max-width: 767.98px)
+          margin:
+            left: 0
+      &__name--wrapper
+        display: flex
+        flex-direction: column
+      &__random
+        color: rgba(0, 0, 0, 0.5)
+        padding:
+          left: 32px
+        margin:
+          top: 20px
+          bottom: 0
+          left: 31px
+        background-image: url("../assets/Icons/gift-box.svg")
         background-repeat: no-repeat
         background-size: contain
-        span
+        background-position: 0 0
+        @media (max-width: 1199.98px)
+          margin:
+            left: 20px
+        @media (max-width: 767.98px)
+          margin:
+            left: 0
+      &__content
+        display: flex
+        align-items: flex-start
+        @media (max-width: 767.98px)
+          flex-wrap: wrap
+      &__name
+        transition: all 0.2s ease
+        color: #000000
+        line-height: 20px
+        margin:
+          top: 6px
+          left: 31px
+          right: auto
+        &:hover, &:focus
+          text-decoration: none
+          color: #e70068
+        @media (max-width: 1199.98px)
+          margin:
+            left: 20px
+        @media (max-width: 991.98px)
+          margin:
+            right: 0
+        @media (max-width: 767.98px)
+          margin:
+            top: 20px
+            left: 0
+            right: 100px
+      &__col
+        margin:
+          right: 45px
+        @media (max-width: 991.98px)
+          margin:
+            right: 0
+        .el-input-number
+          width: 152px
+        .el-input__inner
+          color: #000000
+          font-size: 20px
+          line-height: 30px
+          border: 1px solid #f8f8f8
+          width: 152px
+          padding:
+            top: 9px
+            bottom: 14px
+            left: 20px
+            right: 20px
+          height: 50px
+        .el-input-number__decrease
+          top: 10px
+          left: 20px
+          background-color: transparent
+          border: none
+        .el-input-number__increase
+          top: 10px
+          right: 20px
+          background-color: transparent
+          border: none
+      &__price
+        font-size: 18px
+        line-height: 24px
+        margin:
+          right: 74px
+          bottom: 0
+        @media (max-width: 991.98px)
+          margin:
+            right: 0
+      &__delete
+        transition: all 0.2s ease
+        color: #000000
+        line-height: 20px
+        &:hover, &:focus
+          text-decoration: none
+          color: #e70068
+      &__contrlos
+        margin:
+          top: 9px
+          right: 55px
+        display: flex
+        align-items: center
+        @media (max-width: 1199.98px)
+          margin:
+            right: 0
+        @media (max-width: 991.98px)
+          width: 350px
+          justify-content: space-between
+          margin:
+            top: 20px
+            left: 31px
+        @media (max-width: 767.98px)
+          margin:
+            top: 15px
+            left: 0
+        @media (max-width: 575.98px)
+          width: 100%
+    .total
+      &__content
+        padding:
+          top: 70px
+          bottom: 50px
+        display: flex
+        align-items: center
+        @media (max-width: 991.98px)
+          justify-content: space-between
+        @media (max-width: 767.98px)
+          flex-wrap: wrap
+        @media (max-width: 575.98px)
+          flex-direction: column
+          align-items: flex-start
+          padding:
+            top: 40px
+      &__button
+        &--icon
           display: inline-block
           width: 12px
           height: 12px
           margin:
-            left: 10px
+            left: 5px
           .icon
+            margin:
+              top: -2px
             fill: #ffffff
-
-    .top-navigation
-      display: flex
-      justify-content: space-between
-      align-items: flex-start
-      margin:
-        bottom: 51px
-      @media (max-width: 767.98px)
-        flex-direction: column
-      &__subtitle
-        font-weight: 700
-        font-size: 20px
-        line-height: 27px
-        color: #e6e6e6
-        margin:
-          bottom: 12px
-      &__title
-        font-weight: 700
-        font-size: 30px
-        line-height: 40px
-        margin:
-          bottom: 0
-      &__buttons
-        padding:
-          left: 5px
-          top: 5px
-          right: 5px
-          bottom: 5px
-        border: 1px solid #f8f8f8
-        @media (max-width: 575.98px)
-          display: flex
-        .el-button.active
-          background-color: #e70068
-          color: #ffffff
-        .el-button
-          background-color: #ffffff
-          color: #000000
-          padding:
-            top: 9px
-            bottom: 11px
-          span
-            display: inline-block
-            line-height: 20px
         @media (max-width: 767.98px)
           margin:
             top: 20px
-
-      &__link
-        margin:
-          left: 50px
-          right: 30px
+      &__promo
         transition: all 0.2s ease
+        display: inline-block
+        padding:
+          bottom: 8.5px
         color: #000000
+        border-bottom: 1px dashed #e70068
+        margin:
+          left: 24px
+          right: auto
+        &--activated
+          display: none
+        @media (max-width: 991.98px)
+          margin:
+            right: 0
+            left: 0
         @media (max-width: 575.98px)
+          margin:
+            bottom: 20px
+        &:hover, &:focus
+          color: #e70068
+          text-decoration: none
+      &__promo.activated
+        border: none
+        color: #e70068
+        .total__promo--first
+          display: none
+        .total__promo--activated
+          display: inline-block
+      &__price
+        font-weight: 700
+        font-size: 20px
+        line-height: 27px
+        margin:
+          bottom: 0
+          right: 40px
+        span
+          display: inline-block
+          margin:
+            left: 12px
+        @media (max-width: 991.98px)
+          margin:
+            right: 0
+      &__button
+        margin:
+          right: 34px
+        @media (max-width: 991.98px)
+          margin:
+            right: 0
+
+    .alerts
+      &__element
+        display: none
+        position: fixed
+        z-index: 10000
+        top: 0
+        left: 0
+        right: 0
+        margin:
+          left: auto
+          right: auto
+        width: 700px
+        background-color: #e70068
+        color: #ffffff
+        @media (max-width: 767.98px)
+          width: calc(100% - 60px)
           margin:
             left: 30px
-        &:hover, &:focus
-          text-decoration: none
-          color: #e70068
-
-  .decor
-    &__content
-      padding:
-        left: 0px
-        right: 0px
-      @media (max-width: 575.98px)
-        padding:
-          left: 0
-          right: 0
-    .postcard
-      margin:
-        bottom: 214px
-      @media (max-width: 991.98px)
-        margin:
-          bottom: 50px
-      &__content
-        display: flex
-        align-items: stretch
-        @media (max-width: 575.98px)
-          flex-direction: column-reverse
-      &__background
-        flex-grow: 1
-        min-height: 205px
-        background-image: url("../assets/white.jpg")
-        background-repeat: no-repeat
-        background-size: cover
-      &__control
-        display: flex
-        flex-direction: column
-        padding:
-          top: 110px
-        width: 294px
-        background-color: #f8f8f8
-        @media (max-width: 575.98px)
-          width: 100%
+            right: 30px
+        &--basket.show
+          display: block
+        &--products.show
+          display: block
+        p
+          text-align: center
+          line-height: 20px
           padding:
-            top: 50px
-      &__title
-        margin:
-          bottom: 9px
-        font-size: 20px
-        line-height: 30px
-        font-weight: 700
-        text-align: center
-        padding:
-          left: 20px
-          right: 20px
-        @media (max-width: 575.98px)
-          padding:
+            top: 14px
+            bottom: 16px
             left: 10px
             right: 10px
-      &__price
-        text-align: center
-        padding:
-          left: 50px
-          right: 50px
-        margin:
-          bottom: 64px
-      &__button
-        width: 100%
-        background-color: rgba(231, 0, 104, 0.5)
-        p
           margin:
             bottom: 0
-      &__icon
-        display: inline-block
-        width: 18px
-        margin:
-          left: 13px
-        #box
-          fill: #ffffff
-      &__link
-        display: block
-        width: 280px
-        margin:
-          top: 13px
-          left: auto
-          bottom: 50px
-        color: #000000
-        transition: all 0.2s ease
-        &:hover, &:focus
-          text-decoration: none
-          color: #e70068
-          .choose__link--icon
-            fill: #e70068
-        &--icon
+
+    .modals
+      display: flex
+      align-items: center
+      .clean
+        .el-dialog__header
+          display: none
+        .el-dialog
+          width: 600px
+          padding: 0
+          @media (max-width: 767.98px)
+            width: 500px
+          @media (max-width: 575.98px)
+            width: 100%
+        &__content
+          width: 600px
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          height: 400px
+          padding:
+            top: 35px
+            bottom: 50px
+          margin:
+            top: auto
+            bottom: auto
+            left: auto
+            right: auto
+          background-color: #fff
+          @media (max-width: 767.98px)
+            width: 500px
+          @media (max-width: 575.98px)
+            width: calc(100% - 60px)
+            padding:
+              left: 10px
+              right: 10px
+        &__title
+          font-size: 30px
+          line-height: 40px
+          font-weight: 700
+          text-align: center
+          margin:
+            bottom: 50px
+          @media (max-width: 575.98px)
+            font-size: 25px
+            line-height: 35px
+            margin:
+              bottom: 40px
+        &__description
+          text-align: center
+          margin:
+            bottom: 90px
+          @media (max-width: 575.98px)
+            margin:
+              bottom: 50px
+        &__link
           transition: all 0.2s ease
-        p
+          color: #000000
+          &:hover, &:focus
+            text-decoration: none
+            color: #e70068
+        &__button
+          margin:
+            right: 50px
+          @media (max-width: 575.98px)
+            margin:
+              right: 0
+              bottom: 15px
+        &__buttons
+          display: flex
+          justify-content: center
+          align-items: center
+          margin:
+            left: auto
+            right: auto
+          @media (max-width: 575.98px)
+            flex-direction: column
+        &__icon
+          width: 50px
+          height: 50px
+          background-image: url("../assets/Icons/rubbish-bin-delete-button.svg")
+          background-repeat: no-repeat
+          background-size: cover
+          margin:
+            left: auto
+            right: auto
+            bottom: 16px
+
+      .favourite
+        .el-dialog__header
+          display: none
+        .el-dialog
+          width: 600px
+          @media (max-width: 767.98px)
+            width: 500px
+          @media (max-width: 575.98px)
+            width: 100%
+        &__content
+          width: 600px
+          height: 400px
+          padding:
+            top: 35px
+            bottom: 50px
+          margin:
+            top: auto
+            bottom: auto
+            left: auto
+            right: auto
+          background-color: #fff
+          @media (max-width: 767.98px)
+            width: 500px
+          @media (max-width: 575.98px)
+            width: calc(100% - 60px)
+            padding:
+              left: 10px
+              right: 10px
+        &__title
+          font-size: 30px
+          line-height: 40px
+          font-weight: 700
+          text-align: center
+          margin:
+            bottom: 50px
+          @media (max-width: 575.98px)
+            font-size: 25px
+            line-height: 35px
+            margin:
+              bottom: 40px
+        &__description
+          width: 450px
+          text-align: center
+          margin:
+            left: auto
+            right: auto
+            bottom: 60px
+          @media (max-width: 575.98px)
+            width: 100%
+            margin:
+              bottom: 40px
+        &__link
+          transition: all 0.2s ease
+          color: #000000
+          &:hover, &:focus
+            text-decoration: none
+            color: #e70068
+        &__button
+          margin:
+            right: 50px
+          @media (max-width: 575.98px)
+            margin:
+              right: 0
+              bottom: 15px
+        &__buttons
+          display: flex
+          justify-content: center
+          align-items: center
+          margin:
+            left: auto
+            right: auto
+          @media (max-width: 575.98px)
+            flex-direction: column
+        &__icon
+          width: 55px
+          height: 55px
+          background-image: url("../assets/Icons/favorite-heart-button.svg")
+          background-repeat: no-repeat
+          background-size: cover
+          margin:
+            left: auto
+            right: auto
+            bottom: 16px
+
+      .sale
+        .el-dialog__header
+          display: none
+        .el-dialog
+          width: 600px
+          padding: 0
+          @media (max-width: 767.98px)
+            width: 550px
+          @media (max-width: 575.98px)
+            width: 100%
+        &__content
+          width: 600px
+          height: 600px
+          padding:
+            top: 106px
+            bottom: 50px
+          margin:
+            top: auto
+            bottom: auto
+            left: auto
+            right: auto
+          background-color: #fff
+          @media (max-width: 767.98px)
+            width: 550px
+            height: 550px
+          @media (max-width: 575.98px)
+            width: calc(100% - 30px)
+            height: 450px
+            padding:
+              top: 40px
+              left: 10px
+              right: 10px
+        &__close
+          width: 15px
+          height: 15px
+          cursor: pointer
+          position: absolute
+          top: 54px
+          right: 54px
+          background-image: url(../assets/Icons/cancel.svg)
+          background-size: cover
+          background-repeat: no-repeat
+          @media (max-width: 575.98px)
+            top: 20px
+            right: 20px
+        &__title
+          font-size: 30px
+          line-height: 40px
+          font-weight: 700
+          text-align: center
+          margin:
+            bottom: 19px
+          @media (max-width: 575.98px)
+            font-size: 25px
+            line-height: 35px
+            margin:
+              bottom: 15px
+        &__wrapper
+          padding:
+            left: 33px
+            right: 33px
+        &__promo.el-input
+          width: 100%
+          .el-input__inner
+            padding:
+              left: 5px
+              bottom: 10px
+            border: none
+            border-bottom: 1px solid #c4c4c4
+            font-size: 15px
+            line-height: 20px
+            color: #DCDCDC
+            &::placeholder
+              font-size: 15px
+              line-height: 20px
+              color: #DCDCDC
+        &__description
+          width: 470px
+          text-align: center
+          margin:
+            left: auto
+            right: auto
+            bottom: 40px
+          @media (max-width: 575.98px)
+            width: 100%
+
+        &__alert
+          transition: all 0.2s ease
+          line-height: 20px
+          color: #e70068
           margin:
             bottom: 0
-        span
-          fill: #000000
-          display: inline-block
-          width: 12px
+          opacity: 0
           margin:
-            left: 3px
+            left: 33px
+            top: 43px
+          @media (max-width: 575.98px)
+            margin:
+              top: 30px
+        &__alert.show
+          opacity: 1
+        &__link
+          transition: all 0.2s ease
+          color: #000000
+          margin:
+            left: 47px
+            right: 44px
+          &:hover, &:focus
+            text-decoration: none
+            color: #e70068
+          @media (max-width: 575.98px)
+            margin:
+              right: 10px
+              left: 30px
+        &__buttons
+          display: flex
+          justify-content: flex-end
+          align-items: center
+          margin:
+            top: 124px
+          @media (max-width: 767.98px)
+            margin:
+              top: 90px
+          @media (max-width: 575.98px)
+            justify-content: center
+            margin:
+              top: 50px
 
-    .inner-text
-      &__title
-        font-size: 30px
-        line-height: 40px
-        font-weight: 700
-        width: 282px
+    .inside, .decor
+      overflow: auto
+      background-color: rgba(58, 58, 58, 0.8)
+      .el-dialog__header
+        display: none
+      .el-dialog
+        width: 1200px
+        @media (max-width: 1199.98px)
+          width: 990px
+        @media (max-width: 991.98px)
+          width: 750px
+        @media (max-width: 767.98px)
+          width: 570px
+        @media (max-width: 575.98px)
+          width: 100%
+      .container
+        background-color: #fff
         margin:
-          bottom: 21px
+          top: 115px
+          bottom: 115px
+        @media (max-width: 575.98px)
+          margin:
+            top: 50px
+            bottom: 50px
+          width: calc(100% - 30px) !important
+      &__content
         padding:
-          right: 54px
-        background-image: url(../assets/Icons/letter.svg)
-        background-repeat: no-repeat
-        background-size: auto 35px
-        background-position: right 3px
-      &__description
-        line-height: 25px
-      @media (max-width: 991.98px)
+          top: 46px
+          bottom: 30px
+      &__button
+        display: flex
+        justify-content: center
+      .element
         margin:
-          bottom: 50px
+          bottom: 30px
+        @media (max-width: 575.98px)
+          margin:
+            bottom: 20px
+        &__wrapper
+          display: block
+          position: relative
+          z-index: 10
+          background-image: url("../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png")
+          background-repeat: no-repeat
+          background-size: 190px auto
+          background-position: center center
+          color: #ffffff
+          &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            background-color: rgba(0, 0, 0, 0.8)
+          &:hover, &:focus
+            text-decoration: none
+            .element__content
+              opacity: 0
+            .element__icon
+              opacity: 1
+        &__content
+          display: block
+          transition: all 0.2s ease
+          opacity: 1
+          padding:
+            left: 20px
+            top: 18px
+            bottom: 20px
+            right: 18px
+          position: relative
+          z-index: 100
+          color: #ffffff
+        &__title
+          font-size: 15px
+          line-height: 20px
+          font-weight: 400
+          margin:
+            bottom: 6px
+        &__price
+          font-size: 30px
+          line-height: 40px
+          font-weight: 700
+          margin:
+            bottom: 27px
+        &__place
+          opacity: 0.5
+          font-size: 14px
+          line-height: 19px
+          margin:
+            bottom: 0
+        &__icon
+          transition: all 0.2s ease
+          position: absolute
+          opacity: 0
+          z-index: 100
+          width: 100%
+          text-align: center
+          height: 20px
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+          margin:
+            top: auto
+            bottom: auto
+            left: auto
+            right: auto
+          background-repeat: no-repeat
+          background-size: contain
+          span
+            display: inline-block
+            width: 12px
+            height: 12px
+            margin:
+              left: 10px
+            .icon
+              fill: #ffffff
 
+      .top-navigation
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        margin:
+          bottom: 51px
+        @media (max-width: 767.98px)
+          flex-direction: column
+        &__subtitle
+          font-weight: 700
+          font-size: 20px
+          line-height: 27px
+          color: #e6e6e6
+          margin:
+            bottom: 12px
+        &__title
+          font-weight: 700
+          font-size: 30px
+          line-height: 40px
+          margin:
+            bottom: 0
+        &__buttons
+          padding:
+            left: 5px
+            top: 5px
+            right: 5px
+            bottom: 5px
+          border: 1px solid #f8f8f8
+          @media (max-width: 575.98px)
+            display: flex
+          .el-button.active
+            background-color: #e70068
+            color: #ffffff
+          .el-button
+            background-color: #ffffff
+            color: #000000
+            padding:
+              top: 9px
+              bottom: 11px
+            span
+              display: inline-block
+              line-height: 20px
+          @media (max-width: 767.98px)
+            margin:
+              top: 20px
 
-  .inside::-webkit-scrollbar, .decor::-webkit-scrollbar
-    width: 4px
-  .inside::-webkit-scrollbar-button, .decor::-webkit-scrollbar-button
-    background-color: #666
-  .inside::-webkit-scrollbar-track, .decor::-webkit-scrollbar-track
-    background-color: none
-  .inside::-webkit-scrollbar-thumb, .decor::-webkit-scrollbar-thumb
-    height: 100px
-    background-color: #000000
-    border-radius: 5px
-  .inside::-webkit-scrollbar-button, .decor::-webkit-scrollbar-button
+        &__link
+          margin:
+            left: 50px
+            right: 30px
+          transition: all 0.2s ease
+          color: #000000
+          @media (max-width: 575.98px)
+            margin:
+              left: 30px
+          &:hover, &:focus
+            text-decoration: none
+            color: #e70068
+
+    .decor
+      &__content
+        padding:
+          left: 0px
+          right: 0px
+        @media (max-width: 575.98px)
+          padding:
+            left: 0
+            right: 0
+      .postcard
+        margin:
+          bottom: 214px
+        @media (max-width: 991.98px)
+          margin:
+            bottom: 50px
+        &__content
+          display: flex
+          align-items: stretch
+          @media (max-width: 575.98px)
+            flex-direction: column-reverse
+        &__background
+          flex-grow: 1
+          min-height: 205px
+          background-image: url("../assets/white.jpg")
+          background-repeat: no-repeat
+          background-size: cover
+        &__control
+          display: flex
+          flex-direction: column
+          padding:
+            top: 110px
+          width: 294px
+          background-color: #f8f8f8
+          @media (max-width: 575.98px)
+            width: 100%
+            padding:
+              top: 50px
+        &__title
+          margin:
+            bottom: 9px
+          font-size: 20px
+          line-height: 30px
+          font-weight: 700
+          text-align: center
+          padding:
+            left: 20px
+            right: 20px
+          @media (max-width: 575.98px)
+            padding:
+              left: 10px
+              right: 10px
+        &__price
+          text-align: center
+          padding:
+            left: 50px
+            right: 50px
+          margin:
+            bottom: 64px
+        &__button
+          width: 100%
+          background-color: rgba(231, 0, 104, 0.5)
+          p
+            margin:
+              bottom: 0
+        &__icon
+          display: inline-block
+          width: 18px
+          margin:
+            left: 13px
+          #box
+            fill: #ffffff
+        &__link
+          display: block
+          width: 280px
+          margin:
+            top: 13px
+            left: auto
+            bottom: 50px
+          color: #000000
+          transition: all 0.2s ease
+          &:hover, &:focus
+            text-decoration: none
+            color: #e70068
+            .choose__link--icon
+              fill: #e70068
+          &--icon
+            transition: all 0.2s ease
+          p
+            margin:
+              bottom: 0
+          span
+            fill: #000000
+            display: inline-block
+            width: 12px
+            margin:
+              left: 3px
+
+      .inner-text
+        &__title
+          font-size: 30px
+          line-height: 40px
+          font-weight: 700
+          width: 282px
+          margin:
+            bottom: 21px
+          padding:
+            right: 54px
+          background-image: url(../assets/Icons/letter.svg)
+          background-repeat: no-repeat
+          background-size: auto 35px
+          background-position: right 3px
+        &__description
+          line-height: 25px
+        @media (max-width: 991.98px)
+          margin:
+            bottom: 50px
+
+    .inside::-webkit-scrollbar, .decor::-webkit-scrollbar
+      width: 4px
+    .inside::-webkit-scrollbar-button, .decor::-webkit-scrollbar-button
+      background-color: #666
+    .inside::-webkit-scrollbar-track, .decor::-webkit-scrollbar-track
+      background-color: none
+    .inside::-webkit-scrollbar-thumb, .decor::-webkit-scrollbar-thumb
+      height: 100px
+      background-color: #000000
+      border-radius: 5px
+    .inside::-webkit-scrollbar-button, .decor::-webkit-scrollbar-button
       background-color: #F8F8F8
 
 </style>

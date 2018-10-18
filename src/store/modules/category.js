@@ -1,6 +1,6 @@
 import ROOT_CATEGORY_CHILDREN from '../../graphql/RootCategoryChildrenQuery.gql';
-import { apolloProvider } from '../../vue-apollo';
 import { categoryBackData } from '../data/fallBackData';
+import { apolloProvider } from '../../vue-apollo';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {
@@ -23,9 +23,13 @@ const mutations = {
 const actions = {
   async loadCategories(context) {
     try {
+      // const response = await apolloProvider.defaultClient.query({
+      //   query: ROOT_CATEGORY_CHILDREN,
+      // });
       const response = await apolloProvider.defaultClient.query({
         query: ROOT_CATEGORY_CHILDREN,
       });
+
       console.log(response.data.categories.edges);
       context.commit('setCategories', response.data.categories.edges);
     } catch (e) {

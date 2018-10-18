@@ -54,7 +54,8 @@
           <div class="mail__wrapper">
             <div class="mail__content">
               <h2 class="mail__title">По Харькову</h2>
-              <p class="mail__description">Доставка товара по Харькову может быть осуществлена по указанному адресу на необходимую дату. Оплата происходит при получении товара.</p>
+              <p class="mail__description">Доставка товара по Харькову может быть осуществлена по указанному адресу на
+              необходимую дату. Оплата происходит при получении товара.</p>
             </div>
           </div>
         </b-col>
@@ -130,9 +131,7 @@
 <script>
 export default {
   name: 'Kharkiv',
-  components: {
-
-  },
+  components: {},
   data() {
     return {
       input: '',
@@ -143,226 +142,226 @@ export default {
 </script>
 
 <style lang="sass">
-.Kharkiv
-  .back
-    &__link
-      display: inline-block
-      font-weight: 700
-      margin:
-        top: 37px
-        bottom: 50px
-      transition: all 0.2s ease
-      color: #000000
-      @media (max-width: 767.98px)
-        margin:
-          bottom: 30px
-      @media (max-width: 575.98px)
-        font-size: 14px
-      &:hover, &:focus
-        color: #e70068
-        text-decoration: none
-        .icon
-          fill: #e70068
-    span
-      display: inline-block
-    &__icon
-      margin:
-        left: 0
-      display: block
-      transform: rotate(-180deg)
-      .icon
-        transition: all 0.2s ease
-        width: 12px
-        height: 12px
-        fill: #000000
-        margin:
-          left: 12px
-          top: -6px
-        @media (max-width: 575.98px)
-          margin:
-            left: 5px
-
-  .mail
-    margin:
-      bottom: 46px
-    &__wrapper
-      position: relative
-      background-image: url(../assets/kharkiv.jpg)
-      background-repeat: no-repeat
-      background-position: 0 -150px
-      background-size: cover
-      @media (max-width: 991.98px)
-        background-position: 0 0
-      &::before
-        content: ''
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        position: absolute
-        z-index: 100
-        background-color: rgba(0, 0, 0, 0.7)
-
-    &__content
-      position: relative
-      z-index: 1000
-      color: #ffffff
-      padding:
-        top: 44px
-        left: 70px
-        bottom: 100px
-        right: 30px
-      @media (max-width: 991.98px)
-        padding:
-          left: 30px
-      @media (max-width: 575.98px)
-        padding:
-          left: 15px
-          right: 15px
-    &__title
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
-      margin:
-        bottom: 41px
-      @media (max-width: 575.98px)
-        font-size: 25px
-        line-height: 35px
-        margin:
-          bottom: 30px
-    &__description
-      width: 950px
-      line-height: 25px
-      margin:
-        bottom: 25px
-      @media (max-width: 1199.98px)
-        width: 800px
-      @media (max-width: 991.98px)
-        width: 100%
-
-  .city
-    &__content
-      padding:
-        left: 22px
-      @media (max-width: 991.98px)
-        padding:
-          left: 0
-    &__title
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
-      margin:
-        bottom: 50px
-      @media (max-width: 575.98px)
-        margin:
-          bottom: 30px
-    &__control
-      display: flex
-      align-items: flex-start
-      @media (max-width: 767.98px)
-        flex-wrap: wrap
-    &__wrapper
-      margin:
-        right: 60px
-      @media (max-width: 767.98px)
-        margin:
-          bottom: 10px
-    &__error
-      opacity: 0
-      color: #e70068
-      margin:
-        bottom: 0
-    &__error.show
-      opacity: 1
-      line-height: 20px
-    &__characteristic
-      display: flex
-      padding:
-        left: 0
-      margin:
-        bottom: 0
-      list-style: none
-      @media (max-width: 767.98px)
-        flex-wrap: wrap
-      &-element
-        line-height: 20px
-        margin:
-          right: 80px
-        @media (max-width: 1199.98px)
-          margin:
-            right: 30px
-        @media (max-width: 767.98px)
-          width: 100%
-          margin:
-            bottom: 10px
-        &:last-of-type
-          margin:
-            right: 0
-    &__bottom-information
-      display: flex
-      align-items: center
-      margin:
-        top: 40px
-        bottom: 50px
-      @media (max-width: 991.98px)
-        flex-wrap: wrap
-      @media (max-width: 767.98px)
-        margin:
-          top: 20px
-    &__button
-      margin:
-        left: auto
-        right: 34px
-      padding:
-        right: 25px
-      @media (max-width: 1199.98px)
-        margin:
-          right: 20px
-      @media (max-width: 991.98px)
-        margin:
-          left: 0
-          right: 0
-          top: 30px
-      &--icon
+  .Kharkiv
+    .back
+      &__link
         display: inline-block
+        font-weight: 700
+        margin:
+          top: 37px
+          bottom: 50px
+        transition: all 0.2s ease
+        color: #000000
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 30px
+        @media (max-width: 575.98px)
+          font-size: 14px
+        &:hover, &:focus
+          color: #e70068
+          text-decoration: none
+          .icon
+            fill: #e70068
+      span
+        display: inline-block
+      &__icon
+        margin:
+          left: 0
+        display: block
+        transform: rotate(-180deg)
         .icon
-          fill: #ffffff
+          transition: all 0.2s ease
           width: 12px
           height: 12px
+          fill: #000000
           margin:
-            top: -2px
-            left: 10px
-    &__search.el-input
-      width: 326px
+            left: 12px
+            top: -6px
+          @media (max-width: 575.98px)
+            margin:
+              left: 5px
+
+    .mail
       margin:
-        bottom: 23px
-      .el-input__inner
-        font-size: 15px
-        color: #DCDCDC
+        bottom: 46px
+      &__wrapper
+        position: relative
+        background-image: url(../assets/kharkiv.jpg)
+        background-repeat: no-repeat
+        background-position: 0 -150px
+        background-size: cover
+        @media (max-width: 991.98px)
+          background-position: 0 0
+        &::before
+          content: ''
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          position: absolute
+          z-index: 100
+          background-color: rgba(0, 0, 0, 0.7)
+
+      &__content
+        position: relative
+        z-index: 1000
+        color: #ffffff
         padding:
-          left: 5px
-          bottom: 10px
-        border: none
-        border-radius: 0px
-        border-bottom: 1px solid #c4c4c4
-        &::placeholder
+          top: 44px
+          left: 70px
+          bottom: 100px
+          right: 30px
+        @media (max-width: 991.98px)
+          padding:
+            left: 30px
+        @media (max-width: 575.98px)
+          padding:
+            left: 15px
+            right: 15px
+      &__title
+        font-size: 30px
+        line-height: 40px
+        font-weight: 700
+        margin:
+          bottom: 41px
+        @media (max-width: 575.98px)
+          font-size: 25px
+          line-height: 35px
+          margin:
+            bottom: 30px
+      &__description
+        width: 950px
+        line-height: 25px
+        margin:
+          bottom: 25px
+        @media (max-width: 1199.98px)
+          width: 800px
+        @media (max-width: 991.98px)
+          width: 100%
+
+    .city
+      &__content
+        padding:
+          left: 22px
+        @media (max-width: 991.98px)
+          padding:
+            left: 0
+      &__title
+        font-size: 30px
+        line-height: 40px
+        font-weight: 700
+        margin:
+          bottom: 50px
+        @media (max-width: 575.98px)
+          margin:
+            bottom: 30px
+      &__control
+        display: flex
+        align-items: flex-start
+        @media (max-width: 767.98px)
+          flex-wrap: wrap
+      &__wrapper
+        margin:
+          right: 60px
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 10px
+      &__error
+        opacity: 0
+        color: #e70068
+        margin:
+          bottom: 0
+      &__error.show
+        opacity: 1
+        line-height: 20px
+      &__characteristic
+        display: flex
+        padding:
+          left: 0
+        margin:
+          bottom: 0
+        list-style: none
+        @media (max-width: 767.98px)
+          flex-wrap: wrap
+        &-element
+          line-height: 20px
+          margin:
+            right: 80px
+          @media (max-width: 1199.98px)
+            margin:
+              right: 30px
+          @media (max-width: 767.98px)
+            width: 100%
+            margin:
+              bottom: 10px
+          &:last-of-type
+            margin:
+              right: 0
+      &__bottom-information
+        display: flex
+        align-items: center
+        margin:
+          top: 40px
+          bottom: 50px
+        @media (max-width: 991.98px)
+          flex-wrap: wrap
+        @media (max-width: 767.98px)
+          margin:
+            top: 20px
+      &__button
+        margin:
+          left: auto
+          right: 34px
+        padding:
+          right: 25px
+        @media (max-width: 1199.98px)
+          margin:
+            right: 20px
+        @media (max-width: 991.98px)
+          margin:
+            left: 0
+            right: 0
+            top: 30px
+        &--icon
+          display: inline-block
+          .icon
+            fill: #ffffff
+            width: 12px
+            height: 12px
+            margin:
+              top: -2px
+              left: 10px
+      &__search.el-input
+        width: 326px
+        margin:
+          bottom: 23px
+        .el-input__inner
           font-size: 15px
           color: #DCDCDC
-      @media (max-width: 767.98px)
-        margin:
-          bottom: 10px
-      @media (max-width: 575.98px)
-        width: 250px
-    .el-checkbox__inner
-      border-radius: 0
-      border-width: 2px
-      border-color: #c4c4c4
-    .el-checkbox__label
-      font-size: 13px
-      color: #c4c4c4
-      font-weight: normal
-      padding:
-        left: 12px
+          padding:
+            left: 5px
+            bottom: 10px
+          border: none
+          border-radius: 0px
+          border-bottom: 1px solid #c4c4c4
+          &::placeholder
+            font-size: 15px
+            color: #DCDCDC
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 10px
+        @media (max-width: 575.98px)
+          width: 250px
+      .el-checkbox__inner
+        border-radius: 0
+        border-width: 2px
+        border-color: #c4c4c4
+      .el-checkbox__label
+        font-size: 13px
+        color: #c4c4c4
+        font-weight: normal
+        padding:
+          left: 12px
 
 
 </style>

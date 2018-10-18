@@ -152,7 +152,8 @@
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
-              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onSortFilterChange()"></el-input>
+              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search"
+                        @change="sortFilterProducts(); onSortFilterChange()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
               <el-select v-model="sortBy" class="sort__select" @change="sortFilterProducts(); onSortFilterChange()">
@@ -184,7 +185,8 @@
                       <ul v-for="category in allCategories" :key="category.node.id"
                           class="filter__list filter__list--category">
                         <li>
-                          <el-checkbox :label="category.node.id">{{ `${category.node.name} (${category.node.products.totalCount})` }}
+                          <el-checkbox :label="category.node.id">{{ `${category.node.name}
+                            (${category.node.products.totalCount})` }}
                           </el-checkbox>
                         </li>
                       </ul>

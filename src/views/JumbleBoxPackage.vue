@@ -185,156 +185,154 @@
 <script>
 export default {
   name: 'JumbleBoxPackage',
-  components: {
-
-  },
+  components: {},
 };
 </script>
 
 <style lang="sass">
-.choose
-  margin:
-    top: 20px
-  &__content
-    display: flex
-    align-items: stretch
-    @media (max-width: 575.98px)
-      flex-direction: column-reverse
-  &__title
-    text-align: center
-    font-size: 30px
-    font-weight: 700
-    line-height: 40px
+  .choose
     margin:
-      bottom: 19px
-  &__descrition
-    text-align: center
-    margin:
-      bottom: 50px
-  &__element
-    margin:
-      bottom: 30px
-    @media (max-width: 575.98px)
+      top: 20px
+    &__content
+      display: flex
+      align-items: stretch
+      @media (max-width: 575.98px)
+        flex-direction: column-reverse
+    &__title
+      text-align: center
+      font-size: 30px
+      font-weight: 700
+      line-height: 40px
       margin:
-        bottom: 20px
-    &--default
+        bottom: 19px
+    &__descrition
+      text-align: center
+      margin:
+        bottom: 50px
+    &__element
+      margin:
+        bottom: 30px
+      @media (max-width: 575.98px)
+        margin:
+          bottom: 20px
+      &--default
       .choose__button
         background-color: rgba(231, 0, 104, 0.5)
-      .choose__background
-        flex-grow: 1
-        background-image: url("../assets/white.jpg")
-      &-photo
-        min-height: 285px
-        @media (max-width: 575.98px)
-          min-height: 200px
-          margin:
-            bottom: 35px
+        .choose__background
+          flex-grow: 1
+          background-image: url("../assets/white.jpg")
+        &-photo
+          min-height: 285px
+          @media (max-width: 575.98px)
+            min-height: 200px
+            margin:
+              bottom: 35px
 
-        .choose__content
-          height: 100%
-          background-size: 700px auto
-          background-position: center 0
-          background-repeat: no-repeat
-          background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
-          @media (max-width: 1199.98px)
-            background-size: 600px auto
-          @media (max-width: 991.98px)
-            background-size: cover
+          .choose__content
+            height: 100%
+            background-size: 700px auto
+            background-position: center 0
+            background-repeat: no-repeat
+            background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
+            @media (max-width: 1199.98px)
+              background-size: 600px auto
+            @media (max-width: 991.98px)
+              background-size: cover
 
-    &--texture
+      &--texture
       .choose__background
         flex-grow: 1
         background-image: url("../assets/painting_texture_package_by_lumbe_stock.jpg")
-      &-photo
-        min-height: 285px
-        @media (max-width: 575.98px)
-          min-height: 200px
-        .choose__content
-          height: 100%
-          background-size: 700px auto
-          background-position: center 0
-          background-repeat: no-repeat
-          background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
-          @media (max-width: 1199.98px)
-            background-size: 600px auto
-          @media (max-width: 991.98px)
-            background-size: cover
-  &__control
-    display: flex
-    flex-direction: column
-    padding:
-      top: 110px
-    width: 294px
-    background-color: #f8f8f8
-    @media (max-width: 575.98px)
+        &-photo
+          min-height: 285px
+          @media (max-width: 575.98px)
+            min-height: 200px
+          .choose__content
+            height: 100%
+            background-size: 700px auto
+            background-position: center 0
+            background-repeat: no-repeat
+            background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
+            @media (max-width: 1199.98px)
+              background-size: 600px auto
+            @media (max-width: 991.98px)
+              background-size: cover
+    &__control
+      display: flex
+      flex-direction: column
+      padding:
+        top: 110px
+      width: 294px
+      background-color: #f8f8f8
+      @media (max-width: 575.98px)
+        width: 100%
+        padding:
+          top: 50px
+    &__element-title
+      margin:
+        bottom: 9px
+      font-size: 20px
+      line-height: 30px
+      font-weight: 700
+      text-align: center
+      padding:
+        left: 20px
+        right: 20px
+      @media (max-width: 575.98px)
+        padding:
+          left: 10px
+          right: 10px
+    &__element-price
+      text-align: center
+      padding:
+        left: 50px
+        right: 50px
+      margin:
+        bottom: 64px
+      @media (max-width: 575.98px)
+        margin:
+          bottom: 30px
+    &__button
       width: 100%
-      padding:
-        top: 50px
-  &__element-title
-    margin:
-      bottom: 9px
-    font-size: 20px
-    line-height: 30px
-    font-weight: 700
-    text-align: center
-    padding:
-      left: 20px
-      right: 20px
-    @media (max-width: 575.98px)
-      padding:
-        left: 10px
-        right: 10px
-  &__element-price
-    text-align: center
-    padding:
-      left: 50px
-      right: 50px
-    margin:
-      bottom: 64px
-    @media (max-width: 575.98px)
+      p
+        margin:
+          bottom: 0
+      &--icon
+        display: inline-block
+        width: 18px
+        margin:
+          left: 13px
+        #box
+          fill: #ffffff
+    &__background
+      min-height: 205px
+      background-repeat: no-repeat
+      background-size: cover
+      @media (max-width: 575.98px)
+        min-height: 180px
+    &__link
+      display: block
+      width: 280px
       margin:
-        bottom: 30px
-  &__button
-    width: 100%
-    p
-      margin:
-        bottom: 0
-    &--icon
-      display: inline-block
-      width: 18px
-      margin:
-        left: 13px
-      #box
-        fill: #ffffff
-  &__background
-    min-height: 205px
-    background-repeat: no-repeat
-    background-size: cover
-    @media (max-width: 575.98px)
-      min-height: 180px
-  &__link
-    display: block
-    width: 280px
-    margin:
-      top: 13px
-      left: auto
-      bottom: 50px
-    color: #000000
-    transition: all 0.2s ease
-    &:hover, &:focus
-      text-decoration: none
-      color: #e70068
-      .choose__link--icon
-        fill: #e70068
-    &--icon
+        top: 13px
+        left: auto
+        bottom: 50px
+      color: #000000
       transition: all 0.2s ease
-    p
-      margin:
-        bottom: 0
-    span
-      fill: #000000
-      display: inline-block
-      width: 12px
-      margin:
-        left: 3px
+      &:hover, &:focus
+        text-decoration: none
+        color: #e70068
+        .choose__link--icon
+          fill: #e70068
+      &--icon
+        transition: all 0.2s ease
+      p
+        margin:
+          bottom: 0
+      span
+        fill: #000000
+        display: inline-block
+        width: 12px
+        margin:
+          left: 3px
 </style>
