@@ -6,7 +6,7 @@
           <b-col>
             <div class="main-header__content">
               <router-link to="/" class="main-header__logo"></router-link>
-              <a href="#" class="main-header__title" @click="menuOpen = true">Меню</a>
+              <a href="#" class="main-header__title" @click="openMenu">Меню</a>
               <div :class="{show: menuOpen}" class="main-header__menu menu">
                 <ul class="menu__list">
                   <li class="menu__cart">
@@ -14,7 +14,7 @@
                       <router-link to="/cart"></router-link>
                     </el-badge>
                   </li>
-                  <li class="menu__close" @click="menuOpen = false"></li>
+                  <li class="menu__close" @click="closeMenu"></li>
                   <li class="menu__element"><router-link to="/">Главная</router-link></li>
                   <li class="menu__element"><router-link to="/about">О нас</router-link></li>
                   <li class="menu__element"><router-link to="/contacts">Контакты</router-link></li>
@@ -43,8 +43,8 @@
                         </svg>
                     </span>Мы в Instagram</router-link>
                     <ul class="mobile__contacts">
-                      <li class="mobile__element">+38(050)-666-66-66</li>
-                      <li class="mobile__element">help@jumble-sweets.com.ua</li>
+                      <li class="mobile__element"><a href="#">+38(050)-666-66-66</a></li>
+                      <li class="mobile__element"><a href="#">help@jumble-sweets.com.ua</a></li>
                       <li class="mobile__element">г. Харьков, Героев труда 7, ТРЦ Караван</li>
                     </ul>
                   </li>
@@ -83,6 +83,18 @@ export default {
   },
   computed: {
     ...mapGetters(['getCartAmount']),
+  },
+  methods: {
+    openMenu() {
+      this.menuOpen = true;
+      const el = document.querySelector('body');
+      el.classList.add('no-scroll');
+    },
+    closeMenu() {
+      this.menuOpen = false;
+      const el = document.querySelector('body');
+      el.classList.remove('no-scroll');
+    },
   },
 };
 </script>
@@ -192,6 +204,7 @@ export default {
       &__cart
         display: none
         .el-badge__content
+          width: 20px
           right: 3px
         @media (max-width: 991.98px)
           display: inline-block
@@ -247,6 +260,15 @@ export default {
         line-height: 20px
         margin:
           bottom: 18px
+        a
+          transition: all 0.2s ease
+          line-height: 20px
+          color: #000000
+          font-weight: 400
+          font-size: 15px
+          &:hover, &:focus
+            color: #000000
+            text-decoration: underline
       &__login
         display: inline-block
         line-height: 20px
@@ -300,10 +322,10 @@ export default {
 
           margin:
             right: 48px
-          .el-badge
             display: flex
             align-items: center
           .el-badge__content
+            width: 20px
             right: 3px
           @media (max-width: 1199.98px)
             margin:
