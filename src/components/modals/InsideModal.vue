@@ -3,9 +3,10 @@
   <!--<b-modal class="repeat-modal" :id="id" hide-header hide-footer centered>-->
 
   <div>
-    <el-button type="text" @click="insideModal = true">inside modal</el-button>
+    <!--<el-button type="text" @click="insideModal = true">inside modal</el-button>-->
+    <!--<el-button type="text" @click="insideShow = true">inside modal</el-button>-->
 
-    <el-dialog :visible.sync="insideModal" class="inside decor" close-on-press-escape="true">
+    <el-dialog :visible.sync="insideShow" class="inside decor" close-on-press-escape="true">
       <b-container>
         <b-row>
           <b-col>
@@ -315,7 +316,7 @@
                   </a>
                 </b-col>
                 <b-col cols="12" class="inside__button">
-                  <el-button @click="insideModal = false">Закрыть подробности</el-button>
+                  <el-button>Закрыть подробности</el-button>
                 </b-col>
 
               </b-row>
@@ -427,16 +428,34 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
   name: 'InsideModal',
   components: {
   },
+  props: {
+    showDialog: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
-      insideModal: false,
       checkModals: true,
       radioModal: 'Сладости',
+      insideShow: this.showDialog,
+      insideVisible: false,
     };
+  },
+  computed: {
+    ...mapGetters.getInsideShow,
+    insideModal() {
+      return this.getInsideShow;
+    },
+  },
+  methods: {
+    ...mapMutations.setInsideShow,
   },
 };
 </script>

@@ -10,6 +10,7 @@ import productDetail from './modules/productDetail';
 import news from './modules/news';
 import cart from './modules/cart';
 import auth from './modules/auth';
+import modals from './modules/modals';
 
 Vue.use(Vuex);
 
@@ -24,5 +25,6 @@ export default new Vuex.Store({
     news,
     cart,
     auth,
+    modals,
   },
 });

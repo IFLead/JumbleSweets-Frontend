@@ -43,17 +43,22 @@
 
       <section class="ring">
         <div class="ring__number">
-          <div class="ring__number-input">
-            <el-input v-model="input" placeholder="Номер телефона"></el-input>
-          </div>
+          <el-form ref="numberForm" :rules="rulesNumber" :model="numberForm" status-icon>
+            <div class="ring__number-input">
+              <el-form-item prop="phone">
+                <el-input v-model.number="numberForm.phone" placeholder="Номер телефона"></el-input>
+              </el-form-item>
+            </div>
+          </el-form>
           <div class="ring__number_conf">
             <el-checkbox v-model="checked">Согласен с политикой конфиденциальности</el-checkbox>
           </div>
         </div>
-        <el-button :disabled="!checked" class="ring__button" >Заказать обратный звонок</el-button>
+        <el-button :disabled="!checked" class="ring__button" @click="submitForm('numberForm')">Заказать обратный звонок</el-button>
       </section>
 
     </b-container>
+
   </div>
 
 </template>
@@ -63,10 +68,45 @@ export default {
   components: {
   },
   data() {
+    const checkPhone = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error('Пожалуйста, введите номер телефона'));
+      }
+      setTimeout(() => {
+        if (!Number.isInteger(value)) {
+          callback(new Error('Пожалуйста, введите цифры'));
+        } else {
+          callback();
+        }
+      }, 1000);
+    };
     return {
       input: '',
       checked: false,
+      numberForm: {
+        phone: '',
+      },
+      rulesNumber: {
+        phone: [
+          { validator: checkPhone, trigger: 'blur' },
+        ],
+      },
     };
+  },
+  methods: {
+    submitForm(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          this.$message({
+            message: 'Success',
+            center: true,
+          });
+          return true;
+        }
+        console.log('error submit!!');
+        return false;
+      });
+    },
   },
 };
 </script>
@@ -176,33 +216,38 @@ export default {
     margin:
       right: 75px
     @media (max-width: 767.98px)
-      margin-right: 0
+      margin:
+        right: 0
   &__number-input
     width: 264px
     margin:
       bottom: 25px
+    @media (max-width: 767.98px)
+      margin:
+        right: auto
+        left: auto
     .el-input__inner
       border-radius: 0
       padding: 5px 5px
       border:
-        top: 1px solid #ffffff
-        left: 1px solid #ffffff
-        right: 1px solid #ffffff
+        top: none
+        left: none
+        right: none
         bottom: 1px solid #c4c4c4
       font-size: 15px
     .el-input__inner:hover
       border-bottom: 1px solid #c4c4c4
     .el-input__inner:focus
       border:
-        top: 1px solid #ffffff
-        left: 1px solid #ffffff
-        right: 1px solid #ffffff
+        top: none
+        left: none
+        right: none
         bottom: 1px solid #c4c4c4
   .ring__button
     height: 50px
     width: 278px
     box-sizing: border-box
-    background-image: url("../assets/Icons/phone-receiver.svg")
+    background-image: url("../assets/Icons/phone-receiver.svg") !important
     background-repeat: no-repeat
     background-size: 20px 20px
     background-position: right 30px top 14px
@@ -214,4 +259,5 @@ export default {
       margin:
         top: 25px
         bottom: 10px
+
 </style>

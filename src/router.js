@@ -18,6 +18,7 @@ import Summary from './views/Summary.vue';
 import Auth from './views/Auth.vue';
 import RepeatModal from './components/modals/RepeatModal.vue';
 import InsideModal from './components/modals/InsideModal.vue';
+// import Cards from './components/Cards.vue';
 
 Vue.use(Router);
 Vue.use(Meta, {
@@ -116,6 +117,11 @@ export default new Router({
       name: 'InsideModal',
       component: InsideModal,
     },
+    // {
+    //   path: '/cards',
+    //   name: 'Cards',
+    //   component: Cards,
+    // },
     // {
     //   path: '/about',
     //   name: 'about',

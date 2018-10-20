@@ -1,7 +1,9 @@
 <template>
   <div class="profile">
     <!--<repeatModal v-model="repeatVisible"></repeatModal>-->
+    <insideModal :show-dialog="showInsideModal"></insideModal>
     <b-container>
+      <el-button type="text" @click="showInsideModal = true">inside modal</el-button>
       <b-row>
         <b-col md="4" sm="12">
 
@@ -378,13 +380,17 @@
 </template>
 
 <script>
+import { mapMutations, mapGetters } from 'vuex';
 import RepeatModal from '../components/modals/RepeatModal.vue';
+import InsideModal from '../components/modals/InsideModal.vue';
 import Cards from '../components/Cards.vue';
+
 
 export default {
   name: 'Profile',
   components: {
     repeatModal: RepeatModal,
+    insideModal: InsideModal,
     card: Cards,
   },
   data() {
@@ -398,14 +404,18 @@ export default {
       selectedMenu: 'Основная информация',
       isMobMenu: false,
       isRightMob: true,
+      showInsideModal: false,
     };
   },
   computed: {
+    ...mapGetters.getInsideShow,
+
     repeatVisible() {
       return this.repeatVisibleValue;
     },
   },
   methods: {
+    ...mapMutations(['setInsideShow']),
     setRepeatVisibleValue(val) {
       this.repeatVisibleValue = val;
     },
