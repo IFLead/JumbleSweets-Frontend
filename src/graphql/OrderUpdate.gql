@@ -1,0 +1,20 @@
+#import "./AddressFragment.gql"
+
+mutation OrderUpdate($id: ID!, $input: OrderUpdateInput!) {
+    orderUpdate(id: $id, input: $input) {
+      errors {
+        field
+        message
+      }
+      order {
+        id
+        userEmail
+        billingAddress {
+          ...AddressFragment
+        }
+        shippingAddress {
+          ...AddressFragment
+        }
+      }
+    }
+  }
