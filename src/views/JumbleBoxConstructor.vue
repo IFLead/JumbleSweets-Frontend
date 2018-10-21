@@ -1055,7 +1055,6 @@ export default {
           padding:
             left: 15px
             right: 15px
-
     .price
       &__content
         background-color: #f8f8f8
@@ -1076,7 +1075,6 @@ export default {
         color: #e70068
         margin:
           bottom: 17px
-
     .added-items
       @media (max-width: 767.98px)
         margin:
@@ -1121,7 +1119,6 @@ export default {
         &:hover
           .icon
             fill: #e70068
-
     .photo
       margin:
         top: 30px
@@ -1141,7 +1138,6 @@ export default {
         @media (max-width: 575.98px)
           min-height: 250px
           background-position: center 0
-
     .add-sweets
       @media (max-width: 991.98px)
         margin:
@@ -1210,7 +1206,6 @@ export default {
         &:hover
           .icon
             fill: #e70068
-
     .add-sweets__list::-webkit-scrollbar
       width: 4px
     .add-sweets__list::-webkit-scrollbar-button
@@ -1223,7 +1218,6 @@ export default {
       border-radius: 5px
     .add-sweets__list::-webkit-scrollbar-button
       background-color: #F8F8F8
-
     .controls
       padding:
         left: 10px
@@ -1310,7 +1304,6 @@ export default {
             top: 15px
             left: auto
             right: auto
-
     .product-add
       display: block
       background-color: rgba(58, 58, 58, 0.8)
@@ -1390,7 +1383,6 @@ export default {
             right: 34px
           @media (max-width: 767.98px)
             top: 45px
-
         &__list
           list-style: none
           display: flex
@@ -1435,7 +1427,6 @@ export default {
               bottom: 6px
               left: 15px
               right: 15px
-
           &:hover, &:focus
             text-decoration: none
             background-color: #e70068
@@ -1453,7 +1444,6 @@ export default {
           @media (max-width: 575.98px)
             margin:
               right: 0
-
           .el-input__inner
             padding:
               left: 5px
@@ -1463,12 +1453,10 @@ export default {
             border-bottom: 1px solid #c4c4c4
             font-size: 15px
             line-height: 20px
-
             &::placeholder
               font-size: 15px
               line-height: 20px
               color: #DCDCDC
-
         &__places
           margin:
             bottom: 10px
@@ -1615,7 +1603,6 @@ export default {
               margin:
                 left: 0 !important
                 right: 0 !important
-
     .product-add::-webkit-scrollbar
       width: 4px
     .product-add::-webkit-scrollbar-button
@@ -1628,7 +1615,6 @@ export default {
       border-radius: 5px
     .product-add::-webkit-scrollbar-button
       background-color: #F8F8F8
-
     .holiday
       overflow: auto
       background-color: rgba(58, 58, 58, 0.8)
@@ -1722,7 +1708,6 @@ export default {
         align-items: stretch
         @media (max-width: 575.98px)
           flex-direction: column-reverse
-
       &__title
         color: #000000
         text-align: center
@@ -1790,7 +1775,6 @@ export default {
             bottom: 40px
       &__button
         width: 100%
-
         p
           margin:
             bottom: 0
@@ -1809,7 +1793,6 @@ export default {
         min-height: 205px
         background-repeat: no-repeat
         background-size: cover
-
     .holiday::-webkit-scrollbar
       width: 4px
     .holiday::-webkit-scrollbar-button
@@ -1822,7 +1805,6 @@ export default {
       border-radius: 5px
     .holiday::-webkit-scrollbar-button
       background-color: #F8F8F8
-
     .postcard
       overflow: auto
       background-color: rgba(58, 58, 58, 0.8)
@@ -1892,12 +1874,11 @@ export default {
         margin:
           left: auto
           right: auto
-        background: repeating-linear-gradient(to bottom, #ffffff, #ffffff 40px, #c4c4c4 40px, #c4c4c4 41px)
+        background: repeating-linear-gradient(to bottom, #ffffff,  #ffffff 40px, #c4c4c4 40px, #c4c4c4 41px)
         @media (max-width: 991.98px)
           width: 550px
         @media (max-width: 767.98px)
           width: 100%
-
       &__title
         color: #000000
         font-size: 30px
@@ -1960,7 +1941,6 @@ export default {
       border-radius: 5px
     .postcard::-webkit-scrollbar-button
       background-color: #F8F8F8
-
     .confirmed
       overflow: auto
       background-color: rgba(58, 58, 58, 0.8)
@@ -2043,7 +2023,6 @@ export default {
           padding:
             top: 20px
             left: 0
-
       &__link
         transition: all 0.2s ease
         color: #000000
@@ -2056,7 +2035,6 @@ export default {
         &:hover, &:focus
           color: #e70068
           text-decoration: none
-
     .confirmed::-webkit-scrollbar
       width: 4px
     .confirmed::-webkit-scrollbar-button
