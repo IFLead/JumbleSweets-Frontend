@@ -1,0 +1,9 @@
+#import "./OrderDetailsFragment.gql"
+
+mutation OrderRelease($id: ID!) {
+    orderRelease(id: $id) {
+      order {
+        ...OrderDetailsFragment
+      }
+    }
+  }

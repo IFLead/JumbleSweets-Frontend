@@ -1,0 +1,13 @@
+#import "./OrderDetailsFragment.gql"
+
+mutation OrderMarkAsPaid($id: ID!) {
+    orderMarkAsPaid(id: $id) {
+      errors {
+        field
+        message
+      }
+      order {
+        ...OrderDetailsFragment
+      }
+    }
+  }

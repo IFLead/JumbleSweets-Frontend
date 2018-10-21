@@ -1,0 +1,13 @@
+#import "./OrderDetailsFragment.gql"
+
+mutation OrderDraftFinalize($id: ID!) {
+    draftOrderComplete(id: $id) {
+      errors {
+        field
+        message
+      }
+      order {
+        ...OrderDetailsFragment
+      }
+    }
+  }

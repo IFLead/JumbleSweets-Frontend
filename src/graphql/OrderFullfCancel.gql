@@ -1,0 +1,13 @@
+#import "./OrderDetailsFragment.gql"
+
+mutation OrderFulfillmentCancel($id: ID!, $input: FulfillmentCancelInput!) {
+    orderFulfillmentCancel(id: $id, input: $input) {
+      errors {
+        field
+        message
+      }
+      order {
+        ...OrderDetailsFragment
+      }
+    }
+  }

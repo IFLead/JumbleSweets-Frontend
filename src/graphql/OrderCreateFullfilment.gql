@@ -1,0 +1,16 @@
+#import "./OrderDetailsFragment.gql"
+
+mutation OrderCreateFulfillment(
+    $order: ID!
+    $input: FulfillmentCreateInput!
+  ) {
+    orderFulfillmentCreate(order: $order, input: $input) {
+      errors {
+        field
+        message
+      }
+      order {
+        ...OrderDetailsFragment
+      }
+    }
+  }

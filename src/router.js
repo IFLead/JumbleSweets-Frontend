@@ -26,9 +26,25 @@ Vue.use(Meta, {
   ssrAttribute: 'data-vue-meta-server-rendered', // the attribute name that lets vue-meta know that meta info has already been server-rendered
   tagIDKeyName: 'vmid', // the property name that vue-meta uses to determine whether to overwrite or append a tag
 });
+
+function scrollBehavior(to, from, savedPosition) {
+  if (savedPosition) {
+    return savedPosition;
+  }
+  const position = {};
+  if (to.matched.some(m => m.meta.scrollToTop)) {
+    // coords will be used if no selector is provided,
+    // or if the selector didn't match any element.
+    position.x = 0;
+    position.y = 0;
+  }
+  return position;
+}
+
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior,
   routes: [
     {
       path: '/',
@@ -60,6 +76,7 @@ export default new Router({
       name: 'item',
       component: Item,
       props: true,
+      meta: { scrollToTop: true },
     },
     {
       path: '/package',
@@ -105,6 +122,7 @@ export default new Router({
       path: '/summary',
       name: 'Summary',
       component: Summary,
+      meta: { scrollToTop: true },
     },
     {
       path: '/repeatmodal',

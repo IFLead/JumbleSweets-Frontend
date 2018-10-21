@@ -2,7 +2,7 @@
   <div class="cards">
 
     <div class="products__catalog catalog">
-      <div v-for="product in allProducts.edges" :key="product.node.id"
+      <div v-for="product in allProducts" :key="product.node.id"
            class="catalog__element">
         <div class="catalog__content">
           <!--<div v-if="product.node.availability.onSale" class="catalog__sale">{{

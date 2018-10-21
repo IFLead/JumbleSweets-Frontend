@@ -1,0 +1,13 @@
+#import "./OrderDetailsFragment.gql"
+
+mutation OrderRefund($id: ID!, $amount: Decimal!) {
+    orderRefund(id: $id, amount: $amount) {
+      errors {
+        field
+        message
+      }
+      order {
+        ...OrderDetailsFragment
+      }
+    }
+  }

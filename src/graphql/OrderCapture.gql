@@ -1,0 +1,13 @@
+#import "./OrderDetailsFragment.gql"
+
+mutation OrderCapture($id: ID!, $amount: Decimal!) {
+    orderCapture(id: $id, amount: $amount) {
+      errors {
+        field
+        message
+      }
+      order {
+        ...OrderDetailsFragment
+      }
+    }
+  }
