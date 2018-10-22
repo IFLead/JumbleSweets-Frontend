@@ -1874,7 +1874,7 @@ export default {
         margin:
           left: auto
           right: auto
-        background: repeating-linear-gradient(to bottom, #ffffff,  #ffffff 40px, #c4c4c4 40px, #c4c4c4 41px)
+        background: repeating-linear-gradient(to bottom, #ffffff, #ffffff 40px, #c4c4c4 40px, #c4c4c4 41px)
         @media (max-width: 991.98px)
           width: 550px
         @media (max-width: 767.98px)

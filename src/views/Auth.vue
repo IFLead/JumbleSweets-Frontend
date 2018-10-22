@@ -38,7 +38,7 @@
                     <img src="../assets/Icons/user.svg" width="16" height="20" alt="Контакты">
                   </div>
                   <div class="authorization__data-input">
-                    <el-input v-model="input_mail" placeholder="Почта или телефон"></el-input>
+                    <el-input v-model="email" placeholder="Почта или телефон"></el-input>
                   </div>
                 </div>
                 <div class="authorization__data-pass">
@@ -46,7 +46,7 @@
                     <img src="../assets/Icons/key.svg" width="9" height="20" alt="Пароль">
                   </div>
                   <div class="authorization__data-input">
-                    <el-input :type="visible_pass_auto" v-model="input_pass_auto" placeholder="Пароль"></el-input>
+                    <el-input :type="visible_pass_auto" v-model="password" placeholder="Пароль" autocomplete="current-password"></el-input>
                   </div>
                   <div class="authorization__data-pass-eye" @click="visible_pass_auto = 'text'"
                        @mouseout="visible_pass_auto = 'password'">
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="registr__data-input">
-                  <el-input :type="visible_pass_reg" v-model="input_pass_reg" placeholder="Пароль"></el-input>
+                  <el-input :type="visible_pass_reg" v-model="input_pass_reg" placeholder="Пароль" autocomplete="new-password"></el-input>
                 </div>
 
                 <div class="registr__data-pass-eye" @click="visible_pass_reg = 'text'"
@@ -120,7 +120,7 @@
                   <img src="../assets/Icons/key.svg" width="9" height="20" alt="Повторите пароль">
                 </div>
                 <div class="registr__data-input">
-                  <el-input :type="visible_repass" v-model="input_repass" placeholder="Повторите пароль"></el-input>
+                  <el-input :type="visible_repass" v-model="input_repass" placeholder="Повторите пароль" autocomplete="new-password"></el-input>
                 </div>
                 <div class="registr__data-repass-eye" @click="visible_repass = 'text'"
                      @mouseout="visible_repass = 'password'">
