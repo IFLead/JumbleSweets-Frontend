@@ -9,14 +9,18 @@
                 <div class="jumble-box__content">
                   <h2 class="jumble-box__title">Что такое Jumble Box</h2>
                   <p class="jumble-box__description">
-                    Jumble Box - это универсальная подарочная коробка, которую Вы можете наполнить любыми сладостями на выбор.
+                    Jumble Box - это универсальная подарочная коробка, которую Вы можете наполнить любыми сладостями на
+                    выбор.
                   </p>
                   <p class="jumble-box__description">
-                    При создании Jumble Box Вы сможете выбрать необходимый размер, а после - изменить внешнее оформление и, при желании, добавить открытку с поздравлениями для Ваших друзей и близких.
+                    При создании Jumble Box Вы сможете выбрать необходимый размер, а после - изменить внешнее оформление
+                    и, при желании, добавить открытку с поздравлениями для Ваших друзей и близких.
                   </p>
                   <h2 class="jumble-box__title">Jumble Mystery</h2>
                   <p class="jumble-box__description">
-                    Если Вы не можете определиться с выбором или любите неожиданности, Jumble Mystery - то, что Вам нужно! Подарочная коробка - сюрпри со случайными сладостями, стоимость которой меньше, чем стоимость её содержимого. Выгодно и интересно, не правда ли?
+                    Если Вы не можете определиться с выбором или любите неожиданности, Jumble Mystery - то, что Вам
+                    нужно! Подарочная коробка - сюрпри со случайными сладостями, стоимость которой меньше, чем стоимость
+                    её содержимого. Выгодно и интересно, не правда ли?
                   </p>
                 </div>
               </div>
@@ -422,229 +426,373 @@
 <script>
 export default {
   name: 'JumbleBox',
-  components: {
-
-  },
+  components: {},
 };
 </script>
 
 <style lang="sass">
-.jumble-box
-  &__content
-    position: relative
-    z-index: 10
-  &__wrapper
-    position: relative
-    background-color: black
-    background-image: url("../assets/samuel-holt-490207-unsplash.jpg")
-    background-size: cover
-    background-position: 0 -120px
-    background-repeat: no-repeat
-    color: #ffffff
-    padding:
-      left: 70px
-      top: 66px
-      bottom: 70px
-    @media (max-width: 1199.98px)
-      background-position: 0 0
-    @media (max-width: 991.98px)
+  .jumble-box
+    &__content
+      position: relative
+      z-index: 10
+    &__wrapper
+      position: relative
+      background-color: black
+      background-image: url("../assets/samuel-holt-490207-unsplash.jpg")
+      background-size: cover
+      background-position: 0 -120px
+      background-repeat: no-repeat
+      color: #ffffff
       padding:
-        left: 50px
-        top: 40px
-        bottom: 50px
-    @media (max-width: 575.98px)
+        left: 70px
+        top: 66px
+        bottom: 70px
+      @media (max-width: 1199.98px)
+        background-position: 0 0
+      @media (max-width: 991.98px)
+        padding:
+          left: 50px
+          top: 40px
+          bottom: 50px
+      @media (max-width: 575.98px)
+        padding:
+          left: 35px
+          top: 30px
+          bottom: 40px
+      &::after
+        z-index: 1
+        content: ''
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background-color: rgba(0, 0, 0, 0.7)
+    &__title
+      font-weight: 700
+      font-size: 30px
       padding:
+        top: 6px
+      line-height: 35px
+      width: 600px
+      margin:
+        bottom: 41px
+      @media (max-width: 1199.98px)
+        margin:
+          bottom: 35px
+      @media (max-width: 991.98px)
+        width: 400px
+        margin:
+          bottom: 30px
+      @media (max-width: 767.98px)
+        font-size: 25px
+        line-height: 30px
+        margin:
+          bottom: 25px
+      @media (max-width: 575.98px)
+        width: 100%
+        padding:
+          right: 40px
+        margin:
+          bottom: 20px
+    &__description
+      width: 950px
+      margin:
+        bottom: 30px
+      @media (max-width: 1199.98px)
+        width: 800px
+        margin:
+          bottom: 25px
+      @media (max-width: 991.98px)
+        width: 550px
+        margin:
+          bottom: 20px
+      @media (max-width: 767.98px)
+        width: 400px
+      @media (max-width: 575.98px)
+        width: 100%
+        padding:
+          right: 40px
+        margin:
+          bottom: 15px
+
+  .steps
+    margin:
+      top: 46px
+    &__element
+      margin:
+        bottom: 30px
+      @media (max-width: 991.98px)
+        padding:
+          left: 10px
+          right: 10px
+        margin:
+          bottom: 20px
+      @media (max-width: 575.98px)
+        padding:
+          left: 15px
+          right: 15px
+        margin:
+          bottom: 10px
+    &__content
+      background-color: #000000
+      color: #ffffff
+      background-position: center 30px
+      background-size: 30px auto
+      background-repeat: no-repeat
+      height: 100%
+      padding:
+        top: 88px
         left: 35px
-        top: 30px
-        bottom: 40px
-    &::after
-      z-index: 1
-      content: ''
+        right: 35px
+        bottom: 60px
+      @media (max-width: 991.98px)
+        padding:
+          left: 25px
+          right: 25px
+      &--first
+        background-image: url("../assets/Icons/Group_128.svg")
+      &--second
+        background-image: url("../assets/Icons/roller.svg")
+      &--third
+        background-image: url("../assets/Icons/sweet.svg")
+      &--four
+        background-image: url("../assets/Icons/invitation.svg")
+      &--fifth
+        background-image: url("../assets/Icons/shopping-bag.svg")
+    &__element-title
+      display: block
+      text-align: center
+      font-weight: 700
+      font-size: 18px
+      line-height: 25px
+    &__number
+      color: #707070
+      margin:
+        bottom: 8px
+      text-align: center
+    &__title
+      font-size: 30px
+      line-height: 35px
+      font-weight: 700
+      width: 600px
+      text-align: center
+      margin:
+        bottom: 51px
+        left: auto
+        right: auto
+      @media (max-width: 767.98px)
+        font-size: 25px
+        line-height: 30px
+        padding:
+          left: 20px
+          right: 20px
+        width: 100%
+      @media (max-width: 575.98px)
+        margin:
+          bottom: 30px
+
+  .jumble-size
+    margin:
+      top: 46px
+    &__title
+      font-size: 30px
+      line-height: 35px
+      font-weight: 700
+      width: 600px
+      text-align: center
+      margin:
+        bottom: 51px
+        left: auto
+        right: auto
+      @media (max-width: 767.98px)
+        font-size: 25px
+        line-height: 30px
+        padding:
+          left: 20px
+          right: 20px
+        width: 100%
+      @media (max-width: 575.98px)
+        margin:
+          bottom: 30px
+    &__element
+      @media (max-width: 991.98px)
+        margin:
+          bottom: 30px
+      a
+        display: block
+        height: 100%
+        position: relative
+        color: #000000
+        padding:
+          top: 238px
+          left: 40px
+          right: 40px
+          bottom: 40px
+        background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center 0
+        @media (max-width: 1199.98px)
+          padding:
+            left: 35px
+            right: 35px
+            top: 200px
+        @media (max-width: 991.98px)
+          padding:
+            left: 50px
+        &:hover, &:focus
+          text-decoration: none
+          .jumble-size__content
+            opacity: 0
+          .jumble-size__hide
+            opacity: 1
+        &::after
+          z-index: 1
+          position: absolute
+          content: ''
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          background-color: rgba(255, 250, 185, 0.8)
+    &__element-title
+      font-size: 30px
+      line-height: 40px
+      font-weight: 700
+      margin:
+        bottom: 19px
+      @media (max-width: 1199.98px)
+        margin:
+          bottom: 15px
+    &__description
+      margin:
+        bottom: 0
+    &__content
+      transition: opacity 0.2s ease
+      position: relative
+      z-index: 10
+    &__icon
+      display: inline-block
+      width: 20px
+      height: 20px
+      margin:
+        right: auto
+        left: 12px
+      .icon
+        margin:
+          top: -4px
+    &__hide
+      transition: opacity 0.2s ease
+      display: flex
+      align-items: center
+      opacity: 0
       position: absolute
+      z-index: 100
+      color: #ffffff
+      background-color: rgba(0, 0, 0, 0.8)
+      top: 0
       left: 0
       right: 0
-      top: 0
       bottom: 0
-      background-color: rgba(0, 0, 0, 0.7)
-  &__title
-    font-weight: 700
-    font-size: 30px
-    padding:
-      top: 6px
-    line-height: 35px
-    width: 600px
-    margin:
-      bottom: 41px
-    @media (max-width: 1199.98px)
-      margin:
-        bottom: 35px
-    @media (max-width: 991.98px)
-      width: 400px
-      margin:
-        bottom: 30px
-    @media (max-width: 767.98px)
-      font-size: 25px
-      line-height: 30px
-      margin:
-        bottom: 25px
-    @media (max-width: 575.98px)
-      width: 100%
-      padding:
-        right: 40px
-      margin:
-        bottom: 20px
-  &__description
-    width: 950px
-    margin:
-      bottom: 30px
-    @media (max-width: 1199.98px)
-      width: 800px
-      margin:
-        bottom: 25px
-    @media (max-width: 991.98px)
-      width: 550px
-      margin:
-        bottom: 20px
-    @media (max-width: 767.98px)
-      width: 400px
-    @media (max-width: 575.98px)
-      width: 100%
-      padding:
-        right: 40px
-      margin:
-        bottom: 15px
+      p
+        font-size: 15px
+        display: inline-block
+        margin:
+          left: auto
+          bottom: 0
 
-.steps
-  margin:
-    top: 46px
-  &__element
+  .surprise
     margin:
-      bottom: 30px
-    @media (max-width: 991.98px)
-      padding:
-        left: 10px
-        right: 10px
+      top: 46px
+    &__title
+      font-size: 30px
+      line-height: 35px
+      font-weight: 700
+      width: 600px
+      text-align: center
       margin:
-        bottom: 20px
-    @media (max-width: 575.98px)
-      padding:
-        left: 15px
-        right: 15px
+        bottom: 19px
+        left: auto
+        right: auto
+      @media (max-width: 767.98px)
+        font-size: 25px
+        line-height: 30px
+        padding:
+          left: 20px
+          right: 20px
+        width: 100%
+      @media (max-width: 575.98px)
+        margin:
+          bottom: 10px
+    &__subtitle
+      text-align: center
+      width: 500px
       margin:
-        bottom: 10px
-  &__content
-    background-color: #000000
-    color: #ffffff
-    background-position: center 30px
-    background-size: 30px auto
-    background-repeat: no-repeat
-    height: 100%
-    padding:
-      top: 88px
-      left: 35px
-      right: 35px
-      bottom: 60px
-    @media (max-width: 991.98px)
-      padding:
-        left: 25px
-        right: 25px
-    &--first
-      background-image: url("../assets/Icons/Group_128.svg")
-    &--second
-      background-image: url("../assets/Icons/roller.svg")
-    &--third
-      background-image: url("../assets/Icons/sweet.svg")
-    &--four
-      background-image: url("../assets/Icons/invitation.svg")
-    &--fifth
-      background-image: url("../assets/Icons/shopping-bag.svg")
-  &__element-title
-    display: block
-    text-align: center
-    font-weight: 700
-    font-size: 18px
-    line-height: 25px
-  &__number
-    color: #707070
-    margin:
-      bottom: 8px
-    text-align: center
-  &__title
-    font-size: 30px
-    line-height: 35px
-    font-weight: 700
-    width: 600px
-    text-align: center
-    margin:
-      bottom: 51px
-      left: auto
-      right: auto
-    @media (max-width: 767.98px)
-      font-size: 25px
-      line-height: 30px
-      padding:
-        left: 20px
-        right: 20px
-      width: 100%
-    @media (max-width: 575.98px)
-      margin:
-        bottom: 30px
+        left: auto
+        right: auto
+        bottom: 50px
+      @media (max-width: 575.98px)
+        width: 100%
+        padding:
+          left: 20px
+          right: 20px
 
-
-.jumble-size
-  margin:
-    top: 46px
-  &__title
-    font-size: 30px
-    line-height: 35px
-    font-weight: 700
-    width: 600px
-    text-align: center
-    margin:
-      bottom: 51px
-      left: auto
-      right: auto
-    @media (max-width: 767.98px)
-      font-size: 25px
-      line-height: 30px
-      padding:
-        left: 20px
-        right: 20px
-      width: 100%
-    @media (max-width: 575.98px)
+    &__element-title
+      font-size: 30px
+      line-height: 40px
+      font-weight: 700
       margin:
-        bottom: 30px
-  &__element
-    @media (max-width: 991.98px)
+        bottom: 19px
+      @media (max-width: 1199.98px)
+        font-size: 29px
+        margin:
+          bottom: 15px
+      @media (max-width: 991.98px)
+        font-size: 30px
+    &__description
       margin:
-        bottom: 30px
+        bottom: 8px
+    &__price
+      display: block
+      font-size: 40px
+      line-height: 45px
+      margin:
+        top: 74px
+      @media (max-width: 1199.98px)
+        margin:
+          top: 40px
     a
       display: block
       height: 100%
       position: relative
-      color: #000000
+      color: #ffffff
       padding:
-        top: 238px
+        top: 56px
         left: 40px
         right: 40px
-        bottom: 40px
+        bottom: 60px
       background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
       background-repeat: no-repeat
       background-size: cover
       background-position: center 0
       @media (max-width: 1199.98px)
         padding:
-          left: 35px
-          right: 35px
-          top: 200px
+          left: 30px
+          right: 30px
+          bottom: 50px
       @media (max-width: 991.98px)
         padding:
           left: 50px
+      @media (max-width: 575.98px)
+        padding:
+          left: 30px
+
       &:hover, &:focus
         text-decoration: none
-        .jumble-size__content
+        .surprise__content
           opacity: 0
-        .jumble-size__hide
+        .surprise__hide
           opacity: 1
       &::after
         z-index: 1
@@ -654,258 +802,110 @@ export default {
         left: 0
         right: 0
         bottom: 0
-        background-color: rgba(255, 250, 185, 0.8)
-  &__element-title
-    font-size: 30px
-    line-height: 40px
-    font-weight: 700
-    margin:
-      bottom: 19px
-    @media (max-width: 1199.98px)
+        background-color: rgba(231, 0, 104, 0.8)
+    &__content
+      transition: opacity 0.2s ease
+      position: relative
+      z-index: 10
+    &__icon
+      width: 20px
+      height: 20px
       margin:
-        bottom: 15px
-  &__description
-    margin:
-      bottom: 0
-  &__content
-    transition: opacity 0.2s ease
-    position: relative
-    z-index: 10
-  &__icon
-    display: inline-block
-    width: 20px
-    height: 20px
-    margin:
-      right: auto
-      left: 12px
-    .icon
-      margin:
-        top: -4px
-  &__hide
-    transition: opacity 0.2s ease
-    display: flex
-    align-items: center
-    opacity: 0
-    position: absolute
-    z-index: 100
-    color: #ffffff
-    background-color: rgba(0, 0, 0, 0.8)
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    p
-      font-size: 15px
-      display: inline-block
-      margin:
-        left: auto
-        bottom: 0
-
-.surprise
-  margin:
-    top: 46px
-  &__title
-    font-size: 30px
-    line-height: 35px
-    font-weight: 700
-    width: 600px
-    text-align: center
-    margin:
-      bottom: 19px
-      left: auto
-      right: auto
-    @media (max-width: 767.98px)
-      font-size: 25px
-      line-height: 30px
-      padding:
-        left: 20px
-        right: 20px
-      width: 100%
-    @media (max-width: 575.98px)
-      margin:
-        bottom: 10px
-  &__subtitle
-    text-align: center
-    width: 500px
-    margin:
-      left: auto
-      right: auto
-      bottom: 50px
-    @media (max-width: 575.98px)
-      width: 100%
-      padding:
-        left: 20px
-        right: 20px
-
-  &__element-title
-    font-size: 30px
-    line-height: 40px
-    font-weight: 700
-    margin:
-      bottom: 19px
-    @media (max-width: 1199.98px)
-      font-size: 29px
-      margin:
-        bottom: 15px
-    @media (max-width: 991.98px)
-      font-size: 30px
-  &__description
-    margin:
-      bottom: 8px
-  &__price
-    display: block
-    font-size: 40px
-    line-height: 45px
-    margin:
-      top: 74px
-    @media (max-width: 1199.98px)
-      margin:
-        top: 40px
-  a
-    display: block
-    height: 100%
-    position: relative
-    color: #ffffff
-    padding:
-      top: 56px
-      left: 40px
-      right: 40px
-      bottom: 60px
-    background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
-    background-repeat: no-repeat
-    background-size: cover
-    background-position: center 0
-    @media (max-width: 1199.98px)
-      padding:
-        left: 30px
-        right: 30px
-        bottom: 50px
-    @media (max-width: 991.98px)
-      padding:
-        left: 50px
-    @media (max-width: 575.98px)
-      padding:
-        left: 30px
-
-    &:hover, &:focus
-      text-decoration: none
-      .surprise__content
-        opacity: 0
-      .surprise__hide
-        opacity: 1
-    &::after
-      z-index: 1
+        left: 10px
+        right: auto
+      .icon
+        margin:
+          top: -4px
+    &__hide
+      transition: opacity 0.2s ease
+      display: flex
+      align-items: center
+      opacity: 0
       position: absolute
-      content: ''
+      z-index: 100
+      color: #ffffff
+      background-color: rgba(0, 0, 0, 0.8)
       top: 0
       left: 0
       right: 0
       bottom: 0
-      background-color: rgba(231, 0, 104, 0.8)
-  &__content
-    transition: opacity 0.2s ease
-    position: relative
-    z-index: 10
-  &__icon
-    width: 20px
-    height: 20px
+      p
+        font-size: 15px
+        display: inline-block
+        margin:
+          left: auto
+          bottom: 0
+    &__element
+      @media (max-width: 991.98px)
+        margin:
+          bottom: 30px
+
+  .what-choose
     margin:
-      left: 10px
-      right: auto
-    .icon
-      margin:
-        top: -4px
-  &__hide
-    transition: opacity 0.2s ease
-    display: flex
-    align-items: center
-    opacity: 0
-    position: absolute
-    z-index: 100
-    color: #ffffff
-    background-color: rgba(0, 0, 0, 0.8)
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    p
-      font-size: 15px
-      display: inline-block
-      margin:
-        left: auto
-        bottom: 0
-  &__element
+      top: 50px
+      bottom: 50px
     @media (max-width: 991.98px)
       margin:
-        bottom: 30px
-
-
-.what-choose
-  margin:
-    top: 50px
-    bottom: 50px
-  @media (max-width: 991.98px)
-    margin:
-      top: 40px
-      bottom: 40px
-  &__content
-    background-color: #fcb0b0
-    background-repeat: no-repeat
-    background-size: cover
-    background-image: url("../assets/joanna-kosinska-559792-unsplash.jpg")
-    background-position: 0 -240px
-    padding:
-      top: 86px
-      bottom: 120px
-      right: 115px
-      left: 590px
-    @media (max-width: 1199.98px)
-      background-position: 0 -200px
-      padding:
-        left: 450px
-        right: 50px
-    @media (max-width: 991.98px)
-      background-position: 0 -100px
-      padding:
-        left: 300px
-        top: 60px
-        bottom: 80px
-    @media (max-width: 767.98px)
-      background-position: right -50px center
-      background-size: 800px auto
-      padding:
-        left: 100px
-    @media (max-width: 575.98px)
-      background-position: right -50px center
-      padding:
-        left: 30px
-        right: 30px
-  &__title
-    font-size: 30px
-    line-height: 40px
-    font-weight: 700
-    margin:
-      bottom: 19px
-  &__description
-    margin:
-      bottom: 65px
-    @media (max-width: 1199.98px)
-      margin:
+        top: 40px
         bottom: 40px
-    @media (max-width: 991.98px)
+    &__content
+      background-color: #fcb0b0
+      background-repeat: no-repeat
+      background-size: cover
+      background-image: url("../assets/joanna-kosinska-559792-unsplash.jpg")
+      background-position: 0 -240px
+      padding:
+        top: 86px
+        bottom: 120px
+        right: 115px
+        left: 590px
+      @media (max-width: 1199.98px)
+        background-position: 0 -200px
+        padding:
+          left: 450px
+          right: 50px
+      @media (max-width: 991.98px)
+        background-position: 0 -100px
+        padding:
+          left: 300px
+          top: 60px
+          bottom: 80px
+      @media (max-width: 767.98px)
+        background-position: right -50px center
+        background-size: 800px auto
+        padding:
+          left: 100px
+      @media (max-width: 575.98px)
+        background-position: right -50px center
+        padding:
+          left: 30px
+          right: 30px
+    &__title
+      font-size: 30px
+      line-height: 40px
+      font-weight: 700
       margin:
-        bottom: 30px
-    @media (max-width: 575.98px)
+        bottom: 19px
+    &__description
       margin:
-        bottom: 20px
-  &__button-icon
-    display: inline-block
-    width: 20px
-    height: 20px
-    margin:
-      left: 16px
-  .what-choose__button
-    background-color: #000000
-    padding:
-      right: 30px
+        bottom: 65px
+      @media (max-width: 1199.98px)
+        margin:
+          bottom: 40px
+      @media (max-width: 991.98px)
+        margin:
+          bottom: 30px
+      @media (max-width: 575.98px)
+        margin:
+          bottom: 20px
+    &__button-icon
+      display: inline-block
+      width: 20px
+      height: 20px
+      margin:
+        left: 16px
+    .what-choose__button
+      background-color: #000000
+      padding:
+        right: 30px
 </style>

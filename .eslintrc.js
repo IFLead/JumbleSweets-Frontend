@@ -25,11 +25,11 @@ module.exports = {
         allowFirstLine: true,
       },
     }],
-    'vue/script-indent': 'off',
-    //     ['error', 2, {
-    //     'baseIndent': 1,
-    //     'switchCase': 1,
-    // }]
+    'vue/script-indent':
+      ['error', 2, {
+        baseIndent: 0,
+        switchCase: 1,
+      }],
     'no-mixed-operators': [
       'error',
       {

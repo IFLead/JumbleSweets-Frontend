@@ -10,7 +10,7 @@
   white-space: nowrap;
   cursor: pointer;
   background: $--button-default-fill;
-	border: none;
+  border: none;
   border-color: $--button-default-border;
   color: $--button-default-color;
   -webkit-appearance: none;
@@ -74,7 +74,7 @@
     &,
     &:hover,
     &:focus {
-			opacity: 0.2;
+      opacity: 0.2;
       color: $--button-default-color;
       cursor: not-allowed;
       background-color: $--button-default-fill;

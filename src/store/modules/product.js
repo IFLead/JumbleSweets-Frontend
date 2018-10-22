@@ -64,6 +64,7 @@ const actions = {
       context.commit('setTotalCount', response.data.products.totalCount);
       context.commit('setPageInfo', response.data.products.pageInfo);
     } catch (e) {
+      console.log(e);
       context.commit('setProducts', productBackData);
     }
   },
