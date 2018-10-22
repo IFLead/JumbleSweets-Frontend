@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 import Vue from 'vue';
-import { apolloProvider } from '../../vue-apollo';
+import { apolloProvider as apollo } from '../../vue-apollo';
 import PRODUCT_LIST from '../../graphql/ProductList.gql';
 import { productBackData, productDetailBackData } from '../data/fallBackData';
 import PRODUCT_DETAILS from '../../graphql/ProductDetails.gql';
@@ -56,7 +56,7 @@ const mutations = {
 const actions = {
   async loadProducts(context, data = {}) {
     try {
-      const response = await apolloProvider.defaultClient.query({
+      const response = await apollo.defaultClient.query({
         query: PRODUCT_LIST,
         variables: { first: Vue.prototype.$PAGINATE_BY, sortBy: data.sortBy, ...data.filters }, //  after: context.state.endCursor
       });
@@ -80,7 +80,7 @@ const actions = {
   // },
   async loadProduct(context, { cb, id }) {
     try {
-      const response = await apolloProvider.defaultClient.query({
+      const response = await apollo.defaultClient.query({
         query: PRODUCT_DETAILS,
         variables: { id },
       });

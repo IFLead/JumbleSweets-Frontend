@@ -1,3 +1,4 @@
 **/*.gql
 .postcssrc.js
 .*
+.*
