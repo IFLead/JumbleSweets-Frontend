@@ -99,7 +99,7 @@
               <h2 class="category__title">Популярные категории товаров</h2>
             </b-col>
             <b-col sm="6" lg="3" class="category__element">
-              <router-link :to="{name: 'home', query: { categories: 2, }, }">
+              <router-link :to="{name: 'home', query: { categories: '2', }, }">
                 <a href="#">
                   <div class=" category__element-candybar">
                     <h3 class="category__element-title">Батончики</h3>
@@ -108,7 +108,7 @@
               </router-link>
             </b-col>
             <b-col sm="6" lg="3" class="category__element">
-              <router-link :to="{name: 'home', query: { categories: 6, }, }">
+              <router-link :to="{name: 'home', query: { categories: '6', }, }">
                 <a href="#">
                   <div class="category__element-marmalade">
                     <h3 class="category__element-title">Мармелад</h3>
@@ -117,7 +117,7 @@
               </router-link>
             </b-col>
             <b-col sm="6" lg="3" class="category__element">
-              <router-link :to="{name: 'home', query: { categories: 7, }, }">
+              <router-link :to="{name: 'home', query: { categories: '7', }, }">
                 <a href="#">
                   <div class="category__element-drinks">
                     <h3 class="category__element-title">Напитки</h3>
@@ -126,7 +126,7 @@
               </router-link>
             </b-col>
             <b-col sm="6" lg="3" class="category__element">
-              <router-link :to="{name: 'home', query: { categories: 9, }, }">
+              <router-link :to="{name: 'home', query: { categories: '9', }, }">
                 <a href="#">
                   <div class="category__element-chocolate">
                     <h3 class="category__element-title">Шоколад</h3>
@@ -161,7 +161,7 @@
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
-              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onSortFilterChange()"></el-input>
+              <el-input v-model="productQuery" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onSortFilterChange()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
               <el-select v-model="sortBy" class="sort__select" @change="sortFilterProducts(); onSortFilterChange()">
@@ -287,7 +287,7 @@
                   </div>
                 </b-col>
               </b-row>
-              <!--todo: не работает блок отсутствия товаров, чтобы протестить, замени v-if="allProducts" на v-if="!!!allProducts"  -->
+              <!--todo: не работает блок отсутствия товаров, чтобы протестить, замени v-if="allProducts" на v-if="!allProducts"  -->
               <b-row v-else class="catalog__list">
                 <div class="products__not-found not-found ">
                   <div class="not-found__heart">
@@ -411,7 +411,9 @@
 </template>
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
+import { isEqual } from 'lodash/lang';
 import { getDiscount as getDiscountBase } from '../utils/priceFuncs';
+
 
 export default {
   name: 'Home',
@@ -453,7 +455,12 @@ export default {
       filterOpen: false,
       priceRange: [0, 1000],
       categoryList: [],
-      productName: '',
+      productQuery: '',
+
+      defaultSortBy: '',
+      defaultPriceRange: [0, 1000],
+      defaultCategoryList: [],
+      defaultProductQuery: '',
     };
   },
   computed: {
@@ -497,17 +504,28 @@ export default {
     sortFilterProducts() {
       const priceGte = this.priceRange[0];
       const priceLte = this.priceRange[1];
-      const filters = { price_Gte: priceGte, price_Lte: priceLte, query: this.productName };
+      const filters = { price_Gte: priceGte, price_Lte: priceLte, query: this.productQuery };
       const data = { filters, sortBy: this.sortBy };
       console.log(data);
       this.loadProducts(data);
     },
     onSortFilterChange() {
+      const newQuery = {};
+      if (this.productQuery !== this.defaultProductQuery) {
+        newQuery.q = this.productQuery;
+      }
+      if (this.categoryList !== this.defaultCategoryList) {
+        newQuery.categories = this.categoryList;
+      }
+      if (!isEqual(this.priceRange, this.defaultPriceRange)) {
+        newQuery.price = this.priceRange;
+      }
+      if (this.sortBy !== this.defaultSortBy) {
+        newQuery.sort = this.sortBy;
+      }
       this.$router.push({
         name: 'home',
-        query: {
-          q: this.productName, categories: this.categoryList, price: this.priceRange, sort: this.sortBy,
-        },
+        query: newQuery,
       });
     },
     onRouteWithParams() {
@@ -515,7 +533,7 @@ export default {
         this.priceRange = this.$route.query.price;
       }
       if (this.$route.query.q) {
-        this.productName = this.$route.query.q;
+        this.productQuery = this.$route.query.q;
       }
       if (this.$route.query.categories) {
         if (Array.isArray(this.$route.query.categories)) {
@@ -532,7 +550,7 @@ export default {
       this.priceRange = [0, 1000];
       this.categoryList = [];
       this.sortBy = '';
-      this.productName = '';
+      this.productQuery = '';
       this.sortFilterProducts();
     },
   },

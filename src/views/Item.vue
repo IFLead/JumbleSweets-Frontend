@@ -4,7 +4,7 @@
       {{ error }}
     </div>
     <div v-else-if="loading" class="loading">
-      <!--toDo: добавить отступы сверху и снизу от анимации загрузки-->
+      <!--toDo: добавить отступы сверху и снизу от анимации загрузки. Для постоянного вызова загрузки поставить ! перед loading, который на строку выше-->
       <Loading></Loading>
     </div>
     <div v-else-if="currentProduct" class="Item">
