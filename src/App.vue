@@ -2,7 +2,9 @@
   <div id="app">
     <!--<el-button :plain="true" @click="openVn">VNode</el-button>-->
     <vHeader></vHeader>
-    <router-view></router-view>
+    <transition>
+      <router-view></router-view>
+    </transition>
     <vFooter></vFooter>
   </div>
 </template>

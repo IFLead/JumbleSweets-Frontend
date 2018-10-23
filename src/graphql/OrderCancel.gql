@@ -1,0 +1,9 @@
+#import "./OrderDetailsFragment.gql"
+
+mutation OrderCancel($id: ID!, $restock: Boolean!) {
+    orderCancel(id: $id, restock: $restock) {
+      order {
+        ...OrderDetailsFragment
+      }
+    }
+  }

@@ -1,58 +1,57 @@
 <template>
   <div>
-    <div v-if="loading" class="loading">
-      Загрузка...
-    </div>
-
     <div v-if="error" class="error">
       {{ error }}
     </div>
-    <div v-if="product" class="Item">
-
+    <div v-else-if="loading" class="loading">
+      <!--toDo: добавить отступы сверху и снизу от анимации загрузки. Для постоянного вызова загрузки поставить ! перед loading, который на строку выше-->
+      <Loading></Loading>
+    </div>
+    <div v-else-if="currentProduct" class="Item">
       <section class="characteristics">
         <b-container>
 
           <b-row>
             <b-col cols="12">
-              <a href="#" class="characteristics__link">
-                <span>
-                  <svg id="Layer_1" class="characteristics__link--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                       viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-                    <g>
+              <router-link to="/">
+                <a href="#" class="characteristics__link">
+                  <span>
+                    <svg id="Layer_1" class="characteristics__link--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
                       <g>
-                        <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
+                        <g>
+                          <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                               c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                               c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
+                        </g>
                       </g>
-                    </g>
-                  </svg>
-                </span>
-                <p>Вернуться назад</p>
-              </a>
+                    </svg>
+                  </span>
+                  <p>Вернуться назад</p>
+                </a>
+              </router-link>
             </b-col>
             <b-col lg="6" class="characteristics__photo">
 
               <el-carousel :interval="5000" arrow="never" trigger="click">
-                <div class="characteristics__sale">{{ getDiscount }}%</div>
-                <el-carousel-item v-for="item in product.images.edges" :key="item.node.id">
+                <div v-if="getDiscount !== 100">
+                  <div class="characteristics__sale">{{ getDiscount }}%</div>
+                </div>
+                <!--toDo: картинки обрезаются-->
+                <el-carousel-item v-for="item in currentProduct.images.edges" :key="item.node.id">
                   <div class="characteristics__wrapper">
                     <img :alt="item.node.alt"
-                         src="http://www.bbc.co.uk/staticarchive/6132e89e723956efa1bad9791d06b0f88d27d379.jpg">
+                         :src="item.node.url">
                   </div>
                 </el-carousel-item>
               </el-carousel>
             </b-col>
             <b-col lg="6" class="characteristics__information information">
               <div class="information__content">
-                <h3 class="information__title">{{ product.name }}</h3>
+                <h3 class="information__title">{{ currentProduct.name }}</h3>
 
-                <vFormat v-if="product.variants.edges.length > 1" v-model="selectedVariant"
-                         :variants="product.variants.edges | getVariants"></vFormat>
-                <!--<el-radio-group v-model="radioFormat" class="choose-format">-->
-                <!--<el-radio-button class="choose-format__elem" label="200 гр"></el-radio-button>-->
-                <!--<el-radio-button class="choose-format__elem" label="500 гр"></el-radio-button>-->
-                <!--<el-radio-button class="choose-format__elem" label="1000 гр"></el-radio-button>-->
-                <!--</el-radio-group>-->
+                <vFormat v-if="currentProduct.variants.edges.length > 1" v-model="selectedVariant"
+                         :variants="currentProduct.variants.edges | getVariants"></vFormat>
 
                 <div class="prices">
                   <p class="information__price">{{ getSelectedProductPrice.priceDiscounted ? getSelectedProductPrice.priceDiscounted : getSelectedProductPrice.price }} грн.</p>
@@ -84,7 +83,7 @@
                   </el-button>
                   <a href="#" class="information__link">Добавить в список желани</a>
                 </div>
-                <p class="information__manufacturer">Производитель: {{ product.attributes[1].value.name }}</p>
+                <p class="information__manufacturer">Производитель: {{ currentProduct.attributes[1].value.name }}</p>
                 <p class="information__occasions">Популярные поводы: Свадьба / День рождения / Извинения</p>
               </div>
             </b-col>
@@ -98,7 +97,7 @@
 
             <b-col cols="12">
               <h2 class="description-item__title">Описание товара</h2>
-              <div class="description-item__information" v-html="product.description"></div>
+              <div class="description-item__information" v-html="currentProduct.description"></div>
             </b-col>
 
             <b-col cols="12" class="description-item__item-advantages item-advantages">
@@ -394,12 +393,14 @@
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Format from '../components/Format.vue';
+import Loading from '../components/Loading.vue';
 import { getDiscount as getDiscountBase } from '../utils/priceFuncs';
 
 export default {
   name: 'Item',
   components: {
     vFormat: Format,
+    Loading,
   },
   filters: {
     getVariants(uncutVariants) {
@@ -424,7 +425,6 @@ export default {
   data() {
     return {
       loading: false,
-      product: null,
       error: null,
 
       productCount: 1,
@@ -432,25 +432,28 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['allProductDetails', 'getCartItems']),
+    ...mapGetters(['getCartItems', 'getCurrentProduct']),
     seo() {
-      if (this.product) {
+      if (this.currentProduct) {
         return {
-          title: this.product.seoTitle,
+          title: this.currentProduct.seoTitle,
         };
       }
       return {};
     },
+    currentProduct() {
+      return this.getCurrentProduct(window.btoa(`Product:${this.id}`));
+    },
     getSelectedProductPrice() {
-      const product = this.allProductDetails.variants.edges;
-      for (let i = 0; i < product.length; i++) {
-        if (product[i].node.id === this.selectedVariant) {
-          const priceDiscounted = product[i].node.availability.priceDiscounted.net.amount;
-          const price = product[i].node.price.amount;
+      const productVariant = this.currentProduct.variants.edges;
+      for (let i = 0; i < productVariant.length; i++) {
+        if (productVariant[i].node.id === this.selectedVariant) {
+          const priceDiscounted = productVariant[i].node.availability.priceDiscounted.net.amount;
+          const price = productVariant[i].node.price.amount;
           if (price === priceDiscounted) {
             return { price, priceDiscounted: null };
           }
-          console.log(product[i].node);
+          console.log(productVariant[i].node);
           return { price, priceDiscounted };
         }
       }
@@ -458,36 +461,35 @@ export default {
     },
     getDiscount() {
       const { price, priceDiscounted } = this.getSelectedProductPrice;
-      return getDiscountBase(priceDiscounted, price);
+      console.log(price, priceDiscounted);
+      return getDiscountBase(price - priceDiscounted, price);
     },
   },
   watch: {
     $route:
-        'fetchData',
+      'fetchData',
   },
   created() {
     this.fetchData();
   },
   methods: {
-    ...mapActions(['loadProductDetails']),
+    ...mapActions(['loadProduct']),
     ...mapMutations(['addToCart']),
     handleChange(value) {
       console.log(value);
     },
     async fetchData() {
       this.error = null;
-      this.product = null;
-      this.loading = true;
-      const callback = (err, response) => {
+      this.loading = !this.currentProduct;
+      const callback = (err) => {
         this.loading = false;
         if (err) {
           this.error = err.toString();
         } else {
-          this.product = response;
-          this.selectedVariant = this.product.variants.edges[0].node.id;
+          this.selectedVariant = this.currentProduct.variants.edges[0].node.id;
         }
       };
-      this.loadProductDetails({ cb: callback, data: {} });
+      this.loadProduct({ cb: callback, id: window.btoa(`Product:${this.id}`) });
     },
     cartButtonClick() {
       this.addToCart({
@@ -505,6 +507,7 @@ export default {
     return {
       title: this.seo.title,
     };
+
     // // all titles will be injected into this template
     // titleTemplate: '%s | My Awesome Webapp',
   },
@@ -1049,5 +1052,6 @@ export default {
 
   .prices
     margin-top: 30px
+
 
 </style>

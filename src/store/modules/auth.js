@@ -71,6 +71,11 @@ const actions = {
       console.log(e);
     }
   },
+  async auth({ dispatch, commit }, { email, password, rememberMe }) {
+    commit('setRememberMe', this.rememberMe);
+    dispatch('tokenCreate', { email: this.email, password: this.password });
+    return null;
+  },
 };
 
 export default {

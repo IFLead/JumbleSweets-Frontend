@@ -1,4 +1,5 @@
 #import "./MoneyFragment.gql"
+#import "./ProductImageFragment.gql"
 
 query ProductList($first: Int, $after: String, $last: Int, $before: String, $price_Gte: Float, $price_Lte: Float, $query: String, $sortBy: String) {
   products(before: $before, after: $after, first: $first, last: $last, isPublished: true, price_Gte: $price_Gte, price_Lte: $price_Lte, query: $query, sortBy: $sortBy) {
@@ -7,8 +8,27 @@ query ProductList($first: Int, $after: String, $last: Int, $before: String, $pri
       node {
         id
         name
-        url
+        description
+        seoTitle
+        seoDescription
         thumbnailUrl
+        category {
+          id
+          name
+        }
+        price {
+          ...Money
+        }
+        isPublished
+        availableOn
+        attributes {
+          attribute {
+            name
+          }
+          value {
+            name
+          }
+        }
         availability {
           available
           onSale
@@ -18,9 +38,41 @@ query ProductList($first: Int, $after: String, $last: Int, $before: String, $pri
             }
           }
         }
-        price {
-          ...Money
+        images {
+          edges {
+            node {
+              ...ProductImage
+            }
+          }
         }
+        variants {
+          edges {
+            node {
+              id
+              name
+              stockQuantity
+              trackInventory
+              price {
+                ...Money
+              }
+              availability {
+                priceDiscounted {
+                  net {
+                    amount
+                  }
+                }
+              }
+              images {
+                edges {
+                  node {
+                    ...ProductImage
+                  }
+                }
+              }
+            }
+          }
+        }
+        url
       }
     }
     pageInfo {

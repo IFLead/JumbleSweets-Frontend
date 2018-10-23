@@ -20,7 +20,7 @@
                 <div class="added-items__content">
                   <ul class="added-items__list">
                     <li class="added-items__element">
-                      <p class="added-items__line"><strong>Обёртка:</strong>  Название обёртки</p>
+                      <p class="added-items__line"><strong>Обёртка:</strong> Название обёртки</p>
                       <div class="added-items__icon">
                         <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                              viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
@@ -465,7 +465,8 @@
                   </li>
                 </ul>
                 <p class="controls__progress-title">Наполнение (<span>6</span>/10)</p>
-                <el-progress :text-inside="false" :stroke-width="15" :percentage="60" :width="200" color="#000000"></el-progress>
+                <el-progress :text-inside="false" :stroke-width="15" :percentage="60" :width="200"
+                             color="#000000"></el-progress>
                 <div class="controls__buttons-wrapper">
                   <el-button class="controls__button" @click="confirmed = true">Добавить в корзину</el-button>
                   <a href="#" class="controls__clean">Очистить
@@ -963,7 +964,8 @@
                 </svg>
               </div>
               <h2 class="postcard__title">Открытка - прекрасное дополнение к подарку</h2>
-              <p class="postcard__description">Напишите несколько приятных слов, а мы красиво изобразим их в поздравительной открытке</p>
+              <p class="postcard__description">Напишите несколько приятных слов, а мы красиво изобразим их в
+              поздравительной открытке</p>
               <form action="POST" class="postcard__form">
                 <textarea class="postcard__textarea"></textarea>
                 <el-button :disabled="true" class="postcard__button">Готово</el-button>
@@ -982,7 +984,8 @@
               <div class="confirmed__icon"></div>
               <h2 class="confirmed__title">Вам точно понравится</h2>
               <p class="confirmed__description">Мы заметили, что вы только что добавили праздничный бокс в корзину.</p>
-              <p class="confirmed__description">Возможно, это всё, ради чего вы пришли к нам. Хотите оформить заказ прямо сейчас или присмотрите что-нибудь ещё?</p>
+              <p class="confirmed__description">Возможно, это всё, ради чего вы пришли к нам. Хотите оформить заказ
+              прямо сейчас или присмотрите что-нибудь ещё?</p>
               <div class="confirmed__buttons">
                 <el-button>Хочу побыстрее свой Jumble Box</el-button>
                 <a href="#" class="confirmed__link" @click="confirmed = false">Посмотрю что-нибудь ещё</a>
@@ -997,9 +1000,7 @@
 <script>
 export default {
   name: 'JumbleBoxConstructor',
-  components: {
-
-  },
+  components: {},
   data() {
     return {
       activeName: 'first',
@@ -1013,368 +1014,823 @@ export default {
 </script>
 
 <style lang="sass">
-.JumbleBoxConstructor
-  .constructor
-    margin:
-      top: 21px
-      bottom: 50px
-    &__title
-      color: #000000
-      font-size: 30px
-      line-height: 40px
-      text-align: center
-      font-weight: 700
-      width: 500px
+  .JumbleBoxConstructor
+    .constructor
       margin:
-        left: auto
-        right: auto
-        bottom: 19px
-      @media (max-width: 991.98px)
-        margin:
-          bottom: 15px
-      @media (max-width: 575.98px)
-        font-size: 25px
-        line-height: 35px
-        width: 100%
-        padding:
-          left: 15px
-          right: 15px
-    &__description
-      width: 500px
-      text-align: center
-      margin:
-        left: auto
-        right: auto
+        top: 21px
         bottom: 50px
-      @media (max-width: 991.98px)
+      &__title
+        color: #000000
+        font-size: 30px
+        line-height: 40px
+        text-align: center
+        font-weight: 700
+        width: 500px
         margin:
-          bottom: 30px
-      @media (max-width: 575.98px)
-        width: 100%
+          left: auto
+          right: auto
+          bottom: 19px
+        @media (max-width: 991.98px)
+          margin:
+            bottom: 15px
+        @media (max-width: 575.98px)
+          font-size: 25px
+          line-height: 35px
+          width: 100%
+          padding:
+            left: 15px
+            right: 15px
+      &__description
+        width: 500px
+        text-align: center
+        margin:
+          left: auto
+          right: auto
+          bottom: 50px
+        @media (max-width: 991.98px)
+          margin:
+            bottom: 30px
+        @media (max-width: 575.98px)
+          width: 100%
+          padding:
+            left: 15px
+            right: 15px
+    .price
+      &__content
+        background-color: #f8f8f8
         padding:
-          left: 15px
-          right: 15px
-
-  .price
-    &__content
-      background-color: #f8f8f8
-      padding:
-        left: 20px
-        right: 10px
-        top: 18px
-        bottom: 18px
-    &__description
-      font-weight: 700
-      line-height: 20px
-      margin:
-        bottom: 2px
-    &__number
-      font-size: 45px
-      line-height: 60px
-      font-weight: 700
-      color: #e70068
-      margin:
-        bottom: 17px
-
-  .added-items
-    @media (max-width: 767.98px)
-      margin:
-        top: 20px
-    &__content
-      height: 100%
-      background-color: #f8f8f8
-      padding:
-        left: 20px
-        right: 20px
-        top: 18px
-        bottom: 18px
-      @media (max-width: 1199.98px)
-        padding:
+          left: 20px
           right: 10px
-      @media (max-width: 991.98px)
-        padding:
-          right: 20px
-    &__line
-      line-height: 20px
-      margin:
-        bottom: 0
-    &__list
-      padding:
-        left: 0
-      list-style: none
-    &__element
-      display: flex
-      margin:
-        bottom: 18px
-    &__icon
-      cursor: pointer
-      margin:
-        left: auto
-      width: 15px
-      height: 15px
-      .icon
+          top: 18px
+          bottom: 18px
+      &__description
+        font-weight: 700
+        line-height: 20px
         margin:
-          top: -4px
-        fill: #c4c4c4
-        transition: all 0.2s ease
-      &:hover
+          bottom: 2px
+      &__number
+        font-size: 45px
+        line-height: 60px
+        font-weight: 700
+        color: #e70068
+        margin:
+          bottom: 17px
+    .added-items
+      @media (max-width: 767.98px)
+        margin:
+          top: 20px
+      &__content
+        height: 100%
+        background-color: #f8f8f8
+        padding:
+          left: 20px
+          right: 20px
+          top: 18px
+          bottom: 18px
+        @media (max-width: 1199.98px)
+          padding:
+            right: 10px
+        @media (max-width: 991.98px)
+          padding:
+            right: 20px
+      &__line
+        line-height: 20px
+        margin:
+          bottom: 0
+      &__list
+        padding:
+          left: 0
+        list-style: none
+      &__element
+        display: flex
+        margin:
+          bottom: 18px
+      &__icon
+        cursor: pointer
+        margin:
+          left: auto
+        width: 15px
+        height: 15px
         .icon
-          fill: #e70068
-
-  .photo
-    margin:
-      top: 30px
-    &__content
-      min-height: 508px
-      background-repeat: no-repeat
-      background-size: 1250px auto
-      background-position: -240px 0
-      background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
-      @media (max-width: 1199.98px)
-        background-position: center 0
-        background-size: 800px auto
-      @media (max-width: 991.98px)
-        min-height: 300px
-        background-size: cover
-        background-position: 0 0
-      @media (max-width: 575.98px)
-        min-height: 250px
-        background-position: center 0
-
-
-  .add-sweets
-    @media (max-width: 991.98px)
+          margin:
+            top: -4px
+          fill: #c4c4c4
+          transition: all 0.2s ease
+        &:hover
+          .icon
+            fill: #e70068
+    .photo
       margin:
         top: 30px
-    &__content
-      height: 100%
-      padding:
-        top: 18px
-        left: 20px
-        bottom: 42px
-      background-color: #f8f8f8
-    &__title
-      color: #000000
-      font-size: 15px
-      line-height: 20px
-      font-weight: 700
-      margin:
-        bottom: 33px
-    &__number
-      width: 70px
-      text-align: left
-      margin:
-        bottom: 0
-    &__list
-      position: relative
-      overflow: auto
-      height: 320px
-      padding:
-        left: 0
-      list-style: none
+      &__content
+        min-height: 508px
+        background-repeat: no-repeat
+        background-size: 1250px auto
+        background-position: -240px 0
+        background-image: url("../assets/joanna-kosinska-255355-unsplash.jpg")
+        @media (max-width: 1199.98px)
+          background-position: center 0
+          background-size: 800px auto
+        @media (max-width: 991.98px)
+          min-height: 300px
+          background-size: cover
+          background-position: 0 0
+        @media (max-width: 575.98px)
+          min-height: 250px
+          background-position: center 0
+    .add-sweets
       @media (max-width: 991.98px)
-        height: 200px
-      &::before
-        content: ''
-        position: absolute
-        left: 10px
-        bottom: 0
-        width: calc(100% - 40px)
-        height: 1px
-        background-color: #c4c4c4
-    &__element
-      display: flex
-      margin:
-        bottom: 13px
-    &__name
-      color: #000000
-      line-height: 20px
-      margin:
-        right: auto
-      &:hover, &:focus
-        font-weight: 700
-        text-decoration: none
+        margin:
+          top: 30px
+      &__content
+        height: 100%
+        padding:
+          top: 18px
+          left: 20px
+          bottom: 42px
+        background-color: #f8f8f8
+      &__title
         color: #000000
-    &__icon
-      margin:
-        left: 50px
-        right: 20px
-      cursor: pointer
-      width: 15px
-      height: 15px
-      .icon
-        margin:
-          top: -4px
-        fill: #c4c4c4
-        transition: all 0.2s ease
-      &:hover
-        .icon
-          fill: #e70068
-
-  .add-sweets__list::-webkit-scrollbar
-    width: 4px
-  .add-sweets__list::-webkit-scrollbar-button
-    background-color: #000000
-  .add-sweets__list::-webkit-scrollbar-track
-    background-color: none
-  .add-sweets__list::-webkit-scrollbar-thumb
-    height: 100px
-    background-color: #000000
-    border-radius: 5px
-  .add-sweets__list::-webkit-scrollbar-button
-    background-color: #F8F8F8
-
-  .controls
-    padding:
-      left: 10px
-      right: 10px
-    margin:
-      top: 13px
-      bottom: 0
-    &__list
-      padding:
-        left: 0
-      margin:
-        bottom: 23px
-      list-style: none
-    &__element
-      margin:
-        bottom: 9px
-    &__link
-      transition: all 0.2s ease
-      opacity: 0.5
-      color: #000000
-      &:hover, &:focus
-        text-decoration: none
-        opacity: 1
-    &__icon
-      display: inline-block
-      width: 15px
-      height: 15px
-      margin:
-        right: 15px
-      .icon
-        fill: #e70068
-        margin:
-          top: -4px
-    .el-progress-bar
-      padding:
-        right: 20px
-    .el-progress-bar__inner
-      border-radius: 0px
-    .el-progress-bar__outer
-      border-radius: 0px
-      background-color: #fff
-    .el-progress__text
-      display: none
-    &__progress-title
-      text-align: center
-      line-height: 20px
-      margin:
-        bottom: 10px
-    &__buttons-wrapper
-      margin:
-        top: 20px
-      @media (max-width: 575.98px)
-        display: flex
-        flex-direction: column
-    &__button
-      @media (max-width: 575.98px)
-        width: 200px
-        margin:
-          left: auto
-          right: auto
-    &__clean--icon
-      display: inline-block
-      width: 15px
-      height: 15px
-      margin:
-        left: 6px
-      .icon
-        margin:
-          top: -4px
-        fill: #e70068
-    &__clean
-      margin:
-        left: 20px
-      opacity: 0.5
-      color: #e70068
-      transition: all 0.2s ease
-      &:hover, &:focus
-        opacity: 1
-        text-decoration: none
-      @media (max-width: 575.98px)
-        text-align: center
-        width: 200px
-        margin:
-          top: 15px
-          left: auto
-          right: auto
-
-  .product-add
-    display: block
-    background-color: rgba(58, 58, 58, 0.8)
-    .el-dialog
-      width: 1200px
-      padding: 0
-      @media (max-width: 1199.98px)
-        width: 990px
-      @media (max-width: 991.98px)
-        width: 750px
-      @media (max-width: 767.98px)
-        width: 570px
-      @media (max-width: 575.98px)
-        width: 100%
-    .el-dialog__header
-      display: none
-    .container
-      background-color: #fff
-      @media (max-width: 575.98px)
-        margin:
-          top: 50px
-          bottom: 50px
-        width: calc(100% - 30px) !important
-    &__alert
-      position: fixed
-      top: 0
-      left: 0
-      right: 0
-      z-index: 100000
-      display: none
-      margin:
-        left: auto
-        right: auto
-      width: 700px
-      padding:
-        top: 14px
-        bottom: 16px
-      background-color: #e70068
-      @media (max-width: 767.98px)
-        width: calc(100% - 40px)
-      &--message
         font-size: 15px
         line-height: 20px
         font-weight: 700
-        color: #ffffff
+        margin:
+          bottom: 33px
+      &__number
+        width: 70px
+        text-align: left
+        margin:
+          bottom: 0
+      &__list
+        position: relative
+        overflow: auto
+        height: 320px
+        padding:
+          left: 0
+        list-style: none
+        @media (max-width: 991.98px)
+          height: 200px
+        &::before
+          content: ''
+          position: absolute
+          left: 10px
+          bottom: 0
+          width: calc(100% - 40px)
+          height: 1px
+          background-color: #c4c4c4
+      &__element
+        display: flex
+        margin:
+          bottom: 13px
+      &__name
+        color: #000000
+        line-height: 20px
+        margin:
+          right: auto
+        &:hover, &:focus
+          font-weight: 700
+          text-decoration: none
+          color: #000000
+      &__icon
+        margin:
+          left: 50px
+          right: 20px
+        cursor: pointer
+        width: 15px
+        height: 15px
+        .icon
+          margin:
+            top: -4px
+          fill: #c4c4c4
+          transition: all 0.2s ease
+        &:hover
+          .icon
+            fill: #e70068
+    .add-sweets__list::-webkit-scrollbar
+      width: 4px
+    .add-sweets__list::-webkit-scrollbar-button
+      background-color: #000000
+    .add-sweets__list::-webkit-scrollbar-track
+      background-color: none
+    .add-sweets__list::-webkit-scrollbar-thumb
+      height: 100px
+      background-color: #000000
+      border-radius: 5px
+    .add-sweets__list::-webkit-scrollbar-button
+      background-color: #F8F8F8
+    .controls
+      padding:
+        left: 10px
+        right: 10px
+      margin:
+        top: 13px
+        bottom: 0
+      &__list
+        padding:
+          left: 0
+        margin:
+          bottom: 23px
+        list-style: none
+      &__element
+        margin:
+          bottom: 9px
+      &__link
+        transition: all 0.2s ease
+        opacity: 0.5
+        color: #000000
+        &:hover, &:focus
+          text-decoration: none
+          opacity: 1
+      &__icon
+        display: inline-block
+        width: 15px
+        height: 15px
+        margin:
+          right: 15px
+        .icon
+          fill: #e70068
+          margin:
+            top: -4px
+      .el-progress-bar
+        padding:
+          right: 20px
+      .el-progress-bar__inner
+        border-radius: 0px
+      .el-progress-bar__outer
+        border-radius: 0px
+        background-color: #fff
+      .el-progress__text
+        display: none
+      &__progress-title
+        text-align: center
+        line-height: 20px
+        margin:
+          bottom: 10px
+      &__buttons-wrapper
+        margin:
+          top: 20px
+        @media (max-width: 575.98px)
+          display: flex
+          flex-direction: column
+      &__button
+        @media (max-width: 575.98px)
+          width: 200px
+          margin:
+            left: auto
+            right: auto
+      &__clean--icon
+        display: inline-block
+        width: 15px
+        height: 15px
+        margin:
+          left: 6px
+        .icon
+          margin:
+            top: -4px
+          fill: #e70068
+      &__clean
+        margin:
+          left: 20px
+        opacity: 0.5
+        color: #e70068
+        transition: all 0.2s ease
+        &:hover, &:focus
+          opacity: 1
+          text-decoration: none
+        @media (max-width: 575.98px)
+          text-align: center
+          width: 200px
+          margin:
+            top: 15px
+            left: auto
+            right: auto
+    .product-add
+      display: block
+      background-color: rgba(58, 58, 58, 0.8)
+      .el-dialog
+        width: 1200px
+        padding: 0
+        @media (max-width: 1199.98px)
+          width: 990px
+        @media (max-width: 991.98px)
+          width: 750px
+        @media (max-width: 767.98px)
+          width: 570px
+        @media (max-width: 575.98px)
+          width: 100%
+      .el-dialog__header
+        display: none
+      .container
+        background-color: #fff
+        @media (max-width: 575.98px)
+          margin:
+            top: 50px
+            bottom: 50px
+          width: calc(100% - 30px) !important
+      &__alert
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        z-index: 100000
+        display: none
+        margin:
+          left: auto
+          right: auto
+        width: 700px
+        padding:
+          top: 14px
+          bottom: 16px
+        background-color: #e70068
+        @media (max-width: 767.98px)
+          width: calc(100% - 40px)
+        &--message
+          font-size: 15px
+          line-height: 20px
+          font-weight: 700
+          color: #ffffff
+          text-align: center
+          padding:
+            left: 20px
+            right: 20px
+          margin:
+            bottom: 0
+      &__content
+        padding:
+          top: 30px
+          bottom: 35px
+      .menu
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-end
+        margin:
+          bottom: 40px
+        @media (max-width: 767.98px)
+          flex-direction: column
+          align-items: flex-start
+        &__close
+          position: absolute
+          width: 15px
+          height: 15px
+          top: 54px
+          right: 54px
+          cursor: pointer
+          .icon
+            fill: #000000
+            margin:
+              top: -10px
+          @media (max-width: 1199.98px)
+            right: 34px
+          @media (max-width: 767.98px)
+            top: 45px
+        &__list
+          list-style: none
+          display: flex
+          border: 1px solid #f8f8f8
+          margin:
+            bottom: 0
+          padding:
+            top: 5px
+            left: 5px
+            bottom: 5px
+            right: 5px
+          &--wrapper
+            display: inline-block
+            margin:
+              bottom: 0
+              right: 70px
+            @media (max-width: 1199.98px)
+              margin:
+                right: 60px
+            @media (max-width: 991.98px)
+              margin:
+                right: 50px
+            @media (max-width: 767.98px)
+              margin:
+                bottom: 20px
+            @media (max-width: 575.98px)
+              margin:
+                right: 0
+        &__link
+          transition: all 0.2s ease
+          padding:
+            top: 9px
+            bottom: 11px
+            left: 25px
+            right: 25px
+          display: block
+          line-height: 20px
+          color: #000
+          @media (max-width: 575.98px)
+            padding:
+              top: 5px
+              bottom: 6px
+              left: 15px
+              right: 15px
+          &:hover, &:focus
+            text-decoration: none
+            background-color: #e70068
+            color: #ffffff
+        &__link.active
+          background-color: #e70068
+          color: #ffffff
+        &__search.el-input
+          width: 264px
+          margin:
+            right: 70px
+          @media (max-width: 1199.98px)
+            margin:
+              right: 60px
+          @media (max-width: 575.98px)
+            margin:
+              right: 0
+          .el-input__inner
+            padding:
+              left: 5px
+              bottom: 10px
+            border: none
+            border-radius: 0px
+            border-bottom: 1px solid #c4c4c4
+            font-size: 15px
+            line-height: 20px
+            &::placeholder
+              font-size: 15px
+              line-height: 20px
+              color: #DCDCDC
+        &__places
+          margin:
+            bottom: 10px
+          @media (max-width: 991.98px)
+            margin:
+              top: 15px
+          @media (max-width: 767.98px)
+            margin:
+              top: 20px
+      .element
+        margin:
+          bottom: 30px
+        @media (max-width: 575.98px)
+          margin:
+            bottom: 20px
+        &__wrapper
+          display: block
+          position: relative
+          z-index: 10
+          background-image: url("../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png")
+          background-repeat: no-repeat
+          background-size: 190px auto
+          background-position: center center
+          &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            background-color: rgba(0, 0, 0, 0.8)
+          &:hover, &:focus
+            text-decoration: none
+            .element__content
+              opacity: 0
+            .element__icon
+              opacity: 1
+        &__content
+          transition: all 0.2s ease
+          opacity: 1
+          padding:
+            left: 20px
+            top: 18px
+            bottom: 20px
+            right: 18px
+          position: relative
+          z-index: 100
+          color: #ffffff
+        &__title
+          font-size: 15px
+          line-height: 20px
+          font-weight: 400
+          margin:
+            bottom: 6px
+        &__price
+          font-size: 30px
+          line-height: 40px
+          font-weight: 700
+          margin:
+            bottom: 27px
+        &__place
+          opacity: 0.5
+          font-size: 14px
+          line-height: 19px
+          margin:
+            bottom: 0
+        &__icon
+          transition: all 0.2s ease
+          opacity: 0
+          position: absolute
+          z-index: 100
+          width: 35px
+          height: 35px
+          transform: rotate(45deg)
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+          margin:
+            top: auto
+            bottom: auto
+            left: auto
+            right: auto
+          background-image: url("../assets/Icons/add-sweets.svg")
+          background-repeat: no-repeat
+          background-size: contain
+      &__bottom-navigation
+        display: flex
+        align-items: center
+        justify-content: space-between
+        @media (max-width: 575.98px)
+          flex-direction: column
+          align-items: flex-start
+      &__pages
+        margin:
+          bottom: 0
+        @media (max-width: 575.98px)
+          margin:
+            top: 15px
+      &__pagination
+        display: inline-block
+        margin:
+          top: 5px
+        padding:
+          top: 5px
+          bottom: 5px
+        background-color: #f8f8f8
+        @media (max-width: 330.98px)
+          margin:
+            left: -5px
+        &-content
+          display: flex
+          align-items: center
+          @media (max-width: 575.98px)
+            padding:
+              left: 0
+              right: 0
+          .number
+            transition: all 0.2s ease
+            width: 40px
+            height: 40px
+            padding:
+              top: 5px
+            @media (max-width: 575.98px)
+              width: 30px
+              height: 30px
+              padding:
+                top: 2px
+            &:hover, &:focus
+              box-shadow: inset 0 0 0px 1px #dcdcdc
+          .el-icon-more
+            margin:
+              top: 10px
+          .el-pager
+            display: flex
+            align-items: baseline
+          .el-icon.more.btn-quickprev.el-icon-more
+            display: none
+          .el-pagination
+            @media (max-width: 575.98px)
+              width: 100%
+          .btn-prev, .btn-next
+            @media (max-width: 575.98px)
+              margin:
+                left: 0 !important
+                right: 0 !important
+    .product-add::-webkit-scrollbar
+      width: 4px
+    .product-add::-webkit-scrollbar-button
+      background-color: #666
+    .product-add::-webkit-scrollbar-track
+      background-color: none
+    .product-add::-webkit-scrollbar-thumb
+      height: 100px
+      background-color: #000000
+      border-radius: 5px
+    .product-add::-webkit-scrollbar-button
+      background-color: #F8F8F8
+    .holiday
+      overflow: auto
+      background-color: rgba(58, 58, 58, 0.8)
+      .el-dialog__header
+        display: none
+      .el-dialog
+        width: 1200px
+        padding: 0
+        @media (max-width: 1199.98px)
+          width: 990px
+        @media (max-width: 991.98px)
+          width: 750px
+        @media (max-width: 767.98px)
+          width: 570px
+        @media (max-width: 575.98px)
+          width: 100%
+      .container
+        background-color: #fff
+        margin:
+          top: 115px
+          bottom: 115px
+        @media (max-width: 575.98px)
+          margin:
+            top: 50px
+            bottom: 50px
+          width: calc(100% - 30px) !important
+        .product-add__alert.show
+        display: block
+      &__alert.show
+        display: block
+      &__alert
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        z-index: 100000
+        display: none
+        margin:
+          left: auto
+          right: auto
+        width: 700px
+        padding:
+          top: 14px
+          bottom: 16px
+        background-color: #e70068
+        @media (max-width: 767.98px)
+          width: calc(100% - 40px)
+        &--message
+          font-size: 15px
+          line-height: 20px
+          font-weight: 700
+          color: #ffffff
+          text-align: center
+          padding:
+            left: 20px
+            right: 20px
+          margin:
+            bottom: 0
+      &__close
+        position: absolute
+        width: 15px
+        height: 15px
+        top: 54px
+        right: 54px
+        cursor: pointer
+        background-repeat: no-repeat
+        background-image: url("../assets/Icons/cancel.svg")
+        .icon
+          fill: #000000
+          margin:
+            top: -10px
+        @media (max-width: 767.98px)
+          top: 40px
+          right: 40px
+      &__content
+        padding:
+          top: 110px
+          left: 12px
+          right: 12px
+          bottom: 170px
+        @media (max-width: 767.98px)
+          padding:
+            top: 70px
+            bottom: 70px
+        @media (max-width: 575.98px)
+          padding:
+            left: 0
+            right: 0
+      &__wrapper
+        display: flex
+        align-items: stretch
+        @media (max-width: 575.98px)
+          flex-direction: column-reverse
+      &__title
+        color: #000000
+        text-align: center
+        font-size: 30px
+        font-weight: 700
+        line-height: 40px
+        margin:
+          bottom: 19px
+      &__descrition
+        text-align: center
+        margin:
+          bottom: 80px
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 40px
+      &__element
+        margin:
+          bottom: 30px
+        &--default
+        .holiday__button
+          background-color: rgba(231, 0, 104, 0.5)
+          .holiday__background
+            flex-grow: 1
+            background-image: url("../assets/white.jpg")
+        &--texture
+        .holiday__background
+          flex-grow: 1
+          background-image: url("../assets/painting_texture_package_by_lumbe_stock.jpg")
+      &__control
+        display: flex
+        flex-direction: column
+        padding:
+          top: 110px
+        width: 294px
+        background-color: #f8f8f8
+        @media (max-width: 1199.98px)
+          width: 260px
+        @media (max-width: 575.98px)
+          width: 100%
+          padding:
+            top: 50px
+      &__element-title
+        margin:
+          bottom: 9px
+        font-size: 20px
+        line-height: 30px
+        font-weight: 700
         text-align: center
         padding:
           left: 20px
           right: 20px
+        @media (max-width: 575.98px)
+          padding:
+            left: 10px
+            right: 10px
+      &__element-price
+        text-align: center
+        padding:
+          left: 50px
+          right: 50px
         margin:
-          bottom: 0
-    &__content
-      padding:
-        top: 30px
-        bottom: 35px
-    .menu
-      display: flex
-      flex-wrap: wrap
-      align-items: flex-end
-      margin:
-        bottom: 40px
-      @media (max-width: 767.98px)
-        flex-direction: column
-        align-items: flex-start
+          bottom: 64px
+        @media (max-width: 575.98px)
+          margin:
+            bottom: 40px
+      &__button
+        width: 100%
+        p
+          margin:
+            bottom: 0
+        &--icon
+          display: inline-block
+          width: 18px
+          margin:
+            left: 13px
+          #box
+            fill: #ffffff
+        @media (max-width: 575.98px)
+          padding:
+            left: 5px
+            right: 5px
+      &__background
+        min-height: 205px
+        background-repeat: no-repeat
+        background-size: cover
+    .holiday::-webkit-scrollbar
+      width: 4px
+    .holiday::-webkit-scrollbar-button
+      background-color: #666
+    .holiday::-webkit-scrollbar-track
+      background-color: none
+    .holiday::-webkit-scrollbar-thumb
+      height: 100px
+      background-color: #000000
+      border-radius: 5px
+    .holiday::-webkit-scrollbar-button
+      background-color: #F8F8F8
+    .postcard
+      overflow: auto
+      background-color: rgba(58, 58, 58, 0.8)
+      .el-dialog__header
+        display: none
+      .el-dialog
+        width: 1200px
+        padding: 0
+        @media (max-width: 1199.98px)
+          width: 990px
+        @media (max-width: 991.98px)
+          width: 750px
+        @media (max-width: 767.98px)
+          width: 570px
+        @media (max-width: 575.98px)
+          width: 100%
+      .container
+        background-color: #fff
+        margin:
+          top: 115px
+          bottom: 115px
+        @media (max-width: 575.98px)
+          margin:
+            top: 50px
+            bottom: 50px
+          width: calc(100% - 30px) !important
       &__close
         position: absolute
         width: 15px
@@ -1383,690 +1839,212 @@ export default {
         right: 54px
         cursor: pointer
         .icon
-          fill: #000000
           margin:
             top: -10px
-        @media (max-width: 1199.98px)
-          right: 34px
+          fill: #000000
         @media (max-width: 767.98px)
-          top: 45px
-
-      &__list
-        list-style: none
-        display: flex
-        border: 1px solid #f8f8f8
-        margin:
-          bottom: 0
-        padding:
-          top: 5px
-          left: 5px
-          bottom: 5px
-          right: 5px
-        &--wrapper
-          display: inline-block
-          margin:
-            bottom: 0
-            right: 70px
-          @media (max-width: 1199.98px)
-            margin:
-              right: 60px
-          @media (max-width: 991.98px)
-            margin:
-              right: 50px
-          @media (max-width: 767.98px)
-            margin:
-              bottom: 20px
-          @media (max-width: 575.98px)
-            margin:
-              right: 0
-      &__link
-        transition: all 0.2s ease
-        padding:
-          top: 9px
-          bottom: 11px
-          left: 25px
-          right: 25px
-        display: block
-        line-height: 20px
-        color: #000
+          top: 40px
+          right: 40px
         @media (max-width: 575.98px)
-          padding:
-            top: 5px
-            bottom: 6px
-            left: 15px
-            right: 15px
-
-        &:hover, &:focus
-          text-decoration: none
-          background-color: #e70068
-          color: #ffffff
-      &__link.active
-        background-color: #e70068
-        color: #ffffff
-      &__search.el-input
-        width: 264px
-        margin:
-          right: 70px
-        @media (max-width: 1199.98px)
-          margin:
-            right: 60px
-        @media (max-width: 575.98px)
-          margin:
-            right: 0
-
-        .el-input__inner
-          padding:
-            left: 5px
-            bottom: 10px
-          border: none
-          border-radius: 0px
-          border-bottom: 1px solid #c4c4c4
-          font-size: 15px
-          line-height: 20px
-          &::placeholder
-            font-size: 15px
-            line-height: 20px
-            color: #DCDCDC
-
-      &__places
-        margin:
-          bottom: 10px
-        @media (max-width: 991.98px)
-          margin:
-            top: 15px
-        @media (max-width: 767.98px)
-          margin:
-            top: 20px
-    .element
-      margin:
-        bottom: 30px
-      @media (max-width: 575.98px)
-        margin:
-          bottom: 20px
-      &__wrapper
-        display: block
-        position: relative
-        z-index: 10
-        background-image: url("../assets/http___pluspng.com_img-png_snickers-png-file-snickers-wrapped-png-589.png")
-        background-repeat: no-repeat
-        background-size: 190px auto
-        background-position: center center
-        &::before
-          content: ''
-          position: absolute
-          top: 0
-          left: 0
-          bottom: 0
-          right: 0
-          background-color: rgba(0, 0, 0, 0.8)
-        &:hover, &:focus
-          text-decoration: none
-          .element__content
-            opacity: 0
-          .element__icon
-            opacity: 1
+          top: 30px
+          right: 30px
       &__content
-        transition: all 0.2s ease
-        opacity: 1
         padding:
-          left: 20px
-          top: 18px
-          bottom: 20px
-          right: 18px
-        position: relative
-        z-index: 100
-        color: #ffffff
-      &__title
-        font-size: 15px
-        line-height: 20px
-        font-weight: 400
+          top: 110px
+          bottom: 84px
+        @media (max-width: 767.98px)
+          padding:
+            top: 90px
+            bottom: 70px
+      &__form
+        display: flex
+        flex-direction: column
+        align-items: center
+        @media (max-width: 767.98px)
+          padding:
+            left: 20px
+            right: 20px
+      &__textarea
+        outline: none
+        resize: none
+        width: 700px
+        border: none
+        height: 330px
+        line-height: 40px
         margin:
-          bottom: 6px
-      &__price
+          left: auto
+          right: auto
+        background: repeating-linear-gradient(to bottom, #ffffff, #ffffff 40px, #c4c4c4 40px, #c4c4c4 41px)
+        @media (max-width: 991.98px)
+          width: 550px
+        @media (max-width: 767.98px)
+          width: 100%
+      &__title
+        color: #000000
         font-size: 30px
         line-height: 40px
         font-weight: 700
+        text-align: center
         margin:
-          bottom: 27px
-      &__place
-        opacity: 0.5
-        font-size: 14px
-        line-height: 19px
+          bottom: 19px
+        @media (max-width: 991.98px)
+          font-size: 25px
+          line-height: 35px
+      &__description
+        text-align: center
+        line-height: 20px
         margin:
-          bottom: 0
-      &__icon
-        transition: all 0.2s ease
-        opacity: 0
-        position: absolute
-        z-index: 100
-        width: 35px
-        height: 35px
-        transform: rotate(45deg)
+          bottom: 45px
+      &__button
+        min-width: 200px
+        margin:
+          top: 55px
+      &__alert.show
+        display: block
+      &__alert
+        position: fixed
         top: 0
-        right: 0
-        bottom: 0
         left: 0
+        right: 0
+        z-index: 100000
+        display: none
         margin:
-          top: auto
-          bottom: auto
           left: auto
           right: auto
-        background-image: url("../assets/Icons/add-sweets.svg")
-        background-repeat: no-repeat
-        background-size: contain
-    &__bottom-navigation
-      display: flex
-      align-items: center
-      justify-content: space-between
-      @media (max-width: 575.98px)
-        flex-direction: column
-        align-items: flex-start
-    &__pages
-      margin:
-        bottom: 0
-      @media (max-width: 575.98px)
-        margin:
-          top: 15px
-    &__pagination
-      display: inline-block
-      margin:
-        top: 5px
-      padding:
-        top: 5px
-        bottom: 5px
-      background-color: #f8f8f8
-      @media (max-width: 330.98px)
-        margin:
-          left: -5px
-      &-content
-        display: flex
-        align-items: center
-        @media (max-width: 575.98px)
+        width: 700px
+        padding:
+          top: 14px
+          bottom: 16px
+        background-color: #e70068
+        @media (max-width: 767.98px)
+          width: calc(100% - 40px)
+        &--message
+          font-size: 15px
+          line-height: 20px
+          font-weight: 700
+          color: #ffffff
+          text-align: center
           padding:
-            left: 0
-            right: 0
-        .number
-          transition: all 0.2s ease
-          width: 40px
-          height: 40px
-          padding:
-            top: 5px
-          @media (max-width: 575.98px)
-            width: 30px
-            height: 30px
-            padding:
-              top: 2px
-          &:hover, &:focus
-            box-shadow: inset 0 0 0px 1px #dcdcdc
-        .el-icon-more
+            left: 20px
+            right: 20px
           margin:
-            top: 10px
-        .el-pager
-          display: flex
-          align-items: baseline
-        .el-icon.more.btn-quickprev.el-icon-more
-          display: none
-        .el-pagination
-          @media (max-width: 575.98px)
-            width: 100%
-        .btn-prev, .btn-next
-          @media (max-width: 575.98px)
-            margin:
-              left: 0 !important
-              right: 0 !important
-
-  .product-add::-webkit-scrollbar
-    width: 4px
-  .product-add::-webkit-scrollbar-button
-    background-color: #666
-  .product-add::-webkit-scrollbar-track
-    background-color: none
-  .product-add::-webkit-scrollbar-thumb
-    height: 100px
-    background-color: #000000
-    border-radius: 5px
-  .product-add::-webkit-scrollbar-button
+            bottom: 0
+    .postcard::-webkit-scrollbar
+      width: 4px
+    .postcard::-webkit-scrollbar-button
+      background-color: #666
+    .postcard::-webkit-scrollbar-track
+      background-color: none
+    .postcard::-webkit-scrollbar-thumb
+      height: 100px
+      background-color: #000000
+      border-radius: 5px
+    .postcard::-webkit-scrollbar-button
       background-color: #F8F8F8
-
-
-  .holiday
-    overflow: auto
-    background-color: rgba(58, 58, 58, 0.8)
-    .el-dialog__header
-      display: none
-    .el-dialog
-      width: 1200px
-      padding: 0
-      @media (max-width: 1199.98px)
-        width: 990px
-      @media (max-width: 991.98px)
-        width: 750px
-      @media (max-width: 767.98px)
-        width: 570px
-      @media (max-width: 575.98px)
-        width: 100%
-    .container
-      background-color: #fff
-      margin:
-        top: 115px
-        bottom: 115px
-      @media (max-width: 575.98px)
+    .confirmed
+      overflow: auto
+      background-color: rgba(58, 58, 58, 0.8)
+      .el-dialog__header
+        display: none
+      .el-dialog
+        width: 700px
+        @media (max-width: 575.98px)
+          width: 100%
+      .container
         margin:
-          top: 50px
-          bottom: 50px
-        width: calc(100% - 30px) !important
-      .product-add__alert.show
-      display: block
-    &__alert.show
-      display: block
-    &__alert
-      position: fixed
-      top: 0
-      left: 0
-      right: 0
-      z-index: 100000
-      display: none
-      margin:
-        left: auto
-        right: auto
-      width: 700px
-      padding:
-        top: 14px
-        bottom: 16px
-      background-color: #e70068
-      @media (max-width: 767.98px)
-        width: calc(100% - 40px)
-      &--message
-        font-size: 15px
-        line-height: 20px
-        font-weight: 700
-        color: #ffffff
-        text-align: center
-        padding:
-          left: 20px
-          right: 20px
-        margin:
-          bottom: 0
-    &__close
-      position: absolute
-      width: 15px
-      height: 15px
-      top: 54px
-      right: 54px
-      cursor: pointer
-      background-repeat: no-repeat
-      background-image: url("../assets/Icons/cancel.svg")
-      .icon
-        fill: #000000
-        margin:
-          top: -10px
-      @media (max-width: 767.98px)
-        top: 40px
-        right: 40px
-    &__content
-      padding:
-        top: 110px
-        left: 12px
-        right: 12px
-        bottom: 170px
-      @media (max-width: 767.98px)
-        padding:
-          top: 70px
-          bottom: 70px
-      @media (max-width: 575.98px)
+          top: 115px
+          bottom: 115px
+        @media (max-width: 575.98px)
+          margin:
+            top: 50px
+            bottom: 50px
+          width: calc(100% - 30px) !important
+      .col
         padding:
           left: 0
           right: 0
-    &__wrapper
-      display: flex
-      align-items: stretch
-      @media (max-width: 575.98px)
-        flex-direction: column-reverse
-
-    &__title
-      color: #000000
-      text-align: center
-      font-size: 30px
-      font-weight: 700
-      line-height: 40px
-      margin:
-        bottom: 19px
-    &__descrition
-      text-align: center
-      margin:
-        bottom: 80px
-      @media (max-width: 767.98px)
+      &__content
+        background-color: #fff
         margin:
-          bottom: 40px
-    &__element
-      margin:
-        bottom: 30px
-      &--default
-        .holiday__button
-          background-color: rgba(231, 0, 104, 0.5)
-        .holiday__background
-          flex-grow: 1
-          background-image: url("../assets/white.jpg")
-      &--texture
-        .holiday__background
-          flex-grow: 1
-          background-image: url("../assets/painting_texture_package_by_lumbe_stock.jpg")
-    &__control
-      display: flex
-      flex-direction: column
-      padding:
-        top: 110px
-      width: 294px
-      background-color: #f8f8f8
-      @media (max-width: 1199.98px)
-        width: 260px
-      @media (max-width: 575.98px)
-        width: 100%
+          left: auto
+          right: auto
+        width: 700px
         padding:
-         top: 50px
-    &__element-title
-      margin:
-        bottom: 9px
-      font-size: 20px
-      line-height: 30px
-      font-weight: 700
-      text-align: center
-      padding:
-        left: 20px
-        right: 20px
-      @media (max-width: 575.98px)
-        padding:
-          left: 10px
-          right: 10px
-    &__element-price
-      text-align: center
-      padding:
-        left: 50px
-        right: 50px
-      margin:
-        bottom: 64px
-      @media (max-width: 575.98px)
+          left: 50px
+          right: 50px
+          top: 35px
+          bottom: 80px
+        @media (max-width: 767.98px)
+          width: 100%
+        @media (max-width: 575.98px)
+          padding:
+            left: 30px
+            right: 30px
+            bottom: 50px
+      &__icon
+        width: 50px
+        height: 50px
+        background-image: url("../assets/Icons/present.svg")
+        background-position: 0 0
+        background-repeat: no-repeat
+        background-size: cover
         margin:
-          bottom: 40px
-    &__button
-      width: 100%
-
-      p
-        margin:
-          bottom: 0
-      &--icon
-        display: inline-block
-        width: 18px
-        margin:
-          left: 13px
-        #box
-          fill: #ffffff
-      @media (max-width: 575.98px)
-        padding:
-          left: 5px
-          right: 5px
-    &__background
-      min-height: 205px
-      background-repeat: no-repeat
-      background-size: cover
-
-  .holiday::-webkit-scrollbar
-    width: 4px
-  .holiday::-webkit-scrollbar-button
-    background-color: #666
-  .holiday::-webkit-scrollbar-track
-    background-color: none
-  .holiday::-webkit-scrollbar-thumb
-    height: 100px
-    background-color: #000000
-    border-radius: 5px
-  .holiday::-webkit-scrollbar-button
-      background-color: #F8F8F8
-
-  .postcard
-    overflow: auto
-    background-color: rgba(58, 58, 58, 0.8)
-    .el-dialog__header
-      display: none
-    .el-dialog
-      width: 1200px
-      padding: 0
-      @media (max-width: 1199.98px)
-        width: 990px
-      @media (max-width: 991.98px)
-        width: 750px
-      @media (max-width: 767.98px)
-        width: 570px
-      @media (max-width: 575.98px)
-        width: 100%
-    .container
-      background-color: #fff
-      margin:
-        top: 115px
-        bottom: 115px
-      @media (max-width: 575.98px)
-        margin:
-          top: 50px
-          bottom: 50px
-        width: calc(100% - 30px) !important
-    &__close
-      position: absolute
-      width: 15px
-      height: 15px
-      top: 54px
-      right: 54px
-      cursor: pointer
-      .icon
-        margin:
-          top: -10px
-        fill: #000000
-      @media (max-width: 767.98px)
-        top: 40px
-        right: 40px
-      @media (max-width: 575.98px)
-        top: 30px
-        right: 30px
-    &__content
-      padding:
-        top: 110px
-        bottom: 84px
-      @media (max-width: 767.98px)
-        padding:
-          top: 90px
-          bottom: 70px
-    &__form
-      display: flex
-      flex-direction: column
-      align-items: center
-      @media (max-width: 767.98px)
-        padding:
-          left: 20px
-          right: 20px
-    &__textarea
-      outline: none
-      resize: none
-      width: 700px
-      border: none
-      height: 330px
-      line-height: 40px
-      margin:
-        left: auto
-        right: auto
-      background: repeating-linear-gradient(to bottom, #ffffff,  #ffffff 40px, #c4c4c4 40px, #c4c4c4 41px)
-      @media (max-width: 991.98px)
-        width: 550px
-      @media (max-width: 767.98px)
-        width: 100%
-
-    &__title
-      color: #000000
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
-      text-align: center
-      margin:
-        bottom: 19px
-      @media (max-width: 991.98px)
-        font-size: 25px
-        line-height: 35px
-    &__description
-      text-align: center
-      line-height: 20px
-      margin:
-        bottom: 45px
-    &__button
-      min-width: 200px
-      margin:
-        top: 55px
-    &__alert.show
-      display: block
-    &__alert
-      position: fixed
-      top: 0
-      left: 0
-      right: 0
-      z-index: 100000
-      display: none
-      margin:
-        left: auto
-        right: auto
-      width: 700px
-      padding:
-        top: 14px
-        bottom: 16px
-      background-color: #e70068
-      @media (max-width: 767.98px)
-        width: calc(100% - 40px)
-      &--message
-        font-size: 15px
-        line-height: 20px
-        font-weight: 700
-        color: #ffffff
+          left: auto
+          right: auto
+          bottom: 16px
+      &__title
+        color: #000000
+        font-size: 30px
+        line-height: 40px
         text-align: center
+        font-weight: 700
+        margin:
+          bottom: 61px
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 40px
+        @media (max-width: 575.98px)
+          font-size: 25px
+          line-height: 35px
+      &__description
+        margin:
+          bottom: 30px
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 20px
+      &__buttons
+        display: flex
+        align-items: center
         padding:
-          left: 20px
-          right: 20px
+          top: 30px
+          left: 43px
+        @media (max-width: 767.98px)
+          flex-direction: column
+          padding:
+            top: 20px
+            left: 0
+      &__link
+        transition: all 0.2s ease
+        color: #000000
         margin:
-          bottom: 0
-  .postcard::-webkit-scrollbar
-    width: 4px
-  .postcard::-webkit-scrollbar-button
-    background-color: #666
-  .postcard::-webkit-scrollbar-track
-    background-color: none
-  .postcard::-webkit-scrollbar-thumb
-    height: 100px
-    background-color: #000000
-    border-radius: 5px
-  .postcard::-webkit-scrollbar-button
-    background-color: #F8F8F8
-
-  .confirmed
-    overflow: auto
-    background-color: rgba(58, 58, 58, 0.8)
-    .el-dialog__header
-      display: none
-    .el-dialog
-      width: 700px
-      @media (max-width: 575.98px)
-        width: 100%
-    .container
-      margin:
-        top: 115px
-        bottom: 115px
-      @media (max-width: 575.98px)
-        margin:
-          top: 50px
-          bottom: 50px
-        width: calc(100% - 30px) !important
-    .col
-      padding:
-        left: 0
-        right: 0
-    &__content
-      background-color: #fff
-      margin:
-        left: auto
-        right: auto
-      width: 700px
-      padding:
-        left: 50px
-        right: 50px
-        top: 35px
-        bottom: 80px
-      @media (max-width: 767.98px)
-        width: 100%
-      @media (max-width: 575.98px)
-        padding:
-          left: 30px
-          right: 30px
-          bottom: 50px
-    &__icon
-      width: 50px
-      height: 50px
-      background-image: url("../assets/Icons/present.svg")
-      background-position: 0 0
-      background-repeat: no-repeat
-      background-size: cover
-      margin:
-        left: auto
-        right: auto
-        bottom: 16px
-    &__title
-      color: #000000
-      font-size: 30px
-      line-height: 40px
-      text-align: center
-      font-weight: 700
-      margin:
-        bottom: 61px
-      @media (max-width: 767.98px)
-        margin:
-          bottom: 40px
-      @media (max-width: 575.98px)
-        font-size: 25px
-        line-height: 35px
-    &__description
-      margin:
-        bottom: 30px
-      @media (max-width: 767.98px)
-        margin:
-          bottom: 20px
-    &__buttons
-      display: flex
-      align-items: center
-      padding:
-        top: 30px
-        left: 43px
-      @media (max-width: 767.98px)
-        flex-direction: column
-        padding:
-          top: 20px
-          left: 0
-
-    &__link
-      transition: all 0.2s ease
-      color: #000000
-      margin:
-        left: 40px
-      @media (max-width: 767.98px)
-        margin:
-          left: 0
-          top: 20px
-      &:hover, &:focus
-        color: #e70068
-        text-decoration: none
-
-  .confirmed::-webkit-scrollbar
-    width: 4px
-  .confirmed::-webkit-scrollbar-button
-    background-color: #666
-  .confirmed::-webkit-scrollbar-track
-    background-color: none
-  .confirmed::-webkit-scrollbar-thumb
-    height: 100px
-    background-color: #000000
-    border-radius: 5px
-  .confirmed::-webkit-scrollbar-button
-    background-color: #F8F8F8
+          left: 40px
+        @media (max-width: 767.98px)
+          margin:
+            left: 0
+            top: 20px
+        &:hover, &:focus
+          color: #e70068
+          text-decoration: none
+    .confirmed::-webkit-scrollbar
+      width: 4px
+    .confirmed::-webkit-scrollbar-button
+      background-color: #666
+    .confirmed::-webkit-scrollbar-track
+      background-color: none
+    .confirmed::-webkit-scrollbar-thumb
+      height: 100px
+      background-color: #000000
+      border-radius: 5px
+    .confirmed::-webkit-scrollbar-button
+      background-color: #F8F8F8
 </style>

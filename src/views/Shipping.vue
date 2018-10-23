@@ -55,14 +55,16 @@
           <div class="way__wrapper">
             <div class="way__content">
               <h2 class="way__title">Получите сладости удобным способом</h2>
-              <p class="way__description">Мы позаботились о разных вариантах получения товара, которые предусматривают ваше географическое положение и количество свободного времени.</p>
+              <p class="way__description">Мы позаботились о разных вариантах получения товара, которые предусматривают
+              ваше географическое положение и количество свободного времени.</p>
             </div>
           </div>
         </b-col>
 
         <b-col cols="12" class="product-delivery">
           <h2 class="product-delivery__title">Доставка товара</h2>
-          <p class="product-delivery__description">Для получения заказанного Вами товара выберите подходящий способ доставки</p>
+          <p class="product-delivery__description">Для получения заказанного Вами товара выберите подходящий способ
+          доставки</p>
         </b-col>
 
         <b-col>
@@ -71,7 +73,8 @@
               <div class="delivery-options__wrapper">
                 <div class="delivery-options__content">
                   <h3 class="delivery-options__title">Самовывоз</h3>
-                  <p class="delivery-options__description">Для жителей Харькова есть возможность забрать заказ<br>в нашем магазине по адресу: <br>ул. Героев труда 7, ТРЦ Караван.</p>
+                  <p class="delivery-options__description">Для жителей Харькова есть возможность забрать заказ<br>в
+                  нашем магазине по адресу: <br>ул. Героев труда 7, ТРЦ Караван.</p>
                   <p class="delivery-options__description">Работаем ежедневно с 10:00 до 22:00.</p>
                   <el-button class="delivery-options__button">Выбрать этот тип доставки
                     <span class="delivery-options__button--icon">
@@ -133,7 +136,8 @@
               <div class="delivery-options__wrapper">
                 <div class="delivery-options__content">
                   <h3 class="delivery-options__title">По Харькову</h3>
-                  <p class="delivery-options__description">Доставка товара по Харькову может быть осуществлена по указанному адресу на необходимую дату.</p>
+                  <p class="delivery-options__description">Доставка товара по Харькову может быть осуществлена по
+                  указанному адресу на необходимую дату.</p>
                   <p class="delivery-options__description">Оплата происходить при получении товара</p>
                   <el-button class="delivery-options__button">
                     Выбрать этот тип доставки
@@ -196,9 +200,11 @@
               <div class="delivery-options__wrapper">
                 <div class="delivery-options__content">
                   <h3 class="delivery-options__title">По Украине</h3>
-                  <p class="delivery-options__description">Отправляем через Новую почту. Стоимость отправки зависит от веса посылки и города.</p>
+                  <p class="delivery-options__description">Отправляем через Новую почту. Стоимость отправки зависит от
+                  веса посылки и города.</p>
                   <p class="delivery-options__description">Заказ высылается в течении 24-х часов после выполнения.</p>
-                  <p class="delivery-options__description">Вы можете оплатить товар при получении наложенным платежом или произвести предоплату на карту банка.</p>
+                  <p class="delivery-options__description">Вы можете оплатить товар при получении наложенным платежом
+                  или произвести предоплату на карту банка.</p>
                   <el-button class="delivery-options__button">Выбрать этот тип доставки
                     <span class="delivery-options__button--icon">
                       <svg id="Capa_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -263,242 +269,240 @@
 <script>
 export default {
   name: 'Shipping',
-  components: {
-
-  },
+  components: {},
 };
 </script>
 
 <style lang="sass">
-.Shipping
-  .back
-    &__link
-      display: inline-block
-      font-weight: 700
+  .Shipping
+    .back
+      &__link
+        display: inline-block
+        font-weight: 700
+        margin:
+          top: 37px
+          bottom: 50px
+        transition: all 0.2s ease
+        color: #000000
+        @media (max-width: 767.98px)
+          margin:
+            bottom: 30px
+        @media (max-width: 575.98px)
+          font-size: 14px
+        &:hover, &:focus
+          color: #e70068
+          text-decoration: none
+          .icon
+            fill: #e70068
+      span
+        display: inline-block
+      &__icon
+        margin:
+          left: 0
+        display: block
+        transform: rotate(-180deg)
+        .icon
+          transition: all 0.2s ease
+          width: 12px
+          height: 12px
+          fill: #000000
+          margin:
+            left: 12px
+            top: -6px
+          @media (max-width: 575.98px)
+            margin:
+              left: 5px
+    .way
+      &__wrapper
+        position: relative
+        background-image: url(../assets/gleb-kozenko-170832-unsplash.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        &::before
+          content: ''
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          position: absolute
+          z-index: 100
+          background-color: rgba(0, 0, 0, 0.5)
+
+      &__content
+        position: relative
+        z-index: 1000
+        color: #ffffff
+        padding:
+          top: 44px
+          left: 70px
+          bottom: 112px
+          right: 30px
+        @media (max-width: 991.98px)
+          padding:
+            left: 30px
+        @media (max-width: 575.98px)
+          padding:
+            left: 15px
+            right: 15px
+      &__title
+        font-size: 30px
+        line-height: 40px
+        font-weight: 700
+        margin:
+          bottom: 41px
+        @media (max-width: 575.98px)
+          font-size: 25px
+          line-height: 35px
+      &__description
+        width: 950px
+        line-height: 25px
+        margin:
+          bottom: 12px
+        @media (max-width: 1199.98px)
+          width: 800px
+        @media (max-width: 991.98px)
+          width: 100%
+
+    .product-delivery
       margin:
-        top: 37px
+        top: 46px
         bottom: 50px
-      transition: all 0.2s ease
-      color: #000000
+      &__title
+        font-size: 30px
+        font-weight: 700
+        line-height: 40px
+        margin:
+          bottom: 19px
+        text-align: center
+      &__description
+        margin:
+          bottom: 0
+        text-align: center
+
+    .delivery-options
+      margin:
+        bottom: 50px
       @media (max-width: 767.98px)
         margin:
           bottom: 30px
-      @media (max-width: 575.98px)
-        font-size: 14px
-      &:hover, &:focus
-        color: #e70068
-        text-decoration: none
-        .icon
-          fill: #e70068
-    span
-      display: inline-block
-    &__icon
-      margin:
-        left: 0
-      display: block
-      transform: rotate(-180deg)
-      .icon
-        transition: all 0.2s ease
-        width: 12px
-        height: 12px
-        fill: #000000
-        margin:
-          left: 12px
-          top: -6px
-        @media (max-width: 575.98px)
-          margin:
-            left: 5px
-  .way
-    &__wrapper
-      position: relative
-      background-image: url(../assets/gleb-kozenko-170832-unsplash.jpg)
-      background-repeat: no-repeat
-      background-size: cover
-      &::before
-        content: ''
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        position: absolute
-        z-index: 100
-        background-color: rgba(0, 0, 0, 0.5)
-
-    &__content
-      position: relative
-      z-index: 1000
-      color: #ffffff
-      padding:
-        top: 44px
-        left: 70px
-        bottom: 112px
-        right: 30px
-      @media (max-width: 991.98px)
-        padding:
-          left: 30px
-      @media (max-width: 575.98px)
-        padding:
-          left: 15px
-          right: 15px
-    &__title
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
-      margin:
-        bottom: 41px
-      @media (max-width: 575.98px)
-        font-size: 25px
-        line-height: 35px
-    &__description
-      width: 950px
-      line-height: 25px
-      margin:
-        bottom: 12px
-      @media (max-width: 1199.98px)
-        width: 800px
-      @media (max-width: 991.98px)
-        width: 100%
-
-  .product-delivery
-    margin:
-      top: 46px
-      bottom: 50px
-    &__title
-      font-size: 30px
-      font-weight: 700
-      line-height: 40px
-      margin:
-        bottom: 19px
-      text-align: center
-    &__description
-      margin:
-        bottom: 0
-      text-align: center
-
-  .delivery-options
-    margin:
-      bottom: 50px
-    @media (max-width: 767.98px)
-      margin:
-        bottom: 30px
-    &--pickup
+      &--pickup
       .delivery-options__wrapper
         background-image: url("../assets/felix-russell-saw-234903-unsplash.jpg")
-    &--kharkiv
+      &--kharkiv
       .delivery-options__wrapper
         background-image: url("../assets/kharkiv.jpg")
         background-position: -230px 0
         @media (max-width: 991.98px)
           background-position: 0 0
-    &--ukraine
+      &--ukraine
       .delivery-options__wrapper
         background-image: url("../assets/john-mark-smith-134302-unsplash.jpg")
 
-    &__wrapper
-      position: relative
-      height: 100%
-      background-repeat: no-repeat
-      background-size: cover
-      background-position: center 0
-      @media (max-width: 991.98px)
-        background-size: 800px auto
-      &::before
-        content: ''
-        position: absolute
-        z-index: 100
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 1))
-    &__content
-      position: relative
-      z-index: 1000
-      height: 100%
-      color: #ffffff
-      padding:
-        left: 30px
-        top: 21px
-        right: 30px
-        bottom: 35px
-      display: flex
-      flex-direction: column
-      @media (max-width: 1199.98px)
-        padding:
-          left: 15px
-          right: 15px
-      @media (max-width: 991.98px)
+      &__wrapper
+        position: relative
+        height: 100%
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center 0
+        @media (max-width: 991.98px)
+          background-size: 800px auto
+        &::before
+          content: ''
+          position: absolute
+          z-index: 100
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 1))
+      &__content
+        position: relative
+        z-index: 1000
+        height: 100%
+        color: #ffffff
         padding:
           left: 30px
+          top: 21px
           right: 30px
-      @media (max-width: 575.98px)
-        padding:
-          left: 15px
-          right: 15px
-    &__description
-      width: 280px
-      font-size: 18px
-      line-height: 25px
-      margin:
-        bottom: 25px
-      @media (max-width: 1199.98px)
-        font-size: 15px
-        width: 270px
-      @media (max-width: 991.98px)
-        width: 400px
-        br
-          display: none
-      @media (max-width: 575.98px)
-        width: 100%
-      &:last-of-type
-        margin:
-          bottom: 105px
+          bottom: 35px
+        display: flex
+        flex-direction: column
+        @media (max-width: 1199.98px)
+          padding:
+            left: 15px
+            right: 15px
         @media (max-width: 991.98px)
-          margin:
-            bottom: 70px
-    &__button
-      width: 288px
-      padding:
-        right: 72px
-      margin:
-        left: auto
-        right: auto
-        top: auto
-      &--icon
-        display: inline-block
-        width: 30px
-        height: 20px
+          padding:
+            left: 30px
+            right: 30px
+        @media (max-width: 575.98px)
+          padding:
+            left: 15px
+            right: 15px
+      &__description
+        width: 280px
+        font-size: 18px
+        line-height: 25px
         margin:
-          left: 8px
-        .icon
-          fill: #ffffff
+          bottom: 25px
+        @media (max-width: 1199.98px)
+          font-size: 15px
+          width: 270px
+        @media (max-width: 991.98px)
+          width: 400px
+          br
+            display: none
+        @media (max-width: 575.98px)
+          width: 100%
+        &:last-of-type
           margin:
-            top: -4px
-      @media (max-width: 1199.98px)
-        width: 100%
-        padding:
-          left: 20px
-      @media (max-width: 991.98px)
+            bottom: 105px
+          @media (max-width: 991.98px)
+            margin:
+              bottom: 70px
+      &__button
         width: 288px
         padding:
-          left: 30px
+          right: 72px
         margin:
-          left: 0
+          left: auto
           right: auto
-      @media (max-width: 575.98px)
-        width: 100%
-        padding:
-          left: 15px
-          right: 15px
-    &__title
-      font-size: 30px
-      line-height: 40px
-      font-weight: 700
-      margin:
-        bottom: 21px
-      @media (max-width: 575.98px)
-        font-size: 25px
-        line-height: 35px
+          top: auto
+        &--icon
+          display: inline-block
+          width: 30px
+          height: 20px
+          margin:
+            left: 8px
+          .icon
+            fill: #ffffff
+            margin:
+              top: -4px
+        @media (max-width: 1199.98px)
+          width: 100%
+          padding:
+            left: 20px
+        @media (max-width: 991.98px)
+          width: 288px
+          padding:
+            left: 30px
+          margin:
+            left: 0
+            right: auto
+        @media (max-width: 575.98px)
+          width: 100%
+          padding:
+            left: 15px
+            right: 15px
+      &__title
+        font-size: 30px
+        line-height: 40px
+        font-weight: 700
+        margin:
+          bottom: 21px
+        @media (max-width: 575.98px)
+          font-size: 25px
+          line-height: 35px
 
 
 </style>

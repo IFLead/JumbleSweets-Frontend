@@ -99,32 +99,40 @@
               <h2 class="category__title">Популярные категории товаров</h2>
             </b-col>
             <b-col sm="6" lg="3" class="category__element">
-              <a href="#">
-                <div class=" category__element-candybar">
-                  <h3 class="category__element-title">Батончики</h3>
-                </div>
-              </a>
+              <router-link :to="{name: 'home', query: { categories: '2', }, }">
+                <a href="#">
+                  <div class=" category__element-candybar">
+                    <h3 class="category__element-title">Батончики</h3>
+                  </div>
+                </a>
+              </router-link>
             </b-col>
             <b-col sm="6" lg="3" class="category__element">
-              <a href="#">
-                <div class="category__element-marmalade">
-                  <h3 class="category__element-title">Мармелад</h3>
-                </div>
-              </a>
+              <router-link :to="{name: 'home', query: { categories: '6', }, }">
+                <a href="#">
+                  <div class="category__element-marmalade">
+                    <h3 class="category__element-title">Мармелад</h3>
+                  </div>
+                </a>
+              </router-link>
             </b-col>
             <b-col sm="6" lg="3" class="category__element">
-              <a href="#">
-                <div class="category__element-drinks">
-                  <h3 class="category__element-title">Напитки</h3>
-                </div>
-              </a>
+              <router-link :to="{name: 'home', query: { categories: '7', }, }">
+                <a href="#">
+                  <div class="category__element-drinks">
+                    <h3 class="category__element-title">Напитки</h3>
+                  </div>
+                </a>
+              </router-link>
             </b-col>
             <b-col sm="6" lg="3" class="category__element">
-              <a href="#">
-                <div class="category__element-chocolate">
-                  <h3 class="category__element-title">Шоколад</h3>
-                </div>
-              </a>
+              <router-link :to="{name: 'home', query: { categories: '9', }, }">
+                <a href="#">
+                  <div class="category__element-chocolate">
+                    <h3 class="category__element-title">Шоколад</h3>
+                  </div>
+                </a>
+              </router-link>
             </b-col>
           </b-row>
         </b-container>
@@ -153,7 +161,7 @@
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
-              <el-input v-model="productName" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onSortFilterChange()"></el-input>
+              <el-input v-model="productQuery" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onSortFilterChange()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
               <el-select v-model="sortBy" class="sort__select" @change="sortFilterProducts(); onSortFilterChange()">
@@ -185,7 +193,7 @@
                       <ul v-for="category in allCategories" :key="category.node.id"
                           class="filter__list filter__list--category">
                         <li>
-                          <el-checkbox :label="category.node.id">{{ `${category.node.name} (${category.node.products.totalCount})` }}
+                          <el-checkbox :label="category.node.id | getNormalId">{{ `${category.node.name} (${category.node.products.totalCount})` }}
                           </el-checkbox>
                         </li>
                       </ul>
@@ -226,8 +234,9 @@
 
 
             <b-col md="8" lg="9" class="products__catalog catalog">
-              <b-row class="catalog__list">
-                <b-col v-for="product in allProducts.edges" :key="product.node.id" sm="6" lg="4"
+              <b-row v-if="allProducts" class="catalog__list">
+                <!-- toDo: добвить анимацию появления -->
+                <b-col v-for="product in allProducts" :key="product.node.id" sm="6" lg="4"
                        class="catalog__element">
                   <div class="catalog__content">
                     <div v-if="product.node.availability.onSale" class="catalog__sale">{{
@@ -277,6 +286,9 @@
                     </div>
                   </div>
                 </b-col>
+              </b-row>
+              <!--todo: не работает блок отсутствия товаров, чтобы протестить, замени v-if="allProducts" на v-if="!allProducts"  -->
+              <b-row v-else class="catalog__list">
                 <div class="products__not-found not-found ">
                   <div class="not-found__heart">
                     <svg id="Capa_1" class="not-found__heart--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -294,10 +306,10 @@
                   <el-button class="not-found__button">Сбросить фильтры</el-button>
                 </div>
               </b-row>
-              <b-row>
+              <b-row v-if="allProducts">
                 <b-col md="12" lg="6" class="pagination__wrapper">
                   <div class="pagination">
-                    <el-pagination :total="allProducts.totalCount"
+                    <el-pagination :total="getTotalCount"
                                    :page-size="this.$PAGINATE_BY"
                                    class="pagination__content"
                                    background
@@ -306,7 +318,7 @@
                   </div>
                 </b-col>
                 <b-col md="6" class="ml-lg-auto pages">
-                  <p class="pages__count">Страница 1 из {{ Math.ceil(allProducts.totalCount/this.$PAGINATE_BY) }}</p>
+                  <p class="pages__count">Страница 1 из {{ Math.ceil(getTotalCount/this.$PAGINATE_BY) }}</p>
                 </b-col>
               </b-row>
             </b-col>
@@ -399,11 +411,27 @@
 </template>
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
+import { isEqual } from 'lodash/lang';
 import { getDiscount as getDiscountBase } from '../utils/priceFuncs';
+
 
 export default {
   name: 'Home',
   components: {},
+  filters: {
+    getNormalId(id) {
+      return window.atob(id).split(':')[1];
+    },
+    getCategoriesWithNormalIds(startingCategories) {
+      const newCategories = [];
+      for (let index = 0; index < startingCategories.length; index++) {
+        const newCategory = startingCategories[index].node;
+        newCategory.node.id = window.atob(newCategory.node.id);
+        newCategories.push(newCategory);
+      }
+      return newCategories;
+    },
+  },
   data() {
     return {
       options: [{
@@ -427,11 +455,22 @@ export default {
       filterOpen: false,
       priceRange: [0, 1000],
       categoryList: [],
-      productName: '',
+      productQuery: '',
+
+      defaultSortBy: '',
+      defaultPriceRange: [0, 1000],
+      defaultCategoryList: [],
+      defaultProductQuery: '',
     };
   },
   computed: {
-    ...mapGetters(['allProducts', 'allCategories', 'allOccasions', 'allManufacturers', 'allNews', 'getCartItems']),
+    ...mapGetters(['allProducts', 'allCategories', 'allOccasions', 'allManufacturers', 'allNews', 'getCartItems', 'getTotalCount']),
+  },
+  watch: {
+    $route() {
+      this.onRouteWithParams();
+      this.sortFilterProducts();
+    },
   },
   created() {
     this.loadProducts({});
@@ -441,6 +480,7 @@ export default {
     this.loadNews({});
     this.onRouteWithParams();
     this.sortFilterProducts();
+    console.log(this.allProducts);
   },
   methods: {
     ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers', 'loadNews']),
@@ -454,7 +494,7 @@ export default {
         name: product.name,
       });
       this.$message({
-        message: 'Ура!!!',
+        message: `Добавлено ${product.name}`,
         center: true,
       });
     },
@@ -464,17 +504,28 @@ export default {
     sortFilterProducts() {
       const priceGte = this.priceRange[0];
       const priceLte = this.priceRange[1];
-      const filters = { price_Gte: priceGte, price_Lte: priceLte, query: this.productName };
+      const filters = { price_Gte: priceGte, price_Lte: priceLte, query: this.productQuery };
       const data = { filters, sortBy: this.sortBy };
       console.log(data);
       this.loadProducts(data);
     },
     onSortFilterChange() {
+      const newQuery = {};
+      if (this.productQuery !== this.defaultProductQuery) {
+        newQuery.q = this.productQuery;
+      }
+      if (this.categoryList !== this.defaultCategoryList) {
+        newQuery.categories = this.categoryList;
+      }
+      if (!isEqual(this.priceRange, this.defaultPriceRange)) {
+        newQuery.price = this.priceRange;
+      }
+      if (this.sortBy !== this.defaultSortBy) {
+        newQuery.sort = this.sortBy;
+      }
       this.$router.push({
         name: 'home',
-        query: {
-          q: this.productName, categories: this.categoryList, price: this.priceRange, sort: this.sortBy,
-        },
+        query: newQuery,
       });
     },
     onRouteWithParams() {
@@ -482,7 +533,7 @@ export default {
         this.priceRange = this.$route.query.price;
       }
       if (this.$route.query.q) {
-        this.productName = this.$route.query.q;
+        this.productQuery = this.$route.query.q;
       }
       if (this.$route.query.categories) {
         if (Array.isArray(this.$route.query.categories)) {
@@ -499,7 +550,7 @@ export default {
       this.priceRange = [0, 1000];
       this.categoryList = [];
       this.sortBy = '';
-      this.productName = '';
+      this.productQuery = '';
       this.sortFilterProducts();
     },
   },
