@@ -65,7 +65,9 @@ const actions = {
       context.commit('setPageInfo', response.data.products.pageInfo);
     } catch (e) {
       console.log(e);
-      context.commit('setProducts', productBackData);
+      context.commit('setProducts', productBackData.edges);
+      context.commit('setTotalCount', productBackData.totalCount);
+      context.commit('setPageInfo', productBackData.pageInfo);
     }
   },
   // async getProductDetails(context, {cb, id}) {

@@ -228,7 +228,7 @@ export const productBackData = {
       },
     },
   },
-}.data.products.edges;
+}.data.products;
 
 export const categoryBackData = {
   data: {
