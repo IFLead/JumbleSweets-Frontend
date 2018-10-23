@@ -79,6 +79,7 @@ export default {
           callback();
         }
       }, 1000);
+      return null;
     };
     return {
       input: '',
