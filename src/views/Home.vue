@@ -291,13 +291,41 @@
               <b-row v-else class="catalog__list">
                 <div class="products__not-found not-found ">
                   <div class="not-found__heart">
-                    <svg id="Capa_1" class="not-found__heart--icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                         width="79.5px" height="70px" viewBox="0 0 63.111 63.11" style="enable-background:new 0 0 79.5 70;"
+                    <svg id="Capa_1" version="1.1" class="not-found__heart--icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="63.111px" height="63.11px" viewBox="0 0 63.111 63.11" style="enable-background:new 0 0 63.111 63.11;"
                          xml:space="preserve">
                       <g>
-                        <path d="M41.691,5.234l-8.567,11.079l11.928,8.056L33.909,48.825l0.897-18.475L22.507,18.711L25.92,7.534C13.316-0.526,0,4.712,0,19.846c0.002,17.429,31.557,39.495,31.55739.495s31.554-22.062,31.554-39.492C63.113,6.509,52.77,0.883,41.691,5.234z"/>
+                        <path style="fill: #e70068" d="M41.691,5.234l-8.567,11.079l11.928,8.056L33.909,48.825l0.897-18.475L22.507,18.711L25.92,7.534
+                            C13.316-0.526,0,4.712,0,19.846c0.002,17.429,31.557,39.495,31.557,39.495s31.554-22.062,31.554-39.492
+                            C63.113,6.509,52.77,0.883,41.691,5.234z"/>
+                      </g><g>
                       </g>
-                    </svg>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                    </g><g></g></svg>
                   </div>
                   <h2 class="not-found__title">Ничего не найдено.</h2>
                   <p class="not-found__description">Очень жаль, но мы ничего не нашли по вашему
@@ -556,7 +584,6 @@ export default {
   },
 };
 </script>
-
 <style lang="sass">
 
   .home
@@ -847,6 +874,11 @@ export default {
         border-radius: 5px
 
     .catalog
+      min-height: 720px
+      @media (max-width: 1199.98px)
+        min-height: 600px
+      @media (max-width: 575.98px)
+        min-height: 500px
       position: relative
       margin:
         top: 8px
@@ -1095,6 +1127,7 @@ export default {
         color: #FFFAB9
         font-weight: 700
       .special
+        transition: all 0.2s ease
         display: inline-block
         margin:
           left: 7px
@@ -1102,7 +1135,8 @@ export default {
         color: #FFFAB9
         border-bottom: 2px dotted #FFFAB9
         font-weight: 700
-
+        &:hover, &:active
+          cursor: url("../assets/Icons/copy-content.svg"), pointer
     .jumble
       &__wrapper
         position: relative
@@ -1620,7 +1654,11 @@ export default {
           display: inline-block
           margin:
             top: 23px
+        .el-select-dropdown__item
+          span
+            font-size: 14px
         .el-input__inner
+          font-size: 14px
           border: none
           padding:
             left: 0
@@ -1632,6 +1670,7 @@ export default {
             width: 360px
           @media (max-width: 575.98px)
             width: 100%
+
         @media (max-width: 575.98px)
           width: 100%
 
@@ -1736,10 +1775,15 @@ export default {
         right: 15px
         left: 15px
       background-color: #f8f8f8
+      @media (max-width: 767.98px)
+        padding:
+          top: 150px
+
       @media (max-width: 575.98px)
         padding:
-          left: 30px
-          right: 30px
+          top: 100px
+          left: 15px
+          right: 15px
       &__title
         font-size: 30px
         font-weight: 700

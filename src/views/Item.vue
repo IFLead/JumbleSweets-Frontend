@@ -41,7 +41,7 @@
                 <el-carousel-item v-for="item in currentProduct.images.edges" :key="item.node.id">
                   <div class="characteristics__wrapper">
                     <img :alt="item.node.alt"
-                         :src="item.node.url">
+                         :src="item.node.url" class="characteristics__item" >
                   </div>
                 </el-carousel-item>
               </el-carousel>
@@ -236,7 +236,6 @@
           </b-row>
         </b-container>
       </section>
-
       <section class="similar-products">
         <b-container>
           <b-row>
@@ -569,18 +568,24 @@ export default {
         fill: #000000
     &__wrapper
       display: flex
-      align-items: flex-start
+      // align-items: flex-start
       justify-content: center
+      width: 100%
       height: 420px
-      overflow: hidden
       /*width: 340px*/
       margin:
         left: auto
         right: auto
-      img
-        object-fit: cover
       @media (max-width: 991.98px)
-        height: 300px
+        height: 350px
+    &__item
+      margin:
+        left: auto
+        right: auto
+      width: calc(100% - 100px)
+      height: 100%
+      object-fit: contain
+      object-position: center center
 
 
     &__photo
