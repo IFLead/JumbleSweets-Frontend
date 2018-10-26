@@ -5,6 +5,7 @@ import { apolloProvider } from '../../vue-apollo';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {
+  authorized: false,
   token: '',
   expTime: 0,
   rememberMe: false,

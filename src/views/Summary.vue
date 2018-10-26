@@ -100,7 +100,7 @@
                   <img :src="record.photoUrl">
                 </div>
                 <ul class="additional__information">
-                  <li class="additional__name">{{ record.name }}</li>
+                  <li class="additional__name">{{ `${record.name} (${record.quantity} шт.)` }}</li>
                   <li class="additional__price">{{ record.price }} грн.</li>
                 </ul>
               </div>
