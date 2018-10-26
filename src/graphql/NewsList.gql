@@ -1,5 +1,5 @@
-query NewsList($first: Int, $after: String, $last: Int, $before: String) {
-    products(before: $before, after: $after, first: $first, last: $last, availableOn_Isnull: false) {
+query NewsList($first: Int, $after: String, $last: Int, $before: String, $hasAvailableOn: Boolean) {
+    products(before: $before, after: $after, first: $first, last: $last, hasAvailableOn: $hasAvailableOn) {
       edges {
         node {
           id

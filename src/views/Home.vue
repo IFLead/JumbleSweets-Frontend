@@ -422,16 +422,7 @@ export default {
   components: {},
   filters: {
     getNormalId(id) {
-      return window.atob(id).split(':')[1];
-    },
-    getCategoriesWithNormalIds(startingCategories) {
-      const newCategories = [];
-      for (let index = 0; index < startingCategories.length; index++) {
-        const newCategory = startingCategories[index].node;
-        newCategory.node.id = window.atob(newCategory.node.id);
-        newCategories.push(newCategory);
-      }
-      return newCategories;
+      return atob(id).split(':')[1];
     },
   },
   data() {
@@ -519,13 +510,22 @@ export default {
         });
       }
     },
+    // toDo: решить, что делать с автообновлением
+    // toDo: поменять список id категорий
+    getEncodedId() {
+      return this.categoryList.map(id =>
+        // Возвращает элемент для new_array
+        btoa(`Category:${id}`));
+    },
     getDiscount(reduction, preDiscPrice) {
       return getDiscountBase(reduction, preDiscPrice);
     },
     sortFilterProducts() {
       const priceGte = this.priceRange[0];
       const priceLte = this.priceRange[1];
-      const filters = { price_Gte: priceGte, price_Lte: priceLte, query: this.productQuery };
+      const filters = {
+        priceGte, priceLte, query: this.productQuery, categories: this.getEncodedId(),
+      };
       const data = { filters, sortBy: this.sortBy };
       console.log(data);
       this.loadProducts(data);

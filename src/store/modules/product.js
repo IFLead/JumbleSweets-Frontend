@@ -58,7 +58,9 @@ const actions = {
     try {
       const response = await apollo.defaultClient.query({
         query: PRODUCT_LIST,
-        variables: { first: Vue.prototype.$PAGINATE_BY, sortBy: data.sortBy, ...data.filters }, //  after: context.state.endCursor
+        variables: {
+          first: Vue.prototype.$PAGINATE_BY, stockAvailability: 'IN_STOCK', sortBy: data.sortBy, ...data.filters,
+        }, //  after: context.state.endCursor
       });
       context.commit('setProducts', response.data.products.edges);
       context.commit('setTotalCount', response.data.products.totalCount);

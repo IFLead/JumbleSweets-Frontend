@@ -109,7 +109,7 @@ export default {
     sortFilterProducts() {
       const priceGte = this.sliderRange[0];
       const priceLte = this.sliderRange[1];
-      const filters = { price_Gte: priceGte, price_Lte: priceLte, name_Icontains: this.productName };
+      const filters = { priceGte, priceLte, name_Icontains: this.productName };
       const data = { filters, sortBy: this.sortBy };
       this.loadProducts(data);
     },

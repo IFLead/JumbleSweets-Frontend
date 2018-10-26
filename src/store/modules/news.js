@@ -34,7 +34,7 @@ const actions = {
       try {
         const response = await apolloProvider.defaultClient.query({
           query: NEWS_LIST,
-          variables: { first: 15, after: context.state.endCursor },
+          variables: { first: 15, after: context.state.endCursor, hasAvailableOn: true },
         });
         context.commit('pushNews', response.data.products.edges);
         context.commit('setEndCursor', response.data.products.pageInfo.endCursor);
