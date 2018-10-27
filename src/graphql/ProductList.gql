@@ -8,6 +8,7 @@ query ProductList($first: Int, $after: String, $last: Int, $before: String, $pri
       node {
         id
         name
+        favourite
         description
         seoTitle
         seoDescription

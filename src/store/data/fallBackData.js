@@ -7,10 +7,11 @@ export const productBackData = {
           node: {
             id: 'UHJvZHVjdDoy',
             name: 'Ferrero Duplo (10 шт.)',
+            favourite: false,
             description: '<p>Упаковка кокосовых батончиков. В упаковке 10 шт.</p>',
             seoTitle: '',
             seoDescription: 'Упаковка кокосовых батончиков. В упаковке 10 шт.',
-            thumbnailUrl: '/media/__sized__/products/duplo-10er-multipack-800x800-thumbnail-255x255-70.jpg',
+            thumbnailUrl: 'http://localhost:8000/media/__sized__/products/duplo-10er-multipack-800x800-thumbnail-255x255-70.jpg',
             category: {
               id: 'Q2F0ZWdvcnk6Mg==',
               name: 'Батончики',
@@ -40,7 +41,7 @@ export const productBackData = {
               },
             ],
             availability: {
-              available: true,
+              available: false,
               onSale: true,
               discount: {
                 net: {
@@ -55,7 +56,7 @@ export const productBackData = {
                     id: 'UHJvZHVjdEltYWdlOjE=',
                     alt: '',
                     sortOrder: 0,
-                    url: '/media/products/duplo-10er-multipack-800x800.jpg',
+                    url: 'http://localhost:8000/media/products/duplo-10er-multipack-800x800.jpg',
                   },
                 },
                 {
@@ -63,7 +64,7 @@ export const productBackData = {
                     id: 'UHJvZHVjdEltYWdlOjI=',
                     alt: '',
                     sortOrder: 1,
-                    url: '/media/products/duplococos-800x800.png',
+                    url: 'http://localhost:8000/media/products/duplococos-800x800.png',
                   },
                 },
               ],
@@ -74,7 +75,7 @@ export const productBackData = {
                   node: {
                     id: 'UHJvZHVjdFZhcmlhbnQ6Mg==',
                     name: 'Cocos',
-                    stockQuantity: 1,
+                    stockQuantity: 0,
                     trackInventory: true,
                     price: {
                       amount: 92,
@@ -94,7 +95,7 @@ export const productBackData = {
                             id: 'UHJvZHVjdEltYWdlOjI=',
                             alt: '',
                             sortOrder: 1,
-                            url: '/media/products/duplococos-800x800.png',
+                            url: 'http://localhost:8000/media/products/duplococos-800x800.png',
                           },
                         },
                       ],
@@ -105,7 +106,7 @@ export const productBackData = {
                   node: {
                     id: 'UHJvZHVjdFZhcmlhbnQ6MQ==',
                     name: 'Original',
-                    stockQuantity: 1,
+                    stockQuantity: 0,
                     trackInventory: true,
                     price: {
                       amount: 90,
@@ -125,7 +126,7 @@ export const productBackData = {
                             id: 'UHJvZHVjdEltYWdlOjE=',
                             alt: '',
                             sortOrder: 0,
-                            url: '/media/products/duplo-10er-multipack-800x800.jpg',
+                            url: 'http://localhost:8000/media/products/duplo-10er-multipack-800x800.jpg',
                           },
                         },
                       ],
@@ -141,10 +142,11 @@ export const productBackData = {
           node: {
             id: 'UHJvZHVjdDoz',
             name: 'Kinder Bueno mini Mix',
+            favourite: false,
             description: '<p>Kinder Bueno Конфеты 3 видов ( В белом, молочном, черном шоколаде), в упаковке 24 конфеты.</p>',
             seoTitle: '',
             seoDescription: 'Kinder Bueno Конфеты 3 видов ( В белом, молочном, черном шоколаде), в упаковке 24 конфеты.',
-            thumbnailUrl: '/media/__sized__/products/kinder-bueno-mini-mix-800x800-thumbnail-255x255-70.jpg',
+            thumbnailUrl: 'http://localhost:8000/media/__sized__/products/kinder-bueno-mini-mix-800x800-thumbnail-255x255-70.jpg',
             category: {
               id: 'Q2F0ZWdvcnk6Mg==',
               name: 'Батончики',
@@ -185,7 +187,7 @@ export const productBackData = {
                     id: 'UHJvZHVjdEltYWdlOjM=',
                     alt: '',
                     sortOrder: 0,
-                    url: '/media/products/kinder-bueno-mini-mix-800x800.jpg',
+                    url: 'http://localhost:8000/media/products/kinder-bueno-mini-mix-800x800.jpg',
                   },
                 },
               ],

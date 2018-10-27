@@ -5,7 +5,7 @@ import { apolloProvider } from '../../vue-apollo';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {
-  authorized: false,
+  authorized: true,
   token: '',
   expTime: 0,
   rememberMe: false,
@@ -13,6 +13,7 @@ const state = {
 
 // getters
 const getters = {
+  getAuthStatus: state => state.authorized,
   allAuthData: state => state.authData,
   getToken: state => state.token,
 };

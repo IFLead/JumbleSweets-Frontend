@@ -4,6 +4,7 @@ import { apolloProvider as apollo } from '../../vue-apollo';
 import PRODUCT_LIST from '../../graphql/ProductList.gql';
 import { productBackData, productDetailBackData } from '../data/fallBackData';
 import PRODUCT_DETAILS from '../../graphql/ProductDetails.gql';
+import USER_UPDATE from '../../graphql/UserUpdate.gql';
 
 const state = {
   products: null,
@@ -95,6 +96,19 @@ const actions = {
       cb(null);
       context.commit('setProduct', productDetailBackData);
     }
+  },
+  async updateFavourite(context, { ids, liked, userId }) {
+    const variables = { id: userId };
+    if (liked) {
+      variables.input = { addedFavourites: ids };
+    } else {
+      variables.input = { removedFavourites: ids };
+    }
+    console.log(variables);
+    const response = await apollo.defaultClient.mutate({
+      mutation: USER_UPDATE,
+      variables,
+    });
   },
 };
 

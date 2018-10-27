@@ -1,5 +1,5 @@
 query RootCategoryChildren {
-    categories(level:0){
+    categories(level:0, sortBy:"-productsCount"){
       edges {
         cursor
         node {
