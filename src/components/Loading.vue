@@ -10,6 +10,8 @@ export default {
 
 <style lang="css">
   .loader-wrapper {
+    min-height: 90vh;
+    align-items: center;
     display: flex;
     justify-content: center;
     align-content: center;
