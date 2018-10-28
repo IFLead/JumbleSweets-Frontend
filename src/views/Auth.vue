@@ -226,11 +226,10 @@ export default {
     ...mapGetters(['getToken']),
   },
   methods: {
-    ...mapActions(['tokenCreate']),
+    ...mapActions(['auth']),
     ...mapMutations(['setRememberMe']),
     authorize() {
-      this.setRememberMe(this.rememberMe);
-      this.tokenCreate({ email: this.inputMailAuto, password: this.inputPassAuto });
+      this.auth({ email: this.inputMailAuto, password: this.inputPassAuto, rememberMe: this.rememberMe });
     },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {

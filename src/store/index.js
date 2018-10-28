@@ -27,4 +27,6 @@ export default new Vuex.Store({
     auth,
     modals,
   },
+  // todo: uncomment
+  // strict: true,
 });

@@ -15,6 +15,16 @@ export const filesRoot = process.env.VUE_APP_FILES_ROOT || httpEndpoint.substr(0
 
 Vue.prototype.$filesRoot = filesRoot;
 
+function getAuthToken(tokenName) {
+  if (typeof window !== 'undefined') {
+    // get the authentication token from local storage if it exists
+    const token = window.localStorage.getItem(tokenName);
+    // return the headers to the context so httpLink can read them
+    return token ? `JWT ${token}` : '';
+  }
+  return null;
+}
+
 // Config
 const defaultOptions = {
   // You can use `https` for secure connection (recommended in production)
@@ -39,7 +49,7 @@ const defaultOptions = {
   // cache: myCache
 
   // Override the way the Authorization header is set
-  // getAuth: (tokenName) => ...
+  getAuth: getAuthToken,
 
   // Additional ApolloClient options
   // apollo: { ... }
@@ -76,16 +86,21 @@ export const apolloProvider = (function createProvider(options = {}) {
 
 
 // Manually call this when user log in
-export async function onLogin(apolloClient, token) {
-  if (typeof localStorage !== 'undefined' && token) {
-    localStorage.setItem(AUTH_TOKEN, token);
+export async function onLogin(apolloClient, token, rememberMe) {
+  const storage = rememberMe ? localStorage : sessionStorage;
+  if (typeof storage === 'undefined' || !token) {
+    return false;
   }
+  storage.setItem(AUTH_TOKEN, token);
+
   try {
     await apolloClient.resetStore();
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log('%cError on cache reset (login)', 'color: orange;', e.message);
+    return false;
   }
+  return true;
 }
 
 // Manually call this when user log out
