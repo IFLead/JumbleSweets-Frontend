@@ -40,6 +40,12 @@ const mutations = {
   setTotalCount(state, payload) {
     state.totalCount = payload;
   },
+  changeFavourite(state, { id, liked }) {
+    const product = state.products.find(x => x.node.id === id);
+    if (product) {
+      product.node.favourite = liked;
+    }
+  },
   setProduct(state, newProduct) {
     if (!state.products) {
       state.products = [];

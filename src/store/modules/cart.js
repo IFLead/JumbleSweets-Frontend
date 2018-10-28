@@ -22,7 +22,7 @@ const getters = {
 // mutations
 const mutations = {
   addToCart(state, {
-    id, quantity, photoUrl, price, name,
+    id, quantity, photoUrl, price, name, url,
   }) {
     const record = state.cartItems.find(x => x.id === id);
     if (!record) {
@@ -32,6 +32,7 @@ const mutations = {
         photoUrl,
         price,
         name,
+        url,
       };
       state.cartItems.push(item);
     } else {

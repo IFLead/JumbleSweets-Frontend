@@ -6,7 +6,7 @@
     <!--<el-button type="text" @click="insideModal = true">inside modal</el-button>-->
     <!--<el-button type="text" @click="insideShow = true">inside modal</el-button>-->
 
-    <el-dialog :visible.sync="insideShow" class="inside decor" close-on-press-escape="true">
+    <el-dialog :visible="getInsideShow" :close-on-press-escape="true" class="inside decor" @close="setInsideShow(false)" @open="setInsideShow(true)">
       <b-container>
         <b-row>
           <b-col>
@@ -316,7 +316,7 @@
                   </a>
                 </b-col>
                 <b-col cols="12" class="inside__button">
-                  <el-button>Закрыть подробности</el-button>
+                  <el-button @click="setInsideShow(false)">Закрыть подробности</el-button>
                 </b-col>
 
               </b-row>
@@ -434,28 +434,27 @@ export default {
   name: 'InsideModal',
   components: {
   },
-  props: {
-    showDialog: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  // props: {
+  //   showDialog: {
+  //     type: Boolean,
+  //     default: false,
+  //   },
+  // },
   data() {
     return {
       checkModals: true,
       radioModal: 'Сладости',
-      insideShow: this.showDialog,
       insideVisible: false,
     };
   },
   computed: {
-    ...mapGetters.getInsideShow,
+    ...mapGetters(['getInsideShow']),
     insideModal() {
       return this.getInsideShow;
     },
   },
   methods: {
-    ...mapMutations.setInsideShow,
+    ...mapMutations(['setInsideShow']),
   },
 };
 </script>

@@ -21,7 +21,12 @@
                   <li class="menu__element"><router-link to="/delivery">Доставка и оплата</router-link></li>
                   <li class="menu__element"><router-link to="/jumble_box">Jumble Box</router-link></li>
                   <li class="menu__element menu__element--mobile mobile">
-                    <router-link to="/profile" class="mobile__login">Личный кабинет</router-link>
+                    <div v-if="getAuthStatus">
+                      <router-link to="/profile" class="mobile__login">Личный кабинет</router-link>
+                    </div>
+                    <div v-else>
+                      <router-link to="/auth" class="mobile__login">Войти</router-link>
+                    </div>
                     <router-link to="#" class="mobile__inst">
                       <span>
                         <svg id="instagram" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
@@ -52,12 +57,17 @@
               </div>
 
               <ul class="main-header__user user">
-                <li class="user__element user__element--cart">
+                <li v-if="getAuthStatus" class="user__element user__element--cart">
                   <el-badge :value="getCartAmount">
                     <router-link to="/cart"><span>Корзина</span></router-link>
                   </el-badge>
                 </li>
-                <li class="user__element user__element--login"><router-link to="/profile">Личный кабинет</router-link></li>
+                <li v-if="getAuthStatus" class="user__element user__element--login">
+                  <router-link to="/profile">Личный кабинет</router-link>
+                </li>
+                <li v-else class="user__element user__element--login">
+                  <router-link to="/auth">Войти</router-link>
+                </li>
               </ul>
 
             </div>
@@ -82,7 +92,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['getCartAmount']),
+    ...mapGetters(['getCartAmount', 'getAuthStatus']),
   },
   methods: {
     openMenu() {

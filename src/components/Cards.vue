@@ -101,6 +101,7 @@ export default {
         price: product.availability.discount ? product.price.amount - product.availability.discount.net.amount : product.price.amount,
         photoUrl: product.thumbnailUrl,
         name: product.name,
+        url: product.url,
       });
     },
     getDiscount(reduction, preDiscPrice) {

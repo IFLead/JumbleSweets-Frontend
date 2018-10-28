@@ -1,9 +1,9 @@
 <template>
   <div class="profile">
     <!--<repeatModal v-model="repeatVisible"></repeatModal>-->
-    <insideModal :show-dialog="showInsideModal"></insideModal>
+    <insideModal></insideModal>
     <b-container>
-      <el-button type="text" @click="showInsideModal = true">inside modal</el-button>
+      <el-button type="text" @click="setInsideShow(true)">inside modal</el-button>
       <b-row>
         <b-col md="4" sm="12">
 
@@ -405,7 +405,6 @@ export default {
       selectedMenu: 'Основная информация',
       isMobMenu: false,
       isRightMob: true,
-      showInsideModal: false,
     };
   },
   computed: {
