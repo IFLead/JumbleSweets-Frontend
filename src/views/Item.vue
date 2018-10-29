@@ -480,8 +480,21 @@ export default {
     likeProduct() {
       if (this.getAuthStatus) {
         // toDo: добавить id текущего пользователя
-        this.updateFavourite({ ids: [this.currentProduct.id], liked: true, userId: 'VXNlcjoz' });
-        this.changeFavourite({ id: this.currentProduct.id, liked: true });
+        if (!this.currentProduct.favourite) {
+          this.updateFavourite({ ids: [this.currentProduct.id], liked: true, userId: 'VXNlcjoz' });
+          this.changeFavourite({ id: this.currentProduct.id, liked: true });
+          this.$message({
+            message: `Продукт ${this.currentProduct.name} добавлен в список избранного`,
+            center: true,
+            duration: this.$MESSAGE_DURATION,
+          });
+        } else {
+          this.$message({
+            message: `Продукт ${this.currentProduct.name} уже в списке избранного`,
+            center: true,
+            duration: this.$MESSAGE_DURATION,
+          });
+        }
       } else {
         this.$message({
           message: 'Для добавления продукта в избранное зарегистрируйтесь',

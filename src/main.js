@@ -14,6 +14,7 @@ import { apolloProvider } from './vue-apollo';
 
 Vue.config.productionTip = process.env.NODE_ENV === 'production';
 Vue.prototype.$PAGINATE_BY = 2;
+Vue.prototype.$JUMBLE_BOX_ENABLED = false;
 Vue.prototype.$MESSAGE_DURATION = 1500;
 
 Vue.use(YmapPlugin);
