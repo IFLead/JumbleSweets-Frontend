@@ -81,7 +81,7 @@
                       </svg>
                     </span>
                   </el-button>
-                  <a href="#" class="information__link">Добавить в список желани</a>
+                  <a href="#" class="information__link" @click="likeProduct()">Добавить в список желаний</a>
                 </div>
                 <p class="information__manufacturer">Производитель: {{ currentProduct.attributes[1].value.name }}</p>
                 <p class="information__occasions">Популярные поводы: Свадьба / День рождения / Извинения</p>
@@ -431,7 +431,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['getCartItems', 'getCurrentProduct']),
+    ...mapGetters(['getCartItems', 'getCurrentProduct', 'getAuthStatus']),
     seo() {
       if (this.currentProduct) {
         return {
@@ -472,14 +472,27 @@ export default {
     this.fetchData();
   },
   methods: {
-    ...mapActions(['loadProduct']),
-    ...mapMutations(['addToCart']),
+    ...mapActions(['loadProduct', 'updateFavourite']),
+    ...mapMutations(['addToCart', 'changeFavourite']),
     handleChange(value) {
       console.log(value);
     },
+    likeProduct() {
+      if (this.getAuthStatus) {
+        // toDo: добавить id текущего пользователя
+        this.updateFavourite({ ids: [this.currentProduct.id], liked: true, userId: 'VXNlcjoz' });
+        this.changeFavourite({ id: this.currentProduct.id, liked: true });
+      } else {
+        this.$message({
+          message: 'Для добавления продукта в избранное зарегистрируйтесь',
+          center: true,
+          duration: this.$MESSAGE_DURATION,
+        });
+      }
+    },
     async fetchData() {
       this.error = null;
-      this.loading = !this.currentProduct;
+      this.loading = !!this.currentProduct;
       const callback = (err) => {
         this.loading = false;
         if (err) {
@@ -491,14 +504,28 @@ export default {
       this.loadProduct({ cb: callback, id: window.btoa(`Product:${this.id}`) });
     },
     cartButtonClick() {
-      this.addToCart({
-        id: this.product.id,
-        quantity: this.productCount,
-        price: this.getSelectedProductPrice.priceDiscounted ? this.getSelectedProductPrice.priceDiscounted : this.getSelectedProductPrice.price,
-        photoUrl: this.product.images.edges[0].node.url,
-        name: this.product.name,
-      });
-      this.productCount = 1;
+      if (this.getAuthStatus) {
+        console.log(this.currentProduct);
+        this.addToCart({
+          id: this.currentProduct.id,
+          quantity: this.productCount,
+          price: this.getSelectedProductPrice.priceDiscounted ? this.getSelectedProductPrice.priceDiscounted : this.getSelectedProductPrice.price,
+          photoUrl: this.currentProduct.images.edges[0].node.url,
+          name: this.currentProduct.name,
+        });
+        this.$message({
+          message: `Добавлено ${this.currentProduct.name} (${this.productCount} шт.)`,
+          center: true,
+          duration: this.$MESSAGE_DURATION,
+        });
+        this.productCount = 1;
+      } else {
+        this.$message({
+          message: 'Для добавления продукта в корзину зарегистрируйтесь',
+          center: true,
+          duration: this.$MESSAGE_DURATION,
+        });
+      }
     },
   },
   metaInfo() {

@@ -19,7 +19,10 @@
                   <li class="menu__element"><router-link to="/about">О нас</router-link></li>
                   <li class="menu__element"><router-link to="/contacts">Контакты</router-link></li>
                   <li class="menu__element"><router-link to="/delivery">Доставка и оплата</router-link></li>
-                  <li class="menu__element"><router-link to="/jumble_box">Jumble Box</router-link></li>
+                  <li v-if="this.$JUMBLE_BOX_ENABLED" class="menu__element">
+                    <router-link to="/jumble_box">Jumble Box</router-link>
+                  </li>
+
                   <li class="menu__element menu__element--mobile mobile">
                     <div v-if="getAuthStatus">
                       <router-link to="/profile" class="mobile__login">Личный кабинет</router-link>

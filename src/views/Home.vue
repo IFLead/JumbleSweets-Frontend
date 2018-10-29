@@ -328,7 +328,7 @@
         </b-container>
       </section>
 
-      <section class="jumble">
+      <section v-if="this.$JUMBLE_BOX_ENABLED" class="jumble">
         <b-container>
           <b-row>
             <b-col>
@@ -1136,7 +1136,7 @@ export default {
         border-bottom: 2px dotted #FFFAB9
         font-weight: 700
         &:hover, &:active
-          cursor: url("../assets/Icons/copy-content.svg"), pointer
+          cursor: pointer
     .jumble
       &__wrapper
         position: relative

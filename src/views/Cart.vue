@@ -65,8 +65,9 @@
                 </div>
               </a>
               <div class="element__information">
-                <a href="#" class="element__name">{{ record.name }}</a>
+                <router-link :to="record.url" class="element__name"> {{ record.name }} </router-link>
                 <div class="element__contrlos">
+                  <!--toDo: неровные блоки с количеством товара-->
                   <div class="element__col">
                     <template>
                       <el-input-number v-model="record.quantity" :min="1" :max="10"
@@ -137,7 +138,7 @@
           <h3 class="favourite__title">В список желаемого</h3>
           <p class="favourite__description">С радостью перенесем содержимое корзины в список желаний, вы согласны?</p>
           <div class="favourite__buttons">
-            <el-button class="favourite__button">Да, конечно</el-button>
+            <el-button class="favourite__button" @click="allToFavourite()">Да, конечно</el-button>
             <a href="#" class="favourite__link" @click="favouriteModalOpened = false">Нет, оставьте всё в корзине</a>
           </div>
         </div>
@@ -558,8 +559,17 @@ export default {
     ...mapGetters(['getCartItems', 'totalPrice']),
   },
   methods: {
-    ...mapMutations(['clearCart', 'removeProductFromCart']),
-    ...mapActions(['saveCart']),
+    ...mapMutations(['clearCart', 'removeProductFromCart', 'changeFavourite']),
+    ...mapActions(['saveCart', 'updateFavourite']),
+    allToFavourite() {
+      console.log(this.getCartItems);
+      this.getCartItems.forEach(function (product) {
+        // toDo: добавить id текущего пользователя
+        this.updateFavourite({ ids: [product.id], liked: true, userId: 'VXNlcjoz' });
+        this.changeFavourite({ id: product.id, liked: true });
+      }, this);
+      this.favouriteModalOpened = false;
+    },
     modalClearCart() {
       this.clearCart();
       this.cleanModal = false;
