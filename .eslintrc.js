@@ -13,6 +13,13 @@ module.exports = {
     'no-console': 'off',
     'no-debugger': 'off',
     'max-len': 'off',
+    'one-var': ['error', { var: 'always', let: 'always' }],
+    'one-var-declaration-per-line': ['error', 'initializations'],
+    'prefer-const': ['error', {
+      'destructuring': 'all',
+      'ignoreReadBeforeAssign': true,
+    }],
+    'indent': ['error', 2, { 'VariableDeclarator': { 'var': 2, 'let': 2, 'const': 3 } }],
     'vue/html-closing-bracket-newline': 'warning',
     'vue/html-closing-bracket-spacing': 'warning',
     'vue/no-use-v-if-with-v-for': 'warning',

@@ -563,7 +563,7 @@ export default {
     ...mapActions(['saveCart', 'updateFavourite']),
     allToFavourite() {
       console.log(this.getCartItems);
-      this.getCartItems.forEach(function (product) {
+      this.getCartItems.forEach((product) => {
         // toDo: добавить id текущего пользователя
         this.updateFavourite({ ids: [product.id], liked: true, userId: 'VXNlcjoz' });
         this.changeFavourite({ id: product.id, liked: true });

@@ -1,5 +1,10 @@
 mutation tokenVerify($token: String!) {
   tokenVerify(token: $token) {
     payload
+    user {
+      id
+      email
+    }
+
   }
 }

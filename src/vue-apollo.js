@@ -6,7 +6,7 @@ import { createApolloClient } from 'vue-cli-plugin-apollo/graphql-client';
 Vue.use(VueApollo);
 
 // Name of the localStorage item
-const AUTH_TOKEN = 'apollo-token';
+export const AUTH_TOKEN = 'apollo-token';
 
 // Http endpoint
 const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || '/graphql/';
@@ -89,7 +89,7 @@ export const apolloProvider = (function createProvider(options = {}) {
 export async function onLogin(apolloClient, token, rememberMe) {
   const storage = rememberMe ? localStorage : sessionStorage;
   if (typeof storage === 'undefined' || !token) {
-    return false;
+    throw new Error('User not found');
   }
   storage.setItem(AUTH_TOKEN, token);
 
@@ -98,20 +98,22 @@ export async function onLogin(apolloClient, token, rememberMe) {
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log('%cError on cache reset (login)', 'color: orange;', e.message);
-    return false;
+    throw new Error('User not found');
   }
-  return true;
 }
 
 // Manually call this when user log out
 export async function onLogout(apolloClient) {
-  if (typeof localStorage !== 'undefined') {
+  if (typeof localStorage !== 'undefined' && typeof sessionStorage !== 'undefined') {
     localStorage.removeItem(AUTH_TOKEN);
+    sessionStorage.removeItem(AUTH_TOKEN);
   }
   try {
     await apolloClient.resetStore();
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log('%cError on cache reset (logout)', 'color: orange;', e.message);
+    throw e;
   }
+  return true;
 }

@@ -1,7 +1,7 @@
+// import jwtDecode from 'jwt-decode';
 import TOKEN_REFRESH from '../../graphql/TokenRefresh.gql';
-import TOKEN_VERIFY from '../../graphql/TokenVerify.gql';
-import { apolloProvider } from '../../vue-apollo';
-import { auth } from '../../api/auth';
+import { apolloProvider, AUTH_TOKEN, onLogout } from '../../vue-apollo';
+import { auth, tokenVerify } from '../../api/auth';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {
@@ -9,7 +9,7 @@ const state = {
   lastAuth: null,
 
   token: null,
-  expTime: 0,
+  exp: 0,
 };
 
 // getters
@@ -17,22 +17,33 @@ const getters = {
   getAuthStatus: state => state.authorized,
   allAuthData: state => state.authData,
   getToken: state => state.token,
+  getLastAuth: state => state.lastAuth,
 };
 
 // mutations
 const mutations = {
-  setRememberMe(state, token) {
+  setToken(state, token) {
     state.token = token;
   },
   setAuthorized(state, authorized) {
     state.authorized = authorized;
   },
+  setExpired(state, exp) {
+    state.exp = exp;
+  },
 
+  authReset(state) {
+    state.lastAuth = null;
+  },
   authSuccess(state) {
     state.lastAuth = 'SUCCESS';
   },
   authFailure(state) {
     state.lastAuth = 'FAILURE';
+  },
+
+  setUser(state, user) {
+    state.user = user;
   },
 };
 
@@ -73,33 +84,41 @@ const actions = {
       console.log(e);
     }
   },
-  async tokenVerify(context) {
-    try {
-      const response = await apolloProvider.defaultClient.mutate({
-        mutation: TOKEN_VERIFY,
-        variables: { token: context.state.token },
-      });
-      context.state.expTime = response.data.tokenVerify.payload.exp;
-    } catch (e) {
-      console.log(e);
+
+  async checkAuth({ state, dispatch, commit }) {
+    const token = localStorage.getItem(AUTH_TOKEN) || sessionStorage.getItem(AUTH_TOKEN);
+    console.log(token);
+    if (!token) {
+      commit('setAuthorized', false);
+      await onLogout(apolloProvider.defaultClient);
+    } else {
+      await tokenVerify(
+        token,
+        ({ user, token, exp }) => {
+          console.log('login');
+          commit('setToken', token);
+          commit('setUser', user);
+          commit('setExpired', exp);
+          commit('setAuthorized', true);
+          commit('authSuccess');
+        },
+        async () => {
+          console.log('logout 2');
+          commit('setAuthorized', false);
+          await onLogout(apolloProvider.defaultClient);
+        },
+      );
     }
   },
-  // async checkAuth({ state, dispatch, commit }) {
-  //   commit('setRememberMe', rememberMe);
-  //   await dispatch('tokenCreate', { email, password });
-  //   if (state.token) {
-  //     const result = await onLogin(apolloProvider.defaultClient, state.token);
-  //     if (result) {
-  //       state.authorized = true;
-  //     }
-  //   }
-  // },
+
   async auth({ state, dispatch, commit }, { email, password, rememberMe }) {
-    auth(
+    await auth(
       email,
       password,
       rememberMe,
-      () => {
+      ({ user, token }) => {
+        commit('setToken', token);
+        commit('setUser', user);
         commit('setAuthorized', true);
         commit('authSuccess');
       },

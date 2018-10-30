@@ -11,6 +11,7 @@
 
 
 <script>
+import { mapActions } from 'vuex';
 import Header from './components/VueHeader.vue';
 import Footer from './components/VueFooter.vue';
 
@@ -25,6 +26,9 @@ export default {
       mes: 'our message',
     };
   },
+  created() {
+    this.checkAuth();
+  },
   methods: {
     openVn() {
       this.$message({
@@ -32,6 +36,7 @@ export default {
         center: true,
       });
     },
+    ...mapActions(['checkAuth']),
   },
 };
 </script>

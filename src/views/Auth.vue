@@ -202,7 +202,7 @@ export default {
       inputMailReg: '',
       inputPassAuto: '',
       checked: false,
-      isUser: false,
+      isUser: true,
       visiblePassAuto: 'password',
       visiblePassReg: 'password',
       visibleRepassReg: 'password',
@@ -224,10 +224,24 @@ export default {
   },
   computed: {
     ...mapGetters(['getToken']),
+    ...mapGetters({ lastAuth: 'getLastAuth' }),
+  },
+  watch: {
+    lastAuth(newVal) {
+      if (newVal === 'SUCCESS') {
+        this.$message({
+          message: 'Успешно авторизованы',
+          center: true,
+          duration: this.$MESSAGE_DURATION,
+        });
+        this.authReset();
+        this.$router.push({ name: 'home' });
+      }
+    },
   },
   methods: {
     ...mapActions(['auth']),
-    ...mapMutations(['setRememberMe']),
+    ...mapMutations(['setRememberMe', 'authReset']),
     authorize() {
       this.auth({ email: this.inputMailAuto, password: this.inputPassAuto, rememberMe: this.rememberMe });
     },
@@ -242,6 +256,7 @@ export default {
           console.log('error submit!!');
           return false;
         }
+        // fixme: maybe true?
         return null;
       });
     },
