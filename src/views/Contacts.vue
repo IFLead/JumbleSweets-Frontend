@@ -65,8 +65,7 @@ export default {
           options: {}, // define options here
           clusterName: '1',
           callbacks: {
-            click() {
-            },
+            click() {},
           },
         },
       ],

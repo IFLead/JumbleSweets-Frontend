@@ -432,8 +432,7 @@ import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'InsideModal',
-  components: {
-  },
+  components: {},
   // props: {
   //   showDialog: {
   //     type: Boolean,

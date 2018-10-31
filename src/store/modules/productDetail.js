@@ -1,6 +1,6 @@
 import PRODUCT_DETAILS from '../../graphql/ProductDetails.gql';
 import { apolloProvider } from '../../vue-apollo';
-import { productDetailBackData } from '../data/fallBackData';
+import { productDetailBackData } from '../data/fallbackData';
 
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 const state = {

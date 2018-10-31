@@ -35,8 +35,7 @@
 <script>
 export default {
   name: 'RepeatModal',
-  components: {
-  },
+  components: {},
   data() {
     return {
       repeatVisible: false,

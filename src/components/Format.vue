@@ -11,8 +11,7 @@
 <script>
 export default {
   name: 'Format',
-  components: {
-  },
+  components: {},
   props: {
     variants: {
       type: Array,
@@ -28,8 +27,7 @@ export default {
       selectedVariant: this.value,
     };
   },
-  computed: {
-  },
+  computed: {},
 };
 </script>
 

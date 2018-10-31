@@ -66,7 +66,7 @@ import {
   // Loading,
   // MessageBox,
   Message,
-// Notification,
+  // Notification,
 } from 'element-ui';
 import lang from 'element-ui/lib/locale/lang/ru-RU';
 import locale from 'element-ui/lib/locale';

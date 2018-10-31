@@ -5,11 +5,28 @@ module.exports = {
     node: true,
     es6: true,
   },
+  parserOptions: {
+      ecmaVersion: 2018,
+      sourceType: 'module',
+  },
   extends: [
+    // 'plugin:lodash/recommended',
+    'plugin:unicorn/recommended',
+    'plugin:sonarjs/recommended',
     'plugin:vue/recommended',
     '@vue/airbnb',
   ],
+  plugins: [
+      // 'lodash'
+      'sonarjs',
+      'no-loops',
+      'unicorn'
+  ],
   rules: {
+    'no-loops/no-loops': 2,
+     'sonarjs/cognitive-complexity': ['error', 30],
+      "unicorn/catch-error-name": 'off',
+      "unicorn/filename-case": 'off',
     'no-console': 'off',
     'no-debugger': 'off',
     'max-len': 'off',

@@ -56,9 +56,7 @@
 <script>
 export default {
   name: 'VueFooter',
-  components: {
-
-  },
+  components: {},
 };
 </script>
 

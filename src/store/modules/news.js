@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars,no-shadow,no-param-reassign */
 import { apolloProvider } from '../../vue-apollo';
 import NEWS_LIST from '../../graphql/NewsList.gql';
-import { newsBackData } from '../data/fallBackData';
+import { newsBackData } from '../data/fallbackData';
 
 const state = {
   news: [],
@@ -34,11 +34,21 @@ const actions = {
       try {
         const response = await apolloProvider.defaultClient.query({
           query: NEWS_LIST,
-          variables: { first: 15, after: context.state.endCursor, hasAvailableOn: true },
+          variables: {
+            first: 15,
+            after: context.state.endCursor,
+            hasAvailableOn: true,
+          },
         });
         context.commit('pushNews', response.data.products.edges);
-        context.commit('setEndCursor', response.data.products.pageInfo.endCursor);
-        context.commit('setHasNextPage', response.data.products.pageInfo.hasNextPage);
+        context.commit(
+          'setEndCursor',
+          response.data.products.pageInfo.endCursor,
+        );
+        context.commit(
+          'setHasNextPage',
+          response.data.products.pageInfo.hasNextPage,
+        );
       } catch (e) {
         context.commit('pushNews', newsBackData);
       }

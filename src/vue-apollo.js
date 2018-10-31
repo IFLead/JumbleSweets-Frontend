@@ -11,7 +11,9 @@ export const AUTH_TOKEN = 'apollo-token';
 // Http endpoint
 const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || '/graphql/';
 // Files URL root
-export const filesRoot = process.env.VUE_APP_FILES_ROOT || httpEndpoint.substr(0, httpEndpoint.indexOf('/graphql'));
+export const filesRoot =
+  process.env.VUE_APP_FILES_ROOT ||
+  httpEndpoint.substr(0, httpEndpoint.indexOf('/graphql'));
 
 Vue.prototype.$filesRoot = filesRoot;
 
@@ -68,7 +70,7 @@ export const apolloProvider = (function createProvider(options = {}) {
 
   // Create vue apollo provider
   // eslint-disable-next-line no-shadow
-  const apolloProvider = new VueApollo({
+  return new VueApollo({
     defaultClient: apolloClient,
     defaultOptions: {
       $query: {
@@ -77,13 +79,14 @@ export const apolloProvider = (function createProvider(options = {}) {
     },
     errorHandler(error) {
       // eslint-disable-next-line no-console
-      console.log('%cError', 'background: red; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold;', error.message);
+      console.log(
+        '%cError',
+        'background: red; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold;',
+        error.message,
+      );
     },
   });
-
-  return apolloProvider;
 }());
-
 
 // Manually call this when user log in
 export async function onLogin(apolloClient, token, rememberMe) {
@@ -97,14 +100,21 @@ export async function onLogin(apolloClient, token, rememberMe) {
     await apolloClient.resetStore();
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.log('%cError on cache reset (login)', 'color: orange;', e.message);
+    console.log(
+      '%cError on cache reset (login)',
+      'color: orange;',
+      e.message,
+    );
     throw new Error('User not found');
   }
 }
 
 // Manually call this when user log out
 export async function onLogout(apolloClient) {
-  if (typeof localStorage !== 'undefined' && typeof sessionStorage !== 'undefined') {
+  if (
+    typeof localStorage !== 'undefined' &&
+    typeof sessionStorage !== 'undefined'
+  ) {
     localStorage.removeItem(AUTH_TOKEN);
     sessionStorage.removeItem(AUTH_TOKEN);
   }
@@ -112,7 +122,11 @@ export async function onLogout(apolloClient) {
     await apolloClient.resetStore();
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.log('%cError on cache reset (logout)', 'color: orange;', e.message);
+    console.log(
+      '%cError on cache reset (logout)',
+      'color: orange;',
+      e.message,
+    );
     throw e;
   }
   return true;

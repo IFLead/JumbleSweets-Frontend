@@ -59,20 +59,23 @@
 </template>
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
-import { getDiscount as getDiscountBase } from '../utils/priceFuncs';
+import getDiscountBase from '../utils/priceFuncs';
 
 export default {
   name: 'Cards',
   components: {},
   data() {
     return {
-      options: [{
-        value: 'name',
-        label: 'А-Я',
-      }, {
-        value: 'price',
-        label: 'Цена',
-      }],
+      options: [
+        {
+          value: 'name',
+          label: 'А-Я',
+        },
+        {
+          value: 'price',
+          label: 'Цена',
+        },
+      ],
       sortBy: '',
       activeNames: ['1'],
       filterOpen: false,
@@ -82,7 +85,14 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['allProducts', 'allCategories', 'allOccasions', 'allManufacturers', 'allNews', 'getCartItems']),
+    ...mapGetters([
+      'allProducts',
+      'allCategories',
+      'allOccasions',
+      'allManufacturers',
+      'allNews',
+      'getCartItems',
+    ]),
   },
   created() {
     this.loadProducts({});
@@ -92,13 +102,22 @@ export default {
     this.loadNews({});
   },
   methods: {
-    ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers', 'loadNews']),
+    ...mapActions([
+      'loadProducts',
+      'loadCategories',
+      'loadOccasions',
+      'loadManufacturers',
+      'loadNews',
+    ]),
     ...mapMutations(['addToCart']),
     addProductToCart(product) {
       this.addToCart({
         id: product.id,
         quantity: 1,
-        price: product.availability.discount ? product.price.amount - product.availability.discount.net.amount : product.price.amount,
+        price: product.availability.discount
+          ? product.price.amount -
+            product.availability.discount.net.amount
+          : product.price.amount,
         photoUrl: product.thumbnailUrl,
         name: product.name,
         url: product.url,
@@ -110,7 +129,11 @@ export default {
     sortFilterProducts() {
       const priceGte = this.sliderRange[0];
       const priceLte = this.sliderRange[1];
-      const filters = { priceGte, priceLte, name_Icontains: this.productName };
+      const filters = {
+        priceGte,
+        priceLte,
+        name_Icontains: this.productName,
+      };
       const data = { filters, sortBy: this.sortBy };
       this.loadProducts(data);
     },

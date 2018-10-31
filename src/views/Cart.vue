@@ -559,13 +559,21 @@ export default {
     ...mapGetters(['getCartItems', 'totalPrice']),
   },
   methods: {
-    ...mapMutations(['clearCart', 'removeProductFromCart', 'changeFavourite']),
+    ...mapMutations([
+      'clearCart',
+      'removeProductFromCart',
+      'changeFavourite',
+    ]),
     ...mapActions(['saveCart', 'updateFavourite']),
     allToFavourite() {
       console.log(this.getCartItems);
       this.getCartItems.forEach((product) => {
         // toDo: добавить id текущего пользователя
-        this.updateFavourite({ ids: [product.id], liked: true, userId: 'VXNlcjoz' });
+        this.updateFavourite({
+          ids: [product.id],
+          liked: true,
+          userId: 'VXNlcjoz',
+        });
         this.changeFavourite({ id: product.id, liked: true });
       }, this);
       this.favouriteModalOpened = false;

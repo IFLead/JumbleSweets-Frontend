@@ -1,4 +1,4 @@
 **/*.gql
 .postcssrc.js
 .*
-.*
+fallbackData.js

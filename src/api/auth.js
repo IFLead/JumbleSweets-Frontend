@@ -8,7 +8,10 @@ export async function tokenCreate(email, password) {
     mutation: TOKEN_CREATE,
     variables: { email, password },
   });
-  return { user: response.data.tokenCreate.user, token: response.data.tokenCreate.token };
+  return {
+    user: response.data.tokenCreate.user,
+    token: response.data.tokenCreate.token,
+  };
 }
 
 export async function auth(email, password, rememberMe, cb, cbEr) {
@@ -41,4 +44,3 @@ export async function tokenVerify(token, cb, cbEr) {
   }
   return cb({ user, token, exp });
 }
-

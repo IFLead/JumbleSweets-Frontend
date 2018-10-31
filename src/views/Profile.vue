@@ -386,7 +386,6 @@ import RepeatModal from '../components/modals/RepeatModal.vue';
 import InsideModal from '../components/modals/InsideModal.vue';
 import Cards from '../components/Cards.vue';
 
-
 export default {
   name: 'Profile',
   components: {

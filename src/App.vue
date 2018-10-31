@@ -21,21 +21,10 @@ export default {
     vHeader: Header,
     vFooter: Footer,
   },
-  data() {
-    return {
-      mes: 'our message',
-    };
-  },
   created() {
     this.checkAuth();
   },
   methods: {
-    openVn() {
-      this.$message({
-        message: this.mes,
-        center: true,
-      });
-    },
     ...mapActions(['checkAuth']),
   },
 };
@@ -47,5 +36,4 @@ export default {
 
 
 <style>
-
 </style>

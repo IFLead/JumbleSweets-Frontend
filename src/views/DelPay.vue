@@ -65,8 +65,7 @@
 <script>
 export default {
   name: 'Delivery',
-  components: {
-  },
+  components: {},
   data() {
     const checkPhone = (rule, value, callback) => {
       if (!value) {
@@ -88,9 +87,7 @@ export default {
         phone: '',
       },
       rulesNumber: {
-        phone: [
-          { validator: checkPhone, trigger: 'blur' },
-        ],
+        phone: [{ validator: checkPhone, trigger: 'blur' }],
       },
     };
   },

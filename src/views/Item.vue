@@ -50,8 +50,8 @@
               <div class="information__content">
                 <h3 class="information__title">{{ currentProduct.name }}</h3>
 
-                <vFormat v-if="currentProduct.variants.edges.length > 1" v-model="selectedVariant"
-                         :variants="currentProduct.variants.edges | getVariants"></vFormat>
+                <Format v-if="currentProduct.variants.edges.length > 1" v-model="selectedVariant"
+                        :variants="currentProduct.variants.edges | getVariants"></Format>
 
                 <div class="prices">
                   <p class="information__price">{{ getSelectedProductPrice.priceDiscounted ? getSelectedProductPrice.priceDiscounted : getSelectedProductPrice.price }} грн.</p>
@@ -393,21 +393,23 @@
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Format from '../components/Format.vue';
 import Loading from '../components/Loading.vue';
-import { getDiscount as getDiscountBase } from '../utils/priceFuncs';
+import getDiscountBase from '../utils/priceFuncs';
 
 export default {
   name: 'Item',
   components: {
-    vFormat: Format,
+    Format,
     Loading,
   },
   filters: {
     getVariants(uncutVariants) {
       const newVariants = [];
-      for (let index = 0; index < uncutVariants.length; index++) {
-        const { id, name } = uncutVariants[index].node;
+
+      uncutVariants.forEach((variant) => {
+        const { id, name } = variant.node;
         newVariants.push({ id, name });
-      }
+      });
+
       return newVariants;
     },
   },
@@ -445,9 +447,13 @@ export default {
     },
     getSelectedProductPrice() {
       const productVariant = this.currentProduct.variants.edges;
+      // fixme: do refactor, maybe you need "find" http://www.codereadability.com/coding-without-loops/
+      // eslint-disable-next-line no-loops/no-loops
       for (let i = 0; i < productVariant.length; i++) {
         if (productVariant[i].node.id === this.selectedVariant) {
-          const priceDiscounted = productVariant[i].node.availability.priceDiscounted.net.amount;
+          const priceDiscounted =
+            productVariant[i].node.availability.priceDiscounted.net
+              .amount;
           const price = productVariant[i].node.price.amount;
           if (price === priceDiscounted) {
             return { price, priceDiscounted: null };
@@ -465,8 +471,7 @@ export default {
     },
   },
   watch: {
-    $route:
-      'fetchData',
+    $route: 'fetchData',
   },
   created() {
     this.fetchData();
@@ -481,23 +486,35 @@ export default {
       if (this.getAuthStatus) {
         // toDo: добавить id текущего пользователя
         if (!this.currentProduct.favourite) {
-          this.updateFavourite({ ids: [this.currentProduct.id], liked: true, userId: 'VXNlcjoz' });
-          this.changeFavourite({ id: this.currentProduct.id, liked: true });
+          this.updateFavourite({
+            ids: [this.currentProduct.id],
+            liked: true,
+            userId: 'VXNlcjoz',
+          });
+          this.changeFavourite({
+            id: this.currentProduct.id,
+            liked: true,
+          });
           this.$message({
-            message: `Продукт ${this.currentProduct.name} добавлен в список избранного`,
+            message: `Продукт ${
+              this.currentProduct.name
+            } добавлен в список избранного`,
             center: true,
             duration: this.$MESSAGE_DURATION,
           });
         } else {
           this.$message({
-            message: `Продукт ${this.currentProduct.name} уже в списке избранного`,
+            message: `Продукт ${
+              this.currentProduct.name
+            } уже в списке избранного`,
             center: true,
             duration: this.$MESSAGE_DURATION,
           });
         }
       } else {
         this.$message({
-          message: 'Для добавления продукта в избранное зарегистрируйтесь',
+          message:
+            'Для добавления продукта в избранное зарегистрируйтесь',
           center: true,
           duration: this.$MESSAGE_DURATION,
         });
@@ -514,7 +531,10 @@ export default {
           this.selectedVariant = this.currentProduct.variants.edges[0].node.id;
         }
       };
-      this.loadProduct({ cb: callback, id: window.btoa(`Product:${this.id}`) });
+      this.loadProduct({
+        cb: callback,
+        id: window.btoa(`Product:${this.id}`),
+      });
     },
     cartButtonClick() {
       if (this.getAuthStatus) {
@@ -522,19 +542,24 @@ export default {
         this.addToCart({
           id: this.currentProduct.id,
           quantity: this.productCount,
-          price: this.getSelectedProductPrice.priceDiscounted ? this.getSelectedProductPrice.priceDiscounted : this.getSelectedProductPrice.price,
+          price: this.getSelectedProductPrice.priceDiscounted
+            ? this.getSelectedProductPrice.priceDiscounted
+            : this.getSelectedProductPrice.price,
           photoUrl: this.currentProduct.images.edges[0].node.url,
           name: this.currentProduct.name,
         });
         this.$message({
-          message: `Добавлено ${this.currentProduct.name} (${this.productCount} шт.)`,
+          message: `Добавлено ${this.currentProduct.name} (${
+            this.productCount
+          } шт.)`,
           center: true,
           duration: this.$MESSAGE_DURATION,
         });
         this.productCount = 1;
       } else {
         this.$message({
-          message: 'Для добавления продукта в корзину зарегистрируйтесь',
+          message:
+            'Для добавления продукта в корзину зарегистрируйтесь',
           center: true,
           duration: this.$MESSAGE_DURATION,
         });

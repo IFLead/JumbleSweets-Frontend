@@ -175,8 +175,7 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 export default {
   name: 'Auth',
-  components: {
-  },
+  components: {},
   data() {
     const validatePass = (rule, value, callback) => {
       if (value === '') {
@@ -213,12 +212,8 @@ export default {
         checkPassReg: '',
       },
       rules2: {
-        passReg: [
-          { validator: validatePass, trigger: 'blur' },
-        ],
-        checkPassReg: [
-          { validator: validatePass2, trigger: 'blur' },
-        ],
+        passReg: [{ validator: validatePass, trigger: 'blur' }],
+        checkPassReg: [{ validator: validatePass2, trigger: 'blur' }],
       },
     };
   },
@@ -243,7 +238,11 @@ export default {
     ...mapActions(['auth']),
     ...mapMutations(['setRememberMe', 'authReset']),
     authorize() {
-      this.auth({ email: this.inputMailAuto, password: this.inputPassAuto, rememberMe: this.rememberMe });
+      this.auth({
+        email: this.inputMailAuto,
+        password: this.inputPassAuto,
+        rememberMe: this.rememberMe,
+      });
     },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
@@ -262,8 +261,6 @@ export default {
     },
   },
 };
-
-
 </script>
 
 <style lang="sass">

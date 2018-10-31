@@ -414,8 +414,7 @@
 <script>
 import { mapGetters, mapActions, mapMutations, mapState } from 'vuex';
 import { isEqual } from 'lodash/lang';
-import { getDiscount as getDiscountBase } from '../utils/priceFuncs';
-
+import getDiscountBase from '../utils/priceFuncs';
 
 export default {
   name: 'Home',
@@ -427,22 +426,28 @@ export default {
   },
   data() {
     return {
-      options: [{
-        value: 'name',
-        label: 'А-Я',
-      }, {
-        value: '-name',
-        label: 'Я-А',
-      }, {
-        value: 'price',
-        label: 'Цена по убыванию',
-      }, {
-        value: '-price',
-        label: 'Цена по возрастанию',
-      }, {
-        value: '',
-        label: 'Сначала новые',
-      }],
+      options: [
+        {
+          value: 'name',
+          label: 'А-Я',
+        },
+        {
+          value: '-name',
+          label: 'Я-А',
+        },
+        {
+          value: 'price',
+          label: 'Цена по убыванию',
+        },
+        {
+          value: '-price',
+          label: 'Цена по возрастанию',
+        },
+        {
+          value: '',
+          label: 'Сначала новые',
+        },
+      ],
       sortBy: '',
       activeNames: ['1'],
       filterOpen: false,
@@ -457,7 +462,16 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['allProducts', 'allCategories', 'allOccasions', 'allManufacturers', 'allNews', 'getCartItems', 'getTotalCount', 'getAuthStatus']),
+    ...mapGetters([
+      'allProducts',
+      'allCategories',
+      'allOccasions',
+      'allManufacturers',
+      'allNews',
+      'getCartItems',
+      'getTotalCount',
+      'getAuthStatus',
+    ]),
     ...mapState(['authorized']),
   },
   watch: {
@@ -477,9 +491,15 @@ export default {
     console.log(this.allProducts);
   },
   methods: {
-    ...mapActions(['loadProducts', 'loadCategories', 'loadOccasions', 'loadManufacturers', 'loadNews', 'updateFavourite']),
+    ...mapActions([
+      'loadProducts',
+      'loadCategories',
+      'loadOccasions',
+      'loadManufacturers',
+      'loadNews',
+      'updateFavourite',
+    ]),
     ...mapMutations(['addToCart', 'changeFavourite']),
-    // eslint-disable-next-line
     likeProduct(product, liked) {
       console.log(`Продукт избранный: ${product.favourite}`);
       if (this.getAuthStatus) {
@@ -499,7 +519,9 @@ export default {
         this.addToCart({
           id: product.id,
           quantity: 1,
-          price: product.availability.discount ? product.price.amount - product.availability.discount.net.amount : product.price.amount,
+          price: product.availability.discount
+            ? product.price.amount - product.availability.discount.net.amount
+            : product.price.amount,
           photoUrl: product.thumbnailUrl,
           name: product.name,
           url: product.url,
@@ -520,9 +542,7 @@ export default {
     // toDo: решить, что делать с автообновлением
     // toDo: поменять список id категорий
     getEncodedId() {
-      return this.categoryList.map(id =>
-        // Возвращает элемент для new_array
-        btoa(`Category:${id}`));
+      return this.categoryList.map(id => btoa(`Category:${id}`));
     },
     getDiscount(reduction, preDiscPrice) {
       return getDiscountBase(reduction, preDiscPrice);
@@ -531,7 +551,10 @@ export default {
       const priceGte = this.priceRange[0];
       const priceLte = this.priceRange[1];
       const filters = {
-        priceGte, priceLte, query: this.productQuery, categories: this.getEncodedId(),
+        priceGte,
+        priceLte,
+        query: this.productQuery,
+        categories: this.getEncodedId(),
       };
       const data = { filters, sortBy: this.sortBy };
       console.log(data);

@@ -2,7 +2,7 @@
 import Vue from 'vue';
 import { apolloProvider as apollo } from '../../vue-apollo';
 import PRODUCT_LIST from '../../graphql/ProductList.gql';
-import { productBackData, productDetailBackData } from '../data/fallBackData';
+import { productBackData, productDetailBackData } from '../data/fallbackData';
 import PRODUCT_DETAILS from '../../graphql/ProductDetails.gql';
 import USER_UPDATE from '../../graphql/UserUpdate.gql';
 
@@ -20,7 +20,8 @@ const getters = {
   getCurrentProduct(state) {
     return (id) => {
       if (state.products) {
-        return state.products.find(product => product.node.id === id).node;
+        return state.products.find(product => product.node.id === id)
+          .node;
       }
       return null;
     };
@@ -66,7 +67,10 @@ const actions = {
       const response = await apollo.defaultClient.query({
         query: PRODUCT_LIST,
         variables: {
-          first: Vue.prototype.$PAGINATE_BY, stockAvailability: 'IN_STOCK', sortBy: data.sortBy, ...data.filters,
+          first: Vue.prototype.$PAGINATE_BY,
+          stockAvailability: 'IN_STOCK',
+          sortBy: data.sortBy,
+          ...data.filters,
         }, //  after: context.state.endCursor
       });
       context.commit('setProducts', response.data.products.edges);
