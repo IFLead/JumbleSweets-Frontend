@@ -17,8 +17,8 @@ const mutations = {
 
 // actions
 const actions = {
-  loadManufacturers(context) {
-    context.commit(
+  loadManufacturers({ state, dispatch, commit }) {
+    commit(
       'setManufacturers',
       {
         results: [

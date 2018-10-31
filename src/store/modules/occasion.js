@@ -17,8 +17,8 @@ const mutations = {
 
 // actions
 const actions = {
-  loadOccasions(context) {
-    context.commit(
+  loadOccasions({ state, dispatch, commit }) {
+    commit(
       'setOccasions',
       {
         results: [

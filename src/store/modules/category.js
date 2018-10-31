@@ -21,7 +21,7 @@ const mutations = {
 
 // actions
 const actions = {
-  async loadCategories(context) {
+  async loadCategories({ state, dispatch, commit }) {
     try {
       // const response = await apolloProvider.defaultClient.query({
       //   query: ROOT_CATEGORY_CHILDREN,
@@ -31,9 +31,9 @@ const actions = {
       });
 
       console.log(response.data.categories.edges);
-      context.commit('setCategories', response.data.categories.edges);
+      commit('setCategories', response.data.categories.edges);
     } catch (e) {
-      context.commit('setCategories', categoryBackData);
+      commit('setCategories', categoryBackData);
     }
   },
 };

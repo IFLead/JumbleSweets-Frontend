@@ -29,28 +29,28 @@ const mutations = {
 
 // actions
 const actions = {
-  async loadNews(context) {
-    if (context.state.hasNextPage) {
+  async loadNews({ state, dispatch, commit }) {
+    if (state.hasNextPage) {
       try {
         const response = await apolloProvider.defaultClient.query({
           query: NEWS_LIST,
           variables: {
             first: 15,
-            after: context.state.endCursor,
+            after: state.endCursor,
             hasAvailableOn: true,
           },
         });
-        context.commit('pushNews', response.data.products.edges);
-        context.commit(
+        commit('pushNews', response.data.products.edges);
+        commit(
           'setEndCursor',
           response.data.products.pageInfo.endCursor,
         );
-        context.commit(
+        commit(
           'setHasNextPage',
           response.data.products.pageInfo.hasNextPage,
         );
       } catch (e) {
-        context.commit('pushNews', newsBackData);
+        commit('pushNews', newsBackData);
       }
     }
   },

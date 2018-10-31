@@ -574,7 +574,6 @@ export default {
           liked: true,
           userId: 'VXNlcjoz',
         });
-        this.changeFavourite({ id: product.id, liked: true });
       }, this);
       this.favouriteModalOpened = false;
     },

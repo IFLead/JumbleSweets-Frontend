@@ -41,7 +41,6 @@ const mutations = {
   authFailure(state) {
     state.lastAuth = 'FAILURE';
   },
-
   setUser(state, user) {
     state.user = user;
   },
@@ -67,14 +66,14 @@ const actions = {
   //     console.log(e);
   //   }
   // },
-  async tokenRefresh(context) {
+  async tokenRefresh({ state, dispatch, commit }) {
     try {
       const response = await apolloProvider.defaultClient.mutate({
         mutation: TOKEN_REFRESH,
-        variables: { token: context.state.token },
+        variables: { token: state.token },
       });
-      context.state.token = response.data.tokenRefresh.token;
-      context.state.expTime = response.data.tokenRefresh.payload.exp;
+      state.token = response.data.tokenRefresh.token;
+      state.expTime = response.data.tokenRefresh.payload.exp;
       if (state.rememberMe) {
         localStorage.token = response.data.tokenRefresh.token;
       } else {
@@ -111,6 +110,14 @@ const actions = {
         },
       );
     }
+  },
+
+  async logOut({ state, dispatch, commit }) {
+    console.log('Вызываем функцию');
+    commit('setAuthorized', false);
+    commit('authReset');
+    commit('setToken', null);
+    await onLogout(apolloProvider.defaultClient);
   },
 
   async auth({ state, dispatch, commit }, { email, password, rememberMe }) {

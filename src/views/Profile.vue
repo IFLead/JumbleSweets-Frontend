@@ -30,8 +30,12 @@
                   </el-radio-button>
                 </div>
                 <div class="left-panel__menu-element" @click="panelIndex = 4; isMobMenu = false; isRightMob = true">
-                  <el-radio-button label="Выйти">
-                  </el-radio-button>
+                  <router-link to="/">
+                    <div @click="Exit()">
+                      <el-radio-button label="Выйти">
+                      </el-radio-button>
+                    </div>
+                  </router-link>
                 </div>
               </el-radio-group>
 
@@ -62,8 +66,12 @@
                   </el-radio-button>
                 </div>
                 <div class="left-panel-mob__menu-element" @click="panelIndex = 4; isMobMenu = false; isRightMob = true">
-                  <el-radio-button label="Выйти">
-                  </el-radio-button>
+                  <router-link to="/">
+                    <div @click="Exit()">
+                      <el-radio-button label="Выйти">
+                      </el-radio-button>
+                    </div>
+                  </router-link>
                 </div>
               </el-radio-group>
 
@@ -381,7 +389,7 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters } from 'vuex';
+import { mapMutations, mapGetters, mapActions } from 'vuex';
 import RepeatModal from '../components/modals/RepeatModal.vue';
 import InsideModal from '../components/modals/InsideModal.vue';
 import Cards from '../components/Cards.vue';
@@ -404,10 +412,11 @@ export default {
       selectedMenu: 'Основная информация',
       isMobMenu: false,
       isRightMob: true,
+      input: null,
     };
   },
   computed: {
-    ...mapGetters.getInsideShow,
+    ...mapGetters(['getInsideShow']),
 
     repeatVisible() {
       return this.repeatVisibleValue;
@@ -415,6 +424,11 @@ export default {
   },
   methods: {
     ...mapMutations(['setInsideShow']),
+    ...mapActions(['logOut']),
+    Exit() {
+      console.log('Я работаю как гавно');
+      this.logOut();
+    },
     setRepeatVisibleValue(val) {
       this.repeatVisibleValue = val;
     },

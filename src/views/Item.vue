@@ -478,7 +478,7 @@ export default {
   },
   methods: {
     ...mapActions(['loadProduct', 'updateFavourite']),
-    ...mapMutations(['addToCart', 'changeFavourite']),
+    ...mapMutations(['addToCart']),
     handleChange(value) {
       console.log(value);
     },
@@ -490,10 +490,6 @@ export default {
             ids: [this.currentProduct.id],
             liked: true,
             userId: 'VXNlcjoz',
-          });
-          this.changeFavourite({
-            id: this.currentProduct.id,
-            liked: true,
           });
           this.$message({
             message: `Продукт ${

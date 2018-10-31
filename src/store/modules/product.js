@@ -62,7 +62,7 @@ const mutations = {
 
 // actions
 const actions = {
-  async loadProducts(context, data = {}) {
+  async loadProducts({ state, dispatch, commit }, data = {}) {
     try {
       const response = await apollo.defaultClient.query({
         query: PRODUCT_LIST,
@@ -73,14 +73,14 @@ const actions = {
           ...data.filters,
         }, //  after: context.state.endCursor
       });
-      context.commit('setProducts', response.data.products.edges);
-      context.commit('setTotalCount', response.data.products.totalCount);
-      context.commit('setPageInfo', response.data.products.pageInfo);
+      commit('setProducts', response.data.products.edges);
+      commit('setTotalCount', response.data.products.totalCount);
+      commit('setPageInfo', response.data.products.pageInfo);
     } catch (e) {
       console.log(e);
-      context.commit('setProducts', productBackData.edges);
-      context.commit('setTotalCount', productBackData.totalCount);
-      context.commit('setPageInfo', productBackData.pageInfo);
+      commit('setProducts', productBackData.edges);
+      commit('setTotalCount', productBackData.totalCount);
+      commit('setPageInfo', productBackData.pageInfo);
     }
   },
   // async getProductDetails(context, {cb, id}) {
@@ -93,28 +93,30 @@ const actions = {
   //     context.dispatch('loadProductDetails', { cb, id });
   //   }
   // },
-  async loadProduct(context, { cb, id }) {
+  async loadProduct({ state, dispatch, commit }, { cb, id }) {
     try {
       const response = await apollo.defaultClient.query({
         query: PRODUCT_DETAILS,
         variables: { id },
       });
-      context.commit('setProduct', response.data.product);
+      commit('setProduct', response.data.product);
       cb(null);
       // cb(new Error('Post not found.'));
     } catch (e) {
       cb(null);
-      context.commit('setProduct', productDetailBackData);
+      commit('setProduct', productDetailBackData);
     }
   },
-  async updateFavourite(context, { ids, liked, userId }) {
+  async updateFavourite({ state, dispatch, commit }, { ids, liked, userId }) {
     const variables = { id: userId };
     if (liked) {
       variables.input = { addedFavourites: ids };
     } else {
       variables.input = { removedFavourites: ids };
     }
-    console.log(variables);
+    ids.forEach((id) => {
+      commit('changeFavourite', { id, liked });
+    }, commit);
     const response = await apollo.defaultClient.mutate({
       mutation: USER_UPDATE,
       variables,

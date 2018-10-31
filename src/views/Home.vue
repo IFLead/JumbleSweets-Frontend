@@ -505,7 +505,6 @@ export default {
       if (this.getAuthStatus) {
         // toDo: добавить id текущего пользователя
         this.updateFavourite({ ids: [product.id], liked, userId: 'VXNlcjoz' });
-        this.changeFavourite({ id: product.id, liked });
       } else {
         this.$message({
           message: 'Для добавления продукта в избранное зарегистрируйтесь',
