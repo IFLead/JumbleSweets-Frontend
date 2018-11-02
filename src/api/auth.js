@@ -21,13 +21,13 @@ export async function auth(email, password, rememberMe, cb, cbEr) {
   [err, { user, token }] = await to(tokenCreate(email, password));
   if (err) return cbEr();
 
-  [err] = await to(onLogin(apollo.defaultClient, token));
+  [err] = await to(onLogin(apollo.defaultClient, token, rememberMe));
   if (err) return cbEr();
 
   return cb({ user, token });
 }
 
-export async function tokenVerify(token, cb, cbEr) {
+export async function tokenVerify(token, rememberMe, cb, cbEr) {
   let err, response;
 
   [err, response] = await to(apollo.defaultClient.mutate({
@@ -36,9 +36,8 @@ export async function tokenVerify(token, cb, cbEr) {
   }));
   if (err) return cbEr();
 
-  const { user } = response.data.tokenVerify.user,
-        { exp } = response.data.tokenVerify.payload;
-  [err, response] = await to(onLogin(apollo.defaultClient, token));
+  const { user, payload: { exp } } = response.data.tokenVerify;
+  [err, response] = await to(onLogin(apollo.defaultClient, token, rememberMe, false));
   if (err) {
     return cbEr();
   }

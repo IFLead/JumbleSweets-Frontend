@@ -2,3 +2,4 @@
 .postcssrc.js
 .*
 fallbackData.js
+webpack-vue.config.js

@@ -433,7 +433,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['getCartItems', 'getCurrentProduct', 'getAuthStatus']),
+    ...mapGetters(['getCartItems', 'getCurrentProduct', 'getAuthStatus', 'getUserData']),
     seo() {
       if (this.currentProduct) {
         return {
@@ -443,7 +443,7 @@ export default {
       return {};
     },
     currentProduct() {
-      return this.getCurrentProduct(window.btoa(`Product:${this.id}`));
+      return this.getCurrentProduct(btoa(`Product:${this.id}`));
     },
     getSelectedProductPrice() {
       const productVariant = this.currentProduct.variants.edges;
@@ -484,12 +484,11 @@ export default {
     },
     likeProduct() {
       if (this.getAuthStatus) {
-        // toDo: добавить id текущего пользователя
         if (!this.currentProduct.favourite) {
           this.updateFavourite({
             ids: [this.currentProduct.id],
             liked: true,
-            userId: 'VXNlcjoz',
+            userId: this.getUserData.id,
           });
           this.$message({
             message: `Продукт ${
@@ -529,7 +528,7 @@ export default {
       };
       this.loadProduct({
         cb: callback,
-        id: window.btoa(`Product:${this.id}`),
+        id: btoa(`Product:${this.id}`),
       });
     },
     cartButtonClick() {

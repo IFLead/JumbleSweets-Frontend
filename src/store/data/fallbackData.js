@@ -6,7 +6,7 @@ export const productBackData = {
         {
           node: {
             id: 'UHJvZHVjdDoy',
-            name: 'Ferrero Duplo (10 шт.)',
+            name: 'Ferrero Duplo (10 шт.) Offline',
             favourite: false,
             description:
               '<p>Упаковка кокосовых батончиков. В упаковке 10 шт.</p>',
@@ -150,7 +150,7 @@ export const productBackData = {
         {
           node: {
             id: 'UHJvZHVjdDoz',
-            name: 'Kinder Bueno mini Mix',
+            name: 'Kinder Bueno mini Mix Offline',
             favourite: false,
             description:
               '<p>Kinder Bueno Конфеты 3 видов ( В белом, молочном, черном шоколаде), в упаковке 24 конфеты.</p>',

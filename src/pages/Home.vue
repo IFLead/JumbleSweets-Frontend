@@ -471,6 +471,7 @@ export default {
       'getCartItems',
       'getTotalCount',
       'getAuthStatus',
+      'getUserData',
     ]),
     ...mapState(['authorized']),
   },
@@ -503,8 +504,7 @@ export default {
     likeProduct(product, liked) {
       console.log(`Продукт избранный: ${product.favourite}`);
       if (this.getAuthStatus) {
-        // toDo: добавить id текущего пользователя
-        this.updateFavourite({ ids: [product.id], liked, userId: 'VXNlcjoz' });
+        this.updateFavourite({ ids: [product.id], liked, userId: this.getUserData.id });
       } else {
         this.$message({
           message: 'Для добавления продукта в избранное зарегистрируйтесь',

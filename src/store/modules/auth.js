@@ -7,7 +7,7 @@ import { auth, tokenVerify } from '../../api/auth';
 const state = {
   authorized: false,
   lastAuth: null,
-
+  user: { id: null },
   token: null,
   exp: 0,
 };
@@ -15,7 +15,7 @@ const state = {
 // getters
 const getters = {
   getAuthStatus: state => state.authorized,
-  allAuthData: state => state.authData,
+  getUserData: state => state.user,
   getToken: state => state.token,
   getLastAuth: state => state.lastAuth,
 };
@@ -85,18 +85,16 @@ const actions = {
   },
 
   async checkAuth({ state, dispatch, commit }) {
-    const token =
-      localStorage.getItem(AUTH_TOKEN) ||
-      sessionStorage.getItem(AUTH_TOKEN);
-    console.log(token);
+    const token = localStorage.getItem(AUTH_TOKEN) || sessionStorage.getItem(AUTH_TOKEN);
+
     if (!token) {
       commit('setAuthorized', false);
-      await onLogout(apolloProvider.defaultClient);
     } else {
+      const rememberMe = localStorage.getItem(AUTH_TOKEN) === token;
       await tokenVerify(
         token,
+        rememberMe,
         ({ user, token, exp }) => {
-          console.log('login');
           commit('setToken', token);
           commit('setUser', user);
           commit('setExpired', exp);
@@ -104,7 +102,6 @@ const actions = {
           commit('authSuccess');
         },
         async () => {
-          console.log('logout 2');
           commit('setAuthorized', false);
           await onLogout(apolloProvider.defaultClient);
         },

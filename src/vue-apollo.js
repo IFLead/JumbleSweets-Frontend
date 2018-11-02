@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueApollo from 'vue-apollo';
-import { createApolloClient } from 'vue-cli-plugin-apollo/graphql-client';
+// import { createApolloClient } from 'vue-cli-plugin-apollo/graphql-client';
+import createApolloClient from './utils/graphql-client';
 
 // Install the vue plugin
 Vue.use(VueApollo);
@@ -20,7 +21,7 @@ Vue.prototype.$filesRoot = filesRoot;
 function getAuthToken(tokenName) {
   if (typeof window !== 'undefined') {
     // get the authentication token from local storage if it exists
-    const token = window.localStorage.getItem(tokenName);
+    const token = sessionStorage.getItem(tokenName) || localStorage.getItem(tokenName);
     // return the headers to the context so httpLink can read them
     return token ? `JWT ${token}` : '';
   }
@@ -43,27 +44,15 @@ const defaultOptions = {
   websocketsOnly: false,
   // Is being rendered on the server?
   ssr: false,
-
-  // Override default http link
-  // link: myLink
-
-  // Override default cache
-  // cache: myCache
-
   // Override the way the Authorization header is set
   getAuth: getAuthToken,
 
-  // Additional ApolloClient options
-  // apollo: { ... }
-
-  // Client local data (see apollo-link-state)
-  // clientState: { resolvers: { ... }, defaults: { ... } }
 };
 
 // Call this in the Vue app file
 export const apolloProvider = (function createProvider(options = {}) {
   // Create apollo client
-  const { apolloClient } = createApolloClient({
+  const apolloClient = createApolloClient({
     ...defaultOptions,
     ...options,
   });
@@ -89,13 +78,13 @@ export const apolloProvider = (function createProvider(options = {}) {
 }());
 
 // Manually call this when user log in
-export async function onLogin(apolloClient, token, rememberMe) {
+export async function onLogin(apolloClient, token, rememberMe, resetStore = true) {
   const storage = rememberMe ? localStorage : sessionStorage;
   if (typeof storage === 'undefined' || !token) {
     throw new Error('User not found');
   }
   storage.setItem(AUTH_TOKEN, token);
-
+  if (!resetStore) return;
   try {
     await apolloClient.resetStore();
   } catch (e) {
@@ -105,7 +94,6 @@ export async function onLogin(apolloClient, token, rememberMe) {
       'color: orange;',
       e.message,
     );
-    throw new Error('User not found');
   }
 }
 
@@ -119,6 +107,7 @@ export async function onLogout(apolloClient) {
     sessionStorage.removeItem(AUTH_TOKEN);
   }
   try {
+    // fixme: it have an error when token is invalid
     await apolloClient.resetStore();
   } catch (e) {
     // eslint-disable-next-line no-console
@@ -127,7 +116,6 @@ export async function onLogout(apolloClient) {
       'color: orange;',
       e.message,
     );
-    throw e;
   }
   return true;
 }
