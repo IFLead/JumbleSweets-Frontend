@@ -14,7 +14,7 @@ import modals from './modules/modals';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     example,
     product,
@@ -30,3 +30,5 @@ export default new Vuex.Store({
   // todo: uncomment
   // strict: true,
 });
+
+export default store;

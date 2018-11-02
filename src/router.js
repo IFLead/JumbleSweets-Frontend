@@ -18,6 +18,7 @@ import Summary from './pages/Summary.vue';
 import Auth from './pages/Auth.vue';
 import RepeatModal from './components/modals/RepeatModal.vue';
 import InsideModal from './components/modals/InsideModal.vue';
+import store from './store';
 
 Vue.use(Router);
 Vue.use(Meta, {
@@ -97,11 +98,13 @@ const router = new Router({
       path: '/cart',
       name: 'Cart',
       component: Cart,
+      meta: { requiresAuth: true },
     },
     {
       path: '/auth',
       name: 'Auth',
       component: Auth,
+      meta: { guest: true },
     },
     {
       path: '/shipping',
@@ -137,12 +140,17 @@ const router = new Router({
   ],
 });
 
+console.log(store.getters.getAuthStatus);
+
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (localStorage.getItem('jwt') == null) {
+    if (!store.getters.getAuthStatus) {
       next({
         path: '/auth',
         params: { nextUrl: to.fullPath },
+        // query: {
+        //   redirect: to.fullPath,
+        // },
       });
     } else {
       const user = JSON.parse(localStorage.getItem('user'));
@@ -157,10 +165,12 @@ router.beforeEach((to, from, next) => {
       }
     }
   } else if (to.matched.some(record => record.meta.guest)) {
-    if (localStorage.getItem('jwt') == null) {
+    if (!store.getters.getAuthStatus) {
       next();
     } else {
-      next({ name: 'home' });
+      next({
+        name: 'home',
+      });
     }
   } else {
     next();
