@@ -32,7 +32,8 @@
     "vue-router": "^3.0.1",
     "vue-yandex-maps": "^0.7.15",
     "vue2-google-maps": "^0.10.2",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "apollo-cache-inmemory": "latest"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.0.0",

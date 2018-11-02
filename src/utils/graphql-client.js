@@ -1,5 +1,6 @@
 import { ApolloClient } from 'apollo-client';
 import { createUploadLink } from 'apollo-upload-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 import { setContext } from 'apollo-link-context';
 
 
@@ -44,6 +45,7 @@ export default function createApolloClient({
 
   return new ApolloClient({
     link,
+    cache: new InMemoryCache(),
     // Apollo devtools
     connectToDevTools: process.env.NODE_ENV !== 'production',
   });
