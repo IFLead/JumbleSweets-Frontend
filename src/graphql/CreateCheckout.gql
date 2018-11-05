@@ -1,0 +1,11 @@
+mutation CreateCheckot($input: CheckoutCreateInput!) {
+  checkoutCreate(input: $input) {
+    errors {
+      message
+      field
+    }
+    checkout {
+      id
+    }
+  }
+}

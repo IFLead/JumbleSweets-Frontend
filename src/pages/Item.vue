@@ -535,6 +535,7 @@ export default {
       if (this.getAuthStatus) {
         console.log(this.currentProduct);
         this.addToCart({
+          // toDo: поменять id продуктов при добавлении в корзину на id вариантов
           id: this.currentProduct.id,
           quantity: this.productCount,
           price: this.getSelectedProductPrice.priceDiscounted
