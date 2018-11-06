@@ -516,6 +516,7 @@ export default {
     addProductToCart(product) {
       if (this.getAuthStatus) {
         this.addToCart({
+          // toDo: поменять id продуктов при добавлении в корзину на id вариантов
           id: product.id,
           quantity: 1,
           price: product.availability.discount

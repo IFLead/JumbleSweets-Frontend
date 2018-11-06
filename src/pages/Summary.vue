@@ -75,7 +75,7 @@
 
         <b-col cols="12" class="finaly">
           <p class="finaly__price">Итого:<span>{{ totalPrice }}</span> грн.</p>
-          <el-button class="finaly__button">Перейти к сервису оплаты<span class="finaly__button--icon">
+          <el-button class="finaly__button" @click="finalizeCheckout()">Перейти к сервису оплаты<span class="finaly__button--icon">
             <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
               <g>
@@ -487,7 +487,7 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Summary',
@@ -499,7 +499,31 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['getCartItems', 'totalPrice']),
+    ...mapGetters(['getCartItems', 'totalPrice', 'getUserData']),
+  },
+  methods: {
+    ...mapActions(['finishCheckout']),
+    finishCheckout() {
+      this.finishCheckout({
+        email: this.getUserData.email,
+        paymentData: {
+          gateway: 'DUMMY',
+          // toDo: Поменять токен
+          token: '94a08da1fecbb6e8b46990538c7b50b2',
+          // toDo: Поменять данные адреса
+          billingAddress: {
+            firstName: 'Leoinid',
+            lastName: 'Rudak',
+            country: 'RU',
+            city: 'Moscow',
+            countryArea: 'Moskva',
+            postalCode: '101000',
+            streetAddress1: 'Street 1',
+            streetAddress2: 'Street 2',
+          },
+        },
+      });
+    },
   },
 };
 </script>

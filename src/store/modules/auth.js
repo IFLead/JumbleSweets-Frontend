@@ -7,7 +7,8 @@ import { auth, tokenVerify } from '../../api/auth';
 const state = {
   authorized: false,
   lastAuth: null,
-  user: { id: null },
+  // toDo: поменять, когда появятся нормальные данные о пользователе
+  user: { id: null, email: 'leo2598@yandex.ua' },
   token: null,
   exp: 0,
 };
