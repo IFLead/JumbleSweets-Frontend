@@ -227,7 +227,7 @@
                   </el-slider>
                   <el-button class="filter__button filter__button--submit" @click="sortFilterProducts()">Применить
                   </el-button>
-                  <el-button class="filter__button filter__button--refresh" @click="cleatFilters()">Сбросить</el-button>
+                  <el-button class="filter__button filter__button--refresh" @click="cleanFilters()">Сбросить</el-button>
                 </div>
               </el-collapse>
             </b-col>
@@ -459,6 +459,8 @@ export default {
       defaultPriceRange: [0, 1000],
       defaultCategoryList: [],
       defaultProductQuery: '',
+
+      muteRouteChanged: false,
     };
   },
   computed: {
@@ -477,6 +479,11 @@ export default {
   },
   watch: {
     $route() {
+      if (this.muteRouteChanged) {
+        this.muteRouteChanged = false;
+        console.log('no reload');
+        return;
+      }
       this.onRouteWithParams();
       this.sortFilterProducts();
     },
@@ -489,7 +496,6 @@ export default {
     this.loadNews({});
     this.onRouteWithParams();
     this.sortFilterProducts();
-    console.log(this.allProducts);
   },
   methods: {
     ...mapActions([
@@ -557,7 +563,6 @@ export default {
         categories: this.getEncodedId(),
       };
       const data = { filters, sortBy: this.sortBy };
-      console.log(data);
       this.loadProducts(data);
     },
     onSortFilterChange() {
@@ -574,10 +579,13 @@ export default {
       if (this.sortBy !== this.defaultSortBy) {
         newQuery.sort = this.sortBy;
       }
-      this.$router.push({
-        name: 'home',
-        query: newQuery,
-      });
+      this.$router.push(
+        {
+          name: 'home',
+          query: newQuery,
+        },
+        () => { this.muteRouteChanged = true; },
+      );
     },
     onRouteWithParams() {
       if (this.$route.query.price) {
@@ -597,7 +605,7 @@ export default {
         this.sortBy = this.$route.query.sort;
       }
     },
-    cleatFilters() {
+    cleanFilters() {
       this.priceRange = [0, 1000];
       this.categoryList = [];
       this.sortBy = '';
