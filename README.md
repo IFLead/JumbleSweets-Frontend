@@ -1,5 +1,7 @@
 # jumblesweets-frontend
 
+[![Build Status](https://travis-ci.com/Art9Studio/JumbleSweets-Frontend.svg?branch=deploy)](https://travis-ci.com/Art9Studio/JumbleSweets-Frontend)
+
 ## Project setup
 ```
 npm install
