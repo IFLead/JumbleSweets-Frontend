@@ -474,8 +474,10 @@ export default {
     },
     getVariantImage() {
       const variant = this.getCurrentVariant;
-      console.log(variant);
-      return variant.images.edges[0].node.url;
+      if (variant.images) {
+        return variant.images.edges[0].node.url;
+      }
+      return this.currentProduct.images.edges[0].node.url;
     },
   },
   watch: {
