@@ -161,10 +161,10 @@
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
-              <el-input v-model="productQuery" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onSortFilterChange()"></el-input>
+              <el-input v-model="productQuery" placeholder="Поиск товаров" class="sort__search" @change="filterProducts(); onSortFilterChange()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
-              <el-select v-model="sortBy" class="sort__select" @change="sortFilterProducts(); onSortFilterChange()">
+              <el-select v-model="sortBy" class="sort__select" @change="sortProducts(); onSortFilterChange()">
                 <el-option
                   v-for="item in options"
                   :key="item.value"
@@ -225,7 +225,7 @@
                     range
                     @change="onSortFilterChange()">
                   </el-slider>
-                  <el-button class="filter__button filter__button--submit" @click="sortFilterProducts()">Применить
+                  <el-button class="filter__button filter__button--submit" @click="filterProducts()">Применить
                   </el-button>
                   <el-button class="filter__button filter__button--refresh" @click="cleanFilters()">Сбросить</el-button>
                 </div>
@@ -452,7 +452,9 @@ export default {
       activeNames: ['1'],
       filterOpen: false,
       priceRange: [0, 1000],
+      acceptedPriceRange: [0, 1000],
       categoryList: [],
+      acceptedCategoryList: [],
       productQuery: '',
 
       defaultSortBy: '',
@@ -485,7 +487,7 @@ export default {
         return;
       }
       this.onRouteWithParams();
-      this.sortFilterProducts();
+      this.sortProducts();
     },
   },
   created() {
@@ -495,7 +497,7 @@ export default {
     this.loadOccasions({});
     this.loadNews({});
     this.onRouteWithParams();
-    this.sortFilterProducts();
+    this.filterProducts();
   },
   methods: {
     ...mapActions([
@@ -547,20 +549,35 @@ export default {
     },
     // toDo: решить, что делать с автообновлением
     // toDo: поменять список id категорий
-    getEncodedId() {
-      return this.categoryList.map(id => btoa(`Category:${id}`));
+    getEncodedId(list) {
+      return list.map(id => btoa(`Category:${id}`));
     },
+
     getDiscount(reduction, preDiscPrice) {
       return getDiscountBase(reduction, preDiscPrice);
     },
-    sortFilterProducts() {
+    sortProducts() {
+      const priceGte = this.acceptedPriceRange[0];
+      const priceLte = this.acceptedPriceRange[1];
+      const filters = {
+        priceGte,
+        priceLte,
+        query: this.productQuery,
+        categories: this.getEncodedId(this.acceptedCategoryList),
+      };
+      const data = { filters, sortBy: this.sortBy };
+      this.loadProducts(data);
+    },
+    filterProducts() {
+      this.acceptedPriceRange = this.priceRange;
+      this.acceptedCategoryList = this.categoryList;
       const priceGte = this.priceRange[0];
       const priceLte = this.priceRange[1];
       const filters = {
         priceGte,
         priceLte,
         query: this.productQuery,
-        categories: this.getEncodedId(),
+        categories: this.getEncodedId(this.categoryList),
       };
       const data = { filters, sortBy: this.sortBy };
       this.loadProducts(data);
@@ -590,6 +607,7 @@ export default {
     onRouteWithParams() {
       if (this.$route.query.price) {
         this.priceRange = this.$route.query.price;
+        this.acceptedPriceRange = this.$route.query.price;
       }
       if (this.$route.query.q) {
         this.productQuery = this.$route.query.q;
@@ -597,8 +615,10 @@ export default {
       if (this.$route.query.categories) {
         if (Array.isArray(this.$route.query.categories)) {
           this.categoryList = this.$route.query.categories;
+          this.acceptedCategoryList = this.$route.query.categories;
         } else {
           this.categoryList = [this.$route.query.categories];
+          this.acceptedCategoryList = [this.$route.query.categories];
         }
       }
       if (this.$route.query.sort) {
@@ -610,7 +630,9 @@ export default {
       this.categoryList = [];
       this.sortBy = '';
       this.productQuery = '';
-      this.sortFilterProducts();
+      this.acceptedCategoryList = [];
+      this.priceRange = [0, 1000];
+      this.filterProducts();
     },
   },
 };
