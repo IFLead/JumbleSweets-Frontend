@@ -37,7 +37,7 @@
                     <img src="../assets/Icons/user.svg" width="16" height="20" alt="Контакты">
                   </div>
                   <div class="authorization__data-input">
-                    <el-input v-model="inputMailAuto" placeholder="Почта или телефон"></el-input>
+                    <el-input v-model="inputMailAuto" placeholder="Почта или телефон" @keyup.enter.native="authorize()"></el-input>
                   </div>
                 </div>
                 <div class="authorization__data-pass">
@@ -45,7 +45,7 @@
                     <img src="../assets/Icons/key.svg" width="9" height="20" alt="Пароль">
                   </div>
                   <div class="authorization__data-input">
-                    <el-input :type="visiblePassAuto" v-model="inputPassAuto" placeholder="Пароль"></el-input>
+                    <el-input :type="visiblePassAuto" v-model="inputPassAuto" placeholder="Пароль" @keyup.enter.native="authorize()"></el-input>
                   </div>
                   <div class="authorization__data-pass-eye" @click="visiblePassAuto = 'text'" @mouseout="visiblePassAuto = 'password'">
                     <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
@@ -105,7 +105,7 @@
 
                   <div class="registr__data-input">
                     <el-form-item prop="passReg">
-                      <el-input :type="visiblePassReg" v-model="regForm.passReg" placeholder="Пароль"></el-input>
+                      <el-input :type="visiblePassReg" v-model="regForm.passReg" placeholder="Пароль" @keyup.enter.native="submitForm('regForm')"></el-input>
                     </el-form-item>
                   </div>
 
@@ -121,7 +121,7 @@
 
                   <div class="registr__data-input">
                     <el-form-item prop="checkPassReg">
-                      <el-input :type="visibleRepassReg" v-model="regForm.checkPassReg" placeholder="Пароль"></el-input>
+                      <el-input :type="visibleRepassReg" v-model="regForm.checkPassReg" placeholder="Пароль" @keyup.enter.native="submitForm('regForm')"></el-input>
                     </el-form-item>
                   </div>
                   <div class="registr__data-repass-eye" @click="visibleRepassReg = 'text'" @mouseout="visibleRepassReg = 'password'">
