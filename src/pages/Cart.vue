@@ -67,7 +67,6 @@
               <div class="element__information">
                 <router-link :to="record.url" class="element__name"> {{ record.name }} </router-link>
                 <div class="element__contrlos">
-                  <!--toDo: неровные блоки с количеством товара-->
                   <div class="element__col">
                     <template>
                       <el-input-number v-model="record.quantity" :min="1" :max="10"

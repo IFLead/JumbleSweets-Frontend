@@ -458,7 +458,7 @@ export default {
           if (price === priceDiscounted) {
             return { price, priceDiscounted: null };
           }
-          console.log(productVariant[i].node);
+          // console.log(productVariant[i].node);
           return { price, priceDiscounted };
         }
       }
@@ -466,8 +466,18 @@ export default {
     },
     getDiscount() {
       const { price, priceDiscounted } = this.getSelectedProductPrice;
-      console.log(price, priceDiscounted);
+      // console.log(price, priceDiscounted);
       return getDiscountBase(price - priceDiscounted, price);
+    },
+    getCurrentVariant() {
+      return this.currentProduct.variants.edges.find(x => x.node.id === this.selectedVariant).node;
+    },
+    getVariantImage() {
+      const variant = this.getCurrentVariant;
+      if (variant.images) {
+        return variant.images.edges[0].node.url;
+      }
+      return this.currentProduct.images.edges[0].node.url;
     },
   },
   watch: {
@@ -533,15 +543,14 @@ export default {
     },
     cartButtonClick() {
       if (this.getAuthStatus) {
-        console.log(this.currentProduct);
+        // console.log(this.currentProduct);
         this.addToCart({
-          // toDo: поменять id продуктов при добавлении в корзину на id вариантов
-          id: this.currentProduct.id,
+          id: this.selectedVariant,
           quantity: this.productCount,
           price: this.getSelectedProductPrice.priceDiscounted
             ? this.getSelectedProductPrice.priceDiscounted
             : this.getSelectedProductPrice.price,
-          photoUrl: this.currentProduct.images.edges[0].node.url,
+          photoUrl: this.getVariantImage,
           name: this.currentProduct.name,
         });
         this.$message({
