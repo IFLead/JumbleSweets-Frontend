@@ -156,15 +156,14 @@
         </b-container>
       </section>
 
-
       <section class="products">
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
-              <el-input v-model="productQuery" placeholder="Поиск товаров" class="sort__search" @change="sortFilterProducts(); onSortFilterChange()"></el-input>
+              <el-input v-model="productQuery" placeholder="Поиск товаров" class="sort__search" @change="filterProducts(); onSortFilterChange()"></el-input>
               <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
-              <el-select v-model="sortBy" class="sort__select" @change="sortFilterProducts(); onSortFilterChange()">
+              <el-select v-model="sortBy" class="sort__select" @change="sortProducts(); onSortFilterChange()">
                 <el-option
                   v-for="item in options"
                   :key="item.value"
@@ -173,8 +172,6 @@
                 </el-option>
               </el-select>
             </b-col>
-
-
             <b-col :class="{show: filterOpen}" md="4" lg="3" class="products__filter filter">
               <el-collapse v-model="activeNames">
                 <div class="filter__content">
@@ -191,36 +188,6 @@
                         c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
                         c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
                         </g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
-                      </g>
-                      <g>
                       </g>
                     </svg>
                   </div>
@@ -262,7 +229,7 @@
                     range
                     @change="onSortFilterChange()">
                   </el-slider>
-                  <el-button class="filter__button filter__button--submit" @click="sortFilterProducts()">Применить
+                  <el-button class="filter__button filter__button--submit" @click="filterProducts()">Применить
                   </el-button>
                   <el-button class="filter__button filter__button--refresh" @click="cleanFilters()">Сбросить</el-button>
                 </div>
@@ -301,7 +268,7 @@
                         <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
                              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                           <g><g>
-                            <path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z" @click="addProductToCart(product.node)"/>
+                            <path class="basket" d="M443.209,442.24l-27.296-299.68c-0.736-8.256-7.648-14.56-15.936-14.56h-48V96c0-25.728-9.984-49.856-28.064-67.936C306.121,10.24,281.353,0,255.977,0c-52.928,0-96,43.072-96,96v32h-48c-8.288,0-15.2,6.304-15.936,14.56L68.809,442.208c-1.632,17.888,4.384,35.712,16.48,48.96S114.601,512,132.553,512h246.88c17.92,0,35.136-7.584,47.232-20.8C438.793,477.952,444.777,460.096,443.209,442.24z M303.977,368h-32v32c0,8.832-7.168,16-16,16c-8.832,0-16-7.168-16-16v-32h-32c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16h32v-32c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16v32h32c8.832,0,16,7.168,16,16C319.977,360.832,312.809,368,303.977,368z M319.977,128h-128V96c0-35.296,28.704-64,64-64c16.96,0,33.472,6.784,45.312,18.656C313.353,62.72,319.977,78.816,319.977,96V128z"/>
                           </g></g>
                         </svg>
                       </div>
@@ -489,7 +456,9 @@ export default {
       activeNames: ['1'],
       filterOpen: false,
       priceRange: [0, 1000],
+      acceptedPriceRange: [0, 1000],
       categoryList: [],
+      acceptedCategoryList: [],
       productQuery: '',
 
       defaultSortBy: '',
@@ -522,7 +491,7 @@ export default {
         return;
       }
       this.onRouteWithParams();
-      this.sortFilterProducts();
+      this.sortProducts();
     },
   },
   created() {
@@ -532,7 +501,7 @@ export default {
     this.loadOccasions({});
     this.loadNews({});
     this.onRouteWithParams();
-    this.sortFilterProducts();
+    this.filterProducts();
   },
   methods: {
     ...mapActions([
@@ -584,20 +553,35 @@ export default {
     },
     // toDo: решить, что делать с автообновлением
     // toDo: поменять список id категорий
-    getEncodedId() {
-      return this.categoryList.map(id => btoa(`Category:${id}`));
+    getEncodedId(list) {
+      return list.map(id => btoa(`Category:${id}`));
     },
+
     getDiscount(reduction, preDiscPrice) {
       return getDiscountBase(reduction, preDiscPrice);
     },
-    sortFilterProducts() {
+    sortProducts() {
+      const priceGte = this.acceptedPriceRange[0];
+      const priceLte = this.acceptedPriceRange[1];
+      const filters = {
+        priceGte,
+        priceLte,
+        query: this.productQuery,
+        categories: this.getEncodedId(this.acceptedCategoryList),
+      };
+      const data = { filters, sortBy: this.sortBy };
+      this.loadProducts(data);
+    },
+    filterProducts() {
+      this.acceptedPriceRange = this.priceRange;
+      this.acceptedCategoryList = this.categoryList;
       const priceGte = this.priceRange[0];
       const priceLte = this.priceRange[1];
       const filters = {
         priceGte,
         priceLte,
         query: this.productQuery,
-        categories: this.getEncodedId(),
+        categories: this.getEncodedId(this.categoryList),
       };
       const data = { filters, sortBy: this.sortBy };
       this.loadProducts(data);
@@ -627,6 +611,7 @@ export default {
     onRouteWithParams() {
       if (this.$route.query.price) {
         this.priceRange = this.$route.query.price;
+        this.acceptedPriceRange = this.$route.query.price;
       }
       if (this.$route.query.q) {
         this.productQuery = this.$route.query.q;
@@ -634,8 +619,10 @@ export default {
       if (this.$route.query.categories) {
         if (Array.isArray(this.$route.query.categories)) {
           this.categoryList = this.$route.query.categories;
+          this.acceptedCategoryList = this.$route.query.categories;
         } else {
           this.categoryList = [this.$route.query.categories];
+          this.acceptedCategoryList = [this.$route.query.categories];
         }
       }
       if (this.$route.query.sort) {
@@ -647,7 +634,9 @@ export default {
       this.categoryList = [];
       this.sortBy = '';
       this.productQuery = '';
-      this.sortFilterProducts();
+      this.acceptedCategoryList = [];
+      this.priceRange = [0, 1000];
+      this.filterProducts();
     },
   },
 };
