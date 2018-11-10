@@ -1708,26 +1708,26 @@ export default {
         @media (max-width: 575.98px)
           width: 100%
       &__select
-        @media (max-width: 767.98px)
-          display: inline-block
-          margin:
-            top: 23px
+
         .el-select-dropdown__item
           span
             font-size: 14px
-        .el-input__inner
-          font-size: 14px
-          border: none
-          padding:
-            left: 0
-          width: 140px
-          &::placeholder
-            font-size: 15px
-            color: #000
-          @media (max-width: 767.98px)
-            width: 360px
-          @media (max-width: 575.98px)
-            width: 100%
+        .el-input
+          .el-input__inner
+            font-size: 14px
+            border: none
+            padding:
+              left: 0
+            &::placeholder
+              font-size: 15px
+              color: #000
+            @media (max-width: 767.98px)
+              width: 360px
+            @media (max-width: 575.98px)
+              width: 100%
+        @media (max-width: 767.98px)
+          margin:
+            top: 23px
 
         @media (max-width: 575.98px)
           width: 100%
@@ -1874,10 +1874,5 @@ export default {
       display: none
       &::after
         display: none
-
-  .el-select.sort__select
-    .el-input__inner
-      display: inline-block !important
-      width: auto !important
 
 </style>
