@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import YmapPlugin from 'vue-yandex-maps';
 import * as Sentry from '@sentry/browser';
 import Meta from 'vue-meta';
 import 'normalize.css/normalize.css';
@@ -30,7 +29,6 @@ Vue.prototype.$PAGINATE_BY = 2;
 Vue.prototype.$JUMBLE_BOX_ENABLED = false;
 Vue.prototype.$MESSAGE_DURATION = 1500;
 
-Vue.use(YmapPlugin);
 Vue.use(Meta);
 
 new Vue({

@@ -33,12 +33,12 @@
             </b-col>
             <b-col lg="6" class="characteristics__photo">
 
-              <el-carousel :interval="5000" arrow="never" trigger="click">
+              <el-carousel ref="carousel" :interval="5000" arrow="never" trigger="click">
                 <div v-if="getDiscount !== 100">
                   <div class="characteristics__sale">{{ getDiscount }}%</div>
                 </div>
                 <!--toDo: картинки обрезаются-->
-                <el-carousel-item v-for="item in currentProduct.images.edges" :key="item.node.id">
+                <el-carousel-item v-for="item in currentProduct.images.edges" :key="item.node.id" :name="item.node.url">
                   <div class="characteristics__wrapper">
                     <img :alt="item.node.alt"
                          :src="item.node.url" class="characteristics__item" >
@@ -50,7 +50,7 @@
               <div class="information__content">
                 <h3 class="information__title">{{ currentProduct.name }}</h3>
 
-                <Format v-if="currentProduct.variants.edges.length > 1" v-model="selectedVariant"
+                <Format v-if="currentProduct.variants.edges.length > 1" v-model="selectedVariant" :onchange="setActiveItem()"
                         :variants="currentProduct.variants.edges | getVariants"></Format>
 
                 <div class="prices">
@@ -474,10 +474,10 @@ export default {
     },
     getVariantImage() {
       const variant = this.getCurrentVariant;
-      if (variant.images) {
-        return variant.images.edges[0].node.url;
+      if (variant.images.edges.length > 0) {
+        return variant.images.edges[0].node;
       }
-      return this.currentProduct.images.edges[0].node.url;
+      return this.currentProduct.images.edges[0].node;
     },
   },
   watch: {
@@ -491,6 +491,11 @@ export default {
     ...mapMutations(['addToCart']),
     handleChange(value) {
       console.log(value);
+    },
+    setActiveItem() {
+      if (this.$refs.carousel) {
+        this.$refs.carousel.setActiveItem(this.getVariantImage.url);
+      }
     },
     likeProduct() {
       if (this.getAuthStatus) {
@@ -543,14 +548,14 @@ export default {
     },
     cartButtonClick() {
       if (this.getAuthStatus) {
-        // console.log(this.currentProduct);
+        this.handleChange(this.currentProduct);
         this.addToCart({
           id: this.selectedVariant,
           quantity: this.productCount,
           price: this.getSelectedProductPrice.priceDiscounted
             ? this.getSelectedProductPrice.priceDiscounted
             : this.getSelectedProductPrice.price,
-          photoUrl: this.getVariantImage,
+          photoUrl: this.getVariantImage.url,
           name: this.currentProduct.name,
         });
         this.$message({

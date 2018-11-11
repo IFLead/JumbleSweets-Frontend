@@ -1,7 +1,7 @@
 <template>
   <div class="cards">
-
-    <div class="products__catalog catalog">
+    <transition-group enter-active-class="slideInUp"
+                      leave-active-class="fadeOut" tag="div" class="products__catalog catalog">
       <div v-for="product in allProducts" :key="product.node.id"
            class="catalog__element">
         <div class="catalog__content">
@@ -52,8 +52,7 @@
           </div>
         </div>
       </div>
-
-    </div>
+    </transition-group>
 
   </div>
 </template>
@@ -142,6 +141,10 @@ export default {
 </script>
 
 <style lang="sass">
+$animationDuration: 0.5s
+@import "~vue2-animate/src/sass/vue2-animate.scss"
+
+
 .cards
   .catalog
     display: flex
@@ -221,7 +224,7 @@ export default {
       &--sale
         color: #e70068
     &__old-price
-      font-weight: regular
+      font-weight: normal
       line-height: 20px
       color: #c4c4c4
       text-decoration: line-through

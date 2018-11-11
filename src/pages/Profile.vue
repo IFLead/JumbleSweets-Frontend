@@ -2,8 +2,10 @@
   <div class="profile">
     <!--<repeatModal v-model="repeatVisible"></repeatModal>-->
     <insideModal></insideModal>
+    <repeatModal></repeatModal>
     <b-container>
       <el-button type="text" @click="setInsideShow(true)">inside modal</el-button>
+      <el-button type="text" @click="setRepeatShow(true)">repeat modal</el-button>
       <b-row>
         <b-col md="4" sm="12">
 
@@ -170,7 +172,7 @@
                         </div>
 
                         <div class="orders-yes__elem-repeat">
-                          <div class="orders-yes__elem-repeat-label">Повторить</div>
+                          <div class="orders-yes__elem-repeat-label" @click="setRepeatShow(true)">Повторить</div>
                           <div class="orders-yes__elem-repeat-icon">
                             <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
                           </div>
@@ -265,7 +267,7 @@
                         </div>
 
                         <div class="orders-yesmob__elem-repeat">
-                          <div class="orders-yesmob__elem-repeat-label">Повторить</div>
+                          <div class="orders-yesmob__elem-repeat-label" @click="setRepeatShow(true)">Повторить</div>
                           <div class="orders-yesmob__elem-repeat-icon">
                             <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
                           </div>
@@ -403,35 +405,28 @@ export default {
   },
   data() {
     return {
-      panelIndex: 1,
+      panelIndex: 3,
       isHidden: false,
       isHidden1: false,
       isOrders: true,
       isWish: true,
-      repeatVisibleValue: false,
-      selectedMenu: 'Основная информация',
+      selectedMenu: 'Список желаний',
       isMobMenu: false,
       isRightMob: true,
       input: null,
     };
   },
   computed: {
-    ...mapGetters(['getInsideShow']),
-
-    repeatVisible() {
-      return this.repeatVisibleValue;
-    },
+    ...mapGetters(['getInsideShow', 'getRepeatShow']),
   },
   methods: {
-    ...mapMutations(['setInsideShow']),
+    ...mapMutations(['setInsideShow', 'setRepeatShow']),
     ...mapActions(['logOut']),
     Exit() {
       console.log('Я работаю как гавно');
       this.logOut();
     },
-    setRepeatVisibleValue(val) {
-      this.repeatVisibleValue = val;
-    },
+
   },
 };
 </script>
@@ -789,6 +784,7 @@ export default {
       margin-left: 12px
     &__elem-repeat
       display: flex
+      cursor: pointer
     &__elem-repeat-icon
       margin-left: 12px
     &__elem-cost

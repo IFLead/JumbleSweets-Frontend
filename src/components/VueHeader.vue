@@ -9,7 +9,7 @@
               <a href="#" class="main-header__title" @click="openMenu">Меню</a>
               <div :class="{show: menuOpen}" class="main-header__menu menu">
                 <ul class="menu__list">
-                  <li class="menu__cart">
+                  <li v-if="getAuthStatus" class="menu__cart">
                     <el-badge :value="getCartAmount">
                       <router-link to="/cart"></router-link>
                     </el-badge>

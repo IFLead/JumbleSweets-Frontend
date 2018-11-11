@@ -2,7 +2,7 @@
   <div id="app">
     <!--<el-button :plain="true" @click="openVn">VNode</el-button>-->
     <vHeader></vHeader>
-    <transition>
+    <transition name="fade">
       <router-view></router-view>
     </transition>
     <vFooter></vFooter>
@@ -32,8 +32,18 @@ export default {
 
 <style lang="sass" type="text/sass">
   @import "./styles/main-style.sass"
+  @import "~vue2-animate/src/sass/vue2-animate.scss"
+  $animationDuration: 0.5s
+
+  .fade-enter
+    opacity: 0
+
+  .fade-leave-active
+    transition: opacity 0.25s ease
+    opacity: 0
+
+  .fade-enter-active
+    transition: opacity 0.25s ease
+
 </style>
 
-
-<style>
-</style>
