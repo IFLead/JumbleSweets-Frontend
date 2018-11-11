@@ -1,0 +1,8 @@
+mutation CompleteCheckot($checkoutId: ID!) {
+  checkoutComplete(checkoutId: $checkoutId) {
+    errors {
+      message
+      field
+    }
+  }
+}

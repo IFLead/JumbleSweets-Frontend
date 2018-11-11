@@ -67,7 +67,6 @@
               <div class="element__information">
                 <router-link :to="record.url" class="element__name"> {{ record.name }} </router-link>
                 <div class="element__contrlos">
-                  <!--toDo: неровные блоки с количеством товара-->
                   <div class="element__col">
                     <template>
                       <el-input-number v-model="record.quantity" :min="1" :max="10"
@@ -86,7 +85,7 @@
               <a href="#" class="total__promo activated"><span class="total__promo--first">У меня есть промокод на скидку</span>
               <span class="total__promo--activated" @click="saleModal = true">Скидка 10% с промокода</span></a>
               <p class="total__price">Сумма: <span>{{ totalPrice }} грн.</span></p>
-              <router-link to="/summary">
+              <router-link to="/shipping">
                 <el-button class="total__button" @click="decorModal = true">Перейти к оформлению
                   <span class="total__button--icon">
                     <svg id="Layer_1" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
