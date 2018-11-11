@@ -260,7 +260,12 @@
                       <p v-else class="catalog__price">{{ product.node.price.amount }} грн.</p>
                       <p v-if="product.node.availability.onSale" class="catalog__old-price">{{ product.node.price.amount
                       }} грн.</p>
-                      <div class="catalog__basket">
+                      <el-popover
+                        placement="top-start"
+                        width="200"
+                        trigger="hover"
+                        content="хз, что тут должно быть">
+                      <div  slot="reference" class="catalog__basket">
                         <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" x="0px" y="0px"
                              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                           <g><g>
@@ -268,6 +273,8 @@
                           </g></g>
                         </svg>
                       </div>
+                      </el-popover>
+
                       <div>
                       </div>
                       <div class="catalog__like">
@@ -415,10 +422,13 @@
 import { mapGetters, mapActions, mapMutations, mapState } from 'vuex';
 import { isEqual } from 'lodash/lang';
 import getDiscountBase from '../utils/priceFuncs';
+import Format from '../components/Format.vue';
 
 export default {
   name: 'Home',
-  components: {},
+  components: {
+    Format,
+  },
   filters: {
     getNormalId(id) {
       return atob(id).split(':')[1];

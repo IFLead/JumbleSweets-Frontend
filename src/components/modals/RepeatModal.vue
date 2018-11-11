@@ -2,10 +2,9 @@
   <b-container>
     <!--<b-modal class="repeat-modal" :id="id" hide-header hide-footer centered>-->
 
-    <el-button type="text" @click="repeatVisible = true">repeat modal</el-button>
+    <!--<el-button type="text" @click="repeatVisible = true">repeat modal</el-button>-->
 
-    <el-dialog :visible.sync="repeatVisible"
-               class="repeat-modal">
+    <el-dialog :visible="getRepeatShow" :close-on-press-escape="true" class="repeat-modal" @close="setRepeatShow(false)" @open="setRepeatShow(true)">
       <div class="repeat-modal__wrapper">
         <div class="repeat-modal__icon">
           <img src="../../assets/Icons/refresh_icon.svg" width="50" height="50" alt="Повторить">
@@ -23,7 +22,7 @@
         </div>
         <div class="repeat-modal__buttons">
           <el-button class="repeat-modal__buttons-okey">Да, хорошо</el-button>
-          <el-button class="repeat-modal__buttons-close" @click="repeatVisible = false">Не хочу повторять</el-button>
+          <el-button class="repeat-modal__buttons-close" @close="setRepeatShow(false)">Не хочу повторять</el-button>
         </div>
       </div>
     </el-dialog>
@@ -33,13 +32,20 @@
 
 </template>
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
   name: 'RepeatModal',
   components: {},
   data() {
     return {
-      repeatVisible: false,
     };
+  },
+  computed: {
+    ...mapGetters(['getRepeatShow']),
+  },
+  methods: {
+    ...mapMutations(['setRepeatShow']),
   },
 };
 </script>

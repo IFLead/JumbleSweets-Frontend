@@ -443,14 +443,10 @@ export default {
     return {
       checkModals: true,
       radioModal: 'Сладости',
-      insideVisible: false,
     };
   },
   computed: {
     ...mapGetters(['getInsideShow']),
-    insideModal() {
-      return this.getInsideShow;
-    },
   },
   methods: {
     ...mapMutations(['setInsideShow']),
