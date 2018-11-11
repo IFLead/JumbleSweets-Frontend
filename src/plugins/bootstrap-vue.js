@@ -5,6 +5,6 @@ import Vue from 'vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-import { Layout } from 'bootstrap-vue/es/components';
+import Layout from 'bootstrap-vue/es/components/layout';
 
 Vue.use(Layout);
