@@ -1,12 +1,13 @@
 <template>
-    
+  <div>
+  </div>
 </template>
 
 <script>
-    export default {
-      name: "WishesModal",
-      components: {},
-    }
+export default {
+  name: 'WishesModal',
+  components: {},
+};
 </script>
 
 <style lang="sass">

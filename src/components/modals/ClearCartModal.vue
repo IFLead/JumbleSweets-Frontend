@@ -1,12 +1,13 @@
 <template>
-    
+  <div>
+  </div>
 </template>
 
 <script>
-    export default {
-      name: "ClearCartModal",
-      components: {},
-    }
+export default {
+  name: 'ClearCartModal',
+  components: {},
+};
 </script>
 
 <style lang="sass">
