@@ -503,9 +503,10 @@ export default {
   },
   methods: {
     ...mapActions(['finishCheckout']),
-    finishCheckout() {
+    finalizeCheckout() {
       this.finishCheckout({
         email: this.getUserData.email,
+        customerId: this.getUserData.id,
         paymentData: {
           gateway: 'DUMMY',
           // toDo: Поменять токен

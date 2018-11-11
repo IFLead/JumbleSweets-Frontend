@@ -474,7 +474,7 @@ export default {
     },
     getVariantImage() {
       const variant = this.getCurrentVariant;
-      if (variant.images) {
+      if (variant.images.edges.length > 0) {
         return variant.images.edges[0].node;
       }
       return this.currentProduct.images.edges[0].node;
@@ -548,7 +548,7 @@ export default {
     },
     cartButtonClick() {
       if (this.getAuthStatus) {
-        // console.log(this.currentProduct);
+        this.handleChange(this.currentProduct);
         this.addToCart({
           id: this.selectedVariant,
           quantity: this.productCount,

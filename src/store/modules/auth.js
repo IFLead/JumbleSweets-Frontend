@@ -8,7 +8,7 @@ const state = {
   authorized: false,
   lastAuth: null,
   // toDo: поменять, когда появятся нормальные данные о пользователе
-  user: { id: null, email: 'leo2598@yandex.ua' },
+  user: { id: null, email: '' },
   token: null,
   exp: 0,
 };

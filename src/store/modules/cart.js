@@ -5,6 +5,7 @@ import { apolloProvider } from '../../vue-apollo';
 import CREATE_CHECKOUT from '../../graphql/CreateCheckout.gql';
 import CREATE_CHECKOUT_PAYMENT from '../../graphql/CreateCheckoutPayment.gql';
 import COMPLETE_CHECKOUT from '../../graphql/CompleteCheckout.gql';
+import CHECKOUT_ATTACH_CUSTOMER from '../../graphql/CheckoutAttachCustomer.gql';
 
 const state = {
   cartItems: fromLocalStorage('cartItems', []),
@@ -65,34 +66,47 @@ const actions = {
   saveCart() {
     toLocalStorage(state.cartItems, 'cartItems');
   },
-  async finishCheckout({ state, dispatch, commit }, { email, paymentData }) {
+  async finishCheckout({
+    state, dispatch, commit, getters,
+  }, { email, customerId, paymentData }) {
     try {
       const lines = [];
       state.cartItems.forEach((item) => {
         lines.push({ variantId: item.id, quantity: item.quantity });
       });
-      const responseCreateCheckout = await apolloProvider.defaultClient.query({
-        query: CREATE_CHECKOUT,
+      const input = { email, lines };
+      const responseCreateCheckout = await apolloProvider.defaultClient.mutate({
+        mutation: CREATE_CHECKOUT,
         variables: {
-          email,
-          lines,
+          input,
         },
       });
-      const checkoutId = responseCreateCheckout.data.checkout.id;
+      console.log(responseCreateCheckout);
+      const checkoutId = responseCreateCheckout.data.checkoutCreate.checkout.id;
       paymentData.checkoutId = checkoutId;
-      paymentData.amount = state.getCartAmount();
-      const responseCheckoutPayment = await apolloProvider.defaultClient.query({
-        query: CREATE_CHECKOUT_PAYMENT,
+      paymentData.amount = getters.totalPrice;
+      const responseCheckoutPayment = await apolloProvider.defaultClient.mutate({
+        mutation: CREATE_CHECKOUT_PAYMENT,
         variables: {
-          paymentData,
+          input: paymentData,
         },
       });
-      const responseCompleteCheckout = await apolloProvider.defaultClient.query({
-        query: COMPLETE_CHECKOUT,
+      console.log(responseCheckoutPayment);
+      // const responseCustomerAttach = await apolloProvider.defaultClient.mutate({
+      //   mutation: CHECKOUT_ATTACH_CUSTOMER,
+      //   variables: {
+      //     checkoutId,
+      //     customerId
+      //   },
+      // });
+      // console.log(responseCustomerAttach);
+      const responseCompleteCheckout = await apolloProvider.defaultClient.mutate({
+        mutation: COMPLETE_CHECKOUT,
         variables: {
           checkoutId,
         },
       });
+      console.log(responseCompleteCheckout);
     } catch (e) {
       console.log(e);
     }
