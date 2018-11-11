@@ -6,6 +6,9 @@ module.exports = {
         useBuiltIns: 'entry',
       },
     ],
+    ['@babel/env', {
+      modules: false,
+    }],
   ],
   plugins: [
     [
