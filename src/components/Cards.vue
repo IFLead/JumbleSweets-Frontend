@@ -1,7 +1,7 @@
 <template>
   <div class="cards">
-      <transition-group enter-active-class="slideInUp"
-                        leave-active-class="fadeOut" tag="div" class="products__catalog catalog">
+    <transition-group enter-active-class="slideInUp"
+                      leave-active-class="fadeOut" tag="div" class="products__catalog catalog">
       <div v-for="product in allProducts" :key="product.node.id"
            class="catalog__element">
         <div class="catalog__content">
@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-      </transition-group>
+    </transition-group>
 
   </div>
 </template>

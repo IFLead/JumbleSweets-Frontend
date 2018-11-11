@@ -5,20 +5,9 @@
       <!--<iframe src="https://goo.gl/maps/eHffYJ9gW2M2" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
       <!--</div>-->
       <section class="map">
-        <yandex-map
-          :coords="[50.029227, 36.327978]"
-          :cluster-options="{
-            1: {clusterDisableClickZoom: true}
-          }"
-          :behaviors="['drag']"
-          :controls="[]"
-          :placemarks="placemarks"
-          zoom="17"
-          style="width: 100%; height: 400px;"
-          map-type="map"
-        >
+        <iframe width="100%" height="100%" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?q=50.029227,+36.327978&key=AIzaSyB8-Ypxzmv_8MOjXZBnAc6ZrWJUFkduu6U" allowfullscreen></iframe>
 
-        </yandex-map>
       </section>
 
       <section class="data">
@@ -58,17 +47,6 @@ export default {
   name: 'ContactsPage',
   data() {
     return {
-      placemarks: [
-        {
-          coords: [50.029227, 36.327978],
-          properties: {}, // define properties here
-          options: {}, // define options here
-          clusterName: '1',
-          callbacks: {
-            click() {},
-          },
-        },
-      ],
     };
   },
 };

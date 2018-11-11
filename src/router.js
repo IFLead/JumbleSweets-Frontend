@@ -5,11 +5,11 @@ import Home from './pages/Home.vue';
 import AboutUs from './pages/AboutUs.vue';
 import Contacts from './pages/Contacts.vue';
 import DelPay from './pages/DelPay.vue';
-import JumbleBox from './pages/JumbleBox.vue';
+// import JumbleBox from './pages/JumbleBox.vue';
 import Item from './pages/Item.vue';
-import JumbleBoxPackage from './pages/JumbleBoxPackage.vue';
+// import JumbleBoxPackage from './pages/JumbleBoxPackage.vue';
 import Profile from './pages/Profile.vue';
-import JumbleBoxConstructor from './pages/JumbleBoxConstructor.vue';
+// import JumbleBoxConstructor from './pages/JumbleBoxConstructor.vue';
 import Cart from './pages/Cart.vue';
 import Shipping from './pages/Shipping.vue';
 import NovaPoshta from './pages/NovaPoshta.vue';
@@ -66,12 +66,13 @@ const router = new Router({
       path: '/delivery',
       name: 'delivery',
       component: DelPay,
+      meta: { requiresAuth: true },
     },
-    {
-      path: '/jumbleBox',
-      name: 'jumbleBox',
-      component: JumbleBox,
-    },
+    // {
+    //   path: '/jumbleBox',
+    //   name: 'jumbleBox',
+    //   component: JumbleBox,
+    // },
     {
       path: '/products/:name(.*)-:id(\\d*)',
       name: 'item',
@@ -79,22 +80,22 @@ const router = new Router({
       props: true,
       meta: { scrollToTop: true },
     },
-    {
-      path: '/package',
-      name: 'JumbleBoxPackage',
-      component: JumbleBoxPackage,
-    },
+    // {
+    //   path: '/package',
+    //   name: 'JumbleBoxPackage',
+    //   component: JumbleBoxPackage,
+    // },
     {
       path: '/profile',
       name: 'profile',
       component: Profile,
       meta: { requiresAuth: true },
     },
-    {
-      path: '/constructor',
-      name: 'JumbleBoxConstructor',
-      component: JumbleBoxConstructor,
-    },
+    // {
+    //   path: '/constructor',
+    //   name: 'JumbleBoxConstructor',
+    //   component: JumbleBoxConstructor,
+    // },
     {
       path: '/cart',
       name: 'Cart',
@@ -111,22 +112,25 @@ const router = new Router({
       path: '/shipping',
       name: 'Shipping',
       component: Shipping,
+      meta: { requiresAuth: true },
     },
     {
       path: '/novaposhta',
       name: 'NovaPoshta',
       component: NovaPoshta,
+      meta: { requiresAuth: true },
     },
     {
       path: '/kharkiv',
       name: 'Kharkiv',
       component: Kharkiv,
+      meta: { requiresAuth: true },
     },
     {
       path: '/summary',
       name: 'Summary',
       component: Summary,
-      meta: { scrollToTop: true },
+      meta: { scrollToTop: true, requiresAuth: true },
     },
     {
       path: '/repeatmodal',

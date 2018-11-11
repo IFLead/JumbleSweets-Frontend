@@ -22,7 +22,7 @@
         </div>
         <div class="repeat-modal__buttons">
           <el-button class="repeat-modal__buttons-okey">Да, хорошо</el-button>
-          <el-button class="repeat-modal__buttons-close" @close="setRepeatShow(false)">Не хочу повторять</el-button>
+          <el-button class="repeat-modal__buttons-close" @click="setRepeatShow(false)">Не хочу повторять</el-button>
         </div>
       </div>
     </el-dialog>

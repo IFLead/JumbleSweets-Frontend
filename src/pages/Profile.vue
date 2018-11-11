@@ -172,7 +172,7 @@
                         </div>
 
                         <div class="orders-yes__elem-repeat">
-                          <div class="orders-yes__elem-repeat-label">Повторить</div>
+                          <div class="orders-yes__elem-repeat-label" @click="setRepeatShow(true)">Повторить</div>
                           <div class="orders-yes__elem-repeat-icon">
                             <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
                           </div>
@@ -267,7 +267,7 @@
                         </div>
 
                         <div class="orders-yesmob__elem-repeat">
-                          <div class="orders-yesmob__elem-repeat-label">Повторить</div>
+                          <div class="orders-yesmob__elem-repeat-label" @click="setRepeatShow(true)">Повторить</div>
                           <div class="orders-yesmob__elem-repeat-icon">
                             <img src="../assets/Icons/refresh_profile.svg" width="12" height="12" alt="Повторить">
                           </div>
