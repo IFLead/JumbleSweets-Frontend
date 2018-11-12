@@ -6,6 +6,9 @@ module.exports = {
         useBuiltIns: 'entry',
       },
     ],
+    ['@babel/preset-env', {
+      modules: false,
+    }],
   ],
   plugins: [
     [
