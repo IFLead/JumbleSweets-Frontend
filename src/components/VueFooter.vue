@@ -16,7 +16,7 @@
                     <h3 class="main-information__title">Основная информация</h3>
                     <ul class="main-information__list">
                       <li class="main-information__element"><router-link to="/delivery">Оплата и доставка</router-link></li>
-                      <li class="main-information__element"><router-link to="/jumble_box">Jumble Box</router-link></li>
+                      <!--<li class="main-information__element"><router-link to="/jumble_box">Jumble Box</router-link></li>-->
                       <li class="main-information__element"><router-link to="/about">О нас</router-link></li>
                     </ul>
                   </div>

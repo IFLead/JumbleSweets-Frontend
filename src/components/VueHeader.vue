@@ -11,7 +11,7 @@
                 <ul class="menu__list">
                   <li v-if="getAuthStatus" class="menu__cart">
                     <el-badge :value="getCartAmount">
-                      <router-link to="/cart"></router-link>
+                      <div @click="checkCart()"></div>
                     </el-badge>
                   </li>
                   <li class="menu__close" @click="closeMenu"></li>
@@ -62,7 +62,7 @@
               <ul class="main-header__user user">
                 <li v-if="getAuthStatus" class="user__element user__element--cart">
                   <el-badge :value="getCartAmount">
-                    <router-link to="/cart"><span>Корзина</span></router-link>
+                    <div @click="checkCart()"><span>Корзина</span></div>
                   </el-badge>
                 </li>
                 <li v-if="getAuthStatus" class="user__element user__element--login">
@@ -95,6 +95,17 @@ export default {
     ...mapGetters(['getCartAmount', 'getAuthStatus']),
   },
   methods: {
+    checkCart() {
+      if (this.getCartAmount > 0) {
+        this.$router.push('/cart');
+      } else {
+        this.$message({
+          message: 'Ваша корзина пуста',
+          center: true,
+          duration: this.$MESSAGE_DURATION,
+        });
+      }
+    },
     openMenu() {
       this.menuOpen = true;
       const el = document.querySelector('body');
@@ -329,7 +340,8 @@ export default {
             text-decoration: none
             color: #e70068
         &--cart
-
+          cursor: pointer
+          font-weight: 700
           margin:
             right: 48px
             display: flex
