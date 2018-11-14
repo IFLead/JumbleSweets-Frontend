@@ -1063,7 +1063,7 @@ export default {
       margin:
         bottom: 0
     &__old-price
-      font-weight: regular
+      font-weight: 400
       line-height: 18px
       color: #c4c4c4
       text-decoration: line-through

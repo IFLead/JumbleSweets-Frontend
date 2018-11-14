@@ -18,7 +18,9 @@
                       вкусным и необычным
                       презентом и, несомненно, подарит получателю массу положительных эмоций.
                     </p>
-                    <el-button class="description__button">Посмотреть каталог</el-button>
+                    <a href="#catalog-direction">
+                      <el-button class="description__button">Посмотреть каталог</el-button>
+                    </a>
                   </div>
                 </el-carousel-item>
                 <el-carousel-item>
@@ -33,7 +35,9 @@
                       вкусным и необычным
                       презентом и, несомненно, подарит получателю массу положительных эмоций.
                     </p>
-                    <el-button class="description__button">Посмотреть каталог</el-button>
+                    <a href="#catalog-direction">
+                      <el-button class="description__button">Посмотреть каталог</el-button>
+                    </a>
                   </div>
                 </el-carousel-item>
                 <el-carousel-item>
@@ -48,9 +52,9 @@
                       вкусным и необычным
                       презентом и, несомненно, подарит получателю массу положительных эмоций.
                     </p>
-                    <el-button class="description__button">
-                      Посмотреть каталог
-                    </el-button>
+                    <a href="#catalog-direction">
+                      <el-button class="description__button">Посмотреть каталог</el-button>
+                    </a>
                   </div>
                 </el-carousel-item>
               </el-carousel>
@@ -157,11 +161,13 @@
       </section>
 
       <section class="products">
+        <a name="catalog-direction"></a>
         <b-container>
           <b-row>
             <b-col cols="12" class="products__sort sort">
+
               <el-input v-model="productQuery" placeholder="Поиск товаров" class="sort__search" @change="filterProducts(); onSortFilterChange()"></el-input>
-              <div class="sort__filters" @click="filterOpen = true">Фильтры</div>
+              <div class="sort__filters" @click="openFilters">Фильтры</div>
               <h3 class="sort__title">Сортировка</h3>
               <el-select v-model="sortBy" class="sort__select" @change="sortProducts(); onSortFilterChange()">
                 <el-option
@@ -175,7 +181,7 @@
             <b-col :class="{show: filterOpen}" md="4" lg="3" class="products__filter filter">
               <el-collapse v-model="activeNames">
                 <div class="filter__content">
-                  <div class="filter__close" @click="filterOpen = false">
+                  <div class="filter__close" @click="closeFilters">
                     <svg id="Layer_1" version="1.1" class="filter__close--icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
                       <g>
@@ -229,11 +235,14 @@
                     range
                     @change="onSortFilterChange()">
                   </el-slider>
-                  <el-button class="filter__button filter__button--submit" @click="filterProducts()">Применить
-                  </el-button>
-                  <el-button class="filter__button filter__button--refresh" @click="cleanFilters()">Сбросить</el-button>
+                  <div class="filter__buttons">
+                    <el-button class="filter__button filter__button--submit" @click="filterProducts()">Применить
+                    </el-button>
+                    <el-button class="filter__button filter__button--refresh" @click="cleanFilters()">Сбросить</el-button>
+                  </div>
                 </div>
               </el-collapse>
+              <div class="filter__background"></div>
             </b-col>
 
 
@@ -410,9 +419,8 @@
                     <li class="delivery__element">- Возможность самовывоза</li>
                     <li class="delivery__element">- Доставка Новой почтой по всей Украине</li>
                   </ul>
-                  <p class="delivery__description">Более подробно Вы можете ознакомиться с условиями
-                  доставки и оплаты в
-                  <a href="#" class="delivery__special">специальном разделе.</a></p>
+                  <p class="delivery__description">Более подробно Вы можете ознакомиться с условиями доставки и оплаты в
+                  <router-link to="/delivery" class="delivery__special">специальном разделе.</router-link></p>
                 </div>
               </div>
             </b-col>
@@ -648,6 +656,21 @@ export default {
       this.priceRange = [0, 1000];
       this.filterProducts();
     },
+    openFilters() {
+      this.filterOpen = true;
+      const body = document.querySelector('body');
+      const background = document.querySelector('.filter__background');
+
+      body.classList.add('no-scroll');
+      background.addEventListener('click', () => {
+        this.closeFilters();
+      });
+    },
+    closeFilters() {
+      this.filterOpen = false;
+      const body = document.querySelector('body');
+      body.classList.remove('no-scroll');
+    },
   },
 };
 </script>
@@ -807,11 +830,10 @@ export default {
       position: relative
       background-color: #F8F8F8
       padding:
-        left: 20px
         bottom: 15px
       &__actions
         padding:
-          left: 0
+          left: 20px
         list-style: none
         height: 355px
         overflow: auto
@@ -821,6 +843,7 @@ export default {
           height: 300px
         @media (max-width: 767.98px)
           height: 355px
+
       &__link
         text-decoration: none
         color: #000000
@@ -833,17 +856,29 @@ export default {
           left: auto
           right: auto
         &:hover, &:focus
-          text-decoration: none
+          text-decoration: underline
           color: #000
+        &:before
+          content: ''
+          height: 2px
+          width: calc(100% - 32px)
+          position: absolute
+          bottom: 46px
+          left: 0
+          right: 0
+          margin:
+            left: auto
+            right: auto
+          background-color: #dcdcdc
       &__action
         margin:
-          bottom: -5px
+          bottom: -4px
         @media (max-width: 991.98px)
           font-size: 14px
           line-height: 22px
       &__element
         margin:
-          bottom: 10px
+          bottom: 15px
       &__action-link
         transition: all 0.2s ease
         color: #6a0030
@@ -851,16 +886,7 @@ export default {
         &:hover, &:focus
           color: #e70068
           text-decoration: none
-      &:before
-        content: ''
-        height: 2px
-        width: calc(100% - 34px)
-        position: absolute
-        bottom: 46px
-        margin:
-          left: auto
-          right: auto
-        background-color: #dcdcdc
+
 
     .news__actions::-webkit-scrollbar
       width: 4px
@@ -932,7 +958,7 @@ export default {
         font-weight: 700
         line-height: 18px
         &:hover, &:focus
-          text-decoration: none
+          text-decoration: underline
           color: #000
 
       .news__actions::-webkit-scrollbar-thumb
@@ -941,11 +967,6 @@ export default {
         border-radius: 5px
 
     .catalog
-      min-height: 720px
-      @media (max-width: 1199.98px)
-        min-height: 600px
-      @media (max-width: 575.98px)
-        min-height: 500px
       position: relative
       margin:
         top: 8px
@@ -1017,7 +1038,7 @@ export default {
         &--sale
           color: #e70068
       &__old-price
-        font-weight: regular
+        font-weight: 400
         line-height: 20px
         color: #c4c4c4
         text-decoration: line-through
@@ -1536,8 +1557,10 @@ export default {
         overflow: auto
         top: 0
         right: 0
-        &::before
-          content: ''
+      &__background
+        display: none
+        @media (max-width: 767.98px)
+          display: block
           z-index: 10
           position: fixed
           top: 0
@@ -1545,16 +1568,16 @@ export default {
           bottom: 0
           right: 0
           background-color: rgba(0, 0, 0, 0.6)
-        &::after
-          content: ''
+
       &__content
         @media (max-width: 767.98px)
           position: relative
           z-index: 100
-          height: 100%
+          min-height: 100vh
           background-color: #fff
           padding:
             left: 30px
+            right: 30px
             top: 1px
             bottom: 40px
       .el-checkbox__inner
@@ -1595,9 +1618,9 @@ export default {
           height: 15px
           position: fixed
           top: 25px
-          right: 330px
-          @media (max-width: 575.98px)
-            right: 310px
+          right: 345px
+          @media (max-width: 384.98px)
+            right: 295px
           .filter__close--icon
             fill: #ffffff
             margin:
@@ -1623,34 +1646,27 @@ export default {
         padding:
           left: 19px
         list-style: none
+      &__buttons
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding:
+          right: 15px
+        @media (max-width: 1199.98px)
+          padding:
+            right: 0px
       &__button.el-button
-        margin:
-          left: 15px
         width: 200px
         @media (max-width: 767.98px)
           margin:
             left: 0px
-      &__buttons
-        padding:
-          left: 16px
-        @media (max-width: 1199.98px)
-          padding:
-            left: 0
-        @media (max-width: 767.98px)
-          margin:
-            bottom: 20px
-          display: flex
-          flex-direction: column
-        @media (max-width: 575.98px)
-          align-items: center
-          margin:
-            bottom: 6px
       &__button--refresh.el-button
         color: #000
         font-weight: 700
         background-color: #fff
         margin:
           top: 23px
+          left: 0px
         &:hover, &:focus
           background-color: darken(#ffffff, 3%)
           color: #000000
@@ -1668,7 +1684,7 @@ export default {
         @media (max-width: 1199.98px)
           width: 100%
         @media (max-width: 767.98px)
-          width: 230px
+          width: 225px
 
     .filter.show
       display: block
@@ -1686,6 +1702,7 @@ export default {
       @media (max-width: 767.98px)
         display: flex
         flex-direction: column
+        align-items: center
       @media (max-width: 575.98px)
         padding:
           left: 40px
@@ -1716,9 +1733,9 @@ export default {
           background-size: 15px auto
           background-position: right center
         @media (max-width: 575.98px)
+          background-position: right 9px center
           width: 100%
       &__select
-
         .el-select-dropdown__item
           span
             font-size: 14px
@@ -1732,9 +1749,15 @@ export default {
               font-size: 15px
               color: #000
             @media (max-width: 767.98px)
-              width: 360px
+              width: 365px
+              padding:
+                left: 7px
             @media (max-width: 575.98px)
               width: 100%
+              padding:
+                  left: 0px
+          .el-icon-arrow-up::before
+            font-size: 18px
         @media (max-width: 767.98px)
           margin:
             top: 23px
@@ -1764,6 +1787,7 @@ export default {
     .pagination
       background-color: #f8f8f8
       display: inline-block
+      border-radius: 0px
       padding:
         top: 5px
         bottom: 5px
