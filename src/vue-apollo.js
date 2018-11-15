@@ -18,10 +18,12 @@ export const filesRoot =
 
 Vue.prototype.$filesRoot = filesRoot;
 
-function getAuthToken(tokenName) {
+export function getAuthToken(tokenName) {
   if (typeof window !== 'undefined') {
     // get the authentication token from local storage if it exists
+    console.log('Задание авторизации');
     const token = sessionStorage.getItem(tokenName) || localStorage.getItem(tokenName);
+    console.log(token);
     // return the headers to the context so httpLink can read them
     return token ? `JWT ${token}` : '';
   }
