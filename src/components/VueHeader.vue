@@ -11,7 +11,7 @@
                 <ul class="menu__list">
                   <li v-if="getAuthStatus" class="menu__cart">
                     <el-badge :value="getCartAmount">
-                      <router-link to="/cart"></router-link>
+                      <div @click="checkCart()"></div>
                     </el-badge>
                   </li>
                   <li class="menu__close" @click="closeMenu"></li>
@@ -57,12 +57,13 @@
                     </ul>
                   </li>
                 </ul>
+                <div class="menu__background"></div>
               </div>
 
               <ul class="main-header__user user">
                 <li v-if="getAuthStatus" class="user__element user__element--cart">
                   <el-badge :value="getCartAmount">
-                    <router-link to="/cart"><span>Корзина</span></router-link>
+                    <div @click="checkCart()"><span>Корзина</span></div>
                   </el-badge>
                 </li>
                 <li v-if="getAuthStatus" class="user__element user__element--login">
@@ -95,15 +96,31 @@ export default {
     ...mapGetters(['getCartAmount', 'getAuthStatus']),
   },
   methods: {
+    checkCart() {
+      if (this.getCartAmount > 0) {
+        this.$router.push('/cart');
+      } else {
+        this.$message({
+          message: 'Ваша корзина пуста',
+          center: true,
+          duration: this.$MESSAGE_DURATION,
+        });
+      }
+    },
     openMenu() {
       this.menuOpen = true;
-      const el = document.querySelector('body');
-      el.classList.add('no-scroll');
+      const body = document.querySelector('body');
+      const background = document.querySelector('.menu__background');
+
+      body.classList.add('no-scroll');
+      background.addEventListener('click', () => {
+        this.closeMenu();
+      });
     },
     closeMenu() {
       this.menuOpen = false;
-      const el = document.querySelector('body');
-      el.classList.remove('no-scroll');
+      const body = document.querySelector('body');
+      body.classList.remove('no-scroll');
     },
   },
 };
@@ -165,14 +182,16 @@ export default {
         top: 0
         width: 297px
         z-index: 1000
-        &::after
-          content: ''
-          position: fixed
+      &__background
+        display: none
+        @media (max-width: 991.98px)
+          display: block
           z-index: 10
+          position: fixed
           top: 0
-          right: 0
-          bottom: 0
           left: 0
+          bottom: 0
+          right: 0
           background-color: rgba(0, 0, 0, 0.6)
       @media (max-width: 767.98px)
         width: 260px
@@ -184,7 +203,7 @@ export default {
           display: block
           position: fixed
           top: 30px
-          right: 330px
+          right: 345px
           width: 20px
           height: 20px
           cursor: pointer
@@ -192,8 +211,8 @@ export default {
           background-repeat: no-repeat
           background-size: contain
           background-position: ceneter center
-        @media (max-width: 767.98px)
-          right: 280px
+        @media (max-width: 384.98px)
+          right: 285px
       &__list
         overflow: auto
         display: flex
@@ -329,7 +348,8 @@ export default {
             text-decoration: none
             color: #e70068
         &--cart
-
+          cursor: pointer
+          font-weight: 700
           margin:
             right: 48px
             display: flex
