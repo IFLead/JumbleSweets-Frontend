@@ -159,6 +159,8 @@ export default {
       left: 0px
       right: 0px
     max-width: 362px
+    @media (max-width: 800px)
+      max-width: none
     &-pickup, &-kharkiv, &-ukraine
       background-size: cover
       background-repeat: no-repeat

@@ -210,7 +210,7 @@ export default {
           background-image: url("../assets/Icons/cancel.svg")
           background-repeat: no-repeat
           background-size: contain
-          background-position: ceneter center
+          background-position: center center
         @media (max-width: 384.98px)
           right: 285px
       &__list
@@ -371,6 +371,8 @@ export default {
               background-repeat: no-repeat
               background-size: contain
               background-position: center center
+          @media (max-width: 767.98px)
+            padding-top: 7px
           @media (max-width: 575.98px)
             right: 40px
 

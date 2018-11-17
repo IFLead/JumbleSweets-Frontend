@@ -66,7 +66,6 @@ const router = new Router({
       path: '/delivery',
       name: 'delivery',
       component: DelPay,
-      meta: { requiresAuth: true },
     },
     // {
     //   path: '/jumbleBox',

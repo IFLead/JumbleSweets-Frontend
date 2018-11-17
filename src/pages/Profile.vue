@@ -107,22 +107,22 @@
               <div class="personal-data__personal">
                 <div class="personal-data__personal-elem">
                   <div class="personal-data__personal-label">Фамилия</div>
-                  <el-input v-model="input" class="personal-data__personal-field" placeholder="Иванов">
+                  <el-input v-model="inputSurname" class="personal-data__personal-field" placeholder="Иванов">
                   </el-input>
                 </div>
                 <div class="personal-data__personal-elem">
                   <div class="personal-data__personal-label">Имя</div>
-                  <el-input v-model="input" class="personal-data__personal-field" placeholder="Иван">
+                  <el-input v-model="inputName" class="personal-data__personal-field" placeholder="Иван">
                   </el-input>
                 </div>
                 <div class="personal-data__personal-elem">
                   <div class="personal-data__personal-label">Отчество</div>
-                  <el-input v-model="input" class="personal-data__personal-field" placeholder="Иванович">
+                  <el-input v-model="inputMiddleName" class="personal-data__personal-field" placeholder="Иванович">
                   </el-input>
                 </div>
                 <div class="personal-data__personal-elem">
                   <div class="personal-data__personal-label">Телефон</div>
-                  <el-input v-model="input" class="personal-data__personal-field" placeholder="+3805012312312">
+                  <el-input v-model="inputPhone" class="personal-data__personal-field" placeholder="+3805012312312">
                   </el-input>
                 </div>
               </div>
@@ -405,15 +405,18 @@ export default {
   },
   data() {
     return {
-      panelIndex: 3,
+      panelIndex: 1,
       isHidden: false,
       isHidden1: false,
       isOrders: true,
       isWish: true,
-      selectedMenu: 'Список желаний',
+      selectedMenu: 'Основная информация',
       isMobMenu: false,
       isRightMob: true,
-      input: null,
+      inputName: null,
+      inputSurname: null,
+      inputMiddleName: null,
+      inputPhone: null,
     };
   },
   computed: {

@@ -47,7 +47,8 @@
                   <div class="authorization__data-input">
                     <el-input :type="visiblePassAuto" v-model="inputPassAuto" placeholder="Пароль" @keyup.enter.native="authorize()"></el-input>
                   </div>
-                  <div class="authorization__data-pass-eye" @click="visiblePassAuto = 'text'" @mouseout="visiblePassAuto = 'password'">
+                  <!--<div class="authorization__data-pass-eye" @click="visiblePassAuto = 'text'" @mouseout="visiblePassAuto = 'password'">-->
+                  <div class="authorization__data-pass-eye" @click="hidePassAuto">
                     <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
                   </div>
                 </div>
@@ -109,7 +110,7 @@
                     </el-form-item>
                   </div>
 
-                  <div class="registr__data-pass-eye" @click="visiblePassReg = 'text'" @mouseout="visiblePassReg = 'password'">
+                  <div class="registr__data-pass-eye" @click="hidePassReg">
                     <!--<div v-on:click="visible_pass = 'text'" class="registr__data-pass-eye">-->
                     <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
                   </div>
@@ -124,7 +125,7 @@
                       <el-input :type="visibleRepassReg" v-model="regForm.checkPassReg" placeholder="Пароль" @keyup.enter.native="submitForm('regForm')"></el-input>
                     </el-form-item>
                   </div>
-                  <div class="registr__data-repass-eye" @click="visibleRepassReg = 'text'" @mouseout="visibleRepassReg = 'password'">
+                  <div class="registr__data-repass-eye" @click="hideRepassReg">
                     <img src="../assets/Icons/eye-close-up.svg" width="18" height="12" alt="Подсказка">
                   </div>
                 </div>
@@ -243,6 +244,27 @@ export default {
         password: this.inputPassAuto,
         rememberMe: this.rememberMe,
       });
+    },
+    hidePassAuto() {
+      if (this.visiblePassAuto === 'text') {
+        this.visiblePassAuto = 'password';
+      } else {
+        this.visiblePassAuto = 'text';
+      }
+    },
+    hidePassReg() {
+      if (this.visiblePassReg === 'text') {
+        this.visiblePassReg = 'password';
+      } else {
+        this.visiblePassReg = 'text';
+      }
+    },
+    hideRepassReg() {
+      if (this.visibleRepassReg === 'text') {
+        this.visibleRepassReg = 'password';
+      } else {
+        this.visibleRepassReg = 'text';
+      }
     },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
@@ -509,6 +531,8 @@ export default {
       bottom: 1px dashed #fffab9
   &__pointerlink a
     color: #fffab9
+  &__pointerlink a:hover
+    text-decoration: none
 
 
 .registr
@@ -651,6 +675,9 @@ export default {
       bottom: 1px dashed #fffab9
   &__pointerlink a
     color: #fffab9
+  &__pointerlink a:hover
+    text-decoration: none
+
 
 .el-form-item__content
   margin-left: 0px !important
