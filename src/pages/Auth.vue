@@ -407,7 +407,9 @@ export default {
       min-width: 500px
       padding:
         top: 40px
-        bottom: 40px
+        bottom: 70px
+    @media (max-width: 767.98px)
+      min-width: 0
 
   &__site-wrapper
     @media (max-width: 991.98px)
@@ -445,6 +447,7 @@ export default {
     @media (max-width: 575.98px)
       margin:
         right: 10px
+        left: 5px
 
   &__data-pass-icon
     text-align: center
@@ -454,6 +457,7 @@ export default {
     @media (max-width: 575.98px)
       margin:
         right: 10px
+        left: 5px
 
   &__data-pass-eye
     opacity: 0.5
@@ -462,6 +466,7 @@ export default {
     @media (max-width: 575.98px)
       margin:
         left: 5px
+        right: 5px
   &__data-pass-eye:hover
     opacity: 1
 
@@ -472,6 +477,8 @@ export default {
     width: 264px
     margin:
       bottom: 35px
+    @media (max-width: 408px)
+      width: 230px
     .el-input__inner
       border-radius: 0
       padding: 0px 5px
@@ -608,6 +615,8 @@ export default {
     width: 264px
     margin:
       bottom: 40px
+    @media (max-width: 575.98px)
+      width: 230px
     .el-input__inner
       border-radius: 0
       padding: 0px 5px
@@ -641,6 +650,7 @@ export default {
     @media (max-width: 575.98px)
       flex-direction: column-reverse
       align-items: center
+      min-width: 100%
 
   .registr__actives-button
     width: 150px
