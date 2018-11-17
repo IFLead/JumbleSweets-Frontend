@@ -86,7 +86,9 @@ const actions = {
   },
 
   async checkAuth({ state, dispatch, commit }) {
-    const token = localStorage.getItem(AUTH_TOKEN) || sessionStorage.getItem(AUTH_TOKEN);
+    console.log('Проверка токена');
+    const token =
+      localStorage.getItem(AUTH_TOKEN) || sessionStorage.getItem(AUTH_TOKEN);
 
     if (!token) {
       commit('setAuthorized', false);

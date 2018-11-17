@@ -188,37 +188,37 @@
                     <div v-if="isHidden1 === false" class="orders-yes__elem-products">
                       <div class="orders-yes__elem-products-wrapper">
                         <div class="orders-yes__elem-products-product">
-                          <div class="orders-yes__elem-products-name">
-                            <div class="orders-yes__elem-products-name-wrapper bold-type">Батончик Snickers</div>
-                          </div>
+                          <router-link to="/" class="orders-yes__elem-products-name">
+                            <div class="orders-yes__elem-products-name-wrapper">Батончик Snickers</div>
+                          </router-link>
                           <div class="orders-yes__elem-products-number">4 шт.</div>
                           <div class="orders-yes__elem-products-price">60 грн.</div>
                         </div>
                         <div class="orders-yes__elem-products-product">
-                          <div class="orders-yes__elem-products-name">
+                          <router-link to="/" class="orders-yes__elem-products-name">
                             <div class="orders-yes__elem-products-name-wrapper">Шоколад Milka Sweet</div>
-                          </div>
+                          </router-link>
                           <div class="orders-yes__elem-products-number">1 шт.</div>
                           <div class="orders-yes__elem-products-price">150 грн.</div>
                         </div>
                         <div class="orders-yes__elem-products-product">
-                          <div class="orders-yes__elem-products-name">
+                          <router-link to="/" class="orders-yes__elem-products-name">
                             <div class="orders-yes__elem-products-name-wrapper underline">Jumble Box Light</div>
-                          </div>
+                          </router-link>
                           <div class="orders-yes__elem-products-number">1 шт.</div>
                           <div class="orders-yes__elem-products-price">150 грн.</div>
                         </div>
                         <div class="orders-yes__elem-products-product">
-                          <div class="orders-yes__elem-products-name">
+                          <router-link to="/" class="orders-yes__elem-products-name">
                             <div class="orders-yes__elem-products-name-wrapper">Шоколад Alpen Gold</div>
-                          </div>
+                          </router-link>
                           <div class="orders-yes__elem-products-number">1 шт.</div>
                           <div class="orders-yes__elem-products-price">150 грн.</div>
                         </div>
                         <div class="orders-yes__elem-products-product">
-                          <div class="orders-yes__elem-products-name">
+                          <router-link to="/" class="orders-yes__elem-products-name">
                             <div class="orders-yes__elem-products-name-wrapper">Jumble Box Light Mistery</div>
-                          </div>
+                          </router-link>
                           <div class="orders-yes__elem-products-number">1 шт.</div>
                           <div class="orders-yes__elem-products-price">150 грн.</div>
                         </div>
@@ -280,37 +280,37 @@
                   <div v-if="isHidden1 === false" class="orders-yesmob__elem-products">
                     <div class="orders-yesmob__elem-products-wrapper">
                       <div class="orders-yesmob__elem-products-product">
-                        <div class="orders-yesmob__elem-products-name">
+                        <router-link to="/" class="orders-yesmob__elem-products-name">
                           <div class="orders-yesmob__elem-products-name-wrapper">Батончик Snickers</div>
-                        </div>
+                        </router-link>
                         <div class="orders-yesmob__elem-products-number">4 шт.</div>
                         <div class="orders-yesmob__elem-products-price">60 грн.</div>
                       </div>
                       <div class="orders-yesmob__elem-products-product">
-                        <div class="orders-yesmob__elem-products-name">
+                        <router-link to="/" class="orders-yesmob__elem-products-name">
                           <div class="orders-yesmob__elem-products-name-wrapper">Шоколад Milka Sweet</div>
-                        </div>
+                        </router-link>
                         <div class="orders-yesmob__elem-products-number">1 шт.</div>
                         <div class="orders-yesmob__elem-products-price">150 грн.</div>
                       </div>
                       <div class="orders-yesmob__elem-products-product">
-                        <div class="orders-yesmob__elem-products-name">
+                        <router-link to="/" class="orders-yesmob__elem-products-name">
                           <div class="orders-yesmob__elem-products-name-wrapper underline">Jumble Box Light</div>
-                        </div>
+                        </router-link>
                         <div class="orders-yesmob__elem-products-number">1 шт.</div>
                         <div class="orders-yesmob__elem-products-price">150 грн.</div>
                       </div>
                       <div class="orders-yesmob__elem-products-product">
-                        <div class="orders-yesmob__elem-products-name">
+                        <router-link to="/" class="orders-yesmob__elem-products-name">
                           <div class="orders-yesmob__elem-products-name-wrapper">Шоколад Alpen Gold</div>
-                        </div>
+                        </router-link>
                         <div class="orders-yesmob__elem-products-number">1 шт.</div>
                         <div class="orders-yesmob__elem-products-price">150 грн.</div>
                       </div>
                       <div class="orders-yesmob__elem-products-product">
-                        <div class="orders-yesmob__elem-products-name">
+                        <router-link to="/" class="orders-yesmob__elem-products-name">
                           <div class="orders-yesmob__elem-products-name-wrapper">Jumble Box Light Mistery</div>
-                        </div>
+                        </router-link>
                         <div class="orders-yesmob__elem-products-number">1 шт.</div>
                         <div class="orders-yesmob__elem-products-price">150 грн.</div>
                       </div>
@@ -466,7 +466,8 @@ export default {
       font-weight: 400
       line-height: 25px
     span
-      font-size: 18px
+      //font-size: 18px
+      font-size: 15px
       font-weight: 600
     &__user
       max-width: 362px
@@ -543,7 +544,7 @@ export default {
       font-weight: 400
       line-height: 25px
     span
-      font-size: 18px
+      font-size: 15px
       font-weight: 600
     &__user
       max-width: 362px
@@ -817,6 +818,11 @@ export default {
       padding-bottom: 15px
     &__elem-products-name
       width: 170px
+      font-weight: 400
+      color: #000000
+    &__elem-products-name:hover
+      font-weight: 700
+      color: #000000
     &__elem-products-name-wrapper
       display: inline-block
     .underline
@@ -904,6 +910,10 @@ export default {
       padding-bottom: 15px
     &__elem-products-name
       width: 170px
+      color: #000000
+    &__elem-products-name:hover
+      font-weight: 700
+      color: #000000
     &__elem-products-name-wrapper
       display: inline-block
     .underline
